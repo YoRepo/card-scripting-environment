@@ -1,0 +1,76 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:36
+-- Card: 见习魔术师  (ID: 9156135)
+-- Type: Monster / Effect
+-- Attribute: DARK
+-- Race: Spellcaster
+-- Level 2
+-- ATK 400 | DEF 800
+-- Setcode: 152
+--
+-- Effect Text:
+-- ①：这张卡召唤·反转召唤·特殊召唤成功的场合，以场上1张可以放置魔力指示物的卡为对象发动。给那张卡放置1个魔力指示物。
+-- ②：这张卡被战斗破坏时才能发动。从卡组把1只2星以下的魔法师族怪兽里侧守备表示特殊召唤。
+--[[ __CARD_HEADER_END__ ]]
+
+--見習い魔術師
+function c9156135.initial_effect(c)
+	--counter
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(9156135,0))
+	e1:SetCategory(CATEGORY_COUNTER)
+	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_F)
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e1:SetCode(EVENT_SUMMON_SUCCESS)
+	e1:SetTarget(c9156135.addct)
+	e1:SetOperation(c9156135.addc)
+	c:RegisterEffect(e1)
+	local e2=e1:Clone()
+	e2:SetCode(EVENT_FLIP_SUMMON_SUCCESS)
+	c:RegisterEffect(e2)
+	local e3=e1:Clone()
+	e3:SetCode(EVENT_SPSUMMON_SUCCESS)
+	c:RegisterEffect(e3)
+	--spsummon
+	local e4=Effect.CreateEffect(c)
+	e4:SetDescription(aux.Stringid(9156135,1))
+	e4:SetCategory(CATEGORY_SPECIAL_SUMMON+CATEGORY_MSET)
+	e4:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
+	e4:SetCode(EVENT_BATTLE_DESTROYED)
+	e4:SetTarget(c9156135.target)
+	e4:SetOperation(c9156135.operation)
+	c:RegisterEffect(e4)
+end
+function c9156135.filter(c)
+	return c:IsFaceup() and c:IsCanAddCounter(0x1,1)
+end
+function c9156135.addct(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsOnField() and c9156135.filter(chkc) end
+	if chk==0 then return true end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_FACEUP)
+	Duel.SelectTarget(tp,c9156135.filter,tp,LOCATION_ONFIELD,LOCATION_ONFIELD,1,1,nil)
+	Duel.SetOperationInfo(0,CATEGORY_COUNTER,nil,1,0,0x1)
+end
+function c9156135.addc(e,tp,eg,ep,ev,re,r,rp)
+	local tc=Duel.GetFirstTarget()
+	if tc and tc:IsFaceup() and tc:IsRelateToEffect(e) then
+		tc:AddCounter(0x1,1)
+	end
+end
+function c9156135.spfilter(c,e,tp)
+	return c:IsLevelBelow(2) and c:IsRace(RACE_SPELLCASTER) and c:IsCanBeSpecialSummoned(e,0,tp,false,false,POS_FACEDOWN_DEFENSE)
+end
+function c9156135.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+		and Duel.IsExistingMatchingCard(c9156135.spfilter,tp,LOCATION_DECK,0,1,nil,e,tp) end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_DECK)
+end
+function c9156135.operation(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
+	local g=Duel.SelectMatchingCard(tp,c9156135.spfilter,tp,LOCATION_DECK,0,1,1,nil,e,tp)
+	if g:GetCount()>0 then
+		Duel.SpecialSummon(g,0,tp,tp,false,false,POS_FACEDOWN_DEFENSE)
+		Duel.ConfirmCards(1-tp,g)
+	end
+end

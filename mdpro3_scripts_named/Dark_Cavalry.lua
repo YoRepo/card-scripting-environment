@@ -1,0 +1,74 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:33
+-- Card: 超魔导骑士-黑魔导骑兵  (ID: 73452089)
+-- Type: Monster / Effect / Fusion
+-- Attribute: DARK
+-- Race: Spellcaster
+-- Level 8
+-- ATK 2800 | DEF 2300
+-- Setcode: 110
+--
+-- Effect Text:
+-- 「黑魔术师」＋战士族怪兽
+-- ①：这张卡的攻击力上升双方的场上·墓地的魔法·陷阱卡数量×100。
+-- ②：这张卡向守备表示怪兽攻击的场合，给与对方为攻击力超过那个守备力的数值的战斗伤害。
+-- ③：场上的卡为对象的魔法·陷阱·怪兽的效果发动时，丢弃1张手卡才能发动。那个发动无效并破坏。
+--[[ __CARD_HEADER_END__ ]]
+
+--超魔導騎士－ブラック・キャバルリー
+function c73452089.initial_effect(c)
+	--fusion material
+	c:EnableReviveLimit()
+	aux.AddFusionProcCodeFun(c,46986414,aux.FilterBoolFunction(Card.IsRace,RACE_WARRIOR),1,true,true)
+	--atkup
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e1:SetCode(EFFECT_UPDATE_ATTACK)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetValue(c73452089.atkval)
+	c:RegisterEffect(e1)
+	--pierce
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_SINGLE)
+	e2:SetCode(EFFECT_PIERCE)
+	c:RegisterEffect(e2)
+	--negate
+	local e3=Effect.CreateEffect(c)
+	e3:SetDescription(aux.Stringid(73452089,0))
+	e3:SetCategory(CATEGORY_NEGATE+CATEGORY_DESTROY)
+	e3:SetType(EFFECT_TYPE_QUICK_O)
+	e3:SetCode(EVENT_CHAINING)
+	e3:SetProperty(EFFECT_FLAG_DAMAGE_STEP+EFFECT_FLAG_DAMAGE_CAL)
+	e3:SetRange(LOCATION_MZONE)
+	e3:SetCondition(c73452089.discon)
+	e3:SetCost(c73452089.discost)
+	e3:SetTarget(c73452089.distg)
+	e3:SetOperation(c73452089.disop)
+	c:RegisterEffect(e3)
+end
+function c73452089.atkval(e,c)
+	return Duel.GetMatchingGroupCount(Card.IsType,0,LOCATION_ONFIELD+LOCATION_GRAVE,LOCATION_ONFIELD+LOCATION_GRAVE,nil,TYPE_SPELL+TYPE_TRAP)*100
+end
+function c73452089.discon(e,tp,eg,ep,ev,re,r,rp)
+	if e:GetHandler():IsStatus(STATUS_BATTLE_DESTROYED) then return false end
+	if not re:IsHasProperty(EFFECT_FLAG_CARD_TARGET) then return false end
+	local tg=Duel.GetChainInfo(ev,CHAININFO_TARGET_CARDS)
+	return tg and tg:IsExists(Card.IsOnField,1,nil) and Duel.IsChainNegatable(ev)
+end
+function c73452089.discost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsDiscardable,tp,LOCATION_HAND,0,1,nil) end
+	Duel.DiscardHand(tp,Card.IsDiscardable,1,1,REASON_COST+REASON_DISCARD,nil)
+end
+function c73452089.distg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return true end
+	Duel.SetOperationInfo(0,CATEGORY_NEGATE,eg,1,0,0)
+	if re:GetHandler():IsDestructable() and re:GetHandler():IsRelateToEffect(re) then
+		Duel.SetOperationInfo(0,CATEGORY_DESTROY,eg,1,0,0)
+	end
+end
+function c73452089.disop(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.NegateActivation(ev) and re:GetHandler():IsRelateToEffect(re) then
+		Duel.Destroy(eg,REASON_EFFECT)
+	end
+end

@@ -1,0 +1,91 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:24
+-- Card: 魔导书库 苏雷  (ID: 20822520)
+-- Type: Spell
+-- ATK 0 | DEF 0
+-- Setcode: 4206
+--
+-- Effect Text:
+-- 自己墓地的名字带有「魔导书」的魔法卡是5张以上的场合才能发动。从自己卡组上面把2张卡翻开。那之中的名字带有「魔导书」的魔法卡全部加入手卡，剩下的卡回到卡组。「魔导书库
+-- 苏雷」在1回合只能发动1张，这张卡发动的回合，自己不能把名字带有「魔导书」的卡以外的魔法卡发动。
+--[[ __CARD_HEADER_END__ ]]
+
+--魔導書庫ソレイン
+function c20822520.initial_effect(c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetCategory(CATEGORY_TOHAND+CATEGORY_SEARCH)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:SetCountLimit(1,20822520+EFFECT_COUNT_CODE_OATH)
+	e1:SetCondition(c20822520.condition)
+	e1:SetCost(c20822520.cost)
+	e1:SetTarget(c20822520.target)
+	e1:SetOperation(c20822520.activate)
+	c:RegisterEffect(e1)
+	if not c20822520.global_check then
+		c20822520.global_check=true
+		local ge1=Effect.CreateEffect(c)
+		ge1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
+		ge1:SetCode(EVENT_CHAINING)
+		ge1:SetOperation(c20822520.checkop)
+		Duel.RegisterEffect(ge1,0)
+	end
+end
+function c20822520.checkop(e,tp,eg,ep,ev,re,r,rp)
+	if re:IsHasType(EFFECT_TYPE_ACTIVATE) and re:IsActiveType(TYPE_SPELL) and not re:GetHandler():IsSetCard(0x106e) then
+		Duel.RegisterFlagEffect(rp,20822521,RESET_PHASE+PHASE_END,0,1)
+	end
+end
+function c20822520.cfilter(c)
+	return c:IsType(TYPE_SPELL) and c:IsSetCard(0x106e)
+end
+function c20822520.condition(e,tp,eg,ep,ev,re,r,rp)
+	return Duel.IsExistingMatchingCard(c20822520.cfilter,tp,LOCATION_GRAVE,0,5,nil)
+end
+function c20822520.cost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.GetFlagEffect(tp,20822521)==0 end
+	--oath effects
+	local e1=Effect.CreateEffect(e:GetHandler())
+	e1:SetType(EFFECT_TYPE_FIELD)
+	e1:SetProperty(EFFECT_FLAG_PLAYER_TARGET+EFFECT_FLAG_OATH)
+	e1:SetCode(EFFECT_CANNOT_ACTIVATE)
+	e1:SetTargetRange(1,0)
+	e1:SetValue(c20822520.aclimit)
+	e1:SetReset(RESET_PHASE+PHASE_END)
+	Duel.RegisterEffect(e1,tp)
+end
+function c20822520.aclimit(e,re,tp)
+	return re:IsHasType(EFFECT_TYPE_ACTIVATE) and re:IsActiveType(TYPE_SPELL) and not re:GetHandler():IsSetCard(0x106e)
+end
+function c20822520.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then
+		if Duel.GetFieldGroupCount(tp,LOCATION_DECK,0)<2 then return false end
+		local g=Duel.GetDecktopGroup(tp,2)
+		return g:FilterCount(Card.IsAbleToHand,nil)>0
+	end
+	Duel.SetTargetPlayer(tp)
+	Duel.SetOperationInfo(0,CATEGORY_TOHAND,nil,1,0,LOCATION_DECK)
+end
+function c20822520.filter(c)
+	return c:IsType(TYPE_SPELL) and c:IsSetCard(0x106e)
+end
+function c20822520.activate(e,tp,eg,ep,ev,re,r,rp)
+	local p=Duel.GetChainInfo(0,CHAININFO_TARGET_PLAYER)
+	Duel.ConfirmDecktop(p,2)
+	local g=Duel.GetDecktopGroup(p,2)
+	if g:GetCount()>0 then
+		local sg=g:Filter(c20822520.filter,nil)
+		if sg:GetCount()>0 then
+			if sg:GetFirst():IsAbleToHand() then
+				Duel.SendtoHand(sg,nil,REASON_EFFECT)
+				Duel.ConfirmCards(1-p,sg)
+				Duel.ShuffleHand(p)
+			else
+				Duel.SendtoGrave(sg,REASON_EFFECT)
+			end
+		end
+		Duel.ShuffleDeck(p)
+	end
+end

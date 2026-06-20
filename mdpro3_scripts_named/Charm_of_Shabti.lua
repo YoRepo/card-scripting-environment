@@ -1,0 +1,44 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:28
+-- Card: 沙布提俑护符  (ID: 50412166)
+-- Type: Monster / Effect
+-- Attribute: EARTH
+-- Race: Rock
+-- Level 1
+-- ATK 100 | DEF 100
+--
+-- Effect Text:
+-- 从手卡丢弃这张卡。到本回合结束阶段为止，自己场上名称中带有「守墓」的怪兽卡所受战斗伤害为0。
+--[[ __CARD_HEADER_END__ ]]
+
+--シャブティのお守り
+function c50412166.initial_effect(c)
+	--indes
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(50412166,0))
+	e1:SetType(EFFECT_TYPE_QUICK_O)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:SetRange(LOCATION_HAND)
+	e1:SetCondition(c50412166.condition)
+	e1:SetCost(c50412166.cost)
+	e1:SetOperation(c50412166.operation)
+	c:RegisterEffect(e1)
+end
+function c50412166.condition(e,tp,eg,ep,ev,re,r,rp)
+	local ph=Duel.GetCurrentPhase()
+	return ph~=PHASE_MAIN2 and ph~=PHASE_END
+end
+function c50412166.cost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return e:GetHandler():IsDiscardable() end
+	Duel.SendtoGrave(e:GetHandler(),REASON_COST+REASON_DISCARD)
+end
+function c50412166.operation(e,tp,eg,ep,ev,re,r,rp)
+	local e1=Effect.CreateEffect(e:GetHandler())
+	e1:SetType(EFFECT_TYPE_FIELD)
+	e1:SetCode(EFFECT_INDESTRUCTABLE_BATTLE)
+	e1:SetTargetRange(LOCATION_MZONE,0)
+	e1:SetReset(RESET_PHASE+PHASE_END)
+	e1:SetTarget(aux.TargetBoolFunction(Card.IsSetCard,0x2e))
+	e1:SetValue(1)
+	Duel.RegisterEffect(e1,tp)
+end

@@ -1,0 +1,101 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:36
+-- Card: 神圣蓟花  (ID: 94845588)
+-- Type: Spell
+-- ATK 0 | DEF 0
+-- Setcode: 444
+--
+-- Effect Text:
+-- 这个卡名的②的效果1回合只能使用1次。
+-- ①：把额外卡组1只「蓟花」融合怪兽给对方观看，那个等级每4星为1张的「罪宝」卡从自己的手卡·场上送去墓地（里侧表示卡翻开确认）。那之后，给人观看的怪兽当作融合召唤作特殊召唤。
+-- ②：这张卡在墓地存在的场合，以自己的场上·墓地1只「蓟花」怪兽为对象才能发动。那只怪兽回到卡组，这张卡加入手卡。
+--[[ __CARD_HEADER_END__ ]]
+
+--聖なる薊花
+local s,id,o=GetID()
+function s.initial_effect(c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(id,0))
+	e1:SetCategory(CATEGORY_SPECIAL_SUMMON+CATEGORY_FUSION_SUMMON+CATEGORY_TOGRAVE)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:SetTarget(s.target)
+	e1:SetOperation(s.activate)
+	c:RegisterEffect(e1)
+	--to hand
+	local e2=Effect.CreateEffect(c)
+	e2:SetDescription(aux.Stringid(id,1))
+	e2:SetCategory(CATEGORY_TOHAND+CATEGORY_TODECK)
+	e2:SetType(EFFECT_TYPE_IGNITION)
+	e2:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e2:SetRange(LOCATION_GRAVE)
+	e2:SetCountLimit(1,id+o)
+	e2:SetTarget(s.thtg)
+	e2:SetOperation(s.thop)
+	c:RegisterEffect(e2)
+end
+s.fusion_effect=true
+function s.filter(c,e,tp,mg)
+	if c:GetLevel()<4 then return false end
+	local ct=math.floor(c:GetLevel()/4)
+	return c:IsType(TYPE_FUSION) and c:IsSetCard(0x1bc) and c:CheckFusionMaterial()
+		and c:IsCanBeSpecialSummoned(e,SUMMON_TYPE_FUSION,tp,false,false)
+		and mg:CheckSubGroup(s.gcheck,ct,ct,tp,c)
+end
+function s.gcheck(g,tp,fc)
+	return Duel.GetLocationCountFromEx(tp,tp,g,fc)>0
+		and g:FilterCount(Card.IsAbleToGrave,nil)==g:GetCount()
+end
+function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	local g=Duel.GetMatchingGroup(Card.IsSetCard,tp,LOCATION_HAND+LOCATION_ONFIELD,0,nil,0x19e)
+	if chk==0 then return aux.MustMaterialCheck(nil,tp,EFFECT_MUST_BE_FMATERIAL)
+		and Duel.IsExistingMatchingCard(s.filter,tp,LOCATION_EXTRA,0,1,nil,e,tp,g) end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_EXTRA)
+end
+function s.activate(e,tp,eg,ep,ev,re,r,rp)
+	if not aux.MustMaterialCheck(nil,tp,EFFECT_MUST_BE_FMATERIAL) then return end
+	local mg=Duel.GetMatchingGroup(Card.IsSetCard,tp,LOCATION_HAND+LOCATION_ONFIELD,0,nil,0x19e)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
+	local g=Duel.SelectMatchingCard(tp,s.filter,tp,LOCATION_EXTRA,0,1,1,nil,e,tp,mg)
+	local tc=g:GetFirst()
+	if tc then
+		Duel.ConfirmCards(1-tp,tc)
+		local ct=math.floor(tc:GetLevel()/4)
+		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
+		local sg=mg:SelectSubGroup(tp,s.gcheck,false,ct,ct,tp,tc)
+		local cg=sg:Filter(Card.IsFacedown,nil)
+		Duel.ConfirmCards(1-tp,cg)
+		if Duel.SendtoGrave(sg,REASON_EFFECT)~=0 and sg:FilterCount(Card.IsLocation,nil,LOCATION_GRAVE)~=0 then
+			tc:SetMaterial(nil)
+			Duel.BreakEffect()
+			if Duel.SpecialSummon(tc,SUMMON_TYPE_FUSION,tp,tp,false,false,POS_FACEUP) then
+				tc:CompleteProcedure()
+			end
+		end
+	end
+end
+function s.tdfilter(c)
+	return c:IsFaceupEx() and c:IsType(TYPE_MONSTER)
+		and c:IsAbleToDeck() and c:IsSetCard(0x1bc)
+end
+function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	local c=e:GetHandler()
+	if chkc then return chkc:IsLocation(LOCATION_MZONE+LOCATION_GRAVE) and chkc:IsControler(tp) and s.tdfilter(chkc) end
+	if chk==0 then return Duel.IsExistingTarget(s.tdfilter,tp,LOCATION_MZONE+LOCATION_GRAVE,0,1,nil,tp)
+		and c:IsAbleToHand() end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
+	local g=Duel.SelectTarget(tp,s.tdfilter,tp,LOCATION_MZONE+LOCATION_GRAVE,0,1,1,nil,tp)
+	Duel.SetOperationInfo(0,CATEGORY_TODECK,g,#g,0,0)
+	Duel.SetOperationInfo(0,CATEGORY_TOHAND,c,1,0,0)
+end
+function s.thop(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	local tc=Duel.GetFirstTarget()
+	if tc:IsRelateToEffect(e) and aux.NecroValleyFilter()(tc) and tc:IsType(TYPE_MONSTER)
+		and Duel.SendtoDeck(tc,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)~=0
+		and tc:IsLocation(LOCATION_DECK+LOCATION_EXTRA)
+		and c:IsRelateToEffect(e) then
+		Duel.SendtoHand(c,nil,REASON_EFFECT)
+	end
+end

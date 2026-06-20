@@ -1,0 +1,64 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:24
+-- Card: 龙骑兵团-首席百夫长  (ID: 18060565)
+-- Type: Monster / Effect
+-- Attribute: WIND
+-- Race: Winged Beast
+-- Level 5
+-- ATK 2200 | DEF 1600
+-- Setcode: 41
+--
+-- Effect Text:
+-- ①：这张卡召唤·特殊召唤成功时，以自己场上1只鸟兽族「龙骑兵团」怪兽为对象才能发动。从卡组选1只龙族·3星以下的「龙骑兵团」怪兽当作装备卡使用给作为对象的怪兽装备。
+--[[ __CARD_HEADER_END__ ]]
+
+--ドラグニティ－プリムス・ピルス
+function c18060565.initial_effect(c)
+	--equip
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(18060565,0))
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET+EFFECT_FLAG_DAMAGE_STEP)
+	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
+	e1:SetCode(EVENT_SUMMON_SUCCESS)
+	e1:SetTarget(c18060565.eqtg)
+	e1:SetOperation(c18060565.eqop)
+	c:RegisterEffect(e1)
+	local e2=e1:Clone()
+	e2:SetCode(EVENT_SPSUMMON_SUCCESS)
+	c:RegisterEffect(e2)
+end
+function c18060565.filter(c)
+	return c:IsFaceup() and c:IsSetCard(0x29) and c:IsRace(RACE_WINDBEAST)
+end
+function c18060565.eqtg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsLocation(LOCATION_MZONE) and chkc:IsControler(tp) and c18060565.filter(chkc) end
+	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_SZONE)>0
+		and Duel.IsExistingTarget(c18060565.filter,tp,LOCATION_MZONE,0,1,nil)
+		and Duel.IsExistingMatchingCard(c18060565.eqfilter,tp,LOCATION_DECK,0,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_FACEUP)
+	Duel.SelectTarget(tp,c18060565.filter,tp,LOCATION_MZONE,0,1,1,nil)
+end
+function c18060565.eqfilter(c)
+	return c:IsSetCard(0x29) and c:IsRace(RACE_DRAGON) and c:IsLevelBelow(3) and not c:IsForbidden()
+end
+function c18060565.eqop(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.GetLocationCount(tp,LOCATION_SZONE)<=0 then return end
+	local tc=Duel.GetFirstTarget()
+	if not tc:IsRelateToEffect(e) or tc:IsFacedown() then return end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_EQUIP)
+	local eq=Duel.SelectMatchingCard(tp,c18060565.eqfilter,tp,LOCATION_DECK,0,1,1,nil)
+	local eqc=eq:GetFirst()
+	if eqc and Duel.Equip(tp,eqc,tc) then
+		local e1=Effect.CreateEffect(e:GetHandler())
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetCode(EFFECT_EQUIP_LIMIT)
+		e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD)
+		e1:SetValue(c18060565.eqlimit)
+		e1:SetLabelObject(tc)
+		eqc:RegisterEffect(e1)
+	end
+end
+function c18060565.eqlimit(e,c)
+	return c==e:GetLabelObject()
+end

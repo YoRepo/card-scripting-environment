@@ -1,0 +1,43 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:37
+-- Card: 升天之角笛  (ID: 98069388)
+-- Type: Trap / Flip
+-- ATK 0 | DEF 0
+--
+-- Effect Text:
+-- ①：自己或对方把怪兽召唤·反转召唤·特殊召唤之际，把自己场上1只怪兽解放才能发动。那个无效，那些怪兽破坏。
+--[[ __CARD_HEADER_END__ ]]
+
+--昇天の角笛
+function c98069388.initial_effect(c)
+	--Activate(summon)
+	local e1=Effect.CreateEffect(c)
+	e1:SetCategory(CATEGORY_DISABLE_SUMMON+CATEGORY_DESTROY)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_SUMMON)
+	e1:SetCondition(aux.NegateSummonCondition)
+	e1:SetCost(c98069388.cost)
+	e1:SetTarget(c98069388.target)
+	e1:SetOperation(c98069388.activate)
+	c:RegisterEffect(e1)
+	local e2=e1:Clone()
+	e2:SetCode(EVENT_FLIP_SUMMON)
+	c:RegisterEffect(e2)
+	local e3=e1:Clone()
+	e3:SetCode(EVENT_SPSUMMON)
+	c:RegisterEffect(e3)
+end
+function c98069388.cost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.CheckReleaseGroup(tp,aux.TRUE,1,nil) end
+	local g=Duel.SelectReleaseGroup(tp,aux.TRUE,1,1,nil)
+	Duel.Release(g,REASON_COST)
+end
+function c98069388.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return true end
+	Duel.SetOperationInfo(0,CATEGORY_DISABLE_SUMMON,eg,eg:GetCount(),0,0)
+	Duel.SetOperationInfo(0,CATEGORY_DESTROY,eg,eg:GetCount(),0,0)
+end
+function c98069388.activate(e,tp,eg,ep,ev,re,r,rp)
+	Duel.NegateSummon(eg)
+	Duel.Destroy(eg,REASON_EFFECT)
+end

@@ -1,0 +1,52 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:26
+-- Card: 赌博  (ID: 37313786)
+-- Type: Trap
+-- ATK 0 | DEF 0
+--
+-- Effect Text:
+-- 对方的手卡6张以上，自己的手卡2张以下的时候才可以发动。猜硬币的正反。
+-- ●猜中：自己的手卡抽到5张。
+-- ●猜不中：跳过下次的自己的整个回合。
+--[[ __CARD_HEADER_END__ ]]
+
+--ギャンブル
+function c37313786.initial_effect(c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetCategory(CATEGORY_COIN+CATEGORY_DRAW)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:SetCondition(c37313786.condition)
+	e1:SetTarget(c37313786.target)
+	e1:SetOperation(c37313786.activate)
+	c:RegisterEffect(e1)
+end
+function c37313786.condition(e,tp,eg,ep,ev,re,r,rp)
+	return Duel.GetFieldGroupCount(tp,LOCATION_HAND,0)<=2 and Duel.GetFieldGroupCount(tp,0,LOCATION_HAND)>=6
+end
+function c37313786.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return true end
+	Duel.SetOperationInfo(0,CATEGORY_COIN,nil,0,tp,1)
+end
+function c37313786.activate(e,tp,eg,ep,ev,re,r,rp)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_COIN)
+	local coin=Duel.AnnounceCoin(tp)
+	local res=Duel.TossCoin(tp,1)
+	if coin~=res then
+		local gc=Duel.GetFieldGroupCount(tp,LOCATION_HAND,0)
+		Duel.Draw(tp,5-gc,REASON_EFFECT)
+	else
+		local e1=Effect.CreateEffect(e:GetHandler())
+		e1:SetType(EFFECT_TYPE_FIELD)
+		e1:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
+		e1:SetTargetRange(1,0)
+		e1:SetCode(EFFECT_SKIP_TURN)
+		if Duel.GetTurnPlayer()==tp then
+			e1:SetReset(RESET_PHASE+PHASE_END+RESET_SELF_TURN,2)
+		else
+			e1:SetReset(RESET_PHASE+PHASE_END+RESET_SELF_TURN,1)
+		end
+		Duel.RegisterEffect(e1,tp)
+	end
+end

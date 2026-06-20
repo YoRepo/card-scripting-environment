@@ -1,0 +1,49 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:28
+-- Card: 魔轰神 雷文  (ID: 47217354)
+-- Type: Monster / Effect / Tuner
+-- Attribute: LIGHT
+-- Race: Fiend
+-- Level 2
+-- ATK 1300 | DEF 1000
+-- Setcode: 53
+--
+-- Effect Text:
+-- ①：1回合1次，自己主要阶段才能发动。选自己手卡任意数量丢弃，直到回合结束时，这张卡的等级上升丢弃数量的数值，攻击力上升丢弃数量×400。
+--[[ __CARD_HEADER_END__ ]]
+
+--魔轟神レイヴン
+function c47217354.initial_effect(c)
+	--lv atk up
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(47217354,0))
+	e1:SetCategory(CATEGORY_HANDES+CATEGORY_ATKCHANGE)
+	e1:SetType(EFFECT_TYPE_IGNITION)
+	e1:SetCountLimit(1)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetTarget(c47217354.tg)
+	e1:SetOperation(c47217354.op)
+	c:RegisterEffect(e1)
+end
+function c47217354.tg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.GetFieldGroupCount(tp,LOCATION_HAND,0)>0 end
+	Duel.SetOperationInfo(0,CATEGORY_HANDES,nil,0,tp,1)
+end
+function c47217354.op(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	local ct=Duel.DiscardHand(tp,aux.TRUE,1,60,REASON_EFFECT+REASON_DISCARD)
+	if ct>0 and c:IsFaceup() and c:IsRelateToEffect(e) then
+		local e1=Effect.CreateEffect(c)
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetCode(EFFECT_UPDATE_ATTACK)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_DISABLE+RESET_PHASE+PHASE_END)
+		e1:SetValue(ct*400)
+		c:RegisterEffect(e1)
+		local e2=Effect.CreateEffect(c)
+		e2:SetType(EFFECT_TYPE_SINGLE)
+		e2:SetCode(EFFECT_UPDATE_LEVEL)
+		e2:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_DISABLE+RESET_PHASE+PHASE_END)
+		e2:SetValue(ct)
+		c:RegisterEffect(e2)
+	end
+end

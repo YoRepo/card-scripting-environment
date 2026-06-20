@@ -1,0 +1,114 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:25
+-- Card: 铠装比特机灵  (ID: 29374928)
+-- Type: Monster / Effect
+-- Attribute: DARK
+-- Race: Cyberse
+-- Level 2
+-- ATK 500 | DEF 0
+--
+-- Effect Text:
+-- 这个卡名的①②的效果1回合各能使用1次。
+-- ①：把这张卡解放才能发动。从卡组把「铠装比特机灵」以外的1只电子界族怪兽效果无效特殊召唤。这个回合，自己不是电子界族怪兽不能特殊召唤。
+-- ②：这张卡在墓地存在，自己场上的连接3以上的连接怪兽被战斗或者对方的效果破坏的场合才能发动。这张卡特殊召唤。这个效果特殊召唤的这张卡从场上离开的场合除外。
+--[[ __CARD_HEADER_END__ ]]
+
+--アーマード・ビットロン
+function c29374928.initial_effect(c)
+	--spsummon
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(29374928,0))
+	e1:SetCategory(CATEGORY_SPECIAL_SUMMON)
+	e1:SetType(EFFECT_TYPE_IGNITION)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetCountLimit(1,29374928)
+	e1:SetCost(c29374928.spcost)
+	e1:SetTarget(c29374928.sptg)
+	e1:SetOperation(c29374928.spop)
+	c:RegisterEffect(e1)
+	--spsummon2
+	local e2=Effect.CreateEffect(c)
+	e2:SetDescription(aux.Stringid(29374928,1))
+	e2:SetCategory(CATEGORY_SPECIAL_SUMMON)
+	e2:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_O)
+	e2:SetCode(EVENT_DESTROYED)
+	e2:SetProperty(EFFECT_FLAG_DAMAGE_STEP+EFFECT_FLAG_DELAY)
+	e2:SetRange(LOCATION_GRAVE)
+	e2:SetCountLimit(1,29374929)
+	e2:SetCondition(c29374928.spcon2)
+	e2:SetTarget(c29374928.sptg2)
+	e2:SetOperation(c29374928.spop2)
+	c:RegisterEffect(e2)
+end
+function c29374928.spcost(e,tp,eg,ep,ev,re,r,rp,chk)
+	local c=e:GetHandler()
+	if chk==0 then return c:IsReleasable() end
+	Duel.Release(c,REASON_COST)
+end
+function c29374928.spfilter(c,e,tp)
+	return c:IsRace(RACE_CYBERSE) and not c:IsCode(29374928) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+end
+function c29374928.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
+	local c=e:GetHandler()
+	if chk==0 then return Duel.GetMZoneCount(tp,c)>0 and Duel.IsExistingMatchingCard(c29374928.spfilter,tp,LOCATION_DECK,0,1,nil,e,tp) end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_DECK)
+end
+function c29374928.spop(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	if Duel.GetLocationCount(tp,LOCATION_MZONE)>0 then
+		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
+		local g=Duel.SelectMatchingCard(tp,c29374928.spfilter,tp,LOCATION_DECK,0,1,1,nil,e,tp)
+		local tc=g:GetFirst()
+		if tc and Duel.SpecialSummonStep(tc,0,tp,tp,false,false,POS_FACEUP) then
+			local e1=Effect.CreateEffect(c)
+			e1:SetType(EFFECT_TYPE_SINGLE)
+			e1:SetCode(EFFECT_DISABLE)
+			e1:SetReset(RESET_EVENT+RESETS_STANDARD)
+			tc:RegisterEffect(e1,true)
+			local e2=Effect.CreateEffect(c)
+			e2:SetType(EFFECT_TYPE_SINGLE)
+			e2:SetCode(EFFECT_DISABLE_EFFECT)
+			e2:SetValue(RESET_TURN_SET)
+			e2:SetReset(RESET_EVENT+RESETS_STANDARD)
+			tc:RegisterEffect(e2,true)
+		end
+		Duel.SpecialSummonComplete()
+	end
+	local e3=Effect.CreateEffect(c)
+	e3:SetType(EFFECT_TYPE_FIELD)
+	e3:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
+	e3:SetCode(EFFECT_CANNOT_SPECIAL_SUMMON)
+	e3:SetTargetRange(1,0)
+	e3:SetTarget(c29374928.splimit)
+	e3:SetReset(RESET_PHASE+PHASE_END)
+	Duel.RegisterEffect(e3,tp)
+end
+function c29374928.splimit(e,c)
+	return not c:IsRace(RACE_CYBERSE)
+end
+function c29374928.cfilter(c,tp)
+	return c:IsPreviousControler(tp) and c:IsPreviousLocation(LOCATION_MZONE)
+		and c:IsPreviousPosition(POS_FACEUP) and bit.band(c:GetPreviousTypeOnField(),TYPE_LINK)~=0 and c:IsLinkAbove(3)
+		and (c:IsReason(REASON_BATTLE) or c:IsReason(REASON_EFFECT) and c:GetReasonPlayer()==1-tp)
+end
+function c29374928.spcon2(e,tp,eg,ep,ev,re,r,rp)
+	return eg:IsExists(c29374928.cfilter,1,nil,tp) and not eg:IsContains(e:GetHandler())
+end
+function c29374928.sptg2(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+		and e:GetHandler():IsCanBeSpecialSummoned(e,0,tp,false,false) end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,e:GetHandler(),1,0,0)
+end
+function c29374928.spop2(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	if not c:IsRelateToEffect(e) then return end
+	if Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)~=0 then
+		local e1=Effect.CreateEffect(c)
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
+		e1:SetCode(EFFECT_LEAVE_FIELD_REDIRECT)
+		e1:SetValue(LOCATION_REMOVED)
+		e1:SetReset(RESET_EVENT+RESETS_REDIRECT)
+		c:RegisterEffect(e1,true)
+	end
+end

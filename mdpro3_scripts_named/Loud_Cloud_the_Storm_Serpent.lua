@@ -1,0 +1,141 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:31
+-- Card: 扰动骚蛇 响云蛇  (ID: 61465001)
+-- Type: Monster / Effect / SpecialSummon
+-- Attribute: WATER
+-- Race: Reptile
+-- Level 5
+-- ATK 0 | DEF 2000
+--
+-- Effect Text:
+-- 这张卡不能通常召唤。从自己墓地把炎属性和风属性的怪兽各1只除外的场合可以特殊召唤。这个卡名的①②的效果1回合各能使用1次。
+-- ①：从自己墓地把1只炎属性怪兽除外，以对方场上1只怪兽为对象才能发动。那只怪兽破坏。这张卡的攻击力上升破坏的怪兽的原本攻击力数值。
+-- ②：从自己墓地把1只风属性怪兽除外，以对方的魔法与陷阱区域1张卡为对象才能发动。那张卡破坏。
+--[[ __CARD_HEADER_END__ ]]
+
+--擾乱騒蛇ラウドクラウド
+function c61465001.initial_effect(c)
+	c:EnableReviveLimit()
+	--special summon
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_FIELD)
+	e1:SetCode(EFFECT_SPSUMMON_PROC)
+	e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE+EFFECT_FLAG_UNCOPYABLE)
+	e1:SetRange(LOCATION_HAND)
+	e1:SetCondition(c61465001.spcon)
+	e1:SetTarget(c61465001.sptg)
+	e1:SetOperation(c61465001.spop)
+	c:RegisterEffect(e1)
+	--destroy monster
+	local e2=Effect.CreateEffect(c)
+	e2:SetDescription(aux.Stringid(61465001,0))
+	e2:SetCategory(CATEGORY_DESTROY+CATEGORY_ATKCHANGE)
+	e2:SetType(EFFECT_TYPE_IGNITION)
+	e2:SetCountLimit(1,61465001)
+	e2:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e2:SetRange(LOCATION_MZONE)
+	e2:SetCost(c61465001.descost1)
+	e2:SetTarget(c61465001.destg1)
+	e2:SetOperation(c61465001.desop1)
+	c:RegisterEffect(e2)
+	--destroy spell/trap
+	local e3=Effect.CreateEffect(c)
+	e3:SetDescription(aux.Stringid(61465001,1))
+	e3:SetCategory(CATEGORY_DESTROY)
+	e3:SetType(EFFECT_TYPE_IGNITION)
+	e3:SetCountLimit(1,61465002)
+	e3:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e3:SetRange(LOCATION_MZONE)
+	e3:SetCost(c61465001.descost2)
+	e3:SetTarget(c61465001.destg2)
+	e3:SetOperation(c61465001.desop2)
+	c:RegisterEffect(e3)
+end
+function c61465001.cfilter(c)
+	return c:IsAbleToRemoveAsCost() and c:IsAttribute(ATTRIBUTE_FIRE+ATTRIBUTE_WIND)
+end
+function c61465001.cfilter1(c,g)
+	return c:IsAttribute(ATTRIBUTE_FIRE) and g:IsExists(Card.IsAttribute,1,c,ATTRIBUTE_WIND)
+end
+function c61465001.check(g)
+	return g:IsExists(c61465001.cfilter1,1,nil,g)
+end
+function c61465001.spcon(e,c)
+	if c==nil then return true end
+	local tp=c:GetControler()
+	if Duel.GetMZoneCount(tp)<=0 then return false end
+	local g=Duel.GetMatchingGroup(c61465001.cfilter,tp,LOCATION_GRAVE,0,nil)
+	return g:CheckSubGroup(c61465001.check,2,2)
+end
+function c61465001.sptg(e,tp,eg,ep,ev,re,r,rp,chk,c)
+	local g=Duel.GetMatchingGroup(c61465001.cfilter,tp,LOCATION_GRAVE,0,nil)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
+	local sg=g:SelectSubGroup(tp,c61465001.check,true,2,2)
+	if sg then
+		sg:KeepAlive()
+		e:SetLabelObject(sg)
+		return true
+	else return false end
+end
+function c61465001.spop(e,tp,eg,ep,ev,re,r,rp,c)
+	local g=e:GetLabelObject()
+	Duel.Remove(g,POS_FACEUP,REASON_SPSUMMON)
+	g:DeleteGroup()
+end
+function c61465001.descfilter1(c)
+	return c:IsAttribute(ATTRIBUTE_FIRE) and c:IsAbleToRemoveAsCost()
+end
+function c61465001.descost1(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(c61465001.descfilter1,tp,LOCATION_GRAVE,0,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
+	local g=Duel.SelectMatchingCard(tp,c61465001.descfilter1,tp,LOCATION_GRAVE,0,1,1,nil)
+	Duel.Remove(g,POS_FACEUP,REASON_COST)
+end
+function c61465001.destg1(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsLocation(LOCATION_MZONE) and chkc:IsControler(1-tp) end
+	if chk==0 then return Duel.IsExistingTarget(aux.TRUE,tp,0,LOCATION_MZONE,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
+	local g=Duel.SelectTarget(tp,aux.TRUE,tp,0,LOCATION_MZONE,1,1,nil)
+	Duel.SetOperationInfo(0,CATEGORY_DESTROY,g,1,0,0)
+end
+function c61465001.desop1(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	local tc=Duel.GetFirstTarget()
+	local atk=math.max(tc:GetTextAttack(),0)
+	if tc:IsRelateToEffect(e) then
+		if Duel.Destroy(tc,REASON_EFFECT)~=0
+			and c:IsFaceup() and c:IsRelateToEffect(e) and atk>0 then
+			local e1=Effect.CreateEffect(c)
+			e1:SetType(EFFECT_TYPE_SINGLE)
+			e1:SetCode(EFFECT_UPDATE_ATTACK)
+			e1:SetValue(atk)
+			e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_DISABLE)
+			c:RegisterEffect(e1)
+		end
+	end
+end
+function c61465001.descfilter2(c)
+	return c:IsAttribute(ATTRIBUTE_WIND) and c:IsAbleToRemoveAsCost()
+end
+function c61465001.descost2(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(c61465001.descfilter2,tp,LOCATION_GRAVE,0,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
+	local g=Duel.SelectMatchingCard(tp,c61465001.descfilter2,tp,LOCATION_GRAVE,0,1,1,nil)
+	Duel.Remove(g,POS_FACEUP,REASON_COST)
+end
+function c61465001.desfilter(c)
+	return c:GetSequence()<5
+end
+function c61465001.destg2(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsLocation(LOCATION_SZONE) and chkc:IsControler(1-tp) and c61465001.desfilter(chkc) end
+	if chk==0 then return Duel.IsExistingTarget(c61465001.desfilter,tp,0,LOCATION_SZONE,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
+	local g=Duel.SelectTarget(tp,c61465001.desfilter,tp,0,LOCATION_SZONE,1,1,nil)
+	Duel.SetOperationInfo(0,CATEGORY_DESTROY,g,1,0,0)
+end
+function c61465001.desop2(e,tp,eg,ep,ev,re,r,rp)
+	local tc=Duel.GetFirstTarget()
+	if tc:IsRelateToEffect(e) then
+		Duel.Destroy(tc,REASON_EFFECT)
+	end
+end

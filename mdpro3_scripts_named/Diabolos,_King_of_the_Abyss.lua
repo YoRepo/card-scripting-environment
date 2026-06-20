@@ -1,0 +1,62 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:25
+-- Card: 魔王 迪亚波罗斯  (ID: 29424328)
+-- Type: Monster / Effect
+-- Attribute: DARK
+-- Race: Dragon
+-- Level 7
+-- ATK 2800 | DEF 1000
+--
+-- Effect Text:
+-- 这张卡不能特殊召唤。这张卡上级召唤的场合，解放的怪兽必须是暗属性怪兽。
+-- ①：这张卡只要在怪兽区域存在，不能用效果解放。
+-- ②：对方抽卡阶段的抽卡前发动。把对方卡组最上面的卡确认，回到卡组最上面或者最下面。
+--[[ __CARD_HEADER_END__ ]]
+
+--魔王ディアボロス
+function c29424328.initial_effect(c)
+	--cannot special summon
+	local e1=Effect.CreateEffect(c)
+	e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE+EFFECT_FLAG_UNCOPYABLE)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetCode(EFFECT_SPSUMMON_CONDITION)
+	c:RegisterEffect(e1)
+	--tribute limit
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_SINGLE)
+	e2:SetCode(EFFECT_TRIBUTE_LIMIT)
+	e2:SetValue(c29424328.tlimit)
+	c:RegisterEffect(e2)
+	--release limit
+	local e3=Effect.CreateEffect(c)
+	e3:SetType(EFFECT_TYPE_SINGLE)
+	e3:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e3:SetRange(LOCATION_MZONE)
+	e3:SetCode(EFFECT_UNRELEASABLE_EFFECT)
+	e3:SetValue(1)
+	c:RegisterEffect(e3)
+	--confirm deck
+	local e4=Effect.CreateEffect(c)
+	e4:SetDescription(aux.Stringid(29424328,0))
+	e4:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_F)
+	e4:SetRange(LOCATION_MZONE)
+	e4:SetCode(EVENT_PREDRAW)
+	e4:SetCondition(c29424328.cfcon)
+	e4:SetOperation(c29424328.cfop)
+	c:RegisterEffect(e4)
+end
+function c29424328.tlimit(e,c)
+	return not c:IsAttribute(ATTRIBUTE_DARK)
+end
+function c29424328.cfcon(e,tp,eg,ep,ev,re,r,rp)
+	return tp~=Duel.GetTurnPlayer() and Duel.GetFieldGroupCount(1-tp,LOCATION_DECK,0)>0
+end
+function c29424328.cfop(e,tp,eg,ep,ev,re,r,rp)
+	local g=Duel.GetDecktopGroup(1-tp,1)
+	Duel.ConfirmCards(tp,g)
+	local tc=g:GetFirst()
+	local opt=Duel.SelectOption(tp,aux.Stringid(29424328,1),aux.Stringid(29424328,2))
+	if opt==1 then
+		Duel.MoveSequence(tc,opt)
+	end
+end

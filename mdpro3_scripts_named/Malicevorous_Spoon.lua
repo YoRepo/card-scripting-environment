@@ -1,0 +1,69 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:26
+-- Card: 食恶餐匙鬼  (ID: 35307484)
+-- Type: Monster / Effect
+-- Attribute: DARK
+-- Race: Fiend
+-- Level 2
+-- ATK 100 | DEF 500
+-- Setcode: 139
+--
+-- Effect Text:
+-- 这张卡在场上表侧表示存在的场合「食恶餐匙鬼」以外的名字带有「食恶」的怪兽在自己场上召唤·特殊召唤时，可以从自己墓地选择1只恶魔族·2星怪兽特殊召唤。这个效果特殊召唤的怪兽的效果无效化。「食恶餐匙鬼」的
+-- 效果1回合只能使用1次。
+--[[ __CARD_HEADER_END__ ]]
+
+--マリスボラス・スプーン
+function c35307484.initial_effect(c)
+	--special summon
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(35307484,0))
+	e1:SetCategory(CATEGORY_SPECIAL_SUMMON)
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_O)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetCountLimit(1,35307484)
+	e1:SetCode(EVENT_SUMMON_SUCCESS)
+	e1:SetCondition(c35307484.condition)
+	e1:SetTarget(c35307484.target)
+	e1:SetOperation(c35307484.operation)
+	c:RegisterEffect(e1)
+	local e2=e1:Clone()
+	e2:SetCode(EVENT_SPSUMMON_SUCCESS)
+	c:RegisterEffect(e2)
+end
+function c35307484.cfilter(c,tp)
+	return c:IsFaceup() and c:IsControler(tp) and c:IsSetCard(0x8b) and not c:IsCode(35307484)
+end
+function c35307484.condition(e,tp,eg,ep,ev,re,r,rp)
+	return not eg:IsContains(e:GetHandler()) and eg:IsExists(c35307484.cfilter,1,nil,tp)
+end
+function c35307484.spfilter(c,e,tp)
+	return c:IsLevel(2) and c:IsRace(RACE_FIEND) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+end
+function c35307484.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsControler(tp) and chkc:IsLocation(LOCATION_GRAVE) and c35307484.spfilter(chkc,e,tp) end
+	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+		and Duel.IsExistingTarget(c35307484.spfilter,tp,LOCATION_GRAVE,0,1,nil,e,tp) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
+	local g=Duel.SelectTarget(tp,c35307484.spfilter,tp,LOCATION_GRAVE,0,1,1,nil,e,tp)
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,g,1,0,0)
+end
+function c35307484.operation(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
+	local tc=Duel.GetFirstTarget()
+	if tc:IsRelateToEffect(e) and Duel.SpecialSummonStep(tc,0,tp,tp,false,false,POS_FACEUP) then
+		local e1=Effect.CreateEffect(e:GetHandler())
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetCode(EFFECT_DISABLE)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD)
+		tc:RegisterEffect(e1)
+		local e2=Effect.CreateEffect(e:GetHandler())
+		e2:SetType(EFFECT_TYPE_SINGLE)
+		e2:SetCode(EFFECT_DISABLE_EFFECT)
+		e2:SetValue(RESET_TURN_SET)
+		e2:SetReset(RESET_EVENT+RESETS_STANDARD)
+		tc:RegisterEffect(e2)
+	end
+	Duel.SpecialSummonComplete()
+end

@@ -1,0 +1,70 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:25
+-- Card: 威风妖怪大暴风  (ID: 2572890)
+-- Type: Trap / Flip
+-- ATK 0 | DEF 0
+-- Setcode: 208
+--
+-- Effect Text:
+-- ①：可以把自己场上1只魔法师族·风属性怪兽解放把以下效果发动。
+-- ●怪兽的效果发动时才能发动。那个发动无效并破坏。
+-- ●自己或者对方把怪兽特殊召唤之际才能发动。那次特殊召唤无效，那些怪兽破坏。
+--[[ __CARD_HEADER_END__ ]]
+
+--マジェスペクター・テンペスト
+function c2572890.initial_effect(c)
+	--Activate(summon)
+	local e1=Effect.CreateEffect(c)
+	e1:SetCategory(CATEGORY_DISABLE_SUMMON+CATEGORY_DESTROY)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_SPSUMMON)
+	e1:SetCondition(aux.NegateSummonCondition)
+	e1:SetCost(c2572890.cost)
+	e1:SetTarget(c2572890.target1)
+	e1:SetOperation(c2572890.activate1)
+	c:RegisterEffect(e1)
+	--Activate(effect)
+	local e2=Effect.CreateEffect(c)
+	e2:SetCategory(CATEGORY_NEGATE+CATEGORY_DESTROY)
+	e2:SetProperty(EFFECT_FLAG_DAMAGE_STEP+EFFECT_FLAG_DAMAGE_CAL)
+	e2:SetType(EFFECT_TYPE_ACTIVATE)
+	e2:SetCode(EVENT_CHAINING)
+	e2:SetCondition(c2572890.condition2)
+	e2:SetCost(c2572890.cost)
+	e2:SetTarget(c2572890.target2)
+	e2:SetOperation(c2572890.activate2)
+	c:RegisterEffect(e2)
+end
+function c2572890.cfilter(c)
+	return c:IsRace(RACE_SPELLCASTER) and c:IsAttribute(ATTRIBUTE_WIND)
+		and not c:IsStatus(STATUS_BATTLE_DESTROYED)
+end
+function c2572890.cost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.CheckReleaseGroup(tp,c2572890.cfilter,1,nil) end
+	local g=Duel.SelectReleaseGroup(tp,c2572890.cfilter,1,1,nil)
+	Duel.Release(g,REASON_COST)
+end
+function c2572890.target1(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return true end
+	Duel.SetOperationInfo(0,CATEGORY_DISABLE_SUMMON,eg,eg:GetCount(),0,0)
+	Duel.SetOperationInfo(0,CATEGORY_DESTROY,eg,eg:GetCount(),0,0)
+end
+function c2572890.activate1(e,tp,eg,ep,ev,re,r,rp)
+	Duel.NegateSummon(eg)
+	Duel.Destroy(eg,REASON_EFFECT)
+end
+function c2572890.condition2(e,tp,eg,ep,ev,re,r,rp)
+	return re:IsActiveType(TYPE_MONSTER) and Duel.IsChainNegatable(ev)
+end
+function c2572890.target2(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return true end
+	Duel.SetOperationInfo(0,CATEGORY_NEGATE,eg,1,0,0)
+	if re:GetHandler():IsDestructable() and re:GetHandler():IsRelateToEffect(re) then
+		Duel.SetOperationInfo(0,CATEGORY_DESTROY,eg,1,0,0)
+	end
+end
+function c2572890.activate2(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.NegateActivation(ev) and re:GetHandler():IsRelateToEffect(re) then
+		Duel.Destroy(eg,REASON_EFFECT)
+	end
+end

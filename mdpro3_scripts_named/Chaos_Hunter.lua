@@ -1,0 +1,58 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:37
+-- Card: 混沌猎人  (ID: 97940434)
+-- Type: Monster / Effect
+-- Attribute: DARK
+-- Race: Fiend
+-- Level 7
+-- ATK 2500 | DEF 1600
+-- Setcode: 207
+--
+-- Effect Text:
+-- ①：对方对怪兽的特殊召唤成功时，把这张卡以外的1张手卡丢弃才能发动。这张卡从手卡特殊召唤。
+-- ②：只要这张卡在怪兽区域存在，对方不能把卡除外。
+--[[ __CARD_HEADER_END__ ]]
+
+--カオスハンター
+function c97940434.initial_effect(c)
+	--special summon
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(97940434,0))
+	e1:SetCategory(CATEGORY_SPECIAL_SUMMON)
+	e1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_O)
+	e1:SetRange(LOCATION_HAND)
+	e1:SetCode(EVENT_SPSUMMON_SUCCESS)
+	e1:SetCondition(c97940434.spcon)
+	e1:SetCost(c97940434.spcost)
+	e1:SetTarget(c97940434.sptg)
+	e1:SetOperation(c97940434.spop)
+	c:RegisterEffect(e1)
+	--cannot remove
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_FIELD)
+	e2:SetCode(EFFECT_CANNOT_REMOVE)
+	e2:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
+	e2:SetRange(LOCATION_MZONE)
+	e2:SetTargetRange(0,1)
+	c:RegisterEffect(e2)
+end
+function c97940434.spfilter(c,sp)
+	return c:IsSummonPlayer(sp)
+end
+function c97940434.spcon(e,tp,eg,ep,ev,re,r,rp)
+	return eg:IsExists(c97940434.spfilter,1,nil,1-tp)
+end
+function c97940434.spcost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsDiscardable,tp,LOCATION_HAND,0,1,e:GetHandler()) end
+	Duel.DiscardHand(tp,Card.IsDiscardable,1,1,REASON_COST+REASON_DISCARD,e:GetHandler())
+end
+function c97940434.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+		and e:GetHandler():IsCanBeSpecialSummoned(e,0,tp,false,false) end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,e:GetHandler(),1,0,0)
+end
+function c97940434.spop(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	if not c:IsRelateToEffect(e) then return end
+	Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)
+end

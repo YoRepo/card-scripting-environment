@@ -1,0 +1,54 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:25
+-- Card: 腾塔克尔斯异虫  (ID: 30299166)
+-- Type: Monster / Effect
+-- Attribute: LIGHT
+-- Race: Reptile
+-- Level 4
+-- ATK 1700 | DEF 700
+-- Setcode: 62
+--
+-- Effect Text:
+-- 把自己墓地存在的1只名字带有「异虫」的爬虫类族怪兽从游戏中除外发动。这个回合这张卡在同1次的战斗阶段中可以作2次攻击。这个效果1回合只能使用1次。
+--[[ __CARD_HEADER_END__ ]]
+
+--ワーム・テンタクルス
+function c30299166.initial_effect(c)
+	--multi atk
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(30299166,0))
+	e1:SetType(EFFECT_TYPE_IGNITION)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetCountLimit(1)
+	e1:SetCondition(c30299166.mtcon)
+	e1:SetCost(c30299166.mtcost)
+	e1:SetTarget(c30299166.mttg)
+	e1:SetOperation(c30299166.mtop)
+	c:RegisterEffect(e1)
+end
+function c30299166.mtcon(e,tp,eg,ep,ev,re,r,rp)
+	return Duel.IsAbleToEnterBP()
+end
+function c30299166.costfilter(c)
+	return c:IsSetCard(0x3e) and c:IsRace(RACE_REPTILE) and c:IsAbleToRemoveAsCost()
+end
+function c30299166.mtcost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(c30299166.costfilter,tp,LOCATION_GRAVE,0,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
+	local g=Duel.SelectMatchingCard(tp,c30299166.costfilter,tp,LOCATION_GRAVE,0,1,1,nil)
+	Duel.Remove(g,POS_FACEUP,REASON_COST)
+end
+function c30299166.mttg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return e:GetHandler():GetEffectCount(EFFECT_EXTRA_ATTACK)==0 end
+end
+function c30299166.mtop(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	if c:IsRelateToEffect(e) then
+		local e1=Effect.CreateEffect(c)
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetCode(EFFECT_EXTRA_ATTACK)
+		e1:SetValue(1)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
+		c:RegisterEffect(e1)
+	end
+end

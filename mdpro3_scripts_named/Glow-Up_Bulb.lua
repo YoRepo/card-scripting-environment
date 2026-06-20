@@ -1,0 +1,43 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:32
+-- Card: 成长的鳞茎  (ID: 67441435)
+-- Type: Monster / Effect / Tuner
+-- Attribute: EARTH
+-- Race: Plant
+-- Level 1
+-- ATK 100 | DEF 100
+--
+-- Effect Text:
+-- 这个卡名的效果在决斗中只能使用1次。
+-- ①：这张卡在墓地存在的场合才能发动。自己卡组最上面的卡送去墓地，这张卡特殊召唤。
+--[[ __CARD_HEADER_END__ ]]
+
+--グローアップ・バルブ
+function c67441435.initial_effect(c)
+	--spsummon
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(67441435,0))
+	e1:SetCategory(CATEGORY_DECKDES+CATEGORY_SPECIAL_SUMMON)
+	e1:SetType(EFFECT_TYPE_IGNITION)
+	e1:SetRange(LOCATION_GRAVE)
+	e1:SetCountLimit(1,67441435+EFFECT_COUNT_CODE_DUEL)
+	e1:SetTarget(c67441435.target)
+	e1:SetOperation(c67441435.operation)
+	c:RegisterEffect(e1)
+end
+function c67441435.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	local c=e:GetHandler()
+	if chk==0 then return Duel.IsPlayerCanDiscardDeck(tp,1)
+		and Duel.GetLocationCount(tp,LOCATION_MZONE)>0 and c:IsCanBeSpecialSummoned(e,0,tp,false,false) end
+	Duel.SetOperationInfo(0,CATEGORY_DECKDES,nil,0,tp,1)
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,c,1,0,0)
+end
+function c67441435.operation(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.DiscardDeck(tp,1,REASON_EFFECT)~=0 then
+		local oc=Duel.GetOperatedGroup():GetFirst()
+		local c=e:GetHandler()
+		if oc:IsLocation(LOCATION_GRAVE) and c:IsRelateToEffect(e) then
+			Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)
+		end
+	end
+end

@@ -1,0 +1,40 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:23
+-- Card: 侍刀男爵  (ID: 14344682)
+-- Type: Monster / Effect
+-- Attribute: EARTH
+-- Race: Warrior
+-- Level 4
+-- ATK 1600 | DEF 1200
+--
+-- Effect Text:
+-- 1回合1次，选择对方场上守备表示存在的1只怪兽才能发动。选择的怪兽变成表侧攻击表示。
+--[[ __CARD_HEADER_END__ ]]
+
+--サムライソード・バロン
+function c14344682.initial_effect(c)
+	--pos change
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(14344682,0))
+	e1:SetCategory(CATEGORY_POSITION)
+	e1:SetType(EFFECT_TYPE_IGNITION)
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetCountLimit(1)
+	e1:SetTarget(c14344682.target)
+	e1:SetOperation(c14344682.operation)
+	c:RegisterEffect(e1)
+end
+function c14344682.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsLocation(LOCATION_MZONE) and chkc:IsControler(1-tp) and chkc:IsDefensePos() end
+	if chk==0 then return Duel.IsExistingTarget(Card.IsDefensePos,tp,0,LOCATION_MZONE,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DEFENSE)
+	local g=Duel.SelectTarget(tp,Card.IsDefensePos,tp,0,LOCATION_MZONE,1,1,nil)
+	Duel.SetOperationInfo(0,CATEGORY_POSITION,g,1,0,0)
+end
+function c14344682.operation(e,tp,eg,ep,ev,re,r,rp)
+	local tc=Duel.GetFirstTarget()
+	if tc:IsRelateToEffect(e) and tc:IsDefensePos() then
+		Duel.ChangePosition(tc,POS_FACEUP_ATTACK)
+	end
+end

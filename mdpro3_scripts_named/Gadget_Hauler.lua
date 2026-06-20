@@ -1,0 +1,47 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:25
+-- Card: 工具挂车  (ID: 28002611)
+-- Type: Monster / Effect
+-- Attribute: EARTH
+-- Race: Machine
+-- Level 6
+-- ATK 1300 | DEF 0
+-- Setcode: 81
+--
+-- Effect Text:
+-- ①：1回合1次，自己主要阶段才能发动。从手卡选「变形斗士」怪兽任意数量送去墓地。这张卡的攻击力上升这个效果送去墓地的怪兽数量×800。
+--[[ __CARD_HEADER_END__ ]]
+
+--ガジェット・トレーラー
+function c28002611.initial_effect(c)
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(28002611,0))
+	e1:SetCategory(CATEGORY_TOGRAVE+CATEGORY_ATKCHANGE)
+	e1:SetType(EFFECT_TYPE_IGNITION)
+	e1:SetCountLimit(1)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetTarget(c28002611.tg)
+	e1:SetOperation(c28002611.op)
+	c:RegisterEffect(e1)
+end
+function c28002611.filter(c)
+	return c:IsSetCard(0x26) and c:IsType(TYPE_MONSTER)
+end
+function c28002611.tg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(c28002611.filter,tp,LOCATION_HAND,0,1,nil) end
+	Duel.SetOperationInfo(0,CATEGORY_TOGRAVE,nil,1,tp,LOCATION_HAND)
+end
+function c28002611.op(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	if c:IsFacedown() or not c:IsRelateToEffect(e) then return end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
+	local g=Duel.SelectMatchingCard(tp,c28002611.filter,tp,LOCATION_HAND,0,1,63,nil)
+	if g:GetCount()==0 then return end
+	Duel.SendtoGrave(g,REASON_EFFECT)
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetCode(EFFECT_UPDATE_ATTACK)
+	e1:SetValue(g:GetCount()*800)
+	e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_DISABLE)
+	c:RegisterEffect(e1)
+end

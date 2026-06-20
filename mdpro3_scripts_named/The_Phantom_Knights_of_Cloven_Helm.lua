@@ -1,0 +1,82 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:37
+-- Card: 幻影骑士团 裂头盔  (ID: 99315585)
+-- Type: Monster / Effect
+-- Attribute: DARK
+-- Race: Warrior
+-- Level 4
+-- ATK 1500 | DEF 500
+-- Setcode: 4315
+--
+-- Effect Text:
+-- 「幻影骑士团 裂头盔」的①②的效果1回合各能使用1次。
+-- ①：「幻影骑士团」卡或者「幻影」魔法·陷阱卡被送去自己墓地的场合发动。这张卡的攻击力上升500。
+-- ②：把墓地的这张卡除外才能发动。这个回合的结束阶段，从自己墓地选1张「幻影骑士团」卡或者「幻影」魔法·陷阱卡加入手卡。
+--[[ __CARD_HEADER_END__ ]]
+
+--幻影騎士団クラックヘルム
+function c99315585.initial_effect(c)
+	--atk up
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(99315585,0))
+	e1:SetCategory(CATEGORY_ATKCHANGE)
+	e1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_F)
+	e1:SetCode(EVENT_TO_GRAVE)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetCountLimit(1,99315585)
+	e1:SetCondition(c99315585.atkcon)
+	e1:SetOperation(c99315585.atkop)
+	c:RegisterEffect(e1)
+	--to hand
+	local e2=Effect.CreateEffect(c)
+	e2:SetDescription(aux.Stringid(99315585,1))
+	e2:SetCategory(CATEGORY_TOHAND)
+	e2:SetType(EFFECT_TYPE_IGNITION)
+	e2:SetRange(LOCATION_GRAVE)
+	e2:SetCountLimit(1,99315586)
+	e2:SetCost(aux.bfgcost)
+	e2:SetOperation(c99315585.regop)
+	c:RegisterEffect(e2)
+end
+function c99315585.tgfilter(c,tp)
+	return c:IsControler(tp) and (c:IsSetCard(0x10db) or c:IsSetCard(0xdb) and c:IsType(TYPE_SPELL+TYPE_TRAP))
+end
+function c99315585.atkcon(e,tp,eg,ep,ev,re,r,rp)
+	return eg:IsExists(c99315585.tgfilter,1,nil,tp)
+end
+function c99315585.atkop(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	if c:IsFaceup() and c:IsRelateToEffect(e) then
+		local e1=Effect.CreateEffect(c)
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetCode(EFFECT_UPDATE_ATTACK)
+		e1:SetValue(500)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_DISABLE)
+		c:RegisterEffect(e1)
+	end
+end
+function c99315585.regop(e,tp,eg,ep,ev,re,r,rp)
+	local e1=Effect.CreateEffect(e:GetHandler())
+	e1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
+	e1:SetCode(EVENT_PHASE+PHASE_END)
+	e1:SetCountLimit(1)
+	e1:SetCondition(c99315585.thcon)
+	e1:SetOperation(c99315585.thop)
+	e1:SetReset(RESET_PHASE+PHASE_END)
+	Duel.RegisterEffect(e1,tp)
+end
+function c99315585.thfilter(c)
+	return (c:IsSetCard(0x10db) or (c:IsSetCard(0xdb) and c:IsType(TYPE_SPELL+TYPE_TRAP))) and c:IsAbleToHand()
+end
+function c99315585.thcon(e,tp,eg,ep,ev,re,r,rp)
+	return Duel.IsExistingMatchingCard(c99315585.thfilter,tp,LOCATION_GRAVE,0,1,nil)
+end
+function c99315585.thop(e,tp,eg,ep,ev,re,r,rp)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
+	local g=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(c99315585.thfilter),tp,LOCATION_GRAVE,0,1,1,nil)
+	local tc=g:GetFirst()
+	if tc then
+		Duel.SendtoHand(tc,nil,REASON_EFFECT)
+		Duel.ConfirmCards(1-tp,tc)
+	end
+end

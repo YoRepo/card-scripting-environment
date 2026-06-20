@@ -1,0 +1,58 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:25
+-- Card: 念力循轨人  (ID: 30227494)
+-- Type: Monster / Effect
+-- Attribute: EARTH
+-- Race: Psychic
+-- Level 3
+-- ATK 1600 | DEF 600
+--
+-- Effect Text:
+-- 这个卡名的①的方法的特殊召唤1回合只能有1次。
+-- ①：自己场上有「念力循轨人」以外的3星怪兽存在的场合，这张卡可以从手卡守备表示特殊召唤。
+-- ②：这张卡为同调素材的同调怪兽的攻击力上升600。
+--[[ __CARD_HEADER_END__ ]]
+
+--サイコトラッカー
+function c30227494.initial_effect(c)
+	--special summon rule
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_FIELD)
+	e1:SetProperty(EFFECT_FLAG_UNCOPYABLE+EFFECT_FLAG_SPSUM_PARAM)
+	e1:SetCode(EFFECT_SPSUMMON_PROC)
+	e1:SetRange(LOCATION_HAND)
+	e1:SetTargetRange(POS_FACEUP_DEFENSE,0)
+	e1:SetCountLimit(1,30227494+EFFECT_COUNT_CODE_OATH)
+	e1:SetCondition(c30227494.sprcon)
+	c:RegisterEffect(e1)
+	--atkup
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_CONTINUOUS)
+	e2:SetCode(EVENT_BE_MATERIAL)
+	e2:SetProperty(EFFECT_FLAG_EVENT_PLAYER)
+	e2:SetCondition(c30227494.atkcon)
+	e2:SetOperation(c30227494.atkop)
+	c:RegisterEffect(e2)
+end
+function c30227494.sprfilter(c)
+	return c:IsFaceup() and c:IsLevel(3) and not c:IsCode(30227494)
+end
+function c30227494.sprcon(e,c)
+	if c==nil then return true end
+	local tp=c:GetControler()
+	return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+		and Duel.IsExistingMatchingCard(c30227494.sprfilter,tp,LOCATION_MZONE,0,1,nil)
+end
+function c30227494.atkcon(e,tp,eg,ep,ev,re,r,rp)
+	return r==REASON_SYNCHRO
+end
+function c30227494.atkop(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	local rc=c:GetReasonCard()
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetCode(EFFECT_UPDATE_ATTACK)
+	e1:SetValue(600)
+	e1:SetReset(RESET_EVENT+RESETS_STANDARD)
+	rc:RegisterEffect(e1,true)
+end

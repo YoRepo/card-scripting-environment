@@ -1,0 +1,62 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:32
+-- Card: 黑猫瞪眼  (ID: 67381587)
+-- Type: Trap
+-- ATK 0 | DEF 0
+--
+-- Effect Text:
+-- ①：自己场上有里侧守备表示怪兽2只以上存在的场合，对方战斗阶段才能发动。那次战斗阶段结束。
+-- ②：把墓地的这张卡除外，以包含「占术姬」怪兽的场上2只表侧表示怪兽为对象才能发动。那些怪兽变成里侧守备表示。
+--[[ __CARD_HEADER_END__ ]]
+
+--黒猫の睨み
+function c67381587.initial_effect(c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:SetCondition(c67381587.condition)
+	e1:SetOperation(c67381587.activate)
+	c:RegisterEffect(e1)
+	--position change
+	local e2=Effect.CreateEffect(c)
+	e2:SetCategory(CATEGORY_POSITION+CATEGORY_MSET)
+	e2:SetType(EFFECT_TYPE_QUICK_O)
+	e2:SetCode(EVENT_FREE_CHAIN)
+	e2:SetRange(LOCATION_GRAVE)
+	e2:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e2:SetCost(aux.bfgcost)
+	e2:SetTarget(c67381587.postg)
+	e2:SetOperation(c67381587.posop)
+	c:RegisterEffect(e2)
+end
+function c67381587.condition(e,tp,eg,ep,ev,re,r,rp)
+	return Duel.GetTurnPlayer()~=tp and (Duel.GetCurrentPhase()>=PHASE_BATTLE_START and Duel.GetCurrentPhase()<=PHASE_BATTLE)
+		and Duel.IsExistingMatchingCard(Card.IsPosition,tp,LOCATION_MZONE,0,2,nil,POS_FACEDOWN_DEFENSE)
+end
+function c67381587.activate(e,tp,eg,ep,ev,re,r,rp)
+	Duel.SkipPhase(1-tp,PHASE_BATTLE,RESET_PHASE+PHASE_BATTLE_STEP,1)
+end
+function c67381587.posfilter1(c)
+	return c:IsFaceup() and c:IsSetCard(0xcc) and c:IsCanTurnSet()
+		and Duel.IsExistingTarget(c67381587.posfilter2,0,LOCATION_MZONE,LOCATION_MZONE,1,c)
+end
+function c67381587.posfilter2(c)
+	return c:IsFaceup() and c:IsCanTurnSet()
+end
+function c67381587.postg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return false end
+	if chk==0 then return Duel.IsExistingTarget(c67381587.posfilter1,tp,LOCATION_MZONE,LOCATION_MZONE,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_POSCHANGE)
+	local g1=Duel.SelectTarget(tp,c67381587.posfilter1,tp,LOCATION_MZONE,LOCATION_MZONE,1,1,nil)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_POSCHANGE)
+	local g2=Duel.SelectTarget(tp,c67381587.posfilter2,tp,LOCATION_MZONE,LOCATION_MZONE,1,1,g1:GetFirst())
+	g1:Merge(g2)
+	Duel.SetOperationInfo(0,CATEGORY_POSITION,g1,2,0,0)
+end
+function c67381587.posop(e,tp,eg,ep,ev,re,r,rp)
+	local g=Duel.GetChainInfo(0,CHAININFO_TARGET_CARDS):Filter(Card.IsRelateToEffect,nil,e)
+	if g:GetCount()>0 then
+		Duel.ChangePosition(g,POS_FACEDOWN_DEFENSE)
+	end
+end

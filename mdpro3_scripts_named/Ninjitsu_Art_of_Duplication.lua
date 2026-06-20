@@ -1,0 +1,72 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:28
+-- Card: 忍法 分身之术  (ID: 50766506)
+-- Type: Trap / Equip
+-- ATK 0 | DEF 0
+-- Setcode: 97
+--
+-- Effect Text:
+-- ①：把自己场上1只「忍者」怪兽解放才能把这张卡发动。等级合计最多到解放的怪兽的等级以下为止，从卡组选「忍者」怪兽任意数量各以表侧攻击表示或者里侧守备表示特殊召唤。这张卡从场上离开时那些怪兽全部破坏。
+--[[ __CARD_HEADER_END__ ]]
+
+--忍法 分身の術
+function c50766506.initial_effect(c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetCategory(CATEGORY_SPECIAL_SUMMON+CATEGORY_MSET)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:SetHintTiming(0,TIMINGS_CHECK_MONSTER)
+	e1:SetTarget(c50766506.target)
+	e1:SetOperation(c50766506.operation)
+	c:RegisterEffect(e1)
+	--Destroy
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_CONTINUOUS+EFFECT_TYPE_SINGLE)
+	e2:SetCode(EVENT_LEAVE_FIELD)
+	e2:SetOperation(c50766506.desop)
+	c:RegisterEffect(e2)
+end
+function c50766506.cfilter(c,e,tp,ft)
+	local lv=c:GetLevel()
+	return lv>0 and c:IsSetCard(0x2b)
+		and (ft>0 or (c:IsControler(tp) and c:GetSequence()<5)) and (c:IsControler(tp) or c:IsFaceup())
+		and Duel.IsExistingMatchingCard(c50766506.spfilter,tp,LOCATION_DECK,0,1,nil,lv,e,tp)
+end
+function c50766506.spfilter(c,lv,e,tp)
+	return c:IsLevelBelow(lv) and c:IsSetCard(0x2b) and c:IsCanBeSpecialSummoned(e,0,tp,false,false,POS_FACEUP_ATTACK+POS_FACEDOWN_DEFENSE)
+end
+function c50766506.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	local ft=Duel.GetLocationCount(tp,LOCATION_MZONE)
+	if chk==0 then return ft>-1 and Duel.CheckReleaseGroup(tp,c50766506.cfilter,1,nil,e,tp,ft) end
+	local rg=Duel.SelectReleaseGroup(tp,c50766506.cfilter,1,1,nil,e,tp,ft)
+	e:SetLabel(rg:GetFirst():GetLevel())
+	Duel.Release(rg,REASON_COST)
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_DECK)
+end
+function c50766506.gselect(g,slv)
+	return g:GetSum(Card.GetLevel)<=slv
+end
+function c50766506.operation(e,tp,eg,ep,ev,re,r,rp)
+	local ft=Duel.GetLocationCount(tp,LOCATION_MZONE)
+	if ft<=0 then return end
+	if Duel.IsPlayerAffectedByEffect(tp,59822133) then ft=1 end
+	local c=e:GetHandler()
+	local slv=e:GetLabel()
+	local sg=Duel.GetMatchingGroup(c50766506.spfilter,tp,LOCATION_DECK,0,nil,slv,e,tp)
+	if sg:GetCount()==0 then return end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
+	local tg=sg:SelectSubGroup(tp,c50766506.gselect,false,1,ft,slv)
+	local cg=Group.CreateGroup()
+	for tc in aux.Next(tg) do
+		Duel.SpecialSummonStep(tc,0,tp,tp,false,false,POS_FACEUP_ATTACK+POS_FACEDOWN_DEFENSE)
+		if tc:IsFacedown() then cg:AddCard(tc) end
+		c:SetCardTarget(tc)
+	end
+	Duel.SpecialSummonComplete()
+	Duel.ConfirmCards(1-tp,cg)
+end
+function c50766506.desop(e,tp,eg,ep,ev,re,r,rp)
+	local g=e:GetHandler():GetCardTarget():Filter(Card.IsLocation,nil,LOCATION_MZONE)
+	Duel.Destroy(g,REASON_EFFECT)
+end

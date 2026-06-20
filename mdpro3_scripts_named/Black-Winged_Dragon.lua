@@ -1,0 +1,92 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:35
+-- Card: 黑翼龙  (ID: 9012916)
+-- Type: Monster / Effect / Synchro
+-- Attribute: DARK
+-- Race: Dragon
+-- Level 8
+-- ATK 2800 | DEF 1600
+--
+-- Effect Text:
+-- 调整＋调整以外的怪兽1只以上
+-- ①：自己受到效果伤害的场合，作为代替给这张卡放置1个黑羽指示物。
+-- ②：这张卡的攻击力下降这张卡的黑羽指示物数量×700。
+-- ③：1回合1次，把这张卡的黑羽指示物全部取除，以对方场上1只表侧表示怪兽为对象才能发动。那只对方怪兽的攻击力下降取除的黑羽指示物数量×700，给与对方下降数值的伤害。
+--[[ __CARD_HEADER_END__ ]]
+
+--ブラックフェザー・ドラゴン
+function c9012916.initial_effect(c)
+	c:EnableCounterPermit(0x10)
+	--synchro summon
+	aux.AddSynchroProcedure(c,nil,aux.NonTuner(nil),1)
+	c:EnableReviveLimit()
+	--damage reduce
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_FIELD)
+	e1:SetCode(EFFECT_REPLACE_DAMAGE)
+	e1:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetTargetRange(1,0)
+	e1:SetValue(c9012916.damval)
+	c:RegisterEffect(e1)
+	local e4=e1:Clone()
+	e4:SetCode(EFFECT_NO_EFFECT_DAMAGE)
+	c:RegisterEffect(e4)
+	--atkdown-c
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_SINGLE)
+	e2:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e2:SetRange(LOCATION_MZONE)
+	e2:SetCode(EFFECT_UPDATE_ATTACK)
+	e2:SetValue(c9012916.atkval)
+	c:RegisterEffect(e2)
+	--atkdown
+	local e3=Effect.CreateEffect(c)
+	e3:SetDescription(aux.Stringid(9012916,0))
+	e3:SetType(EFFECT_TYPE_IGNITION)
+	e3:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e3:SetRange(LOCATION_MZONE)
+	e3:SetCountLimit(1)
+	e3:SetCost(c9012916.cost)
+	e3:SetTarget(c9012916.target)
+	e3:SetOperation(c9012916.operation)
+	c:RegisterEffect(e3)
+end
+function c9012916.damval(e,re,val,r,rp,rc)
+	if bit.band(r,REASON_EFFECT)~=0 then
+		e:GetHandler():AddCounter(0x10,1)
+		return 0
+	end
+	return val
+end
+function c9012916.atkval(e,c)
+	return c:GetCounter(0x10)*-700
+end
+function c9012916.cost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return e:GetHandler():GetCounter(0x10)>0 end
+	local ct=e:GetHandler():GetCounter(0x10)
+	e:SetLabel(ct*700)
+	e:GetHandler():RemoveCounter(tp,0x10,ct,REASON_COST)
+end
+function c9012916.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsLocation(LOCATION_MZONE) and chkc:IsControler(1-tp) and chkc:IsFaceup() end
+	if chk==0 then return Duel.IsExistingTarget(aux.nzatk,tp,0,LOCATION_MZONE,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_FACEUP)
+	Duel.SelectTarget(tp,aux.nzatk,tp,0,LOCATION_MZONE,1,1,nil)
+end
+function c9012916.operation(e,tp,eg,ep,ev,re,r,rp)
+	local tc=Duel.GetFirstTarget()
+	if tc:IsRelateToEffect(e) and tc:IsFaceup() and not tc:IsImmuneToEffect(e) then
+		local val=e:GetLabel()
+		local atk=tc:GetAttack()
+		local e1=Effect.CreateEffect(e:GetHandler())
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD)
+		e1:SetCode(EFFECT_UPDATE_ATTACK)
+		e1:SetValue(-val)
+		tc:RegisterEffect(e1)
+		if tc:IsHasEffect(EFFECT_REVERSE_UPDATE) then return end
+		if val>atk then Duel.Damage(1-tp,atk,REASON_EFFECT)
+		else Duel.Damage(1-tp,val,REASON_EFFECT) end
+	end
+end

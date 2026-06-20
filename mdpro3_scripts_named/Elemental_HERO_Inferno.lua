@@ -1,0 +1,44 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:32
+-- Card: 元素英雄 爆裂火焰侠  (ID: 68745629)
+-- Type: Monster / Effect / Fusion
+-- Attribute: FIRE
+-- Race: Pyro
+-- Level 8
+-- ATK 2300 | DEF 1600
+-- Setcode: 12296
+--
+-- Effect Text:
+-- 「元素英雄 炽热侠」＋「元素英雄 火焰女郎」
+-- 这只怪兽不能作融合召唤以外的特殊召唤。和水属性怪兽战斗的场合，伤害步骤内这只怪兽的攻击力上升1000。
+--[[ __CARD_HEADER_END__ ]]
+
+--E・HERO フレイム・ブラスト
+function c68745629.initial_effect(c)
+	--fusion material
+	c:EnableReviveLimit()
+	aux.AddFusionProcCode2(c,98266377,95362816,true,true)
+	--spsummon condition
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE+EFFECT_FLAG_UNCOPYABLE)
+	e1:SetCode(EFFECT_SPSUMMON_CONDITION)
+	e1:SetValue(aux.fuslimit)
+	c:RegisterEffect(e1)
+	--atkup
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_SINGLE)
+	e2:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e2:SetRange(LOCATION_MZONE)
+	e2:SetCode(EFFECT_UPDATE_ATTACK)
+	e2:SetCondition(c68745629.atkcon)
+	e2:SetValue(1000)
+	c:RegisterEffect(e2)
+end
+c68745629.material_setcode=0x8
+function c68745629.atkcon(e)
+	local ph=Duel.GetCurrentPhase()
+	if ph~=PHASE_DAMAGE and ph~=PHASE_DAMAGE_CAL then return false end
+	local bc=e:GetHandler():GetBattleTarget()
+	return bc and bc:IsFaceup() and bc:IsAttribute(ATTRIBUTE_WATER)
+end

@@ -1,0 +1,28 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:33
+-- Card: 女王亲卫队  (ID: 71411377)
+-- Type: Monster / Effect
+-- Attribute: EARTH
+-- Race: Warrior
+-- Level 4
+-- ATK 1700 | DEF 1200
+--
+-- Effect Text:
+-- 只要这张卡在自己场上表侧表示存在，自己场上存在的名字带有「魅惑的女王」的怪兽不能被选择作为攻击对象。
+--[[ __CARD_HEADER_END__ ]]
+
+--女王親衛隊
+function c71411377.initial_effect(c)
+	--at limit
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_FIELD)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetTargetRange(LOCATION_MZONE,0)
+	e1:SetCode(EFFECT_CANNOT_BE_BATTLE_TARGET)
+	e1:SetTarget(c71411377.atlimit)
+	e1:SetValue(aux.imval1)
+	c:RegisterEffect(e1)
+end
+function c71411377.atlimit(e,c)
+	return c:IsSetCard(0x3)
+end

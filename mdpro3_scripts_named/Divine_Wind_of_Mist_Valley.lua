@@ -1,0 +1,58 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:23
+-- Card: 霞之谷的神风  (ID: 15854426)
+-- Type: Spell / Counter
+-- ATK 0 | DEF 0
+-- Setcode: 55
+--
+-- Effect Text:
+-- 自己场上表侧表示存在的风属性怪兽回到手卡的场合，可以从自己卡组把1只4星以下的风属性怪兽特殊召唤。这个效果1回合只能使用1次。
+--[[ __CARD_HEADER_END__ ]]
+
+--霞の谷の神風
+function c15854426.initial_effect(c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	c:RegisterEffect(e1)
+	--special summon
+	local e2=Effect.CreateEffect(c)
+	e2:SetDescription(aux.Stringid(15854426,0))
+	e2:SetCategory(CATEGORY_SPECIAL_SUMMON)
+	e2:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_O)
+	e2:SetProperty(EFFECT_FLAG_DELAY)
+	e2:SetRange(LOCATION_FZONE)
+	e2:SetCode(EVENT_TO_HAND)
+	e2:SetCountLimit(1)
+	e2:SetCondition(c15854426.condition)
+	e2:SetTarget(c15854426.target)
+	e2:SetOperation(c15854426.operation)
+	c:RegisterEffect(e2)
+end
+function c15854426.cfilter(c,tp)
+	return c:IsPreviousControler(tp) and c:IsPreviousLocation(LOCATION_MZONE)
+		and bit.band(c:GetPreviousAttributeOnField(),ATTRIBUTE_WIND)~=0
+		and c:IsPreviousPosition(POS_FACEUP)
+end
+function c15854426.condition(e,tp,eg,ep,ev,re,r,rp)
+	return eg:IsExists(c15854426.cfilter,1,nil,tp)
+end
+function c15854426.filter(c,e,tp)
+	return c:IsLevelBelow(4) and c:IsAttribute(ATTRIBUTE_WIND)
+		and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+end
+function c15854426.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+		and not e:GetHandler():IsStatus(STATUS_CHAINING)
+		and Duel.IsExistingMatchingCard(c15854426.filter,tp,LOCATION_DECK,0,1,nil,e,tp) end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_DECK)
+end
+function c15854426.operation(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
+	local g=Duel.SelectMatchingCard(tp,c15854426.filter,tp,LOCATION_DECK,0,1,1,nil,e,tp)
+	if g:GetCount()>0 then
+		Duel.SpecialSummon(g,0,tp,tp,false,false,POS_FACEUP)
+	end
+end

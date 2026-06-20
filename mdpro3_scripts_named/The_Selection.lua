@@ -1,0 +1,53 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:26
+-- Card: 方舟的选别  (ID: 30888983)
+-- Type: Trap / Flip
+-- ATK 0 | DEF 0
+--
+-- Effect Text:
+-- ①：自己或对方把怪兽召唤·反转召唤·特殊召唤之际，支付1000基本分才能发动。和那怪兽相同种族的其他怪兽在场上存在的场合，那召唤·反转召唤·特殊召唤无效，那怪兽破坏。
+--[[ __CARD_HEADER_END__ ]]
+
+--方舟の選別
+function c30888983.initial_effect(c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetCategory(CATEGORY_DISABLE_SUMMON+CATEGORY_DESTROY)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_SUMMON)
+	e1:SetCondition(c30888983.condition)
+	e1:SetCost(c30888983.cost)
+	e1:SetTarget(c30888983.target)
+	e1:SetOperation(c30888983.activate)
+	c:RegisterEffect(e1)
+	local e2=e1:Clone()
+	e2:SetCode(EVENT_FLIP_SUMMON)
+	c:RegisterEffect(e2)
+	local e3=e1:Clone()
+	e3:SetCode(EVENT_SPSUMMON)
+	c:RegisterEffect(e3)
+end
+function c30888983.cfilter(c,rc)
+	return c:IsFaceup() and c:IsRace(rc)
+end
+function c30888983.filter(c)
+	return Duel.IsExistingMatchingCard(c30888983.cfilter,0,LOCATION_MZONE,LOCATION_MZONE,1,c,c:GetRace())
+end
+function c30888983.condition(e,tp,eg,ep,ev,re,r,rp)
+	return aux.NegateSummonCondition() and eg:IsExists(c30888983.filter,1,nil)
+end
+function c30888983.cost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.CheckLPCost(tp,1000) end
+	Duel.PayLPCost(tp,1000)
+end
+function c30888983.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return true end
+	local g=eg:Filter(c30888983.filter,nil)
+	Duel.SetOperationInfo(0,CATEGORY_DISABLE_SUMMON,g,g:GetCount(),0,0)
+	Duel.SetOperationInfo(0,CATEGORY_DESTROY,g,g:GetCount(),0,0)
+end
+function c30888983.activate(e,tp,eg,ep,ev,re,r,rp)
+	local g=eg:Filter(c30888983.filter,nil)
+	Duel.NegateSummon(g)
+	Duel.Destroy(g,REASON_EFFECT)
+end

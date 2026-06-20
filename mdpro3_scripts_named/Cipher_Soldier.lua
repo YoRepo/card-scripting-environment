@@ -1,0 +1,45 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:34
+-- Card: 密码侦察者  (ID: 79853073)
+-- Type: Monster / Effect
+-- Attribute: EARTH
+-- Race: Machine
+-- Level 3
+-- ATK 1350 | DEF 1800
+-- Setcode: 229
+--
+-- Effect Text:
+-- 这张卡和战士族怪兽进行战斗的伤害计算时发动。这张卡的攻击力·守备力只在那次伤害计算时上升2000。
+--[[ __CARD_HEADER_END__ ]]
+
+--サイファー・スカウター
+function c79853073.initial_effect(c)
+	--atkdef up
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(79853073,0))
+	e1:SetCategory(CATEGORY_ATKCHANGE+CATEGORY_DEFCHANGE)
+	e1:SetType(EFFECT_TYPE_TRIGGER_F+EFFECT_TYPE_SINGLE)
+	e1:SetCode(EVENT_PRE_DAMAGE_CALCULATE)
+	e1:SetCondition(c79853073.con)
+	e1:SetOperation(c79853073.op)
+	c:RegisterEffect(e1)
+end
+function c79853073.con(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	local bc=c:GetBattleTarget()
+	return bc and bc:IsRace(RACE_WARRIOR)
+end
+function c79853073.op(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	if c:IsRelateToEffect(e) and c:IsFaceup() then
+		local e1=Effect.CreateEffect(c)
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetCode(EFFECT_UPDATE_ATTACK)
+		e1:SetReset(RESET_PHASE+PHASE_DAMAGE_CAL)
+		e1:SetValue(2000)
+		c:RegisterEffect(e1)
+		local e2=e1:Clone()
+		e2:SetCode(EFFECT_UPDATE_DEFENSE)
+		c:RegisterEffect(e2)
+	end
+end

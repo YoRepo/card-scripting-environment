@@ -1,0 +1,58 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-06-20T18:14:24
+-- Card: 倍倍伤害  (ID: 20735371)
+-- Type: Trap
+-- ATK 0 | DEF 0
+--
+-- Effect Text:
+-- 这个卡名的效果1回合只能适用1次。
+-- ①：自己怪兽被攻击的伤害计算时才能发动。那只自己怪兽不会被那次战斗破坏。那次战斗让自己受到战斗伤害时，对方受到那个数值2倍的效果伤害。
+--[[ __CARD_HEADER_END__ ]]
+
+--バイバイダメージ
+function c20735371.initial_effect(c)
+	--damage
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_PRE_DAMAGE_CALCULATE)
+	e1:SetCondition(c20735371.condition)
+	e1:SetTarget(c20735371.target)
+	e1:SetOperation(c20735371.activate)
+	c:RegisterEffect(e1)
+end
+function c20735371.condition(e,tp,eg,ep,ev,re,r,rp)
+	local a=Duel.GetAttacker()
+	local d=a:GetBattleTarget()
+	e:SetLabelObject(d)
+	return a:IsControler(1-tp) and d and d:IsControler(tp)
+end
+function c20735371.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.GetFlagEffect(tp,20735371)==0 end
+end
+function c20735371.activate(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.GetFlagEffect(tp,20735371)~=0 then return end
+	local c=e:GetHandler()
+	local tc=e:GetLabelObject()
+	if not tc:IsRelateToBattle() then return end
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetCode(EFFECT_INDESTRUCTABLE_BATTLE)
+	e1:SetValue(1)
+	e1:SetReset(RESET_PHASE+PHASE_DAMAGE)
+	tc:RegisterEffect(e1)
+	local e2=Effect.CreateEffect(c)
+	e2:SetCategory(CATEGORY_DAMAGE)
+	e2:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
+	e2:SetCode(EVENT_BATTLE_DAMAGE)
+	e2:SetCondition(c20735371.damcon)
+	e2:SetOperation(c20735371.damop)
+	e2:SetReset(RESET_PHASE+PHASE_DAMAGE)
+	Duel.RegisterEffect(e2,tp)
+	Duel.RegisterFlagEffect(tp,20735371,RESET_PHASE+PHASE_END,0,1)
+end
+function c20735371.damcon(e,tp,eg,ep,ev,re,r,rp)
+	return ep==tp
+end
+function c20735371.damop(e,tp,eg,ep,ev,re,r,rp)
+	Duel.Damage(1-tp,ev*2,REASON_EFFECT)
+end
