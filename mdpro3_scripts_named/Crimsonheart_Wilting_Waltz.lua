@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
 -- Generated: 2026-06-21T00:00:00
--- Card: Crimsonheart Wilting Waltz  (ID: 211110)
+-- Card: Crimsonheart Wilting Waltz  (ID: 211120)
 -- Type: Trap / Continuous
 -- Setcode: 0x95c (Crimsonheart)
 -- (Trap Monster form: Illusion / Tuner / LIGHT / Level 6 / ATK 0 / DEF 1600)

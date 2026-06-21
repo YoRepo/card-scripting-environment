@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
 -- Generated: 2026-06-21T00:00:00
--- Card: Crimsonheart Rosemare  (ID: 211120)
+-- Card: Crimsonheart Rosemare  (ID: 211130)
 -- Type: Trap / Continuous
 -- Setcode: 0x95c (Crimsonheart)
 -- (Trap Monster form: Illusion / Tuner / LIGHT / Level 6 / ATK 2300 / DEF 1800)

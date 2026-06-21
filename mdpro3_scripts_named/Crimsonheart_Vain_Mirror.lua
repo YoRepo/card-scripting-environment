@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
 -- Generated: 2026-06-21T00:00:00
--- Card: Crimsonheart Vain Mirror  (ID: 211130)
+-- Card: Crimsonheart Vain Mirror  (ID: 211140)
 -- Type: Monster / Effect / Fusion
 -- Attribute: DARK
 -- Race: Illusion

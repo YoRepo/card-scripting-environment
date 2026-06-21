@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
 -- Generated: 2026-06-21T00:00:00
--- Card: Crimsonheart Iron Maiden  (ID: 211140)
+-- Card: Crimsonheart Iron Maiden  (ID: 211150)
 -- Type: Monster / Effect / Xyz
 -- Attribute: DARK
 -- Race: Machine
