@@ -20,7 +20,6 @@
 --Barren Lady Lacrimosaica
 local s,id,o=GetID()
 function s.initial_effect(c)
-	c:EnableReviveLimit()
 	--spsummon proc (from Deck by sending 3 "Crimsonheart" cards you control to the GY)
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD)

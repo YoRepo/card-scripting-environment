@@ -56,7 +56,7 @@ function s.spcon(e,tp,eg,ep,ev,re,r,rp)
 	return eg:IsExists(s.cfilter,1,nil,tp)
 end
 function s.spfilter(c,e,tp)
-	return c:IsCode(211000) and c:IsCanBeSpecialSummoned(e,0,tp,false,true)
+	return c:IsCode(211000) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.GetLocationCount(1-tp,LOCATION_MZONE)>0
@@ -69,7 +69,7 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	if not Duel.SelectYesNo(1-tp,aux.Stringid(id,2)) then return end
 	Duel.Hint(HINT_SELECTMSG,1-tp,HINTMSG_SPSUMMON)
 	local g=Duel.SelectMatchingCard(1-tp,s.spfilter,1-tp,LOCATION_DECK,0,1,1,nil,e,1-tp)
-	if g:GetCount()>0 and Duel.SpecialSummon(g,0,1-tp,1-tp,false,true,POS_FACEUP)>0
+	if g:GetCount()>0 and Duel.SpecialSummon(g,0,1-tp,1-tp,false,false,POS_FACEUP)>0
 		and Duel.IsExistingMatchingCard(Card.IsDiscardable,1-tp,LOCATION_HAND,0,1,nil,REASON_DISCARD+REASON_EFFECT) then
 		Duel.BreakEffect()
 		Duel.Hint(HINT_SELECTMSG,1-tp,HINTMSG_DISCARD)
