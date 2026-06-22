@@ -11,7 +11,8 @@
 -- Effect Text:
 -- You can only use 1 "Crimsonheart Chambermaid" effect per turn and only once that turn.
 -- (1) During the Main Phase (Quick Effect): You can discard this card; place 1 "Crimsonheart"
--- Continuous Spell in your Spell & Trap Zone face-up.
+-- monster from your Deck or GY in your Spell/Trap Zone face-up as a Continuous Spell, except
+-- "Crimsonheart Chambermaid".
 -- (2) If this card battles a monster, neither can be destroyed by that battle.
 -- (3) When a "Crimsonheart" monster(s) is targeted by a card effect while this card is in your GY,
 -- OR a non-"Crimsonheart" monster is targeted for an attack while this card is in your GY and you
@@ -23,7 +24,7 @@
 local s,id,o=GetID()
 function s.initial_effect(c)
 	aux.AddCodeList(c,211000)
-	--(1) discard; place 1 "Crimsonheart" Continuous Spell in your S/T Zone face-up
+	--(1) discard; place 1 "Crimsonheart" monster from Deck/GY in your S/T Zone face-up as a Continuous Spell
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
 	e1:SetType(EFFECT_TYPE_QUICK_O)
@@ -74,18 +75,25 @@ function s.plcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SendtoGrave(e:GetHandler(),REASON_COST+REASON_DISCARD)
 end
 function s.plfilter(c)
-	return c:IsSetCard(0x95c) and c:IsType(TYPE_SPELL+TYPE_CONTINUOUS)
+	return c:IsSetCard(0x95c) and c:IsType(TYPE_MONSTER) and not c:IsCode(id)
 end
 function s.pltg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_SZONE)>0
-		and Duel.IsExistingMatchingCard(s.plfilter,tp,LOCATION_HAND+LOCATION_DECK,0,1,nil) end
+		and Duel.IsExistingMatchingCard(s.plfilter,tp,LOCATION_DECK+LOCATION_GRAVE,0,1,nil) end
 end
 function s.plop(e,tp,eg,ep,ev,re,r,rp)
 	if Duel.GetLocationCount(tp,LOCATION_SZONE)<=0 then return end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOFIELD)
-	local tc=Duel.SelectMatchingCard(tp,s.plfilter,tp,LOCATION_HAND+LOCATION_DECK,0,1,1,nil):GetFirst()
-	if tc then
-		Duel.MoveToField(tc,tp,tp,LOCATION_SZONE,POS_FACEUP,true)
+	local tc=Duel.SelectMatchingCard(tp,s.plfilter,tp,LOCATION_DECK+LOCATION_GRAVE,0,1,1,nil):GetFirst()
+	if tc and Duel.MoveToField(tc,tp,tp,LOCATION_SZONE,POS_FACEUP,true) then
+		--treat the placed monster as a Continuous Spell while it remains on the field
+		local e1=Effect.CreateEffect(tc)
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetCode(EFFECT_CHANGE_TYPE)
+		e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD-RESET_TURN_SET)
+		e1:SetValue(TYPE_SPELL+TYPE_CONTINUOUS)
+		tc:RegisterEffect(e1)
 	end
 end
 --(2)

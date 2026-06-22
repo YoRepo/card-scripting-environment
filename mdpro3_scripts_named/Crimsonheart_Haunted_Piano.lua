@@ -10,7 +10,9 @@
 --
 -- Effect Text:
 -- You can only use the (1) effect of "Crimsonheart Haunted Piano" per turn and only once that turn.
--- (1) When you activate a Spell/Trap or effect while this card is in your GY, OR when your opponent
+-- (1) During the Main Phase (Quick Effect): You can discard this card; place 1 "Crimsonheart"
+-- Continuous Spell in your Spell/Trap Zone face-up.
+-- (2) When you activate a Spell/Trap or effect while this card is in your GY, OR when your opponent
 -- activates a Spell/Trap or effect while you control "Barren Lady Lacrimosaica" and this card is in
 -- your GY: You can Special Summon this card, and if you do, negate the activation and destroy that card.
 --[[ __CARD_HEADER_END__ ]]
@@ -19,25 +21,61 @@
 local s,id,o=GetID()
 function s.initial_effect(c)
 	aux.AddCodeList(c,211000)
-	--(1a) from GY: when YOU activate a Spell/Trap or effect; SS this card, then negate & destroy
+	--(1) discard; place 1 "Crimsonheart" Continuous Spell in your S/T Zone face-up
+	local e0=Effect.CreateEffect(c)
+	e0:SetDescription(aux.Stringid(id,0))
+	e0:SetType(EFFECT_TYPE_QUICK_O)
+	e0:SetCode(EVENT_FREE_CHAIN)
+	e0:SetRange(LOCATION_HAND)
+	e0:SetCountLimit(1,id)
+	e0:SetCondition(s.plcon)
+	e0:SetCost(s.plcost)
+	e0:SetTarget(s.pltg)
+	e0:SetOperation(s.plop)
+	c:RegisterEffect(e0)
+	--(2a) from GY: when YOU activate a Spell/Trap or effect; SS this card, then negate & destroy
 	local e1=Effect.CreateEffect(c)
-	e1:SetDescription(aux.Stringid(id,0))
+	e1:SetDescription(aux.Stringid(id,1))
 	e1:SetCategory(CATEGORY_SPECIAL_SUMMON+CATEGORY_NEGATE+CATEGORY_DESTROY)
 	e1:SetType(EFFECT_TYPE_QUICK_O)
 	e1:SetCode(EVENT_CHAINING)
 	e1:SetProperty(EFFECT_FLAG_DAMAGE_STEP+EFFECT_FLAG_DAMAGE_CAL)
 	e1:SetRange(LOCATION_GRAVE)
-	e1:SetCountLimit(1,id)
+	e1:SetCountLimit(1,id+o)
 	e1:SetCondition(s.negcon1)
 	e1:SetTarget(s.negtg)
 	e1:SetOperation(s.negop)
 	c:RegisterEffect(e1)
-	--(1b) from GY: when your OPPONENT activates a Spell/Trap or effect & you control Lacrimosaica
+	--(2b) from GY: when your OPPONENT activates a Spell/Trap or effect & you control Lacrimosaica
 	local e2=e1:Clone()
-	e2:SetDescription(aux.Stringid(id,1))
+	e2:SetDescription(aux.Stringid(id,2))
 	e2:SetCondition(s.negcon2)
 	c:RegisterEffect(e2)
 end
+--(1)
+function s.plcon(e,tp,eg,ep,ev,re,r,rp)
+	return Duel.GetCurrentPhase()==PHASE_MAIN1 or Duel.GetCurrentPhase()==PHASE_MAIN2
+end
+function s.plcost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return e:GetHandler():IsDiscardable() end
+	Duel.SendtoGrave(e:GetHandler(),REASON_COST+REASON_DISCARD)
+end
+function s.plfilter(c)
+	return c:IsSetCard(0x95c) and c:IsType(TYPE_SPELL) and c:IsType(TYPE_CONTINUOUS)
+end
+function s.pltg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_SZONE)>0
+		and Duel.IsExistingMatchingCard(s.plfilter,tp,LOCATION_HAND+LOCATION_DECK,0,1,nil) end
+end
+function s.plop(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.GetLocationCount(tp,LOCATION_SZONE)<=0 then return end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOFIELD)
+	local tc=Duel.SelectMatchingCard(tp,s.plfilter,tp,LOCATION_HAND+LOCATION_DECK,0,1,1,nil):GetFirst()
+	if tc then
+		Duel.MoveToField(tc,tp,tp,LOCATION_SZONE,POS_FACEUP,true)
+	end
+end
+--(2)
 function s.negcon1(e,tp,eg,ep,ev,re,r,rp)
 	return ep==tp and Duel.IsChainNegatable(ev)
 end
