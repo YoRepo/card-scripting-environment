@@ -77,13 +77,13 @@ function s.plop(e,tp,eg,ep,ev,re,r,rp)
 end
 --(2)
 function s.negcon1(e,tp,eg,ep,ev,re,r,rp)
-	return ep==tp and Duel.IsChainNegatable(ev)
+	return ep==tp and re:IsActiveType(TYPE_SPELL+TYPE_TRAP) and Duel.IsChainNegatable(ev)
 end
 function s.lacfilter(c)
 	return c:IsFaceup() and c:IsCode(211000)
 end
 function s.negcon2(e,tp,eg,ep,ev,re,r,rp)
-	return ep~=tp and Duel.IsChainNegatable(ev)
+	return ep~=tp and re:IsActiveType(TYPE_SPELL+TYPE_TRAP) and Duel.IsChainNegatable(ev)
 		and Duel.IsExistingMatchingCard(s.lacfilter,tp,LOCATION_MZONE,0,1,nil)
 end
 function s.negtg(e,tp,eg,ep,ev,re,r,rp,chk)
