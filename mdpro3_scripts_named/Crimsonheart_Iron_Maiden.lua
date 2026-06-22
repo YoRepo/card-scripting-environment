@@ -25,8 +25,17 @@ function s.initial_effect(c)
 	aux.AddCodeList(c,211000)
 	c:SetSPSummonOnce(id)
 	c:EnableReviveLimit()
-	--Xyz: 2 Level 8 monsters; or (while you control Lacrimosaica) overlay onto 1 monster your opponent controls
-	aux.AddXyzProcedure(c,nil,8,2,s.ovfilter,aux.Stringid(id,0),2,s.xyzop)
+	--Xyz: 2 Level 8 monsters
+	aux.AddXyzProcedure(c,nil,8,2)
+	--custom proc: while you control Lacrimosaica, Xyz Summon by overlaying onto 1 monster your opponent controls
+	local e0=Effect.CreateEffect(c)
+	e0:SetType(EFFECT_TYPE_FIELD)
+	e0:SetProperty(EFFECT_FLAG_UNCOPYABLE+EFFECT_FLAG_CANNOT_DISABLE)
+	e0:SetCode(EFFECT_SPSUMMON_PROC)
+	e0:SetRange(LOCATION_EXTRA)
+	e0:SetCondition(s.xyzcon)
+	e0:SetOperation(s.xyzop)
+	c:RegisterEffect(e0)
 	--(1) opponent's monsters must attack this card, if able
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD)
@@ -57,11 +66,21 @@ end
 function s.lacfilter(c)
 	return c:IsFaceup() and c:IsCode(211000)
 end
-function s.ovfilter(c,e,tp)
-	return c:IsControler(1-tp) and c:IsFaceup()
+function s.matfilter(c)
+	return c:IsFaceup() and c:IsCanOverlay()
 end
-function s.xyzop(e,tp,chk)
-	if chk==0 then return Duel.IsExistingMatchingCard(s.lacfilter,tp,LOCATION_MZONE,0,1,nil) end
+function s.xyzcon(e,c)
+	if c==nil then return true end
+	local tp=c:GetControler()
+	return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+		and Duel.IsExistingMatchingCard(s.lacfilter,tp,LOCATION_MZONE,0,1,nil)
+		and Duel.IsExistingMatchingCard(s.matfilter,tp,0,LOCATION_MZONE,1,nil)
+end
+function s.xyzop(e,tp,eg,ep,ev,re,r,rp,c)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_XMATERIAL)
+	local g=Duel.SelectMatchingCard(tp,s.matfilter,tp,0,LOCATION_MZONE,1,1,nil)
+	c:SetMaterial(g)
+	Duel.Overlay(c,g)
 end
 --(1)
 function s.atklimit(e,c)
