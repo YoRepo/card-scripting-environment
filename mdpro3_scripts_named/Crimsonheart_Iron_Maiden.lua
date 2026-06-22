@@ -25,8 +25,8 @@ function s.initial_effect(c)
 	aux.AddCodeList(c,211000)
 	c:SetSPSummonOnce(id)
 	c:EnableReviveLimit()
-	--Xyz: 2 Level 8 monsters; or (controlling Lacrimosaica) overlay onto 1 opponent monster
-	aux.AddXyzProcedure(c,nil,8,2,s.ovfilter,aux.Stringid(id,0))
+	--Xyz: 2 Level 8 monsters; or (while you control Lacrimosaica) overlay onto 1 monster your opponent controls
+	aux.AddXyzProcedure(c,nil,8,2,s.ovfilter,aux.Stringid(id,0),2,s.xyzop)
 	--(1) opponent's monsters must attack this card, if able
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD)
@@ -53,13 +53,15 @@ function s.initial_effect(c)
 	e3:SetOperation(s.disop)
 	c:RegisterEffect(e3)
 end
---alternative Xyz material: overlay onto 1 opponent monster while controlling Lacrimosaica
+--alternative Xyz Summon: overlay onto 1 monster your opponent controls, while you control Lacrimosaica
 function s.lacfilter(c)
 	return c:IsFaceup() and c:IsCode(211000)
 end
 function s.ovfilter(c,e,tp)
 	return c:IsControler(1-tp) and c:IsFaceup()
-		and Duel.IsExistingMatchingCard(s.lacfilter,tp,LOCATION_MZONE,0,1,nil)
+end
+function s.xyzop(e,tp,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(s.lacfilter,tp,LOCATION_MZONE,0,1,nil) end
 end
 --(1)
 function s.atklimit(e,c)
