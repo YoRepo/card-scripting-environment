@@ -53,12 +53,16 @@ function s.rmfilter(c)
 end
 function s.rmop(e,tp,eg,ep,ev,re,r,rp)
 	local tc=Duel.GetFirstTarget()
+	--remember whether it was banished from the GY: ReturnToField only restores
+	--cards whose previous location was the field, so GY monsters need SendtoGrave
+	local fromgrave=tc:IsLocation(LOCATION_GRAVE)
 	if tc:IsRelateToEffect(e) and Duel.Remove(tc,0,REASON_EFFECT+REASON_TEMPORARY)~=0 then
 		tc:RegisterFlagEffect(id,RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END,0,1)
 		local e1=Effect.CreateEffect(e:GetHandler())
 		e1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
 		e1:SetCode(EVENT_PHASE+PHASE_END)
 		e1:SetReset(RESET_PHASE+PHASE_END)
+		e1:SetLabel(fromgrave and 1 or 0)
 		e1:SetLabelObject(tc)
 		e1:SetCountLimit(1)
 		e1:SetCondition(s.retcon)
@@ -70,7 +74,12 @@ function s.retcon(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetLabelObject():GetFlagEffect(id)~=0
 end
 function s.retop(e,tp,eg,ep,ev,re,r,rp)
-	Duel.ReturnToField(e:GetLabelObject())
+	local tc=e:GetLabelObject()
+	if e:GetLabel()==1 then
+		Duel.SendtoGrave(tc,REASON_EFFECT+REASON_RETURN)
+	else
+		Duel.ReturnToField(tc)
+	end
 end
 --(2)
 function s.stfilter(c)
