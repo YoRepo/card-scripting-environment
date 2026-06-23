@@ -14,7 +14,7 @@
 -- While you control "Barren Lady Lacrimosaica", you can also Xyz Summon this card using 1 monster
 -- your opponent controls. You can only Special Summon "Crimsonheart Iron Maiden(s)" once per turn.
 -- You can only use the (2) effect of "Crimsonheart Iron Maiden" once per turn.
--- (1) Your opponent's monsters must attack this card, if able.
+-- (1) Your opponent cannot target monsters you control for attacks, except "Crimsonheart Iron Maiden".
 -- (2) When your opponent activates a monster effect in the GY while this card is in your GY (Quick
 -- Effect): You can banish this; negate the activation, and if you do, banish that card.
 --[[ __CARD_HEADER_END__ ]]
@@ -36,17 +36,14 @@ function s.initial_effect(c)
 	e0:SetCondition(s.xyzcon)
 	e0:SetOperation(s.xyzop)
 	c:RegisterEffect(e0)
-	--(1) opponent's monsters must attack this card, if able
+	--(1) opponent cannot target monsters you control for attacks, except this card
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD)
-	e1:SetCode(EFFECT_MUST_ATTACK)
+	e1:SetCode(EFFECT_CANNOT_SELECT_BATTLE_TARGET)
 	e1:SetRange(LOCATION_MZONE)
 	e1:SetTargetRange(0,LOCATION_MZONE)
+	e1:SetValue(s.atklimit)
 	c:RegisterEffect(e1)
-	local e2=e1:Clone()
-	e2:SetCode(EFFECT_MUST_ATTACK_MONSTER)
-	e2:SetValue(s.atklimit)
-	c:RegisterEffect(e2)
 	--(2) (Quick Effect) from GY: when opponent activates a monster effect in the GY; banish this, negate & banish
 	local e3=Effect.CreateEffect(c)
 	e3:SetDescription(aux.Stringid(id,1))
@@ -82,9 +79,9 @@ function s.xyzop(e,tp,eg,ep,ev,re,r,rp,c)
 	c:SetMaterial(g)
 	Duel.Overlay(c,g)
 end
---(1)
+--(1) monsters you control other than this card cannot be selected as attack targets
 function s.atklimit(e,c)
-	return c==e:GetHandler()
+	return not c:IsCode(id)
 end
 --(2)
 function s.discon(e,tp,eg,ep,ev,re,r,rp)
