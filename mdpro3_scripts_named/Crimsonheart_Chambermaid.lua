@@ -17,7 +17,7 @@
 -- (3) When a "Crimsonheart" monster(s) is targeted by a card effect while this card is in your GY,
 -- OR a non-"Crimsonheart" monster is targeted for an attack while this card is in your GY and you
 -- control "Barren Lady Lacrimosaica" (Quick Effect): You can Tribute 1 of those monsters; Special
--- Summon this card.
+-- Summon this card to its field, but banish it when it leaves the field.
 --[[ __CARD_HEADER_END__ ]]
 
 --Crimsonheart Chambermaid
@@ -108,14 +108,15 @@ end
 function s.spcon1(e,tp,eg,ep,ev,re,r,rp)
 	return eg:IsExists(s.cfilter1,1,nil)
 end
-function s.costfilter1(c,eg,tp)
-	return eg:IsContains(c) and c:IsSetCard(0x95c) and c:IsLocation(LOCATION_MZONE) and Duel.GetMZoneCount(tp,c)>0
+function s.costfilter1(c)
+	return c:IsSetCard(0x95c) and c:IsLocation(LOCATION_MZONE) and c:IsReleasable()
 end
 function s.spcost1(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.CheckReleaseGroup(tp,s.costfilter1,1,nil,eg,tp) end
+	if chk==0 then return eg:IsExists(s.costfilter1,1,nil) end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_RELEASE)
-	local g=Duel.SelectReleaseGroup(tp,s.costfilter1,1,1,nil,eg,tp)
-	Duel.Release(g,REASON_COST)
+	local sg=eg:Filter(s.costfilter1,nil):Select(tp,1,1,nil)
+	e:SetLabel(sg:GetFirst():GetControler())
+	Duel.Release(sg,REASON_COST)
 end
 --(3b) condition: a non-"Crimsonheart" monster was targeted for an attack & you control Lacrimosaica
 function s.cfilter2(c)
@@ -128,16 +129,17 @@ function s.spcon2(e,tp,eg,ep,ev,re,r,rp)
 	return eg:IsExists(s.cfilter2,1,nil)
 		and Duel.IsExistingMatchingCard(s.lacfilter,tp,LOCATION_MZONE,0,1,nil)
 end
-function s.costfilter2(c,eg,tp)
-	return eg:IsContains(c) and not c:IsSetCard(0x95c) and c:IsLocation(LOCATION_MZONE) and Duel.GetMZoneCount(tp,c)>0
+function s.costfilter2(c)
+	return not c:IsSetCard(0x95c) and c:IsLocation(LOCATION_MZONE) and c:IsReleasable()
 end
 function s.spcost2(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.CheckReleaseGroup(tp,s.costfilter2,1,nil,eg,tp) end
+	if chk==0 then return eg:IsExists(s.costfilter2,1,nil) end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_RELEASE)
-	local g=Duel.SelectReleaseGroup(tp,s.costfilter2,1,1,nil,eg,tp)
-	Duel.Release(g,REASON_COST)
+	local sg=eg:Filter(s.costfilter2,nil):Select(tp,1,1,nil)
+	e:SetLabel(sg:GetFirst():GetControler())
+	Duel.Release(sg,REASON_COST)
 end
---(3) shared Special Summon target/operation
+--(3) shared Special Summon target/operation (summon to the tributed monster's field; banish if it leaves)
 function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
 	if chk==0 then return c:IsCanBeSpecialSummoned(e,0,tp,false,false) end
@@ -145,7 +147,15 @@ function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	if c:IsRelateToEffect(e) then
-		Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)
+	if not c:IsRelateToEffect(e) then return end
+	local rc=e:GetLabel()
+	if Duel.SpecialSummon(c,0,tp,rc,false,false,POS_FACEUP)>0 then
+		local e1=Effect.CreateEffect(c)
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetCode(EFFECT_LEAVE_FIELD_REDIRECT)
+		e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
+		e1:SetReset(RESET_EVENT+RESETS_REDIRECT)
+		e1:SetValue(LOCATION_REMOVED)
+		c:RegisterEffect(e1)
 	end
 end

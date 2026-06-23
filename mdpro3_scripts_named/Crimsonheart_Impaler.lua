@@ -11,7 +11,7 @@
 -- Materials: 1 Tuner + 1+ non-Tuner monsters
 --
 -- Effect Text:
--- You can only use the (1) effect of "Crimsonheart Impaler" once per turn.
+-- You can only use each effect of "Crimsonheart Impaler" once per turn.
 -- (1) If this card is Special Summoned from the Extra Deck: You can target 2 cards on the field,
 -- including 1 "Crimsonheart" Spell/Trap; negate their effects, then destroy them.
 -- (2) At the Start of the Damage Step, if this card battles an opponent's monster: You can send both
@@ -44,6 +44,7 @@ function s.initial_effect(c)
 	e2:SetCategory(CATEGORY_TOGRAVE+CATEGORY_SPECIAL_SUMMON)
 	e2:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e2:SetCode(EVENT_BATTLE_START)
+	e2:SetCountLimit(1,id+o)
 	e2:SetCondition(s.descon)
 	e2:SetTarget(s.destg)
 	e2:SetOperation(s.desop)
