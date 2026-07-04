@@ -9,7 +9,8 @@
 -- You can only use each effect of "Crimsonheart Wilting Waltz" once per turn.
 -- (1) Special Summon this card as a Normal Monster (Illusion/Tuner/LIGHT/Level 6/ATK 0/DEF 1600)
 -- (this card is also still a Trap), then you can take control of 1 monster your opponent controls
--- (while this card remains face-up on the field), but negate its effects, also its ATK becomes 0.
+-- (while this card remains face-up on the field), but if you do not control "Barren Lady
+-- Lacrimosaica", its effects are negated, also its ATK becomes 0.
 -- (2) If this card is in your GY (Quick Effect): You can target 1 "Barren Lady Lacrimosaica" you
 -- control; Set this card, and if you do, return that target to the hand.
 --[[ __CARD_HEADER_END__ ]]
@@ -73,33 +74,38 @@ function s.activate(e,tp,eg,ep,ev,re,r,rp)
 			e1:SetReset(RESET_EVENT+RESETS_STANDARD)
 			e1:SetCondition(s.ctcon)
 			tc:RegisterEffect(e1)
-			--negate its effects
+			--while you do NOT control "Barren Lady Lacrimosaica": negate its effects...
 			local e2=Effect.CreateEffect(c)
 			e2:SetType(EFFECT_TYPE_SINGLE)
 			e2:SetCode(EFFECT_DISABLE)
 			e2:SetReset(RESET_EVENT+RESETS_STANDARD)
-			e2:SetCondition(s.ctcon)
+			e2:SetCondition(s.negcon)
 			tc:RegisterEffect(e2)
 			local e3=Effect.CreateEffect(c)
 			e3:SetType(EFFECT_TYPE_SINGLE)
 			e3:SetCode(EFFECT_DISABLE_EFFECT)
 			e3:SetValue(RESET_TURN_SET)
 			e3:SetReset(RESET_EVENT+RESETS_STANDARD)
-			e3:SetCondition(s.ctcon)
+			e3:SetCondition(s.negcon)
 			tc:RegisterEffect(e3)
-			--its ATK becomes 0
+			--...and its ATK becomes 0 (same condition)
 			local e4=Effect.CreateEffect(c)
 			e4:SetType(EFFECT_TYPE_SINGLE)
 			e4:SetCode(EFFECT_SET_ATTACK_FINAL)
 			e4:SetValue(0)
 			e4:SetReset(RESET_EVENT+RESETS_STANDARD)
-			e4:SetCondition(s.ctcon)
+			e4:SetCondition(s.negcon)
 			tc:RegisterEffect(e4)
 		end
 	end
 end
 function s.ctcon(e)
 	return e:GetOwner():IsHasCardTarget(e:GetHandler())
+end
+--negate + ATK-lock apply only while you still hold control AND do NOT control "Barren Lady Lacrimosaica"
+function s.negcon(e)
+	return s.ctcon(e)
+		and not Duel.IsExistingMatchingCard(s.lacfilter,e:GetOwner():GetControler(),LOCATION_MZONE,0,1,nil)
 end
 --(2)
 function s.lacfilter(c)
