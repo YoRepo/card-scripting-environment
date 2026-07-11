@@ -8,9 +8,6 @@ The ground-truth corpus for Yu-Gi-Oh (mdpro3/EDOPro) card scripting.
   (13,460 files), named by card name. Each file opens with a structured
   header comment (`__CARD_HEADER_START__` … `__CARD_HEADER_END__`) carrying
   the card's name, ID, type line, stats, setcode, and effect text.
-  **Warning:** the header's Spell/Trap *subtype* line is unreliable
-  (scrambled in the source data) — trust the script code, not the header,
-  when determining Quick-Play vs Continuous vs Counter etc.
 - `custom_cards/` — house custom scripts (the Crimsonheart archetype and
   friends). These use the modern idiom (`local s,id,o=GetID()`, numbered
   `--(n)` effect comments, `aux.Stringid(id,n)`) and are the **house-style
