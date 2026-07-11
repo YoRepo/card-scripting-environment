@@ -5,6 +5,11 @@ Produces the constant catalogs the script studio's tag widgets offer
 (EFFECT_FLAG_*, LOCATION_*, CATEGORY_*, ...), each with corpus frequency so
 dropdowns can rank by real-world usage.
 
+Like mine_api.py, the miner only owns the mechanical half: if the output
+file already exists, hand-authored `desc` fields (the plain-language
+explanations the studio shows when a constant is tapped) are preserved
+across re-runs. Only frequencies and the constant inventory are refreshed.
+
 Usage:
   python3 tools/mine_constants.py --out ../Website-TEST/static/data/scripter/constants.json
 """
@@ -57,18 +62,34 @@ def main():
                 for m in TOKEN.finditer(code):
                     counts[m.group(0)] = counts.get(m.group(0), 0) + 1
 
+    # authored desc fields from a previous run survive the re-mine
+    authored = {}
+    if os.path.exists(args.out):
+        try:
+            with open(args.out, encoding="utf-8") as fh:
+                previous = json.load(fh)
+            for fam_entries in previous.get("families", {}).values():
+                for entry in fam_entries:
+                    if entry.get("desc"):
+                        authored[entry["id"]] = entry["desc"]
+        except (OSError, ValueError):
+            pass
+
     families = {}
     for token, freq in counts.items():
         fam = family_of(token)
         if fam is None or freq < args.min_freq:
             continue
-        families.setdefault(fam, []).append({"id": token, "freq": freq})
+        entry = {"id": token, "freq": freq}
+        if token in authored:
+            entry["desc"] = authored[token]
+        families.setdefault(fam, []).append(entry)
     for fam in families:
         families[fam].sort(key=lambda x: (-x["freq"], x["id"]))
 
     payload = {
         "format": "scripter-constants-v1",
-        "note": "mined by card-scripting-environment/tools/mine_constants.py; rerun after corpus updates",
+        "note": "mined by card-scripting-environment/tools/mine_constants.py; rerun after corpus updates (authored desc fields are preserved)",
         "families": dict(sorted(families.items())),
     }
     os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
