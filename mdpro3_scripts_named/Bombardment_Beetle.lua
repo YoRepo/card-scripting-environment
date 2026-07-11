@@ -1,0 +1,44 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:50
+-- Source DB: cards.cdb
+-- Card: Bombardment Beetle  (ID: 57409948)
+-- Type: Monster / Effect / Flip
+-- Attribute: WIND
+-- Race: Insect
+-- Level: 2
+-- ATK 400 | DEF 900
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- FLIP: Pick up and see 1 face-down Defense Position Monster Card on your opponent's side of the
+-- field.
+-- If it is an Effect Monster, destroy it (its Flip Effect is not activated), and if the card is not,
+-- return it to its original position.
+--[[ __CARD_HEADER_END__ ]]
+
+--爆弾かめ虫
+function c57409948.initial_effect(c)
+	--flip
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(57409948,0))
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_FLIP)
+	e1:SetTarget(c57409948.target)
+	e1:SetOperation(c57409948.operation)
+	c:RegisterEffect(e1)
+end
+function c57409948.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsControler(1-tp) and chkc:IsLocation(LOCATION_MZONE) and chkc:IsFacedown() end
+	if chk==0 then return true end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TARGET)
+	Duel.SelectTarget(tp,Card.IsFacedown,tp,0,LOCATION_MZONE,1,1,nil)
+end
+function c57409948.operation(e,tp,eg,ep,ev,re,r,rp)
+	local tc=Duel.GetFirstTarget()
+	if tc and tc:IsRelateToEffect(e) and tc:IsFacedown() then
+		Duel.ConfirmCards(tp,tc)
+		if tc:IsType(TYPE_EFFECT) then
+			Duel.Destroy(tc,REASON_EFFECT)
+		end
+	end
+end

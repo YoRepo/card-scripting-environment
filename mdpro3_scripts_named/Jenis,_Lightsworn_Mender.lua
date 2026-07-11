@@ -1,0 +1,75 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:52
+-- Source DB: cards.cdb
+-- Card: Jenis, Lightsworn Mender  (ID: 83725008)
+-- Type: Monster / Effect
+-- Attribute: LIGHT
+-- Race: Spellcaster
+-- Level: 4
+-- ATK 300 | DEF 2100
+-- Setcode: 0x38
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- Once per turn, during the End Phase, if a card(s) was sent from your Deck to the GY by the effect of
+-- a "Lightsworn" card this turn: Inflict 500 damage to your opponent, and if you do, gain 500 LP.
+--[[ __CARD_HEADER_END__ ]]
+
+--ライトロード・プリースト ジェニス
+function c83725008.initial_effect(c)
+	--recover&damage
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(83725008,0))
+	e1:SetCategory(CATEGORY_DAMAGE+CATEGORY_RECOVER)
+	e1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_F)
+	e1:SetCode(EVENT_PHASE+PHASE_END)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetCountLimit(1)
+	e1:SetCondition(c83725008.lpcon)
+	e1:SetTarget(c83725008.lptg)
+	e1:SetOperation(c83725008.lpop)
+	c:RegisterEffect(e1)
+	if c83725008.discard==nil then
+		c83725008.discard=true
+		c83725008[0]=false
+		c83725008[1]=false
+		local e2=Effect.CreateEffect(c)
+		e2:SetType(EFFECT_TYPE_CONTINUOUS+EFFECT_TYPE_FIELD)
+		e2:SetCode(EVENT_PHASE_START+PHASE_DRAW)
+		e2:SetOperation(c83725008.reset)
+		Duel.RegisterEffect(e2,0)
+		local e3=Effect.CreateEffect(c)
+		e3:SetType(EFFECT_TYPE_CONTINUOUS+EFFECT_TYPE_FIELD)
+		e3:SetCode(EVENT_TO_GRAVE)
+		e3:SetOperation(c83725008.set)
+		Duel.RegisterEffect(e3,0)
+	end
+end
+function c83725008.reset(e,tp,eg,ep,ev,re,r,rp)
+	c83725008[0]=false
+	c83725008[1]=false
+end
+function c83725008.cfilter(c)
+	return c:IsPreviousLocation(LOCATION_DECK)
+end
+function c83725008.set(e,tp,eg,ep,ev,re,r,rp)
+	if not re then return false end
+	local rc=re:GetHandler()
+	if bit.band(r,REASON_EFFECT)>0 and rc:IsSetCard(0x38) and eg:IsExists(c83725008.cfilter,1,nil) then
+		c83725008[rp]=true
+	end
+end
+function c83725008.lpcon(e,tp,eg,ep,ev,re,r,rp)
+	return tp==Duel.GetTurnPlayer() and c83725008[tp]
+end
+function c83725008.lptg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return true end
+	Duel.SetOperationInfo(0,CATEGORY_RECOVER,nil,0,tp,500)
+	Duel.SetOperationInfo(0,CATEGORY_DAMAGE,nil,0,1-tp,500)
+end
+function c83725008.lpop(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	if c:IsControler(1-tp) or not c:IsRelateToEffect(e) or c:IsFacedown() then return end
+	Duel.Recover(tp,500,REASON_EFFECT)
+	Duel.Damage(1-tp,500,REASON_EFFECT)
+end

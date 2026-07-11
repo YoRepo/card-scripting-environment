@@ -1,0 +1,59 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:51
+-- Source DB: cards.cdb
+-- Card: Eria the Water Charmer  (ID: 74364659)
+-- Type: Monster / Effect / Flip
+-- Attribute: WATER
+-- Race: Spellcaster
+-- Level: 3
+-- ATK 500 | DEF 1500
+-- Setcode: 0xbf
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- FLIP: Target 1 WATER monster your opponent controls; take control of that target while this card is
+-- face-up on the field.
+--[[ __CARD_HEADER_END__ ]]
+
+--水霊使いエリア
+function c74364659.initial_effect(c)
+	--flip
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(74364659,0))
+	e1:SetCategory(CATEGORY_CONTROL)
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_FLIP)
+	e1:SetTarget(c74364659.target)
+	e1:SetOperation(c74364659.operation)
+	c:RegisterEffect(e1)
+end
+function c74364659.filter(c)
+	return c:IsFaceup() and c:IsAttribute(ATTRIBUTE_WATER) and c:IsAbleToChangeControler()
+end
+function c74364659.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsLocation(LOCATION_MZONE) and chkc:IsControler(1-tp) and c74364659.filter(chkc) end
+	if chk==0 then return true end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_CONTROL)
+	local g=Duel.SelectTarget(tp,c74364659.filter,tp,0,LOCATION_MZONE,1,1,nil)
+	Duel.SetOperationInfo(0,CATEGORY_CONTROL,g,g:GetCount(),0,0)
+end
+function c74364659.operation(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	local tc=Duel.GetFirstTarget()
+	if c:IsRelateToEffect(e) and c:IsFaceup() and tc and tc:IsRelateToEffect(e)
+		and not tc:IsImmuneToEffect(e) then
+		c:SetCardTarget(tc)
+		local e1=Effect.CreateEffect(c)
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetCode(EFFECT_SET_CONTROL)
+		e1:SetValue(tp)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD)
+		e1:SetCondition(c74364659.ctcon)
+		tc:RegisterEffect(e1)
+	end
+end
+function c74364659.ctcon(e)
+	local c=e:GetOwner()
+	local h=e:GetHandler()
+	return c:IsHasCardTarget(h)
+end

@@ -1,0 +1,43 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:51
+-- Source DB: cards.cdb
+-- Card: Card Rotator  (ID: 72767833)
+-- Type: Spell
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- Send 1 card from your hand to the Graveyard.
+-- Change the battle positions of all monsters your opponent controls.
+-- (Face-down Defense Position monsters are flipped to face-up Attack Position.)
+--[[ __CARD_HEADER_END__ ]]
+
+--カード・フリッパー
+function c72767833.initial_effect(c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetCategory(CATEGORY_POSITION)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:SetCost(c72767833.cost)
+	e1:SetTarget(c72767833.target)
+	e1:SetOperation(c72767833.activate)
+	c:RegisterEffect(e1)
+end
+function c72767833.costfilter(c)
+	return c:IsDiscardable() and c:IsAbleToGraveAsCost()
+end
+function c72767833.cost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(c72767833.costfilter,tp,LOCATION_HAND,0,1,e:GetHandler()) end
+	Duel.DiscardHand(tp,c72767833.costfilter,1,1,REASON_COST)
+end
+function c72767833.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.GetFieldGroupCount(tp,0,LOCATION_MZONE)>0 end
+	local sg=Duel.GetFieldGroup(tp,0,LOCATION_MZONE)
+	Duel.SetOperationInfo(0,CATEGORY_POSITION,sg,sg:GetCount(),0,0)
+end
+function c72767833.activate(e,tp,eg,ep,ev,re,r,rp)
+	local sg=Duel.GetFieldGroup(tp,0,LOCATION_MZONE)
+	if sg:GetCount()>0 then
+		Duel.ChangePosition(sg,POS_FACEUP_DEFENSE,POS_FACEDOWN_DEFENSE,POS_FACEUP_ATTACK,POS_FACEUP_ATTACK)
+	end
+end

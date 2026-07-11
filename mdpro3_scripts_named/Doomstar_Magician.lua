@@ -1,0 +1,51 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:50
+-- Source DB: cards.cdb
+-- Card: Doomstar Magician  (ID: 58369990)
+-- Type: Monster / Effect
+-- Attribute: DARK
+-- Race: Spellcaster
+-- Level: 4
+-- ATK 1800 | DEF 300
+-- Setcode: 0x98
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- Once per turn: You can discard 1 card, then target 1 card in either player's Pendulum Zone; destroy
+-- that card, and if you do, draw 1 card.
+--[[ __CARD_HEADER_END__ ]]
+
+--凶星の魔術師
+function c58369990.initial_effect(c)
+	--destroy
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(58369990,0))
+	e1:SetCategory(CATEGORY_DESTROY+CATEGORY_DRAW)
+	e1:SetType(EFFECT_TYPE_IGNITION)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e1:SetCountLimit(1)
+	e1:SetCost(c58369990.cost)
+	e1:SetTarget(c58369990.target)
+	e1:SetOperation(c58369990.operation)
+	c:RegisterEffect(e1)
+end
+function c58369990.cost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsDiscardable,tp,LOCATION_HAND,0,1,nil) end
+	Duel.DiscardHand(tp,Card.IsDiscardable,1,1,REASON_COST+REASON_DISCARD)
+end
+function c58369990.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsLocation(LOCATION_PZONE) end
+	if chk==0 then return Duel.IsPlayerCanDraw(tp,1)
+		and Duel.IsExistingTarget(nil,tp,LOCATION_PZONE,LOCATION_PZONE,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
+	local g=Duel.SelectTarget(tp,nil,tp,LOCATION_PZONE,LOCATION_PZONE,1,1,nil)
+	Duel.SetOperationInfo(0,CATEGORY_DESTROY,g,1,0,0)
+	Duel.SetOperationInfo(0,CATEGORY_DRAW,nil,0,tp,1)
+end
+function c58369990.operation(e,tp,eg,ep,ev,re,r,rp)
+	local tc=Duel.GetFirstTarget()
+	if tc:IsRelateToEffect(e) and Duel.Destroy(tc,REASON_EFFECT)~=0 then
+		Duel.Draw(tp,1,REASON_EFFECT)
+	end
+end

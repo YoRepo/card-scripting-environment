@@ -1,0 +1,62 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:50
+-- Source DB: cards.cdb
+-- Card: Unstable Evolution  (ID: 62991886)
+-- Type: Spell / Equip
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- While your LP is lower than your opponent's, the equipped monster's original ATK becomes 2400.
+-- While your LP is higher, the equipped monster's original ATK becomes 1000.
+--[[ __CARD_HEADER_END__ ]]
+
+--進化する人類
+function c62991886.initial_effect(c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetCategory(CATEGORY_EQUIP)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET+EFFECT_FLAG_CONTINUOUS_TARGET)
+	e1:SetTarget(c62991886.target)
+	e1:SetOperation(c62991886.operation)
+	c:RegisterEffect(e1)
+	--Atk Change
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_EQUIP)
+	e2:SetCode(EFFECT_SET_BASE_ATTACK)
+	e2:SetCondition(c62991886.condition)
+	e2:SetValue(c62991886.value)
+	c:RegisterEffect(e2)
+	--Equip limit
+	local e3=Effect.CreateEffect(c)
+	e3:SetType(EFFECT_TYPE_SINGLE)
+	e3:SetCode(EFFECT_EQUIP_LIMIT)
+	e3:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
+	e3:SetValue(1)
+	c:RegisterEffect(e3)
+end
+function c62991886.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsLocation(LOCATION_MZONE) and chkc:IsFaceup() end
+	if chk==0 then return Duel.IsExistingTarget(Card.IsFaceup,tp,LOCATION_MZONE,LOCATION_MZONE,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_EQUIP)
+	Duel.SelectTarget(tp,Card.IsFaceup,tp,LOCATION_MZONE,LOCATION_MZONE,1,1,nil)
+	Duel.SetOperationInfo(0,CATEGORY_EQUIP,e:GetHandler(),1,0,0)
+end
+function c62991886.operation(e,tp,eg,ep,ev,re,r,rp)
+	local tc=Duel.GetFirstTarget()
+	if e:GetHandler():IsRelateToEffect(e) and tc:IsRelateToEffect(e) and tc:IsFaceup() then
+		Duel.Equip(tp,e:GetHandler(),tc)
+	end
+end
+function c62991886.condition(e)
+	return Duel.GetLP(0)~=Duel.GetLP(1)
+end
+function c62991886.value(e,c)
+	local p=e:GetHandler():GetControler()
+	if Duel.GetLP(p)<Duel.GetLP(1-p) then
+		return 2400
+	elseif Duel.GetLP(p)>Duel.GetLP(1-p) then
+		return 1000
+	end
+end

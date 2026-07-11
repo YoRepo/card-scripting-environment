@@ -1,0 +1,58 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:52
+-- Source DB: cards.cdb
+-- Card: Zone Eater  (ID: 86100785)
+-- Type: Monster / Effect
+-- Attribute: WATER
+-- Race: Aqua
+-- Level: 1
+-- ATK 250 | DEF 200
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- A monster attacked by this card will be destroyed during the End Phase of the 5th turn after the
+-- attack.
+--[[ __CARD_HEADER_END__ ]]
+
+--ゾーン・イーター
+function c86100785.initial_effect(c)
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(86100785,0))
+	e1:SetCategory(CATEGORY_DESTROY)
+	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_F)
+	e1:SetCode(EVENT_BATTLED)
+	e1:SetCondition(c86100785.condition)
+	e1:SetOperation(c86100785.operation)
+	c:RegisterEffect(e1)
+end
+function c86100785.condition(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	local bc=c:GetBattleTarget()
+	return c==Duel.GetAttacker() and bc and bc:IsRelateToBattle() and bc:IsFaceup()
+end
+function c86100785.operation(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	local bc=c:GetBattleTarget()
+	if bc:IsRelateToBattle() then
+		local e1=Effect.CreateEffect(c)
+		e1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
+		e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
+		e1:SetCode(EVENT_PHASE+PHASE_END)
+		e1:SetCountLimit(1)
+		e1:SetRange(LOCATION_MZONE)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD)
+		e1:SetOperation(c86100785.desop)
+		e1:SetLabel(0)
+		e1:SetOwnerPlayer(tp)
+		bc:RegisterEffect(e1)
+	end
+end
+function c86100785.desop(e,tp,eg,ep,ev,re,r,rp)
+	local ct=e:GetLabel()
+	ct=ct+1
+	e:SetLabel(ct)
+	e:GetOwner():SetTurnCounter(ct)
+	if ct==5 then
+		Duel.Destroy(e:GetHandler(),REASON_EFFECT)
+	end
+end

@@ -1,0 +1,35 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:54
+-- Source DB: cards.cdb
+-- Card: The Huge Revolution is Over  (ID: 99188141)
+-- Type: Trap / Counter
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- When a Spell/Trap Card, or monster effect, is activated that would destroy 2 or more cards on the
+-- field: Negate the activation, and if you do, banish it.
+--[[ __CARD_HEADER_END__ ]]
+
+--大革命返し
+function c99188141.initial_effect(c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetCategory(CATEGORY_NEGATE+CATEGORY_REMOVE)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_CHAINING)
+	e1:SetCondition(c99188141.condition)
+	e1:SetTarget(aux.nbtg)
+	e1:SetOperation(c99188141.activate)
+	c:RegisterEffect(e1)
+end
+function c99188141.condition(e,tp,eg,ep,ev,re,r,rp)
+	if (not re:IsActiveType(TYPE_MONSTER) and not re:IsHasType(EFFECT_TYPE_ACTIVATE))
+		or not Duel.IsChainNegatable(ev) then return false end
+	local ex,tg,tc=Duel.GetOperationInfo(ev,CATEGORY_DESTROY)
+	return ex and tg~=nil and tc+tg:FilterCount(Card.IsOnField,nil)-tg:GetCount()>1
+end
+function c99188141.activate(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.NegateActivation(ev) and re:GetHandler():IsRelateToEffect(re) then
+		Duel.Remove(re:GetHandler(),POS_FACEUP,REASON_EFFECT)
+	end
+end

@@ -1,0 +1,73 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:44
+-- Source DB: cards.cdb
+-- Card: Dragunity Dux  (ID: 28183605)
+-- Type: Monster / Effect
+-- Attribute: WIND
+-- Race: Winged Beast
+-- Level: 4
+-- ATK 1500 | DEF 1000
+-- Setcode: 0x29
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- Gains 200 ATK for each "Dragunity" card you control.
+-- When this card is Normal Summoned: You can target 1 Level 3 or lower Dragon "Dragunity" monster in
+-- your GY; equip that target to this card.
+--[[ __CARD_HEADER_END__ ]]
+
+--ドラグニティ－ドゥクス
+function c28183605.initial_effect(c)
+	--atk
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetCode(EFFECT_UPDATE_ATTACK)
+	e1:SetValue(c28183605.atkval)
+	c:RegisterEffect(e1)
+	--equip
+	local e2=Effect.CreateEffect(c)
+	e2:SetDescription(aux.Stringid(28183605,0))
+	e2:SetCategory(CATEGORY_LEAVE_GRAVE)
+	e2:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
+	e2:SetCode(EVENT_SUMMON_SUCCESS)
+	e2:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e2:SetTarget(c28183605.eqtg)
+	e2:SetOperation(c28183605.eqop)
+	c:RegisterEffect(e2)
+end
+function c28183605.atkfilter(c)
+	return c:IsFaceup() and c:IsSetCard(0x29)
+end
+function c28183605.atkval(e,c)
+	return Duel.GetMatchingGroupCount(c28183605.atkfilter,c:GetControler(),LOCATION_ONFIELD,0,nil)*200
+end
+function c28183605.filter(c)
+	return c:IsLevelBelow(3) and c:IsSetCard(0x29) and c:IsRace(RACE_DRAGON) and not c:IsForbidden()
+end
+function c28183605.eqtg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsLocation(LOCATION_GRAVE) and chkc:IsControler(tp) and c28183605.filter(chkc) end
+	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_SZONE)>0
+		and Duel.IsExistingTarget(c28183605.filter,tp,LOCATION_GRAVE,0,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_EQUIP)
+	local g=Duel.SelectTarget(tp,c28183605.filter,tp,LOCATION_GRAVE,0,1,1,nil)
+	Duel.SetOperationInfo(0,CATEGORY_LEAVE_GRAVE,g,1,0,0)
+end
+function c28183605.eqop(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	local tc=Duel.GetFirstTarget()
+	if tc:IsRelateToEffect(e) and tc:IsRace(RACE_DRAGON) then
+		if not Duel.Equip(tp,tc,c,false) then return end
+		local e1=Effect.CreateEffect(c)
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetProperty(EFFECT_FLAG_OWNER_RELATE)
+		e1:SetCode(EFFECT_EQUIP_LIMIT)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD)
+		e1:SetValue(c28183605.eqlimit)
+		tc:RegisterEffect(e1)
+	end
+end
+function c28183605.eqlimit(e,c)
+	return e:GetOwner()==c
+end

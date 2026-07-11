@@ -1,0 +1,50 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:51
+-- Source DB: cards.cdb
+-- Card: Lady of D.  (ID: 67511500)
+-- Type: Monster / Effect
+-- Attribute: DARK
+-- Race: Spellcaster
+-- Level: 4
+-- ATK 1500 | DEF 1100
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- Your opponent cannot target face-up Dragon-Type monsters you control for attacks.
+-- If this card on the field would be destroyed by battle or by a card effect, you can send 1
+-- Dragon-Type monster from your hand to the Graveyard instead.
+--[[ __CARD_HEADER_END__ ]]
+
+--ドラゴン・ウィッチ－ドラゴンの守護者－
+function c67511500.initial_effect(c)
+	--cannot be battle target
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_FIELD)
+	e1:SetCode(EFFECT_CANNOT_SELECT_BATTLE_TARGET)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetTargetRange(0,LOCATION_MZONE)
+	e1:SetValue(c67511500.atlimit)
+	c:RegisterEffect(e1)
+	--destroy replace
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_CONTINUOUS+EFFECT_TYPE_SINGLE)
+	e2:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e2:SetRange(LOCATION_MZONE)
+	e2:SetCode(EFFECT_DESTROY_REPLACE)
+	e2:SetTarget(c67511500.desreptg)
+	c:RegisterEffect(e2)
+end
+function c67511500.atlimit(e,c)
+	return c:IsFaceup() and c:IsRace(RACE_DRAGON)
+end
+function c67511500.desreptg(e,tp,eg,ep,ev,re,r,rp,chk)
+	local c=e:GetHandler()
+	if chk==0 then return c:IsReason(REASON_BATTLE+REASON_EFFECT) and not c:IsReason(REASON_REPLACE)
+		and Duel.IsExistingMatchingCard(Card.IsRace,tp,LOCATION_HAND,0,1,nil,RACE_DRAGON) end
+	if Duel.SelectEffectYesNo(tp,e:GetHandler(),96) then
+		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
+		local g=Duel.SelectMatchingCard(tp,Card.IsRace,tp,LOCATION_HAND,0,1,1,nil,RACE_DRAGON)
+		Duel.SendtoGrave(g,REASON_EFFECT+REASON_REPLACE)
+		return true
+	else return false end
+end

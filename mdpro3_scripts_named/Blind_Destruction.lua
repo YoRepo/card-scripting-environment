@@ -1,0 +1,55 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:44
+-- Source DB: cards.cdb
+-- Card: Blind Destruction  (ID: 32015116)
+-- Type: Trap / Continuous
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- Once per turn, during your Standby Phase: Roll a six-sided die.
+-- If the result is 1-5, destroy all monsters on the field with the same Level as the number rolled.
+-- If it is 6, destroy all Level 6 and higher monsters on the field.
+--[[ __CARD_HEADER_END__ ]]
+
+--無差別破壊
+function c32015116.initial_effect(c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:SetHintTiming(0,TIMING_END_PHASE)
+	c:RegisterEffect(e1)
+	--roll and destroy
+	local e2=Effect.CreateEffect(c)
+	e2:SetDescription(aux.Stringid(32015116,0))
+	e2:SetCategory(CATEGORY_DESTROY+CATEGORY_DICE)
+	e2:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_F)
+	e2:SetRange(LOCATION_SZONE)
+	e2:SetCountLimit(1)
+	e2:SetCode(EVENT_PHASE+PHASE_STANDBY)
+	e2:SetCondition(c32015116.rdcon)
+	e2:SetTarget(c32015116.rdtg)
+	e2:SetOperation(c32015116.rdop)
+	c:RegisterEffect(e2)
+end
+function c32015116.rdcon(e,tp,eg,ep,ev,re,r,rp)
+	return tp==Duel.GetTurnPlayer()
+end
+function c32015116.rdtg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return true end
+	Duel.SetOperationInfo(0,CATEGORY_DICE,nil,0,tp,1)
+end
+function c32015116.rdfilter(c,lv)
+	if lv<=5 then
+		return c:IsFaceup() and c:IsLevel(lv)
+	elseif lv==6 then
+		return c:IsFaceup() and c:IsLevelAbove(6)
+	else
+		return false
+	end
+end
+function c32015116.rdop(e,tp,eg,ep,ev,re,r,rp)
+	local d1=Duel.TossDice(tp,1)
+	local g=Duel.GetMatchingGroup(c32015116.rdfilter,tp,LOCATION_MZONE,LOCATION_MZONE,nil,d1)
+	Duel.Destroy(g,REASON_EFFECT)
+end

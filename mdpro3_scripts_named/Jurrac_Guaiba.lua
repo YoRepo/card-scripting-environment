@@ -1,0 +1,51 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:42
+-- Source DB: cards.cdb
+-- Card: Jurrac Guaiba  (ID: 11012887)
+-- Type: Monster / Effect
+-- Attribute: FIRE
+-- Race: Dinosaur
+-- Level: 4
+-- ATK 1700 | DEF 400
+-- Setcode: 0x22
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- If this card destroys an opponent's monster by battle: You can Special Summon 1 "Jurrac" monster
+-- with 1700 or less ATK from your Deck, but it cannot declare an attack this turn.
+--[[ __CARD_HEADER_END__ ]]
+
+--ジュラック・グアイバ
+function c11012887.initial_effect(c)
+	--special summon
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(11012887,0))
+	e1:SetCategory(CATEGORY_SPECIAL_SUMMON)
+	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
+	e1:SetCode(EVENT_BATTLE_DESTROYING)
+	e1:SetCondition(aux.bdocon)
+	e1:SetTarget(c11012887.target)
+	e1:SetOperation(c11012887.operation)
+	c:RegisterEffect(e1)
+end
+function c11012887.filter(c,e,tp)
+	return c:IsSetCard(0x22) and c:IsAttackBelow(1700) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+end
+function c11012887.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+		and Duel.IsExistingMatchingCard(c11012887.filter,tp,LOCATION_DECK,0,1,nil,e,tp) end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_DECK)
+end
+function c11012887.operation(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
+	local g=Duel.SelectMatchingCard(tp,c11012887.filter,tp,LOCATION_DECK,0,1,1,nil,e,tp)
+	local tc=g:GetFirst()
+	if tc and Duel.SpecialSummon(tc,0,tp,tp,false,false,POS_FACEUP)~=0 then
+		local e1=Effect.CreateEffect(e:GetHandler())
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetCode(EFFECT_CANNOT_ATTACK_ANNOUNCE)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
+		tc:RegisterEffect(e1)
+	end
+end

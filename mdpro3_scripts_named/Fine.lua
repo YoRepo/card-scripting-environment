@@ -1,0 +1,32 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:53
+-- Source DB: cards.cdb
+-- Card: Fine  (ID: 92595643)
+-- Type: Trap
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- Discard 2 cards.
+--[[ __CARD_HEADER_END__ ]]
+
+--罰則金
+function c92595643.initial_effect(c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetCategory(CATEGORY_HANDES_SELF)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:SetTarget(c92595643.target)
+	e1:SetOperation(c92595643.activate)
+	c:RegisterEffect(e1)
+end
+function c92595643.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(nil,tp,LOCATION_HAND,0,2,e:GetHandler()) end
+	Duel.SetTargetPlayer(tp)
+	Duel.SetOperationInfo(0,CATEGORY_HANDES_SELF,nil,0,tp,2)
+end
+function c92595643.activate(e,tp,eg,ep,ev,re,r,rp)
+	local p=Duel.GetChainInfo(0,CHAININFO_TARGET_PLAYER)
+	Duel.DiscardHand(p,nil,2,2,REASON_EFFECT+REASON_DISCARD)
+end

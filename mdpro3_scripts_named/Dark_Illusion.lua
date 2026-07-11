@@ -1,0 +1,45 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:49
+-- Source DB: cards.cdb
+-- Card: Dark Illusion  (ID: 5562461)
+-- Type: Trap / Counter
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- When a Spell/Trap Card, or monster effect, is activated that targets a DARK monster on the field:
+-- Negate the activation, and if you do, destroy that card.
+--[[ __CARD_HEADER_END__ ]]
+
+--闇の幻影
+function c5562461.initial_effect(c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetCategory(CATEGORY_NEGATE+CATEGORY_DESTROY)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_CHAINING)
+	e1:SetCondition(c5562461.condition)
+	e1:SetTarget(c5562461.target)
+	e1:SetOperation(c5562461.activate)
+	c:RegisterEffect(e1)
+end
+function c5562461.cfilter(c)
+	return c:IsLocation(LOCATION_MZONE) and c:IsFaceup() and c:IsAttribute(ATTRIBUTE_DARK)
+end
+function c5562461.condition(e,tp,eg,ep,ev,re,r,rp)
+	if not re:IsHasProperty(EFFECT_FLAG_CARD_TARGET) then return end
+	if not re:IsActiveType(TYPE_MONSTER) and not re:IsHasType(EFFECT_TYPE_ACTIVATE) then return false end
+	local tg=Duel.GetChainInfo(ev,CHAININFO_TARGET_CARDS)
+	return tg and tg:IsExists(c5562461.cfilter,1,nil) and Duel.IsChainNegatable(ev)
+end
+function c5562461.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return true end
+	Duel.SetOperationInfo(0,CATEGORY_NEGATE,eg,1,0,0)
+	if re:GetHandler():IsDestructable() and re:GetHandler():IsRelateToEffect(re) then
+		Duel.SetOperationInfo(0,CATEGORY_DESTROY,eg,1,0,0)
+	end
+end
+function c5562461.activate(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.NegateActivation(ev) and re:GetHandler():IsRelateToEffect(re) then
+		Duel.Destroy(eg,REASON_EFFECT)
+	end
+end

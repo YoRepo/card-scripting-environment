@@ -1,0 +1,83 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:47
+-- Source DB: cards.cdb
+-- Card: Number C32: Shark Drake Veiss  (ID: 49221191)
+-- Type: Monster / Effect / Xyz
+-- Attribute: WATER
+-- Race: Sea Serpent
+-- Rank: 4
+-- ATK 2800 | DEF 2100
+-- Setcode: 0x1048, 0x11b8
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- 4 Level 4 WATER monsters
+-- You can also Xyz Summon this card by using "Number 32: Shark Drake" you control as material.
+-- (Transfer its materials to this card.)
+-- If your LP are 1000 or less (Quick Effect): You can banish 1 monster from your GY and detach 1
+-- material from this card, then target 1 face-up monster on the field; its ATK/DEF become 0 until the
+-- end of your turn.
+--[[ __CARD_HEADER_END__ ]]
+
+--CNo.32 海咬龍シャーク・ドレイク・バイス
+function c49221191.initial_effect(c)
+	--xyz summon
+	c:EnableReviveLimit()
+	aux.AddXyzProcedure(c,aux.FilterBoolFunction(Card.IsAttribute,ATTRIBUTE_WATER),4,4,c49221191.ovfilter,aux.Stringid(49221191,0))
+	--atk/def
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(49221191,1))
+	e1:SetCategory(CATEGORY_ATKCHANGE)
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET+EFFECT_FLAG_DAMAGE_STEP)
+	e1:SetType(EFFECT_TYPE_QUICK_O)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetHintTiming(TIMING_DAMAGE_STEP)
+	e1:SetCondition(c49221191.condition)
+	e1:SetCost(c49221191.cost)
+	e1:SetTarget(c49221191.target)
+	e1:SetOperation(c49221191.operation)
+	c:RegisterEffect(e1)
+end
+aux.xyz_number[49221191]=32
+function c49221191.ovfilter(c)
+	return c:IsFaceup() and c:IsCode(65676461)
+end
+function c49221191.condition(e,tp,eg,ep,ev,re,r,rp)
+	return Duel.GetLP(tp)<=1000 and aux.dscon(e,tp,eg,ep,ev,re,r,rp)
+end
+function c49221191.rfilter(c)
+	return c:IsType(TYPE_MONSTER) and c:IsAbleToRemoveAsCost()
+end
+function c49221191.cost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return e:GetHandler():CheckRemoveOverlayCard(tp,1,REASON_COST)
+		and Duel.IsExistingMatchingCard(c49221191.rfilter,tp,LOCATION_GRAVE,0,1,nil) end
+	e:GetHandler():RemoveOverlayCard(tp,1,1,REASON_COST)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
+	local g=Duel.SelectMatchingCard(tp,c49221191.rfilter,tp,LOCATION_GRAVE,0,1,1,nil)
+	Duel.Remove(g,POS_FACEUP,REASON_COST)
+end
+function c49221191.filter(c)
+	return c:IsFaceup() and (c:GetAttack()>0 or c:GetDefense()>0)
+end
+function c49221191.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsLocation(LOCATION_MZONE) and c49221191.filter(chkc) end
+	if chk==0 then return Duel.IsExistingTarget(c49221191.filter,tp,LOCATION_MZONE,LOCATION_MZONE,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_FACEUP)
+	Duel.SelectTarget(tp,c49221191.filter,tp,LOCATION_MZONE,LOCATION_MZONE,1,1,nil)
+end
+function c49221191.operation(e,tp,eg,ep,ev,re,r,rp)
+	local tc=Duel.GetFirstTarget()
+	if tc:IsRelateToEffect(e) and tc:IsFaceup() then
+		local e1=Effect.CreateEffect(e:GetHandler())
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
+		e1:SetCode(EFFECT_SET_ATTACK_FINAL)
+		e1:SetValue(0)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END+RESET_SELF_TURN)
+		tc:RegisterEffect(e1)
+		local e2=e1:Clone()
+		e2:SetCode(EFFECT_SET_DEFENSE_FINAL)
+		tc:RegisterEffect(e2)
+	end
+end

@@ -1,0 +1,61 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:44
+-- Source DB: cards.cdb
+-- Card: Pumpking the King of Ghosts  (ID: 29155212)
+-- Type: Monster / Effect
+-- Attribute: DARK
+-- Race: Zombie
+-- Level: 6
+-- ATK 1800 | DEF 2000
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- Gains 100 ATK/DEF while "Castle of Dark Illusions" is on the field.
+-- Also, during your Standby Phase, if "Castle of Dark Illusions" is on the field: This card gains 100
+-- ATK/DEF.
+-- This effect activates once per turn, for four of your Standby Phases (counting this as the first).
+-- "Castle of Dark Illusions" must be on the field to activate and to resolve this effect.
+-- If "Castle of Dark Illusions" is not on the field, this ATK/DEF gain disappears and this effect
+-- resets.
+--[[ __CARD_HEADER_END__ ]]
+
+--ゴースト王－パンプキング－
+function c29155212.initial_effect(c)
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetCode(EFFECT_UPDATE_ATTACK)
+	e1:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetValue(c29155212.adval)
+	c:RegisterEffect(e1)
+	local e2=e1:Clone()
+	e2:SetCode(EFFECT_UPDATE_DEFENSE)
+	c:RegisterEffect(e2)
+	local e3=Effect.CreateEffect(c)
+	e3:SetDescription(aux.Stringid(29155212,0))
+	e3:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_F)
+	e3:SetCode(EVENT_PHASE+PHASE_STANDBY)
+	e3:SetRange(LOCATION_MZONE)
+	e3:SetCountLimit(1)
+	e3:SetCondition(c29155212.atkcon)
+	e3:SetOperation(c29155212.atkop)
+	c:RegisterEffect(e3)
+end
+function c29155212.filter(c)
+	return c:IsFaceup() and c:IsCode(62121)
+end
+function c29155212.adval(e,c)
+	if Duel.IsExistingMatchingCard(c29155212.filter,0,LOCATION_ONFIELD,LOCATION_ONFIELD,1,nil) then
+		return 100+c:GetFlagEffect(29155212)*100
+	else
+		return c:GetFlagEffect(29155212)*100
+	end
+end
+function c29155212.atkcon(e,tp,eg,ep,ev,re,r,rp)
+	return Duel.GetTurnPlayer()==tp and e:GetHandler():GetFlagEffect(29155212)<4
+		and Duel.IsExistingMatchingCard(c29155212.filter,0,LOCATION_ONFIELD,LOCATION_ONFIELD,1,nil)
+end
+function c29155212.atkop(e,tp,eg,ep,ev,re,r,rp)
+	if not e:GetHandler():IsRelateToEffect(e) or not Duel.IsExistingMatchingCard(c29155212.filter,0,LOCATION_ONFIELD,LOCATION_ONFIELD,1,nil) then return end
+	e:GetHandler():RegisterFlagEffect(29155212,RESET_EVENT+RESETS_STANDARD+RESET_DISABLE,0,1)
+end

@@ -1,0 +1,55 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:45
+-- Source DB: cards.cdb
+-- Card: Master of the Flaming Dragonswords  (ID: 34160055)
+-- Type: Monster / Effect
+-- Attribute: FIRE
+-- Race: Warrior
+-- Level: 4
+-- ATK 1800 | DEF 1200
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- When a monster is Normal Summoned to your side of the field, except "Master of the Flaming
+-- Dragonswords": You can increase that monster's Level by 1, and this card gains 300 ATK until the End
+-- Phase.
+--[[ __CARD_HEADER_END__ ]]
+
+--龍炎剣の使い手
+function c34160055.initial_effect(c)
+	--atkup
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(34160055,0))
+	e1:SetCategory(CATEGORY_ATKCHANGE)
+	e1:SetType(EFFECT_TYPE_TRIGGER_O+EFFECT_TYPE_FIELD)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetCode(EVENT_SUMMON_SUCCESS)
+	e1:SetTarget(c34160055.target)
+	e1:SetOperation(c34160055.operation)
+	c:RegisterEffect(e1)
+end
+function c34160055.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	local tc=eg:GetFirst()
+	if chk==0 then return tc:IsControler(tp) and not tc:IsCode(34160055) end
+	tc:CreateEffectRelation(e)
+end
+function c34160055.operation(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	local tc=eg:GetFirst()
+	if tc:IsFaceup() and tc:IsRelateToEffect(e) then
+		local e1=Effect.CreateEffect(c)
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetCode(EFFECT_UPDATE_LEVEL)
+		e1:SetValue(1)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD)
+		tc:RegisterEffect(e1)
+		if c:IsFaceup() and c:IsRelateToEffect(e) then
+			local e2=Effect.CreateEffect(c)
+			e2:SetType(EFFECT_TYPE_SINGLE)
+			e2:SetCode(EFFECT_UPDATE_ATTACK)
+			e2:SetValue(300)
+			e2:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_DISABLE+RESET_PHASE+PHASE_END)
+			c:RegisterEffect(e2)
+		end
+	end
+end

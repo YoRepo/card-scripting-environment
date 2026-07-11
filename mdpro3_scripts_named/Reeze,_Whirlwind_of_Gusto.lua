@@ -1,0 +1,66 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:45
+-- Source DB: cards.cdb
+-- Card: Reeze, Whirlwind of Gusto  (ID: 36331074)
+-- Type: Monster / Effect
+-- Attribute: WIND
+-- Race: Psychic
+-- Level: 5
+-- ATK 1900 | DEF 1400
+-- Setcode: 0x10
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- Once per turn: You can return 1 card from your hand to the bottom of the Deck to target 1 monster
+-- your opponent controls and 1 face-up "Gusto" monster you control; switch control of both monsters.
+--[[ __CARD_HEADER_END__ ]]
+
+--ガスタの疾風 リーズ
+function c36331074.initial_effect(c)
+	--special summon
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(36331074,0))
+	e1:SetCategory(CATEGORY_CONTROL)
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e1:SetType(EFFECT_TYPE_IGNITION)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetCountLimit(1)
+	e1:SetCost(c36331074.cost)
+	e1:SetTarget(c36331074.target)
+	e1:SetOperation(c36331074.operation)
+	c:RegisterEffect(e1)
+end
+function c36331074.cost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsAbleToDeckAsCost,tp,LOCATION_HAND,0,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
+	local g=Duel.SelectMatchingCard(tp,Card.IsAbleToDeckAsCost,tp,LOCATION_HAND,0,1,1,nil)
+	Duel.SendtoDeck(g,nil,SEQ_DECKBOTTOM,REASON_COST)
+end
+function c36331074.filter1(c)
+	local tp=c:GetControler()
+	return c:IsFaceup() and c:IsSetCard(0x10)
+		and c:IsAbleToChangeControler() and Duel.GetMZoneCount(tp,c,tp,LOCATION_REASON_CONTROL)>0
+end
+function c36331074.filter2(c)
+	local tp=c:GetControler()
+	return c:IsAbleToChangeControler() and Duel.GetMZoneCount(tp,c,tp,LOCATION_REASON_CONTROL)>0
+end
+function c36331074.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return false end
+	if chk==0 then return Duel.IsExistingTarget(c36331074.filter2,tp,0,LOCATION_MZONE,1,nil)
+		and Duel.IsExistingTarget(c36331074.filter1,tp,LOCATION_MZONE,0,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_CONTROL)
+	local g1=Duel.SelectTarget(tp,c36331074.filter1,tp,LOCATION_MZONE,0,1,1,nil)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_CONTROL)
+	local g2=Duel.SelectTarget(tp,c36331074.filter2,tp,0,LOCATION_MZONE,1,1,nil)
+	g1:Merge(g2)
+	Duel.SetOperationInfo(0,CATEGORY_CONTROL,g1,2,0,0)
+end
+function c36331074.operation(e,tp,eg,ep,ev,re,r,rp)
+	local g=Duel.GetChainInfo(0,CHAININFO_TARGET_CARDS)
+	local a=g:GetFirst()
+	local b=g:GetNext()
+	if a:IsRelateToEffect(e) and b:IsRelateToEffect(e) then
+		Duel.SwapControl(a,b)
+	end
+end

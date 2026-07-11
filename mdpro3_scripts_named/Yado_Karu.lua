@@ -1,0 +1,47 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:44
+-- Source DB: cards.cdb
+-- Card: Yado Karu  (ID: 29380133)
+-- Type: Monster / Effect
+-- Attribute: WATER
+-- Race: Aqua
+-- Level: 4
+-- ATK 900 | DEF 1700
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- When this card is changed from Attack Position to Defense Position, you can place any number of
+-- cards from your hand at the bottom of your Deck in any order you desire.
+--[[ __CARD_HEADER_END__ ]]
+
+--ヤドカリュー
+function c29380133.initial_effect(c)
+	--todeck
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(29380133,0))
+	e1:SetCategory(CATEGORY_TODECK)
+	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
+	e1:SetCode(EVENT_CHANGE_POS)
+	e1:SetCondition(c29380133.condition)
+	e1:SetTarget(c29380133.target)
+	e1:SetOperation(c29380133.operation)
+	c:RegisterEffect(e1)
+end
+function c29380133.condition(e,tp,eg,ep,ev,re,r,rp)
+	return e:GetHandler():IsPreviousPosition(POS_ATTACK) and e:GetHandler():IsPosition(POS_DEFENSE)
+end
+function c29380133.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsAbleToDeck,tp,LOCATION_HAND,0,1,nil) end
+	Duel.SetOperationInfo(0,CATEGORY_TODECK,nil,1,tp,LOCATION_HAND)
+end
+function c29380133.operation(e,tp,eg,ep,ev,re,r,rp)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
+	local g=Duel.SelectMatchingCard(tp,Card.IsAbleToDeck,tp,LOCATION_HAND,0,1,99,nil)
+	local ct=Duel.SendtoDeck(g,nil,SEQ_DECKTOP,REASON_EFFECT)
+	if ct==0 then return end
+	Duel.SortDecktop(tp,tp,ct)
+	for i=1,ct do
+		local mg=Duel.GetDecktopGroup(tp,1)
+		Duel.MoveSequence(mg:GetFirst(),SEQ_DECKBOTTOM)
+	end
+end

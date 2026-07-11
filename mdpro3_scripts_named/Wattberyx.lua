@@ -1,0 +1,43 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:49
+-- Source DB: cards.cdb
+-- Card: Wattberyx  (ID: 5554990)
+-- Type: Monster / Effect / Tuner
+-- Attribute: LIGHT
+-- Race: Thunder
+-- Level: 3
+-- ATK 300 | DEF 0
+-- Setcode: 0xe
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- If this card inflicts battle damage to your opponent by a direct attack: Discard 1 random card from
+-- your opponent's hand.
+--[[ __CARD_HEADER_END__ ]]
+
+--エレキンメダイ
+function c5554990.initial_effect(c)
+	--handes
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(5554990,0))
+	e1:SetCategory(CATEGORY_HANDES_OPPO)
+	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_F)
+	e1:SetCode(EVENT_BATTLE_DAMAGE)
+	e1:SetCondition(c5554990.condition)
+	e1:SetTarget(c5554990.target)
+	e1:SetOperation(c5554990.operation)
+	c:RegisterEffect(e1)
+end
+function c5554990.condition(e,tp,eg,ep,ev,re,r,rp)
+	return ep~=tp and Duel.GetAttackTarget()==nil
+end
+function c5554990.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return true end
+	Duel.SetOperationInfo(0,CATEGORY_HANDES_OPPO,nil,0,1-tp,1)
+end
+function c5554990.operation(e,tp,eg,ep,ev,re,r,rp)
+	local g=Duel.GetFieldGroup(ep,LOCATION_HAND,0)
+	if g:GetCount()==0 then return end
+	local sg=g:RandomSelect(1-tp,1)
+	Duel.SendtoGrave(sg,REASON_DISCARD+REASON_EFFECT)
+end

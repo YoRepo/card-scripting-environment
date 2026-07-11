@@ -1,0 +1,64 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:50
+-- Source DB: cards.cdb
+-- Card: Nimble Musasabi  (ID: 57844634)
+-- Type: Monster / Effect
+-- Attribute: EARTH
+-- Race: Beast
+-- Level: 2
+-- ATK 800 | DEF 100
+-- Setcode: 0x78
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- When this card is destroyed by battle and sent to the Graveyard, inflict 500 damage to your
+-- opponent.
+-- You can also Special Summon up to 2 "Nimble Musasabi" from your Deck to your opponent's side of the
+-- field in face-up Attack Position.
+-- This card cannot be Tributed for a Tribute Summon.
+--[[ __CARD_HEADER_END__ ]]
+
+--素早いムササビ
+function c57844634.initial_effect(c)
+	--battle destroyed
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(57844634,0))
+	e1:SetCategory(CATEGORY_DAMAGE+CATEGORY_SPECIAL_SUMMON+CATEGORY_DECKDES)
+	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_F)
+	e1:SetCode(EVENT_BATTLE_DESTROYED)
+	e1:SetCondition(c57844634.condition)
+	e1:SetTarget(c57844634.target)
+	e1:SetOperation(c57844634.operation)
+	c:RegisterEffect(e1)
+	--
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_SINGLE)
+	e2:SetCode(EFFECT_UNRELEASABLE_SUM)
+	e2:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e2:SetRange(LOCATION_MZONE)
+	e2:SetValue(1)
+	c:RegisterEffect(e2)
+end
+function c57844634.condition(e,tp,eg,ep,ev,re,r,rp)
+	return e:GetHandler():IsLocation(LOCATION_GRAVE) and e:GetHandler():IsReason(REASON_BATTLE)
+end
+function c57844634.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return true end
+	Duel.SetOperationInfo(0,CATEGORY_DAMAGE,nil,0,1-tp,500)
+end
+function c57844634.filter(c,e,tp)
+	return c:IsCode(57844634) and c:IsCanBeSpecialSummoned(e,0,tp,false,false,POS_FACEUP_ATTACK,1-tp)
+end
+function c57844634.operation(e,tp,eg,ep,ev,re,r,rp)
+	local ft=Duel.GetLocationCount(1-tp,LOCATION_MZONE,tp)
+	Duel.Damage(1-tp,500,REASON_EFFECT)
+	if ft<=0 then return end
+	if Duel.IsPlayerAffectedByEffect(tp,59822133) then ft=1 end
+	local g=Duel.GetMatchingGroup(c57844634.filter,tp,LOCATION_DECK,0,nil,e,tp)
+	if g:GetCount()>0 and Duel.SelectYesNo(tp,aux.Stringid(57844634,1)) then
+		Duel.BreakEffect()
+		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
+		local sg=g:Select(tp,1,ft,nil)
+		Duel.SpecialSummon(sg,0,tp,1-tp,false,false,POS_FACEUP_ATTACK)
+	end
+end

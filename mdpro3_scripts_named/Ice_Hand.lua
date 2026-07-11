@@ -1,0 +1,57 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:53
+-- Source DB: cards.cdb
+-- Card: Ice Hand  (ID: 95929069)
+-- Type: Monster / Effect
+-- Attribute: WATER
+-- Race: Aqua
+-- Level: 4
+-- ATK 1400 | DEF 1600
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- When this card in your possession is destroyed by your opponent's card and sent to your GY: You can
+-- target 1 Spell/Trap they control; destroy that target, then you can Special Summon 1 "Fire Hand"
+-- from your Deck.
+--[[ __CARD_HEADER_END__ ]]
+
+--アイス・ハンド
+function c95929069.initial_effect(c)
+	--destroy
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(95929069,0))
+	e1:SetCategory(CATEGORY_DESTROY+CATEGORY_SPECIAL_SUMMON+CATEGORY_DECKDES)
+	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET+EFFECT_FLAG_DAMAGE_STEP)
+	e1:SetCode(EVENT_TO_GRAVE)
+	e1:SetCondition(aux.dogcon)
+	e1:SetTarget(c95929069.target)
+	e1:SetOperation(c95929069.operation)
+	c:RegisterEffect(e1)
+end
+function c95929069.dfilter(c)
+	return c:IsType(TYPE_SPELL+TYPE_TRAP)
+end
+function c95929069.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsOnField() and chkc:IsControler(1-tp) and c95929069.dfilter(chkc) end
+	if chk==0 then return Duel.IsExistingTarget(c95929069.dfilter,tp,0,LOCATION_ONFIELD,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
+	local g=Duel.SelectTarget(tp,c95929069.dfilter,tp,0,LOCATION_ONFIELD,1,1,nil)
+	Duel.SetOperationInfo(0,CATEGORY_DESTROY,g,1,0,0)
+end
+function c95929069.spfilter(c,e,tp)
+	return c:IsCode(68535320) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+end
+function c95929069.operation(e,tp,eg,ep,ev,re,r,rp)
+	local tc=Duel.GetFirstTarget()
+	if tc:IsRelateToEffect(e) and Duel.Destroy(tc,REASON_EFFECT)~=0 then
+		if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
+		local g=Duel.GetMatchingGroup(c95929069.spfilter,tp,LOCATION_DECK,0,nil,e,tp)
+		if g:GetCount()>0 and Duel.SelectYesNo(tp,aux.Stringid(95929069,1)) then
+			Duel.BreakEffect()
+			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
+			local sg=g:Select(tp,1,1,nil)
+			Duel.SpecialSummon(sg,0,tp,tp,false,false,POS_FACEUP)
+		end
+	end
+end

@@ -1,0 +1,93 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:51
+-- Source DB: cards.cdb
+-- Card: Light Barrier  (ID: 73206827)
+-- Type: Spell / Field
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- Once per turn, during your Standby Phase: Toss a coin.
+-- If the result is Tails, the following effects are negated until your next Standby Phase.
+-- ● When you Summon an "Arcana Force" monster, choose which effect to apply without tossing a coin.
+-- ● If your "Arcana Force" monster destroys an opponent's monster by battle: You gain LP equal to the
+-- destroyed monster's original ATK.
+--[[ __CARD_HEADER_END__ ]]
+
+--光の結界
+function c73206827.initial_effect(c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	c:RegisterEffect(e1)
+	--coin
+	local e2=Effect.CreateEffect(c)
+	e2:SetDescription(aux.Stringid(73206827,0))
+	e2:SetCategory(CATEGORY_COIN)
+	e2:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_F)
+	e2:SetRange(LOCATION_FZONE)
+	e2:SetCountLimit(1)
+	e2:SetCode(EVENT_PHASE+PHASE_STANDBY)
+	e2:SetCondition(c73206827.coincon)
+	e2:SetTarget(c73206827.cointg)
+	e2:SetOperation(c73206827.coinop)
+	c:RegisterEffect(e2)
+	--
+	local e3=Effect.CreateEffect(c)
+	e3:SetType(EFFECT_TYPE_FIELD)
+	e3:SetCode(73206827)
+	e3:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
+	e3:SetRange(LOCATION_FZONE)
+	e3:SetTargetRange(1,0)
+	e3:SetCondition(c73206827.effectcon)
+	c:RegisterEffect(e3)
+	--
+	local e4=Effect.CreateEffect(c)
+	e4:SetDescription(aux.Stringid(73206827,1))
+	e4:SetCategory(CATEGORY_RECOVER)
+	e4:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_F)
+	e4:SetRange(LOCATION_FZONE)
+	e4:SetCode(EVENT_BATTLE_DESTROYING)
+	e4:SetCondition(c73206827.reccon)
+	e4:SetTarget(c73206827.rectg)
+	e4:SetOperation(c73206827.recop)
+	c:RegisterEffect(e4)
+end
+function c73206827.coincon(e,tp,eg,ep,ev,re,r,rp)
+	return tp==Duel.GetTurnPlayer()
+end
+function c73206827.cointg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return true end
+	Duel.SetOperationInfo(0,CATEGORY_COIN,nil,0,tp,1)
+end
+function c73206827.coinop(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	local res=Duel.TossCoin(tp,1)
+	if res==0 then
+		c:RegisterFlagEffect(73206828,RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_STANDBY+RESET_SELF_TURN,0,2)
+	end
+end
+function c73206827.effectcon(e)
+	local c=e:GetHandler()
+	return c:GetFlagEffect(73206828)==0 or c:IsHasEffect(EFFECT_CANNOT_DISABLE)
+end
+function c73206827.reccon(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	local rc=eg:GetFirst()
+	return c73206827.effectcon(e) and rc:IsRelateToBattle() and rc:IsSetCard(0x5) and rc:IsFaceup() and rc:IsControler(tp)
+end
+function c73206827.rectg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return true end
+	local tc=eg:GetFirst():GetBattleTarget()
+	local atk=tc:GetBaseAttack()
+	if atk<0 then atk=0 end
+	Duel.SetTargetPlayer(tp)
+	Duel.SetTargetParam(atk)
+	Duel.SetOperationInfo(0,CATEGORY_RECOVER,nil,0,tp,atk)
+end
+function c73206827.recop(e,tp,eg,ep,ev,re,r,rp)
+	local p,d=Duel.GetChainInfo(0,CHAININFO_TARGET_PLAYER,CHAININFO_TARGET_PARAM)
+	if d>0 then
+		Duel.Recover(p,d,REASON_EFFECT)
+	end
+end

@@ -1,0 +1,105 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:50
+-- Source DB: cards.cdb
+-- Card: DZW - Chimera Clad  (ID: 6330307)
+-- Type: Monster / Effect
+-- Attribute: DARK
+-- Race: Fiend
+-- Level: 1
+-- ATK 0 | DEF 0
+-- Setcode: 0x107e
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- You can target 1 "Number C39" monster you control; equip this monster from your hand or your side of
+-- the field to that target.
+-- The equipped monster cannot be destroyed by battle.
+-- At the end of the Damage Step, when the equipped monster attacks an opponent's monster, but the
+-- opponent's monster was not destroyed by the battle: You can make the opponent's monster's ATK 0
+-- (even after this card leaves the field or the monster becomes unaffected by card effects), and if
+-- you do, the equipped monster can make a second attack on the same monster in a row.
+--[[ __CARD_HEADER_END__ ]]
+
+--DZW－魔装鵺妖衣
+function c6330307.initial_effect(c)
+	--equip
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(6330307,0))
+	e1:SetType(EFFECT_TYPE_IGNITION)
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e1:SetCategory(CATEGORY_EQUIP)
+	e1:SetRange(LOCATION_HAND+LOCATION_MZONE)
+	e1:SetTarget(c6330307.eqtg)
+	e1:SetOperation(c6330307.eqop)
+	c:RegisterEffect(e1)
+	--destroy sub
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_EQUIP)
+	e2:SetProperty(EFFECT_FLAG_IGNORE_IMMUNE)
+	e2:SetCode(EFFECT_INDESTRUCTABLE_BATTLE)
+	e2:SetValue(1)
+	c:RegisterEffect(e2)
+	--chain attack
+	local e3=Effect.CreateEffect(c)
+	e3:SetDescription(aux.Stringid(6330307,1))
+	e3:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_O)
+	e3:SetCode(EVENT_DAMAGE_STEP_END)
+	e3:SetRange(LOCATION_SZONE)
+	e3:SetCondition(c6330307.atkcon)
+	e3:SetOperation(c6330307.atkop)
+	c:RegisterEffect(e3)
+end
+function c6330307.filter(c)
+	return c:IsFaceup() and c:IsSetCard(0x107f) and c:IsSetCard(0x1048)
+end
+function c6330307.eqtg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsLocation(LOCATION_MZONE) and chkc:IsControler(tp) and c6330307.filter(chkc) end
+	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_SZONE)>0
+		and Duel.IsExistingTarget(c6330307.filter,tp,LOCATION_MZONE,0,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_EQUIP)
+	Duel.SelectTarget(tp,c6330307.filter,tp,LOCATION_MZONE,0,1,1,nil)
+end
+function c6330307.eqop(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	if not c:IsRelateToEffect(e) then return end
+	if c:IsLocation(LOCATION_MZONE) and c:IsFacedown() then return end
+	local tc=Duel.GetFirstTarget()
+	if Duel.GetLocationCount(tp,LOCATION_SZONE)<=0 or tc:IsControler(1-tp) or tc:IsFacedown() or not tc:IsRelateToEffect(e) or not c:CheckUniqueOnField(tp) then
+		Duel.SendtoGrave(c,REASON_EFFECT)
+		return
+	end
+	c6330307.zw_equip_monster(c,tp,tc)
+end
+function c6330307.zw_equip_monster(c,tp,tc)
+	if not Duel.Equip(tp,c,tc) then return end
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetCode(EFFECT_EQUIP_LIMIT)
+	e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
+	e1:SetReset(RESET_EVENT+RESETS_STANDARD)
+	e1:SetValue(c6330307.eqlimit)
+	e1:SetLabelObject(tc)
+	c:RegisterEffect(e1)
+end
+function c6330307.eqlimit(e,c)
+	return c==e:GetLabelObject()
+end
+function c6330307.atkcon(e,tp,eg,ep,ev,re,r,rp)
+	local a=Duel.GetAttacker()
+	local at=Duel.GetAttackTarget()
+	return at and a==e:GetHandler():GetEquipTarget() and at:IsRelateToBattle() and at:GetAttack()>0 and a:IsChainAttackable()
+end
+function c6330307.atkop(e,tp,eg,ep,ev,re,r,rp)
+	local at=Duel.GetAttackTarget()
+	local c=e:GetHandler()
+	local ec=c:GetEquipTarget()
+	if at:IsRelateToBattle() and not at:IsImmuneToEffect(e) and at:GetAttack()>0 then
+		local e1=Effect.CreateEffect(e:GetHandler())
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetCode(EFFECT_SET_ATTACK_FINAL)
+		e1:SetValue(0)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD)
+		at:RegisterEffect(e1)
+		Duel.ChainAttack(at)
+	end
+end

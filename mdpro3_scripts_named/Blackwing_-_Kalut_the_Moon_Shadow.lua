@@ -1,0 +1,56 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:52
+-- Source DB: cards.cdb
+-- Card: Blackwing - Kalut the Moon Shadow  (ID: 85215458)
+-- Type: Monster / Effect
+-- Attribute: DARK
+-- Race: Winged Beast
+-- Level: 3
+-- ATK 1400 | DEF 1000
+-- Setcode: 0x33
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- During the Damage Step, when your "Blackwing" monster battles (Quick Effect): You can send this card
+-- from your hand to the GY; that monster gains 1400 ATK until the end of this turn.
+--[[ __CARD_HEADER_END__ ]]
+
+--BF－月影のカルート
+function c85215458.initial_effect(c)
+	--atkup
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_QUICK_O)
+	e1:SetDescription(aux.Stringid(85215458,0))
+	e1:SetCategory(CATEGORY_ATKCHANGE)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:SetHintTiming(TIMING_DAMAGE_STEP)
+	e1:SetRange(LOCATION_HAND)
+	e1:SetProperty(EFFECT_FLAG_DAMAGE_STEP)
+	e1:SetCondition(c85215458.condition)
+	e1:SetCost(c85215458.cost)
+	e1:SetOperation(c85215458.operation)
+	c:RegisterEffect(e1)
+end
+function c85215458.condition(e,tp,eg,ep,ev,re,r,rp)
+	local phase=Duel.GetCurrentPhase()
+	if phase~=PHASE_DAMAGE or Duel.IsDamageCalculated() then return false end
+	local a=Duel.GetAttacker()
+	local d=Duel.GetAttackTarget()
+	return (a:IsControler(tp) and a:IsSetCard(0x33) and a:IsRelateToBattle())
+		or (d and d:IsControler(tp) and d:IsSetCard(0x33) and d:IsRelateToBattle())
+end
+function c85215458.cost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return e:GetHandler():IsAbleToGraveAsCost() end
+	Duel.SendtoGrave(e:GetHandler(),REASON_COST)
+end
+function c85215458.operation(e,tp,eg,ep,ev,re,r,rp)
+	local a=Duel.GetAttacker()
+	if Duel.GetTurnPlayer()~=tp then a=Duel.GetAttackTarget() end
+	if not a:IsRelateToBattle() then return end
+	local e1=Effect.CreateEffect(e:GetHandler())
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetCode(EFFECT_UPDATE_ATTACK)
+	e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
+	e1:SetValue(1400)
+	a:RegisterEffect(e1)
+end

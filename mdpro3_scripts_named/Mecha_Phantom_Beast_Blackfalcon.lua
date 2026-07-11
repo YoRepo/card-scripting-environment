@@ -1,0 +1,103 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:46
+-- Source DB: cards.cdb
+-- Card: Mecha Phantom Beast Blackfalcon  (ID: 4417407)
+-- Type: Monster / Effect
+-- Attribute: WIND
+-- Race: Machine
+-- Level: 4
+-- ATK 1200 | DEF 1700
+-- Setcode: 0x101b
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- When this card declares an attack: Special Summon 1 "Mecha Phantom Beast Token"
+-- (Machine-Type/WIND/Level 3/ATK 0/DEF 0).
+-- This card's Level is increased by the total Levels of all "Mecha Phantom Beast Tokens" you control.
+-- While you control a Token, this card cannot be destroyed by battle or card effects.
+-- Once per turn, during either player's turn: You can Tribute 1 Token, then target 1 monster your
+-- opponent controls; change that target to face-up Defense Position.
+--[[ __CARD_HEADER_END__ ]]
+
+--幻獣機ブラックファルコン
+function c4417407.initial_effect(c)
+	--level
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetCode(EFFECT_UPDATE_LEVEL)
+	e1:SetValue(c4417407.lvval)
+	c:RegisterEffect(e1)
+	--
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_SINGLE)
+	e2:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e2:SetRange(LOCATION_MZONE)
+	e2:SetCode(EFFECT_INDESTRUCTABLE_BATTLE)
+	e2:SetCondition(aux.tkfcon)
+	e2:SetValue(1)
+	c:RegisterEffect(e2)
+	local e3=e2:Clone()
+	e3:SetCode(EFFECT_INDESTRUCTABLE_EFFECT)
+	c:RegisterEffect(e3)
+	--token
+	local e4=Effect.CreateEffect(c)
+	e4:SetDescription(aux.Stringid(4417407,0))
+	e4:SetCategory(CATEGORY_SPECIAL_SUMMON+CATEGORY_TOKEN)
+	e4:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_F)
+	e4:SetCode(EVENT_ATTACK_ANNOUNCE)
+	e4:SetTarget(c4417407.sptg)
+	e4:SetOperation(c4417407.spop)
+	c:RegisterEffect(e4)
+	--pos
+	local e5=Effect.CreateEffect(c)
+	e5:SetDescription(aux.Stringid(4417407,1))
+	e5:SetCategory(CATEGORY_POSITION)
+	e5:SetType(EFFECT_TYPE_QUICK_O)
+	e5:SetRange(LOCATION_MZONE)
+	e5:SetCode(EVENT_FREE_CHAIN)
+	e5:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e5:SetHintTiming(TIMING_BATTLE_PHASE)
+	e5:SetCountLimit(1)
+	e5:SetCost(c4417407.poscost)
+	e5:SetTarget(c4417407.postg)
+	e5:SetOperation(c4417407.posop)
+	c:RegisterEffect(e5)
+end
+function c4417407.lvval(e,c)
+	local tp=c:GetControler()
+	return Duel.GetMatchingGroup(Card.IsCode,tp,LOCATION_MZONE,0,nil,31533705):GetSum(Card.GetLevel)
+end
+function c4417407.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return true end
+	Duel.SetOperationInfo(0,CATEGORY_TOKEN,nil,1,0,0)
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,0,0)
+end
+function c4417407.spop(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
+	if Duel.IsPlayerCanSpecialSummonMonster(tp,31533705,0x101b,TYPES_TOKEN_MONSTER,0,0,3,RACE_MACHINE,ATTRIBUTE_WIND) then
+		local token=Duel.CreateToken(tp,4417408)
+		Duel.SpecialSummon(token,0,tp,tp,false,false,POS_FACEUP)
+	end
+end
+function c4417407.poscost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.CheckReleaseGroup(tp,Card.IsType,1,nil,TYPE_TOKEN) end
+	local g=Duel.SelectReleaseGroup(tp,Card.IsType,1,1,nil,TYPE_TOKEN)
+	Duel.Release(g,REASON_COST)
+end
+function c4417407.filter(c)
+	return c:IsPosition(POS_FACEUP_ATTACK) and c:IsCanChangePosition()
+end
+function c4417407.postg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsControler(1-tp) and chkc:IsLocation(LOCATION_MZONE) and c4417407.filter(chkc) end
+	if chk==0 then return Duel.IsExistingTarget(c4417407.filter,tp,0,LOCATION_MZONE,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_POSCHANGE)
+	Duel.SelectTarget(tp,c4417407.filter,tp,0,LOCATION_MZONE,1,1,nil)
+end
+function c4417407.posop(e,tp,eg,ep,ev,re,r,rp)
+	local tc=Duel.GetFirstTarget()
+	if tc:IsRelateToEffect(e) and not tc:IsPosition(POS_FACEUP_DEFENSE) then
+		Duel.ChangePosition(tc,POS_FACEUP_DEFENSE)
+	end
+end

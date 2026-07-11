@@ -1,0 +1,40 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:46
+-- Source DB: cards.cdb
+-- Card: Fire Darts  (ID: 43061293)
+-- Type: Trap
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- You can only activate this card when you have no cards in your hand.
+-- Roll a six-sided die 3 times, and inflict damage to your opponent's Life Points equal to the total
+-- result of the die rolls x 100 points.
+--[[ __CARD_HEADER_END__ ]]
+
+--ファイアーダーツ
+function c43061293.initial_effect(c)
+	--damage
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCategory(CATEGORY_DAMAGE+CATEGORY_DICE)
+	e1:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:SetCondition(c43061293.damcon)
+	e1:SetTarget(c43061293.damtg)
+	e1:SetOperation(c43061293.damop)
+	c:RegisterEffect(e1)
+end
+function c43061293.damcon(e,tp,eg,ep,ev,re,r,rp)
+	return Duel.GetFieldGroupCount(tp,LOCATION_HAND,0)==0
+end
+function c43061293.damtg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return true end
+	Duel.SetTargetPlayer(1-tp)
+	Duel.SetOperationInfo(0,CATEGORY_DICE,nil,0,tp,3)
+	Duel.SetOperationInfo(0,CATEGORY_DAMAGE,nil,0,1-tp,0)
+end
+function c43061293.damop(e,tp,eg,ep,ev,re,r,rp)
+	local p=Duel.GetChainInfo(0,CHAININFO_TARGET_PLAYER)
+	local d1,d2,d3=Duel.TossDice(tp,3)
+	Duel.Damage(p,(d1+d2+d3)*100,REASON_EFFECT)
+end

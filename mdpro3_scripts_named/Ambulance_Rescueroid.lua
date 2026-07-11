@@ -1,0 +1,62 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:54
+-- Source DB: cards.cdb
+-- Card: Ambulance Rescueroid  (ID: 98927491)
+-- Type: Monster / Effect / Fusion
+-- Attribute: FIRE
+-- Race: Machine
+-- Level: 6
+-- ATK 2300 | DEF 1800
+-- Setcode: 0x16
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- "Rescueroid" + "Ambulanceroid"
+-- Must be Fusion Summoned.
+-- Once per turn, when a monster you control is destroyed by battle and sent to the GY: You can Special
+-- Summon that monster in Defense Position.
+--[[ __CARD_HEADER_END__ ]]
+
+--レスキューキューロイド
+function c98927491.initial_effect(c)
+	--fusion material
+	c:EnableReviveLimit()
+	aux.AddFusionProcCode2(c,24311595,36378213,true,true)
+	--spsummon condition
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE+EFFECT_FLAG_UNCOPYABLE)
+	e1:SetCode(EFFECT_SPSUMMON_CONDITION)
+	e1:SetValue(aux.fuslimit)
+	c:RegisterEffect(e1)
+	--spsummon
+	local e2=Effect.CreateEffect(c)
+	e2:SetDescription(aux.Stringid(98927491,0))
+	e2:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_O)
+	e2:SetRange(LOCATION_MZONE)
+	e2:SetCountLimit(1)
+	e2:SetCategory(CATEGORY_SPECIAL_SUMMON)
+	e2:SetCode(EVENT_BATTLE_DESTROYED)
+	e2:SetTarget(c98927491.target)
+	e2:SetOperation(c98927491.activate)
+	c:RegisterEffect(e2)
+end
+function c98927491.filter(c,e,tp)
+	return c:IsLocation(LOCATION_GRAVE) and c:IsReason(REASON_BATTLE) and c:IsPreviousControler(tp)
+		and c:IsCanBeSpecialSummoned(e,0,tp,false,false,POS_FACEUP_DEFENSE)
+end
+function c98927491.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then
+		local g=eg:Filter(c98927491.filter,nil,e,tp)
+		e:SetLabelObject(g:GetFirst())
+		return g:GetCount()~=0
+	end
+	Duel.SetTargetCard(e:GetLabelObject())
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,e:GetLabelObject(),1,0,0)
+end
+function c98927491.activate(e,tp,eg,ep,ev,re,r,rp)
+	local tc=Duel.GetFirstTarget()
+	if tc:IsRelateToEffect(e) then
+		Duel.SpecialSummon(tc,0,tp,tp,false,false,POS_FACEUP_DEFENSE)
+	end
+end

@@ -1,0 +1,43 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:50
+-- Source DB: cards.cdb
+-- Card: Skyscraper  (ID: 63035430)
+-- Type: Spell / Field
+-- Setcode: 0xf6
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- If an "Elemental HERO" monster attacks a monster that has a higher ATK, the attacking monster gains
+-- 1000 ATK during damage calculation only.
+--[[ __CARD_HEADER_END__ ]]
+
+--摩天楼 －スカイスクレイパー－
+function c63035430.initial_effect(c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	c:RegisterEffect(e1)
+	--atk up
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_FIELD)
+	e2:SetCode(EFFECT_UPDATE_ATTACK)
+	e2:SetRange(LOCATION_FZONE)
+	e2:SetTargetRange(LOCATION_MZONE,LOCATION_MZONE)
+	e2:SetCondition(c63035430.atkcon)
+	e2:SetTarget(c63035430.atktg)
+	e2:SetValue(c63035430.atkval)
+	c:RegisterEffect(e2)
+end
+function c63035430.atkcon(e)
+	return Duel.GetCurrentPhase()==PHASE_DAMAGE_CAL and Duel.GetAttackTarget()
+end
+function c63035430.atktg(e,c)
+	return c==Duel.GetAttacker() and c:IsSetCard(0x3008)
+end
+function c63035430.atkval(e,c)
+	local d=Duel.GetAttackTarget()
+	if c:GetAttack()<d:GetAttack() then
+		return 1000
+	else return 0 end
+end

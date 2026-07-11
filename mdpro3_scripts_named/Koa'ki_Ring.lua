@@ -1,0 +1,57 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:46
+-- Source DB: cards.cdb
+-- Card: Koa'ki Ring  (ID: 46089249)
+-- Type: Spell
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- Reveal 1 "Iron Core of Koa'ki Meiru" in your hand to select 1 face-up monster on the field.
+-- Destroy that monster, and both players take 1000 damage.
+--[[ __CARD_HEADER_END__ ]]
+
+--コアキリング
+function c46089249.initial_effect(c)
+	aux.AddCodeList(c,36623431)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetCategory(CATEGORY_DESTROY+CATEGORY_DAMAGE)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:SetCost(c46089249.cost)
+	e1:SetTarget(c46089249.target)
+	e1:SetOperation(c46089249.activate)
+	c:RegisterEffect(e1)
+end
+function c46089249.cfilter(c)
+	return c:IsCode(36623431) and not c:IsPublic()
+end
+function c46089249.cost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(c46089249.cfilter,tp,LOCATION_HAND,0,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_CONFIRM)
+	local g=Duel.SelectMatchingCard(tp,c46089249.cfilter,tp,LOCATION_HAND,0,1,1,nil)
+	Duel.ConfirmCards(1-tp,g)
+	Duel.ShuffleHand(tp)
+end
+function c46089249.filter(c)
+	return c:IsFaceup()
+end
+function c46089249.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsLocation(LOCATION_MZONE) and c46089249.filter(chkc) end
+	if chk==0 then return Duel.IsExistingTarget(c46089249.filter,tp,LOCATION_MZONE,LOCATION_MZONE,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
+	local g=Duel.SelectTarget(tp,c46089249.filter,tp,LOCATION_MZONE,LOCATION_MZONE,1,1,nil)
+	Duel.SetOperationInfo(0,CATEGORY_DESTROY,g,1,0,0)
+	Duel.SetOperationInfo(0,CATEGORY_DAMAGE,nil,0,PLAYER_ALL,1000)
+end
+function c46089249.activate(e,tp,eg,ep,ev,re,r,rp)
+	local tc=Duel.GetFirstTarget()
+	if tc:IsFaceup() and tc:IsRelateToEffect(e) then
+		if Duel.Destroy(tc,REASON_EFFECT)>0 then
+			Duel.Damage(1-tp,1000,REASON_EFFECT,true)
+			Duel.Damage(tp,1000,REASON_EFFECT,true)
+			Duel.RDComplete()
+		end
+	end
+end

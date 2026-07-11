@@ -1,0 +1,61 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:51
+-- Source DB: cards.cdb
+-- Card: Dragoons of Draconia  (ID: 73779005)
+-- Type: Monster / Normal / Pendulum
+-- Attribute: FIRE
+-- Race: Beast-Warrior
+-- Level: 4
+-- ATK 1800 | DEF 200
+-- Pendulum Scale: L2 / R2
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- Pendulum Scale = 2
+-- [ Pendulum Effect ]
+-- Once per turn, if a Normal Monster you control destroys an opponent's monster by battle, after
+-- damage calculation: You can add 1 Level 4 or higher Normal Monster from your Deck to your hand.
+-- ----------------------------------------
+-- [ Monster Effect ]
+-- Armed with muskets and iron spears, these mounted land troops of the Draconia Empire are feared by
+-- the Reptier Kingdom and other bordering nations.
+--[[ __CARD_HEADER_END__ ]]
+
+--ドラコニアの獣竜騎兵
+function c73779005.initial_effect(c)
+	--pendulum summon
+	aux.EnablePendulumAttribute(c)
+	--to hand
+	local e2=Effect.CreateEffect(c)
+	e2:SetCategory(CATEGORY_TOHAND+CATEGORY_SEARCH)
+	e2:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_O)
+	e2:SetCode(EVENT_BATTLED)
+	e2:SetRange(LOCATION_PZONE)
+	e2:SetCountLimit(1)
+	e2:SetCondition(c73779005.thcon)
+	e2:SetTarget(c73779005.thtg)
+	e2:SetOperation(c73779005.thop)
+	c:RegisterEffect(e2)
+end
+function c73779005.thcon(e,tp,eg,ep,ev,re,r,rp)
+	local a=Duel.GetAttacker()
+	local d=Duel.GetAttackTarget()
+	if not d then return false end
+	if d:IsControler(tp) then a,d=d,a end
+	return a:IsType(TYPE_NORMAL) and d:IsStatus(STATUS_BATTLE_DESTROYED)
+end
+function c73779005.filter(c)
+	return c:IsType(TYPE_NORMAL) and c:IsLevelAbove(4) and c:IsAbleToHand()
+end
+function c73779005.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(c73779005.filter,tp,LOCATION_DECK,0,1,nil) end
+	Duel.SetOperationInfo(0,CATEGORY_TOHAND,nil,1,tp,LOCATION_DECK)
+end
+function c73779005.thop(e,tp,eg,ep,ev,re,r,rp)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
+	local g=Duel.SelectMatchingCard(tp,c73779005.filter,tp,LOCATION_DECK,0,1,1,nil)
+	if g:GetCount()>0 then
+		Duel.SendtoHand(g,nil,REASON_EFFECT)
+		Duel.ConfirmCards(1-tp,g)
+	end
+end

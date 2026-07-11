@@ -1,0 +1,66 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:45
+-- Source DB: cards.cdb
+-- Card: Heroic Challenger - Extra Sword  (ID: 34143852)
+-- Type: Monster / Effect
+-- Attribute: EARTH
+-- Race: Warrior
+-- Level: 4
+-- ATK 1000 | DEF 1000
+-- Setcode: 0x106f
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- An Xyz Monster that was Summoned using this card as material gains this effect.
+-- ● If it is Xyz Summoned: It gains 1000 ATK.
+--[[ __CARD_HEADER_END__ ]]
+
+--H・C エクストラ・ソード
+function c34143852.initial_effect(c)
+	--effect gain
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_CONTINUOUS)
+	e1:SetCode(EVENT_BE_MATERIAL)
+	e1:SetProperty(EFFECT_FLAG_EVENT_PLAYER)
+	e1:SetCondition(c34143852.efcon)
+	e1:SetOperation(c34143852.efop)
+	c:RegisterEffect(e1)
+end
+function c34143852.efcon(e,tp,eg,ep,ev,re,r,rp)
+	return r==REASON_XYZ
+end
+function c34143852.efop(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	local rc=c:GetReasonCard()
+	local e1=Effect.CreateEffect(rc)
+	e1:SetDescription(aux.Stringid(34143852,0))
+	e1:SetCategory(CATEGORY_ATKCHANGE)
+	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_F)
+	e1:SetCode(EVENT_SPSUMMON_SUCCESS)
+	e1:SetCondition(c34143852.atkcon)
+	e1:SetOperation(c34143852.atkop)
+	e1:SetReset(RESET_EVENT+RESETS_STANDARD)
+	rc:RegisterEffect(e1,true)
+	if not rc:IsType(TYPE_EFFECT) then
+		local e2=Effect.CreateEffect(c)
+		e2:SetType(EFFECT_TYPE_SINGLE)
+		e2:SetCode(EFFECT_ADD_TYPE)
+		e2:SetValue(TYPE_EFFECT)
+		e2:SetReset(RESET_EVENT+RESETS_STANDARD)
+		rc:RegisterEffect(e2,true)
+	end
+end
+function c34143852.atkcon(e,tp,eg,ep,ev,re,r,rp)
+	return e:GetHandler():IsSummonType(SUMMON_TYPE_XYZ)
+end
+function c34143852.atkop(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	if c:IsRelateToEffect(e) and c:IsFaceup() then
+		local e1=Effect.CreateEffect(c)
+		e1:SetType(EFFECT_TYPE_SINGLE)
+		e1:SetCode(EFFECT_UPDATE_ATTACK)
+		e1:SetValue(1000)
+		e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_DISABLE)
+		c:RegisterEffect(e1)
+	end
+end

@@ -1,0 +1,48 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:53
+-- Source DB: cards.cdb
+-- Card: Imperial Tombs of Necrovalley  (ID: 90434657)
+-- Type: Trap / Counter
+-- Setcode: 0x91
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- When a Spell/Trap Card, or monster effect, is activated, while both a "Gravekeeper's" monster and
+-- "Necrovalley" are on the field: Negate the activation, and if you do, destroy it.
+-- You can only activate 1 "Imperial Tombs of Necrovalley" per turn.
+--[[ __CARD_HEADER_END__ ]]
+
+--ネクロバレーの王墓
+function c90434657.initial_effect(c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetCategory(CATEGORY_NEGATE+CATEGORY_DESTROY)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_CHAINING)
+	e1:SetCountLimit(1,90434657+EFFECT_COUNT_CODE_OATH)
+	e1:SetCondition(c90434657.condition)
+	e1:SetTarget(c90434657.target)
+	e1:SetOperation(c90434657.activate)
+	c:RegisterEffect(e1)
+end
+function c90434657.cfilter1(c)
+	return c:IsFaceup() and c:IsSetCard(0x2e)
+end
+function c90434657.condition(e,tp,eg,ep,ev,re,r,rp)
+	if not Duel.IsExistingMatchingCard(c90434657.cfilter1,tp,LOCATION_MZONE,LOCATION_MZONE,1,nil)
+		or not Duel.IsEnvironment(47355498) then return false end
+	if not Duel.IsChainNegatable(ev) then return false end
+	return re:IsActiveType(TYPE_MONSTER) or re:IsHasType(EFFECT_TYPE_ACTIVATE)
+end
+function c90434657.target(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return true end
+	Duel.SetOperationInfo(0,CATEGORY_NEGATE,eg,1,0,0)
+	if re:GetHandler():IsDestructable() and re:GetHandler():IsRelateToEffect(re) then
+		Duel.SetOperationInfo(0,CATEGORY_DESTROY,eg,1,0,0)
+	end
+end
+function c90434657.activate(e,tp,eg,ep,ev,re,r,rp)
+	if Duel.NegateActivation(ev) and re:GetHandler():IsRelateToEffect(re) then
+		Duel.Destroy(eg,REASON_EFFECT)
+	end
+end

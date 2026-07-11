@@ -1,0 +1,50 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:51
+-- Source DB: cards.cdb
+-- Card: Elemental HERO Woodsman  (ID: 75434695)
+-- Type: Monster / Effect
+-- Attribute: EARTH
+-- Race: Warrior
+-- Level: 4
+-- ATK 1000 | DEF 2000
+-- Setcode: 0x3008
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- Once per turn, during your Standby Phase: You can add 1 "Polymerization" from your Deck or Graveyard
+-- to your hand.
+--[[ __CARD_HEADER_END__ ]]
+
+--E・HERO フォレストマン
+function c75434695.initial_effect(c)
+	--to hand
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(75434695,0))
+	e1:SetCategory(CATEGORY_TOHAND+CATEGORY_SEARCH)
+	e1:SetType(EFFECT_TYPE_TRIGGER_O+EFFECT_TYPE_FIELD)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetCode(EVENT_PHASE+PHASE_STANDBY)
+	e1:SetCountLimit(1)
+	e1:SetCondition(c75434695.con)
+	e1:SetTarget(c75434695.tg)
+	e1:SetOperation(c75434695.op)
+	c:RegisterEffect(e1)
+end
+function c75434695.con(e,tp,eg,ep,ev,re,r,rp)
+	return Duel.GetTurnPlayer()==tp
+end
+function c75434695.filter(c)
+	return c:IsCode(24094653) and c:IsAbleToHand()
+end
+function c75434695.tg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return Duel.IsExistingMatchingCard(c75434695.filter,tp,LOCATION_DECK+LOCATION_GRAVE,0,1,nil) end
+	Duel.SetOperationInfo(0,CATEGORY_TOHAND,nil,1,tp,LOCATION_DECK+LOCATION_GRAVE)
+end
+function c75434695.op(e,tp,eg,ep,ev,re,r,rp)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
+	local g=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(c75434695.filter),tp,LOCATION_DECK+LOCATION_GRAVE,0,1,1,nil)
+	if g:GetCount()>0 then
+		Duel.SendtoHand(g,nil,REASON_EFFECT)
+		Duel.ConfirmCards(1-tp,g)
+	end
+end

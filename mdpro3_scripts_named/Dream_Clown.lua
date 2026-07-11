@@ -1,0 +1,47 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:42
+-- Source DB: cards.cdb
+-- Card: Dream Clown  (ID: 13215230)
+-- Type: Monster / Effect
+-- Attribute: EARTH
+-- Race: Warrior
+-- Level: 3
+-- ATK 1200 | DEF 900
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- If this Attack Position card is changed to face-up Defense Position: Target 1 monster your opponent
+-- controls; destroy that target.
+--[[ __CARD_HEADER_END__ ]]
+
+--ドリーム・ピエロ
+function c13215230.initial_effect(c)
+	--destroy
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(13215230,0))
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e1:SetCategory(CATEGORY_DESTROY)
+	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_F)
+	e1:SetCode(EVENT_CHANGE_POS)
+	e1:SetCondition(c13215230.condition)
+	e1:SetTarget(c13215230.target)
+	e1:SetOperation(c13215230.operation)
+	c:RegisterEffect(e1)
+end
+function c13215230.condition(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	return c:IsPreviousPosition(POS_ATTACK) and c:IsFaceup() and c:IsDefensePos()
+end
+function c13215230.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsLocation(LOCATION_MZONE) and chkc:IsControler(1-tp) end
+	if chk==0 then return true end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
+	local g=Duel.SelectTarget(tp,aux.TRUE,tp,0,LOCATION_MZONE,1,1,nil)
+	Duel.SetOperationInfo(0,CATEGORY_DESTROY,g,g:GetCount(),0,0)
+end
+function c13215230.operation(e,tp,eg,ep,ev,re,r,rp)
+	local tc=Duel.GetFirstTarget()
+	if tc and tc:IsRelateToEffect(e) then
+		Duel.Destroy(tc,REASON_EFFECT)
+	end
+end

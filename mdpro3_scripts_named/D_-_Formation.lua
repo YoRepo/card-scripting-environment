@@ -1,0 +1,88 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:51
+-- Source DB: cards.cdb
+-- Card: D - Formation  (ID: 74329404)
+-- Type: Spell / Continuous
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- Each time a face-up "Destiny HERO" monster(s) you control is destroyed, place 1 D Counter on this
+-- card for each of those monsters.
+-- When you Normal or Special Summon a monster during your Main Phase: You can send this card with 2 or
+-- more D Counters to the Graveyard; add up to 2 cards from your Deck and/or Graveyard to your hand,
+-- with the same name as that monster.
+--[[ __CARD_HEADER_END__ ]]
+
+--D－フォーメーション
+function c74329404.initial_effect(c)
+	c:EnableCounterPermit(0x1c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	c:RegisterEffect(e1)
+	--counter
+	local e2=Effect.CreateEffect(c)
+	e2:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
+	e2:SetRange(LOCATION_SZONE)
+	e2:SetCode(EVENT_DESTROYED)
+	e2:SetOperation(c74329404.ctop)
+	c:RegisterEffect(e2)
+	--search
+	local e3=Effect.CreateEffect(c)
+	e3:SetDescription(aux.Stringid(74329404,0))
+	e3:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_O)
+	e3:SetCategory(CATEGORY_TOHAND+CATEGORY_SEARCH)
+	e3:SetRange(LOCATION_SZONE)
+	e3:SetCode(EVENT_SUMMON_SUCCESS)
+	e3:SetCondition(c74329404.thcon)
+	e3:SetCost(c74329404.thcost)
+	e3:SetTarget(c74329404.thtg)
+	e3:SetOperation(c74329404.thop)
+	c:RegisterEffect(e3)
+	local e4=e3:Clone()
+	e4:SetCode(EVENT_SPSUMMON_SUCCESS)
+	c:RegisterEffect(e4)
+end
+function c74329404.ctfilter(c,tp)
+	return c:IsPreviousControler(tp) and c:IsPreviousLocation(LOCATION_MZONE) and c:IsPreviousPosition(POS_FACEUP) and c:IsPreviousSetCard(0xc008)
+end
+function c74329404.ctop(e,tp,eg,ep,ev,re,r,rp)
+	local ct=eg:FilterCount(c74329404.ctfilter,nil,tp)
+	if ct>0 then
+		e:GetHandler():AddCounter(0x1c,ct)
+	end
+end
+function c74329404.thcon(e,tp,eg,ep,ev,re,r,rp)
+	local ph=Duel.GetCurrentPhase()
+	return Duel.GetTurnPlayer()==tp and (ph==PHASE_MAIN1 or ph==PHASE_MAIN2)
+end
+function c74329404.thcost(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return e:GetHandler():IsAbleToGraveAsCost() and e:GetHandler():GetCounter(0x1c)>=2 end
+	Duel.SendtoGrave(e:GetHandler(),REASON_COST)
+end
+function c74329404.filter1(c,e,tp)
+	return c:IsFaceup() and (not e or c:IsRelateToEffect(e))
+		and Duel.IsExistingMatchingCard(c74329404.filter2,tp,LOCATION_DECK+LOCATION_GRAVE,0,1,nil,c:GetCode())
+end
+function c74329404.filter2(c,code)
+	return c:IsCode(code) and c:IsAbleToHand()
+end
+function c74329404.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return eg:IsExists(c74329404.filter1,1,nil,nil,tp) end
+	Duel.SetTargetCard(eg)
+	Duel.SetOperationInfo(0,CATEGORY_TOHAND,nil,1,tp,LOCATION_DECK+LOCATION_GRAVE)
+end
+function c74329404.thop(e,tp,eg,ep,ev,re,r,rp)
+	local g=eg:Filter(c74329404.filter1,nil,e,tp)
+	if g:GetCount()==0 then return end
+	if g:GetCount()>1 then
+		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TARGET)
+		g=g:Select(tp,1,1,nil)
+	end
+	local tc=g:GetFirst()
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
+	local ag=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(c74329404.filter2),tp,LOCATION_DECK+LOCATION_GRAVE,0,1,2,nil,tc:GetCode())
+	Duel.SendtoHand(ag,nil,REASON_EFFECT)
+	Duel.ConfirmCards(1-tp,ag)
+end

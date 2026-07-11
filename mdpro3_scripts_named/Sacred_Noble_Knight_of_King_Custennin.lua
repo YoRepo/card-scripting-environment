@@ -1,0 +1,104 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:52
+-- Source DB: cards.cdb
+-- Card: Sacred Noble Knight of King Custennin  (ID: 78876707)
+-- Type: Monster / Effect / Xyz
+-- Attribute: LIGHT
+-- Race: Warrior
+-- Rank: 4
+-- ATK 1500 | DEF 2500
+-- Setcode: 0x107a
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- 2+ Level 4 "Noble Knight" monsters
+-- You can detach any number of materials from this card, then target that many cards your opponent
+-- controls; return them to the hand.
+-- If this card is destroyed by battle or card effect and sent to the GY: You can Special Summon 1
+-- "Noble Knight" Xyz Monster from your Extra Deck, except "Sacred Noble Knight of King Custennin", and
+-- if you do, attach this card from the GY to that monster as material.
+-- (This is treated as an Xyz Summon.)
+-- You can only use each effect of "Sacred Noble Knight of King Custennin" once per turn.
+--[[ __CARD_HEADER_END__ ]]
+
+--神聖騎士王コルネウス
+function c78876707.initial_effect(c)
+	--xyz summon
+	aux.AddXyzProcedure(c,aux.FilterBoolFunction(Card.IsSetCard,0x107a),4,2,nil,nil,99)
+	c:EnableReviveLimit()
+	--to hand
+	local e1=Effect.CreateEffect(c)
+	e1:SetDescription(aux.Stringid(78876707,0))
+	e1:SetCategory(CATEGORY_TOHAND)
+	e1:SetType(EFFECT_TYPE_IGNITION)
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e1:SetRange(LOCATION_MZONE)
+	e1:SetCountLimit(1,78876707)
+	e1:SetCost(c78876707.thcost)
+	e1:SetTarget(c78876707.thtg)
+	e1:SetOperation(c78876707.thop)
+	c:RegisterEffect(e1)
+	--special summon
+	local e2=Effect.CreateEffect(c)
+	e2:SetDescription(aux.Stringid(78876707,1))
+	e2:SetCategory(CATEGORY_SPECIAL_SUMMON)
+	e2:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
+	e2:SetProperty(EFFECT_FLAG_DELAY)
+	e2:SetCode(EVENT_TO_GRAVE)
+	e2:SetCondition(c78876707.spcon)
+	e2:SetTarget(c78876707.sptg)
+	e2:SetOperation(c78876707.spop)
+	c:RegisterEffect(e2)
+end
+function c78876707.thcost(e,tp,eg,ep,ev,re,r,rp,chk)
+	local c=e:GetHandler()
+	if chk==0 then return c:CheckRemoveOverlayCard(tp,1,REASON_COST) end
+	local rt=Duel.GetTargetCount(Card.IsAbleToHand,tp,0,LOCATION_ONFIELD,nil)
+	local ct=c:RemoveOverlayCard(tp,1,rt,REASON_COST)
+	e:SetLabel(ct)
+end
+function c78876707.thtg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsOnField() and chkc:IsControler(1-tp) and chkc:IsAbleToHand() end
+	if chk==0 then return Duel.IsExistingTarget(Card.IsAbleToHand,tp,0,LOCATION_ONFIELD,1,nil) end
+	local ct=e:GetLabel()
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_RTOHAND)
+	local tg=Duel.SelectTarget(tp,Card.IsAbleToHand,tp,0,LOCATION_ONFIELD,ct,ct,nil)
+	Duel.SetOperationInfo(0,CATEGORY_TOHAND,tg,ct,0,0)
+end
+function c78876707.thop(e,tp,eg,ep,ev,re,r,rp)
+	local rg=Duel.GetChainInfo(0,CHAININFO_TARGET_CARDS):Filter(Card.IsRelateToEffect,nil,e)
+	if rg:GetCount()>0 then
+		Duel.SendtoHand(rg,nil,REASON_EFFECT)
+	end
+end
+function c78876707.spcon(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	return c:IsReason(REASON_DESTROY) and c:IsReason(REASON_BATTLE+REASON_EFFECT)
+end
+function c78876707.spfilter(c,e,tp)
+	return c:IsSetCard(0x107a) and not c:IsCode(78876707) and c:IsType(TYPE_XYZ)
+		and c:IsCanBeSpecialSummoned(e,SUMMON_TYPE_XYZ,tp,false,false) and Duel.GetLocationCountFromEx(tp,tp,nil,c)>0
+end
+function c78876707.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
+	if chk==0 then return aux.MustMaterialCheck(nil,tp,EFFECT_MUST_BE_XMATERIAL)
+		and Duel.IsExistingMatchingCard(c78876707.spfilter,tp,LOCATION_EXTRA,0,1,nil,e,tp)
+		and e:GetHandler():IsCanOverlay() end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_EXTRA)
+	Duel.SetOperationInfo(0,CATEGORY_LEAVE_GRAVE,e:GetHandler(),1,tp,0)
+end
+function c78876707.spop(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	if not aux.MustMaterialCheck(nil,tp,EFFECT_MUST_BE_XMATERIAL) then return end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
+	local g=Duel.SelectMatchingCard(tp,c78876707.spfilter,tp,LOCATION_EXTRA,0,1,1,nil,e,tp)
+	local tc=g:GetFirst()
+	if tc then
+		tc:SetMaterial(nil)
+		if Duel.SpecialSummon(tc,SUMMON_TYPE_XYZ,tp,tp,false,false,POS_FACEUP)>0 then
+			tc:CompleteProcedure()
+			if c:IsRelateToEffect(e) and c:IsCanOverlay() then
+				Duel.Overlay(tc,Group.FromCards(c))
+			end
+		end
+	end
+end

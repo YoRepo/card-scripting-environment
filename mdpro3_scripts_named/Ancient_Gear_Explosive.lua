@@ -1,0 +1,44 @@
+--[[ __CARD_HEADER_START__ ]]
+-- Generated: 2026-07-12T02:17:46
+-- Source DB: cards.cdb
+-- Card: Ancient Gear Explosive  (ID: 4446672)
+-- Type: Spell
+-- Setcode: 0x7
+-- Scope: OCG / TCG
+--
+-- Effect Text:
+-- Target 1 "Ancient Gear" monster you control; destroy it, and if you do, inflict damage to your
+-- opponent equal to half its original ATK.
+--[[ __CARD_HEADER_END__ ]]
+
+--古代の機械爆弾
+function c4446672.initial_effect(c)
+	--Activate
+	local e1=Effect.CreateEffect(c)
+	e1:SetCategory(CATEGORY_DESTROY+CATEGORY_DAMAGE)
+	e1:SetType(EFFECT_TYPE_ACTIVATE)
+	e1:SetProperty(EFFECT_FLAG_CARD_TARGET)
+	e1:SetCode(EVENT_FREE_CHAIN)
+	e1:SetTarget(c4446672.target)
+	e1:SetOperation(c4446672.activate)
+	c:RegisterEffect(e1)
+end
+function c4446672.filter(c)
+	return c:IsFaceup() and c:IsSetCard(0x7)
+end
+function c4446672.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
+	if chkc then return chkc:IsLocation(LOCATION_MZONE) and chkc:IsControler(tp) and c4446672.filter(chkc) end
+	if chk==0 then return Duel.IsExistingTarget(c4446672.filter,tp,LOCATION_MZONE,0,1,nil) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
+	local g=Duel.SelectTarget(tp,c4446672.filter,tp,LOCATION_MZONE,0,1,1,nil)
+	Duel.SetOperationInfo(0,CATEGORY_DESTROY,g,1,0,0)
+	Duel.SetOperationInfo(0,CATEGORY_DAMAGE,nil,0,1-tp,0)
+end
+function c4446672.activate(e,tp,eg,ep,ev,re,r,rp)
+	local tc=Duel.GetFirstTarget()
+	if tc:IsRelateToEffect(e) then
+		if Duel.Destroy(tc,REASON_EFFECT)>0 then
+			Duel.Damage(1-tp,math.floor(tc:GetBaseAttack()/2),REASON_EFFECT)
+		end
+	end
+end
