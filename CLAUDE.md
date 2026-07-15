@@ -1,6 +1,6 @@
 # card-scripting-environment
 
-The ground-truth corpus for Yu-Gi-Oh (mdpro3/EDOPro) card scripting.
+The ground-truth corpus for Yu-Gi-Oh (mdpro3, ygopro lineage) card scripting.
 
 ## Layout
 
@@ -12,6 +12,9 @@ The ground-truth corpus for Yu-Gi-Oh (mdpro3/EDOPro) card scripting.
   friends). These use the modern idiom (`local s,id,o=GetID()`, numbered
   `--(n)` effect comments, `aux.Stringid(id,n)`) and are the **house-style
   emission target** for generated scripts.
+- `reference/ygopro/` — the **ygopro** engine source (MyCard lineage; NOT
+  EdoPro, which diverged) — authoritative for function SIGNATURES / arity.
+  See its `README.md` and `Website-TEST/docs/script-builder/api-signature-integrity.md`.
 
 ## How this repo is used
 
