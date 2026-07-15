@@ -26,10 +26,15 @@ The ground-truth corpus for Yu-Gi-Oh (mdpro3, ygopro lineage) card scripting.
    contains a low-code card-script-builder spec
    (`docs/script-builder/` — start at its `README.md`). Every catalog
    entry, emission rule, and fixture in that spec must be grounded in this
-   corpus. If your task is to make a card declarative ("card per day"
-   workflow), follow `Website-TEST/docs/script-builder/expansion-playbook.md`
-   — it includes the grep-based sibling-finding and frequency-test steps
-   that run against this repo.
+   corpus. If your task is the "card per day" loop, follow
+   `Website-TEST/docs/script-builder/workbench-playbook.md` (the v2 successor;
+   the old `expansion-playbook.md` is archived — do not follow it, it catalogs
+   effect shapes, which v2 abandoned). It includes the grep-based
+   sibling-finding and frequency-test steps that run against this repo. Any
+   session that authors an API signature must additionally follow
+   `Website-TEST/docs/script-builder/api-signature-integrity.md` — read the
+   true signature from `reference/ygopro/` (see the Layout note above) and pass
+   the gate (`node tests/validate_api_sigs.js` in `Website-TEST`).
 
 Useful corpus queries (`rg` from the repo root):
 

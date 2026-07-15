@@ -68,16 +68,18 @@ def classify_method(recv):
 def mine(corpus_root):
     functions = {}
 
-    def touch(ns, name, card, line, argc):
+    def touch(ns, name, card, line, argc, form):
         key = ns + "." + name
         f = functions.setdefault(key, {
             "ns": ns, "name": name, "freq": 0,
-            "argc_min": None, "argc_max": None, "examples": []
+            "argc_min": None, "argc_max": None, "examples": [],
+            "calls": [], "has_colon": False,
         })
         f["freq"] += 1
+        if form == "colon":
+            f["has_colon"] = True
         if argc is not None:
-            f["argc_min"] = argc if f["argc_min"] is None else min(f["argc_min"], argc)
-            f["argc_max"] = argc if f["argc_max"] is None else max(f["argc_max"], argc)
+            f["calls"].append((form, argc))
         if len(f["examples"]) < 3:
             snippet = line.strip()
             if len(snippet) <= 120 and all(e["card"] != card for e in f["examples"]):
@@ -104,14 +106,30 @@ def mine(corpus_root):
                         ns = "aux"
                     after = stripped[m.end():m.end() + 1]
                     argc = count_args(stripped, m.end()) if after == "(" else None
-                    touch(ns, name, card, line, argc)
+                    touch(ns, name, card, line, argc, "dot")
                 for m in METHOD.finditer(stripped):
                     recv, name = m.group(1), m.group(2)
                     if recv in ("Duel", "aux", "Auxiliary", "bit", "string", "table", "math"):
                         continue
                     ns = classify_method(recv)
                     argc = count_args(stripped, m.end() - 1)
-                    touch(ns, name, card, line, argc)
+                    touch(ns, name, card, line, argc, "colon")
+
+    # Receiver-aware argc. A Card/Group/Effect METHOD called in DOT form
+    # (e.g. Group.Merge(sg, tg)) passes its receiver as the first in-paren arg,
+    # so the studio sig — which excludes the receiver — is over-counted by one.
+    # Only methods do this, detected by ever being called colon-form (g:Merge());
+    # a static constructor like Effect.CreateEffect(c) is never colon-form, so
+    # its dot-form args are counted as-is.
+    METHOD_NS = ("Card", "Group", "Effect")
+    for f in functions.values():
+        for form, argc in f["calls"]:
+            eff = argc
+            if form == "dot" and f["ns"] in METHOD_NS and f["has_colon"] and eff > 0:
+                eff -= 1
+            f["argc_min"] = eff if f["argc_min"] is None else min(f["argc_min"], eff)
+            f["argc_max"] = eff if f["argc_max"] is None else max(f["argc_max"], eff)
+        del f["calls"], f["has_colon"]
     return functions
 
 
