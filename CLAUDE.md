@@ -5,7 +5,7 @@ The ground-truth corpus for Yu-Gi-Oh (mdpro3, ygopro lineage) card scripting.
 ## Layout
 
 - `mdpro3_scripts_named/` — the Lua script of **every real card**
-  (13,460 files), named by card name. Each file opens with a structured
+  (13,531 files; 13,549 including the 18 `custom_cards/`), named by card name. Each file opens with a structured
   header comment (`__CARD_HEADER_START__` … `__CARD_HEADER_END__`) carrying
   the card's name, ID, type line, stats, setcode, and effect text.
 - `custom_cards/` — house custom scripts (the Crimsonheart archetype and
@@ -13,7 +13,12 @@ The ground-truth corpus for Yu-Gi-Oh (mdpro3, ygopro lineage) card scripting.
   `--(n)` effect comments, `aux.Stringid(id,n)`) and are the **house-style
   emission target** for generated scripts.
 - `reference/ygopro/` — the **ygopro** engine source (MyCard lineage; NOT
-  EdoPro, which diverged) — authoritative for function SIGNATURES / arity.
+  EdoPro, which diverged) — authoritative for function SIGNATURES / arity, and
+  the source read for return types, optional defaults, viewpoint meaning, and
+  required-non-nil params. `Website-TEST/tests/mine_reqargs.js` mines its C
+  source into `reqargs.json` (the required-non-nil map behind the studio's RED
+  filter-forward tier) — the sole engine-source miner, distinct from the
+  corpus-script miners (`tools/mine_api.py`, `tools/mine_constants.py`).
   See its `README.md` and `Website-TEST/docs/script-builder/api-signature-integrity.md`.
 
 ## How this repo is used
