@@ -28,6 +28,7 @@ FAMILIES = [
     "PHASE_", "TIMINGS_", "TIMING_", "HINTMSG_", "HINT_",
     "RESETS_", "RESET_", "STATUS_", "SUMMON_TYPE_", "TYPE_",
     "RACE_", "ATTRIBUTE_", "CHAININFO_", "SEQ_",
+    "ACTIVITY_",
 ]
 
 
