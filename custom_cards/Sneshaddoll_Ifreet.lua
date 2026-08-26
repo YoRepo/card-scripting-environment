@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
 -- Card: Sneshaddoll Ifreet  (ID: 99810000)
--- Type: Monster / Effect
+-- Type: Monster / Effect / Flip
 -- Attribute: FIRE
 -- Race: Sea Serpent
 -- Level 4
