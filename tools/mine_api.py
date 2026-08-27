@@ -23,6 +23,12 @@ import sys
 
 STATIC_NS = re.compile(r"\b(Duel|aux|Auxiliary|bit|Effect|Group|Card)\.([A-Za-z_][A-Za-z0-9_]*)")
 METHOD = re.compile(r"\b([A-Za-z_][A-Za-z0-9_]*)\s*:\s*([A-Za-z_][A-Za-z0-9_]*)\s*\(")
+# A method called on another call's RESULT (g:GetFirst():IsPreviousLocation(...)):
+# METHOD needs an identifier before the colon, so these ~16.7k sites were
+# invisible and every mined freq was a lower bound. The receiver's TYPE is not
+# in the text, so a chained site is attributed after the scan — see mine().
+# (Index-result receivers `]:Name(` — 22 corpus sites — stay invisible.)
+CHAINED = re.compile(r"\)\s*:\s*([A-Za-z_][A-Za-z0-9_]*)\s*\(")
 
 # Receiver-name heuristics for classifying method namespaces. Authored docs
 # can always override; unclassified methods land in "obj".
@@ -67,6 +73,7 @@ def classify_method(recv):
 
 def mine(corpus_root):
     functions = {}
+    chained = []  # (name, card, line, argc) — attributed after the scan
 
     def touch(ns, name, card, line, argc, form):
         key = ns + "." + name
@@ -114,6 +121,27 @@ def mine(corpus_root):
                     ns = classify_method(recv)
                     argc = count_args(stripped, m.end() - 1)
                     touch(ns, name, card, line, argc, "colon")
+                for m in CHAINED.finditer(stripped):
+                    chained.append((m.group(1), card, line,
+                                    count_args(stripped, m.end() - 1)))
+
+    # Chained-receiver sites: the namespace has to come from the bare method
+    # name, and only where that is not a guess — attributed to the ONE
+    # Card/Group/Effect entry owning the name when exactly one does, to "obj"
+    # (the unclassified home the studio's bare-name lookup already resolves)
+    # when none does, and NOWHERE when the name collides across namespaces
+    # (GetOwner): a wrong count is worse than a low one. Owners are
+    # snapshotted from the receiver-classified scan before any chained touch,
+    # so resolution cannot feed itself.
+    owners = {}
+    for f in functions.values():
+        if f["ns"] in ("Card", "Group", "Effect"):
+            owners.setdefault(f["name"], set()).add(f["ns"])
+    for name, card, line, argc in chained:
+        nss = owners.get(name)
+        if nss and len(nss) > 1:
+            continue
+        touch(next(iter(nss)) if nss else "obj", name, card, line, argc, "colon")
 
     # Receiver-aware argc. A Card/Group/Effect METHOD called in DOT form
     # (e.g. Group.Merge(sg, tg)) passes its receiver as the first in-paren arg,
