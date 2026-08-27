@@ -7,6 +7,15 @@ static/data/scripter/api.json): for each function the corpus uses — its
 namespace, call frequency, observed argument-count range, and up to three
 real usage examples (card + line).
 
+`freq` counts every textual use (calls AND bare references); `ptr_freq`
+is the subset where the corpus passes the function BY NAME in argument
+position — a bare `Ns.Name` followed by `,` or `)`, the filter/summing
+callback idiom (`mg:Filter(Card.IsCanBeRitualMaterial,tc,tc)`). Emitted
+only when non-zero. It powers the studio's pointer-form offering
+(`Core.pointerFns`); a value position that isn't an argument (`local
+f=Card.IsFaceup` at end of line) is deliberately not counted — an
+undercount is honest, a miscount is not.
+
 Authored fields (`doc`: signature, parameter docs, description, tags) are
 NEVER produced or touched here — when --merge points at an existing
 api.json, its doc fields are preserved and only the mined data is
@@ -37,6 +46,9 @@ GROUP_RECV = re.compile(r"^(g|sg|mg|dg|rg|hg|eg|exg|og|bg|cg|tg|fg|gg)\d*$")
 EFFECT_RECV = re.compile(r"^(e|te|re|ce|se|oe|pe|ge|ae|be|de|fe)\d*$")
 
 CALL_OPEN = re.compile(r"\(")
+
+# Argument-position pointer use: the bare name's next token is `,` or `)`.
+PTR_AT = re.compile(r"\s*[,)]")
 
 
 def count_args(line, open_idx):
@@ -75,14 +87,16 @@ def mine(corpus_root):
     functions = {}
     chained = []  # (name, card, line, argc) — attributed after the scan
 
-    def touch(ns, name, card, line, argc, form):
+    def touch(ns, name, card, line, argc, form, ptr=False):
         key = ns + "." + name
         f = functions.setdefault(key, {
-            "ns": ns, "name": name, "freq": 0,
+            "ns": ns, "name": name, "freq": 0, "ptr": 0,
             "argc_min": None, "argc_max": None, "examples": [],
             "calls": [], "has_colon": False,
         })
         f["freq"] += 1
+        if ptr:
+            f["ptr"] += 1
         if form == "colon":
             f["has_colon"] = True
         if argc is not None:
@@ -113,7 +127,8 @@ def mine(corpus_root):
                         ns = "aux"
                     after = stripped[m.end():m.end() + 1]
                     argc = count_args(stripped, m.end()) if after == "(" else None
-                    touch(ns, name, card, line, argc, "dot")
+                    ptr = argc is None and PTR_AT.match(stripped, m.end()) is not None
+                    touch(ns, name, card, line, argc, "dot", ptr)
                 for m in METHOD.finditer(stripped):
                     recv, name = m.group(1), m.group(2)
                     if recv in ("Duel", "aux", "Auxiliary", "bit", "string", "table", "math"):
@@ -194,6 +209,8 @@ def main():
             "argc": [f["argc_min"], f["argc_max"]],
             "examples": f["examples"],
         }
+        if f["ptr"]:
+            entry["ptr_freq"] = f["ptr"]
         if doc:
             entry["doc"] = doc
         out_functions.append(entry)
