@@ -56,6 +56,7 @@ function s.initial_effect(c)
 	--(2) name becomes "Harpie Lady" while on the field or in the GY
 	aux.EnableChangeCode(c,76812113,LOCATION_MZONE+LOCATION_GRAVE)
 end
+--Summoning Condition (from the Extra Deck: Fusion Summon, or the SS proc below, which the engine does not check against this)
 function s.splimit(e,se,sp,st)
 	return not e:GetHandler():IsLocation(LOCATION_EXTRA) or aux.fuslimit(e,se,sp,st)
 end
