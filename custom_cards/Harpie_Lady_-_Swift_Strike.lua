@@ -12,7 +12,7 @@
 --
 -- Effect Text:
 -- Must first be either Fusion Summoned, or Special Summoned (from your Extra Deck) by revealing 1 Set
--- Spell/Trap you control that mentions a "Harpie" monster. You can only Special Summon "Harpie Lady -
+-- Spell/Trap you control that mentions a "Harpie" card. You can only Special Summon "Harpie Lady -
 -- Swift Strike" once per turn this way.
 -- ① When this card is Special Summoned: Target 1 Spell/Trap on the field; destroy it.
 -- ② This card's name becomes "Harpie Lady" while on the field or in the GY.
@@ -32,7 +32,7 @@ function s.initial_effect(c)
 	e0:SetCode(EFFECT_SPSUMMON_CONDITION)
 	e0:SetValue(s.splimit)
 	c:RegisterEffect(e0)
-	--SS proc (from Extra Deck): reveal 1 Set S/T you control that mentions a "Harpie" monster
+	--SS proc (from Extra Deck): reveal 1 Set S/T you control that mentions a "Harpie" card
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD)
 	e1:SetCode(EFFECT_SPSUMMON_PROC)
@@ -60,14 +60,15 @@ end
 function s.splimit(e,se,sp,st)
 	return not e:GetHandler():IsLocation(LOCATION_EXTRA) or aux.fuslimit(e,se,sp,st)
 end
---SS proc (reveal 1 Set Spell/Trap you control that mentions a "Harpie" monster)
---naming a "Harpie" monster counts (cf. D - Force). No real Harpie S/T registers AddSetNameMonsterList(c,0x64);
---those naming "Harpie Lady"/"Harpie Lady Sisters" register 12206212, and "Harpie's Feather Storm" (87639778)
---and "Hysteric Party" (77778835) register nothing, so they are listed by code
+--SS proc (reveal 1 Set Spell/Trap you control that mentions a "Harpie" card)
+--the archetype, or any "Harpie" card by name, counts (cf. Toon World the Perfect World's "Toon" card filter).
+--No real S/T registers AddSetNameMonsterList(c,0x64); those naming "Harpie Lady"/"Harpie Lady Sisters" register
+--12206212. "Gryphon Wing" (55608151), "Harpie's Feather Storm" (87639778), "Hysteric Party" (77778835) and
+--"Hysteric Sign" (19337371) register nothing, so they are listed by code
 function s.spcfilter(c)
 	return c:IsFacedown() and c:IsType(TYPE_SPELL+TYPE_TRAP)
 		and (aux.IsSetNameMonsterListed(c,0x64) or aux.IsCodeListed(c,76812113) or aux.IsCodeListed(c,12206212)
-			or c:IsCode(87639778,77778835))
+			or aux.IsCodeListed(c,18144506) or c:IsCode(55608151,87639778,77778835,19337371))
 end
 function s.spcon(e,c)
 	if c==nil then return true end
