@@ -12,8 +12,8 @@
 --
 -- Effect Text:
 -- Must first be either Fusion Summoned, or Special Summoned (from your Extra Deck) by revealing 1 Set
--- Spell/Trap you control that mentions "Harpie Lady" or "Harpie Lady Sisters" in its text. You can
--- only Special Summon "Harpie Lady - Swift Strike" once per turn this way.
+-- Spell/Trap you control that mentions a "Harpie" monster. You can only Special Summon "Harpie Lady -
+-- Swift Strike" once per turn this way.
 -- ① When this card is Special Summoned: Target 1 Spell/Trap on the field; destroy it.
 -- ② This card's name becomes "Harpie Lady" while on the field or in the GY.
 --[[ __CARD_HEADER_END__ ]]
@@ -21,7 +21,7 @@
 --Harpie Lady - Swift Strike
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.AddCodeList(c,76812113,12206212)
+	aux.AddSetNameMonsterList(c,0x64)
 	c:EnableReviveLimit()
 	--fusion material: 1 Winged Beast monster + 1 Warrior monster
 	aux.AddFusionProcFun2(c,aux.FilterBoolFunction(Card.IsRace,RACE_WINDBEAST),aux.FilterBoolFunction(Card.IsRace,RACE_WARRIOR),true)
@@ -32,7 +32,7 @@ function s.initial_effect(c)
 	e0:SetCode(EFFECT_SPSUMMON_CONDITION)
 	e0:SetValue(s.splimit)
 	c:RegisterEffect(e0)
-	--SS proc (from Extra Deck): reveal 1 Set S/T you control that mentions "Harpie Lady"/"Harpie Lady Sisters"
+	--SS proc (from Extra Deck): reveal 1 Set S/T you control that mentions a "Harpie" monster
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD)
 	e1:SetCode(EFFECT_SPSUMMON_PROC)
@@ -60,11 +60,14 @@ end
 function s.splimit(e,se,sp,st)
 	return not e:GetHandler():IsLocation(LOCATION_EXTRA) or aux.fuslimit(e,se,sp,st)
 end
---SS proc (reveal 1 Set Spell/Trap you control that mentions "Harpie Lady" or "Harpie Lady Sisters")
---"Hysteric Party" (77778835) mentions "Harpie Lady" but its script registers no code list
+--SS proc (reveal 1 Set Spell/Trap you control that mentions a "Harpie" monster)
+--naming a "Harpie" monster counts (cf. D - Force). No real Harpie S/T registers AddSetNameMonsterList(c,0x64);
+--those naming "Harpie Lady"/"Harpie Lady Sisters" register 12206212, and "Harpie's Feather Storm" (87639778)
+--and "Hysteric Party" (77778835) register nothing, so they are listed by code
 function s.spcfilter(c)
 	return c:IsFacedown() and c:IsType(TYPE_SPELL+TYPE_TRAP)
-		and (aux.IsCodeListed(c,76812113) or aux.IsCodeListed(c,12206212) or c:IsCode(77778835))
+		and (aux.IsSetNameMonsterListed(c,0x64) or aux.IsCodeListed(c,76812113) or aux.IsCodeListed(c,12206212)
+			or c:IsCode(87639778,77778835))
 end
 function s.spcon(e,c)
 	if c==nil then return true end
