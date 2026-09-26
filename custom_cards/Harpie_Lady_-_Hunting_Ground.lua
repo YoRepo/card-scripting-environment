@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
 -- Generated: 2026-09-25T00:00:00
--- Card: Harpie Lady - Swift Strike  (ID: 211190)
+-- Card: Harpie Lady - Hunting Ground  (ID: 99810010)
 -- Type: Monster / Effect / Fusion
 -- Attribute: WIND
 -- Race: Winged Beast
@@ -13,12 +13,12 @@
 -- Effect Text:
 -- Must first be either Fusion Summoned, or Special Summoned (from your Extra Deck) by revealing 1 Set
 -- Spell/Trap you control that mentions a "Harpie" card. You can only Special Summon "Harpie Lady -
--- Swift Strike" once per turn this way.
+-- Hunting Ground" once per turn this way.
 -- ① When this card is Special Summoned: Target 1 Spell/Trap on the field; destroy it.
 -- ② This card's name becomes "Harpie Lady" while on the field or in the GY.
 --[[ __CARD_HEADER_END__ ]]
 
---Harpie Lady - Swift Strike
+--Harpie Lady - Hunting Ground
 local s,id,o=GetID()
 function s.initial_effect(c)
 	aux.AddSetNameMonsterList(c,0x64)
