@@ -46,6 +46,7 @@ function s.initial_effect(c)
 	--(1) name becomes "Harpie Lady" while on the field or in the GY
 	aux.EnableChangeCode(c,76812113,LOCATION_MZONE+LOCATION_GRAVE)
 	--(2) while you control 3+ "Harpie Lady": their ATK becomes 2700
+	--(continuous "becomes" is EFFECT_SET_ATTACK, cf. Mokey Mokey Smackdown: continuous boosts still apply on top)
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_FIELD)
 	e2:SetCode(EFFECT_SET_ATTACK)
@@ -97,7 +98,6 @@ end
 function s.hlcon(e)
 	return Duel.IsExistingMatchingCard(s.hlfilter,e:GetHandlerPlayer(),LOCATION_MZONE,0,3,nil)
 end
---continuous "becomes" is EFFECT_SET_ATTACK (cf. Mokey Mokey Smackdown): continuous boosts still apply on top
 function s.atktg(e,c)
 	return s.hlfilter(c)
 end

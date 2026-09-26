@@ -65,6 +65,7 @@ end
 --No real S/T registers AddSetNameMonsterList(c,0x64); those naming "Harpie Lady"/"Harpie Lady Sisters" register
 --12206212. "Gryphon Wing" (55608151), "Harpie's Feather Storm" (87639778), "Hysteric Party" (77778835) and
 --"Hysteric Sign" (19337371) register nothing, so they are listed by code
+--(the same list is in Harpie Lady - Feather Dust / Ecstasy Spark: keep the three in sync)
 function s.spcfilter(c)
 	return c:IsFacedown() and c:IsType(TYPE_SPELL+TYPE_TRAP)
 		and (aux.IsSetNameMonsterListed(c,0x64) or aux.IsCodeListed(c,76812113) or aux.IsCodeListed(c,12206212)

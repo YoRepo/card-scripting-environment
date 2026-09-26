@@ -51,8 +51,8 @@ function s.initial_effect(c)
 	e1:SetTarget(s.sptg)
 	e1:SetOperation(s.spop)
 	c:RegisterEffect(e1)
-	--(1) (Quick Effect) when opponent activates a card or effect: return 1 "Harpie Lady" you control to the hand/Extra
-	--Deck; negate the activation, then if you control 2+ "Harpie Lady", banish 1 card from their field or GY
+	--(1) (Quick Effect) when opponent activates a card or effect: return 1 "Harpie Lady" you control to the
+	--hand/Extra Deck; negate the activation, then if you control 2+ "Harpie Lady", banish 1 card from their field or GY
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,1))
 	e2:SetCategory(CATEGORY_NEGATE+CATEGORY_REMOVE)
