@@ -16,10 +16,10 @@
 -- Chained Dragon" once per turn. You can only use each effect of "Harpie's Pet Chained Dragon" once
 -- per turn.
 -- ① When your opponent activates a card or effect (Quick Effect): You can return 1 "Harpie Lady" you
--- control to the hand or Extra Deck; negate the activation, then if you control 2 or more "Harpie
--- Lady", banish 1 card from your opponent's field or GY.
--- ② If this card leaves the field because of an opponent's card: You can Special Summon 2 "Harpie"
--- monsters with different types from your Banishment.
+-- control to the hand or Extra Deck; negate the activation, then you can banish 1 card from your
+-- opponent's field and/or GY for every "Harpie Lady" you control.
+-- ② If this card leaves the field because of an opponent's card: You can Special Summon up to 2
+-- "Harpie" monsters with different types from your Banishment.
 --[[ __CARD_HEADER_END__ ]]
 
 --Harpie's Pet Chained Dragon
@@ -52,7 +52,7 @@ function s.initial_effect(c)
 	e1:SetOperation(s.spop)
 	c:RegisterEffect(e1)
 	--(1) (Quick Effect) when opponent activates a card or effect: return 1 "Harpie Lady" you control to the
-	--hand/Extra Deck; negate the activation, then if you control 2+ "Harpie Lady", banish 1 card from their field or GY
+	--hand/Extra Deck; negate the activation, then you can banish 1 card from their field/GY per "Harpie Lady" you control
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,1))
 	e2:SetCategory(CATEGORY_NEGATE+CATEGORY_REMOVE)
@@ -66,7 +66,7 @@ function s.initial_effect(c)
 	e2:SetTarget(s.negtg)
 	e2:SetOperation(s.negop)
 	c:RegisterEffect(e2)
-	--(2) if this card leaves the field because of an opponent's card: SS 2 "Harpie" monsters with different Types from banishment
+	--(2) if this card leaves the field because of an opponent's card: SS up to 2 "Harpie" monsters with different Types from banishment
 	local e3=Effect.CreateEffect(c)
 	e3:SetDescription(aux.Stringid(id,2))
 	e3:SetCategory(CATEGORY_SPECIAL_SUMMON)
@@ -139,21 +139,18 @@ end
 function s.negtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
 	Duel.SetOperationInfo(0,CATEGORY_NEGATE,eg,1,0,0)
-	if Duel.IsExistingMatchingCard(s.hlfilter,tp,LOCATION_MZONE,0,2,nil) then
-		Duel.SetOperationInfo(0,CATEGORY_REMOVE,nil,1,1-tp,LOCATION_ONFIELD+LOCATION_GRAVE)
-	end
 end
 function s.negop(e,tp,eg,ep,ev,re,r,rp)
 	--"then": only if the activation was negated; "Harpie Lady" are counted now, after the cost
-	if Duel.NegateActivation(ev) and Duel.IsExistingMatchingCard(s.hlfilter,tp,LOCATION_MZONE,0,2,nil) then
-		local g=Duel.GetMatchingGroup(aux.NecroValleyFilter(Card.IsAbleToRemove),tp,0,LOCATION_ONFIELD+LOCATION_GRAVE,nil)
-		if #g>0 then
-			Duel.BreakEffect()
-			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
-			local sg=g:Select(tp,1,1,nil)
-			Duel.HintSelection(sg)
-			Duel.Remove(sg,POS_FACEUP,REASON_EFFECT)
-		end
+	if not Duel.NegateActivation(ev) then return end
+	local ct=Duel.GetMatchingGroupCount(s.hlfilter,tp,LOCATION_MZONE,0,nil)
+	local g=Duel.GetMatchingGroup(aux.NecroValleyFilter(Card.IsAbleToRemove),tp,0,LOCATION_ONFIELD+LOCATION_GRAVE,nil)
+	if ct>0 and #g>0 and Duel.SelectYesNo(tp,aux.Stringid(id,3)) then
+		Duel.BreakEffect()
+		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
+		local sg=g:Select(tp,math.min(ct,#g),math.min(ct,#g),nil)
+		Duel.HintSelection(sg)
+		Duel.Remove(sg,POS_FACEUP,REASON_EFFECT)
 	end
 end
 --(2)
@@ -166,18 +163,17 @@ function s.spfilter2(c,e,tp)
 	return c:IsFaceup() and c:IsSetCard(0x64) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function s.sptg2(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then
-		local g=Duel.GetMatchingGroup(s.spfilter2,tp,LOCATION_REMOVED,0,nil,e,tp)
-		return Duel.GetLocationCount(tp,LOCATION_MZONE)>1 and not Duel.IsPlayerAffectedByEffect(tp,59822133)
-			and g:GetClassCount(Card.GetRace)>1
-	end
-	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,2,tp,LOCATION_REMOVED)
+	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+		and Duel.IsExistingMatchingCard(s.spfilter2,tp,LOCATION_REMOVED,0,1,nil,e,tp) end
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_REMOVED)
 end
 function s.spop2(e,tp,eg,ep,ev,re,r,rp)
-	if Duel.GetLocationCount(tp,LOCATION_MZONE)<2 or Duel.IsPlayerAffectedByEffect(tp,59822133) then return end
+	local ft=math.min(Duel.GetLocationCount(tp,LOCATION_MZONE),2)
+	if ft<=0 then return end
+	if Duel.IsPlayerAffectedByEffect(tp,59822133) then ft=1 end
 	local g=Duel.GetMatchingGroup(s.spfilter2,tp,LOCATION_REMOVED,0,nil,e,tp)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
-	local sg=g:SelectSubGroup(tp,aux.drccheck,false,2,2)
+	local sg=g:SelectSubGroup(tp,aux.drccheck,false,1,ft)
 	if sg then
 		Duel.SpecialSummon(sg,0,tp,tp,false,false,POS_FACEUP)
 	end
