@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
 -- Generated: 2026-09-26T00:00:00
--- Card: Harpie Lady - Feather Dust  (ID: 99810040)
+-- Card: Harpie Lady - Feather Dust  (ID: 99810020)
 -- Type: Monster / Effect / Fusion
 -- Attribute: WIND
 -- Race: Winged Beast
