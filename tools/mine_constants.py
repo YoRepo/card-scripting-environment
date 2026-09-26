@@ -27,7 +27,7 @@ FAMILIES = [
     "EVENT_", "CATEGORY_", "LOCATION_", "POS_", "REASON_",
     "PHASE_", "TIMINGS_", "TIMING_", "HINTMSG_", "HINT_",
     "RESETS_", "RESET_", "STATUS_", "SUMMON_INFO_", "SUMMON_TYPE_", "TYPE_",
-    "RACE_", "ATTRIBUTE_", "CHAININFO_", "SEQ_",
+    "RACE_", "ATTRIBUTE_", "CHAININFO_", "CHINT_", "SEQ_",
     "ACTIVITY_",
 ]
 
