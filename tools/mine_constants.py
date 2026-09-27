@@ -28,8 +28,19 @@ FAMILIES = [
     "PHASE_", "TIMINGS_", "TIMING_", "HINTMSG_", "HINT_",
     "RESETS_", "RESET_", "STATUS_", "SUMMON_INFO_", "SUMMON_TYPE_", "TYPE_",
     "RACE_", "ATTRIBUTE_", "CHAININFO_", "SEQ_",
-    "ACTIVITY_",
+    "ACTIVITY_", "CHINT_",
 ]
+
+# Per-family floor, overriding --min-freq. A family whose membership is a
+# small closed enum in the engine's own constant.lua is mined down to a
+# single occurrence, because the studio renders the family as a PICKER: a
+# member the global floor drops is a value the widget silently fails to
+# offer, and the author who needs it is the one card that uses it. CHINT_
+# is six values (constant.lua:745-750) and Final Countdown is the only
+# card in the corpus that reaches for CHINT_TURN.
+FAMILY_FLOOR = {
+    "CHINT": 1,
+}
 
 
 def family_of(token):
@@ -79,7 +90,7 @@ def main():
     families = {}
     for token, freq in counts.items():
         fam = family_of(token)
-        if fam is None or freq < args.min_freq:
+        if fam is None or freq < FAMILY_FLOOR.get(fam, args.min_freq):
             continue
         entry = {"id": token, "freq": freq}
         if token in authored:
