@@ -28,7 +28,7 @@ FAMILIES = [
     "PHASE_", "TIMINGS_", "TIMING_", "HINTMSG_", "HINT_",
     "RESETS_", "RESET_", "STATUS_", "SUMMON_INFO_", "SUMMON_TYPE_", "TYPE_",
     "RACE_", "ATTRIBUTE_", "CHAININFO_", "SEQ_",
-    "ACTIVITY_", "CHINT_",
+    "ACTIVITY_", "CHINT_", "LINK_MARKER_",
 ]
 
 # Per-family floor, overriding --min-freq. A family whose membership is a
@@ -40,6 +40,28 @@ FAMILIES = [
 # card in the corpus that reaches for CHINT_TURN.
 FAMILY_FLOOR = {
     "CHINT": 1,
+}
+
+# Per-family SEED: the full membership of a closed engine enum, spelled out
+# so the picker offers all of it even where the corpus names only part.
+# FAMILY_FLOOR cannot reach these — it lowers the threshold on tokens the
+# sweep SAW, and a member no card ever names is counted zero, so no floor
+# admits it. LINK_MARKER_ is the case that forced the distinction: the eight
+# arrows are a symmetric set (constant.lua:206-213) and the corpus names only
+# five of them, never the three that point downward, because a card that
+# cares which way it points reads Card.GetLinkedZone as a bitmask instead of
+# naming arrows. A picker offering ←→↑↖↗ and not ↙↓↘ is a picker that is
+# wrong about the game, so the enum is seeded from constant.lua and the
+# unused members simply carry freq 0 (they sort last, after every member the
+# corpus does use). Seed a family here only when constant.lua really closes
+# it; anything open-ended stays corpus-driven.
+FAMILY_SEED = {
+    # constant.lua:206-213 — 0x001..0x100, one bit per arrow
+    "LINK_MARKER": [
+        "LINK_MARKER_BOTTOM_LEFT", "LINK_MARKER_BOTTOM", "LINK_MARKER_BOTTOM_RIGHT",
+        "LINK_MARKER_LEFT", "LINK_MARKER_RIGHT",
+        "LINK_MARKER_TOP_LEFT", "LINK_MARKER_TOP", "LINK_MARKER_TOP_RIGHT",
+    ],
 }
 
 
@@ -88,14 +110,27 @@ def main():
             pass
 
     families = {}
+    seeded = {fam: dict.fromkeys(members, 0)
+              for fam, members in FAMILY_SEED.items()}
     for token, freq in counts.items():
         fam = family_of(token)
-        if fam is None or freq < FAMILY_FLOOR.get(fam, args.min_freq):
+        if fam is None:
+            continue
+        if fam in seeded and token in seeded[fam]:
+            seeded[fam][token] = freq
+            continue
+        if freq < FAMILY_FLOOR.get(fam, args.min_freq):
             continue
         entry = {"id": token, "freq": freq}
         if token in authored:
             entry["desc"] = authored[token]
         families.setdefault(fam, []).append(entry)
+    for fam, members in seeded.items():
+        for token, freq in members.items():
+            entry = {"id": token, "freq": freq}
+            if token in authored:
+                entry["desc"] = authored[token]
+            families.setdefault(fam, []).append(entry)
     for fam in families:
         families[fam].sort(key=lambda x: (-x["freq"], x["id"]))
 
