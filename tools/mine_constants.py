@@ -28,7 +28,7 @@ FAMILIES = [
     "PHASE_", "TIMINGS_", "TIMING_", "HINTMSG_", "HINT_",
     "RESETS_", "RESET_", "STATUS_", "SUMMON_INFO_", "SUMMON_TYPE_", "TYPE_",
     "RACE_", "ATTRIBUTE_", "CHAININFO_", "SEQ_",
-    "ACTIVITY_", "CHINT_",
+    "ACTIVITY_", "CHINT_", "LINK_MARKER_",
 ]
 
 # Per-family floor, overriding --min-freq. A family whose membership is a
@@ -40,7 +40,39 @@ FAMILIES = [
 # card in the corpus that reaches for CHINT_TURN.
 FAMILY_FLOOR = {
     "CHINT": 1,
+    "LINK_MARKER": 1,
 }
+
+# Families SEEDED from the engine's own constant.lua, not only from corpus use.
+# FAMILY_FLOOR's reasoning one notch further: a member the corpus happens never
+# to pass is still a value the PICKER must offer, and a closed geometric enum is
+# the case where that bites — the corpus writes five of the eight link markers
+# (nothing points BOTTOM at anything, because the only cards doing arrow
+# arithmetic read a monster ABOVE the zone they care about), so a corpus-only
+# LINK_MARKER family would hand the studio a compass with three directions
+# missing and no name to look up. Seeding reads the vendored constant.lua for
+# the family's prefix and mines in every member it declares, at freq 0 when the
+# corpus never writes it — honest in the dock card ("used 0x in the corpus") and
+# last in every frequency ranking. Only for families that ARE a closed enum in
+# the engine; anything open stays corpus-only, the living-language rule.
+FAMILY_SEED = ["LINK_MARKER"]
+CONSTANT_LUA = os.path.join("reference", "ygopro", "ygopro-scripts", "constant.lua")
+
+
+def seed_tokens(corpus_root, family):
+    """Every constant of `family` declared in the vendored engine constant.lua."""
+    path = os.path.join(corpus_root, CONSTANT_LUA)
+    out = []
+    try:
+        with open(path, encoding="utf-8", errors="replace") as fh:
+            for line in fh:
+                code = line.split("--")[0]
+                m = re.match(r"\s*(" + family + r"_[A-Z0-9_]+)\s*=", code)
+                if m:
+                    out.append(m.group(1))
+    except OSError:
+        pass
+    return out
 
 
 def family_of(token):
@@ -87,10 +119,19 @@ def main():
         except (OSError, ValueError):
             pass
 
+    for family in FAMILY_SEED:
+        seeded = seed_tokens(args.corpus, family)
+        if not seeded:
+            print(f"warning: no {family}_ constants found in {CONSTANT_LUA}", file=sys.stderr)
+        for token in seeded:
+            counts.setdefault(token, 0)
+
     families = {}
     for token, freq in counts.items():
         fam = family_of(token)
-        if fam is None or freq < FAMILY_FLOOR.get(fam, args.min_freq):
+        if fam is None:
+            continue
+        if freq < FAMILY_FLOOR.get(fam, args.min_freq) and fam not in FAMILY_SEED:
             continue
         entry = {"id": token, "freq": freq}
         if token in authored:
