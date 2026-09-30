@@ -28,7 +28,7 @@ FAMILIES = [
     "PHASE_", "TIMINGS_", "TIMING_", "HINTMSG_", "HINT_",
     "RESETS_", "RESET_", "STATUS_", "SUMMON_INFO_", "SUMMON_TYPE_", "TYPE_",
     "RACE_", "ATTRIBUTE_", "CHAININFO_", "SEQ_",
-    "ACTIVITY_", "CHINT_",
+    "ACTIVITY_", "CHINT_", "LINK_MARKER_",
 ]
 
 # Per-family floor, overriding --min-freq. A family whose membership is a
@@ -40,7 +40,42 @@ FAMILIES = [
 # card in the corpus that reaches for CHINT_TURN.
 FAMILY_FLOOR = {
     "CHINT": 1,
+    "LINK_MARKER": 1,
 }
+
+# Families whose membership is SEEDED FROM THE ENGINE'S OWN constant.lua
+# rather than from corpus occurrences alone. FAMILY_FLOOR above lowers the
+# threshold for a token the corpus DOES write; it cannot conjure one the
+# corpus never writes at all, and for a closed enum rendered as a PICKER
+# that gap is the same silent failure the floor exists to prevent — worse,
+# because nothing in the output hints the member is missing. Two families
+# were provably short: CHINT_DESC (constant.lua:750) is declared and used
+# by no corpus card, and LINK_MARKER_BOTTOM_LEFT / _BOTTOM / _BOTTOM_RIGHT
+# (constant.lua:206-208) are three of the eight link arrows — the whole
+# DOWNWARD row of the marker grid, unreachable in the picker. A seeded
+# member the corpus never uses carries "freq": 0, which is the honest count
+# and sorts it last in the picker.
+CLOSED_ENUM = {"CHINT", "LINK_MARKER"}
+
+DECL = re.compile(r"^([A-Z][A-Z0-9_]{2,})\s*=", re.M)
+
+
+def seeded_members(corpus_root):
+    """Every constant a CLOSED_ENUM family declares in the vendored constant.lua."""
+    path = os.path.join(corpus_root, "reference", "ygopro",
+                        "ygopro-scripts", "constant.lua")
+    out = set()
+    try:
+        text = open(path, encoding="utf-8", errors="replace").read()
+    except OSError:
+        sys.stderr.write(f"warning: {path} unreadable; closed enums not seeded\n")
+        return out
+    for m in DECL.finditer(text):
+        token = m.group(1)
+        fam = family_of(token)
+        if fam in CLOSED_ENUM:
+            out.add(token)
+    return out
 
 
 def family_of(token):
@@ -87,10 +122,16 @@ def main():
         except (OSError, ValueError):
             pass
 
+    forced = seeded_members(args.corpus)
+    for token in forced:
+        counts.setdefault(token, 0)
+
     families = {}
     for token, freq in counts.items():
         fam = family_of(token)
-        if fam is None or freq < FAMILY_FLOOR.get(fam, args.min_freq):
+        if fam is None:
+            continue
+        if token not in forced and freq < FAMILY_FLOOR.get(fam, args.min_freq):
             continue
         entry = {"id": token, "freq": freq}
         if token in authored:
