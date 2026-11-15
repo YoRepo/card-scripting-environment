@@ -12,8 +12,8 @@
 -- this card to the GY, then target 1 "Ink Shader" monster you control; Special Summon 1 "Ink-Shaded"
 -- Fusion Monster from your Extra Deck with a lower Level than that target (this is treated as a Fusion
 -- Summon).
--- ③ If this card is in your GY: You can banish this card; Set 1 "Ink-Shade" Spell/Trap directly from
--- your Deck, except an Equip Spell.
+-- ③ If this card is in your GY: You can banish this card; Set 1 "Ink-Shade" Spell/Trap from your Deck
+-- or banishment, except an Equip Spell.
 --[[ __CARD_HEADER_END__ ]]
 
 --Ink-Shade Calligrapher's Wand
@@ -61,7 +61,7 @@ function s.initial_effect(c)
 	e4:SetCode(EVENT_SPSUMMON_SUCCESS)
 	e4:SetCondition(s.spcon)
 	c:RegisterEffect(e4)
-	--(3) from GY: banish this card; Set 1 "Ink-Shade" Spell/Trap directly from your Deck, except an Equip Spell
+	--(3) from GY: banish this card; Set 1 "Ink-Shade" Spell/Trap from your Deck or banishment, except an Equip Spell
 	--(shares the once-per-turn with (2); a Spell's effect in the GY is an Ignition Effect)
 	local e5=Effect.CreateEffect(c)
 	e5:SetDescription(aux.Stringid(id,1))
@@ -139,16 +139,18 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 --(3)
---"except an Equip Spell": only Spells are Equip cards in the Deck
+--"from your Deck or banishment": a banished card must be face-up (cf. Exosister Karmael, Ryu-Ge End).
+--"except an Equip Spell": only Spells are Equip cards there, so this card cannot Set itself back
 function s.setfilter(c)
-	return c:IsSetCard(0x961) and c:IsType(TYPE_SPELL+TYPE_TRAP) and not c:IsType(TYPE_EQUIP) and c:IsSSetable()
+	return c:IsFaceupEx() and c:IsSetCard(0x961) and c:IsType(TYPE_SPELL+TYPE_TRAP) and not c:IsType(TYPE_EQUIP)
+		and c:IsSSetable()
 end
 function s.settg(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.IsExistingMatchingCard(s.setfilter,tp,LOCATION_DECK,0,1,nil) end
+	if chk==0 then return Duel.IsExistingMatchingCard(s.setfilter,tp,LOCATION_DECK+LOCATION_REMOVED,0,1,nil) end
 end
 function s.setop(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SET)
-	local g=Duel.SelectMatchingCard(tp,s.setfilter,tp,LOCATION_DECK,0,1,1,nil)
+	local g=Duel.SelectMatchingCard(tp,s.setfilter,tp,LOCATION_DECK+LOCATION_REMOVED,0,1,1,nil)
 	if #g>0 then
 		Duel.SSet(tp,g)
 	end

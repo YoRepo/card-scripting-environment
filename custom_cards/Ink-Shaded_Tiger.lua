@@ -13,9 +13,10 @@
 -- Effect Text:
 -- Must either be Fusion Summoned, or Special Summoned (from your Extra Deck) by sending 1 Spell/Trap
 -- from the field to the GY while you control a Level 7 or higher "Ink Shader" monster. You can only
--- Special Summon "Ink-Shaded Tiger(s)" once per turn.
--- ① During the Main Phase (Quick Effect): You can return 1 "Ink Shader" monster you control to the
--- hand or Extra Deck; this card gains the ATK it had on the field.
+-- Special Summon "Ink-Shaded Tiger(s)" once per turn. You can only use 1 "Ink-Shaded Tiger" effect per
+-- turn and only once that turn.
+-- ① (Quick Effect): You can return 1 "Ink Shader" monster you control to the hand or Extra Deck; this
+-- card gains the ATK it had on the field.
 -- ② If this card is in your GY (Quick Effect): You can return this card to the Extra Deck, then target
 -- 1 of your banished "Ink-Shade" Spell/Traps; Set it.
 --[[ __CARD_HEADER_END__ ]]
@@ -46,16 +47,21 @@ function s.initial_effect(c)
 	e1:SetTarget(s.sptg)
 	e1:SetOperation(s.spop)
 	c:RegisterEffect(e1)
-	--(1) (Quick Effect) during the Main Phase: return 1 "Ink Shader" monster you control to the hand/Extra Deck;
-	--this card gains the ATK that monster had on the field
+	--you can only use 1 "Ink-Shaded Tiger" effect per turn, and only once that turn: (1) and (2) share
+	--one count (cf. Odd-Eyes Solblaze Dragon)
+	--(1) (Quick Effect): return 1 "Ink Shader" monster you control to the hand/Extra Deck; this card gains the
+	--ATK that monster had on the field. No timing in the text and all it does is raise ATK, so it can also be
+	--used in the Damage Step, up to damage calculation (cf. Flying Red Carp, Cyber Dragon Nova)
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,0))
 	e2:SetCategory(CATEGORY_ATKCHANGE)
 	e2:SetType(EFFECT_TYPE_QUICK_O)
 	e2:SetCode(EVENT_FREE_CHAIN)
+	e2:SetProperty(EFFECT_FLAG_DAMAGE_STEP)
 	e2:SetRange(LOCATION_MZONE)
-	e2:SetHintTiming(0,TIMINGS_CHECK_MONSTER+TIMING_MAIN_END)
-	e2:SetCondition(s.atkcon)
+	e2:SetHintTiming(TIMING_DAMAGE_STEP,TIMING_DAMAGE_STEP+TIMINGS_CHECK_MONSTER+TIMING_END_PHASE)
+	e2:SetCountLimit(1,id)
+	e2:SetCondition(aux.dscon)
 	e2:SetCost(s.atkcost)
 	e2:SetOperation(s.atkop)
 	c:RegisterEffect(e2)
@@ -68,6 +74,7 @@ function s.initial_effect(c)
 	e3:SetProperty(EFFECT_FLAG_CARD_TARGET)
 	e3:SetRange(LOCATION_GRAVE)
 	e3:SetHintTiming(0,TIMINGS_CHECK_MONSTER+TIMING_END_PHASE)
+	e3:SetCountLimit(1,id)
 	e3:SetCost(s.setcost)
 	e3:SetTarget(s.settg)
 	e3:SetOperation(s.setop)
@@ -103,9 +110,6 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp,c)
 	Duel.SendtoGrave(tc,REASON_SPSUMMON)
 end
 --(1)
-function s.atkcon(e,tp,eg,ep,ev,re,r,rp)
-	return Duel.IsMainPhase()
-end
 --"to the hand or Extra Deck": IsAbleToHandAsCost is false for every Extra Deck monster, so a Synchro/Fusion
 --"Ink Shader" monster is checked with IsAbleToExtraAsCost; SendtoHand sends it to the Extra Deck
 --(cf. Harpie's Pet Chained Dragon)

@@ -13,7 +13,8 @@
 -- Effect Text:
 -- Must either be Fusion Summoned, or Special Summoned (from your Extra Deck) by sending 1 Spell/Trap
 -- from the field to the GY while you control a Level 5 or higher "Ink Shader" monster. You can only
--- Special Summon "Ink-Shaded Deer(s)" once per turn.
+-- Special Summon "Ink-Shaded Deer(s)" once per turn. You can only use 1 "Ink-Shaded Deer" effect per
+-- turn and only once that turn.
 -- ① If this card is Special Summoned: You can target 1 monster in either GY; Special Summon it.
 -- ② "Ink Shader" monsters you control cannot be destroyed by battle.
 -- ③ If this card is in your GY (Quick Effect): You can return this card to the Extra Deck; add 1
@@ -46,6 +47,8 @@ function s.initial_effect(c)
 	e1:SetTarget(s.sptg)
 	e1:SetOperation(s.spop)
 	c:RegisterEffect(e1)
+	--you can only use 1 "Ink-Shaded Deer" effect per turn, and only once that turn: (1) and (3) share
+	--one count (cf. Odd-Eyes Solblaze Dragon)
 	--(1) if this card is Special Summoned: target 1 monster in either GY; Special Summon it
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,0))
@@ -53,6 +56,7 @@ function s.initial_effect(c)
 	e2:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e2:SetProperty(EFFECT_FLAG_DELAY+EFFECT_FLAG_CARD_TARGET)
 	e2:SetCode(EVENT_SPSUMMON_SUCCESS)
+	e2:SetCountLimit(1,id)
 	e2:SetTarget(s.rvtg)
 	e2:SetOperation(s.rvop)
 	c:RegisterEffect(e2)
@@ -73,6 +77,7 @@ function s.initial_effect(c)
 	e4:SetCode(EVENT_FREE_CHAIN)
 	e4:SetRange(LOCATION_GRAVE)
 	e4:SetHintTiming(0,TIMINGS_CHECK_MONSTER+TIMING_END_PHASE)
+	e4:SetCountLimit(1,id)
 	e4:SetCost(s.thcost)
 	e4:SetTarget(s.thtg)
 	e4:SetOperation(s.thop)
