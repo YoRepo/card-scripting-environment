@@ -13,8 +13,8 @@
 -- Effect Text:
 -- Must either be Fusion Summoned, or Special Summoned (from your Extra Deck) by sending 1 Spell/Trap
 -- from the field to the GY while you control a Level 3 or higher "Ink Shader" monster. You can only
--- Special Summon "Ink-Shaded Butterfly(s)" once per turn. You can only use 1 "Ink-Shaded Butterfly"
--- effect per turn and only once that turn.
+-- Special Summon "Ink-Shaded Butterfly(s)" once per turn. You can only use either the ① or ③ effect
+-- of "Ink-Shaded Butterfly" per turn, and only once that turn.
 -- ① If this card is Special Summoned: You can send 1 "Ink-Shade" Spell/Trap from your Deck to the GY.
 -- ② "Ink Shader" monsters you control cannot be destroyed by card effects.
 -- ③ If this card is in your GY (Quick Effect): You can return this card to the Extra Deck; add 1 "Ink
@@ -47,8 +47,8 @@ function s.initial_effect(c)
 	e1:SetTarget(s.sptg)
 	e1:SetOperation(s.spop)
 	c:RegisterEffect(e1)
-	--you can only use 1 "Ink-Shaded Butterfly" effect per turn, and only once that turn: (1) and (3) share
-	--one count (cf. Odd-Eyes Solblaze Dragon)
+	--you can only use either the (1) or (3) effect per turn, and only once that turn: they share one count
+	--(cf. Odd-Eyes Solblaze Dragon); the continuous (2) is not limited
 	--(1) if this card is Special Summoned: send 1 "Ink-Shade" Spell/Trap from Deck to GY
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,0))

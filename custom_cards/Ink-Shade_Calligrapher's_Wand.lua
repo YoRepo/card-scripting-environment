@@ -13,7 +13,7 @@
 -- Fusion Monster from your Extra Deck with a lower Level than that target (this is treated as a Fusion
 -- Summon).
 -- ③ If this card is in your GY: You can banish this card; Set 1 "Ink-Shade" Spell/Trap from your Deck
--- or banishment, except an Equip Spell.
+-- or Banishment, except an Equip Spell.
 --[[ __CARD_HEADER_END__ ]]
 
 --Ink-Shade Calligrapher's Wand
@@ -61,7 +61,7 @@ function s.initial_effect(c)
 	e4:SetCode(EVENT_SPSUMMON_SUCCESS)
 	e4:SetCondition(s.spcon)
 	c:RegisterEffect(e4)
-	--(3) from GY: banish this card; Set 1 "Ink-Shade" Spell/Trap from your Deck or banishment, except an Equip Spell
+	--(3) from GY: banish this card; Set 1 "Ink-Shade" Spell/Trap from your Deck or Banishment, except an Equip Spell
 	--(shares the once-per-turn with (2); a Spell's effect in the GY is an Ignition Effect)
 	local e5=Effect.CreateEffect(c)
 	e5:SetDescription(aux.Stringid(id,1))
@@ -90,7 +90,7 @@ function s.operation(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 --(1)
---"your banished": face-up cards in your banishment (a face-down banished card has no name)
+--"your banished": face-up cards in your Banishment (a face-down banished card has no name)
 function s.atkfilter(c)
 	return c:IsFaceup() and c:IsSetCard(0x961) and c:IsType(TYPE_SPELL+TYPE_TRAP)
 end
@@ -139,7 +139,7 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 --(3)
---"from your Deck or banishment": a banished card must be face-up (cf. Exosister Karmael, Ryu-Ge End).
+--"from your Deck or Banishment": a banished card must be face-up (cf. Exosister Karmael, Ryu-Ge End).
 --"except an Equip Spell": only Spells are Equip cards there, so this card cannot Set itself back
 function s.setfilter(c)
 	return c:IsFaceupEx() and c:IsSetCard(0x961) and c:IsType(TYPE_SPELL+TYPE_TRAP) and not c:IsType(TYPE_EQUIP)
