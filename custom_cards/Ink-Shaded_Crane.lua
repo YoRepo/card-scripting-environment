@@ -13,7 +13,8 @@
 -- Effect Text:
 -- Must either be Fusion Summoned, or Special Summoned (from your Extra Deck) by sending 1 Spell/Trap
 -- from the field to the GY while you control a Level 6 or higher "Ink Shader" monster. You can only
--- Special Summon "Ink-Shaded Crane(s)" once per turn.
+-- Special Summon "Ink-Shaded Crane(s)" once per turn. You can only use 1 "Ink-Shaded Crane" effect per
+-- turn and only once that turn.
 -- ① If an "Ink-Shade" card is banished: You can target 1 card on the field; destroy it.
 -- ② If this card is in your GY (Quick Effect): You can return this card to the Extra Deck, then target
 -- 1 "Ink Shader" monster in your GY; Special Summon it.
@@ -45,6 +46,8 @@ function s.initial_effect(c)
 	e1:SetTarget(s.sptg)
 	e1:SetOperation(s.spop)
 	c:RegisterEffect(e1)
+	--you can only use 1 "Ink-Shaded Crane" effect per turn, and only once that turn: (1) and (2) share
+	--one count (cf. Odd-Eyes Solblaze Dragon)
 	--(1) if an "Ink-Shade" card is banished: target 1 card on the field; destroy it (cf. Bujin Arasuda)
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,0))
@@ -53,6 +56,7 @@ function s.initial_effect(c)
 	e2:SetProperty(EFFECT_FLAG_DELAY+EFFECT_FLAG_CARD_TARGET)
 	e2:SetCode(EVENT_REMOVE)
 	e2:SetRange(LOCATION_MZONE)
+	e2:SetCountLimit(1,id)
 	e2:SetCondition(s.descon)
 	e2:SetTarget(s.destg)
 	e2:SetOperation(s.desop)
@@ -66,6 +70,7 @@ function s.initial_effect(c)
 	e3:SetProperty(EFFECT_FLAG_CARD_TARGET)
 	e3:SetRange(LOCATION_GRAVE)
 	e3:SetHintTiming(0,TIMINGS_CHECK_MONSTER+TIMING_END_PHASE)
+	e3:SetCountLimit(1,id)
 	e3:SetCost(s.rvcost)
 	e3:SetTarget(s.rvtg)
 	e3:SetOperation(s.rvop)
