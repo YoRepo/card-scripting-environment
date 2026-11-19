@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Spacegate  (ID: 97151365)
 -- Type: Trap / Continuous
@@ -40,6 +40,9 @@ function c97151365.initial_effect(c)
 	e3:SetOperation(c97151365.spop)
 	c:RegisterEffect(e3)
 end
+c97151365.mentioned_counter={
+	[0x1e]=true,
+}
 function c97151365.ctop(e,tp,eg,ep,ev,re,r,rp)
 	if Duel.GetTurnPlayer()~=tp or Duel.GetAttackTarget()~=nil then
 		e:GetHandler():AddCounter(0x1e,1)

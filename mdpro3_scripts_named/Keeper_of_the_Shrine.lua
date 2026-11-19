@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Keeper of the Shrine  (ID: 66752837)
 -- Type: Monster / Effect
@@ -40,7 +40,8 @@ function c66752837.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 function c66752837.tricon(e,c)
-	return c:IsRace(RACE_DRAGON)
+	local ec=e:GetHandler()
+	return c:IsRace(RACE_DRAGON) and (ec:IsFaceup() or c:GetControler()==ec:GetControler())
 end
 function c66752837.cfilter(c)
 	return c:IsRace(RACE_DRAGON) and c:GetPreviousRaceOnField()==RACE_DRAGON

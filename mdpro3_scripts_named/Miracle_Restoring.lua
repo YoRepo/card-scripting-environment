@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Miracle Restoring  (ID: 68334074)
 -- Type: Trap
@@ -25,6 +25,9 @@ function c68334074.initial_effect(c)
 	e1:SetOperation(c68334074.activate)
 	c:RegisterEffect(e1)
 end
+c68334074.mentioned_counter={
+	[0x1]=true,
+}
 function c68334074.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsCanRemoveCounter(tp,1,0,0x1,2,REASON_COST) end
 	Duel.RemoveCounter(tp,1,0,0x1,2,REASON_COST)

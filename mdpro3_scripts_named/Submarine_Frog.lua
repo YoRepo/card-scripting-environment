@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Submarine Frog  (ID: 63948258)
 -- Type: Monster / Effect
@@ -11,8 +11,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- During battle between this attacking card and a Defense Position monster whose DEF is lower than the
--- ATK of this card, inflict the difference as Battle Damage to your opponent.
+-- If this card attacks a Defense Position monster, inflict piercing battle damage to your opponent.
 --[[ __CARD_HEADER_END__ ]]
 
 --未知ガエル

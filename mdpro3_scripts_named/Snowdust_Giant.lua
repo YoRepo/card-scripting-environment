@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Snowdust Giant  (ID: 73659078)
 -- Type: Monster / Effect / Xyz
@@ -41,6 +41,9 @@ function c73659078.initial_effect(c)
 	e2:SetValue(c73659078.atkval)
 	c:RegisterEffect(e2)
 end
+c73659078.mentioned_counter={
+	[0x1015]=true,
+}
 function c73659078.cfilter(c)
 	return c:IsAttribute(ATTRIBUTE_WATER) and not c:IsPublic()
 end

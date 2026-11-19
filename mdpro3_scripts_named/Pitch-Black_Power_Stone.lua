@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Pitch-Black Power Stone  (ID: 34029630)
 -- Type: Trap / Continuous
@@ -53,6 +53,9 @@ function c34029630.initial_effect(c)
 	e4:SetCondition(c34029630.descon)
 	c:RegisterEffect(e4)
 end
+c34029630.mentioned_counter={
+	[0x1]=true,
+}
 function c34029630.ctpermit(e)
 	local c=e:GetHandler()
 	return c:IsLocation(LOCATION_SZONE) and c:IsStatus(STATUS_CHAINING)

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Malefic Truth Dragon  (ID: 37115575)
 -- Type: Monster / Effect / Special Summon
@@ -12,11 +12,12 @@
 --
 -- Effect Text:
 -- Cannot be Normal Summoned/Set.
--- Must be Special Summoned by its own effect, and cannot be Special Summoned by other ways.
--- If a "Malefic" monster you control, except "Malefic Truth Dragon", is destroyed by battle or by card
--- effect: You can pay half your Life Points; Special Summon this card from your hand or Graveyard.
+-- Must be Special Summoned by its own effect.
+-- If a face-up "Malefic" monster(s) you control, except "Malefic Truth Dragon", is destroyed by battle
+-- or card effect: You can pay half your LP; Special Summon this card from your GY (if it was there
+-- when the monster was destroyed) or hand (even if not).
 -- There can only be 1 "Malefic" monster on the field.
--- If there is no face-up Field Spell Card on the field, destroy this card.
+-- If there is no face-up Field Spell on the field, destroy this card.
 -- If this card destroys an opponent's monster by battle: Destroy all face-up monsters your opponent
 -- controls.
 --[[ __CARD_HEADER_END__ ]]

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Big Shield Gardna  (ID: 65240384)
 -- Type: Monster / Effect
@@ -48,7 +48,7 @@ function c65240384.negcon(e,tp,eg,ep,ev,re,r,rp)
 end
 function c65240384.negop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	if c:IsRelateToEffect(e) and Duel.ChangePosition(c,POS_FACEUP_DEFENSE) then
+	if c:IsRelateToEffect(e) and Duel.ChangePosition(c,POS_FACEUP_DEFENSE)>0 then
 		Duel.NegateActivation(ev)
 	end
 end

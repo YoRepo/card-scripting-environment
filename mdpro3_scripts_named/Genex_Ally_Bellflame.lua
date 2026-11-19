@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Genex Ally Bellflame  (ID: 91438994)
 -- Type: Monster / Effect
@@ -60,6 +60,9 @@ function c91438994.initial_effect(c)
 	e5:SetLabelObject(e4)
 	c:RegisterEffect(e5)
 end
+c91438994.mentioned_counter={
+	[0xa]=true,
+}
 function c91438994.filter1(c,tp)
 	return c:IsPreviousControler(tp) and c:IsPreviousLocation(LOCATION_MZONE)
 end

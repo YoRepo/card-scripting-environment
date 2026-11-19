@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Fusion Conscription  (ID: 17194258)
 -- Type: Spell
@@ -8,9 +8,9 @@
 --
 -- Effect Text:
 -- Reveal 1 Fusion Monster in your Extra Deck and add 1 of the Fusion Materials whose name is
--- specifically listed on that card from your Deck or Graveyard to your hand, and if you do, for the
--- rest of this turn after this card resolves, you cannot Normal Summon/Set or Special Summon monsters
--- with the added monster's name, also your monsters with that name cannot activate their effects.
+-- specifically listed on that card from your Deck or GY to your hand, and if you do, for the rest of
+-- this turn after this card resolves, you cannot Normal Summon/Set or Special Summon monsters with the
+-- added monster's name, also your monsters with that name cannot activate their effects.
 -- You can only activate 1 "Fusion Conscription" per turn.
 --[[ __CARD_HEADER_END__ ]]
 

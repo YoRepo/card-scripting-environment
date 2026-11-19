@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Code A Ancient Ruins  (ID: 99342953)
 -- Type: Spell / Continuous
@@ -39,6 +39,9 @@ function c99342953.initial_effect(c)
 	c:RegisterEffect(e3)
 end
 c99342953.counter_add_list={0x100e}
+c99342953.mentioned_counter={
+	[0x100e]=true,
+}
 function c99342953.ctfilter(c)
 	return c:IsPreviousLocation(LOCATION_MZONE) and c:IsPreviousPosition(POS_FACEUP) and c:IsPreviousSetCard(0xc)
 end

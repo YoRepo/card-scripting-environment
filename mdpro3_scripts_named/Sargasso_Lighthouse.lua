@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Sargasso Lighthouse  (ID: 37511832)
 -- Type: Spell / Quick-Play
@@ -8,10 +8,10 @@
 -- Effect Text:
 -- When a Spell effect that would inflict damage to you is activated: You take no damage from that
 -- effect.
--- While this card is in your Graveyard, you take no damage from the effect of "Sargasso the D.D.
+-- While this card is in your GY, you take no damage from the effect of "Sargasso the D.D.
 -- Battlefield".
--- When this Set card is sent to the Graveyard: You can add 1 "Sargasso the D.D. Battlefield" from your
--- Deck to your hand.
+-- When this Set card is sent to the GY: You can add 1 "Sargasso the D.D. Battlefield" from your Deck
+-- to your hand.
 --[[ __CARD_HEADER_END__ ]]
 
 --サルガッソの灯台

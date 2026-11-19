@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Cyberse Sage  (ID: 65037172)
 -- Type: Monster / Effect / Ritual / Tuner
 -- Attribute: DARK
@@ -8,14 +8,15 @@
 -- Level: 1
 -- ATK 0 | DEF 0
 -- Setcode: 0x93
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- You can Ritual Summon this card with "Cynet Ritual". During your Main Phase: You can Fusion Summon 1
--- Fusion Monster from your Extra Deck, by banishing materials mentioned on it from your field or GY,
--- including a Cyberse monster. If this card is sent to the GY as Synchro Material: You can target 1
--- Cyberse monster or 1 Ritual Spell in your GY; add it to your hand. You can only use each effect of
--- "Cyberse Sage" once per turn.
+-- You can Ritual Summon this card with "Cynet Ritual".
+-- During your Main Phase: You can Fusion Summon 1 Fusion Monster from your Extra Deck, by banishing
+-- materials mentioned on it from your field or GY, including a Cyberse monster.
+-- If this card is sent to the GY as Synchro Material: You can target 1 Cyberse monster or 1 Ritual
+-- Spell in your GY; add it to your hand.
+-- You can only use each effect of "Cyberse Sage" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --サイバース・セイジ

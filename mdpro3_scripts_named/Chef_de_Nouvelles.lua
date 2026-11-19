@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Chef de Nouvelles  (ID: 29251488)
 -- Type: Monster / Effect / Pendulum
@@ -7,6 +7,7 @@
 -- Race: Fiend
 -- Level: 3
 -- ATK 1000 | DEF 1850
+-- Pendulum Scale: L0 / R0
 -- Setcode: 0x196
 -- Scope: OCG / TCG
 --

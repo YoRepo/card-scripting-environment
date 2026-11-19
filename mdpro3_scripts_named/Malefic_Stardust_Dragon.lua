@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Malefic Stardust Dragon  (ID: 36521459)
 -- Type: Monster / Effect / Special Summon
@@ -11,7 +11,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Cannot be Normal Summoned or Set.
+-- Cannot be Normal Summoned/Set.
 -- Must be Special Summoned (from your hand) by banishing 1 "Stardust Dragon" from your Extra Deck.
 -- There can only be 1 "Malefic" monster on the field.
 -- Face-up Field Spells cannot be destroyed by card effects.

@@ -1,23 +1,24 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Daedalus Maelstrom  (ID: 101306076)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Daedalus Maelstrom  (ID: 64233143)
 -- Type: Trap / Counter
--- Scope: OCG
+-- Setcode: 0x1e5
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- When your opponent would Normal or Special Summon a monster(s) while you control "Atlantis, City of
+-- When your opponent would Normal or Special Summon a monster(s), while you control "Atlantis, City of
 -- the Sea Dragon": Negate the Summon, and if you do, destroy that monster(s), then if you control a
--- WATER Link Monster, you can destroy all non-WATER monsters on the field. You can banish this card
--- from your GY and send 1 face-up "Umi" you control to the GY, then target 1 monster your opponent
--- controls; send it to the GY. You can only use 1 "Daedalus Maelstrom" effect per turn, and only once
--- that turn.
+-- WATER Link Monster, you can destroy all monsters on the field, except WATER monsters.
+-- You can banish this card from your GY and send 1 face-up "Umi" you control to the GY, then target 1
+-- monster your opponent controls; send it to the GY.
+-- You can only use 1 "Daedalus Maelstrom" effect per turn, and only once that turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --海竜神の大渦
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.AddCodeList(c,101306058,22702055)
+	aux.AddCodeList(c,38391684,22702055)
 	--Negate Normal Summon or Special Summon
 	local e1=Effect.CreateEffect(c)
 	e1:SetCategory(CATEGORY_DISABLE_SUMMON+CATEGORY_DESTROY)
@@ -47,7 +48,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e3)
 end
 function s.nsfilter(c)
-	return c:IsFaceup() and c:IsCode(101306058)
+	return c:IsFaceup() and c:IsCode(38391684)
 end
 function s.nscon(e,tp,eg,ep,ev,re,r,rp)
 	return tp~=ep and Duel.GetCurrentChain()==0 and Duel.IsExistingMatchingCard(s.nsfilter,tp,LOCATION_ONFIELD,0,1,nil)

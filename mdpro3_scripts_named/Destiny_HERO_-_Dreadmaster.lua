@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Destiny HERO - Dreadmaster  (ID: 40591390)
 -- Type: Monster / Effect
@@ -15,9 +15,9 @@
 -- "Destiny HERO" monsters, also, after that, you can Special Summon up to 2 "Destiny HERO" monsters
 -- from your GY.
 -- After this card is Special Summoned, for the rest of this turn, "Destiny HERO" monsters you control
--- cannot be destroyed, also you take no battle damage when they battle.
--- The ATK/DEF of this card are equal to the combined original ATK of all other "Destiny HERO" monsters
--- you control.
+-- cannot be destroyed, also you take no battle damage from battles involving them.
+-- The ATK/DEF of this card become the combined original ATK of all other "Destiny HERO" monsters you
+-- control.
 --[[ __CARD_HEADER_END__ ]]
 
 --D-HERO ドレッドガイ

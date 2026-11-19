@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Salamangreat Meer  (ID: 67225377)
 -- Type: Monster / Effect
@@ -46,7 +46,7 @@ function c67225377.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 function c67225377.spcon(e,tp,eg,ep,ev,re,r,rp)
-	return not (r==REASON_RULE)
+	return r~=REASON_RULE
 end
 function c67225377.spcost1(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return not e:GetHandler():IsPublic() end

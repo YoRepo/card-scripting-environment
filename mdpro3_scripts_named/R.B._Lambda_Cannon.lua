@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: R.B. Lambda Cannon  (ID: 81794107)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -12,13 +12,14 @@
 --
 -- Effect Text:
 -- If this card is Normal or Special Summoned: You can target 1 "R.B." monster in your GY, except "R.B.
--- Lambda Cannon"; add it to your hand. While this card is linked to an "R.B." Link Monster: You can
--- pay 1200 LP; destroy this card, and if you do, look at your opponent's hand, then you can Special
--- Summon 1 monster from it to their field, but negate its effects. You can only use each effect of
--- "R.B. Lambda Cannon" once per turn.
+-- Lambda Cannon"; add it to your hand.
+-- While this card is linked to an "R.B." Link Monster: You can pay 1200 LP; destroy this card, and if
+-- you do, look at your opponent's hand, then you can Special Summon 1 monster from it to their field,
+-- but negate its effects.
+-- You can only use each effect of "R.B. Lambda Cannon" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---R.B. Lambda Cannon
+--R.B.ラムダキャノン
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--tohand

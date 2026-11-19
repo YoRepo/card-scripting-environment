@@ -1,15 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Ketu Dracotail  (ID: 6153210)
 -- Type: Spell
 -- Setcode: 0x1c9
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Add 1 "Dracotail" monster from your Deck to your hand, then if your opponent controls a monster, you
 -- can Fusion Summon 1 Dragon or Spellcaster monster from your Extra Deck, using monsters from your
--- hand or field. You can only activate 1 "Ketu Dracotail" per turn.
+-- hand or field.
+-- You can only activate 1 "Ketu Dracotail" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --計都星辰

@@ -1,21 +1,23 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Advent of Atlantis  (ID: 101306060)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Advent of Atlantis  (ID: 1280391)
 -- Type: Spell / Continuous
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- This card's name becomes "Umi" while in the Spell & Trap Zone. You can only use each of the
--- following effects of "Advent of Atlantis" once per turn. During your Main Phase: You can place 1
--- "Atlantis, City of the Sea Dragon" or "Umi" from your Deck face-up in your Field Zone. If this card
--- is sent to the GY: You can add 1 Level 7 Sea Serpent monster from your Deck to your hand.
+-- This card's name becomes "Umi" while in the Spell & Trap Zone.
+-- You can only use each of the following effects of "Advent of Atlantis" once per turn.
+-- During your Main Phase: You can place 1 "Atlantis, City of the Sea Dragon" or "Umi" from your Deck,
+-- face-up in your Field Zone.
+-- If this card is sent to the GY: You can add 1 Level 7 Sea Serpent monster from your Deck to your
+-- hand.
 --[[ __CARD_HEADER_END__ ]]
 
 --顕現する伝説の都
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.AddCodeList(c,101306058,22702055)
+	aux.AddCodeList(c,38391684,22702055)
 	aux.EnableChangeCode(c,22702055)
 	--Activate
 	local e0=Effect.CreateEffect(c)
@@ -44,7 +46,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 function s.tffilter(c,tp)
-	return c:IsCode(101306058,22702055)
+	return c:IsCode(38391684,22702055)
 		and not c:IsForbidden() and c:CheckUniqueOnField(tp)
 		and c:IsType(TYPE_FIELD)
 end

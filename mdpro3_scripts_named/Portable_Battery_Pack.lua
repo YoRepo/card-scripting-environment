@@ -1,14 +1,14 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Portable Battery Pack  (ID: 61840587)
 -- Type: Trap / Continuous
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Select 2 "Batteryman" monsters from your Graveyard and Special Summon them in Attack Position.
--- When this card is removed from the field, destroy those monsters.
--- When both of those monsters have been removed from the field, destroy this card.
+-- Target 2 "Batteryman" monsters in your GY; Special Summon them in Attack Position.
+-- When this card leaves the field, destroy those monsters.
+-- When the last of those monsters leaves the field, destroy this card.
 --[[ __CARD_HEADER_END__ ]]
 
 --携帯型バッテリー

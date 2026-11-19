@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:48
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Jack-In-The-Hand  (ID: 51697825)
 -- Type: Spell
@@ -40,7 +40,7 @@ function c51697825.activate(e,tp,eg,ep,ev,re,r,rp)
 		Duel.Hint(HINT_SELECTMSG,1-tp,HINTMSG_ATOHAND)
 		local oc=sg:Select(1-tp,1,1,nil):GetFirst()
 		oc:SetStatus(STATUS_TO_HAND_WITHOUT_CONFIRM,true)
-		if Duel.SendtoHand(oc,1-tp,REASON_EFFECT)~=0 and oc:IsLocation(LOCATION_HAND) then
+		if Duel.SendtoHand(oc,1-tp,REASON_EFFECT,1-tp)~=0 and oc:IsLocation(LOCATION_HAND) then
 			sg:RemoveCard(oc)
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
 			local sc=sg:Select(tp,1,1,nil):GetFirst()

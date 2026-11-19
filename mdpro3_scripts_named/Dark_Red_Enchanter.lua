@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Dark Red Enchanter  (ID: 45462639)
 -- Type: Monster / Effect
@@ -63,6 +63,9 @@ function c45462639.initial_effect(c)
 	e4:SetOperation(c45462639.desop)
 	c:RegisterEffect(e4)
 end
+c45462639.mentioned_counter={
+	[0x1]=true,
+}
 function c45462639.addct(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
 	Duel.SetOperationInfo(0,CATEGORY_COUNTER,nil,2,0,0x1)

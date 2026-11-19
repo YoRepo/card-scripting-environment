@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Fiendsmith's Sequence  (ID: 49867899)
 -- Type: Monster / Effect / Link
 -- Attribute: LIGHT
@@ -9,14 +9,14 @@
 -- Link Arrows: Bottom-Left, Bottom-Right
 -- ATK 1200
 -- Setcode: 0x1b0
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2 monsters, including a LIGHT Fiend monster
 -- During your Main Phase: You can Fusion Summon 1 Fiend Fusion Monster from your Extra Deck, by
--- shuffling its materials from your GY into the Deck. You can target 1 LIGHT non-Link Fiend monster
--- you control; equip this card from your field or GY to that monster you control as an Equip Spell
--- with the following effect.
+-- shuffling its materials from your GY into the Deck.
+-- You can target 1 LIGHT non-Link Fiend monster you control; equip this card from your field or GY to
+-- that monster you control as an Equip Spell with the following effect.
 -- ● Your opponent cannot target the equipped monster with card effects.
 -- You can only use each effect of "Fiendsmith's Sequence" once per turn.
 --[[ __CARD_HEADER_END__ ]]

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: GMX Applied Experiment #55  (ID: 18795635)
 -- Type: Spell
 -- Setcode: 0x1dd
@@ -9,11 +9,11 @@
 -- Effect Text:
 -- Excavate the top cards of your Deck until you have excavated a "GMX" monster and a Dinosaur monster,
 -- lose 400 LP for each excavated card, then you can Fusion Summon 1 "GMX" Fusion Monster from your
--- Extra Deck, using any excavated monsters as material, also shuffle the rest into the Deck. You can
--- only activate 1 "GMX Applied Experiment #55" per turn.
+-- Extra Deck, using any excavated monsters as material, also shuffle the rest into the Deck.
+-- You can only activate 1 "GMX Applied Experiment #55" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---GMX Applied Experiment #55
+--第５５次GMX応用試験
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Activate

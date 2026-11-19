@@ -1,15 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Ghost Fusion  (ID: 35705817)
 -- Type: Spell
 -- Setcode: 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Fusion Monster from your Extra Deck, using only Zombie monsters you control as
--- material. If your LP are lower than your opponent's, you can also banish up to 1 Zombie monster from
--- your hand, Deck, or GY as material. You can only activate 1 "Ghost Fusion" per turn.
+-- material.
+-- If your LP are lower than your opponent's, you can also banish up to 1 Zombie monster from your
+-- hand, Deck, or GY as material.
+-- You can only activate 1 "Ghost Fusion" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --幽合－ゴースト・フュージョン

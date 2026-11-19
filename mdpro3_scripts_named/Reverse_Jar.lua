@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Reverse Jar  (ID: 67248304)
 -- Type: Monster / Effect / Flip
@@ -54,7 +54,7 @@ function c67248304.operation(e,tp,eg,ep,ev,re,r,rp)
 			if Duel.SendtoHand(rg,nil,REASON_EFFECT)==0 then return end
 			local og=Duel.GetOperatedGroup()
 			local turnp=Duel.GetTurnPlayer()
-			local setg1=Group.CreateGroup()
+			local setg1
 			local sg1=Duel.GetMatchingGroup(Card.IsSSetable,turnp,LOCATION_HAND,0,nil)
 			local ct1=og:FilterCount(c67248304.ctfilter,nil,turnp)
 			if sg1:GetCount()>0 and ct1>0 and Duel.SelectYesNo(turnp,aux.Stringid(67248304,1)) then
@@ -62,7 +62,7 @@ function c67248304.operation(e,tp,eg,ep,ev,re,r,rp)
 				Duel.Hint(HINT_SELECTMSG,turnp,HINTMSG_SET)
 				setg1=sg1:SelectSubGroup(turnp,c67248304.fselect,false,1,math.min(ct1,ft1+1),ft1)
 			end
-			local setg2=Group.CreateGroup()
+			local setg2
 			local sg2=Duel.GetMatchingGroup(Card.IsSSetable,1-turnp,LOCATION_HAND,0,nil)
 			local ct2=og:FilterCount(c67248304.ctfilter,nil,1-turnp)
 			if sg2:GetCount()>0 and ct2>0 and Duel.SelectYesNo(1-turnp,aux.Stringid(67248304,1)) then
@@ -70,9 +70,9 @@ function c67248304.operation(e,tp,eg,ep,ev,re,r,rp)
 				Duel.Hint(HINT_SELECTMSG,1-turnp,HINTMSG_SET)
 				setg2=sg2:SelectSubGroup(1-turnp,c67248304.fselect,false,1,math.min(ct2,ft2+1),ft2)
 			end
-			if setg1:GetCount()>0 or setg2:GetCount()>0 then Duel.BreakEffect() end
-			if setg1:GetCount()>0 then Duel.SSet(turnp,setg1,turnp,false) end
-			if setg2:GetCount()>0 then Duel.SSet(1-turnp,setg2,1-turnp,false) end
+			if setg1 or setg2 then Duel.BreakEffect() end
+			if setg1 then Duel.SSet(turnp,setg1,turnp,false) end
+			if setg2 then Duel.SSet(1-turnp,setg2,1-turnp,false) end
 		end
 	end
 end

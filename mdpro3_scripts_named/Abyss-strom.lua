@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Abyss-strom  (ID: 97697447)
 -- Type: Trap
@@ -7,8 +7,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Send 1 face-up "Umi" you control to the Graveyard; send all Spell and Trap Cards on the field to the
--- Graveyard.
+-- Send 1 face-up "Umi" you control to the GY; send all Spell and Trap Cards on the field to the GY.
 --[[ __CARD_HEADER_END__ ]]
 
 --アビストローム

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Parallel World Fusion  (ID: 54283059)
 -- Type: Spell
 -- Setcode: 0x46
@@ -8,8 +8,9 @@
 --
 -- Effect Text:
 -- Fusion Summon 1 "Elemental HERO" Fusion Monster from your Extra Deck, by shuffling your banished
--- Fusion Materials listed on it into your Deck. You cannot Special Summon monsters except by this
--- card's effect, during the turn you activate this card.
+-- Fusion Materials listed on it into your Deck.
+-- You cannot Special Summon monsters except by this card's effect, during the turn you activate this
+-- card.
 --[[ __CARD_HEADER_END__ ]]
 
 --平行世界融合

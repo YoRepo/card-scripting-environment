@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Tearlaments Merrli  (ID: 74078255)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -8,14 +8,14 @@
 -- Level: 2
 -- ATK 800 | DEF 2000
 -- Setcode: 0x181
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- If this card is Normal or Special Summoned: You can send the top 3 cards of your Deck to the GY. If
--- this card is sent to the GY by card effect (except during the Damage Step): You can Fusion Summon 1
--- Fusion Monster from your Extra Deck, by placing Fusion Materials mentioned on it from your hand,
--- field, and/or GY, including this card from your GY, on the bottom of the Deck in any order. You can
--- only use each effect of "Tearlaments Merrli" once per turn.
+-- If this card is Normal or Special Summoned: You can send the top 3 cards of your Deck to the GY.
+-- If this card is sent to the GY by card effect (except during the Damage Step): You can Fusion Summon
+-- 1 Fusion Monster from your Extra Deck, by placing Fusion Materials mentioned on it from your hand,
+-- field, and/or GY, including this card from your GY, on the bottom of the Deck in any order.
+-- You can only use each effect of "Tearlaments Merrli" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ティアラメンツ・メイルゥ

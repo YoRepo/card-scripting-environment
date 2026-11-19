@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Number 7: Lucky Straight  (ID: 82308875)
 -- Type: Monster / Effect / Xyz
@@ -12,11 +12,11 @@
 --
 -- Effect Text:
 -- 3 Level 7 monsters
--- You can detach 1 Xyz Material from this card; roll a six-sided die twice and this card's ATK becomes
--- the larger number rolled x 700 until your opponent's next End Phase, then if the total roll was
--- exactly 7, apply 1 of these effects.
--- ● Send all other cards on the field to the Graveyard.
--- ● Special Summon 1 monster from your hand or from either Graveyard.
+-- You can detach 1 material from this card; roll a six-sided die twice and this card's ATK becomes the
+-- larger number rolled x 700 until your opponent's next End Phase, then if the total roll was exactly
+-- 7, apply 1 of these effects.
+-- ● Send all other cards on the field to the GY.
+-- ● Special Summon 1 monster from your hand or either GY.
 -- ● Draw 3 cards, then discard 2 cards.
 --[[ __CARD_HEADER_END__ ]]
 

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Ancient Gear Hunting Hound  (ID: 42878636)
 -- Type: Monster / Effect
 -- Attribute: EARTH
@@ -8,13 +8,14 @@
 -- Level: 3
 -- ATK 1000 | DEF 1000
 -- Setcode: 0x7
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- If this card is Normal Summoned: Inflict 600 damage to your opponent. If this card attacks, your
--- opponent cannot activate any Spell/Trap Cards until the end of the Damage Step. Once per turn: You
--- can Fusion Summon 1 "Ancient Gear" Fusion Monster from your Extra Deck, using monsters from your
--- hand or field as Fusion Materials.
+-- If this card is Normal Summoned: Inflict 600 damage to your opponent.
+-- If this card attacks, your opponent cannot activate any Spell/Trap Cards until the end of the Damage
+-- Step.
+-- Once per turn: You can Fusion Summon 1 "Ancient Gear" Fusion Monster from your Extra Deck, using
+-- monsters from your hand or field as material.
 --[[ __CARD_HEADER_END__ ]]
 
 --古代の機械猟犬

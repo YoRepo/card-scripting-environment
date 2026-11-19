@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Luce the Dusk's Dark  (ID: 45409943)
 -- Type: Monster / Effect / Fusion
 -- Attribute: DARK
@@ -11,14 +11,15 @@
 --
 -- Effect Text:
 -- 3 Fiend and/or Fairy monsters in your GY
--- Monsters in your leftmost or rightmost Main Monster Zones cannot be destroyed by card effects. You
--- can only use each of the following effects of "Luce the Dusk's Dark" once per turn. You can target 1
--- card your opponent controls; send 1 Fiend or Fairy monster from your Deck to the GY, and if you do,
--- destroy that card. If another card(s) you control is destroyed by card effect (except during the
--- Damage Step): You can target 1 card on the field; destroy it.
+-- Monsters in your leftmost or rightmost Main Monster Zones cannot be destroyed by card effects.
+-- You can only use each of the following effects of "Luce the Dusk's Dark" once per turn.
+-- You can target 1 card your opponent controls; send 1 Fiend or Fairy monster from your Deck to the
+-- GY, and if you do, destroy that card.
+-- If another card(s) you control is destroyed by card effect (except during the Damage Step): You can
+-- target 1 card on the field; destroy it.
 --[[ __CARD_HEADER_END__ ]]
 
---Luce the Dusk's Dark
+--宵闇のルーチェ
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--fusion material

@@ -1,22 +1,23 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Angelechy Shatranga  (ID: 101305090)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Angelechy Shatranga  (ID: 42410161)
 -- Type: Monster / Effect / Synchro
 -- Attribute: LIGHT
 -- Race: Fairy
 -- Level: 10
 -- ATK 3000 | DEF 0
--- Setcode: 0x2e5
+-- Setcode: 0x1e2
 -- Scope: TCG
 --
 -- Effect Text:
 -- 1 Tuner + 1+ non-Tuners
--- You can target 1 monster your opponent controls; banish it. If this card is placed in the Spell &
--- Trap Zone as a Continuous Spell: You can add 1 "Angelechy" Trap from your Deck or GY to your hand.
--- You can only use each of the preceding effects of "Angelechy Shatranga" once per turn. While this
--- card is treated as a Continuous Spell, your opponent can only attempt to activate up to 5 monster
--- effects per turn.
+-- You can target 1 monster your opponent controls; banish it.
+-- If this card is placed in the Spell & Trap Zone as a Continuous Spell: You can add 1 "Angelechy"
+-- Trap from your Deck or GY to your hand.
+-- You can only use each of the preceding effects of "Angelechy Shatranga" once per turn.
+-- While this card is treated as a Continuous Spell, your opponent can only attempt to activate up to 5
+-- monster effects per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --Angelechy Shatranga
@@ -51,6 +52,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e3)
 	local e4=Effect.CreateEffect(c)
 	e4:SetDescription(aux.Stringid(id,1))
+	e4:SetCategory(CATEGORY_TOHAND+CATEGORY_SEARCH)
 	e4:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e4:SetCode(EVENT_CUSTOM+id)
 	e4:SetProperty(EFFECT_FLAG_DELAY)
@@ -108,7 +110,7 @@ function s.rmop(e,tp,eg,ep,ev,re,r,rp)
 end
 function s.flagop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	if not c:IsLocation(LOCATION_SZONE) or not c:GetType()==TYPE_SPELL+TYPE_CONTINUOUS then return end
+	if not c:IsLocation(LOCATION_SZONE) or c:GetType()~=TYPE_SPELL+TYPE_CONTINUOUS then return end
 	if Duel.GetCurrentChain()>0 then
 		c:RegisterFlagEffect(id+o,RESET_EVENT+RESETS_STANDARD+RESET_CHAIN,0,1)
 	else
@@ -117,7 +119,7 @@ function s.flagop(e,tp,eg,ep,ev,re,r,rp)
 end
 function s.raiseop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	if not c:GetType()==TYPE_SPELL+TYPE_CONTINUOUS then return end
+	if c:GetType()~=TYPE_SPELL+TYPE_CONTINUOUS then return end
 	if c:GetFlagEffect(id+o)~=0 then
 		Duel.RaiseSingleEvent(c,EVENT_CUSTOM+id,e,0,tp,tp,0)
 	end
@@ -126,7 +128,7 @@ function s.thcon(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():GetType()==TYPE_SPELL+TYPE_CONTINUOUS
 end
 function s.thfilter(c)
-	return c:IsSetCard(0x2e5) and c:IsType(TYPE_TRAP) and c:IsAbleToHand()
+	return c:IsSetCard(0x1e2) and c:IsType(TYPE_TRAP) and c:IsAbleToHand()
 end
 function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.thfilter,tp,LOCATION_DECK+LOCATION_GRAVE,0,1,nil) end

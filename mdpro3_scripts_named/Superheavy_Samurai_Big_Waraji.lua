@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Superheavy Samurai Big Waraji  (ID: 36523152)
 -- Type: Monster / Effect
@@ -56,5 +56,6 @@ function c36523152.splimit(e,c,sump,sumtype,sumpos,targetp,se)
 	return not c:IsSetCard(0x9a)
 end
 function c36523152.condition(e,c)
-	return c:IsRace(RACE_MACHINE)
+	local ec=e:GetHandler()
+	return c:IsRace(RACE_MACHINE) and (ec:IsFaceup() or c:GetControler()==ec:GetControler())
 end

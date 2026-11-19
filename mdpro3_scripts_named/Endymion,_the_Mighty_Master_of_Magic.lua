@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Endymion, the Mighty Master of Magic  (ID: 3611830)
 -- Type: Monster / Effect / Pendulum
@@ -94,6 +94,9 @@ function c3611830.initial_effect(c)
 	e6:SetLabelObject(e5)
 	c:RegisterEffect(e6)
 end
+c3611830.mentioned_counter={
+	[0x1]=true,
+}
 function c3611830.descost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsCanRemoveCounter(tp,1,0,0x1,6,REASON_COST) end
 	Duel.RemoveCounter(tp,1,0,0x1,6,REASON_COST)

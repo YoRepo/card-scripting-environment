@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:48
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Gaia the Fierce Knight Origin  (ID: 50354944)
 -- Type: Monster / Effect
@@ -74,7 +74,8 @@ function c50354944.spop(e,tp,eg,ep,ev,re,r,rp)
 	Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)
 end
 function c50354944.condition(e,c)
-	return c:IsRace(RACE_WARRIOR)
+	local ec=e:GetHandler()
+	return c:IsRace(RACE_WARRIOR) and (ec:IsFaceup() or c:GetControler()==ec:GetControler())
 end
 function c50354944.atkcon(e,tp,eg,ep,ev,re,r,rp)
 	local ph=Duel.GetCurrentPhase()

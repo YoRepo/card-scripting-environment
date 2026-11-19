@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Secret Sect Druid Dru  (ID: 24062258)
 -- Type: Monster / Effect
@@ -10,9 +10,8 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- When this card is Normal Summoned: You can target 1 Level 4 DARK monster in your Graveyard with 0
--- ATK and/or DEF, except "Secret Sect Druid Dru"; Special Summon that target in face-up Defense
--- Position.
+-- When this card is Normal Summoned: You can target 1 Level 4 DARK monster in your GY with 0 ATK
+-- and/or DEF, except "Secret Sect Druid Dru"; Special Summon that target in face-up Defense Position.
 -- Its effects are negated.
 -- You can only use the effect of "Secret Sect Druid Dru" once per turn.
 --[[ __CARD_HEADER_END__ ]]

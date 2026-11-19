@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Harpie Lady 1  (ID: 91932350)
 -- Type: Monster / Effect
@@ -7,7 +7,7 @@
 -- Race: Winged Beast
 -- Level: 4
 -- ATK 1300 | DEF 1400
--- Setcode: 0x64
+-- Setcode: 0x1064
 -- Alias of: 76812113
 -- Scope: OCG / TCG
 --

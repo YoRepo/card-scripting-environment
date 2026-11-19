@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Destiny HERO - Dusktopia  (ID: 93657021)
 -- Type: Monster / Effect / Fusion
 -- Attribute: DARK
@@ -13,9 +13,10 @@
 -- Effect Text:
 -- 1 "Destiny HERO" Fusion Monster + 1 "Destiny HERO" monster
 -- If this card is Fusion Summoned: You can Fusion Summon 1 Fusion Monster from your Extra Deck, using
--- monsters from your hand or field as Fusion Material. Once per turn (Quick Effect): You can target 1
--- monster on the field; until the end of this turn, it cannot be destroyed by battle or card effects,
--- and neither player takes any battle damage from attacks involving that monster.
+-- monsters from your hand or field as Fusion Material.
+-- Once per turn (Quick Effect): You can target 1 monster on the field; until the end of this turn, it
+-- cannot be destroyed by battle or card effects, and neither player takes any battle damage from
+-- attacks involving that monster.
 --[[ __CARD_HEADER_END__ ]]
 
 --D-HERO ダスクユートピアガイ

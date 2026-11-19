@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Symphonic Warrior Guitariss  (ID: 43210483)
 -- Type: Monster / Effect / Tuner / Pendulum
@@ -7,6 +7,7 @@
 -- Race: Machine
 -- Level: 3
 -- ATK 1100 | DEF 500
+-- Pendulum Scale: L0 / R0
 -- Setcode: 0x1066
 -- Scope: OCG / TCG
 --

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: F.A. Shining Star GT  (ID: 37414347)
 -- Type: Monster / Effect / Link
@@ -72,6 +72,9 @@ function c37414347.initial_effect(c)
 	e5:SetOperation(c37414347.disop)
 	c:RegisterEffect(e5)
 end
+c37414347.mentioned_counter={
+	[0x4a]=true,
+}
 function c37414347.atkfilter(c)
 	return c:IsFaceup() and c:IsSetCard(0x107) and c:GetLevel()>=0
 end

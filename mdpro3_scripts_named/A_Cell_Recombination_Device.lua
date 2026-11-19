@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: "A" Cell Recombination Device  (ID: 91231901)
 -- Type: Spell / Quick-Play
@@ -36,6 +36,9 @@ function c91231901.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 c91231901.counter_add_list={0x100e}
+c91231901.mentioned_counter={
+	[0x100e]=true,
+}
 function c91231901.filter(c)
 	return c:GetLevel()>0 and c:IsSetCard(0xc) and c:IsAbleToGrave()
 end

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Fabled Levilazebul  (ID: 21281085)
 -- Type: Monster / Effect / Synchro
@@ -77,7 +77,7 @@ function s.ctop(e,tp,eg,ep,ev,re,r,rp)
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_CONTROL)
 		local tg=Duel.SelectMatchingCard(tp,s.ctfilter,tp,0,LOCATION_MZONE,ct,ct,nil)
 		Duel.HintSelection(tg)
-		if not Duel.GetControl(tg,tp) then return end
+		if Duel.GetControl(tg,tp)==0 then return end
 		local cg=tg:Filter(Card.IsControler,nil,tp)
 		for tc in aux.Next(cg) do
 			local e1=Effect.CreateEffect(c)

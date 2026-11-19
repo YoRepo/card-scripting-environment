@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Mythical Beast Jackal  (ID: 91182675)
 -- Type: Monster / Effect / Pendulum
@@ -66,6 +66,9 @@ function c91182675.initial_effect(c)
 	e4:SetOperation(c91182675.spop)
 	c:RegisterEffect(e4)
 end
+c91182675.mentioned_counter={
+	[0x1]=true,
+}
 function c91182675.ctcon(e,tp,eg,ep,ev,re,r,rp)
 	return not Duel.IsExistingMatchingCard(nil,tp,LOCATION_PZONE,0,1,e:GetHandler())
 end

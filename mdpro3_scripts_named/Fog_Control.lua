@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Fog Control  (ID: 63741331)
 -- Type: Spell / Quick-Play
@@ -22,6 +22,9 @@ function c63741331.initial_effect(c)
 	e1:SetOperation(c63741331.activate)
 	c:RegisterEffect(e1)
 end
+c63741331.mentioned_counter={
+	[0x1019]=true,
+}
 function c63741331.cfilter(c)
 	return c:IsFaceup() and c:IsSetCard(0x18)
 end

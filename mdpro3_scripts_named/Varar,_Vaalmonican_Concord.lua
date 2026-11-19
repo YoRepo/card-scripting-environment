@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Varar, Vaalmonican Concord  (ID: 1340142)
 -- Type: Monster / Effect / Link
@@ -57,6 +57,9 @@ function s.initial_effect(c)
 	e3:SetOperation(s.disop)
 	c:RegisterEffect(e3)
 end
+s.mentioned_counter={
+	[0x6a]=true,
+}
 function s.lfilter(c)
 	return c:IsLinkType(TYPE_LINK) and c:IsLinkSetCard(0x1a3)
 end

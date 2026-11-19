@@ -1,15 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: D-Fusion  (ID: 26841274)
 -- Type: Trap
 -- Setcode: 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters you control as Fusion Material,
--- and if you do, it cannot be destroyed by battle or card effects this turn. Only "Destiny HERO"
--- monsters can be used as Fusion Material for a Fusion Summon using this card's effect.
+-- and if you do, it cannot be destroyed by battle or card effects this turn.
+-- Only "Destiny HERO" monsters can be used as Fusion Material for a Fusion Summon using this card's
+-- effect.
 --[[ __CARD_HEADER_END__ ]]
 
 --D－フュージョン

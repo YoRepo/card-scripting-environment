@@ -1,29 +1,30 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Azure Ocean Dragon Lord - Neo-Daedalus Rage  (ID: 101306046)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Azure Ocean Dragon Lord - Neo-Daedalus Rage  (ID: 41570943)
 -- Type: Monster / Effect / Link
 -- Attribute: WATER
 -- Race: Sea Serpent
 -- Link Rating: 4
 -- Link Arrows: Top, Bottom-Left, Bottom, Bottom-Right
 -- ATK 2900
--- Setcode: 0x2e3
--- Scope: OCG
+-- Setcode: 0x1e5
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 4 monsters
+-- This card's name becomes "Umi" while on the field.
 -- If this card is Link Summoned: You can Special Summon up to 3 monsters that mention "Atlantis, City
--- of the Sea Dragon" from your GY to your zones this card points to, also you cannot Special Summon
--- for the rest of this turn. This card's name becomes "Umi" while in the Monster Zone. Once per turn
--- (Quick Effect): You can send 1 face-up "Umi" you control to the GY; send all cards on the field to
--- the GY, except "Umi".
+-- of the Sea Dragon" from your GY to your zone this card points to, also you cannot Special Summon for
+-- the rest of this turn.
+-- Once per turn (Quick Effect): You can send 1 face-up "Umi" you control to the GY; send all cards on
+-- the field to the GY, except "Umi".
 --[[ __CARD_HEADER_END__ ]]
 
---蒼海竜神ーネオダイダロス・レイジ
+--蒼海竜神－ネオダイダロス・レイジ
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.AddCodeList(c,101306058,22702055)
+	aux.AddCodeList(c,38391684,22702055)
 	aux.EnableChangeCode(c,22702055)
 	--link summon
 	c:EnableReviveLimit()
@@ -65,7 +66,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 function s.glcheck(g,c,tp)
-	return Duel.IsPlayerAffectedByEffect(tp,101306058) or g:GetCount()==4
+	return Duel.IsPlayerAffectedByEffect(tp,38391684) or g:GetCount()==4
 end
 function s.LConditionFilter(c,f,lc,e)
 	return (c:IsFaceup() or not c:IsOnField() or e:IsHasProperty(EFFECT_FLAG_SET_AVAILABLE))
@@ -110,7 +111,7 @@ function s.LUncompatibilityFilter(c,sg,lc,tp)
 	return not s.LCheckOtherMaterial(c,mg,lc,tp)
 end
 function s.LCheckGoal(sg,tp,lc,gf,lmat)
-	return (Duel.IsPlayerAffectedByEffect(tp,101306058)
+	return (Duel.IsPlayerAffectedByEffect(tp,38391684)
 		and sg:CheckWithSumEqual(s.GetLinkCount,3,#sg,#sg)
 		or sg:CheckWithSumEqual(s.GetLinkCount,lc:GetLink(),#sg,#sg))
 		and Duel.GetLocationCountFromEx(tp,tp,sg,lc)>0 and (not gf or gf(sg,lc,tp))
@@ -202,7 +203,7 @@ function s.spcon(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():IsSummonType(SUMMON_TYPE_LINK)
 end
 function s.spfilter1(c,e,tp,zone)
-	return aux.IsCodeListed(c,101306058) and c:IsCanBeSpecialSummoned(e,0,tp,false,false,POS_FACEUP,tp,zone)
+	return aux.IsCodeListed(c,38391684) and c:IsCanBeSpecialSummoned(e,0,tp,false,false,POS_FACEUP,tp,zone)
 end
 function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 	local zone=bit.band(e:GetHandler():GetLinkedZone(tp),0x1f)

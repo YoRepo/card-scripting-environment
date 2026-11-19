@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Elder Entity Norden  (ID: 17412721)
 -- Type: Monster / Effect / Fusion
@@ -11,9 +11,11 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- 1 Synchro or Xyz Monster + 1 Synchro or Xyz Monster
--- When this card is Special Summoned: You can target 1 Level 4 or lower monster in your GY; Special
--- Summon it, but its effects are negated, also banish it when this card leaves the field.
+-- 2 monsters (Synchro and/or Xyz)
+-- When this card is Special Summoned from the Extra Deck: You can target 1 Level 4 or lower monster in
+-- your GY; Special Summon it, but its effects are negated, also banish it when this card leaves the
+-- field.
+-- You can only use this effect of "Elder Entity Norden" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --旧神ノーデン

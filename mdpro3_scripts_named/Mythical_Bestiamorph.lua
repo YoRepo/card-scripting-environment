@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Mythical Bestiamorph  (ID: 24429467)
 -- Type: Trap / Continuous
@@ -48,6 +48,9 @@ function c24429467.initial_effect(c)
 	e4:SetOperation(c24429467.thop)
 	c:RegisterEffect(e4)
 end
+c24429467.mentioned_counter={
+	[0x1]=true,
+}
 function c24429467.acop(e,tp,eg,ep,ev,re,r,rp)
 	local p=Duel.GetChainInfo(ev,CHAININFO_TRIGGERING_PLAYER)
 	local c=e:GetHandler()

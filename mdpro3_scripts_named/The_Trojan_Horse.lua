@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: The Trojan Horse  (ID: 38479725)
 -- Type: Monster / Effect
@@ -23,5 +23,6 @@ function c38479725.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 function c38479725.condition(e,c)
-	return c:IsAttribute(ATTRIBUTE_EARTH)
+	local ec=e:GetHandler()
+	return c:IsAttribute(ATTRIBUTE_EARTH) and (ec:IsFaceup() or c:GetControler()==ec:GetControler())
 end

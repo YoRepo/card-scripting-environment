@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Blackwing Armor Master  (ID: 69031175)
 -- Type: Monster / Effect / Synchro
@@ -53,6 +53,9 @@ function c69031175.initial_effect(c)
 	e4:SetOperation(c69031175.atkop)
 	c:RegisterEffect(e4)
 end
+c69031175.mentioned_counter={
+	[0x1002]=true,
+}
 function c69031175.ctcon(e,tp,eg,ep,ev,re,r,rp)
 	local atg=Duel.GetAttackTarget()
 	return aux.dsercon(e,tp,eg,ep,ev,re,r,rp) and Duel.GetAttacker()==e:GetHandler()

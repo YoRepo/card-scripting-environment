@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Let's Go Together  (ID: 38625110)
 -- Type: Spell / Quick-Play
@@ -39,7 +39,7 @@ function s.getrmdg(tp)
 	local cg=Group.CreateGroup()
 	for ct=1,7 do
 		local g=Duel.GetDecktopGroup(1-tp,ct)
-		if not g:FilterCount(Card.IsAbleToRemove,nil,1-tp,POS_FACEDOWN,REASON_RULE)==ct then break end
+		if g:FilterCount(Card.IsAbleToRemove,nil,1-tp,POS_FACEDOWN,REASON_RULE)~=ct then break end
 		cg=g
 	end
 	return cg

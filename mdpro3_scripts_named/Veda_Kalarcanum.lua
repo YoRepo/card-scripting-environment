@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Veda Kalarcanum  (ID: 40785230)
 -- Type: Monster / Effect / Pendulum / Special Summon
@@ -7,6 +7,7 @@
 -- Race: Warrior
 -- Level: 12
 -- ATK 0 | DEF 4000
+-- Pendulum Scale: L0 / R0
 -- Setcode: 0x19a
 -- Scope: OCG / TCG
 --

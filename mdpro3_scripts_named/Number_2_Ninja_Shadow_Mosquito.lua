@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Number 2: Ninja Shadow Mosquito  (ID: 32453837)
 -- Type: Monster / Effect / Xyz
@@ -54,6 +54,9 @@ function c32453837.initial_effect(c)
 	c:RegisterEffect(e4)
 end
 aux.xyz_number[32453837]=2
+c32453837.mentioned_counter={
+	[0x1063]=true,
+}
 function c32453837.filter(c)
 	return c:GetCounter(0x1063)>0 and c:IsFaceup()
 end

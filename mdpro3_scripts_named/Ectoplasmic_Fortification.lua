@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Ectoplasmic Fortification  (ID: 16734927)
 -- Type: Spell
 -- Scope: OCG / TCG
@@ -14,7 +14,7 @@
 -- You can only activate 1 "Ectoplasmic Fortification" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Ectoplasmic Fortification
+--霊魂プラズマ
 local s,id,o=GetID()
 function s.initial_effect(c)
 	aux.AddCodeList(c,97077563,80749819)

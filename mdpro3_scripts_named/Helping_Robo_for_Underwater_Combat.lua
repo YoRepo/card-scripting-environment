@@ -1,23 +1,24 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Helping Robo for Underwater Combat  (ID: 101306050)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Helping Robo for Underwater Combat  (ID: 77856460)
 -- Type: Monster / Effect / Link
 -- Attribute: WATER
 -- Race: Machine
 -- Link Rating: 2
 -- Link Arrows: Right, Bottom-Right
 -- ATK 800
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2 Machine monsters
--- If this card is Link Summoned: You can target 1 monster your opponent controls; destroy it, also
--- this card, then you can Special Summon 1 non-WATER Machine monster with 1600 or less ATK from your
--- GY. If this card is banished: You can add 1 Machine monster whose ATK equals its own DEF from your
--- Deck to your hand. You can only use each effect of "Helping Robo for Underwater Combat" once per
--- turn, also you cannot Special Summon the turn you activate either of this card's effects, except
--- Machine monsters.
+-- If this card is Link Summoned: You can target 1 monster your opponent controls; destroy that
+-- monster, also this card, then you can Special Summon 1 non-WATER Machine monster with 1600 or less
+-- ATK from your GY.
+-- If this card is banished: You can add 1 Machine monster whose ATK equals its own DEF from your Deck
+-- to your hand.
+-- You can only use each effect of "Helping Robo for Underwater Combat" once per turn, also you cannot
+-- Special Summon the turn you activate either of this card's effects, except Machine monsters.
 --[[ __CARD_HEADER_END__ ]]
 
 --海中戦型お手伝いロボ
@@ -26,7 +27,7 @@ function s.initial_effect(c)
 	--link summon
 	c:EnableReviveLimit()
 	aux.AddLinkProcedure(c,aux.FilterBoolFunction(Card.IsLinkRace,RACE_MACHINE),2,2)
-	--set
+	--destroy
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
 	e1:SetCategory(CATEGORY_DESTROY+CATEGORY_SPECIAL_SUMMON+CATEGORY_GRAVE_SPSUMMON)
@@ -89,18 +90,18 @@ end
 function s.desop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	local tc=Duel.GetFirstTarget()
-	if c:IsRelateToChain() and tc:IsRelateToChain() and tc:IsType(TYPE_MONSTER) then
-		local g=Group.FromCards(c,tc)
-		if Duel.Destroy(g,REASON_EFFECT)~=0
-			and Duel.GetLocationCount(tp,LOCATION_MZONE)>0
-			and Duel.IsExistingMatchingCard(aux.NecroValleyFilter(s.spfilter),tp,LOCATION_GRAVE,0,1,nil,e,tp)
-			and Duel.SelectYesNo(tp,aux.Stringid(id,2)) then
-			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
-			local sg=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(s.spfilter),tp,LOCATION_GRAVE,0,1,1,nil,e,tp)
-			if sg:GetCount()>0 then
-				Duel.BreakEffect()
-				Duel.SpecialSummon(sg,0,tp,tp,false,false,POS_FACEUP)
-			end
+	local dg=Group.CreateGroup()
+	if c:IsRelateToChain() then dg:AddCard(c) end
+	if tc:IsRelateToChain() and tc:IsType(TYPE_MONSTER) then dg:AddCard(tc) end
+	if dg:GetCount()>0 and Duel.Destroy(dg,REASON_EFFECT)~=0
+		and Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+		and Duel.IsExistingMatchingCard(aux.NecroValleyFilter(s.spfilter),tp,LOCATION_GRAVE,0,1,nil,e,tp)
+		and Duel.SelectYesNo(tp,aux.Stringid(id,2)) then
+		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
+		local sg=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(s.spfilter),tp,LOCATION_GRAVE,0,1,1,nil,e,tp)
+		if sg:GetCount()>0 then
+			Duel.BreakEffect()
+			Duel.SpecialSummon(sg,0,tp,tp,false,false,POS_FACEUP)
 		end
 	end
 end

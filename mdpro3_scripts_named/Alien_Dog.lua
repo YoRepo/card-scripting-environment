@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Alien Dog  (ID: 15475415)
 -- Type: Monster / Effect
@@ -39,6 +39,9 @@ function c15475415.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 c15475415.counter_add_list={0x100e}
+c15475415.mentioned_counter={
+	[0x100e]=true,
+}
 function c15475415.spcon(e,tp,eg,ep,ev,re,r,rp)
 	return ep==tp and eg:GetFirst():IsSetCard(0xc)
 end

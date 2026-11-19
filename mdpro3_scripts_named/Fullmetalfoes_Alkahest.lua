@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Fullmetalfoes Alkahest  (ID: 77693536)
 -- Type: Monster / Effect / Fusion
 -- Attribute: FIRE
@@ -12,11 +12,12 @@
 --
 -- Effect Text:
 -- 1 "Metalfoes" monster + 1 Normal Monster
--- Must be Fusion Summoned. Once per turn, during your opponent's turn (Quick Effect): You can target 1
--- Effect Monster on the field; equip that target to this card. This card gains DEF equal to the
--- combined original ATK of the monsters equipped to it by this effect. You can use monsters you
--- control equipped to this card you control as material for the Fusion Summon of a "Metalfoes" Fusion
--- Monster that lists them as materials.
+-- Must be Fusion Summoned.
+-- Once per turn, during your opponent's turn (Quick Effect): You can target 1 Effect Monster on the
+-- field; equip that target to this card.
+-- Gains DEF equal to the combined original ATK of the monsters equipped to it by this effect.
+-- You can use monsters you control equipped to this card you control as material for the Fusion Summon
+-- of a "Metalfoes" Fusion Monster that mention them as materials.
 --[[ __CARD_HEADER_END__ ]]
 
 --フルメタルフォーゼ・アルカエスト

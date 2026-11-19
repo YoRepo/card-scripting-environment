@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Skilled Dark Magician  (ID: 73752131)
 -- Type: Monster / Effect
@@ -47,6 +47,9 @@ function c73752131.initial_effect(c)
 	e2:SetOperation(c73752131.spop)
 	c:RegisterEffect(e2)
 end
+c73752131.mentioned_counter={
+	[0x1]=true,
+}
 function c73752131.acop(e,tp,eg,ep,ev,re,r,rp)
 	if re:IsHasType(EFFECT_TYPE_ACTIVATE) and re:IsActiveType(TYPE_SPELL) and e:GetHandler():GetFlagEffect(FLAG_ID_CHAINING)>0 then
 		e:GetHandler():AddCounter(0x1,1)

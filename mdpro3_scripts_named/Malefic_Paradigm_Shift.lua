@@ -1,17 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:48
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Malefic Paradigm Shift  (ID: 5125629)
 -- Type: Trap
 -- Setcode: 0x23
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- You can activate this card from your hand by paying half your LP.
 -- Add to your hand, or place face-up in your Field Zone, 1 "Malefic World" from your Deck or GY, then
 -- Special Summon 1 "Malefic" monster from your Deck or Extra Deck in Defense Position, ignoring its
 -- Summoning conditions, then if your opponent controls a monster with 2500 or more ATK, all face-up
 -- monsters they currently control lose 2500 ATK until the end of this turn.
+-- You can activate this card from your hand by paying half your LP.
 -- You can only activate 1 "Malefic Paradigm Shift" per turn.
 --[[ __CARD_HEADER_END__ ]]
 

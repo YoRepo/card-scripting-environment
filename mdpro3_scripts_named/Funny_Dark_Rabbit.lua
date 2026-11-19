@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Funny Dark Rabbit  (ID: 45536531)
 -- Type: Monster / Effect
@@ -7,15 +7,15 @@
 -- Race: Beast
 -- Level: 4
 -- ATK 1100 | DEF 1500
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- After this card is Normal or Special Summoned, you can Normal Summon 1 monster that mentions "Toon
+-- This card is treated as a Toon monster while "Toon World" is on the field.
+-- After you Normal or Special Summon this card, you can Normal Summon 1 monster that mentions "Toon
 -- World" during your Main Phase this turn, in addition to your Normal Summon/Set (you can only gain
 -- this effect once per turn).
--- This card is treated as a Toon monster while "Toon World" is on the field.
--- Once per turn: You can add to your hand or place face-up on your field, 1 "Toon" Field or Continuous
--- Spell from your Deck.
+-- Once per turn, during your Main Phase: You can take 1 "Toon" Field or Continuous Spell from your
+-- Deck and either add it to your hand or place it face-up on your field.
 --[[ __CARD_HEADER_END__ ]]
 
 --ファニー・ダーク・ラビット

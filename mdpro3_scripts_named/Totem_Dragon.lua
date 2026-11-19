@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Totem Dragon  (ID: 564541)
 -- Type: Monster / Effect
@@ -38,7 +38,8 @@ function c564541.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 function c564541.dccon(e,c)
-	return c:IsRace(RACE_DRAGON)
+	local ec=e:GetHandler()
+	return c:IsRace(RACE_DRAGON) and (ec:IsFaceup() or c:GetControler()==ec:GetControler())
 end
 function c564541.cfilter(c)
 	return c:IsType(TYPE_MONSTER) and not c:IsRace(RACE_DRAGON)

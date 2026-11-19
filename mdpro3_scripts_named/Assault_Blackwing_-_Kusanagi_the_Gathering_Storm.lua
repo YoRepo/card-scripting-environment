@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Assault Blackwing - Kusanagi the Gathering Storm  (ID: 31114334)
 -- Type: Monster / Effect / Synchro
@@ -8,14 +8,14 @@
 -- Level: 9
 -- ATK 3000 | DEF 1000
 -- Setcode: 0x1033
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 1 Tuner + 1+ non-Tuners
 -- If this card is Synchro Summoned using a "Blackwing" monster as material, it is treated as a Tuner
 -- while face-up on the field.
--- After this card is Synchro Summoned, for the rest of this turn, it gains ATK equal to the total
--- original ATK of the Synchro Monsters used as its material.
+-- After this card is Synchro Summoned, it gains ATK equal to the total original ATK of the Synchro
+-- Monsters used as material, until the end of this turn.
 -- Can attack all your opponent's monsters, once each.
 -- If this card attacks a Defense Position monster, inflict piercing battle damage to your opponent.
 --[[ __CARD_HEADER_END__ ]]

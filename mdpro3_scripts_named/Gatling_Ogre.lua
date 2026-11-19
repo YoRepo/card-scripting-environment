@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Gatling Ogre  (ID: 88931417)
 -- Type: Monster / Effect
@@ -7,12 +7,12 @@
 -- Race: Fiend
 -- Level: 3
 -- ATK 800 | DEF 800
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- You can send any number of face-down cards from your Spell & Trap Zone to the GY; inflict 800 damage
--- to your opponent for each, also your opponent takes no damage from non-Fiend monsters' effects for
--- the rest of this turn.
+-- to your opponent for each card sent to the GY, also your opponent takes no effect damage from
+-- non-Fiend monsters' effects for the rest of this turn.
 -- You can only use this effect of "Gatling Ogre" thrice per turn.
 -- Once per turn, when this card is targeted for an attack: You can inflict 500 damage to your opponent
 -- for each Attack Position monster they control, then end the Battle Phase.

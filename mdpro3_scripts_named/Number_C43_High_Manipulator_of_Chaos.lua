@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Number C43: High Manipulator of Chaos  (ID: 32446630)
 -- Type: Monster / Effect / Xyz
@@ -15,7 +15,7 @@
 -- All Tokens you control can make a second attack during each Battle Phase.
 -- If this card has "Number 43: Manipulator of Souls" as an Xyz Material, it gains this effect.
 -- ● Once per turn: You can detach 1 Xyz Material from this card; Special Summon 1 "Manipulator Token"
--- (Fiend-Type/DARK/Level 1/ATK ?/DEF ?).
+-- (Fiend/DARK/Level 1/ATK ?/DEF ?).
 -- (When Summoned, its ATK and DEF each become equal to half the opponent's current LP.)
 --[[ __CARD_HEADER_END__ ]]
 

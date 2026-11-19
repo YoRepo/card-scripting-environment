@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Rose Witch  (ID: 23087070)
 -- Type: Monster / Effect
@@ -23,5 +23,6 @@ function c23087070.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 function c23087070.condition(e,c)
-	return c:IsRace(RACE_PLANT)
+	local ec=e:GetHandler()
+	return c:IsRace(RACE_PLANT) and (ec:IsFaceup() or c:GetControler()==ec:GetControler())
 end

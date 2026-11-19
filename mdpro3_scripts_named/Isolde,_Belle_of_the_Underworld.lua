@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Isolde, Belle of the Underworld  (ID: 22657402)
 -- Type: Monster / Effect
@@ -66,7 +66,7 @@ function c22657402.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	local lv2=0
 	local tc2=g:GetNext()
 	if tc2 then lv2=tc2:GetLevel() end
-	Duel.Hint(HINT_SELECTMSG,tp,HINGMSG_LVRANK)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_LVRANK)
 	local lv=Duel.AnnounceLevel(tp,5,8,lv1,lv2)
 	e:SetLabel(lv)
 end

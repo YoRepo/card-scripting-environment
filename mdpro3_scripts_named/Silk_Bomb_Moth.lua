@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Silk Bomb Moth  (ID: 18300894)
 -- Type: Monster / Effect
 -- Attribute: WIND
@@ -11,15 +11,15 @@
 --
 -- Effect Text:
 -- If you have 2 or more WIND monsters in your GY and this card is in your hand: You can Special Summon
--- this card, and if you do, shuffle 1 WIND monster from your GY into the Deck. If this card is Normal
--- or Special Summoned: You can reveal the top card of your opponent's Deck, and apply the appropriate
--- effect based on its card type.
+-- this card, and if you do, shuffle 1 WIND monster from your GY into the Deck.
+-- If this card is Normal or Special Summoned: You can reveal the top card of your opponent's Deck, and
+-- apply the appropriate effect based on its card type.
 -- ● Monster: Place it in your opponent's Spell & Trap Zone as a face-up Continuous Spell.
 -- ● Spell/Trap: Banish it.
 -- You can only use each effect of "Silk Bomb Moth" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Silk Bomb Moth
+--シルクボムモース
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--special summon

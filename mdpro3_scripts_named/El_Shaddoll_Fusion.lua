@@ -1,14 +1,15 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: El Shaddoll Fusion  (ID: 6417578)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x9d, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 "Shaddoll" Fusion Monster from your Extra Deck, using monsters from your hand or
--- field. You can only activate 1 "El Shaddoll Fusion" per turn.
+-- field.
+-- You can only activate 1 "El Shaddoll Fusion" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --神の写し身との接触

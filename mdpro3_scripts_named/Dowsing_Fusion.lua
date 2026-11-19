@@ -1,15 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Dowsing Fusion  (ID: 72490637)
 -- Type: Spell
 -- Setcode: 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Fusion Monster from your Extra Deck, by banishing Fusion Materials listed on it from
--- your GY. Only Pendulum Monsters can be used as Fusion Material for this card's effect. You can only
--- activate 1 "Dowsing Fusion" per turn.
+-- your GY.
+-- Only Pendulum Monsters can be used as Fusion Material for this card's effect.
+-- You can only activate 1 "Dowsing Fusion" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ダウジング・フュージョン

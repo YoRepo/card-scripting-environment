@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Sky Striker Ace - Kaina  (ID: 12421694)
 -- Type: Monster / Effect / Link
@@ -15,8 +15,8 @@
 -- 1 non-EARTH "Sky Striker Ace" monster
 -- If this card is Special Summoned: You can target 1 face-up monster your opponent controls; it cannot
 -- attack until the end of your opponent's turn.
--- Each time you activate a "Sky Striker" Spell Card, or its effect, gain 100 LP immediately after the
--- card or effect resolves.
+-- Each time you activate a "Sky Striker" Spell Card or effect, gain 100 LP immediately after the card
+-- or effect resolves.
 -- You can only Special Summon "Sky Striker Ace - Kaina(s)" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

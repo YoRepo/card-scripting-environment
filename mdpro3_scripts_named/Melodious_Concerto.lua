@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Melodious Concerto  (ID: 31458630)
 -- Type: Spell
 -- Setcode: 0x9b
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Fairy Fusion Monster from your Extra Deck, using monsters from your hand, field,
--- and/or Pendulum Zones. If a "Melodious" Fusion Monster(s) is sent to your GY while this card is in
--- your GY, even during the Damage Step: You can place this card on the bottom of your Deck, then draw
--- 1 card. You can only use each effect of "Melodious Concerto" once per turn.
+-- and/or Pendulum Zones.
+-- If a "Melodious" Fusion Monster(s) is sent to your GY while this card is in your GY, even during the
+-- Damage Step: You can place this card on the bottom of your Deck, then draw 1 card.
+-- You can only use each effect of "Melodious Concerto" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --幻奏協奏曲

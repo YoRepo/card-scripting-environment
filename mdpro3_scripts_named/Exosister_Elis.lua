@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Exosister Elis  (ID: 16474916)
 -- Type: Monster / Effect
@@ -15,8 +15,7 @@
 -- control "Exosister Stella", you gain 800 LP.
 -- If your opponent moves a card(s) out of either GY (except during the Damage Step): You can Special
 -- Summon from your Extra Deck, 1 "Exosister" Xyz Monster using this face-up card you control as
--- material.
--- (This is treated as an Xyz Summon.)
+-- material (this is treated as an Xyz Summon).
 -- You can only use each effect of "Exosister Elis" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

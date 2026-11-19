@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Deep-Eyes White Dragon, the Blue Abyss  (ID: 67886895)
 -- Type: Monster / Effect
@@ -8,15 +8,15 @@
 -- Level: 10
 -- ATK 0 | DEF 0
 -- Setcode: 0xdd
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- (This card is always treated as a "Blue-Eyes" card.)
 -- You can discard this card; add 1 Level 1 LIGHT Tuner from your Deck to your hand.
--- If a "Blue-Eyes" Ritual Monster(s) and/or "Blue-Eyes White Dragon" is sent to your GY (except during
--- the Damage Step): You can target 1 of them; Special Summon this card from your GY (if it was there
--- when the monster was sent) or hand (even if not), and if you do, its ATK becomes that monster's,
--- also banish it when it leaves the field.
+-- If a "Blue-Eyes" Ritual Monster or "Blue-Eyes White Dragon" is sent to your GY (except during the
+-- Damage Step): You can target 1 of them in the GY; Special Summon this card from your GY (if it was
+-- there when the monster was sent) or hand (even if not), and if you do, its ATK becomes that
+-- target's, also banish it when it leaves the field.
 -- You can only use each effect of "Deep-Eyes White Dragon, the Blue Abyss" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

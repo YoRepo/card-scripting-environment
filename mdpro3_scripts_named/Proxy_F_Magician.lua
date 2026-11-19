@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Proxy F Magician  (ID: 12450071)
 -- Type: Monster / Effect / Link
 -- Attribute: FIRE
@@ -8,14 +8,15 @@
 -- Link Rating: 2
 -- Link Arrows: Bottom-Left, Bottom-Right
 -- ATK 1400
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2 Effect Monsters
 -- During your Main Phase: You can Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters
--- from your field as Fusion Material. If a Fusion Monster(s) is Fusion Summoned to a zone(s) this card
--- points to: You can Special Summon 1 monster with 1000 or less ATK from your hand. You can only use
--- each effect of "Proxy F Magician" once per turn.
+-- from your field as Fusion Material.
+-- If a Fusion Monster(s) is Fusion Summoned to a zone(s) this card points to: You can Special Summon 1
+-- monster with 1000 or less ATK from your hand.
+-- You can only use each effect of "Proxy F Magician" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --プロキシー・F・マジシャン

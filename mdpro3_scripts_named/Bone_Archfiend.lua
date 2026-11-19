@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Bone Archfiend  (ID: 25784595)
 -- Type: Monster / Effect
@@ -12,8 +12,8 @@
 --
 -- Effect Text:
 -- If this card is in your hand or GY: You can send 1 other card from your hand or field to the GY;
--- Special Summon this card, also you cannot Special Summon monsters from the Extra Deck for the rest
--- of this turn, except DARK Dragon Synchro Monsters.
+-- Special Summon this card, also you cannot Special Summon from the Extra Deck for the rest of this
+-- turn, except DARK Dragon Synchro Monsters.
 -- You can target 1 face-up monster you control that has a Level; send 1 Fiend Tuner from your hand or
 -- Deck to the GY, and if you do, increase or decrease that monster's Level by 1.
 -- You can only use each effect of "Bone Archfiend" once per turn.

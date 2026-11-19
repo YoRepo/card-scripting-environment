@@ -1,21 +1,21 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Muddy Mudragon  (ID: 84040113)
 -- Type: Monster / Effect / Synchro
 -- Attribute: DARK
 -- Race: Dragon
 -- Level: 6
 -- ATK 500 | DEF 2200
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- 1 Tuner + 1+ non-Tuner monsters
--- This card can be used as a substitute for any 1 Fusion Material whose name is specifically listed on
--- the Fusion Monster Card, but the other Fusion Material(s) must be correct. During your Main Phase,
--- if you control this Synchro Summoned card: You can Fusion Summon 1 Fusion Monster from your Extra
--- Deck, using monsters you control as Fusion Material, including this card. You can only use this
--- effect of "Muddy Mudragon" once per turn.
+-- 1 Tuner + 1+ non-Tuners
+-- This card in your field or GY can be used as a substitute for any 1 Fusion Material whose name is
+-- mentioned on the Fusion Monster Card, but the other materials must be correct.
+-- During your Main Phase, if you control this Synchro Summoned card: You can Fusion Summon 1 Fusion
+-- Monster from your Extra Deck, using monsters you control, including this card.
+-- You can only use this effect of "Muddy Mudragon" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ドロドロゴン

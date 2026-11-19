@@ -1,21 +1,22 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Gorgonic Umbral Horror  (ID: 101306007)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Gorgonic Umbral Horror  (ID: 76548531)
 -- Type: Monster / Effect
 -- Attribute: DARK
 -- Race: Rock
 -- Level: 4
 -- ATK 1200 | DEF 0
 -- Setcode: 0x87
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- You cannot Special Summon from the Extra Deck, except "Number" Xyz Monsters. You can only use each
--- of the following effects of "Gorgonic Umbral Horror" once per turn. If you control no monsters, or
--- all monsters you control are "Umbral Horror" monsters: You can Special Summon this card from your
--- hand, and if you do, add 1 non-Rock "Umbral Horror" monster from your Deck to your hand. Can be
--- treated as 2 materials for the Xyz Summon of a "Number" Xyz Monster that requires 3 or more
+-- You cannot Special Summon from the Extra Deck, except "Number" Xyz Monsters.
+-- You can only use each of the following effects of "Gorgonic Umbral Horror" once per turn.
+-- If you control no monsters, or all monsters you control are "Umbral Horror" monsters: You can
+-- Special Summon this card from your hand, and if you do, add 1 non-Rock "Umbral Horror" monster from
+-- your Deck to your hand.
+-- Can be treated as 2 materials for the Xyz Summon of a "Number" Xyz Monster that requires 3 or more
 -- materials.
 --[[ __CARD_HEADER_END__ ]]
 
@@ -64,16 +65,17 @@ function s.thfilter(c)
 		and c:IsAbleToHand()
 end
 function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return e:GetHandler():IsCanBeSpecialSummoned(e,0,tp,false,false)
+	local c=e:GetHandler()
+	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
+		and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 		and Duel.IsExistingMatchingCard(s.thfilter,tp,LOCATION_DECK,0,1,nil) end
-	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,e:GetHandler(),1,0,0)
+	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,c,1,0,0)
 	Duel.SetOperationInfo(0,CATEGORY_TOHAND,nil,1,tp,LOCATION_DECK)
 end
 function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	if c:IsRelateToChain() and Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)~=0
-		and Duel.IsExistingMatchingCard(s.thfilter,tp,LOCATION_DECK,0,1,nil)
-		and c:IsLocation(LOCATION_MZONE) then
+		and Duel.IsExistingMatchingCard(s.thfilter,tp,LOCATION_DECK,0,1,nil) then
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
 		local g=Duel.SelectMatchingCard(tp,s.thfilter,tp,LOCATION_DECK,0,1,1,nil)
 		if g:GetCount()>0 then

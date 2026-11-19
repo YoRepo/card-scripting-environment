@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Paleozoic Olenoides  (ID: 35035481)
 -- Type: Trap
@@ -7,10 +7,9 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Target 1 Spell/Trap Card on the field; destroy it.
--- Once per Chain, when a Trap Card is activated while this card is in your Graveyard: Special Summon
--- this card as a Normal Monster (Aqua-Type/WATER/Level 2/ATK 1200/DEF 0).
--- (This card is NOT treated as a Trap Card.)
+-- Target 1 Spell/Trap on the field; destroy it.
+-- Once per Chain, when a Trap Card is activated while this card is in your GY: Special Summon this
+-- card as a Normal Monster (Aqua/WATER/Level 2/ATK 1200/DEF 0) (this card is NOT treated as a Trap).
 -- If Summoned this way, this card is unaffected by monster effects, also banish it when it leaves the
 -- field.
 --[[ __CARD_HEADER_END__ ]]

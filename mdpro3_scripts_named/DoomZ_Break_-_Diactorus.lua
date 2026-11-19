@@ -1,22 +1,23 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: DoomZ Break - Diactorus  (ID: 31010081)
 -- Type: Monster / Effect / Xyz
 -- Attribute: WIND
 -- Race: Machine
 -- Rank: 4
 -- ATK 2400 | DEF 0
--- Setcode: 0x1d2, 0x2e7
--- Scope: OCG / TCG / Illegal
+-- Setcode: 0x1d2, 0x1e7
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2 Level 4 monsters
 -- If this card is Special Summoned: You can destroy 1 "DoomZ" card in your hand or face-up field, then
--- you can destroy 1 monster on the field. If this card is destroyed by card effect while it has a
--- "DoomZ" monster or "Medius the Pure" as material: You can take 1 Equip Spell from your Deck and
--- either add it to your hand or send it to the GY. You can only use each effect of "DoomZ Break -
--- Diactorus" once per turn.
+-- you can destroy 1 monster on the field.
+-- If this card is destroyed by card effect while it has a "DoomZ" monster or "Medius the Pure" as
+-- material: You can take 1 Equip Spell from your Deck and either add it to your hand or send it to the
+-- GY.
+-- You can only use each effect of "DoomZ Break - Diactorus" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --終刻獄徒 ディアクトロス

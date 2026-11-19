@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Arcane Barrier  (ID: 17896384)
 -- Type: Spell / Continuous
@@ -41,6 +41,9 @@ function c17896384.initial_effect(c)
 	e3:SetOperation(c17896384.drop)
 	c:RegisterEffect(e3)
 end
+c17896384.mentioned_counter={
+	[0x1]=true,
+}
 function c17896384.ctfilter(c)
 	return c:IsPreviousLocation(LOCATION_MZONE) and c:IsPreviousPosition(POS_FACEUP) and bit.band(c:GetPreviousRaceOnField(),RACE_SPELLCASTER)~=0
 end

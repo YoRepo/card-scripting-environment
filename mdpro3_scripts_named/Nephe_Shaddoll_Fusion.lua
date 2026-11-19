@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Nephe Shaddoll Fusion  (ID: 60226558)
 -- Type: Spell / Equip
 -- Setcode: 0x46, 0x9d
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Activate this card by declaring 1 Attribute. Equip only to a "Shaddoll" monster, and it becomes that
--- Attribute. During your Main Phase: You can Fusion Summon 1 "Shaddoll" Fusion Monster from your Extra
--- Deck, using monsters from your hand or field as Fusion Material, including the equipped monster. You
--- can only use this effect of "Nephe Shaddoll Fusion" once per turn.
+-- Activate this card by declaring 1 Attribute.
+-- Equip only to a "Shaddoll" monster, and it becomes that Attribute.
+-- During your Main Phase: You can Fusion Summon 1 "Shaddoll" Fusion Monster from your Extra Deck,
+-- using monsters from your hand or field as Fusion Material, including the equipped monster.
+-- You can only use this effect of "Nephe Shaddoll Fusion" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --魂写しの同化

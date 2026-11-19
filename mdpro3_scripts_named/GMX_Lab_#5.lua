@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: GMX Lab #5  (ID: 74378580)
 -- Type: Spell / Field
 -- Setcode: 0x1dd
@@ -9,11 +9,11 @@
 -- Effect Text:
 -- Your opponent cannot activate cards or effects when you Normal or Special Summon a "GMX" monster(s).
 -- During your Main Phase: You can Set 1 "GMX" Spell/Trap from your Deck, except "GMX Lab #5", then
--- place 1 card from your hand on top of the Deck. You can only use this effect of "GMX Lab #5" once
--- per turn.
+-- place 1 card from your hand on top of the Deck.
+-- You can only use this effect of "GMX Lab #5" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---GMX Lab #5
+--旧GMX第５研究所
 local s,id,o=GetID()
 function s.initial_effect(c)
 	local e0=Effect.CreateEffect(c)

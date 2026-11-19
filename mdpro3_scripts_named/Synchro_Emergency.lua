@@ -1,10 +1,10 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Synchro Emergency  (ID: 49415281)
 -- Type: Trap
 -- Setcode: 0x17
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If only your opponent controls a monster, you can activate this card from your hand.

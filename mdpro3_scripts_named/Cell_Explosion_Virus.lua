@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Cell Explosion Virus  (ID: 84491298)
 -- Type: Trap
@@ -22,6 +22,9 @@ function c84491298.initial_effect(c)
 	e1:SetOperation(c84491298.activate)
 	c:RegisterEffect(e1)
 end
+c84491298.mentioned_counter={
+	[0x100e]=true,
+}
 function c84491298.condition(e,tp,eg,ep,ev,re,r,rp)
 	local a=Duel.GetAttacker()
 	return a:IsControler(1-tp) and a:GetCounter(0x100e)>0

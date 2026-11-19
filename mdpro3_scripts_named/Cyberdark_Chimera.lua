@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Cyberdark Chimera  (ID: 5370235)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -8,14 +8,15 @@
 -- Level: 4
 -- ATK 800 | DEF 2100
 -- Setcode: 0x4093
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- You can discard 1 Spell/Trap; add 1 "Power Bond" from your Deck to your hand, you can only use
 -- Dragon or Machine "Cyber" monsters as Fusion Material this turn, also once when you Fusion Summon
--- this turn, you can also banish monster(s) from your GY as material. If this card is sent to the GY:
--- You can send 1 "Cyberdark" monster from your Deck to the GY, with a different name from the cards in
--- your GY. You can only use each effect of "Cyberdark Chimera" once per turn.
+-- this turn, you can also banish monster(s) from your GY as material.
+-- If this card is sent to the GY: You can send 1 "Cyberdark" monster from your Deck to the GY, with a
+-- different name from the cards in your GY.
+-- You can only use each effect of "Cyberdark Chimera" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --サイバー・ダーク・キメラ

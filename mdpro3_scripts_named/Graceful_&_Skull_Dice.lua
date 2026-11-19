@@ -1,23 +1,23 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Graceful & Skull Dice  (ID: 101306053)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Graceful & Skull Dice  (ID: 76630812)
 -- Type: Spell / Quick-Play
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Roll a six-sided die twice and apply these effects for the rest of this turn.
--- ● Monsters you control that mention "Dark Time Wizard" gain ATK/DEF equal to the total x 200.
--- ● Monsters your opponent controls lose ATK/DEF equal to the total x 200.
--- If your opponent Normal or Special Summons a monster(s) while this card is in your GY: You can
--- banish this card, then target 1 of those monsters; roll a six-sided die twice, and if the total is 6
--- or more, destroy that monster.
+-- Roll a six-sided die twice, and apply these effects for the rest of this turn.
+-- ● All monsters you control that mention "Dark Time Wizard" gain ATK/DEF equal to the total x 200.
+-- ● All monsters your opponent controls lose ATK/DEF equal to the total x 200.
+-- If your opponent Normal or Special Summons a monster(s), while this card is in your GY (except
+-- during the Damage Step): You can banish this card, then target 1 of those monsters; roll a six-sided
+-- die twice, and if the total was 6 or higher, destroy that monster.
 --[[ __CARD_HEADER_END__ ]]
 
 --天使と悪魔のサイコロ
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.AddCodeList(c,101306052)
+	aux.AddCodeList(c,40235813)
 	--Activate
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
@@ -34,7 +34,7 @@ function s.initial_effect(c)
 	local custom_code=aux.RegisterMergedDelayedEvent_ToSingleCard(c,id,{EVENT_SUMMON_SUCCESS,EVENT_SPSUMMON_SUCCESS})
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,1))
-	e2:SetCategory(CATEGORY_DESTROY+CATEGORY_DAMAGE+CATEGORY_DICE)
+	e2:SetCategory(CATEGORY_DESTROY+CATEGORY_DICE)
 	e2:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_O)
 	e2:SetCode(custom_code)
 	e2:SetRange(LOCATION_GRAVE)
@@ -73,7 +73,7 @@ function s.activate(e,tp,eg,ep,ev,re,r,rp)
 	Duel.RegisterEffect(e4,tp)
 end
 function s.atktg(e,c)
-	return aux.IsCodeListed(c,101306052)
+	return aux.IsCodeListed(c,40235813)
 end
 function s.desfilter(c,tp,e)
 	return c:IsLocation(LOCATION_MZONE) and c:IsSummonPlayer(1-tp) and c:IsCanBeEffectTarget(e)
@@ -93,6 +93,7 @@ function s.destg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
 		sg=Duel.SelectTarget(tp,aux.IsInGroup,tp,LOCATION_MZONE,LOCATION_MZONE,1,1,nil,g)
 	end
+	Duel.SetOperationInfo(0,CATEGORY_DICE,nil,0,tp,2)
 end
 function s.desop(e,tp,eg,ep,ev,re,r,rp)
 	local a,b=Duel.TossDice(tp,2)

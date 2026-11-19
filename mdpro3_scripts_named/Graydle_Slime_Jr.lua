@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Graydle Slime Jr.  (ID: 80250319)
 -- Type: Monster / Effect / Tuner
@@ -11,12 +11,12 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- When this card is Normal Summoned: You can target 1 "Graydle" monster in your Graveyard; for the
--- rest of this turn, you cannot Special Summon other monsters, except WATER monsters, also Special
--- Summon that monster, then you can Special Summon from your hand, 1 Aqua-Type monster with the same
--- Level as the monster Special Summoned by this card's effect.
--- When this card is destroyed by battle and sent to the Graveyard: You can Special Summon 1 "Graydle"
--- monster from your Deck.
+-- When this card is Normal Summoned: You can target 1 "Graydle" monster in your GY; for the rest of
+-- this turn, you cannot Special Summon other monsters, except WATER monsters, also Special Summon that
+-- monster, then you can Special Summon from your hand, 1 Aqua monster with the same Level as the
+-- monster Special Summoned by this card's effect.
+-- When this card is destroyed by battle and sent to the GY: You can Special Summon 1 "Graydle" monster
+-- from your Deck.
 --[[ __CARD_HEADER_END__ ]]
 
 --グレイドル・スライムJr.

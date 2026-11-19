@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Spell Power Grasp  (ID: 75014062)
 -- Type: Spell
@@ -24,6 +24,9 @@ function c75014062.initial_effect(c)
 	e1:SetOperation(c75014062.activate)
 	c:RegisterEffect(e1)
 end
+c75014062.mentioned_counter={
+	[0x1]=true,
+}
 function c75014062.filter(c)
 	return c:IsFaceup() and c:IsCanAddCounter(0x1,1)
 end

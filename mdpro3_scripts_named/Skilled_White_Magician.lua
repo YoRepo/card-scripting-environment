@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Skilled White Magician  (ID: 46363422)
 -- Type: Monster / Effect
@@ -46,6 +46,9 @@ function c46363422.initial_effect(c)
 	e2:SetOperation(c46363422.spop)
 	c:RegisterEffect(e2)
 end
+c46363422.mentioned_counter={
+	[0x1]=true,
+}
 function c46363422.acop(e,tp,eg,ep,ev,re,r,rp)
 	if re:IsHasType(EFFECT_TYPE_ACTIVATE) and re:IsActiveType(TYPE_SPELL) and e:GetHandler():GetFlagEffect(FLAG_ID_CHAINING)>0 then
 		e:GetHandler():AddCounter(0x1,1)

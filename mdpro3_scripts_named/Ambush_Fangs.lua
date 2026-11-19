@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Ambush Fangs  (ID: 77972406)
 -- Type: Trap
@@ -23,6 +23,9 @@ function c77972406.initial_effect(c)
 	e1:SetOperation(c77972406.activate)
 	c:RegisterEffect(e1)
 end
+c77972406.mentioned_counter={
+	[0x1009]=true,
+}
 function c77972406.condition(e,tp,eg,ep,ev,re,r,rp)
 	local tc=Duel.GetAttackTarget()
 	return tc and tc:IsControler(tp) and tc:IsFaceup() and tc:IsSetCard(0x50)

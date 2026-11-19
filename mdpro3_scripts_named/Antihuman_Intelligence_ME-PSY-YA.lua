@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Antihuman Intelligence ME-PSY-YA  (ID: 58844135)
 -- Type: Monster / Effect / Pendulum
@@ -7,6 +7,7 @@
 -- Race: Cyberse
 -- Level: 8
 -- ATK 2500 | DEF 3000
+-- Pendulum Scale: L0 / R0
 -- Scope: OCG / TCG
 --
 -- Effect Text:

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Prank-Kids Pandemonium  (ID: 79059098)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x120
@@ -8,8 +8,9 @@
 --
 -- Effect Text:
 -- During the Main Phase: Fusion Summon 1 "Prank-Kids" Fusion Monster from your Extra Deck, using
--- monsters from your hand or field as Fusion Material. For the rest of this turn after this card
--- resolves, you cannot Normal or Special Summon monsters, except "Prank-Kids" monsters.
+-- monsters from your hand or field as Fusion Material.
+-- For the rest of this turn after this card resolves, you cannot Normal or Special Summon monsters,
+-- except "Prank-Kids" monsters.
 --[[ __CARD_HEADER_END__ ]]
 
 --プランキッズの大暴走

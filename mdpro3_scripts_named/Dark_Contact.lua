@@ -1,15 +1,15 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Dark Contact  (ID: 77124096)
 -- Type: Spell
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Activate 1 of these effects (but you can only use each effect of "Dark Contact" once per turn);
 -- ● Fusion Summon 1 Fusion Monster from your Extra Deck that must be Special Summoned with "Dark
--- Fusion", by shuffling its materials from your field, GY, and/or banishment into the Deck. (This is
--- treated as a Fusion Summon with "Dark Fusion".)
+-- Fusion", by shuffling its materials from your field, GY, and/or banishment into the Deck.
+-- (This is treated as a Fusion Summon with "Dark Fusion".)
 -- ● Add 1 "Supreme King's Castle" or "Dark Fusion" from your Deck to your hand.
 --[[ __CARD_HEADER_END__ ]]
 

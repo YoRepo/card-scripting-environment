@@ -1,18 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Witchcrafter Walpurgis  (ID: 32353566)
 -- Type: Spell / Field
 -- Setcode: 0x128
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During your Main Phase: You can add 1 "Witchcrafter" monster from your Deck to your hand, then
 -- discard 1 card.
 -- You can only use this effect of "Witchcrafter Walpurgis" once per turn.
--- During your turn, if you would discard to activate the effect of a "Witchcrafter" monster you
--- control, you can send 1 "Witchcrafter" Spell/Trap from your Deck to the GY instead, except
--- "Witchcrafter Walpurgis".
+-- During your turn, if a "Witchcrafter" monster you control would discard to activate an effect, you
+-- can send 1 "Witchcrafter" Spell/Trap from your Deck to the GY instead, except "Witchcrafter
+-- Walpurgis".
 --[[ __CARD_HEADER_END__ ]]
 
 --魔女の聖夜行

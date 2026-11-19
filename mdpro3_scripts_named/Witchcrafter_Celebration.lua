@@ -1,18 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Witchcrafter Celebration  (ID: 6958567)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x128
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Activate 1 of these effects;
 -- ● Destroy 1 "Witchcrafter" monster you control and 1 card your opponent controls.
 -- ● Fusion Summon 1 "Witchcrafter" Fusion Monster from your Extra Deck, by shuffling Spellcaster
--- monsters from your GY and/or banishment into the Deck.
--- During your End Phase, if you control a "Witchcrafter" monster, while this card is in your GY: You
--- can add this card to your hand.
+-- monsters from your GY or banishment into the Deck.
+-- During your End Phase, if this card is in your GY and you control a "Witchcrafter" monster: You can
+-- add this card to your hand.
 -- You can only use 1 "Witchcrafter Celebration" effect per turn, and only once that turn.
 --[[ __CARD_HEADER_END__ ]]
 
@@ -102,7 +102,7 @@ function s.activate(e,tp,eg,ep,ev,re,r,rp)
 			g1:Merge(g2)
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
 			local sg=g1:SelectSubGroup(tp,s.gcheck,false,2,2,tp)
-			if sg:GetCount()>0 then
+			if sg then
 				Duel.HintSelection(sg)
 				Duel.Destroy(sg,REASON_EFFECT)
 			end
@@ -155,7 +155,7 @@ function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function s.thop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	if c:IsRelateToChain() then
+	if c:IsRelateToChain() and aux.NecroValleyFilter()(c) then
 		Duel.SendtoHand(c,nil,REASON_EFFECT)
 	end
 end

@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Artmage Masterwork -Succession-  (ID: 37517035)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x1cd
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During the Main Phase: Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from your
--- hand or field, including an "Artmage" monster, and if a card is in the Field Zone, that monster
--- gains 500 ATK. During your Main Phase: You can banish this card from your GY, then target 3
--- "Artmage" cards with different names in your GY; shuffle them into the Deck. You can only use each
--- effect of "Artmage Masterwork -Succession-" once per turn.
+-- hand or field, including an "Artmage" monster, then if a card is in the Field Zone, that monster
+-- gains 500 ATK.
+-- During your Main Phase: You can banish this card from your GY, then target 3 "Artmage" cards with
+-- different names in your GY; shuffle them into the Deck.
+-- You can only use each effect of "Artmage Masterwork -Succession-" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --アルトメギア・マスターワーク－継承－
@@ -129,7 +130,7 @@ function s.tdtg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	Duel.SetOperationInfo(0,CATEGORY_TODECK,g,g:GetCount(),0,0)
 end
 function s.tdop(e,tp,eg,ep,ev,re,r,rp)
-	local g=Duel.GetTargetsRelateToChain()
+	local g=Duel.GetTargetsRelateToChain():Filter(aux.NecroValleyFilter(),nil)
 	if g:GetCount()>0 then
 		Duel.SendtoDeck(g,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)
 	end

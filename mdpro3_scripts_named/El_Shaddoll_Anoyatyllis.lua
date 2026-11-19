@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: El Shaddoll Anoyatyllis  (ID: 19261966)
 -- Type: Monster / Effect / Fusion
 -- Attribute: WATER
@@ -8,13 +8,14 @@
 -- Level: 9
 -- ATK 2700 | DEF 2000
 -- Setcode: 0x9d
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 1 "Shaddoll" monster + 1 WATER monster
--- Must first be Fusion Summoned. Neither player can Special Summon monsters from the hand or GY using
--- Spell/Trap effects. If this card is sent to the GY: You can target 1 "Shaddoll" Spell/Trap in your
--- GY; add it to your hand.
+-- Must first be Fusion Summoned.
+-- Neither player can Special Summon monsters from the hand or GY using Spell/Trap effects.
+-- If this card is sent to the GY: You can target 1 "Shaddoll" Spell/Trap in your GY; add it to your
+-- hand.
 --[[ __CARD_HEADER_END__ ]]
 
 --エルシャドール・アノマリリス

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Fairy Tail - Snow  (ID: 55623480)
 -- Type: Monster / Effect
@@ -60,24 +60,21 @@ function c55623480.posop(e,tp,eg,ep,ev,re,r,rp)
 		Duel.ChangePosition(tc,POS_FACEDOWN_DEFENSE)
 	end
 end
-function c55623480.mainfilter(c)
-	return c:IsLocation(LOCATION_MZONE) and c:GetSequence()<=4
+function c55623480.mainfilter(c,tp)
+	return Duel.GetMZoneCount(tp,c)>0
 end
 function c55623480.spcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	local ft=Duel.GetLocationCount(tp,LOCATION_MZONE)
-	local ct=-ft+1
 	local sg=Duel.GetMatchingGroup(Card.IsAbleToRemoveAsCost,tp,LOCATION_HAND+LOCATION_ONFIELD+LOCATION_GRAVE,0,e:GetHandler())
-	if chk==0 then return sg:GetCount()>=7 and (ft>0 or sg:IsExists(c55623480.mainfilter,ct,nil)) end
+	if chk==0 then return sg:GetCount()>=7 and (ft>0 or sg:IsExists(c55623480.mainfilter,1,nil,tp)) end
 	local g=nil
 	if ft<=0 then
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
-		g=sg:FilterSelect(tp,c55623480.mainfilter,ct,ct,nil)
-		if ct<7 then
-			sg:Sub(g)
-			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
-			local g1=sg:Select(tp,7-ct,7-ct,nil)
-			g:Merge(g1)
-		end
+		g=sg:FilterSelect(tp,c55623480.mainfilter,1,1,nil,tp)
+		sg:Sub(g)
+		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
+		local g1=sg:Select(tp,6,6,nil)
+		g:Merge(g1)
 	else
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
 		g=sg:Select(tp,7,7,nil)
@@ -90,7 +87,7 @@ function c55623480.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function c55623480.spop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	if c:IsRelateToEffect(e) then
+	if c:IsRelateToChain() then
 		Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)
 	end
 end

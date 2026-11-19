@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Fluffal Wings  (ID: 72413000)
 -- Type: Monster / Effect
@@ -11,9 +11,9 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- If this card is in your Graveyard and you control "Toy Vendor": You can banish this card from your
--- Graveyard, then target 1 "Fluffal" monster in your Graveyard; banish it, and if you do, draw 1 card,
--- then you can send 1 "Toy Vendor" you control to the Graveyard, and if you do, draw 1 card.
+-- If you control "Toy Vendor": You can banish this card from your GY, then target 1 "Fluffal" monster
+-- in your GY; banish it, and if you do, draw 1 card, then you can send 1 "Toy Vendor" you control to
+-- the GY, and if you do, draw 1 card.
 -- You can only use this effect of "Fluffal Wings" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

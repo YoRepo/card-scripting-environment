@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Kyoutou Waterfront  (ID: 56111151)
 -- Type: Spell / Field
@@ -50,6 +50,9 @@ function c56111151.initial_effect(c)
 	e4:SetOperation(c56111151.desrepop)
 	c:RegisterEffect(e4)
 end
+c56111151.mentioned_counter={
+	[0x37]=true,
+}
 function c56111151.cfilter(c)
 	return c:IsPreviousLocation(LOCATION_ONFIELD)
 end

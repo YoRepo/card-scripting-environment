@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Fata Dragna  (ID: 41763141)
 -- Type: Monster / Effect / Fusion
 -- Attribute: WIND
@@ -11,14 +11,15 @@
 --
 -- Effect Text:
 -- 2 monsters with the same Type and Attribute, but different Levels
--- Your opponent cannot target Fusion Monsters you control with card effects. If this card is sent to
--- the GY as material for a Fusion Summon: You can Special Summon 1 Fusion Monster from your Extra Deck
--- in Defense Position (but negate its effects, also return it to the Extra Deck during the End Phase),
--- also for the rest of this turn, you cannot Special Summon from the Extra Deck, except Fusion
--- Monsters. You can only use this effect of "Fata Dragna" once per turn.
+-- Your opponent cannot target Fusion Monsters you control with card effects.
+-- If this card is sent to the GY as material for a Fusion Summon: You can Special Summon 1 Fusion
+-- Monster from your Extra Deck in Defense Position (but negate its effects, also return it to the
+-- Extra Deck during the End Phase), also for the rest of this turn, you cannot Special Summon from the
+-- Extra Deck, except Fusion Monsters.
+-- You can only use this effect of "Fata Dragna" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Fata Dragna
+--蜃欺龍
 local s,id,o=GetID()
 function s.initial_effect(c)
 	c:EnableReviveLimit()

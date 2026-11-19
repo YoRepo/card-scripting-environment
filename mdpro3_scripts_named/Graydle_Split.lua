@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Graydle Split  (ID: 75361204)
 -- Type: Trap
@@ -9,9 +9,9 @@
 -- Effect Text:
 -- Target 1 face-up monster you control; equip this card to it.
 -- It gains 500 ATK.
--- During your Main Phase: You can send this card equipped to a monster by this effect to the
--- Graveyard; destroy the monster this card was equipped to, and if you do, Special Summon 2 "Graydle"
--- monsters with different names from your Deck, but destroy them during the End Phase.
+-- During your Main Phase: You can send this card equipped to a monster by this effect to the GY;
+-- destroy the monster this card was equipped to, and if you do, Special Summon 2 "Graydle" monsters
+-- with different names from your Deck, but destroy them during the End Phase.
 -- You can only use this effect of "Graydle Split" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

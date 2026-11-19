@@ -1,18 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Dark End Evaporation Dragon  (ID: 62002838)
 -- Type: Monster / Effect
 -- Attribute: DARK
 -- Race: Dragon
 -- Level: 8
 -- ATK 2600 | DEF 2100
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- You can banish 1 Level 8 Dragon monster from your Extra Deck; Special Summon this card from your
--- hand, also you cannot Special Summon for the rest of this turn, except Dragon monsters. You can
--- activate 1 of these effects;
+-- hand, also you cannot Special Summon for the rest of this turn, except Dragon monsters.
+-- You can activate 1 of these effects;
 -- ● Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from your hand or field.
 -- ● Target 1 other Attack Position monster on the field; make this card lose exactly 500 ATK/DEF, and
 -- if you do, destroy that monster.

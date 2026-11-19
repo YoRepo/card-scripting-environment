@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Legendary Six Samurai - Mizuho  (ID: 74094021)
 -- Type: Monster / Effect
@@ -12,8 +12,8 @@
 --
 -- Effect Text:
 -- If you control "Legendary Six Samurai - Shinai", you can Special Summon this card (from your hand).
--- Once per turn: You can Tribute another face-up "Six Samurai" monster, then target 1 card on the
--- field; destroy that target.
+-- Once per turn: You can Tribute another "Six Samurai" monster, then target 1 card on the field;
+-- destroy that target.
 --[[ __CARD_HEADER_END__ ]]
 
 --真六武衆－ミズホ

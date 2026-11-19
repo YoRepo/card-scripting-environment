@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Black-Winged Assault Dragon  (ID: 73218989)
 -- Type: Monster / Effect / Synchro
@@ -74,6 +74,9 @@ function c73218989.initial_effect(c)
 	c:RegisterEffect(e5)
 end
 c73218989.material_type=TYPE_SYNCHRO
+c73218989.mentioned_counter={
+	[0x10]=true,
+}
 function c73218989.mfilter(c)
 	return c:IsFaceupEx() and c:IsAbleToRemoveAsCost()
 end

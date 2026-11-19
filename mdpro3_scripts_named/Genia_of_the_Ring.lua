@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Genia of the Ring  (ID: 40041559)
 -- Type: Monster / Effect
 -- Attribute: EARTH
@@ -11,14 +11,15 @@
 --
 -- Effect Text:
 -- If this card is in your hand: You can target 1 face-up monster on the field; Special Summon this
--- card, also that target becomes a Spellcaster monster. The next time that target would be destroyed
--- by card effect this turn, it is not destroyed, also you cannot Special Summon from the Extra Deck
--- for the rest of this turn, except Spellcaster monsters. If this card is Tributed, or banished, to
--- activate a Spellcaster monster's effect: You can add this card to your hand. You can only use each
--- effect of "Genia of the Ring" once per turn.
+-- card, also that target becomes a Spellcaster monster.
+-- The next time that target would be destroyed by card effect this turn, it is not destroyed, also you
+-- cannot Special Summon from the Extra Deck for the rest of this turn, except Spellcaster monsters.
+-- If this card is Tributed, or banished, to activate a Spellcaster monster's effect: You can add this
+-- card to your hand.
+-- You can only use each effect of "Genia of the Ring" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Genia of the Ring
+--指環の精霊ジーニャ
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--spsummon
@@ -62,24 +63,26 @@ function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 end
 function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
+	if c:IsRelateToChain() then
+		Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)
+	end
 	local tc=Duel.GetFirstTarget()
-	local res=c:IsRelateToChain() and Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)>0
-	if res and tc:IsRelateToChain() and tc:IsFaceup() and tc:IsLocation(LOCATION_MZONE) and not tc:IsImmuneToEffect(e) then
+	if tc:IsRelateToChain() and tc:IsFaceup() and tc:IsLocation(LOCATION_MZONE) and not tc:IsImmuneToEffect(e) then
 		local e1=Effect.CreateEffect(c)
 		e1:SetType(EFFECT_TYPE_SINGLE)
 		e1:SetCode(EFFECT_CHANGE_RACE)
 		e1:SetValue(RACE_SPELLCASTER)
 		e1:SetReset(RESET_EVENT+RESETS_STANDARD)
 		tc:RegisterEffect(e1)
+		local e2=Effect.CreateEffect(c)
+		e2:SetType(EFFECT_TYPE_SINGLE)
+		e2:SetCode(EFFECT_INDESTRUCTABLE_COUNT)
+		e2:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
+		e2:SetCountLimit(1)
+		e2:SetValue(s.valcon)
+		e2:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
+		tc:RegisterEffect(e2)
 	end
-	local e2=Effect.CreateEffect(c)
-	e2:SetType(EFFECT_TYPE_SINGLE)
-	e2:SetCode(EFFECT_INDESTRUCTABLE_COUNT)
-	e2:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
-	e2:SetCountLimit(1)
-	e2:SetValue(s.valcon)
-	e2:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
-	tc:RegisterEffect(e2)
 	local e3=Effect.CreateEffect(c)
 	e3:SetType(EFFECT_TYPE_FIELD)
 	e3:SetCode(EFFECT_CANNOT_SPECIAL_SUMMON)

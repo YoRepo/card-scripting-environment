@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Jizukiru, the Star Destroying Kaiju  (ID: 63941210)
 -- Type: Monster / Effect
@@ -56,6 +56,9 @@ function c63941210.initial_effect(c)
 	e3:SetOperation(c63941210.disop)
 	c:RegisterEffect(e3)
 end
+c63941210.mentioned_counter={
+	[0x37]=true,
+}
 function c63941210.spfilter(c,tp)
 	return c:IsReleasable(REASON_SPSUMMON) and Duel.GetMZoneCount(1-tp,c,tp)>0
 end

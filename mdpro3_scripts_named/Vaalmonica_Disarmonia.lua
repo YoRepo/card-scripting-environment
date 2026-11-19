@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Vaalmonica Disarmonia  (ID: 65496951)
 -- Type: Spell
@@ -30,6 +30,9 @@ function s.initial_effect(c)
 	e1:SetOperation(s.activate)
 	c:RegisterEffect(e1)
 end
+s.mentioned_counter={
+	[0x6a]=true,
+}
 function s.pfilter(c)
 	return c:IsFaceup() and c:IsCanAddCounter(0x6a,1)
 end

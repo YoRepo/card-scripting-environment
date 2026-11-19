@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Forgotten Temple of the Deep  (ID: 43889633)
 -- Type: Trap / Continuous
@@ -7,7 +7,7 @@
 --
 -- Effect Text:
 -- While this card is on the field, this card's name becomes "Umi".
--- Once per turn: You can target 1 Level 4 or lower Fish, Sea Serpent or Aqua-Type monster you control;
+-- Once per turn: You can target 1 Level 4 or lower Fish, Sea Serpent or Aqua monster you control;
 -- banish that target.
 -- During your End Phase: Special Summon the monster(s) banished by this effect.
 --[[ __CARD_HEADER_END__ ]]

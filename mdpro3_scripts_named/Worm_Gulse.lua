@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Worm Gulse  (ID: 85754829)
 -- Type: Monster / Effect
@@ -36,6 +36,9 @@ function c85754829.initial_effect(c)
 	e2:SetValue(c85754829.atkval)
 	c:RegisterEffect(e2)
 end
+c85754829.mentioned_counter={
+	[0xf]=true,
+}
 function c85754829.atkval(e,c)
 	return c:GetCounter(0xf)*300
 end

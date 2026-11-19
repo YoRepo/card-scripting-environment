@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Apprentice Magician  (ID: 9156135)
 -- Type: Monster / Effect
@@ -45,6 +45,9 @@ function c9156135.initial_effect(c)
 	e4:SetOperation(c9156135.operation)
 	c:RegisterEffect(e4)
 end
+c9156135.mentioned_counter={
+	[0x1]=true,
+}
 function c9156135.filter(c)
 	return c:IsFaceup() and c:IsCanAddCounter(0x1,1)
 end

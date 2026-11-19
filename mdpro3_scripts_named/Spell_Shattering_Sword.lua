@@ -1,18 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Spell Shattering Sword  (ID: 101306064)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Spell Shattering Sword  (ID: 77456448)
 -- Type: Spell / Quick-Play
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Activate 1 of these effects;
 -- ● Destroy all face-up Spells your opponent controls.
--- ● Target 1 face-up monster your opponent controls; show 1 "Light and Darkness Ritual" from your hand
--- or GY, then change that monster's ATK to 0, also negate its effects.
+-- ● Target 1 face-up monster your opponent controls; show 1 "Light and Darkness Ritual" in your hand
+-- or GY, then that monster's ATK becomes 0, also its effects are negated.
 -- If this card in its owner's possession is destroyed by an opponent's card: You can destroy 1 card in
--- your opponent's hand (at random) or field. You can only activate 1 "Spell-Shattering Sword" per
--- turn.
+-- your opponent's hand (at random) or their field.
+-- You can only activate 1 "Spell Shattering Sword" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --魔法効果の剣
@@ -72,7 +72,7 @@ function s.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	else
 		e:SetCategory(CATEGORY_ATKCHANGE+CATEGORY_DISABLE)
 		e:SetProperty(EFFECT_FLAG_CARD_TARGET+EFFECT_FLAG_DAMAGE_STEP)
-		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_FACEUP)
+		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DISABLE)
 		local g=Duel.SelectTarget(tp,s.disfilter,tp,0,LOCATION_MZONE,1,1,nil)
 		Duel.SetOperationInfo(0,CATEGORY_DISABLE,g,1,0,0)
 	end

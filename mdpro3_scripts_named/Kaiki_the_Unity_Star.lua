@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Kaiki the Unity Star  (ID: 60822251)
 -- Type: Monster / Effect
 -- Attribute: LIGHT
@@ -12,9 +12,11 @@
 -- Effect Text:
 -- If this card is Special Summoned (except during the Damage Step): You can pay 500 LP; Fusion Summon
 -- 1 Warrior Fusion Monster from your Extra Deck, using monsters from your hand or field as Fusion
--- Material. During your opponent's turn, if this card is in your GY and you control a Level 5 or
--- higher Warrior monster whose current ATK is different from its original ATK (Quick Effect): You can
--- Special Summon this card. You can only use each effect of "Kaiki the Unity Star" once per turn.
+-- Material.
+-- During your opponent's turn, if this card is in your GY and you control a Level 5 or higher Warrior
+-- monster whose current ATK is different from its original ATK (Quick Effect): You can Special Summon
+-- this card.
+-- You can only use each effect of "Kaiki the Unity Star" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --天融星カイキ

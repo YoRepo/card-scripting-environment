@@ -1,23 +1,24 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Red-Eyes Black Dragon Exceed  (ID: 101306036)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Red-Eyes Black Dragon Exceed  (ID: 17242022)
 -- Type: Monster / Effect / Fusion
 -- Attribute: DARK
 -- Race: Dragon
 -- Level: 9
 -- ATK 3400 | DEF 3000
 -- Setcode: 0x3b
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- "Red-Eyes Black Dragon" + 1 monster that mentions "Dark Time Wizard"
 -- Must be either Fusion Summoned, or Special Summoned (from your Extra Deck) by Tributing 1 face-up
--- monster on either field during the turn a monster(s) was destroyed by the effect of "Dark Time
--- Wizard". You can only Special Summon "Red-Eyes Black Dragon Exceed" once per turn this way, no
--- matter which method you use. If this card is Special Summoned: You can Special Summon 1 Level 8 or
--- lower monster from your hand or GY. Unaffected by your opponent's activated monster and Spell
--- effects.
+-- monster on either field during the turn a monster was destroyed by the effect of "Dark Time Wizard".
+-- You can only Special Summon "Red-Eyes Black Dragon Exceed" once per turn this way, no matter which
+-- method you use.
+-- Unaffected by your opponent's activated Spell or monster effects.
+-- If this card is Special Summoned: You can Special Summon 1 Level 8 or lower monster from your hand
+-- or GY.
 --[[ __CARD_HEADER_END__ ]]
 
 --真紅眼の超越黒竜
@@ -26,7 +27,7 @@ function s.initial_effect(c)
 	--fusion material
 	c:EnableReviveLimit()
 	aux.AddFusionProcCodeFun(c,74677422,s.mfilter,1,true,true)
-	aux.AddCodeList(c,74677422,101306052)
+	aux.AddCodeList(c,74677422,40235813)
 	--splimit
 	local e0=Effect.CreateEffect(c)
 	e0:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_CONTINUOUS)
@@ -87,12 +88,12 @@ function s.dcfilter(c)
 	return c:IsReason(REASON_EFFECT)
 end
 function s.regop(e,tp,eg,ep,ev,re,r,rp)
-	if re and eg:IsExists(s.dcfilter,1,nil) and re:GetHandler():IsCode(101306052) then
+	if re and eg:IsExists(s.dcfilter,1,nil) and re:GetHandler():IsCode(40235813) then
 		Duel.RegisterFlagEffect(0,id,RESET_PHASE+PHASE_END,0,1)
 	end
 end
 function s.mfilter(c)
-	return aux.IsCodeListed(c,101306052)
+	return aux.IsCodeListed(c,40235813)
 end
 function s.splimit(e,se,sp,st)
 	return bit.band(st,SUMMON_TYPE_FUSION)==SUMMON_TYPE_FUSION and Duel.GetFlagEffect(sp,id+o)==0

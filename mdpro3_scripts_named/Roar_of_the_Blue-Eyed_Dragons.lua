@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Roar of the Blue-Eyed Dragons  (ID: 17725109)
 -- Type: Spell
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Special Summon in Defense Position, 1 "Blue-Eyes" monster from your Deck, GY, or banishment (but if
 -- you control no "Blue-Eyes White Dragon", you can only Special Summon "Blue-Eyes White Dragon" with
 -- this effect), also you cannot Special Summon from the Extra Deck for the rest of this turn, except
--- Dragon monsters. You can banish this card from your GY; Fusion Summon 1 Fusion Monster from your
--- Extra Deck, using monsters from your hand or field, including a "Blue-Eyes" monster. You can only
--- use 1 "Roar of the Blue-Eyed Dragons" effect per turn, and only once that turn.
+-- Dragon monsters.
+-- You can banish this card from your GY; Fusion Summon 1 Fusion Monster from your Extra Deck, using
+-- monsters from your hand or field, including a "Blue-Eyes" monster.
+-- You can only use 1 "Roar of the Blue-Eyed Dragons" effect per turn, and only once that turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --青眼龍轟臨

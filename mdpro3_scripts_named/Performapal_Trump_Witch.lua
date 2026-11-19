@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Performapal Trump Witch  (ID: 91584698)
 -- Type: Monster / Effect / Pendulum
 -- Attribute: DARK

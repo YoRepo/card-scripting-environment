@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Cosmic Slicer Zer'oll  (ID: 1487805)
 -- Type: Monster / Effect / Link
@@ -63,6 +63,9 @@ function c1487805.initial_effect(c)
 	e4:SetValue(1)
 	c:RegisterEffect(e4)
 end
+c1487805.mentioned_counter={
+	[0x100e]=true,
+}
 function c1487805.thcon(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():IsSummonType(SUMMON_TYPE_LINK)
 end

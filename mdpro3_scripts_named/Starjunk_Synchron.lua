@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Starjunk Synchron  (ID: 13021682)
 -- Type: Monster / Effect / Tuner
@@ -8,16 +8,16 @@
 -- Level: 3
 -- ATK 1300 | DEF 500
 -- Setcode: 0x43, 0x1017
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- For a Synchro Summon, you can substitute this card for any 1 "Synchron" Tuner.
 -- You can only use each of the following effects of "Starjunk Synchron" once per turn.
 -- If this card is in your hand: You can target 1 Level 2 or lower monster in your GY; Special Summon
--- this card, and if you do, Special Summon that monster, but negate its effects, also you cannot
+-- this card, and if you do, Special Summon that monster but negate its effects, also you cannot
 -- Special Summon from the Extra Deck for the rest of this turn, except Synchro Monsters.
--- You can banish this card from your GY; "Junk Warrior" you control cannot be destroyed by your
--- opponent's card effects this turn.
+-- You can banish this card from your GY; this turn, no "Junk Warrior" you control can be destroyed by
+-- your opponent's card effects.
 --[[ __CARD_HEADER_END__ ]]
 
 --スタージャンク・シンクロン

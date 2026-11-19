@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: GMX Suppression Squad  (ID: 39706423)
 -- Type: Monster / Effect
 -- Attribute: WIND
@@ -12,13 +12,15 @@
 --
 -- Effect Text:
 -- If this card is in your hand and you control a "GMX" monster or a Dinosaur monster: You can Special
--- Summon this card. You can target 1 face-up monster on the field; excavate the top cards of your Deck
--- until you excavate a Dinosaur monster, send that Dinosaur monster to the GY, and if you do, the
--- targeted monster becomes a Dinosaur monster (until the end of this turn), also shuffle the rest into
--- the Deck. You can only use each effect of "GMX Suppression Squad" once per turn.
+-- Summon this card.
+-- You can target 1 face-up monster on the field; excavate the top cards of your Deck until you
+-- excavate a Dinosaur monster, send that Dinosaur monster to the GY, and if you do, the targeted
+-- monster becomes a Dinosaur monster (until the end of this turn), also shuffle the rest into the
+-- Deck.
+-- You can only use each effect of "GMX Suppression Squad" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---GMX Suppression Squad
+--GMX鎮圧部隊アプト
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--special summon
@@ -110,7 +112,7 @@ function s.excop(e,tp,eg,ep,ev,re,r,rp)
 		Duel.SendtoGrave(qc,REASON_EFFECT)
 		Duel.ShuffleDeck(tp)
 		local tc=Duel.GetFirstTarget()
-		if not tc or not tc:IsRelateToChain() or not tc:IsFaceup() or not tc:IsOnField() then return end
+		if not qc:IsLocation(LOCATION_GRAVE) or not tc or not tc:IsRelateToChain() or not tc:IsFaceup() or not tc:IsOnField() then return end
 		local e1=Effect.CreateEffect(e:GetHandler())
 		e1:SetType(EFFECT_TYPE_SINGLE)
 		e1:SetCode(EFFECT_CHANGE_RACE)

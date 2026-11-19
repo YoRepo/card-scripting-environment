@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Alpacaribou, Mystical Beast of the Forest  (ID: 77797992)
 -- Type: Monster / Effect
@@ -11,10 +11,10 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- ● While in Attack Position: Attack Position Winged Beast, Insect, and Plant-Type monsters you
--- control cannot be destroyed by battle.
--- ● While in Defense Position: Defense Position Winged Beast, Insect, and Plant-Type monsters you
--- control cannot be targeted by, or be destroyed by, card effects.
+-- ● While in Attack Position: Attack Position Winged Beast, Insect, and Plant monsters you control
+-- cannot be destroyed by battle.
+-- ● While in Defense Position: Defense Position Winged Beast, Insect, and Plant monsters you control
+-- cannot be targeted by, or be destroyed by, card effects.
 --[[ __CARD_HEADER_END__ ]]
 
 --森の聖獣 アルパカリブ

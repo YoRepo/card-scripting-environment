@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Vaylantz Buster Baron  (ID: 14418464)
 -- Type: Monster / Effect / Pendulum
@@ -138,7 +138,7 @@ function c14418464.mvop(e,tp,eg,ep,ev,re,r,rp)
 	local tc=Duel.GetFirstTarget()
 	if not tc:IsRelateToEffect(e) then return end
 	local seq=tc:GetSequence()
-	if not seq==0 and not seq==4 then return end
+	if seq~=0 and seq~=4 then return end
 	local nseq=0
 	if seq==0 then nseq=1 end
 	if seq==4 then nseq=3 end

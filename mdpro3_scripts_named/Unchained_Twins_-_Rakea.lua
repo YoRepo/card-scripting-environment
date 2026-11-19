@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Unchained Twins - Rakea  (ID: 53624265)
 -- Type: Monster / Effect
@@ -11,8 +11,8 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- (Quick Effect): You can target 1 card you control; destroy it, also you cannot Special Summon
--- monsters for the rest of this turn, except Fiend monsters.
+-- (Quick Effect): You can target 1 card you control; destroy it, also you cannot Special Summon for
+-- the rest of this turn, except Fiend monsters.
 -- If this card on the field is destroyed by card effect, except "Unchained Twins - Rakea", or by
 -- battle: You can Special Summon 1 "Unchained" monster from your hand or Deck, except "Unchained Twins
 -- - Rakea".

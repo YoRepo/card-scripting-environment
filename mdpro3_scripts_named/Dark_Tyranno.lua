@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Dark Tyranno  (ID: 100263001)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Dark Tyranno  (ID: 46826483)
 -- Type: Monster / Effect
 -- Attribute: EARTH
 -- Race: Dinosaur
@@ -10,11 +10,12 @@
 -- Scope: OCG
 --
 -- Effect Text:
--- Can attack directly if all monsters your opponent controls are in Defense Position. You can only use
--- each of the following effects of "Dark Tyranno" once per turn. During your Main Phase, if a Spell
--- Card or effect was activated this turn: You can Special Summon this card from your hand. If this
--- card is sent to the GY: You can add 1 Level 8 or higher Dinosaur monster from your Deck to your
--- hand, then you can Special Summon it if your opponent controls a monster.
+-- Can attack directly, if all monsters your opponent controls are in Defense Position.
+-- You can only use each of the following effects of "Dark Tyranno" once per turn.
+-- During your Main Phase, if a Spell Card or effect was activated this turn: You can Special Summon
+-- this card from your hand.
+-- If this card is sent to the GY: You can add 1 Level 8 or higher Dinosaur monster from your Deck to
+-- your hand, then you can Special Summon it if your opponent controls a monster.
 --[[ __CARD_HEADER_END__ ]]
 
 --ダークティラノ

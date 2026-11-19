@@ -17,12 +17,15 @@ back, §5 reading the sources, §6 THE RULE that chooses between them, §7 file
 names that collide, §8 the update itself on a small corpus (every kind of
 change, that a second run changes nothing, the refusals), §9 fetching from
 git — against repositories made here — and §10 the real corpus directory:
-every file in it is one this tool reads and would name the same way.
+every file in it is one this tool reads and would name the same way, and
+the three things derived from it (the log, the sources record, the effect
+index) describe the corpus that is actually there.
 
 Run: python3 tests/unit_update_corpus.py
 """
 
 import contextlib
+import csv
 import io
 import json
 import os
@@ -690,6 +693,37 @@ for name, parsed in existing.items():
 check("no card is in the corpus twice", not [v for v in ids.values() if len(v) > 1],
       [v for v in ids.values() if len(v) > 1][:3])
 check("no two files differ only by case", len({name.lower() for name in existing}) == len(existing))
+
+print("--- §10b what is derived from the corpus describes the corpus that is there")
+with open(os.path.join(real, up.LOG_FILE), encoding="utf-8", newline="") as handle:
+    rows = list(csv.DictReader(handle))
+written = {row["output_path"]: int(row["card_id"]) for row in rows if row["status"] == up.WRITTEN}
+check("the log has one row for every file, under its repository path and passcode",
+      written == {"%s/%s" % (up.CORPUS_DIR, name): parsed.card_id
+                  for name, parsed in existing.items()},
+      "%d rows for %d files" % (len(written), len(existing)))
+check("…and every row it does not call written says why",
+      all(row["status"] in (up.WRITTEN, up.SKIPPED_NO_DETAILS, up.SKIPPED_SUPERSEDED)
+          for row in rows))
+with open(os.path.join(real, up.RECORD_FILE), encoding="utf-8") as handle:
+    record = json.load(handle)
+check("the sources record counts the cards that are there",
+      record["cards"]["total"] == len(existing)
+      and record["cards"]["total"] == sum(n for layer, n in record["cards"].items()
+                                          if layer != "total"), record["cards"])
+check("…and names a commit for each of the three sources",
+      sorted(record["sources"]) == sorted(u.key for u in src.UPSTREAMS)
+      and all(len(source.get("commit", "")) >= 40 for source in record["sources"].values()),
+      record["sources"])
+with open(os.path.join(ROOT, "effect_index.json"), encoding="utf-8") as handle:
+    indexed = sorted(entry["path"] for entry in json.load(handle))
+on_disk = sorted("%s/%s" % (folder, name) for folder in ("custom_cards", up.CORPUS_DIR)
+                 for name in os.listdir(os.path.join(ROOT, folder)) if name.endswith(".lua"))
+check("the effect index names every script in the corpus and custom_cards/, and no other "
+      "(after editing custom_cards/ by hand: python3 tools/mine_effects.py)",
+      indexed == on_disk,
+      "%d indexed, %d on disk; e.g. %s" % (len(indexed), len(on_disk),
+                                           sorted(set(indexed) ^ set(on_disk))[:3]))
 
 shutil.rmtree(SCRATCH, ignore_errors=True)
 print()

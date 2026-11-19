@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Long-Tailed Black Horse  (ID: 92447211)
 -- Type: Monster / Effect
@@ -7,7 +7,7 @@
 -- Race: Zombie
 -- Level: 4
 -- ATK 1400 | DEF 800
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If this card is Normal or Special Summoned: You can reveal 1 Zombie monster in your hand and send 1

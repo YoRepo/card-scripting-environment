@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Scatter Fusion  (ID: 40597694)
 -- Type: Spell / Continuous
 -- Setcode: 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During your Main Phase, if your opponent controls a monster: You can Fusion Summon 1 non-Rock
 -- "Gem-Knight" monster from your Extra Deck, using monsters from your Deck as material, also you
 -- cannot Special Summon monsters from the Extra Deck for the rest of this turn, except "Gem-Knight"
--- monsters. You can only use this effect of "Scatter Fusion" once per turn. When this card leaves the
--- field, destroy all monsters Summoned by this card's effect.
+-- monsters.
+-- You can only use this effect of "Scatter Fusion" once per turn.
+-- When this card leaves the field, destroy all monsters Summoned by this card's effect.
 --[[ __CARD_HEADER_END__ ]]
 
 --スキャッター・フュージョン

@@ -1,15 +1,15 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Distrust Paranoia  (ID: 101305082)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Distrust Paranoia  (ID: 81965543)
 -- Type: Trap
 -- Scope: TCG
 --
 -- Effect Text:
--- Take control of all your opponent's monsters in this card's column. If this Set card in its owner's
--- control has left the field by an opponent's effect, and is now in the GY or banished: You can
--- Special Summon this card as an Effect Monster (Fiend/DARK/Level 10/ATK 4000/DEF 4000) with the
--- following effect (this card is NOT treated as a Trap).
+-- Take control of all your opponent's monsters in this card's column.
+-- If this Set card in its owner's control has left the field by an opponent's effect, and is now in
+-- the GY or banished: You can Special Summon this card as an Effect Monster (Fiend/DARK/Level 10/ATK
+-- 4000/DEF 4000) with the following effect (this card is NOT treated as a Trap).
 -- ● Unaffected by your opponent's card effects activated in the same column.
 -- You can only activate 1 "Distrust Paranoia" per turn.
 --[[ __CARD_HEADER_END__ ]]

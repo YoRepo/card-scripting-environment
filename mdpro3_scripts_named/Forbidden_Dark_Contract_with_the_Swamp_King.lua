@@ -1,17 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Forbidden Dark Contract with the Swamp King  (ID: 10833828)
 -- Type: Spell / Continuous
 -- Setcode: 0xae
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Once per turn: You can Special Summon 1 "D/D/D" monster from your hand in Defense Position, but its
--- effects are negated. Once per turn: You can Fusion Summon 1 Fiend-Type Fusion Monster from your
--- Extra Deck, using monsters from your hand or field as Fusion Materials, including a monster Special
--- Summoned by this card with the above effect. Once per turn, during your Standby Phase: Take 2000
--- damage.
+-- effects are negated.
+-- Once per turn: You can Fusion Summon 1 Fiend Fusion Monster from your Extra Deck, using monsters
+-- from your hand or field, including a monster Special Summoned by this card with the above effect.
+-- Once per turn, during your Standby Phase: Take 2000 damage.
 --[[ __CARD_HEADER_END__ ]]
 
 --魔神王の禁断契約書

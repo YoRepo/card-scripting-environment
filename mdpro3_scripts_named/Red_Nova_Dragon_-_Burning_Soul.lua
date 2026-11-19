@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Red Nova Dragon - Burning Soul  (ID: 65541655)
 -- Type: Monster / Effect / Synchro
@@ -7,17 +7,17 @@
 -- Race: Dragon
 -- Level: 12
 -- ATK 3500 | DEF 3000
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2 Tuners + 1 non-Tuner
 -- Must be either Synchro Summoned, or Special Summoned (from your Extra Deck) by banishing 2 Tuners
 -- and 1 "Red Dragon Archfiend" from your GY.
+-- Cannot be destroyed by card effects.
 -- If this card is Special Summoned: You can add 1 card from your GY to your hand, and if you do, this
 -- card gains 2000 ATK.
--- You can only use this effect of "Red Nova Dragon - Burning Soul" once per Duel, and only during a
--- Duel you Synchro Summoned "Red Dragon Archfiend".
--- Cannot be destroyed by card effects.
+-- You can only use this effect of "Red Nova Dragon - Burning Soul" once per Duel, and only if you have
+-- Synchro Summoned "Red Dragon Archfiend".
 --[[ __CARD_HEADER_END__ ]]
 
 --スカーレッド・ノヴァ・ドラゴン－バーニング・ソウル

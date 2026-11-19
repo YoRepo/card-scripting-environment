@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: V Salamander  (ID: 33725002)
 -- Type: Monster / Effect
@@ -10,8 +10,8 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- When this card is Normal Summoned: You can target 1 "Utopia" monster in your Graveyard; Special
--- Summon that target.
+-- When this card is Normal Summoned: You can target 1 "Utopia" monster in your GY; Special Summon that
+-- target.
 -- You can target 1 "Number C39: Utopia Ray V" you control; equip this monster you control to that
 -- target.
 -- Once per turn, while this card is equipped to a monster: You can detach 1 Xyz Material from the

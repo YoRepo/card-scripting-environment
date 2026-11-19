@@ -1,16 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Chimera Fusion  (ID: 63136489)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During the Main Phase: Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from your
--- hand or field as material, including a Beast or Fiend monster. During your Main Phase, if this card
--- is in your GY and you have "Chimera the Flying Mythical Beast" on your field or in your GY: You can
--- activate 1 of these effects;
+-- hand or field as material, including a Beast or Fiend monster.
+-- During your Main Phase, if this card is in your GY and you have "Chimera the Flying Mythical Beast"
+-- on your field or in your GY: You can activate 1 of these effects;
 -- ● Add this card to your hand.
 -- ● Banish this card, and if you do, Special Summon both 1 "Gazelle the King of Mythical Beasts" and 1
 -- "Berfomet" from your Deck and/or GY.

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Supreme King Gate Zero  (ID: 96227613)
 -- Type: Monster / Effect / Pendulum
@@ -7,6 +7,7 @@
 -- Race: Fiend
 -- Level: 7
 -- ATK 0 | DEF 0
+-- Pendulum Scale: L0 / R0
 -- Setcode: 0x10f8
 -- Scope: OCG / TCG
 --

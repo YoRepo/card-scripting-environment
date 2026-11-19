@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Tachyon Cloudragon  (ID: 72705654)
 -- Type: Monster / Effect
@@ -16,7 +16,7 @@
 -- Cloudragon".
 -- If you Special Summon a Dragon Xyz Monster(s) (except during the Damage Step): You can target 1 of
 -- them; attach this card to that monster, from the GY (if it was there when the monster was Special
--- Summoned) or hand (even if not), as material.
+-- Summoned) or hand (even if not).
 -- You can only use each effect of "Tachyon Cloudragon" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

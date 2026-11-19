@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Unification of the Cubic Lords  (ID: 34325937)
 -- Type: Trap
 -- Setcode: 0xe3
@@ -8,10 +8,11 @@
 --
 -- Effect Text:
 -- Fusion Summon 1 "Cubic" Fusion Monster from your Extra Deck, using monsters from your hand or field
--- as Fusion Materials. If a face-up "Cubic" monster is destroyed by battle or leaves the field: You
--- can banish this card from your Graveyard; Special Summon 1 Level 4 or lower "Cubic" monster from
--- your hand or Deck, ignoring its Summoning conditions, and if you do, it cannot be destroyed by
--- battle or card effects this turn.
+-- as Fusion Materials.
+-- If a face-up "Cubic" monster is destroyed by battle or leaves the field: You can banish this card
+-- from your Graveyard; Special Summon 1 Level 4 or lower "Cubic" monster from your hand or Deck,
+-- ignoring its Summoning conditions, and if you do, it cannot be destroyed by battle or card effects
+-- this turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --方界合神

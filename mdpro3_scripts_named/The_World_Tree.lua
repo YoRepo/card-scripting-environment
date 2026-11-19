@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: The World Tree  (ID: 5973663)
 -- Type: Spell / Continuous
@@ -66,6 +66,9 @@ function c5973663.initial_effect(c)
 	e5:SetOperation(c5973663.op3)
 	c:RegisterEffect(e5)
 end
+c5973663.mentioned_counter={
+	[0x18]=true,
+}
 function c5973663.ctfilter(c)
 	return c:IsPreviousLocation(LOCATION_MZONE) and c:IsPreviousPosition(POS_FACEUP) and bit.band(c:GetPreviousRaceOnField(),RACE_PLANT)~=0
 end

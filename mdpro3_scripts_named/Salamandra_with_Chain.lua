@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Salamandra with Chain  (ID: 62091148)
 -- Type: Trap
 -- Setcode: 0x1ac
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Target 1 FIRE monster on the field; equip this card to it as an Equip Card that gives it 700 ATK,
--- then you can change 1 Effect Monster on the field to face-down Defense Position. You can banish this
--- card from your GY; Fusion Summon 1 FIRE Warrior or Dragon Fusion Monster from your Extra Deck, by
--- shuffling its materials from your hand, field, and/or GY into the Deck, but destroy it during the
--- End Phase. You can only use this effect of "Salamandra with Chain" once per turn.
+-- then you can change 1 Effect Monster on the field to face-down Defense Position.
+-- You can banish this card from your GY; Fusion Summon 1 FIRE Warrior or Dragon Fusion Monster from
+-- your Extra Deck, by shuffling its materials from your hand, field, and/or GY into the Deck, but
+-- destroy it during the End Phase.
+-- You can only use this effect of "Salamandra with Chain" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --鎖付き飛龍炎刃

@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Teleport Fusion  (ID: 36494597)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x1cc, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During the Main Phase: Fusion Summon 1 Psychic Fusion Monster from your Extra Deck, by banishing
--- Psychic monsters from your field or GY as material. If a face-up Psychic monster(s) you control that
--- was Special Summoned from the Extra Deck is destroyed by battle or card effect: You can banish this
--- card from your GY, then target 1 of your banished Psychic monsters; Special Summon it. You can only
--- use each effect of "Teleport Fusion" once per turn.
+-- Psychic monsters from your field or GY as material.
+-- If a face-up Psychic monster(s) you control that was Special Summoned from the Extra Deck is
+-- destroyed by battle or card effect: You can banish this card from your GY, then target 1 of your
+-- banished Psychic monsters; Special Summon it.
+-- You can only use each effect of "Teleport Fusion" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --テレポート・フュージョン

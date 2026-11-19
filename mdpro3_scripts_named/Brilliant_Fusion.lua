@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Brilliant Fusion  (ID: 7394770)
 -- Type: Spell / Continuous
 -- Setcode: 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- When this card is activated: Fusion Summon 1 "Gem-Knight" Fusion Monster from your Extra Deck, using
--- monsters from your Deck as Fusion Material, but change its ATK/DEF to 0. If this card leaves the
--- field, destroy that monster. Once per turn: You can discard 1 Spell; the monster Special Summoned by
--- this card's effect gains ATK/DEF equal to its original ATK/DEF, until the end of your opponent's
--- turn. You can only activate 1 "Brilliant Fusion" per turn.
+-- monsters from your Deck as Fusion Material, but change its ATK/DEF to 0.
+-- If this card leaves the field, destroy that monster.
+-- Once per turn: You can discard 1 Spell; the monster Special Summoned by this card's effect gains
+-- ATK/DEF equal to its original ATK/DEF, until the end of your opponent's turn.
+-- You can only activate 1 "Brilliant Fusion" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ブリリアント・フュージョン

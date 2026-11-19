@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Cyberse Contract Witch  (ID: 37458564)
 -- Type: Monster / Effect / Link
@@ -9,7 +9,7 @@
 -- Link Arrows: Bottom-Left, Bottom
 -- ATK 800
 -- Setcode: 0x93
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2 monsters with the same Type

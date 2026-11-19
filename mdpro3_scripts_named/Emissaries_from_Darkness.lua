@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Emissaries from Darkness  (ID: 100266003)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Emissaries from Darkness  (ID: 3635138)
 -- Type: Monster / Effect
 -- Attribute: DARK
 -- Race: Fiend
@@ -15,7 +15,8 @@
 -- ● Special Summon 1 "Emissaries from Darkness" from your hand, Deck, or GY.
 -- ● Destroy up to 2 Attack Position monsters your opponent controls.
 -- During the End Phase, if this card was Special Summoned this turn: You can target 1 Trap in your GY;
--- Set it. You can only use each effect of "Emissaries from Darkness" once per turn.
+-- Set it.
+-- You can only use each effect of "Emissaries from Darkness" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --冥府よりの使者
@@ -34,7 +35,7 @@ function s.initial_effect(c)
 	e1:SetTarget(s.sptg)
 	e1:SetOperation(s.spop)
 	c:RegisterEffect(e1)
-	--search
+	--set
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_CONTINUOUS)
 	e2:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
@@ -110,7 +111,7 @@ function s.settg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 end
 function s.setop(e,tp,eg,ep,ev,re,r,rp)
 	local tc=Duel.GetFirstTarget()
-	if tc:IsRelateToChain() then
+	if tc:IsRelateToChain() and aux.NecroValleyFilter()(tc) then
 		Duel.SSet(tp,tc)
 	end
 end

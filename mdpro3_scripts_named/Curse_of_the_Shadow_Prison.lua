@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Curse of the Shadow Prison  (ID: 81788994)
 -- Type: Spell / Field
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Each time a "Shaddoll" monster(s) is sent to the GY by a card effect, place 1 Spellstone Counter on
--- this card for each sent monster. All monsters your opponent controls lose 100 ATK for each
--- Spellstone Counter on this card during your opponent's turn only. Each time you Fusion Summon a
--- "Shaddoll" Fusion Monster, you can remove 3 Spellstone Counters from this card to use 1 appropriate
--- face-up monster your opponent controls as 1 of the Fusion Materials.
+-- this card for each sent monster.
+-- All monsters your opponent controls lose 100 ATK for each Spellstone Counter on this card during
+-- your opponent's turn only.
+-- Each time you Fusion Summon a "Shaddoll" Fusion Monster, you can remove 3 Spellstone Counters from
+-- this card to use 1 appropriate face-up monster your opponent controls as 1 of the Fusion Materials.
 --[[ __CARD_HEADER_END__ ]]
 
 --影牢の呪縛
@@ -48,6 +49,9 @@ function c81788994.initial_effect(c)
 	e4:SetCode(81788994)
 	c:RegisterEffect(e4)
 end
+c81788994.mentioned_counter={
+	[0x16]=true,
+}
 function c81788994.cfilter(c)
 	return c:IsSetCard(0x9d) and c:IsType(TYPE_MONSTER) and c:IsReason(REASON_EFFECT)
 end

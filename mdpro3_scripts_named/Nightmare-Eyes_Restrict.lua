@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Nightmare-Eyes Restrict  (ID: 30138615)
 -- Type: Monster / Effect / Fusion
@@ -8,16 +8,16 @@
 -- Level: 1
 -- ATK 0 | DEF 0
 -- Setcode: 0x1110
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2 monsters with different Types (Fiend, Illusion, or Spellcaster)
--- If this card is Special Summoned, or at the end of the Battle Phase, if this card battled: You can
--- equip 1 monster your opponent controls to this card as an Equip Spell.
--- You can only use this effect of "Nightmare-Eyes Restrict" once per turn.
 -- Gains ATK equal to the combined ATK of the monsters equipped to this card by its effect.
 -- If this card battles a monster, neither can be destroyed by that battle.
 -- Your opponent's monsters cannot attack any monsters, except this one.
+-- If this card is Special Summoned, or at the end of the Battle Phase, if this card battled: You can
+-- equip 1 monster your opponent controls to this card as an Equip Spell.
+-- You can only use this effect of "Nightmare-Eyes Restrict" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ナイトメア・アイズ・サクリファイス

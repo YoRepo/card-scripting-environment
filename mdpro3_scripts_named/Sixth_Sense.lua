@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Sixth Sense  (ID: 3280747)
 -- Type: Trap
@@ -8,7 +8,7 @@
 -- Effect Text:
 -- Declare 2 numbers from 1 to 6, then your opponent rolls a six-sided die, and if the result is one of
 -- the numbers you declared, you draw that many cards.
--- Otherwise, send a number of cards from the top of your Deck to the Graveyard equal to the result.
+-- Otherwise, send a number of cards from the top of your Deck to the GY equal to the result.
 --[[ __CARD_HEADER_END__ ]]
 
 --第六感

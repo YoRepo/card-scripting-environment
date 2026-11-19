@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Galaxy-Eyes Photon Change Dragon  (ID: 54725177)
 -- Type: Monster / Effect
@@ -8,15 +8,15 @@
 -- Level: 8
 -- ATK 3000 | DEF 2500
 -- Setcode: 0x107b, 0x55
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- You can Special Summon this card (from your hand) by Tributing 2 face-up monsters on either field
--- with 2000 or more ATK, including a monster you control.
+-- You can Special Summon this card (from your hand) by Tributing 2 face-up monsters with 2000 or more
+-- ATK from anywhere on the field, including a monster you control.
 -- You can only Special Summon "Galaxy-Eyes Photon Change Dragon" once per turn this way.
 -- During the Main Phase (Quick Effect): You can banish this card you control; Special Summon 1
 -- "Galaxy-Eyes Photon Dragon" from your Deck or GY, then you can banish 1 monster your opponent
--- controls that was Special Summoned from the Extra Deck until the End Phase.
+-- controls that was Special Summoned from the Extra Deck, until the End Phase.
 -- You can only use this effect of "Galaxy-Eyes Photon Change Dragon" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

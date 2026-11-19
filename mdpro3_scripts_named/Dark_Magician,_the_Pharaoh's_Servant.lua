@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Dark Magician, the Pharaoh's Servant  (ID: 88570003)
 -- Type: Monster / Effect
@@ -8,14 +8,14 @@
 -- Level: 7
 -- ATK 2500 | DEF 2100
 -- Setcode: 0x10a2
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- This card's name becomes "Dark Magician" while on the field or in the GY.
 -- You can only use 1 of the following effects of "Dark Magician, the Pharaoh's Servant" per turn, and
 -- only once that turn.
--- You can reveal 1 Spell in your hand; Special Summon this card from your hand, then you can Set 1
--- Spell/Trap that mentions "Dark Magician" from your Deck.
+-- If this card is in your hand: You can reveal 1 Spell in your hand; Special Summon this card, then
+-- you can Set 1 Spell/Trap that mentions "Dark Magician" from your Deck.
 -- (Quick Effect): You can discard 1 Spell; destroy all Spells/Traps your opponent controls.
 --[[ __CARD_HEADER_END__ ]]
 

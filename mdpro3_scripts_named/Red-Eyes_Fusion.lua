@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Red-Eyes Fusion  (ID: 6172122)
 -- Type: Spell
 -- Setcode: 0x3b, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Fusion Monster that lists a "Red-Eyes" monster as material from your Extra Deck,
 -- using monsters from your hand, Deck, or field as Fusion Material, and if you do, its name becomes
--- "Red-Eyes Black Dragon". You cannot Normal or Special Summon other monsters the turn you activate
--- this card. You can only activate 1 "Red-Eyes Fusion" per turn.
+-- "Red-Eyes Black Dragon".
+-- You cannot Normal or Special Summon other monsters the turn you activate this card.
+-- You can only activate 1 "Red-Eyes Fusion" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --真紅眼融合

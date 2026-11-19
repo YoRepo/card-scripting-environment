@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Sosei Ryu-Ge Mistva  (ID: 92487128)
 -- Type: Monster / Effect / Ritual / Pendulum
@@ -7,6 +7,7 @@
 -- Race: Dragon
 -- Level: 10
 -- ATK 3500 | DEF 2500
+-- Pendulum Scale: L0 / R0
 -- Setcode: 0x1c0
 -- Scope: OCG / TCG
 --

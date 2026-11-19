@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Tantrum Toddler  (ID: 7020743)
 -- Type: Monster / Effect / Xyz
@@ -107,7 +107,7 @@ function s.ovop(e,tp,eg,ep,ev,re,r,rp)
 		if #g>0 then
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_XMATERIAL)
 			local sg=g:SelectSubGroup(tp,s.gcheck,false,1,2,tp)
-			if sg:GetCount()>0 then
+			if sg then
 				Duel.HintSelection(sg)
 				Duel.Overlay(c,sg)
 			end

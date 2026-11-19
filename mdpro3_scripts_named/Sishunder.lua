@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Sishunder  (ID: 57019473)
 -- Type: Monster / Effect
@@ -10,8 +10,8 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- When this card is Normal Summoned: You can target 1 Level 4 LIGHT Thunder-Type monster with 1600 or
--- less ATK in your Graveyard, except "Sishunder"; banish that target.
+-- When this card is Normal Summoned: You can target 1 Level 4 LIGHT Thunder monster with 1600 or less
+-- ATK in your GY, except "Sishunder"; banish that target.
 -- During the End Phase of this turn, add that card to your hand.
 --[[ __CARD_HEADER_END__ ]]
 

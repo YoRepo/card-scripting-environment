@@ -1,17 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Barian's Seal  (ID: 101306072)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Barian's Seal  (ID: 38001022)
 -- Type: Trap / Counter
 -- Setcode: 0x176
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- When your opponent activates a Spell/Trap Card, or monster effect, while you control a "CXyz"
--- monster or a "Number C" monster with a number between "101" and "107" in its name: Negate the
--- activation, then you can attach 1 monster from either field or GY to 1 Xyz Monster you control. You
--- can banish this card from your GY; Special Summon 2 "Umbral Horror" monsters from your GY. You can
--- only use 1 "Barian's Seal" effect per turn, and only once that turn.
+-- monster, or a monster with "Number C101" through "Number C107" in its name: Negate that activation,
+-- then you can attach 1 monster from the field or either GY to 1 Xyz Monster you control.
+-- You can banish this card from your GY; Special Summon 2 "Umbral Horror" monsters from your GY.
+-- You can only use 1 "Barian's Seal" effect per turn, and only once that turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --バリアンズ・シール
@@ -71,9 +71,13 @@ function s.activate(e,tp,eg,ep,ev,re,r,rp)
 		local g=Duel.SelectMatchingCard(tp,s.xyzfilter,tp,LOCATION_MZONE,0,1,1,nil,e,tp)
 		local xc=g:GetFirst()
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_XMATERIAL)
-		local mg=aux.SelectTargetFromFieldFirst(tp,aux.NecroValleyFilter(s.mtfilter),tp,LOCATION_MZONE+LOCATION_GRAVE,LOCATION_MZONE+LOCATION_GRAVE,1,1,xc,e)
+		local mg=aux.SelectCardFromFieldFirst(tp,aux.NecroValleyFilter(s.mtfilter),tp,LOCATION_MZONE+LOCATION_GRAVE,LOCATION_MZONE+LOCATION_GRAVE,1,1,xc,e)
 		if mg:GetCount()>0 then
 			Duel.HintSelection(mg)
+			local og=mg:GetFirst():GetOverlayGroup()
+			if og:GetCount()>0 then
+				Duel.SendtoGrave(og,REASON_RULE)
+			end
 			Duel.Overlay(xc,mg)
 		end
 	end

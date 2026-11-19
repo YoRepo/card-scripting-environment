@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Performage Plushfire  (ID: 7563579)
 -- Type: Monster / Effect / Pendulum
@@ -15,7 +15,7 @@
 -- Pendulum Scale = 5
 -- [ Pendulum Effect ]
 -- If a face-up "Performage" monster(s) you control is destroyed by battle or card effect: You can
--- Special Summon this card from your Pendulum Zone, then take 500 damage.
+-- Special Summon this card, then take 500 damage.
 -- You can only use this effect of "Performage Plushfire" once per turn.
 -- ----------------------------------------
 -- [ Monster Effect ]

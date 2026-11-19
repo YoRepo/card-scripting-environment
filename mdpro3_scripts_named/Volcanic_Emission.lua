@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Volcanic Emission  (ID: 58143766)
 -- Type: Trap
@@ -81,7 +81,7 @@ function s.sop(e,tp,eg,ep,ev,re,r,rp)
 	if op==1 then
 		Duel.SendtoHand(tc,nil,REASON_EFFECT)
 		Duel.ConfirmCards(1-tp,tc)
-	elseif Duel.SpecialSummon(tc,0,tp,tp,true,false,POS_FACEUP) then
+	elseif Duel.SpecialSummon(tc,0,tp,tp,true,false,POS_FACEUP)>0 then
 		local e1=Effect.CreateEffect(e:GetHandler())
 		e1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
 		e1:SetCode(EVENT_PHASE+PHASE_END)

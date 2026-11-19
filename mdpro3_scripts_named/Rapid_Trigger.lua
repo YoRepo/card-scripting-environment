@@ -1,15 +1,15 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Rapid Trigger  (ID: 67526112)
 -- Type: Spell / Quick-Play
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Fusion Summon 1 Fusion Monster from your Extra Deck, by destroying Fusion Materials listed on it
+-- Fusion Summon 1 Fusion Monster from your Extra Deck, by destroying Fusion Materials mentioned on it
 -- from your field, but it can only attack monsters Special Summoned from the Extra Deck, also it is
--- unaffected by activated effects from any other monster Special Summoned from the Extra Deck. You can
--- only activate 1 "Rapid Trigger" per turn.
+-- unaffected by activated effects from any other monster Special Summoned from the Extra Deck.
+-- You can only activate 1 "Rapid Trigger" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ラピッド・トリガー

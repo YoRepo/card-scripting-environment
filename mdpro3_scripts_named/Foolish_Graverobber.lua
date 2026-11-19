@@ -1,22 +1,23 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Foolish Graverobber  (ID: 101306070)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Foolish Graverobber  (ID: 65118318)
 -- Type: Trap
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Send 1 card that mentions "Dark Time Wizard" from your Deck to the GY, except "Foolish Graverobber",
--- then you can Special Summon 1 monster from either GY to your field. You can banish this card from
--- your GY; Set to your field, 1 Spell/Trap that mentions "Dark Time Wizard" from your GY, except
--- "Foolish Graverobber", or 1 Spell/Trap from your opponent's GY. You can only use each effect of
--- "Foolish Graverobber" once per turn.
+-- then you can Special Summon 1 monster from either GY to your field.
+-- You can banish this card from your GY; Set 1 of the following cards to your field.
+-- ● Spell/Trap that mentions "Dark Time Wizard" in your GY, except "Foolish Graverobber"
+-- ● Spell/Trap in your opponent's GY
+-- You can only use each effect of "Foolish Graverobber" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --おろかな墓荒らし
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.AddCodeList(c,101306052)
+	aux.AddCodeList(c,40235813)
 	--Activate
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
@@ -43,7 +44,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 function s.tgfilter(c)
-	return not c:IsCode(id) and aux.IsCodeListed(c,101306052) and c:IsAbleToGrave()
+	return not c:IsCode(id) and aux.IsCodeListed(c,40235813) and c:IsAbleToGrave()
 end
 function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.tgfilter,tp,LOCATION_DECK,0,1,nil) end
@@ -69,7 +70,7 @@ end
 function s.stfilter(c,tp)
 	return c:IsType(TYPE_SPELL+TYPE_TRAP) and c:IsSSetable(true)
 		and (c:IsType(TYPE_FIELD) or Duel.GetLocationCount(tp,LOCATION_SZONE)>0)
-		and (c:IsControler(1-tp) or aux.IsCodeListed(c,101306052) and not c:IsCode(id))
+		and (c:IsControler(1-tp) or aux.IsCodeListed(c,40235813) and not c:IsCode(id))
 end
 function s.settg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.stfilter,tp,LOCATION_GRAVE,LOCATION_GRAVE,1,e:GetHandler(),tp) end

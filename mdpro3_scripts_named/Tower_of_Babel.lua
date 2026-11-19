@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Tower of Babel  (ID: 94256039)
 -- Type: Trap / Continuous
@@ -53,6 +53,9 @@ function c94256039.initial_effect(c)
 	e5:SetOperation(c94256039.desop)
 	c:RegisterEffect(e5)
 end
+c94256039.mentioned_counter={
+	[0x1]=true,
+}
 function c94256039.acop(e,tp,eg,ep,ev,re,r,rp)
 	local p=Duel.GetChainInfo(ev,CHAININFO_TRIGGERING_PLAYER)
 	local c=e:GetHandler()

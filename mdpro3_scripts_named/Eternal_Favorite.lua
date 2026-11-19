@@ -1,16 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Eternal Favorite  (ID: 87532344)
 -- Type: Trap / Continuous
 -- Setcode: 0x194
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Once per turn: You can activate 1 of these effects (but you can only use each effect of "Eternal
 -- Favorite" once per turn);
--- ● Special Summon 1 of your "Yubel" monsters that is banished or in your GY. Neither player can
--- activate cards or effects when that monster is Special Summoned.
+-- ● Special Summon 1 of your "Yubel" monsters that is banished or in your GY.
+-- Neither player can activate cards or effects when that monster is Special Summoned.
 -- ● If you control "Yubel": Discard 1 card and send this face-up card to the GY; Fusion Summon 1
 -- Fusion Monster from your Extra Deck, using monsters from either field as material, including a
 -- "Yubel" monster.
@@ -54,7 +54,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e3)
 end
 function s.spfilter(c,e,tp)
-	return c:IsSetCard(0x1a5) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+	return c:IsFaceupEx() and c:IsSetCard(0x1a5) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.GetFlagEffect(tp,id)==0 and Duel.GetLocationCount(tp,LOCATION_MZONE)>0

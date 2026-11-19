@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: "A" Cell Incubator  (ID: 64163367)
 -- Type: Spell / Continuous
@@ -41,6 +41,9 @@ function c64163367.initial_effect(c)
 	c:RegisterEffect(e3)
 end
 c64163367.counter_add_list={0x100e}
+c64163367.mentioned_counter={
+	[0x100e]=true,
+}
 function c64163367.ctop1(e,tp,eg,ep,ev,re,r,rp)
 	e:GetHandler():AddCounter(0x100e,1)
 end

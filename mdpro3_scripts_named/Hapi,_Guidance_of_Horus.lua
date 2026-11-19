@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Hapi, Guidance of Horus  (ID: 47330808)
 -- Type: Monster / Effect
@@ -70,9 +70,9 @@ function c47330808.destg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	if chk==0 then return Duel.IsExistingTarget(c47330808.tgfilter,tp,LOCATION_GRAVE+LOCATION_REMOVED,LOCATION_GRAVE+LOCATION_REMOVED,2,nil) end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
 	local g=Duel.SelectTarget(tp,c47330808.tgfilter,tp,LOCATION_GRAVE+LOCATION_REMOVED,LOCATION_GRAVE+LOCATION_REMOVED,2,2,nil)
-	if not g:FilterCount(Card.IsAbleToHand,nil,e)==g:GetCount() then
+	if g:FilterCount(Card.IsAbleToHand,nil,e)~=g:GetCount() then
 		Duel.SetOperationInfo(0,CATEGORY_TODECK,g,2,0,0)
-	elseif not g:FilterCount(Card.IsAbleToDeck,nil,e)==g:GetCount() then
+	elseif g:FilterCount(Card.IsAbleToDeck,nil,e)~=g:GetCount() then
 		Duel.SetOperationInfo(0,CATEGORY_TOHAND,g,2,0,0)
 	end
 	Duel.SetOperationInfo(0,CATEGORY_LEAVE_GRAVE,g,2,0,0)

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Guardian Slime  (ID: 15771991)
 -- Type: Monster / Effect
@@ -15,7 +15,7 @@
 -- During damage calculation, if this card battles an opponent's monster (Quick Effect): You can make
 -- this card gain DEF equal to that opponent's monster's ATK during that damage calculation only.
 -- If this card is sent from the hand or field to the GY: You can add 1 Spell/Trap from your Deck to
--- your hand that specifically lists the card "The Winged Dragon of Ra" in its text.
+-- your hand that mentions "The Winged Dragon of Ra".
 -- You can only use each effect of "Guardian Slime" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

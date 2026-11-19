@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: CXyz Barian Hope  (ID: 67926903)
 -- Type: Monster / Effect / Xyz
@@ -16,8 +16,8 @@
 -- C107" in its name as the Xyz Material.
 -- (Xyz Materials attached to that monster also become Xyz Materials on this card.)
 -- This card gains 1000 ATK for each Xyz Material attached to it.
--- You can target 1 "Number" monster in your Graveyard; until your opponent's next End Phase, this
--- card's name becomes that monster's, and replace this effect with that monster's original effects.
+-- You can target 1 "Number" monster in your GY; until your opponent's next End Phase, this card's name
+-- becomes that monster's, and replace this effect with that monster's original effects.
 -- You can only use this effect of "CXyz Barian Hope" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

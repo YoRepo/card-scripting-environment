@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Six Samurai United  (ID: 72345736)
 -- Type: Spell / Continuous
@@ -43,6 +43,9 @@ function c72345736.initial_effect(c)
 	c:RegisterEffect(e4)
 end
 c72345736.counter_add_list={0x3}
+c72345736.mentioned_counter={
+	[0x3]=true,
+}
 function c72345736.ctfilter(c)
 	return c:IsFaceup() and c:IsSetCard(0x103d)
 end

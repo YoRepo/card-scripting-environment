@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Predaplant Banksiogre  (ID: 22138839)
 -- Type: Monster / Effect / Tuner
@@ -39,6 +39,9 @@ function c22138839.initial_effect(c)
 	e2:SetOperation(c22138839.cop)
 	c:RegisterEffect(e2)
 end
+c22138839.mentioned_counter={
+	[0x1041]=true,
+}
 function c22138839.rfilter(c)
 	return c:GetCounter(0x1041)>0 and c:IsReleasable(REASON_SPSUMMON)
 end

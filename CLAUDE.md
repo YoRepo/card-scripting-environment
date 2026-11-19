@@ -4,8 +4,11 @@ The ground-truth corpus for Yu-Gi-Oh (mdpro3, ygopro lineage) card scripting.
 
 ## Layout
 
-- `mdpro3_scripts_named/` — the Lua script of **every real card**
-  (13,531 files; 13,549 including the 18 `custom_cards/`), named by card name. Each file opens with a structured
+- `mdpro3_scripts_named/` — the Lua script of **every real card**, named by
+  card name: 13,749 files at the 2026-11 update (13,572 released cards and
+  the 177 then in pre-release; `mdpro3_scripts_named/corpus_sources.json`
+  always holds the current count and the upstream commits it reflects).
+  Each file opens with a structured
   header comment (`__CARD_HEADER_START__` … `__CARD_HEADER_END__`) carrying
   the card's name, ID, type line, stats, setcode, and effect text.
   **This directory is GENERATED** — by `tools/update_corpus.py`, from the

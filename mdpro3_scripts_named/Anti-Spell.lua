@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:48
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Anti-Spell  (ID: 53112492)
 -- Type: Trap / Counter
@@ -23,6 +23,9 @@ function c53112492.initial_effect(c)
 	e1:SetOperation(c53112492.activate)
 	c:RegisterEffect(e1)
 end
+c53112492.mentioned_counter={
+	[0x1]=true,
+}
 function c53112492.condition(e,tp,eg,ep,ev,re,r,rp)
 	return re:IsActiveType(TYPE_SPELL) and re:IsHasType(EFFECT_TYPE_ACTIVATE) and Duel.IsChainNegatable(ev)
 end

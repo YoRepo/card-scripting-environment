@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Extra Buck  (ID: 94937430)
 -- Type: Trap / Continuous
@@ -39,6 +39,9 @@ function c94937430.initial_effect(c)
 	e3:SetOperation(c94937430.drop)
 	c:RegisterEffect(e3)
 end
+c94937430.mentioned_counter={
+	[0x1]=true,
+}
 function c94937430.cfilter(c,tp)
 	return c:IsLocation(LOCATION_EXTRA) and c:IsControler(tp)
 end

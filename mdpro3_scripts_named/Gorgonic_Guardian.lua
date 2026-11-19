@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Gorgonic Guardian  (ID: 84401683)
 -- Type: Monster / Effect / Xyz
@@ -11,10 +11,9 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- 2 Level 3 Rock-Type monsters
--- Once per turn, during either player's turn: You can detach 1 Xyz Material from this card, then
--- target 1 face-up monster your opponent controls; its ATK becomes 0, and if it does, its effects are
--- negated.
+-- 2 Level 3 Rock monsters
+-- Once per turn (Quick Effect): You can detach 1 Xyz Material from this card, then target 1 face-up
+-- monster your opponent controls; its ATK becomes 0, and if it does, its effects are negated.
 -- These effects last until the end of this turn.
 -- Once per turn: You can target 1 monster on the field with 0 ATK; destroy it.
 --[[ __CARD_HEADER_END__ ]]

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Gold Pride - Roller Baller  (ID: 92003832)
 -- Type: Monster / Effect
 -- Attribute: EARTH
@@ -8,13 +8,13 @@
 -- Level: 5
 -- ATK 1800 | DEF 1600
 -- Setcode: 0x192
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- If your LP are lower than your opponent's: You can Special Summon this card from your hand. During
--- the Main Phase (Quick Effect): You can Fusion Summon 1 "Gold Pride" Fusion Monster from your Extra
--- Deck, using monsters from your hand or field as material. You can only use each effect of "Gold
--- Pride - Roller Baller" once per turn.
+-- If your LP are lower than your opponent's: You can Special Summon this card from your hand.
+-- During the Main Phase (Quick Effect): You can Fusion Summon 1 "Gold Pride" Fusion Monster from your
+-- Extra Deck, using monsters from your hand or field as material.
+-- You can only use each effect of "Gold Pride - Roller Baller" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --GP－RB

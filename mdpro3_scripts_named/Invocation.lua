@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Invocation  (ID: 74063034)
 -- Type: Spell
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from your hand as material. If
--- Summoning an "Invoked" Fusion Monster this way, you can also banish monsters from your field and/or
--- either player's GY as material. If this card is in your GY: You can target 1 of your banished
--- "Aleister the Invoker"; shuffle this card into the Deck, and if you do, add that monster to your
--- hand. You can only use this effect of "Invocation" once per turn.
+-- Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from your hand as material.
+-- If Summoning an "Invoked" Fusion Monster this way, you can also banish monsters from your field
+-- and/or either player's GY as material.
+-- If this card is in your GY: You can target 1 of your banished "Aleister the Invoker"; shuffle this
+-- card into the Deck, and if you do, add that monster to your hand.
+-- You can only use this effect of "Invocation" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --召喚魔術

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Brainwashing Beam  (ID: 59258334)
 -- Type: Trap / Continuous
@@ -57,6 +57,9 @@ function c59258334.initial_effect(c)
 	e5:SetValue(c59258334.ctval)
 	c:RegisterEffect(e5)
 end
+c59258334.mentioned_counter={
+	[0x100e]=true,
+}
 function c59258334.filter(c)
 	return c:GetCounter(0x100e)>0 and c:IsControlerCanBeChanged()
 end

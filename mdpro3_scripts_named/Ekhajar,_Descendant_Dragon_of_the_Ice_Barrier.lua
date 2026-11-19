@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Ekhajar, Descendant Dragon of the Ice Barrier  (ID: 100266005)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Ekhajar, Descendant Dragon of the Ice Barrier  (ID: 65424481)
 -- Type: Monster / Effect / Synchro
 -- Attribute: WATER
 -- Race: Dragon
@@ -13,10 +13,12 @@
 -- Effect Text:
 -- 1 Tuner + 1+ non-Tuners
 -- If this card is Synchro Summoned: You can discard 1 card; banish 2 cards from your opponent's field
--- and/or GY. If your opponent Special Summons a monster(s): You can banish 1 card from your hand;
--- return 1 card in either field or GY to the hand. If this Synchro Summoned card is sent to the GY
--- during your opponent's turn: You can banish 1 card from your opponent's hand (at random), field, or
--- GY. You can only use each effect of "Ekhajar, Descendant Dragon of the Ice Barrier" once per turn.
+-- and/or GY.
+-- If your opponent Special Summons a monster(s) (except during the Damage Step): You can banish 1 card
+-- from your hand; return 1 card in either field or GY to the hand.
+-- If this Synchro Summoned card is sent to the GY during your opponent's turn: You can banish 1 card
+-- from your opponent's hand (at random), field, or GY.
+-- You can only use each effect of "Ekhajar, Descendant Dragon of the Ice Barrier" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --氷結界の龍胤 エクハジャール
@@ -68,9 +70,25 @@ end
 function s.rmcon(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():IsSummonType(SUMMON_TYPE_SYNCHRO)
 end
+function s.costfilter(c,e,tp)
+	if c:IsLocation(LOCATION_HAND) then
+		return c:IsDiscardable()
+	else
+		return e:GetHandler():IsSetCard(0x2f) and c:IsAbleToRemoveAsCost() and c:IsHasEffect(18319762,tp)
+	end
+end
 function s.rmcost(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsDiscardable,tp,LOCATION_HAND,0,1,nil) end
-	Duel.DiscardHand(tp,Card.IsDiscardable,1,1,REASON_COST+REASON_DISCARD)
+	if chk==0 then return Duel.IsExistingMatchingCard(s.costfilter,tp,LOCATION_HAND+LOCATION_GRAVE,0,1,nil,e,tp) end
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DISCARD)
+	local g=Duel.SelectMatchingCard(tp,s.costfilter,tp,LOCATION_HAND+LOCATION_GRAVE,0,1,1,nil,e,tp)
+	local tc=g:GetFirst()
+	local te=tc:IsHasEffect(18319762,tp)
+	if te then
+		te:UseCountLimit(tp)
+		Duel.Remove(tc,POS_FACEUP,REASON_COST+REASON_REPLACE)
+	else
+		Duel.SendtoGrave(tc,REASON_COST+REASON_DISCARD)
+	end
 end
 function s.rmtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsAbleToRemove,tp,0,LOCATION_ONFIELD+LOCATION_GRAVE,2,nil) end
@@ -108,11 +126,12 @@ function s.thop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 function s.rmcon2(e,tp,eg,ep,ev,re,r,rp)
-	return e:GetHandler():IsSummonType(TYPE_SYNCHRO) and Duel.GetTurnPlayer()==1-tp
+	local c=e:GetHandler()
+	return c:IsPreviousLocation(LOCATION_MZONE) and c:IsSummonType(SUMMON_TYPE_SYNCHRO) and Duel.GetTurnPlayer()==1-tp
 end
 function s.rmtg2(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsAbleToRemove,tp,0,LOCATION_HAND+LOCATION_ONFIELD+LOCATION_GRAVE,1,nil) end
-	Duel.SetOperationInfo(0,CATEGORY_REMOVE,nil,1,0,LOCATION_HAND+LOCATION_ONFIELD+LOCATION_GRAVE)
+	Duel.SetOperationInfo(0,CATEGORY_REMOVE,nil,1,1-tp,LOCATION_HAND+LOCATION_ONFIELD+LOCATION_GRAVE)
 end
 function s.rmop2(e,tp,eg,ep,ev,re,r,rp)
 	local g1=Duel.GetMatchingGroup(Card.IsAbleToRemove,tp,0,LOCATION_HAND,nil)

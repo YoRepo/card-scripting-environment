@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Batteryman Micro-Cell  (ID: 56839613)
 -- Type: Monster / Effect / Flip
@@ -13,8 +13,8 @@
 -- Effect Text:
 -- FLIP: Special Summon 1 Level 4 or lower "Batteryman" monster from your Deck, except "Batteryman
 -- Micro-Cell".
--- After this card has been flipped face-up, when it is destroyed by battle and sent to the Graveyard,
--- draw 1 card.
+-- After this card has been flipped face-up, if it is destroyed by battle and sent to the GY: Draw 1
+-- card.
 --[[ __CARD_HEADER_END__ ]]
 
 --電池メン－ボタン型

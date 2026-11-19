@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Predaplant Drosophyllum Hydra  (ID: 99913726)
 -- Type: Monster / Effect
@@ -48,6 +48,9 @@ function c99913726.initial_effect(c)
 	e2:SetOperation(c99913726.atkop)
 	c:RegisterEffect(e2)
 end
+c99913726.mentioned_counter={
+	[0x1041]=true,
+}
 function c99913726.rfilter(c,tp)
 	return c:GetCounter(0x1041)>0 and c:IsReleasable(REASON_SPSUMMON)
 		and Duel.GetMZoneCount(tp,c)>0

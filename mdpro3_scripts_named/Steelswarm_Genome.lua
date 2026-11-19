@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Steelswarm Genome  (ID: 62729173)
 -- Type: Monster / Effect
@@ -24,5 +24,6 @@ function c62729173.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 function c62729173.condition(e,c)
-	return c:IsSetCard(0x100a)
+	local ec=e:GetHandler()
+	return c:IsSetCard(0x100a) and (ec:IsFaceup() or c:GetControler()==ec:GetControler())
 end

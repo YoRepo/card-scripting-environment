@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Cyberload Fusion  (ID: 55704856)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x93, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Fusion Monster from your Extra Deck that lists a "Cyber Dragon" monster as material,
 -- by shuffling the Fusion Materials listed on it into the Deck, from among your cards on the field
 -- and/or your face-up banished cards, but monsters you control cannot attack for the rest of this
--- turn, except that Fusion Summoned monster. You can only activate 1 "Cyberload Fusion" per turn.
+-- turn, except that Fusion Summoned monster.
+-- You can only activate 1 "Cyberload Fusion" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --サイバーロード・フュージョン

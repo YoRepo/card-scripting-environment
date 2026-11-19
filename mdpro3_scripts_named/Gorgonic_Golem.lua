@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Gorgonic Golem  (ID: 37984162)
 -- Type: Monster / Effect
@@ -10,10 +10,10 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- If this card is destroyed by battle and sent to the Graveyard: The ATK of the monster that destroyed
--- it becomes 0.
--- You can banish this card from your Graveyard, then target 1 Set Spell/Trap Card your opponent
--- controls; that target cannot be activated this turn.
+-- If this card is destroyed by battle and sent to the GY: The ATK of the monster that destroyed it
+-- becomes 0.
+-- You can banish this card from your GY, then target 1 Set Spell/Trap Card your opponent controls;
+-- that target cannot be activated this turn.
 -- Your opponent cannot activate the targeted card in response to this effect's activation.
 --[[ __CARD_HEADER_END__ ]]
 

@@ -1,21 +1,22 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Adamancipator Conductor  (ID: 101306024)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Adamancipator Conductor  (ID: 24925387)
 -- Type: Monster / Effect / Tuner
 -- Attribute: EARTH
 -- Race: Rock
 -- Level: 6
 -- ATK 1400 | DEF 1100
 -- Setcode: 0x140
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If this card is in your hand: You can place 1 other "Adamancipator" card from your hand on top of
--- the Deck; Special Summon this card. During your Main Phase: You can excavate the top 5 cards of your
--- Deck, and if you do, you can Special Summon 1 excavated Level 4 or lower Rock monster, also place
--- the rest on the bottom of the Deck in any order. You can only use each effect of "Adamancipator
--- Conductor" once per turn.
+-- the Deck; Special Summon this card.
+-- During your Main Phase: You can excavate the top 5 cards of your Deck, and if you do, you can
+-- Special Summon 1 excavated Level 4 or lower Rock monster, also place the rest on the bottom of your
+-- Deck in any order.
+-- You can only use each effect of "Adamancipator Conductor" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --魔救の調律者

@@ -1,15 +1,15 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Fortissimo  (ID: 11493868)
 -- Type: Spell / Continuous
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Once per turn: You can target 1 "Melodious" monster you control; it gains 800 ATK until your next
--- Standby Phase (even if this card leaves the field). You can send this card to the Graveyard; Fusion
--- Summon 1 "Melodious" Fusion Monster from your Extra Deck, using monsters you control as Fusion
--- Materials.
+-- Standby Phase (even if this card leaves the field).
+-- You can send this card to the GY; Fusion Summon 1 "Melodious" Fusion Monster from your Extra Deck,
+-- using monsters you control as material.
 --[[ __CARD_HEADER_END__ ]]
 
 --フォルテッシモ

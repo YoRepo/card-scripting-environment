@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Yomagna the Fire Phantom  (ID: 101305083)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Yomagna the Fire Phantom  (ID: 17350692)
 -- Type: Monster / Effect / Special Summon
 -- Attribute: DARK
 -- Race: Pyro
@@ -10,12 +10,14 @@
 -- Scope: TCG
 --
 -- Effect Text:
--- Cannot be Normal Summoned/Set. Must first be Special Summoned (from your hand) by shuffling 3 cards
--- of the same type (Monster, Spell, or Trap) from your GY into the Deck/Extra Deck. If this card is
--- Special Summoned: You can declare 1 Monster Type; this card becomes that Type until the end of this
--- turn. During your Main Phase: You can Fusion Summon 1 Fusion Monster from your Extra Deck using
--- monsters on either field, including this card. You can only use each effect of "Yomagna the Fire
--- Phantom" once per turn.
+-- Cannot be Normal Summoned/Set.
+-- Must first be Special Summoned (from your hand) by shuffling 3 cards of the same type (Monster,
+-- Spell, or Trap) from your GY into the Deck/Extra Deck.
+-- If this card is Special Summoned: You can declare 1 Monster Type; this card becomes that Type until
+-- the end of this turn.
+-- During your Main Phase: You can Fusion Summon 1 Fusion Monster from your Extra Deck using monsters
+-- on either field, including this card.
+-- You can only use each effect of "Yomagna the Fire Phantom" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --Yomagna the Fire Phantom
@@ -44,6 +46,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e2)
 	--fusion
 	local e3=Effect.CreateEffect(c)
+	e3:SetDescription(aux.Stringid(id,2))
 	e3:SetCategory(CATEGORY_SPECIAL_SUMMON+CATEGORY_FUSION_SUMMON)
 	e3:SetType(EFFECT_TYPE_IGNITION)
 	e3:SetRange(LOCATION_MZONE)
@@ -138,7 +141,7 @@ function s.fspop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	local chkf=tp
 	if Duel.GetCurrentPhase()&(PHASE_DAMAGE+PHASE_DAMAGE_CAL)~=0 then return end
-	if not c:IsRelateToEffect(e) or c:IsImmuneToEffect(e) then return end
+	if not c:IsRelateToChain() or c:IsImmuneToEffect(e) then return end
 	local mg1=Duel.GetFusionMaterial(tp):Filter(s.filter1,nil,e)
 	local mg2=Duel.GetMatchingGroup(s.filter0,tp,0,LOCATION_MZONE,nil,e)
 	if mg2:GetCount()>0 then

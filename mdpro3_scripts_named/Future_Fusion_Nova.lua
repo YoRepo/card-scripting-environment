@@ -1,15 +1,15 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Future Fusion Nova  (ID: 92058902)
 -- Type: Spell / Continuous
 -- Setcode: 0x46
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- When this card is activated: Fusion Summon 1 LIGHT Machine Fusion Monster from your Extra Deck,
 -- using monsters from your Deck, including "Cyber Dragon", also for the rest of this turn after this
--- card resolves, you cannot Special Summon, except Machine monsters, also you cannot declare attacks,
+-- effect resolves, you cannot Special Summon, except Machine monsters, and you cannot declare attacks,
 -- except with the Summoned monster.
 -- When this card leaves the field, destroy that monster.
 -- When that monster is destroyed, destroy this card.

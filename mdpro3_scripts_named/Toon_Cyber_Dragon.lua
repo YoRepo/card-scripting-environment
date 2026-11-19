@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Toon Cyber Dragon  (ID: 83629030)
 -- Type: Monster / Effect / Toon
@@ -11,11 +11,10 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- If your opponent controls a monster and you control no monsters, you can Special Summon this card
--- (from your hand).
+-- If only your opponent controls a monster, you can Special Summon this card (from your hand).
 -- Cannot attack the turn it is Summoned.
 -- While you control "Toon World" and your opponent controls no Toon monsters, this card can attack
--- your opponent directly.
+-- directly.
 --[[ __CARD_HEADER_END__ ]]
 
 --トゥーン・サイバー・ドラゴン

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:48
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Avance, Swordsman of the Nekroz  (ID: 51618973)
 -- Type: Monster / Effect
@@ -90,7 +90,9 @@ end
 function s.thop(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.GetMatchingGroup(s.thfilter,tp,LOCATION_REMOVED,0,nil)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
-	local tg=g:SelectSubGroup(tp,aux.dncheck,false,1,g:GetCount())
+	aux.GCheckAdditional=aux.dncheck
+	local tg=g:SelectSubGroup(tp,aux.TRUE,false,1,g:GetCount())
+	aux.GCheckAdditional=nil
 	if tg and tg:GetCount()>0 then
 		Duel.SendtoHand(tg,nil,REASON_EFFECT)
 		Duel.ConfirmCards(1-tp,tg)

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Darklord Eveningstar  (ID: 10136446)
 -- Type: Monster / Effect / Fusion
@@ -90,7 +90,7 @@ function s.setop(e,tp,eg,ep,ev,re,r,rp)
 	if not sg:CheckSubGroup(s.gcheck,2,2,tp) then return end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SET)
 	local g=sg:SelectSubGroup(tp,s.gcheck,false,2,2,tp)
-	if g:GetCount()==2 then
+	if g then
 		Duel.SSet(tp,g)
 	end
 end

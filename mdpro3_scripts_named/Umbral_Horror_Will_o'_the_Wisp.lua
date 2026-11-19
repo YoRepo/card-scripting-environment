@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Umbral Horror Will o' the Wisp  (ID: 70546737)
 -- Type: Monster / Effect
@@ -12,9 +12,9 @@
 --
 -- Effect Text:
 -- When this card is Normal or Special Summoned: You can target 1 "Umbral Horror" monster you control
--- or in your Graveyard, except this card; this card's Level becomes the current Level of that monster.
--- When this Attack Position card is destroyed by battle and sent to the Graveyard, and was in face-up
--- Attack Position at the start of the Damage Step: Destroy the monster that destroyed this card.
+-- or in your GY, except this card; this card's Level becomes the current Level of that monster.
+-- When this Attack Position card is destroyed by battle and sent to the GY, and was in face-up Attack
+-- Position at the start of the Damage Step: Destroy the monster that destroyed this card.
 --[[ __CARD_HEADER_END__ ]]
 
 --アンブラル・ウィル・オ・ザ・ウィスプ

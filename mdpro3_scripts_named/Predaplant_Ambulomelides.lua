@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Predaplant Ambulomelides  (ID: 66309175)
 -- Type: Monster / Effect / Fusion
@@ -49,6 +49,9 @@ function c66309175.initial_effect(c)
 	e2:SetOperation(c66309175.spop)
 	c:RegisterEffect(e2)
 end
+c66309175.mentioned_counter={
+	[0x1041]=true,
+}
 function c66309175.thcon(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():IsSummonType(SUMMON_TYPE_FUSION)
 end

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: R-Genex Turing  (ID: 61052897)
 -- Type: Monster / Effect / Tuner
@@ -81,7 +81,7 @@ function s.syntg(e,syncard,f,min,max)
 	local c=e:GetHandler()
 	local tp=syncard:GetControler()
 	local lv=syncard:GetLevel()
-	if lv<=c:GetLevel() and lv<=s.cardiansynlevel(c) then return false end
+	if lv<=c:GetLevel() and lv<=s.cardiansynlevel(c,syncard) then return false end
 	local g=Group.FromCards(c)
 	local mg=Duel.GetSynchroMaterial(tp):Filter(s.synfilter,c,syncard,c,f)
 	return mg:IsExists(s.syncheck,1,g,g,mg,tp,lv,syncard,minc,maxc)

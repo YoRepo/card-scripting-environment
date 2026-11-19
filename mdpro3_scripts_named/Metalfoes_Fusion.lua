@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Metalfoes Fusion  (ID: 73594093)
 -- Type: Spell
 -- Setcode: 0xe1, 0x46
@@ -8,8 +8,9 @@
 --
 -- Effect Text:
 -- Fusion Summon 1 "Metalfoes" Fusion Monster from your Extra Deck, using monsters from your hand or
--- field as Fusion Materials. If this card is in your GY: You can shuffle it into the Deck, then draw 1
--- card. You can only use this effect of "Metalfoes Fusion" once per turn.
+-- field as material.
+-- If this card is in your GY: You can shuffle it into the Deck, then draw 1 card.
+-- You can only use this effect of "Metalfoes Fusion" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --錬装融合

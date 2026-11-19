@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:48
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Lightsworn Sanctuary  (ID: 52665542)
 -- Type: Spell / Continuous
@@ -53,6 +53,9 @@ function c52665542.initial_effect(c)
 	e4:SetOperation(c52665542.desop)
 	c:RegisterEffect(e4)
 end
+c52665542.mentioned_counter={
+	[0x5]=true,
+}
 function c52665542.costfilter(c)
 	return c:IsType(TYPE_MONSTER) and c:IsSetCard(0x38) and c:IsAbleToGraveAsCost()
 end

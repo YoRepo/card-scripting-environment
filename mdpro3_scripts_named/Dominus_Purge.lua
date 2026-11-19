@@ -1,9 +1,9 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Dominus Purge  (ID: 97045737)
 -- Type: Trap
--- Setcode: 0x1c6
+-- Setcode: 0x31c6
 -- Scope: OCG / TCG
 --
 -- Effect Text:

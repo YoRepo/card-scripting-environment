@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Ice Queen  (ID: 14462257)
 -- Type: Monster / Effect
@@ -10,11 +10,10 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Cannot be Special Summoned from the Graveyard.
--- When this face-up card you control is destroyed and sent to your Graveyard: You can target 1 Spell
--- in your Graveyard; add that target to your hand.
--- You must have 3 or more Spellcaster monsters in your Graveyard to activate and to resolve this
--- effect.
+-- Cannot be Special Summoned from the GY.
+-- When this face-up card you control is destroyed and sent to your GY: You can target 1 Spell in your
+-- GY; add that target to your hand.
+-- You must have 3 or more Spellcaster monsters in your GY to activate and to resolve this effect.
 --[[ __CARD_HEADER_END__ ]]
 
 --氷の女王

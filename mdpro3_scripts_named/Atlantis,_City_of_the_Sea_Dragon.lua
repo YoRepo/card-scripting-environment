@@ -1,22 +1,23 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Atlantis, City of the Sea Dragon  (ID: 101306058)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Atlantis, City of the Sea Dragon  (ID: 38391684)
 -- Type: Spell / Field
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- While a monster that mentions "Atlantis, City of the Sea Dragon" is on the field, reduce the Levels
--- of all monsters in both players' hands and fields by 1. If you Link Summon a "Daedalus" monster, you
--- can reduce the material requirement listed on it by 1 and Link Summon it with 1 less material. If
--- this card is in your GY and you control "Umi": You can place this card face-up on your field. You
--- can only use this effect of "Atlantis, City of the Sea Dragon" once per turn.
+-- While a monster that mentions "Atlantis, City of the Sea Dragon" is on the field, the Levels of all
+-- monsters in both players' hands and on the field are reduced by 1.
+-- When you Link Summon a "Daedalus" Link Monster, you can reduce the total number of materials by 1
+-- (from Link Rating and from mentioned materials).
+-- If this card is in your GY and you control "Umi": You can place this card face-up on your field.
+-- You can only use this effect of "Atlantis, City of the Sea Dragon" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --竜都アトランティス
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.AddCodeList(c,101306058,22702055)
+	aux.AddCodeList(c,38391684,22702055)
 	--Activate
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
@@ -51,7 +52,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e4)
 end
 function s.lvfilter(c)
-	return c:IsFaceup() and aux.IsCodeListed(c,101306058)
+	return c:IsFaceup() and aux.IsCodeListed(c,38391684)
 end
 function s.lvcon(e)
 	return Duel.IsExistingMatchingCard(s.lvfilter,e:GetHandlerPlayer(),LOCATION_MZONE,LOCATION_MZONE,1,nil)

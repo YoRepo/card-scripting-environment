@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Shipping Archfiend  (ID: 57256127)
 -- Type: Monster / Effect / Tuner
 -- Attribute: WIND
@@ -12,13 +12,14 @@
 --
 -- Effect Text:
 -- You can target any number of face-up monsters on the field, and declare 1 Type or Attribute; they
--- become that Type or Attribute. If a monster(s) is Special Summoned to your opponent's field, while
--- this card is in your Monster Zone (except during the Damage Step): You can target 1 monster on each
--- field with the same Type and Attribute from each other; return them to the hand. You can only use
--- each effect of "Shipping Archfiend" once per turn.
+-- become that Type or Attribute.
+-- If a monster(s) is Special Summoned to your opponent's field, while this card is in your Monster
+-- Zone (except during the Damage Step): You can target 1 monster on each field with the same Type and
+-- Attribute from each other; return them to the hand.
+-- You can only use each effect of "Shipping Archfiend" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Shipping Archfiend
+--カップリング・デーモン
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--change race/attribute

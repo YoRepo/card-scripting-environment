@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Witchcrafter Confusion Confession  (ID: 35098357)
 -- Type: Spell
 -- Setcode: 0x128, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from your hand or field as
--- material, including a "Witchcrafter" monster. During your End Phase, if you control a "Witchcrafter"
--- monster while this card is in your GY: You can add this card to your hand. You can only use 1
--- "Witchcrafter Confusion Confession" effect per turn, and only once that turn.
+-- material, including a "Witchcrafter" monster.
+-- During your End Phase, if you control a "Witchcrafter" monster while this card is in your GY: You
+-- can add this card to your hand.
+-- You can only use 1 "Witchcrafter Confusion Confession" effect per turn, and only once that turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ウィッチクラフト・コンフュージョン

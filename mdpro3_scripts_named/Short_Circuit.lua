@@ -1,13 +1,12 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Short Circuit  (ID: 75967082)
 -- Type: Spell
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Activate only if you control 3 or more "Batteryman" monsters.
--- Destroy all cards your opponent controls.
+-- If you control 3 or more "Batteryman" monsters: Destroy all cards your opponent controls.
 --[[ __CARD_HEADER_END__ ]]
 
 --漏電

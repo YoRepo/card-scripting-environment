@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Black Shadow Squall  (ID: 96367119)
 -- Type: Trap / Counter
@@ -41,6 +41,9 @@ function c96367119.initial_effect(c)
 	e2:SetOperation(c96367119.setop)
 	c:RegisterEffect(e2)
 end
+c96367119.mentioned_counter={
+	[0x10]=true,
+}
 function c96367119.discon(e,tp,eg,ep,ev,re,r,rp)
 	return re:IsHasType(EFFECT_TYPE_ACTIVATE) and Duel.IsChainNegatable(ev)
 end

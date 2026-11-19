@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Abyss Actor - Mellow Madonna  (ID: 78310590)
 -- Type: Monster / Effect / Pendulum
@@ -7,6 +7,7 @@
 -- Race: Fiend
 -- Level: 7
 -- ATK 1800 | DEF 2500
+-- Pendulum Scale: L0 / R0
 -- Setcode: 0x10ec
 -- Scope: OCG / TCG
 --

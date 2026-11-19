@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Mythical Beast Cerberus  (ID: 55424270)
 -- Type: Monster / Effect
@@ -51,6 +51,9 @@ function c55424270.initial_effect(c)
 	e3:SetOperation(c55424270.operation)
 	c:RegisterEffect(e3)
 end
+c55424270.mentioned_counter={
+	[0x1]=true,
+}
 function c55424270.acop(e,tp,eg,ep,ev,re,r,rp)
 	if re:IsHasType(EFFECT_TYPE_ACTIVATE) and re:IsActiveType(TYPE_SPELL) and e:GetHandler():GetFlagEffect(FLAG_ID_CHAINING)>0 then
 		e:GetHandler():AddCounter(0x1,1)

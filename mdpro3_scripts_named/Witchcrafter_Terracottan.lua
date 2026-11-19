@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Witchcrafter Terracottan  (ID: 70686400)
 -- Type: Monster / Effect
@@ -8,7 +8,7 @@
 -- Level: 2
 -- ATK 0 | DEF 2000
 -- Setcode: 0x128
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If this card is in your hand: You can target 1 "Witchcrafter" card in your GY, except "Witchcrafter
@@ -60,7 +60,7 @@ end
 function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	local tc=Duel.GetFirstTarget()
-	if tc and tc:IsRelateToChain()
+	if tc and tc:IsRelateToChain() and aux.NecroValleyFilter()(tc)
 		and Duel.SendtoHand(tc,nil,REASON_EFFECT)>0 and tc:IsLocation(LOCATION_HAND)
 		and c:IsRelateToChain() then
 		Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Predaplant Chlamydosundew  (ID: 89181134)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -8,14 +8,14 @@
 -- Level: 2
 -- ATK 600 | DEF 200
 -- Setcode: 0x10f3
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Monsters with a Predator Counter that you use as Fusion Materials are treated as DARK. During your
--- Main Phase: You can Fusion Summon 1 DARK Fusion Monster from your Extra Deck, using this card on the
--- field and monsters from your hand, field, and/or monsters with a Predator Counter your opponent
--- controls as Fusion Material. You can only use this effect of "Predaplant Chlamydosundew" once per
--- turn.
+-- Monsters with a Predator Counter that you use as Fusion Materials are treated as DARK.
+-- During your Main Phase: You can Fusion Summon 1 DARK Fusion Monster from your Extra Deck, using this
+-- card on the field and monsters from your hand, field, and/or monsters with a Predator Counter your
+-- opponent controls as Fusion Material.
+-- You can only use this effect of "Predaplant Chlamydosundew" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --捕食植物サンデウ・キンジー
@@ -40,6 +40,9 @@ function c89181134.initial_effect(c)
 	e2:SetOperation(c89181134.operation)
 	c:RegisterEffect(e2)
 end
+c89181134.mentioned_counter={
+	[0x1041]=true,
+}
 function c89181134.attrtg(e,c)
 	return c:GetCounter(0x1041)>0
 end

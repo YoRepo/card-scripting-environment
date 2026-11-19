@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Dark Cavalry  (ID: 73452089)
 -- Type: Monster / Effect / Fusion
@@ -13,7 +13,7 @@
 -- Effect Text:
 -- "Dark Magician" + 1 Warrior monster
 -- Gains 100 ATK for each Spell/Trap on the field and in the GYs.
--- If this card attacks a Defense Position monster, inflict piercing battle damage.
+-- If this card attacks a Defense Position monster, inflict piercing battle damage to your opponent.
 -- When a card or effect is activated that targets a card on the field (Quick Effect): You can discard
 -- 1 card; negate the activation, and if you do, destroy it.
 --[[ __CARD_HEADER_END__ ]]

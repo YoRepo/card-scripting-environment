@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Performapal Whim Witch  (ID: 64450427)
 -- Type: Monster / Effect / Pendulum
@@ -62,5 +62,6 @@ function c64450427.spop(e,tp,eg,ep,ev,re,r,rp)
 	Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)
 end
 function c64450427.dtcon(e,c)
-	return c:IsType(TYPE_PENDULUM)
+	local ec=e:GetHandler()
+	return c:IsType(TYPE_PENDULUM) and (ec:IsFaceup() or c:GetControler()==ec:GetControler())
 end

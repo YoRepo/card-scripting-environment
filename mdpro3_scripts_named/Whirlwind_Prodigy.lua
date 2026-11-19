@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Whirlwind Prodigy  (ID: 15090429)
 -- Type: Monster / Effect
@@ -23,5 +23,6 @@ function c15090429.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 function c15090429.condition(e,c)
-	return c:IsAttribute(ATTRIBUTE_WIND)
+	local ec=e:GetHandler()
+	return c:IsAttribute(ATTRIBUTE_WIND) and (ec:IsFaceup() or c:GetControler()==ec:GetControler())
 end

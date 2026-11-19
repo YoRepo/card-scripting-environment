@@ -1,16 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Soul of the Supreme Celestial King  (ID: 76840111)
 -- Type: Trap
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Tribute 1 Spellcaster Pendulum Monster with 2500 original ATK; Fusion Summon 1 "Supreme King Z-ARC"
 -- from your Extra Deck by banishing Fusion Materials mentioned on it from your hand, Deck, Extra Deck,
 -- field, and/or GY, but negate its effects unless at least 1 each of your "Pendulum Dragon", "Xyz
--- Dragon", "Synchro Dragon", and "Fusion Dragon" monsters are currently banished. You can only
--- activate 1 "Soul of the Supreme Celestial King" per turn.
+-- Dragon", "Synchro Dragon", and "Fusion Dragon" monsters are currently banished.
+-- You can only activate 1 "Soul of the Supreme Celestial King" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --覇王天龍の魂

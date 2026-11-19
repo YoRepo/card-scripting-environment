@@ -1,19 +1,20 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Myriaday Dragon  (ID: 101306035)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Myriaday Dragon  (ID: 81758313)
 -- Type: Monster / Effect
 -- Attribute: LIGHT
 -- Race: Dragon
 -- Level: 1
 -- ATK 0 | DEF 0
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Once per turn, during the End Phase: You can pay 100 LP; place 1 Myriad Counter on this card. Once
--- per turn, during your Main Phase: You can place 1 Myriad Counter on this card for every 1000 points
--- difference between your LP and your opponent's. Gains 10,000 ATK/DEF while it has 10 or more Myriad
--- Counters. If this card would be destroyed by battle or card effect, remove 1 Myriad Counter from it
+-- Once per turn, during the End Phase: You can pay 100 LP; place 1 Myriaday Counter on this card.
+-- Once per turn, during your Main Phase: You can place 1 Myriaday Counter on this card for every 1000
+-- points difference between your LP and your opponent's.
+-- Gains 10000 ATK/DEF while this card has 10 or more Myriaday Counters.
+-- If this card would be destroyed by battle or card effect, remove 1 Myriaday Counter from this card
 -- instead.
 --[[ __CARD_HEADER_END__ ]]
 
@@ -21,7 +22,7 @@
 local s,id,o=GetID()
 function s.initial_effect(c)
 	c:EnableCounterPermit(0x78)
-	--counter
+	--counter (end phase)
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
 	e1:SetCategory(CATEGORY_COUNTER)
@@ -33,7 +34,7 @@ function s.initial_effect(c)
 	e1:SetTarget(s.cttg)
 	e1:SetOperation(s.ctop)
 	c:RegisterEffect(e1)
-	--counter 2
+	--counter (main phase)
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,1))
 	e2:SetCategory(CATEGORY_COUNTER)
@@ -65,6 +66,9 @@ function s.initial_effect(c)
 	e5:SetOperation(s.repop)
 	c:RegisterEffect(e5)
 end
+s.mentioned_counter={
+	[0x78]=true,
+}
 function s.ctcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.CheckLPCost(tp,100) end
 	Duel.PayLPCost(tp,100)

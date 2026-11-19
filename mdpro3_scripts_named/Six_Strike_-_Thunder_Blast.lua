@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Six Strike - Thunder Blast  (ID: 23212990)
 -- Type: Trap
@@ -26,6 +26,9 @@ function c23212990.initial_effect(c)
 	e1:SetOperation(c23212990.activate)
 	c:RegisterEffect(e1)
 end
+c23212990.mentioned_counter={
+	[0x3]=true,
+}
 function c23212990.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsCanRemoveCounter(tp,1,0,0x3,1,REASON_COST) end
 	Duel.RemoveCounter(tp,1,0,0x3,1,REASON_COST)

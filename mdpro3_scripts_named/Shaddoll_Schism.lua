@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Shaddoll Schism  (ID: 21011044)
 -- Type: Trap / Continuous
 -- Setcode: 0x9d
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During the Main Phase, you can: Fusion Summon 1 "Shaddoll" Fusion Monster from your Extra Deck, by
 -- banishing Fusion Materials mentioned on it from your field or GY, but it cannot attack directly.
 -- Then, you can send to the GY 1 monster your opponent controls with the same Attribute as that Fusion
--- Summoned monster. You can only use this effect of "Shaddoll Schism" once per turn.
+-- Summoned monster.
+-- You can only use this effect of "Shaddoll Schism" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --影依の偽典

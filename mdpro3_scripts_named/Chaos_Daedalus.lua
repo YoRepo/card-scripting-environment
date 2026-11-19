@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Chaos Daedalus  (ID: 26873574)
 -- Type: Monster / Effect / Special Summon
@@ -7,7 +7,7 @@
 -- Race: Sea Serpent
 -- Level: 7
 -- ATK 2600 | DEF 1500
--- Setcode: 0xcf
+-- Setcode: 0xcf, 0x1e5
 -- Scope: OCG / TCG
 --
 -- Effect Text:

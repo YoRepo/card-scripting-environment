@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Galaxy-Eyes Tachyon Primal  (ID: 45710945)
 -- Type: Monster / Effect
@@ -86,8 +86,8 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 		end
 	end
 end
-function s.thfilter(c)
-	return c:IsSetCard(0x1b4) and c:IsType(TYPE_SPELL+TYPE_TRAP) and c:IsAbleToHand()
+function s.thfilter(c,p)
+	return c:IsSetCard(0x1b4) and c:IsType(TYPE_SPELL+TYPE_TRAP) and c:IsAbleToHand(p)
 end
 function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	local hp=e:GetHandler():GetOwner()
@@ -96,10 +96,10 @@ function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function s.thop(e,tp,eg,ep,ev,re,r,rp)
 	local hp=e:GetHandler():GetOwner()
-	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
-	local g=Duel.SelectMatchingCard(hp,s.thfilter,hp,LOCATION_DECK,0,1,1,nil)
+	Duel.Hint(HINT_SELECTMSG,hp,HINTMSG_ATOHAND)
+	local g=Duel.SelectMatchingCard(hp,s.thfilter,hp,LOCATION_DECK,0,1,1,nil,hp)
 	if g:GetCount()>0 then
-		Duel.SendtoHand(g,nil,REASON_EFFECT)
+		Duel.SendtoHand(g,nil,REASON_EFFECT,hp)
 		Duel.ConfirmCards(1-hp,g)
 	end
 end

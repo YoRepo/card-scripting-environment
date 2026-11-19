@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:48
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Malefic Claw Stream  (ID: 53063039)
 -- Type: Trap
@@ -7,8 +7,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Activate only if you control a face-up "Malefic" monster.
--- Select 1 monster your opponent controls, and destroy it.
+-- If you control a "Malefic" monster: Target 1 monster your opponent controls; destroy that target.
 --[[ __CARD_HEADER_END__ ]]
 
 --Sin Claw Stream

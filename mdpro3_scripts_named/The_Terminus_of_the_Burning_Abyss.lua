@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: The Terminus of the Burning Abyss  (ID: 44771289)
 -- Type: Spell
 -- Setcode: 0xb1
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 "Burning Abyss" Fusion Monster from your Extra Deck, using monsters from your hand
--- or field as Fusion Materials. During your Main Phase, except the turn this card was sent to the
--- Graveyard: You can banish this card from your Graveyard, then target 1 "Burning Abyss" monster on
--- the field; it gains 800 ATK and DEF until the end of your opponent's next turn.
+-- or field as Fusion Materials.
+-- During your Main Phase, except the turn this card was sent to the Graveyard: You can banish this
+-- card from your Graveyard, then target 1 "Burning Abyss" monster on the field; it gains 800 ATK and
+-- DEF until the end of your opponent's next turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --旅人の結彼岸

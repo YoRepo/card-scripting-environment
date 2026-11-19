@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: El Shaddoll Grysta  (ID: 48424886)
 -- Type: Monster / Effect / Fusion
 -- Attribute: FIRE
@@ -8,15 +8,17 @@
 -- Level: 7
 -- ATK 2450 | DEF 1950
 -- Setcode: 0x9d
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 1 "Shaddoll" monster + 1 FIRE monster
--- Must first be Fusion Summoned. When your opponent would Special Summon a monster(s) while you have a
--- "Shaddoll" card in your hand (Quick Effect): You can negate the Summon, and if you do, destroy that
--- monster, then send 1 "Shaddoll" card from your hand to the GY. You can only use this effect of "El
--- Shaddoll Grysta" once per turn. If this card is sent to the GY: You can target 1 "Shaddoll"
--- Spell/Trap in your GY; add it to your hand.
+-- Must first be Fusion Summoned.
+-- When your opponent would Special Summon a monster(s) while you have a "Shaddoll" card in your hand
+-- (Quick Effect): You can negate the Summon, and if you do, destroy that monster, then send 1
+-- "Shaddoll" card from your hand to the GY.
+-- You can only use this effect of "El Shaddoll Grysta" once per turn.
+-- If this card is sent to the GY: You can target 1 "Shaddoll" Spell/Trap in your GY; add it to your
+-- hand.
 --[[ __CARD_HEADER_END__ ]]
 
 --エルシャドール・エグリスタ

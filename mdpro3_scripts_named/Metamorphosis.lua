@@ -1,13 +1,13 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Metamorphosis  (ID: 46411259)
 -- Type: Spell
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Tribute 1 monster.
--- Special Summon 1 Fusion Monster from your Extra Deck with the same Level as the Tributed monster.
+-- Tribute 1 monster; Special Summon 1 Fusion Monster from your Extra Deck with the same Level as the
+-- Tributed monster.
 --[[ __CARD_HEADER_END__ ]]
 
 --突然変異

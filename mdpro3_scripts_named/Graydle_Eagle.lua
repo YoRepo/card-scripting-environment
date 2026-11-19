@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Graydle Eagle  (ID: 29834183)
 -- Type: Monster / Effect
@@ -11,8 +11,8 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- If this card in your Monster Zone is destroyed by battle or monster effect and sent to your
--- Graveyard: You can target 1 face-up monster your opponent controls; equip this card to that target.
+-- If this card in your Monster Zone is destroyed by battle or monster effect and sent to your GY: You
+-- can target 1 face-up monster your opponent controls; equip this card to that target.
 -- While this card is equipped to a monster by this effect, take control of that monster.
 -- When this card leaves the field, destroy the equipped monster.
 --[[ __CARD_HEADER_END__ ]]

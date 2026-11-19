@@ -1,13 +1,12 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Dedication through Light and Darkness  (ID: 69542930)
 -- Type: Spell / Quick-Play
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Tribute 1 "Dark Magician"; Special Summon 1 "Dark Magician of Chaos" from your hand, Deck, or
--- Graveyard.
+-- Tribute 1 "Dark Magician"; Special Summon 1 "Dark Magician of Chaos" from your hand, Deck, or GY.
 --[[ __CARD_HEADER_END__ ]]
 
 --光と闇の洗礼

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Gaming Gamer GG  (ID: 15778492)
 -- Type: Monster / Effect / Xyz
 -- Attribute: EARTH
@@ -12,14 +12,15 @@
 -- Effect Text:
 -- 2 Level 4 Machine monsters
 -- If this card is Special Summoned: You can change all monsters your opponent controls to Attack
--- Position. If your opponent has a monster in their field or GY: You can detach 1 material from this
--- card; send 1 Machine monster from your Deck/Extra Deck to the GY, then you can apply this effect.
+-- Position.
+-- If your opponent has a monster in their field or GY: You can detach 1 material from this card; send
+-- 1 Machine monster from your Deck/Extra Deck to the GY, then you can apply this effect.
 -- ● Choose 1 Machine Xyz Monster in your GY, and this card's name becomes that monster's name until
 -- the End Phase.
 -- You can only use this effect of "Gaming Gamer GG" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Gaming Gamer GG
+--ゲーミング・ゲーマーGG
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--xyz summon

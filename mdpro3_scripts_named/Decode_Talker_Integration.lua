@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Decode Talker Integration  (ID: 74665150)
 -- Type: Monster / Effect / Link
@@ -9,12 +9,12 @@
 -- Link Arrows: Top, Bottom-Left, Bottom-Right
 -- ATK 2300
 -- Setcode: 0x101
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2+ Effect Monsters
 -- While this card is in the Extra Monster Zone, it gains 500 ATK for every other Link Monster in the
--- field and GYs, also your opponent cannot target it with card effects.
+-- field and the GYs, also your opponent cannot target it with card effects.
 -- (Quick Effect): You can Tribute 1 monster this card points to; send 1 Cyberse monster from your
 -- Extra Deck to the GY, also this card can make up to 2 attacks on monsters during each Battle Phase
 -- this turn.

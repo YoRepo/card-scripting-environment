@@ -1,13 +1,13 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Witchcrafter Distortion  (ID: 69748261)
 -- Type: Trap / Counter
 -- Setcode: 0x128
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- When a Spell/Trap Card, or monster effect, is activated and you control a Level 5 or higher
+-- When a Spell/Trap Card, or monster effect, is activated while you control a Level 5 or higher
 -- "Witchcrafter" monster: Negate the activation, and if you do, destroy that card.
 -- If this card is in your GY, except the turn it was sent there: You can banish it; add 1 Level 5 or
 -- higher Spellcaster monster from your Deck to your hand, then discard 1 card.

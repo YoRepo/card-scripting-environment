@@ -1,15 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Void Imagination  (ID: 31444249)
 -- Type: Spell / Continuous
 -- Setcode: 0xc5
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- "Infernoid" monsters you control whose original Levels are 2 or higher become Level 1 and all battle
--- damage they inflict to your opponent is halved. You can send this card to the GY; Fusion Summon 1
--- "Infernoid" Fusion Monster from your Extra Deck, using monsters from your hand or field as material.
+-- damage they inflict to your opponent is halved.
+-- You can send this card to the GY; Fusion Summon 1 "Infernoid" Fusion Monster from your Extra Deck,
+-- using monsters from your hand or field as material.
 -- If your opponent controls a monster that was Special Summoned from the Extra Deck, and you do not,
 -- you can also use up to 6 monsters in your Deck as Fusion Materials.
 --[[ __CARD_HEADER_END__ ]]

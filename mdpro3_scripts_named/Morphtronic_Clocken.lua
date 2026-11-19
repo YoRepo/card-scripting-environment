@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Morphtronic Clocken  (ID: 91607976)
 -- Type: Monster / Effect
@@ -52,6 +52,9 @@ function c91607976.initial_effect(c)
 	e3:SetOperation(c91607976.opd2)
 	c:RegisterEffect(e3)
 end
+c91607976.mentioned_counter={
+	[0x8]=true,
+}
 function c91607976.cona(e)
 	return e:GetHandler():IsAttackPos()
 end

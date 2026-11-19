@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: All-Eyes Phantom Dragon  (ID: 70335319)
 -- Type: Monster / Effect / Pendulum / Special Summon
@@ -7,6 +7,7 @@
 -- Race: Dragon
 -- Level: 10
 -- ATK 3000 | DEF 2500
+-- Pendulum Scale: L0 / R0
 -- Scope: OCG / TCG
 --
 -- Effect Text:

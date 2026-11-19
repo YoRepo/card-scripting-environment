@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Vehicroid Connection Zone  (ID: 23299957)
 -- Type: Spell
 -- Setcode: 0x1016
@@ -8,7 +8,7 @@
 --
 -- Effect Text:
 -- Fusion Summon 1 "Vehicroid" Fusion Monster from your Extra Deck, using monsters from your hand or
--- field as Fusion Materials, and if you do, it cannot be destroyed by card effects, and its effects
+-- field as Fusion Material, and if you do, it cannot be destroyed by card effects, and its effects
 -- cannot be negated.
 --[[ __CARD_HEADER_END__ ]]
 

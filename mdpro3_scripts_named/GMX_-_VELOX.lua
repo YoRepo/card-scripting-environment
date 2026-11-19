@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: GMX - VELOX  (ID: 82706696)
 -- Type: Monster / Effect / Fusion
 -- Attribute: DARK
@@ -12,15 +12,16 @@
 --
 -- Effect Text:
 -- 1 "GMX" monster + 1 Dinosaur monster
--- Each time your opponent Normal or Special Summons a monster(s), gain 200 LP. During your opponent's
--- turn (Quick Effect): You can target 1 card your opponent controls; excavate the top cards of your
--- Deck until you excavate a "GMX" monster or a Dinosaur monster, lose 400 LP for each excavated card,
--- add that "GMX" or Dinosaur monster to your hand or Special Summon it, and shuffle the rest into the
--- Deck. Also, after that, destroy the targeted card. You can only use this effect of "GMX - VELOX"
--- once per turn.
+-- Each time your opponent Normal or Special Summons a monster(s), gain 200 LP.
+-- During your opponent's turn (Quick Effect): You can target 1 card your opponent controls; excavate
+-- the top cards of your Deck until you excavate a "GMX" monster or a Dinosaur monster, lose 400 LP for
+-- each excavated card, add that "GMX" or Dinosaur monster to your hand or Special Summon it, and
+-- shuffle the rest into the Deck.
+-- Also, after that, destroy the targeted card.
+-- You can only use this effect of "GMX - VELOX" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---GMX - VELOX
+--GMX－VELOX
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--fusion procedure
@@ -114,11 +115,9 @@ function s.desop(e,tp,eg,ep,ev,re,r,rp)
 			Duel.SendtoGrave(hc,REASON_RULE)
 		end
 		Duel.ShuffleDeck(tp)
-		if tc:IsRelateToChain() and tc:IsOnField() then
-			Duel.BreakEffect()
-			Duel.Destroy(tc,REASON_EFFECT)
-		end
-	else
-		Duel.ConfirmDecktop(tp,dct)
+	end
+	if tc:IsRelateToChain() and tc:IsOnField() then
+		Duel.BreakEffect()
+		Duel.Destroy(tc,REASON_EFFECT)
 	end
 end

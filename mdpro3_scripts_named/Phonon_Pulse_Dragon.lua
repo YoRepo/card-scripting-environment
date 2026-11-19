@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Phonon Pulse Dragon  (ID: 67556500)
 -- Type: Monster / Effect / Tuner / Synchro
@@ -38,7 +38,7 @@ function c67556500.lvcon(e,tp,eg,ep,ev,re,r,rp)
 end
 function c67556500.lvtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
-	Duel.Hint(HINT_SELECTMSG,tp,HINGMSG_LVRANK)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_LVRANK)
 	local lv=Duel.AnnounceLevel(tp,1,3)
 	e:SetLabel(lv)
 end

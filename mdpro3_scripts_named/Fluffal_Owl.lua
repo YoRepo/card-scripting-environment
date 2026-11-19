@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Fluffal Owl  (ID: 65331686)
 -- Type: Monster / Effect
 -- Attribute: EARTH
@@ -8,13 +8,14 @@
 -- Level: 2
 -- ATK 1000 | DEF 1000
 -- Setcode: 0xa9
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- When this card is Normal or Special Summoned from the hand: You can add 1 "Polymerization" from your
--- Deck to your hand. You can pay 500 LP; Fusion Summon 1 "Frightfur" Fusion Monster from your Extra
--- Deck, using monsters from your hand or field as Fusion Materials. You can only use 1 "Fluffal Owl"
--- effect per turn, and only once that turn.
+-- Deck to your hand.
+-- You can pay 500 LP; Fusion Summon 1 "Frightfur" Fusion Monster from your Extra Deck, using monsters
+-- from your hand or field as Fusion Materials.
+-- You can only use 1 "Fluffal Owl" effect per turn, and only once that turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ファーニマル・オウル

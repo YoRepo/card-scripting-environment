@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Super Anti-Kaiju War Machine Mecha-Dogoran  (ID: 84769941)
 -- Type: Monster / Effect / Special Summon
@@ -50,6 +50,9 @@ function c84769941.initial_effect(c)
 	e3:SetValue(c84769941.atkval)
 	c:RegisterEffect(e3)
 end
+c84769941.mentioned_counter={
+	[0x37]=true,
+}
 function c84769941.cfilter(c)
 	return c:IsFaceup() and c:IsSetCard(0xd3)
 end

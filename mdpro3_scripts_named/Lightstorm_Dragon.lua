@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Lightstorm Dragon  (ID: 10515412)
 -- Type: Monster / Effect / Synchro
@@ -10,7 +10,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- 1 Tuner + 1+ non-Tuner monsters
+-- 1 Tuner + 1+ non-Tuners
 -- If this card is Special Summoned: You can target Spells/Traps on the field up to the number of
 -- Normal Monsters in your GY +1; destroy them.
 -- If this card is destroyed by battle or card effect: You can target 1 Spell/Trap in your GY; Set it,

@@ -1,18 +1,19 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Mutiny in the Sky  (ID: 71593652)
 -- Type: Spell
 -- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Fiend or Fairy Fusion Monster from your Extra Deck, by shuffling Fiend and/or Fairy
--- monsters from your GY into the Deck as material. If this card is in your GY: You can send 1 Fiend or
--- Fairy monster from your hand or face-up field to the GY; add this card to your hand. You can only
--- use each effect of "Mutiny in the Sky" once per turn.
+-- monsters from your GY into the Deck as material.
+-- If this card is in your GY: You can send 1 Fiend or Fairy monster from your hand or face-up field to
+-- the GY; add this card to your hand.
+-- You can only use each effect of "Mutiny in the Sky" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Mutiny in the Sky
+--天至る叛逆
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Activate

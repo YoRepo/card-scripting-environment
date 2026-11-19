@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Puzzlomino, the Drop-n-Deleter  (ID: 84271823)
 -- Type: Monster / Effect / Link
@@ -70,7 +70,7 @@ function c84271823.lvtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	for i=1,8 do
 		if not g:IsExists(Card.IsLevel,1,nil,i) then table.insert(ct,i) end
 	end
-	Duel.Hint(HINT_SELECTMSG,tp,HINGMSG_LVRANK)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_LVRANK)
 	local lv=Duel.AnnounceNumber(tp,table.unpack(ct))
 	e:SetLabel(lv)
 	e:SetLabelObject(g)

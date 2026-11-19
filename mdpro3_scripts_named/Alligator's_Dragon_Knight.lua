@@ -1,26 +1,27 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Alligator's Dragon Knight  (ID: 101306002)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Alligator's Dragon Knight  (ID: 4881365)
 -- Type: Monster / Effect
 -- Attribute: WIND
 -- Race: Dragon
 -- Level: 5
 -- ATK 1700 | DEF 1500
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Can attack directly. You can only use each of the following effects of "Alligator's Dragon Knight"
--- once per turn. If this card is in your hand: You can reveal 1 other card in your hand that mentions
--- "Dark Time Wizard"; Special Summon this card. If this card is Normal or Special Summoned: You can
--- add up to 2 Spells/Traps with different names from each other that mention "Dark Time Wizard" from
--- your Deck to your hand, then discard 1 card.
+-- Can attack directly.
+-- You can only use each of the following effects of "Alligator's Dragon Knight" once per turn.
+-- If this card is in your hand: You can reveal 1 other card that mentions "Dark Time Wizard" in your
+-- hand; Special Summon this card.
+-- If this card is Normal or Special Summoned: You can add up to 2 Spells/Traps with different names
+-- that mention "Dark Time Wizard", from your Deck to your hand, then discard 1 card.
 --[[ __CARD_HEADER_END__ ]]
 
 --ワイバーンの竜騎士
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.AddCodeList(c,101306052)
+	aux.AddCodeList(c,40235813)
 	--special summon
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
@@ -53,7 +54,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e4)
 end
 function s.cfilter(c)
-	return aux.IsCodeListed(c,101306052) and not c:IsPublic()
+	return aux.IsCodeListed(c,40235813) and not c:IsPublic()
 end
 function s.spcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
@@ -76,7 +77,7 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 function s.thfilter(c)
-	return aux.IsCodeListed(c,101306052) and c:IsType(TYPE_SPELL+TYPE_TRAP) and c:IsAbleToHand()
+	return aux.IsCodeListed(c,40235813) and c:IsType(TYPE_SPELL+TYPE_TRAP) and c:IsAbleToHand()
 end
 function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.thfilter,tp,LOCATION_DECK,0,1,nil) end

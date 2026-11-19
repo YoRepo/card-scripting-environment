@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Spell Power Attainment  (ID: 101306069)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Spell Power Attainment  (ID: 39123673)
 -- Type: Spell / Quick-Play
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Add 1 card from your Deck or GY to your hand that mentions "Spell Counter" in its text, except
--- "Spell Power Attainment", then if you control a Level 7 or higher "Endymion" Monster Card, you can
--- remove any number of Spell Counters from your field, and if you do, negate the effects of that many
--- face-up cards your opponent controls, and if you do that, destroy them. You can only activate 1
--- "Spell Power Attainment" per turn.
+-- Add 1 card that mentions "Spell Counter" in its effect text from your Deck or GY to your hand,
+-- except "Spell Power Attainment", then if you control a Level 7 or higher "Endymion" Monster Card,
+-- you can apply this effect.
+-- ● Remove any number of Spell Counters from your field, and if you do, negate the effects of that
+-- many face-up cards your opponent controls, and if you do that, destroy those cards.
+-- You can only activate 1 "Spell Power Attainment" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --魔力到達
@@ -69,10 +70,10 @@ function s.activate(e,tp,eg,ep,ev,re,r,rp)
 			local sg=Duel.SelectMatchingCard(tp,aux.NegateAnyFilter,tp,0,LOCATION_ONFIELD,rt,rt,nil)
 			if sg:GetCount()>0 then
 				Duel.HintSelection(sg)
-				local flag=false
+				local ng=Group.CreateGroup()
 				for tc in aux.Next(sg) do
 					if tc:IsCanBeDisabledByEffect(e,false) then
-						flag=true
+						ng:AddCard(tc)
 						Duel.NegateRelatedChain(tc,RESET_TURN_SET)
 						local e1=Effect.CreateEffect(c)
 						e1:SetType(EFFECT_TYPE_SINGLE)
@@ -98,8 +99,8 @@ function s.activate(e,tp,eg,ep,ev,re,r,rp)
 					end
 				end
 				Duel.AdjustInstantly()
-				if flag and sg:GetCount()>0 then
-					Duel.Destroy(sg,REASON_EFFECT)
+				if ng:GetCount()>0 then
+					Duel.Destroy(ng,REASON_EFFECT)
 				end
 			end
 		end

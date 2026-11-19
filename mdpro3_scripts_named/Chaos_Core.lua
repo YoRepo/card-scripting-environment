@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Chaos Core  (ID: 54040484)
 -- Type: Monster / Effect
@@ -51,6 +51,9 @@ function c54040484.initial_effect(c)
 	e3:SetOperation(c54040484.repop)
 	c:RegisterEffect(e3)
 end
+c54040484.mentioned_counter={
+	[0x57]=true,
+}
 function c54040484.countcon1(e,tp,eg,ep,ev,re,r,rp)
 	return eg:IsContains(e:GetHandler())
 end

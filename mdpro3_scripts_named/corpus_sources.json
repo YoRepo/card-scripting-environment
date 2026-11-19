@@ -1,0 +1,31 @@
+{
+  "about": "Which upstream revisions mdpro3_scripts_named/ was generated from. Written by tools/update_corpus.py; do not edit by hand.",
+  "cards": {
+    "official": 13572,
+    "pre-release": 177,
+    "total": 13749
+  },
+  "sources": {
+    "official-cards": {
+      "branch": "master",
+      "commit": "c86148b27e97d7d1b8975c9f27ab68b0edb02185",
+      "committed": "2026-11-18T10:18:58+08:00",
+      "path": "locales/en-US_mdpro3/cards.cdb",
+      "url": "https://github.com/mycard/ygopro-database"
+    },
+    "official-scripts": {
+      "branch": "master",
+      "commit": "b83db1cc3f512d3bec2faafb9ecf199143332be1",
+      "committed": "2026-09-23T23:13:34+08:00",
+      "path": null,
+      "url": "https://github.com/mycard/ygopro-scripts"
+    },
+    "prerelease-pack": {
+      "branch": "main",
+      "commit": "5db621589f47b8d41eed71493a4f79db7baa3067",
+      "committed": "2026-11-19T17:36:33+00:00",
+      "path": "EN/ygopro-super-pre.ypk",
+      "url": "https://github.com/ElderLich/Pre-Release-Translations"
+    }
+  }
+}

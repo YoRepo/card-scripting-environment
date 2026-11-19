@@ -1,14 +1,14 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Number C104: Umbral Horror Masquerade  (ID: 49456901)
 -- Type: Monster / Effect / Xyz
 -- Attribute: DARK
 -- Race: Spellcaster
 -- Rank: 5
 -- ATK 3000 | DEF 1500
--- Setcode: 0x1048, 0x2e9, 0x87
--- Scope: OCG / TCG / Illegal
+-- Setcode: 0x1048, 0x1e3, 0x87
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 4 Level 5 monsters

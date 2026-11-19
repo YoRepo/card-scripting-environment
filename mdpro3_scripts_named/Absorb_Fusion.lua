@@ -1,17 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Absorb Fusion  (ID: 71422989)
 -- Type: Spell
 -- Setcode: 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Add 1 "Gem-Knight" card from your Deck to your hand, then you can apply this effect.
 -- ● Fusion Summon 1 "Gem-Knight" Fusion Monster from your Extra Deck, by banishing its materials from
 -- your hand or field.
--- You can only activate 1 "Absorb Fusion" per turn. You cannot Special Summon the turn you activate
--- this card, except "Gem-Knight" monsters.
+-- You can only activate 1 "Absorb Fusion" per turn.
+-- You cannot Special Summon the turn you activate this card, except "Gem-Knight" monsters.
 --[[ __CARD_HEADER_END__ ]]
 
 --吸光融合

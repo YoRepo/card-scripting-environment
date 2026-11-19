@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Corrosive Scales  (ID: 13235258)
 -- Type: Trap
@@ -66,6 +66,9 @@ function c13235258.initial_effect(c)
 	e8:SetCode(EFFECT_UPDATE_DEFENSE)
 	c:RegisterEffect(e8)
 end
+c13235258.mentioned_counter={
+	[0x1045]=true,
+}
 function c13235258.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
 	local c=e:GetHandler()

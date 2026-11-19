@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Dinomorphia Frenzy  (ID: 78420796)
 -- Type: Trap
 -- Setcode: 0x173
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During your opponent's Main Phase: Pay half your LP; Fusion Summon 1 "Dinomorphia" Fusion Monster
 -- from your Extra Deck, using only 1 monster from your Deck and 1 monster from your Extra Deck as
--- Fusion Material. When your opponent activates a card or effect, while your LP are 2000 or less: You
--- can banish this card from your GY; you take no effect damage from your opponent's card effects this
--- turn. You can only activate 1 "Dinomorphia Frenzy" per turn.
+-- Fusion Material.
+-- When your opponent activates a card or effect, while your LP are 2000 or less: You can banish this
+-- card from your GY; you take no effect damage from your opponent's card effects this turn.
+-- You can only activate 1 "Dinomorphia Frenzy" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ダイノルフィア・フレンジー

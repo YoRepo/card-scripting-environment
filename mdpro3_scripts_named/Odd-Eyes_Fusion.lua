@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Odd-Eyes Fusion  (ID: 48144509)
 -- Type: Spell
 -- Setcode: 0x99, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Dragon Fusion Monster from your Extra Deck, using monsters from your hand or field
--- as Fusion Materials. If your opponent controls 2 or more monsters and you control no monsters, you
--- can also use up to 2 "Odd-Eyes" monsters in your Extra Deck as Fusion Materials. You can only
--- activate 1 "Odd-Eyes Fusion" per turn.
+-- as Fusion Materials.
+-- If your opponent controls 2 or more monsters and you control no monsters, you can also use up to 2
+-- "Odd-Eyes" monsters in your Extra Deck as Fusion Materials.
+-- You can only activate 1 "Odd-Eyes Fusion" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --オッドアイズ・フュージョン

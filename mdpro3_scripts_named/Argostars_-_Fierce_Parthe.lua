@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Argostars - Fierce Parthe  (ID: 21050476)
 -- Type: Monster / Effect
@@ -84,7 +84,7 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	if rg and rg:GetCount()>0 then
 		Duel.HintSelection(rg)
 		if Duel.SendtoHand(rg,nil,REASON_EFFECT)~=0 and rg:FilterCount(Card.IsLocation,nil,LOCATION_HAND)>0
-			and c:IsCanBeSpecialSummoned(e,0,tp,false,false) then
+			and c:IsRelateToChain() and c:IsCanBeSpecialSummoned(e,0,tp,false,false) then
 			Duel.SpecialSummon(e:GetHandler(),0,tp,tp,false,false,POS_FACEUP)
 		end
 	end

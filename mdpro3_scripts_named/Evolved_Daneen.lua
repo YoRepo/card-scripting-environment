@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Evolved Daneen  (ID: 1595137)
 -- Type: Monster / Effect / Fusion
 -- Attribute: WATER
@@ -11,15 +11,16 @@
 --
 -- Effect Text:
 -- "Returned Dino Daneen" + 1 Dinosaur monster
--- If this card is Special Summoned: You can add 1 "GMX" card from your Deck to your hand. You can only
--- use this effect of "Evolved Daneen" once per turn. If you excavate a card(s) by a "GMX" card effect:
--- You can activate the following effect, based on where this card is at activation (but you can only
--- use each effect of "Evolved Daneen" once per turn);
+-- If this card is Special Summoned: You can add 1 "GMX" card from your Deck to your hand.
+-- You can only use this effect of "Evolved Daneen" once per turn.
+-- If you excavate a card(s) by a "GMX" card effect: You can activate the following effect, based on
+-- where this card is at activation (but you can only use each effect of "Evolved Daneen" once per
+-- turn);
 -- ● Field: Gain 1500 LP.
 -- ● GY: Special Summon this card.
 --[[ __CARD_HEADER_END__ ]]
 
---Evolved Daneen
+--暁世竜ダニアン
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--fusion material

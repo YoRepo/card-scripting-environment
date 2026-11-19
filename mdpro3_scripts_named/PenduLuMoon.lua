@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: PenduLuMoon  (ID: 66150724)
 -- Type: Monster / Effect / Pendulum
@@ -7,6 +7,7 @@
 -- Race: Spellcaster
 -- Level: 1
 -- ATK 200 | DEF 700
+-- Pendulum Scale: L0 / R0
 -- Setcode: 0xf2
 -- Scope: OCG / TCG
 --

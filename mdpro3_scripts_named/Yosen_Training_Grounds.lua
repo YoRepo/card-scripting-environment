@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Yosen Training Grounds  (ID: 27918963)
 -- Type: Spell / Continuous
@@ -45,6 +45,9 @@ function c27918963.initial_effect(c)
 	e4:SetOperation(c27918963.operation)
 	c:RegisterEffect(e4)
 end
+c27918963.mentioned_counter={
+	[0x33]=true,
+}
 function c27918963.cfilter(c)
 	return c:IsFaceup() and c:IsSetCard(0xb3)
 end

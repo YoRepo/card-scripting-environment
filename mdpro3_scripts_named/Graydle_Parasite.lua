@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Graydle Parasite  (ID: 49966595)
 -- Type: Trap / Continuous
@@ -10,8 +10,7 @@
 -- When an opponent's monster declares a direct attack: You can Special Summon 1 "Graydle" monster from
 -- your Deck in Attack Position, if you control no monsters.
 -- When a "Graydle" monster you control declares a direct attack: You can target 1 monster in your
--- opponent's Graveyard; Special Summon that target to their side of the field, if they control no
--- monsters.
+-- opponent's GY; Special Summon that target to their side of the field, if they control no monsters.
 -- You can only use each effect of "Graydle Parasite" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Faisan, Hunting Scout of the Deep Forest  (ID: 86038337)
 -- Type: Monster / Effect / Fusion
 -- Attribute: EARTH
@@ -11,14 +11,14 @@
 --
 -- Effect Text:
 -- 2 EARTH Warrior monsters
--- Unaffected by your opponent's activated effects, during the Main Phase only. During the Battle Phase
--- (Quick Effect): You can Tribute this Fusion Summoned card; Special Summon 2 EARTH Warrior monsters
--- from your GY, except "Faisan, Hunting Scout of the Deep Forest", and if you do, your EARTH Warrior
--- monsters cannot be destroyed by battle for the rest of this turn. You can only use this effect of
--- "Faisan, Hunting Scout of the Deep Forest" once per turn.
+-- Unaffected by your opponent's activated effects, during the Main Phase only.
+-- During the Battle Phase (Quick Effect): You can Tribute this Fusion Summoned card; Special Summon 2
+-- EARTH Warrior monsters from your GY, except "Faisan, Hunting Scout of the Deep Forest", and if you
+-- do, your EARTH Warrior monsters cannot be destroyed by battle for the rest of this turn.
+-- You can only use this effect of "Faisan, Hunting Scout of the Deep Forest" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Faisan, Hunting Scout of the Deep Forest
+--密林の狩猟者フザン
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--material

@@ -1,15 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Ground Xeno  (ID: 67523044)
 -- Type: Spell
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Add 1 Dinosaur Tuner or Dinosaur Normal Monster from your Deck to your hand, then destroy 1 card in
--- your hand. You can banish this card from your GY; Fusion Summon 1 Dinosaur Fusion Monster from your
--- Extra Deck, using monsters from your hand or field. You can only use each effect of "Ground Xeno"
--- once per turn.
+-- your hand.
+-- You can banish this card from your GY; Fusion Summon 1 Dinosaur Fusion Monster from your Extra Deck,
+-- using monsters from your hand or field.
+-- You can only use each effect of "Ground Xeno" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --グラウンド・ゼノ

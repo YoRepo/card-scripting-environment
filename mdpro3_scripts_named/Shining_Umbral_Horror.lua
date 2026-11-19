@@ -1,21 +1,22 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Shining Umbral Horror  (ID: 101306005)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Shining Umbral Horror  (ID: 3064783)
 -- Type: Monster / Effect
 -- Attribute: LIGHT
 -- Race: Fiend
 -- Level: 4
 -- ATK 0 | DEF 2000
 -- Setcode: 0x87
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- If you Normal or Special Summon an "Umbral Horror" monster(s) and/or a "Masquerade" Xyz Monster(s):
--- You can Special Summon this card from your hand, and if you do, draw 1 card, then if you drew an
--- "Umbral Horror" monster, you can Special Summon it. Can be treated as 2 materials for the Xyz Summon
--- of a "Number" Xyz Monster that requires 3 or more materials. You can only use each effect of
--- "Shining Umbral Horror" once per turn.
+-- If you Normal or Special Summon an "Umbral Horror" monster(s) or a "Masquerade" Xyz Monster(s)
+-- (except during the Damage Step): You can Special Summon this card from your hand, and if you do,
+-- draw 1 card, then you can Special Summon it if it is an "Umbral Horror" monster.
+-- Can be treated as 2 materials for the Xyz Summon of a "Number" Xyz Monster that requires 3 or more
+-- materials.
+-- You can only use each effect of "Shining Umbral Horror" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --シャイニング・アンブラル
@@ -49,7 +50,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e3)
 end
 function s.cfilter(c,tp)
-	return c:IsFaceup() and (c:IsSetCard(0x87) or c:IsSetCard(0x2e9) and c:IsType(TYPE_XYZ)) and c:IsSummonPlayer(tp)
+	return c:IsFaceup() and (c:IsSetCard(0x87) or c:IsSetCard(0x1e3) and c:IsType(TYPE_XYZ)) and c:IsSummonPlayer(tp)
 end
 function s.spcon(e,tp,eg,ep,ev,re,r,rp)
 	return eg:IsExists(s.cfilter,1,nil,tp)

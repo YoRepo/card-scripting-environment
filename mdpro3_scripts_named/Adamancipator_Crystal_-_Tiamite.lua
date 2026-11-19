@@ -1,21 +1,22 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Adamancipator Crystal - Tiamite  (ID: 101306025)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Adamancipator Crystal - Tiamite  (ID: 51420096)
 -- Type: Monster / Effect
 -- Attribute: DARK
 -- Race: Rock
 -- Level: 4
 -- ATK 0 | DEF 2200
 -- Setcode: 0x140
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- If this card is Special Summoned by an "Adamancipator" card's effect: You can add 1 "Adamancipator"
--- card from your Deck to your hand, except "Adamancipator Crystal - Tiamite", then you can Special
--- Summon 1 Rock monster from your hand. If this card is in your GY: You can target 1 Rock Synchro
--- Monster in your field or GY; return it to the Extra Deck, and if you do, place this card on top of
--- the Deck. You can only use each effect of "Adamancipator Crystal - Tiamite" once per turn.
+-- If this card is Special Summoned by the effect of an "Adamancipator" card: You can add 1
+-- "Adamancipator" card from your Deck to your hand, except "Adamancipator Crystal - Tiamite", then you
+-- can Special Summon 1 Rock monster from your hand.
+-- If this card is in your GY: You can target 1 Rock Synchro Monster in your field or GY; return it to
+-- the Extra Deck, and if you do, place this card on top of the Deck.
+-- You can only use each effect of "Adamancipator Crystal - Tiamite" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --魔救の奇石－ティアマイト

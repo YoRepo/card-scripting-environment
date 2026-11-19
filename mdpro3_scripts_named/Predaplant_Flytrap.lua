@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Predaplant Flytrap  (ID: 96622984)
 -- Type: Monster / Effect
@@ -41,6 +41,9 @@ function c96622984.initial_effect(c)
 	e2:SetOperation(c96622984.desop)
 	c:RegisterEffect(e2)
 end
+c96622984.mentioned_counter={
+	[0x1041]=true,
+}
 function c96622984.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	if chkc then return chkc:IsControler(1-tp) and chkc:IsCanAddCounter(0x1041,1) end
 	if chk==0 then return Duel.IsExistingTarget(Card.IsCanAddCounter,tp,0,LOCATION_MZONE,1,nil,0x1041,1) end

@@ -1,30 +1,31 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Levia-Dragoon - Daedalus  (ID: 101306047)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Levia-Dragoon - Daedalus  (ID: 78579058)
 -- Type: Monster / Effect / Link
 -- Attribute: WATER
 -- Race: Sea Serpent
 -- Link Rating: 3
 -- Link Arrows: Bottom-Left, Bottom, Bottom-Right
 -- ATK 2600
--- Setcode: 0x2e3
--- Scope: OCG
+-- Setcode: 0x1e5
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 3 WATER monsters
--- This card's name becomes "Umi" while in the Monster Zone. You can only use each of the following
--- effects of "Levia-Dragoon - Daedalus" once per turn. If this card is Link Summoned: You can Special
--- Summon 1 monster that mentions "Atlantis, City of the Sea Dragon" from your Deck. During the Main
--- Phase (Quick Effect): You can send 1 face-up "Umi" you control to the GY; discard your opponent's
--- entire hand, and if you do, they draw the same number of cards. Neither player can activate cards or
--- effects in response to this effect's activation.
+-- This card's name becomes "Umi" while on the field.
+-- You can only use each of the following effects of "Levia-Dragoon - Daedalus" once per turn.
+-- If this card is Link Summoned: You can Special Summon 1 monster that mentions "Atlantis, City of the
+-- Sea Dragon" from your Deck.
+-- During the Main Phase (Quick Effect): You can send 1 face-up "Umi" you control to the GY; discard
+-- your opponent's entire hand, and if you do, they draw the same number of cards.
+-- Neither player can activate cards or effects in response to this effect's activation.
 --[[ __CARD_HEADER_END__ ]]
 
---真海竜騎ーダイダロス
+--真海竜騎－ダイダロス
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.AddCodeList(c,101306058,22702055)
+	aux.AddCodeList(c,38391684,22702055)
 	aux.EnableChangeCode(c,22702055)
 	--link summon
 	c:EnableReviveLimit()
@@ -71,7 +72,7 @@ function s.mfilter(c)
 	return c:IsLinkAttribute(ATTRIBUTE_WATER)
 end
 function s.glcheck(g,c,tp)
-	return Duel.IsPlayerAffectedByEffect(tp,101306058) or g:GetCount()==3
+	return Duel.IsPlayerAffectedByEffect(tp,38391684) or g:GetCount()==3
 end
 function s.LConditionFilter(c,f,lc,e)
 	return (c:IsFaceup() or not c:IsOnField() or e:IsHasProperty(EFFECT_FLAG_SET_AVAILABLE))
@@ -116,7 +117,7 @@ function s.LUncompatibilityFilter(c,sg,lc,tp)
 	return not s.LCheckOtherMaterial(c,mg,lc,tp)
 end
 function s.LCheckGoal(sg,tp,lc,gf,lmat)
-	return (Duel.IsPlayerAffectedByEffect(tp,101306058)
+	return (Duel.IsPlayerAffectedByEffect(tp,38391684)
 		and sg:CheckWithSumEqual(s.GetLinkCount,2,#sg,#sg)
 		or sg:CheckWithSumEqual(s.GetLinkCount,lc:GetLink(),#sg,#sg))
 		and Duel.GetLocationCountFromEx(tp,tp,sg,lc)>0 and (not gf or gf(sg,lc,tp))
@@ -208,7 +209,7 @@ function s.spcon(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():IsSummonType(SUMMON_TYPE_LINK)
 end
 function s.spfilter(c,e,tp)
-	return aux.IsCodeListed(c,101306058) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+	return aux.IsCodeListed(c,38391684) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
@@ -247,7 +248,8 @@ end
 function s.drop(e,tp,eg,ep,ev,re,r,rp)
 	local h=Duel.GetFieldGroupCount(tp,0,LOCATION_HAND)
 	local g=Duel.GetFieldGroup(tp,0,LOCATION_HAND)
-	Duel.SendtoGrave(g,REASON_EFFECT+REASON_DISCARD)
-	Duel.BreakEffect()
-	Duel.Draw(1-tp,h,REASON_EFFECT)
+	if Duel.SendtoGrave(g,REASON_EFFECT+REASON_DISCARD)>0 then
+		Duel.BreakEffect()
+		Duel.Draw(1-tp,h,REASON_EFFECT)
+	end
 end

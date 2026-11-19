@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Heavy Polymerization  (ID: 58570206)
 -- Type: Spell
 -- Setcode: 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Fusion Monster from your Extra Deck, using 3 or more monsters from your hand or
--- field. You can also banish monsters from your Extra Deck as material, up to the number of monsters
--- your opponent controls, but you lose LP equal to the total ATK of monsters banished this way, when
--- the monster is Fusion Summoned.
+-- field.
+-- You can also banish monsters from your Extra Deck as material, up to the number of monsters your
+-- opponent controls, but you lose LP equal to the total ATK of monsters banished this way, when the
+-- monster is Fusion Summoned.
 --[[ __CARD_HEADER_END__ ]]
 
 --多層融合

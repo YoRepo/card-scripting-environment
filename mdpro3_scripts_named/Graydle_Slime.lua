@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Graydle Slime  (ID: 20056760)
 -- Type: Monster / Effect / Tuner
@@ -11,11 +11,11 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- If this card is in your hand or Graveyard: You can target 2 "Graydle" cards you control; destroy
--- them, and if you do, Special Summon this card.
+-- If this card is in your hand or GY: You can target 2 "Graydle" cards you control; destroy them, and
+-- if you do, Special Summon this card.
 -- You can only use this effect of "Graydle Slime" once per turn.
--- When Summoned this way: You can target 1 "Graydle" monster in your Graveyard; Special Summon that
--- target in Defense Position.
+-- When Summoned this way: You can target 1 "Graydle" monster in your GY; Special Summon that target in
+-- Defense Position.
 --[[ __CARD_HEADER_END__ ]]
 
 --グレイドル・スライム

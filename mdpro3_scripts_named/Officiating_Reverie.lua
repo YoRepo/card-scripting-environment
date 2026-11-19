@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Officiating Reverie  (ID: 49828011)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -10,14 +10,15 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- If this card is in your hand: You can discard 1 other card; Special Summon this card. If an Xyz
--- Monster(s) is sent to the GY, while this card is in your GY (except during the Damage Step): You can
--- banish this card; Special Summon 1 Zombie monster from your GY. During the Standby Phase of the next
--- turn after this card was banished: You can target 1 Zombie Xyz Monster you control; attach this
--- banished card to it. You can only use each effect of "Officiating Reverie" once per turn.
+-- If this card is in your hand: You can discard 1 other card; Special Summon this card.
+-- If an Xyz Monster(s) is sent to the GY, while this card is in your GY (except during the Damage
+-- Step): You can banish this card; Special Summon 1 Zombie monster from your GY.
+-- During the Standby Phase of the next turn after this card was banished: You can target 1 Zombie Xyz
+-- Monster you control; attach this banished card to it.
+-- You can only use each effect of "Officiating Reverie" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Officiating Reverie
+--祭司 レヴァリー
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--special summon

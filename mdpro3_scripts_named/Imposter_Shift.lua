@@ -1,16 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Imposter Shift  (ID: 101305088)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Imposter Shift  (ID: 89027418)
 -- Type: Spell / Continuous
 -- Scope: TCG
 --
 -- Effect Text:
 -- When a monster effect that was activated on your opponent's field by targeting a card(s) on the
 -- field resolves, if any of those targets are in a different column than that opponent's monster, they
--- can banish 1 card from their GY. If they did not, negate the activated effect. You can banish 1
--- monster from your GY; Special Summon 1 "Imposter Token" (Psychic/EARTH/ATK 800/DEF 800) with the
--- same Level as that monster. You can only use this effect of "Imposter Shift" once per turn.
+-- can banish 1 card from their GY.
+-- If they did not, negate the activated effect.
+-- You can banish 1 monster from your GY; Special Summon 1 "Imposter Token" (Psychic/EARTH/ATK 800/DEF
+-- 800) with the same Level as that monster.
+-- You can only use this effect of "Imposter Shift" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --Imposter Shift

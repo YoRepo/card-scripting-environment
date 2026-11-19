@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: R.B. VALCan Rocket  (ID: 79436874)
 -- Type: Monster / Effect
 -- Attribute: FIRE
@@ -12,14 +12,15 @@
 --
 -- Effect Text:
 -- If you control no face-up monsters, or the only face-up monsters you control are "R.B." monsters,
--- you can Special Summon this card (from your hand). You can only Special Summon "R.B. VALCan Rocket"
--- once per turn this way. If this card is linked to an "R.B." Link Monster: You can pay 1000 LP, then
--- target up to 2 cards your opponent controls; destroy them, also this card, and if you do, inflict
--- 500 damage to your opponent for each card destroyed. You can only use this effect of "R.B. VALCan
--- Rocket" once per turn.
+-- you can Special Summon this card (from your hand).
+-- You can only Special Summon "R.B. VALCan Rocket" once per turn this way.
+-- If this card is linked to an "R.B." Link Monster: You can pay 1000 LP, then target up to 2 cards
+-- your opponent controls; destroy them, also this card, and if you do, inflict 500 damage to your
+-- opponent for each card destroyed.
+-- You can only use this effect of "R.B. VALCan Rocket" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---R.B. VALCan Rocket
+--R.B.バルカンロケット
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--special summon

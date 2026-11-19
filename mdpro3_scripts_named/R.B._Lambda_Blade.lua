@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: R.B. Lambda Blade  (ID: 17188206)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -12,13 +12,14 @@
 --
 -- Effect Text:
 -- If this card is Normal or Special Summoned: You can send 1 "R.B." card from your Deck to the GY,
--- except "R.B. Lambda Blade". During your opponent's Main Phase, if this card is linked to an "R.B."
--- Link Monster (Quick Effect): You can pay 1400 LP, then target 1 monster your opponent controls;
--- destroy this card, and if you do, take control of that monster, but destroy it during the End Phase.
+-- except "R.B. Lambda Blade".
+-- During your opponent's Main Phase, if this card is linked to an "R.B." Link Monster (Quick Effect):
+-- You can pay 1400 LP, then target 1 monster your opponent controls; destroy this card, and if you do,
+-- take control of that monster, but destroy it during the End Phase.
 -- You can only use each effect of "R.B. Lambda Blade" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---R.B. Lambda Blade
+--R.B.ラムダブレード
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--to grave

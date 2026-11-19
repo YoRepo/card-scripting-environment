@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Gorgonic Cerberus  (ID: 37168514)
 -- Type: Monster / Effect
@@ -10,7 +10,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- When this card is Normal Summoned: You can make all Rock-Type monsters you control become Level 3.
+-- When this card is Normal Summoned: You can make all Rock monsters you control become Level 3.
 --[[ __CARD_HEADER_END__ ]]
 
 --ゴルゴニック・ケルベロス

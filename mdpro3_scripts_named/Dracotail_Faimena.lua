@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Dracotail Faimena  (ID: 1498449)
 -- Type: Monster / Effect
 -- Attribute: WATER
@@ -8,12 +8,13 @@
 -- Level: 5
 -- ATK 1300 | DEF 2500
 -- Setcode: 0x1c9
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During the Main Phase (Quick Effect): You can discard this card; Fusion Summon 1 Dragon or
--- Spellcaster monster from your Extra Deck, using monsters from your hand or field. If this card is
--- sent to the GY as material for a Fusion Summon: You can Set 1 "Dracotail" Spell/Trap from your Deck.
+-- Spellcaster monster from your Extra Deck, using monsters from your hand or field.
+-- If this card is sent to the GY as material for a Fusion Summon: You can Set 1 "Dracotail" Spell/Trap
+-- from your Deck.
 -- You can only use each effect of "Dracotail Faimena" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

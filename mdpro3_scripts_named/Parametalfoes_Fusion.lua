@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Parametalfoes Fusion  (ID: 58549532)
 -- Type: Spell
 -- Setcode: 0xe1, 0x46
@@ -8,8 +8,8 @@
 --
 -- Effect Text:
 -- Fusion Summon 1 "Metalfoes" Fusion Monster from your Extra Deck, using up to 1 monster each from
--- your hand, field, and/or face-up Extra Deck as Fusion Material. You can only activate 1
--- "Parametalfoes Fusion" per turn.
+-- your hand, field, and/or face-up Extra Deck as Fusion Material.
+-- You can only activate 1 "Parametalfoes Fusion" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --混錬装融合

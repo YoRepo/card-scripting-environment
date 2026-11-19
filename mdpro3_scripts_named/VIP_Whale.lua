@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: VIP Whale  (ID: 14556954)
 -- Type: Monster / Effect
 -- Attribute: LIGHT
@@ -10,14 +10,16 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- You can Tribute additional monsters when you Tribute Summon this card face-up. If this card is
--- Tribute Summoned: You can place VIP Counters on this card equal to the number of monsters Tributed
--- for its Tribute Summon. When your opponent activates a card or effect (Quick Effect): You can remove
--- 1 VIP Counter from this card; toss a coin and call it. If you call it right, negate that effect. If
--- you call it wrong, this card's original ATK becomes halved until the end of this turn.
+-- You can Tribute additional monsters when you Tribute Summon this card face-up.
+-- If this card is Tribute Summoned: You can place VIP Counters on this card equal to the number of
+-- monsters Tributed for its Tribute Summon.
+-- When your opponent activates a card or effect (Quick Effect): You can remove 1 VIP Counter from this
+-- card; toss a coin and call it.
+-- If you call it right, negate that effect.
+-- If you call it wrong, this card's original ATK becomes halved until the end of this turn.
 --[[ __CARD_HEADER_END__ ]]
 
---VIP Whale
+--豪回遊鯨 VIPホエール
 local s,id,o=GetID()
 function s.initial_effect(c)
 	c:EnableCounterPermit(0x75)
@@ -61,6 +63,9 @@ function s.initial_effect(c)
 	e4:SetOperation(s.disop)
 	c:RegisterEffect(e4)
 end
+s.mentioned_counter={
+	[0x75]=true,
+}
 function s.sumcon(e,c,minc)
 	if c==nil then return true end
 	local min=1

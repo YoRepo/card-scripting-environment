@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Ultra Polymerization  (ID: 76647978)
 -- Type: Spell
 -- Setcode: 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Pay 2000 LP; Fusion Summon 1 Fusion Monster from your Extra Deck, using 2 monsters you control as
--- Fusion Materials. Neither player can activate cards or effects in response to this card's
--- activation. You can banish this card from your GY, then target 1 Fusion Monster that was Fusion
--- Summoned with this card's effect; Special Summon all the Fusion Materials used for its Fusion Summon
--- from your GY, but change their ATK/DEF to 0, also they have their effects negated.
+-- Fusion Materials.
+-- Neither player can activate cards or effects in response to this card's activation.
+-- You can banish this card from your GY, then target 1 Fusion Monster that was Fusion Summoned with
+-- this card's effect; Special Summon all the Fusion Materials used for its Fusion Summon from your GY,
+-- but change their ATK/DEF to 0, also they have their effects negated.
 --[[ __CARD_HEADER_END__ ]]
 
 --超越融合

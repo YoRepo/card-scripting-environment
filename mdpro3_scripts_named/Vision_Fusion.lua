@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Vision Fusion  (ID: 57425061)
 -- Type: Spell
 -- Setcode: 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 "HERO" Fusion Monster from your Extra Deck, using monsters from your hand or field
--- as Fusion Material. You can also use up to 2 monsters in your Spell & Trap Zone that are treated as
--- Continuous Traps as Fusion Material, by banishing them. You can only activate 1 "Vision Fusion" per
--- turn.
+-- as Fusion Material.
+-- You can also use up to 2 monsters in your Spell & Trap Zone that are treated as Continuous Traps as
+-- Fusion Material, by banishing them.
+-- You can only activate 1 "Vision Fusion" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --幻影融合

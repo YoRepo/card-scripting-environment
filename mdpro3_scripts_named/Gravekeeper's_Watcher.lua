@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Gravekeeper's Watcher  (ID: 26084285)
 -- Type: Monster / Effect
@@ -11,9 +11,9 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- During either player's turn, when your opponent activates a Spell/Trap Card or monster effect that
--- could make them discard when it resolves: You can send this card from your hand to the Graveyard;
--- negate the activation, and if you do, destroy it.
+-- When your opponent activates a Spell/Trap Card or monster effect that includes an effect that makes
+-- them discard a card(s) (Quick Effect): You can send this card from your hand to the GY; negate the
+-- activation, and if you do, destroy it.
 --[[ __CARD_HEADER_END__ ]]
 
 --墓守の監視者

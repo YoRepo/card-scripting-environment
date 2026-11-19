@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Seventh Ascension  (ID: 23153227)
 -- Type: Spell
@@ -7,12 +7,12 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Take 1 card from your Deck (either a "Barian's" Spell/Trap, a "Rank-Up-Magic" Quick-Play Spell, or a
--- "Seventh" Spell/Trap except "Seventh Ascension"), and either add it to your hand or place it on top
--- of your Deck.
+-- Take 1 card from your Deck ("Barian's" Spell/Trap, "Rank-Up-Magic" Quick-Play Spell, or "Seventh"
+-- Spell/Trap except "Seventh Ascension"), and either add it to your hand or place it on top of your
+-- Deck.
 -- If your opponent controls a monster Special Summoned from the Extra Deck: You can banish this card
--- from your GY and send 1 "Rank-Up-Magic" Spell from your hand to the GY; this effect becomes that
--- Spell's effect when that card is activated.
+-- from your GY and send 1 "Rank-Up-Magic" Spell from your hand to the GY; apply that Spell Card's
+-- activation effect.
 -- You can only use each effect of "Seventh Ascension" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

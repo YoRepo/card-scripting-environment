@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Thunder Sea Horse  (ID: 48049769)
 -- Type: Monster / Effect
@@ -10,8 +10,8 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- You can discard this card; add 2 Level 4 LIGHT Thunder-Type monsters of the same name with 1600 or
--- less ATK from your Deck to your hand.
+-- You can discard this card; add 2 Level 4 LIGHT Thunder monsters of the same name with 1600 or less
+-- ATK from your Deck to your hand.
 -- You can only use the effect of "Thunder Sea Horse" once per turn.
 -- You cannot Special Summon during the turn you activate this effect.
 --[[ __CARD_HEADER_END__ ]]

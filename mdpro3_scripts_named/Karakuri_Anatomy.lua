@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Karakuri Anatomy  (ID: 85541675)
 -- Type: Spell / Continuous
@@ -41,6 +41,9 @@ function c85541675.initial_effect(c)
 	e3:SetOperation(c85541675.drop)
 	c:RegisterEffect(e3)
 end
+c85541675.mentioned_counter={
+	[0x12]=true,
+}
 function c85541675.cfilter(c)
 	local np=c:GetPosition()
 	local pp=c:GetPreviousPosition()

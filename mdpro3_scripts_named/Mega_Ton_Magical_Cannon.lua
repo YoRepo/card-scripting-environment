@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Mega Ton Magical Cannon  (ID: 32062913)
 -- Type: Spell
@@ -22,6 +22,9 @@ function c32062913.initial_effect(c)
 	e1:SetOperation(c32062913.activate)
 	c:RegisterEffect(e1)
 end
+c32062913.mentioned_counter={
+	[0x1]=true,
+}
 function c32062913.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsCanRemoveCounter(tp,1,0,0x1,10,REASON_COST) end
 	Duel.RemoveCounter(tp,1,0,0x1,10,REASON_COST)

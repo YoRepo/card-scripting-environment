@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Venom Burn  (ID: 4466015)
 -- Type: Trap
@@ -24,6 +24,9 @@ function c4466015.initial_effect(c)
 	e1:SetOperation(c4466015.activate)
 	c:RegisterEffect(e1)
 end
+c4466015.mentioned_counter={
+	[0x1009]=true,
+}
 function c4466015.filter(c)
 	return c:GetCounter(0x1009)>0
 end

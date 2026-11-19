@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: R.B. Funk Dock  (ID: 78710386)
 -- Type: Spell / Field
 -- Setcode: 0x1cf
@@ -8,13 +8,14 @@
 --
 -- Effect Text:
 -- When this card is activated: Add 1 "R.B." card from your Deck to your hand, except "R.B. Funk Dock".
--- Each time a monster(s) your opponent controls is destroyed by battle or card effect, gain 500 LP. If
--- a face-up "R.B." monster(s) you control leaves the field by card effect (except during the Damage
--- Step): You can Special Summon 1 "R.B." monster from your Deck. You can only use this effect of "R.B.
--- Funk Dock" once per turn. You can only activate 1 "R.B. Funk Dock" per turn.
+-- Each time a monster(s) your opponent controls is destroyed by battle or card effect, gain 500 LP.
+-- If a face-up "R.B." monster(s) you control leaves the field by card effect (except during the Damage
+-- Step): You can Special Summon 1 "R.B." monster from your Deck.
+-- You can only use this effect of "R.B. Funk Dock" once per turn.
+-- You can only activate 1 "R.B. Funk Dock" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---R.B. Funk Dock
+--R.B.ファンク・ドック
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Activate

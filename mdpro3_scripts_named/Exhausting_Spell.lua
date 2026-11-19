@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Exhausting Spell  (ID: 95451366)
 -- Type: Trap
@@ -19,6 +19,9 @@ function c95451366.initial_effect(c)
 	e1:SetOperation(c95451366.activate)
 	c:RegisterEffect(e1)
 end
+c95451366.mentioned_counter={
+	[0x1]=true,
+}
 function c95451366.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsCanRemoveCounter(tp,1,1,0x1,1,REASON_EFFECT) end
 end

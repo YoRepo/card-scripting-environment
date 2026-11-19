@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Crystron Halqifibrax Prism  (ID: 65400671)
 -- Type: Monster / Effect / Link
@@ -9,13 +9,13 @@
 -- Link Arrows: Bottom-Left, Bottom, Bottom-Right
 -- ATK 1500
 -- Setcode: 0xea
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2+ monsters, including a Tuner
 -- If this card is Link Summoned: You can Special Summon 1 Tuner from your Extra Deck in Defense
--- Position, with a Level less than or equal to the combined original Levels of the monsters used for
--- its Link Summon.
+-- Position, with a Level less than or equal to the total original Levels of the monsters used as Link
+-- Material.
 -- During your opponent's Main or Battle Phase (Quick Effect): You can banish this card you control;
 -- Special Summon 3 "Crystron Tokens" (Machine/WATER/Level 1/ATK 0/DEF 0), but they cannot be Tributed.
 -- You can only use each effect of "Crystron Halqifibrax Prism" once per turn.

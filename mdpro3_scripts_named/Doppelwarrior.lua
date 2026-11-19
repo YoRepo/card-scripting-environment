@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Doppelwarrior  (ID: 53855409)
 -- Type: Monster / Effect
@@ -43,7 +43,7 @@ function c53855409.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 function c53855409.gfilter(c,tp)
-	return c:IsPreviousLocation(LOCATION_GRAVE) and c:IsPreviousControler(tp)
+	return c:IsPreviousLocation(LOCATION_GRAVE) and c:IsPreviousControler(tp) and c:GetOriginalType()&TYPE_MONSTER~=0
 end
 function c53855409.spcon(e,tp,eg,ep,ev,re,r,rp)
 	return eg:IsExists(c53855409.gfilter,1,nil,tp)

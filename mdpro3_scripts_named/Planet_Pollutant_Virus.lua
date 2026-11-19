@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Planet Pollutant Virus  (ID: 39163598)
 -- Type: Trap
@@ -25,6 +25,9 @@ function c39163598.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 c39163598.counter_add_list={0x100e}
+c39163598.mentioned_counter={
+	[0x100e]=true,
+}
 function c39163598.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.CheckReleaseGroup(tp,Card.IsSetCard,1,nil,0xc) end
 	local g=Duel.SelectReleaseGroup(tp,Card.IsSetCard,1,1,nil,0xc)

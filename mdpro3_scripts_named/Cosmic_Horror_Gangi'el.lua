@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:48
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Cosmic Horror Gangi'el  (ID: 51192573)
 -- Type: Monster / Effect
@@ -55,6 +55,9 @@ function c51192573.initial_effect(c)
 	c:RegisterEffect(e4)
 end
 c51192573.counter_add_list={0x100e}
+c51192573.mentioned_counter={
+	[0x100e]=true,
+}
 function c51192573.otfilter(c,tp)
 	return c:GetOwner()==tp
 end

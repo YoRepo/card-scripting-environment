@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: GMX - ALLOS  (ID: 56311997)
 -- Type: Monster / Effect / Fusion
 -- Attribute: LIGHT
@@ -12,14 +12,15 @@
 --
 -- Effect Text:
 -- 1 "GMX" monster + 1 Dinosaur monster
--- Each time your opponent Normal or Special Summons a monster(s), gain 200 LP. You can only use each
--- of the following effects of "GMX - ALLOS" once per turn. You can target 1 "GMX" monster or 1
--- Dinosaur monster in your GY or banishment; Special Summon it. This card cannot attack the turn this
--- effect is activated. At the start of the Damage Step, if this card battles an opponent's monster:
--- You can destroy that monster.
+-- Each time your opponent Normal or Special Summons a monster(s), gain 200 LP.
+-- You can only use each of the following effects of "GMX - ALLOS" once per turn.
+-- You can target 1 "GMX" monster or 1 Dinosaur monster in your GY or banishment; Special Summon it.
+-- This card cannot attack the turn this effect is activated.
+-- At the start of the Damage Step, if this card battles an opponent's monster: You can destroy that
+-- monster.
 --[[ __CARD_HEADER_END__ ]]
 
---GMX - ALLOS
+--GMX－ALLOS
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--fusion procedure

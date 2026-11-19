@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Cloudian - Altus  (ID: 79703905)
 -- Type: Monster / Effect
@@ -53,6 +53,9 @@ function c79703905.initial_effect(c)
 	e4:SetOperation(c79703905.hdop)
 	c:RegisterEffect(e4)
 end
+c79703905.mentioned_counter={
+	[0x1019]=true,
+}
 function c79703905.sdcon(e)
 	return e:GetHandler():IsPosition(POS_FACEUP_DEFENSE)
 end

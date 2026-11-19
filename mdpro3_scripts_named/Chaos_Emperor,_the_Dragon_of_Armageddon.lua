@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Chaos Emperor, the Dragon of Armageddon  (ID: 4538826)
 -- Type: Monster / Effect / Pendulum / Special Summon
@@ -167,5 +167,5 @@ function c4538826.gyop(e,tp,eg,ep,ev,re,r,rp)
 end
 function c4538826.rmcon(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	return c:IsSummonType(SUMMON_TYPE_SPECIAL) and c:IsFaceup()
+	return c:IsSummonType(SUMMON_TYPE_SPECIAL) and c:IsFaceup() and c:IsLocation(LOCATION_MZONE)
 end

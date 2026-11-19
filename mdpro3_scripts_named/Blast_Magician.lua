@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Blast Magician  (ID: 21051146)
 -- Type: Monster / Effect
@@ -45,6 +45,9 @@ function c21051146.initial_effect(c)
 	e2:SetOperation(c21051146.desop)
 	c:RegisterEffect(e2)
 end
+c21051146.mentioned_counter={
+	[0x1]=true,
+}
 function c21051146.acop(e,tp,eg,ep,ev,re,r,rp)
 	if re:IsHasType(EFFECT_TYPE_ACTIVATE) and re:IsActiveType(TYPE_SPELL) and e:GetHandler():GetFlagEffect(FLAG_ID_CHAINING)>0 then
 		e:GetHandler():AddCounter(0x1,1)

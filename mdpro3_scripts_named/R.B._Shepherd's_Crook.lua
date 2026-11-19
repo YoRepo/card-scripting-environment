@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: R.B. Shepherd's Crook  (ID: 80071619)
 -- Type: Monster / Effect / Link
 -- Attribute: DARK
@@ -13,14 +13,15 @@
 --
 -- Effect Text:
 -- 2+ monsters, including an "R.B." monster
--- Gains 500 ATK for each monster you control, except this card. You can only use each of the following
--- effects of "R.B. Shepherd's Crook" once per turn. During your Main Phase: You can Set 1 "R.B." Trap
--- from your Deck or GY. During your opponent's Main Phase (Quick Effect): You can target 3 Level 3 or
--- higher "R.B." monsters in your GY; place 2 on the bottom of the Deck in any order, and if you do,
--- Special Summon the other in Defense Position.
+-- Gains 500 ATK for each monster you control, except this card.
+-- You can only use each of the following effects of "R.B. Shepherd's Crook" once per turn.
+-- During your Main Phase: You can Set 1 "R.B." Trap from your Deck or GY.
+-- During your opponent's Main Phase (Quick Effect): You can target 3 Level 3 or higher "R.B." monsters
+-- in your GY; place 2 on the bottom of the Deck in any order, and if you do, Special Summon the other
+-- in Defense Position.
 --[[ __CARD_HEADER_END__ ]]
 
---R.B. Shepherd's Crook
+--R.B.シェパード・クルーク
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--link summon
@@ -112,7 +113,7 @@ function s.fselect2(g,e,tp,sg)
 		or Duel.GetLocationCount(tp,LOCATION_MZONE)==0)
 end
 function s.spop(e,tp,eg,ep,ev,re,r,rp)
-	local tg=Duel.GetTargetsRelateToChain()
+	local tg=Duel.GetTargetsRelateToChain():Filter(aux.NecroValleyFilter(),nil)
 	if tg:GetCount()<2 then
 		return
 	elseif tg:GetCount()==2 and tg:IsExists(Card.IsAbleToDeck,2,nil) then
@@ -120,7 +121,7 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	elseif tg:GetCount()>2 and Duel.GetLocationCount(tp,LOCATION_MZONE)>0 then
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
 		local sg=tg:SelectSubGroup(tp,s.fselect2,false,2,2,e,tp,tg)
-		if sg:GetCount()>0 then
+		if sg then
 			tg:Sub(sg)
 			Duel.HintSelection(sg)
 			aux.PlaceCardsOnDeckBottom(tp,sg)

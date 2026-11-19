@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Shark Caesar  (ID: 14306092)
 -- Type: Monster / Effect / Xyz
@@ -44,6 +44,9 @@ function c14306092.initial_effect(c)
 	e2:SetValue(c14306092.atkval)
 	c:RegisterEffect(e2)
 end
+c14306092.mentioned_counter={
+	[0x2e]=true,
+}
 function c14306092.ctcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return e:GetHandler():CheckRemoveOverlayCard(tp,1,REASON_COST) end
 	e:GetHandler():RemoveOverlayCard(tp,1,1,REASON_COST)

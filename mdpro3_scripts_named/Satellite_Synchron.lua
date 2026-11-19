@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Satellite Synchron  (ID: 57458399)
 -- Type: Monster / Effect / Tuner
@@ -45,7 +45,7 @@ function c57458399.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 function c57458399.spfilter(c,tp)
-	return c:IsSummonLocation(LOCATION_GRAVE) and c:IsPreviousControler(tp)
+	return c:IsSummonLocation(LOCATION_GRAVE) and c:IsPreviousControler(tp) and c:GetOriginalType()&TYPE_MONSTER~=0
 end
 function c57458399.spcon(e,tp,eg,ep,ev,re,r,rp)
 	return eg:IsExists(c57458399.spfilter,1,nil,tp)

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Selene, Queen of the Master Magicians  (ID: 45819647)
 -- Type: Monster / Effect / Link
@@ -60,6 +60,9 @@ function c45819647.initial_effect(c)
 	e3:SetOperation(c45819647.spop)
 	c:RegisterEffect(e3)
 end
+c45819647.mentioned_counter={
+	[0x1]=true,
+}
 function c45819647.lcheck(g,lc)
 	return g:IsExists(Card.IsLinkRace,1,nil,RACE_SPELLCASTER)
 end

@@ -1,13 +1,13 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Lightning Crash  (ID: 89753095)
 -- Type: Spell
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Add 1 Thunder monster from your Deck to your hand, but you cannot Normal Summon/Set monsters with
--- its name until the end of the next turn after this card resolves.
+-- that name until the end of the next turn after this card resolves.
 -- You can only activate 1 "Lightning Crash" per turn.
 --[[ __CARD_HEADER_END__ ]]
 

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: The Winged Dragon of Ra - Immortal Phoenix  (ID: 10000090)
 -- Type: Monster / Effect / Special Summon
@@ -7,6 +7,7 @@
 -- Race: Divine-Beast
 -- Level: 10
 -- ATK 4000 | DEF 4000
+-- Setcode: 0x1f0
 -- Scope: OCG / TCG
 --
 -- Effect Text:

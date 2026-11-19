@@ -1,15 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Fiendsmith's Tract  (ID: 98567237)
 -- Type: Spell
 -- Setcode: 0x1b0
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Add 1 LIGHT Fiend monster from your Deck to your hand, then discard 1 card. You can banish this card
--- from your GY; Fusion Summon 1 "Fiendsmith" Fusion Monster from your Extra Deck, using monsters from
--- your hand or field. You can only use each effect of "Fiendsmith's Tract" once per turn.
+-- Add 1 LIGHT Fiend monster from your Deck to your hand, then discard 1 card.
+-- You can banish this card from your GY; Fusion Summon 1 "Fiendsmith" Fusion Monster from your Extra
+-- Deck, using monsters from your hand or field.
+-- You can only use each effect of "Fiendsmith's Tract" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --刻まれし魔の詠聖

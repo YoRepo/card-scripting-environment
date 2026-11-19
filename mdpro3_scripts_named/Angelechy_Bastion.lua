@@ -1,28 +1,29 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Angelechy Bastion  (ID: 101305091)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Angelechy Bastion  (ID: 28904860)
 -- Type: Monster / Effect / Synchro
 -- Attribute: LIGHT
 -- Race: Fairy
 -- Level: 8
 -- ATK 3000 | DEF 2500
--- Setcode: 0x2e5
+-- Setcode: 0x1e2
 -- Scope: TCG
 --
 -- Effect Text:
 -- 1 Tuner + 1+ non-Tuners
--- You can target 1 other card in this card's column; banish it. If this card is placed in the Spell &
--- Trap Zone as a Continuous Spell: You can place 1 "Angelechy Shatranga" from your Extra Deck in your
--- Spell & Trap Zone as a face-up Continuous Spell. You can only use each of the preceding effects of
--- "Angelechy Bastion" once per turn. While this card is treated as a Continuous Spell, other
--- "Angelechy" cards on the field cannot be destroyed by your opponent's card effects.
+-- You can target 1 other card in this card's column; banish it.
+-- If this card is placed in the Spell & Trap Zone as a Continuous Spell: You can place 1 "Angelechy
+-- Shatranga" from your Extra Deck in your Spell & Trap Zone as a face-up Continuous Spell.
+-- You can only use each of the preceding effects of "Angelechy Bastion" once per turn.
+-- While this card is treated as a Continuous Spell, other "Angelechy" cards on the field cannot be
+-- destroyed by your opponent's card effects.
 --[[ __CARD_HEADER_END__ ]]
 
 --Angelechy Bastion
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.AddCodeList(c,101305090)
+	aux.AddCodeList(c,42410161)
 	--Synchro summon
 	aux.AddSynchroProcedure(c,nil,aux.NonTuner(nil),1)
 	c:EnableReviveLimit()
@@ -42,7 +43,7 @@ function s.initial_effect(c)
 	e2:SetType(EFFECT_TYPE_FIELD)
 	e2:SetCode(EFFECT_INDESTRUCTABLE_EFFECT)
 	e2:SetRange(LOCATION_SZONE)
-	e2:SetTargetRange(LOCATION_ONFIELD,0)
+	e2:SetTargetRange(LOCATION_ONFIELD,LOCATION_ONFIELD)
 	e2:SetCondition(s.setcon)
 	e2:SetTarget(s.indtg)
 	e2:SetValue(aux.indoval)
@@ -87,13 +88,13 @@ end
 function s.rmop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	local tc=Duel.GetFirstTarget()
-	if tc:IsRelateToChain() then
+	if tc:IsRelateToChain() and tc:IsOnField() then
 		Duel.Remove(tc,POS_FACEUP,REASON_EFFECT)
 	end
 end
 function s.flagop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	if not c:IsLocation(LOCATION_SZONE) or not c:GetType()==TYPE_SPELL+TYPE_CONTINUOUS then return end
+	if not c:IsLocation(LOCATION_SZONE) or c:GetType()~=TYPE_SPELL+TYPE_CONTINUOUS then return end
 	if Duel.GetCurrentChain()>0 then
 		c:RegisterFlagEffect(id,RESET_EVENT+RESETS_STANDARD+RESET_CHAIN,0,1)
 	else
@@ -102,7 +103,7 @@ function s.flagop(e,tp,eg,ep,ev,re,r,rp)
 end
 function s.raiseop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	if not c:GetType()==TYPE_SPELL+TYPE_CONTINUOUS then return end
+	if c:GetType()~=TYPE_SPELL+TYPE_CONTINUOUS then return end
 	if c:GetFlagEffect(id)~=0 then
 		Duel.RaiseSingleEvent(c,EVENT_CUSTOM+id,e,0,tp,tp,0)
 	end
@@ -111,7 +112,7 @@ function s.setcon(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():GetType()==TYPE_SPELL+TYPE_CONTINUOUS
 end
 function s.setfilter(c)
-	return c:IsCode(101305090) and not c:IsForbidden()
+	return c:IsCode(42410161) and not c:IsForbidden()
 end
 function s.settg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.setfilter,tp,LOCATION_EXTRA,0,1,nil)
@@ -135,5 +136,5 @@ function s.setop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 function s.indtg(e,c)
-	return c:IsFaceup() and c:IsSetCard(0x2e5) and c~=e:GetHandler()
+	return c:IsFaceup() and c:IsSetCard(0x1e2) and c~=e:GetHandler()
 end

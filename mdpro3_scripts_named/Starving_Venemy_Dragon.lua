@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Starving Venemy Dragon  (ID: 93729065)
 -- Type: Monster / Effect / Fusion / Pendulum
@@ -83,6 +83,9 @@ function c93729065.initial_effect(c)
 	e5:SetOperation(c93729065.penop)
 	c:RegisterEffect(e5)
 end
+c93729065.mentioned_counter={
+	[0x104f]=true,
+}
 function c93729065.cfilter(c)
 	return c:IsPreviousLocation(LOCATION_ONFIELD)
 end

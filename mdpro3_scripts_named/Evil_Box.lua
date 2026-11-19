@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Evil Box  (ID: 8915275)
 -- Type: Monster / Effect
@@ -7,13 +7,13 @@
 -- Race: Fiend
 -- Level: 6
 -- ATK 2300 | DEF 2000
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- If you control "Toon World": You can Special Summon this card from your hand, then you can add to
--- your hand or Set 1 "Toon" Trap from your Deck.
--- You can only use this effect of "Evil Box" once per turn.
 -- This card is treated as a Toon monster while "Toon World" is on the field.
+-- If this card is in your hand and you control "Toon World": You can Special Summon this card, then
+-- you can add to your hand or Set 1 "Toon" Trap from your Deck.
+-- You can only use this effect of "Evil Box" once per turn.
 -- Once per turn (Quick Effect): You can target 1 card in either GY; place it on the bottom of the
 -- Deck.
 --[[ __CARD_HEADER_END__ ]]
@@ -105,7 +105,7 @@ function s.tdtg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 end
 function s.tdop(e,tp,eg,ep,ev,re,r,rp)
 	local tc=Duel.GetFirstTarget()
-	if tc:IsRelateToChain() then
+	if tc:IsRelateToChain() and aux.NecroValleyFilter()(tc) then
 		Duel.SendtoDeck(tc,nil,SEQ_DECKBOTTOM,REASON_EFFECT)
 	end
 end

@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Barian's Hope  (ID: 101306056)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Barian's Hope  (ID: 75518330)
 -- Type: Spell
 -- Setcode: 0x176, 0x7f
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Special Summon 1 "Umbral Horror" monster or "Masquerade" Xyz Monster from your hand or GY, then you
--- can make the Levels of all "Umbral Horror" monsters you control become the Level of 1 "Umbral
--- Horror" monster in your field or GY. You can banish this card from your GY, then target 1 Xyz
--- Monster you control; attach 1 "Number" Xyz Monster from your Extra Deck or GY to it. You can only
--- use each effect of "Barian's Hope" once per turn.
+-- Special Summon 1 "Umbral Horror" monster or 1 "Masquerade" Xyz Monster from your hand or GY, then
+-- you can make the Levels of all "Umbral Horror" monsters you control the same as 1 "Umbral Horror"
+-- monster in your field or GY.
+-- You can banish this card from your GY, then target 1 Xyz Monster you control; attach 1 "Number" Xyz
+-- Monster from your Extra Deck or GY to it.
+-- You can only use each effect of "Barian's Hope" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --バリアンズ・ホープ
@@ -40,7 +41,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 function s.spfilter(c,e,tp)
-	return (c:IsSetCard(0x87) or c:IsSetCard(0x2e9) and c:IsType(TYPE_XYZ)) and c:IsCanBeSpecialSummoned(e,0,tp,false,false,POS_FACEUP)
+	return (c:IsSetCard(0x87) or c:IsSetCard(0x1e3) and c:IsType(TYPE_XYZ)) and c:IsCanBeSpecialSummoned(e,0,tp,false,false,POS_FACEUP)
 end
 function s.cfilter1(c,lv)
 	return c:IsFaceup() and c:IsSetCard(0x87)

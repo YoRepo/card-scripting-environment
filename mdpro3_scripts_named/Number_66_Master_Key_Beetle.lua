@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Number 66: Master Key Beetle  (ID: 76067258)
 -- Type: Monster / Effect / Xyz
@@ -15,8 +15,8 @@
 -- Once per turn: You can detach 1 Xyz Material from this card, then target 1 card you control, except
 -- this card; while this card is face-up on the field, that card(s) cannot be destroyed by card
 -- effects.
--- If this face-up card on the field would be destroyed, you can send one of its targets to the
--- Graveyard instead.
+-- If this face-up card on the field would be destroyed, you can send one of its targets to the GY
+-- instead.
 --[[ __CARD_HEADER_END__ ]]
 
 --No.66 覇鍵甲虫マスター・キー・ビートル

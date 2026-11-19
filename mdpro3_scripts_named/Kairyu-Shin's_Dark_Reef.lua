@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Kairyu-Shin's Dark Reef  (ID: 95602345)
 -- Type: Trap
@@ -11,8 +11,8 @@
 -- from your hand and/or Deck, that mention "Umi" or are WATER Normal Monsters, in Defense Position,
 -- then if your opponent controls a monster, you can Special Summon any number of Level 6 or lower
 -- WATER Normal Monsters from your hand and/or Deck.
--- Until the end of your next turn after this card resolves, you cannot Special Summon monsters, except
--- WATER monsters.
+-- Until the end of your next turn after this card resolves, you cannot Special Summon, except WATER
+-- monsters.
 -- You can only activate 1 "Kairyu-Shin's Dark Reef" per turn.
 --[[ __CARD_HEADER_END__ ]]
 

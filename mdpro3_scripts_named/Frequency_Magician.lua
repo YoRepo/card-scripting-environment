@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Frequency Magician  (ID: 62154416)
 -- Type: Monster / Effect / Tuner
@@ -40,6 +40,9 @@ function c62154416.initial_effect(c)
 	e2:SetOperation(c62154416.atkop)
 	c:RegisterEffect(e2)
 end
+c62154416.mentioned_counter={
+	[0x1]=true,
+}
 function c62154416.addct(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
 	Duel.SetOperationInfo(0,CATEGORY_COUNTER,nil,1,0,0x1)

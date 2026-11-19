@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Clock Tower Prison  (ID: 75041269)
 -- Type: Spell / Field
@@ -7,7 +7,7 @@
 --
 -- Effect Text:
 -- Once per turn, during your opponent's Standby Phase: Place 1 Clock Counter on this card.
--- While there are 4 or more Clock Counters on this card, you do not take any battle damage.
+-- While this card has 4 or more Clock Counters, you take no battle damage.
 -- If this card with 4 or more Clock Counters is destroyed and sent to the GY: Special Summon 1
 -- "Destiny HERO - Dreadmaster" from your hand or Deck.
 --[[ __CARD_HEADER_END__ ]]
@@ -59,6 +59,9 @@ function c75041269.initial_effect(c)
 	e4:SetLabelObject(e0)
 	c:RegisterEffect(e4)
 end
+c75041269.mentioned_counter={
+	[0x1b]=true,
+}
 function c75041269.dcon(e)
 	return e:GetHandler():GetCounter(0x1b)>=4
 end

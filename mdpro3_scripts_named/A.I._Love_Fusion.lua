@@ -1,15 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: A.I. Love Fusion  (ID: 59332125)
 -- Type: Spell
 -- Setcode: 0x136, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Cyberse Fusion Monster from your Extra Deck, using monsters from your hand or field
--- as Fusion Material. If you use your "@Ignister" monster as Fusion Material, you can also use 1 Link
--- Monster your opponent controls as material. You can only activate 1 "A.I. Love Fusion" per turn.
+-- as material.
+-- If you use your "@Ignister" monster, you can also use 1 Link Monster your opponent controls as
+-- material.
+-- You can only activate 1 "A.I. Love Fusion" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --Aiラブ融合

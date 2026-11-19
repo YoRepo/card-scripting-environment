@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Odd-Eyes Arc Pendulum Dragon  (ID: 14105623)
 -- Type: Monster / Normal / Pendulum
@@ -14,9 +14,9 @@
 -- Effect Text:
 -- Pendulum Scale = 8
 -- [ Pendulum Effect ]
--- If an "Odd-Eyes" card(s) you control is destroyed by battle or card effect: You can Special Summon 1
--- "Odd-Eyes" monster from your hand, Deck, or GY. You can only use this effect of "Odd-Eyes Arc
--- Pendulum Dragon" once per turn.
+-- If a face-up "Odd-Eyes" card(s) you control is destroyed by battle or card effect: You can Special
+-- Summon 1 "Odd-Eyes" monster from your hand, Deck, or GY. You can only use this effect of "Odd-Eyes
+-- Arc Pendulum Dragon" once per turn.
 -- ----------------------------------------
 -- [ Monster Effect ]
 -- Made from miracles, this valiant and beautiful dragon has gleaming eyes that reflect an arc drawn in

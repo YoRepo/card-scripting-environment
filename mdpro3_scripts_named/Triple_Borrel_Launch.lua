@@ -1,10 +1,10 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Triple Borrel Launch  (ID: 89875646)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x10f
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Activate 1 of these effects (but you can only use each effect of "Triple Borrel Launch" once per

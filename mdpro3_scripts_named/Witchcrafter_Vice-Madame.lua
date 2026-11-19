@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Witchcrafter Vice-Madame  (ID: 9603252)
 -- Type: Monster / Effect / Fusion
@@ -14,7 +14,7 @@
 -- 1 "Witchcrafter" monster + 1 Spellcaster monster
 -- When a Spell Card or effect, or a non-Fusion Spellcaster monster effect, is activated (Quick
 -- Effect): You can activate 1 of these effects (but you can only use each effect of "Witchcrafter
--- Vice-Madame" once per turn).
+-- Vice-Madame" once per turn);
 -- ● Destroy 1 card on the field.
 -- ● Special Summon 1 Level 6 or lower "Witchcrafter" monster from your hand or Deck.
 -- ● Add 1 "Witchcrafter" Spell/Trap from your GY to your hand.

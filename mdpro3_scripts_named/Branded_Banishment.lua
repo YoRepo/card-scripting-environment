@@ -1,10 +1,10 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Branded Banishment  (ID: 6763530)
 -- Type: Trap
 -- Setcode: 0x15d
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Target 1 "Despia" monster or 1 Level 8 or higher Fusion Monster in your GY; Special Summon it, then

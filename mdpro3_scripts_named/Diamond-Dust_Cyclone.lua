@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Diamond-Dust Cyclone  (ID: 19980975)
 -- Type: Spell / Quick-Play
@@ -22,6 +22,9 @@ function c19980975.initial_effect(c)
 	e1:SetOperation(c19980975.activate)
 	c:RegisterEffect(e1)
 end
+c19980975.mentioned_counter={
+	[0x1019]=true,
+}
 function c19980975.filter(c)
 	return c:GetCounter(0x1019)>=4
 end

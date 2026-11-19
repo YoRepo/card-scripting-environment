@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Eternal Dread  (ID: 35787450)
 -- Type: Trap
@@ -21,6 +21,9 @@ function c35787450.initial_effect(c)
 	e1:SetOperation(c35787450.addc)
 	c:RegisterEffect(e1)
 end
+c35787450.mentioned_counter={
+	[0x1b]=true,
+}
 function c35787450.filter(c)
 	return c:IsFaceup() and c:IsCode(75041269) and c:IsCanAddCounter(0x1b,2)
 end

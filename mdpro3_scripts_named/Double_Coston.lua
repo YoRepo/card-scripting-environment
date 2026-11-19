@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Double Coston  (ID: 44436472)
 -- Type: Monster / Effect
@@ -23,5 +23,6 @@ function c44436472.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 function c44436472.condition(e,c)
-	return c:IsAttribute(ATTRIBUTE_DARK)
+	local ec=e:GetHandler()
+	return c:IsAttribute(ATTRIBUTE_DARK) and (ec:IsFaceup() or c:GetControler()==ec:GetControler())
 end

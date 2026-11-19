@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Cloudian Squall  (ID: 90135989)
 -- Type: Spell / Continuous
@@ -28,6 +28,9 @@ function c90135989.initial_effect(c)
 	e2:SetOperation(c90135989.operation)
 	c:RegisterEffect(e2)
 end
+c90135989.mentioned_counter={
+	[0x1019]=true,
+}
 function c90135989.condition(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.GetTurnPlayer()==tp
 end

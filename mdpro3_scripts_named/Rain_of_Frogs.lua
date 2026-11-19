@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Rain of Frogs  (ID: 94467314)
 -- Type: Trap
 -- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If you control an Aqua monster with 2000 or more ATK: Send all monsters on the field to the GY,
--- except Aqua monsters. If this Set card is destroyed by card effect: You can Set this card. You can
--- only use each effect of "Rain of Frogs" once per turn.
+-- except Aqua monsters.
+-- If this Set card is destroyed by card effect: You can Set this card.
+-- You can only use each effect of "Rain of Frogs" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Rain of Frogs
+--悪鵺死ノ雨
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Activate

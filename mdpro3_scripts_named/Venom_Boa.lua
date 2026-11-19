@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Venom Boa  (ID: 9284723)
 -- Type: Monster / Effect
@@ -30,6 +30,9 @@ function c9284723.initial_effect(c)
 	e1:SetOperation(c9284723.operation)
 	c:RegisterEffect(e1)
 end
+c9284723.mentioned_counter={
+	[0x1009]=true,
+}
 function c9284723.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return e:GetHandler():GetAttackAnnouncedCount()==0 end
 	local e1=Effect.CreateEffect(e:GetHandler())

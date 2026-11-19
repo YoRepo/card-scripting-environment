@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Dark City at Midnight  (ID: 101306062)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Dark City at Midnight  (ID: 4663194)
 -- Type: Spell / Field
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Each time you Special Summon a Level 8 or higher "Destiny HERO" monster(s): All Warrior monsters you
--- currently control gain 300 ATK. You can only use each of the following effects of "Dark City at
--- Midnight" once per turn. During your Main Phase, if this card was activated this turn: You can add 1
--- "Destiny HERO" monster, or 1 card that mentions a "Destiny HERO" monster's card name, from your Deck
--- to your hand. If this card is destroyed: You can Special Summon 1 "Destiny HERO" monster from your
--- Deck (this is treated as a Special Summon with "Clock Tower Prison").
+-- Each time you Special Summon a Level 8 or higher "Destiny HERO" monster(s): Warrior monsters you
+-- control gain 300 ATK.
+-- You can only use each of the following effects of "Dark City at Midnight" once per turn.
+-- During your Main Phase, if this card was activated this turn: You can add 1 "Destiny HERO" monster
+-- or 1 card that mentions a "Destiny HERO" monster by name from your Deck to your hand.
+-- If this card is destroyed: You can Special Summon 1 "Destiny HERO" monster from your Deck (this is
+-- treated as a Special Summon with "Clock Tower Prison").
 --[[ __CARD_HEADER_END__ ]]
 
 --幽獄の時計都市－ダーク・シティ
@@ -35,7 +36,7 @@ function s.initial_effect(c)
 	e2:SetTarget(s.thtg)
 	e2:SetOperation(s.thop)
 	c:RegisterEffect(e2)
-	--damage
+	--atkup
 	local e3=Effect.CreateEffect(c)
 	e3:SetDescription(aux.Stringid(id,1))
 	e3:SetCategory(CATEGORY_ATKCHANGE)
@@ -103,16 +104,20 @@ end
 function s.spfilter(c,e,tp)
 	return c:IsSetCard(0xc008) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
+function s.rneffect(c)
+	local e=Effect.CreateEffect(c)
+	e:SetType(EFFECT_TYPE_SINGLE)
+	e:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
+	e:SetCode(EFFECT_CHANGE_CODE)
+	e:SetValue(75041269)
+	e:SetReset(RESET_EVENT+RESETS_STANDARD)
+	c:RegisterEffect(e)
+	return e
+end
 function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
 	if chk==0 then
-		local e1=Effect.CreateEffect(c)
-		e1:SetType(EFFECT_TYPE_SINGLE)
-		e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
-		e1:SetCode(EFFECT_CHANGE_CODE)
-		e1:SetValue(75041269)
-		e1:SetReset(RESET_EVENT+RESETS_STANDARD)
-		c:RegisterEffect(e1)
+		local e1=s.rneffect(c)
 		local res=Duel.GetLocationCount(tp,LOCATION_MZONE)>0
 			and Duel.IsExistingMatchingCard(s.spfilter,tp,LOCATION_DECK,0,1,nil,e,tp)
 		e1:Reset()
@@ -123,13 +128,7 @@ end
 function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
 	local c=e:GetHandler()
-	local e1=Effect.CreateEffect(c)
-	e1:SetType(EFFECT_TYPE_SINGLE)
-	e1:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
-	e1:SetCode(EFFECT_CHANGE_CODE)
-	e1:SetValue(75041269)
-	e1:SetReset(RESET_EVENT+RESETS_STANDARD)
-	c:RegisterEffect(e1)
+	local e1=s.rneffect(c)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
 	local g=Duel.SelectMatchingCard(tp,s.spfilter,tp,LOCATION_DECK,0,1,1,nil,e,tp)
 	if g:GetCount()>0 then

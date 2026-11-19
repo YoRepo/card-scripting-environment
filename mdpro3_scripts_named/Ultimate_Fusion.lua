@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Ultimate Fusion  (ID: 71143015)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During the Main Phase: Fusion Summon 1 Fusion Monster from your Extra Deck that mentions "Blue-Eyes
 -- White Dragon" or "Blue-Eyes Ultimate Dragon" as material, by shuffling the materials mentioned on it
 -- from your hand, field, and/or GY into the Deck, then, you can destroy face-up cards your opponent
 -- controls, up to the number of "Blue-Eyes White Dragon" and "Blue-Eyes Ultimate Dragon" used from the
--- field as material. You can only activate 1 "Ultimate Fusion" per turn.
+-- field as material.
+-- You can only activate 1 "Ultimate Fusion" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --究極融合

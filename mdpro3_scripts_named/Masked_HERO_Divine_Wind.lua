@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Masked HERO Divine Wind  (ID: 22093873)
 -- Type: Monster / Effect / Fusion
@@ -14,8 +14,7 @@
 -- Must be Special Summoned with "Mask Change" and cannot be Special Summoned by other ways.
 -- Cannot be destroyed by battle.
 -- Your opponent can attack with only 1 monster during each Battle Phase.
--- When this card destroys an opponent's monster by battle and sends it to the Graveyard: You can draw
--- 1 card.
+-- When this card destroys an opponent's monster by battle and sends it to the GY: You can draw 1 card.
 --[[ __CARD_HEADER_END__ ]]
 
 --M・HERO カミカゼ

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Tearlaments Havnis  (ID: 37961969)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -8,15 +8,15 @@
 -- Level: 3
 -- ATK 1600 | DEF 1000
 -- Setcode: 0x181
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- When your opponent activates a monster effect on the field (Quick Effect): You can Special Summon
--- this card from your hand, and if you do, send the top 3 cards of your Deck to the GY. If this card
--- is sent to the GY by card effect (except during the Damage Step): You can Fusion Summon 1 Fusion
--- Monster from your Extra Deck, by placing Fusion Materials mentioned on it from your hand, field,
--- and/or GY, including this card from your GY, on the bottom of the Deck in any order. You can only
--- use each effect of "Tearlaments Havnis" once per turn.
+-- this card from your hand, and if you do, send the top 3 cards of your Deck to the GY.
+-- If this card is sent to the GY by card effect (except during the Damage Step): You can Fusion Summon
+-- 1 Fusion Monster from your Extra Deck, by placing Fusion Materials mentioned on it from your hand,
+-- field, and/or GY, including this card from your GY, on the bottom of the Deck in any order.
+-- You can only use each effect of "Tearlaments Havnis" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ティアラメンツ・ハゥフニス

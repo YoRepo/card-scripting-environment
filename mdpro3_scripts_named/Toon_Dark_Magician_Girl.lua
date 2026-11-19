@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Toon Dark Magician Girl  (ID: 90960358)
 -- Type: Monster / Effect / Toon / Special Summon
@@ -17,7 +17,7 @@
 -- If "Toon World" on the field is destroyed, destroy this card.
 -- Can attack your opponent directly, unless they control a Toon monster, in which case this card must
 -- target a Toon monster for its attacks.
--- Gains 300 ATK for every "Dark Magician" or "Magician of Black Chaos" in either player's GY.
+-- Gains 300 ATK for every "Dark Magician" or "Magician of Black Chaos" in the GYs.
 --[[ __CARD_HEADER_END__ ]]
 
 --トゥーン・ブラック・マジシャン・ガール

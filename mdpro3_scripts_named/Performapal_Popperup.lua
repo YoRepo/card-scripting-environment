@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Performapal Popperup  (ID: 11481610)
 -- Type: Spell
@@ -72,6 +72,7 @@ function c11481610.activate(e,tp,eg,ep,ev,re,r,rp)
 		end
 	end
 	if not res then
+		Duel.BreakEffect()
 		local lp=Duel.GetFieldGroupCount(tp,LOCATION_HAND,0)
 		Duel.SetLP(tp,Duel.GetLP(tp)-lp*1000)
 	end

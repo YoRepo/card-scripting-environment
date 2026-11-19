@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Dimension Fortress Weapon  (ID: 1596508)
 -- Type: Monster / Effect
@@ -10,7 +10,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Cards cannot be sent from the Deck to the GY.
+-- Neither player can send cards from the Main Deck to the GY.
 --[[ __CARD_HEADER_END__ ]]
 
 --次元要塞兵器

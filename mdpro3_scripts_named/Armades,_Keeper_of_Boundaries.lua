@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Armades, Keeper of Boundaries  (ID: 88033975)
 -- Type: Monster / Effect / Synchro
@@ -10,9 +10,9 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- 1 Tuner + 1 or more non-Tuner monsters
--- If this card attacks or is attacked, your opponent cannot activate cards or effects until the end of
--- the Damage Step.
+-- 1 Tuner + 1+ non-Tuners
+-- If this card battles, your opponent cannot activate cards or effects until the end of the Damage
+-- Step.
 --[[ __CARD_HEADER_END__ ]]
 
 --幻層の守護者アルマデス

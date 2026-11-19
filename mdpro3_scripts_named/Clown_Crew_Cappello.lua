@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Clown Crew Cappello  (ID: 100260001)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Clown Crew Cappello  (ID: 19491080)
 -- Type: Monster / Effect / Pendulum
 -- Attribute: LIGHT
 -- Race: Beast-Warrior
@@ -9,21 +9,21 @@
 -- ATK 1900 | DEF 800
 -- Pendulum Scale: L7 / R7
 -- Setcode: 0x1dc
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Pendulum Scale = 7
 -- [ Pendulum Effect ]
--- During your Main Phase: You can send 1 "Clown Crew" card from your Deck to your GY, except a
--- Pendulum Monster, and if you do, Special Summon this card, also you cannot activate the effects of
--- monsters Special Summoned from the Deck or Extra Deck until the end of the next turn. You can only
--- use this effect of "Clown Crew Cappello" once per turn.
+-- During your Main Phase: You can send 1 non-Pendulum "Clown Crew" card from your Deck to the GY, and
+-- if you do, Special Summon this card, also until the end of the next turn after this effect resolves,
+-- you cannot activate the effect of monsters Special Summoned from the Deck or Extra Deck.
+-- You can only use this effect of "Clown Crew Cappello" once per turn.
 -- ----------------------------------------
 -- [ Monster Effect ]
--- Monsters your opponent controls lose 1500 DEF while you control a Tribute Summoned monster. If this
--- card is Tributed: You can activate 1 of these effects (but you can only use each of these effects of
+-- Monsters your opponent controls lose 1500 DEF while you control a Tribute Summoned monster.
+-- If this card is Tributed: You can activate 1 of these effects (but you can only use each effect of
 -- "Clown Crew Cappello" once per turn);
--- ● Shuffle all Pendulum Monsters on the field and face-up in the Extra Decks into the Deck.
+-- ● Shuffle all Pendulum Monsters from the face-up Extra Decks and the field into the Deck.
 -- ● Special Summon 1 non-Pendulum "Clown Crew" monster from your Deck or Extra Deck, ignoring its
 -- Summoning conditions.
 --[[ __CARD_HEADER_END__ ]]

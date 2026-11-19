@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Winged Kuriboh Sabatiel LV10  (ID: 40237839)
 -- Type: Monster / Effect
@@ -8,15 +8,15 @@
 -- Level: 10
 -- ATK 300 | DEF 200
 -- Setcode: 0x10a4, 0x41
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- You can reveal this card in your hand and pay half your LP; add 1 "Polymerization" Spell or "Fusion"
--- Spell from your Deck to your hand, and if you do, shuffle this card into the Deck, also you cannot
--- Special Summon from the Extra Deck for the rest of this turn, except "HERO" monsters.
+-- Spell from your Deck to your hand, and if you do, shuffle this card into the Deck, also for the rest
+-- of this turn, you cannot Special Summon from the Extra Deck, except "HERO" monsters.
 -- During your opponent's turn, if your LP are 1000 or less (Quick Effect): You can Special Summon this
 -- card from your hand, then you can inflict damage to your opponent equal to the highest ATK among the
--- monsters they control (your choice, if tied).
+-- monsters they control.
 -- You can only use each effect of "Winged Kuriboh Sabatiel LV10" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

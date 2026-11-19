@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Tempest Magician  (ID: 63101919)
 -- Type: Monster / Effect / Synchro
@@ -57,6 +57,9 @@ function c63101919.initial_effect(c)
 	e3:SetOperation(c63101919.damop)
 	c:RegisterEffect(e3)
 end
+c63101919.mentioned_counter={
+	[0x1]=true,
+}
 function c63101919.addcc1(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():IsSummonType(SUMMON_TYPE_SYNCHRO)
 end

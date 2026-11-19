@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Beast Magic Attack  (ID: 21984400)
 -- Type: Spell / Quick-Play
@@ -44,6 +44,9 @@ function c21984400.initial_effect(c)
 	e3:SetOperation(c21984400.spop2)
 	c:RegisterEffect(e3)
 end
+c21984400.mentioned_counter={
+	[0x1]=true,
+}
 function c21984400.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	local ct=e:GetLabel()
 	if chk==0 then return Duel.IsCanRemoveCounter(tp,1,0,0x1,ct,REASON_COST) end

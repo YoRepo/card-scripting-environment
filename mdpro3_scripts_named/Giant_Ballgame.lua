@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Giant Ballgame  (ID: 60619435)
 -- Type: Spell / Continuous
@@ -103,7 +103,7 @@ function c60619435.activate(e,tp,eg,ep,ev,re,r,rp)
 	local tc=g:Filter(Card.IsControler,nil,tp):GetFirst()
 	local tc2=g:Filter(Card.IsControler,nil,1-tp):GetFirst()
 	if tc and tc2 then
-		if Duel.SwapControl(tc,tc2)~=0 then
+		if Duel.SwapControl(tc,tc2) then
 			local e1=Effect.CreateEffect(e:GetHandler())
 			e1:SetType(EFFECT_TYPE_SINGLE)
 			e1:SetCode(EFFECT_CHANGE_RACE)

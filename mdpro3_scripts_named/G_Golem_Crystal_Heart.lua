@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: G Golem Crystal Heart  (ID: 61668670)
 -- Type: Monster / Effect / Link
@@ -56,6 +56,9 @@ function c61668670.initial_effect(c)
 	e4:SetCode(EFFECT_PIERCE)
 	c:RegisterEffect(e4)
 end
+c61668670.mentioned_counter={
+	[0x64]=true,
+}
 function c61668670.filter(c,e,tp,zone)
 	return c:IsAttribute(ATTRIBUTE_EARTH) and c:IsType(TYPE_LINK) and c:IsCanBeSpecialSummoned(e,0,tp,false,false,POS_FACEUP,tp,zone)
 end

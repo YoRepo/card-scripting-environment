@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Vaalmonica, the Agathokakological Voice  (ID: 39210885)
 -- Type: Spell / Field
@@ -39,6 +39,9 @@ function s.initial_effect(c)
 	e2:SetOperation(s.conop)
 	c:RegisterEffect(e2)
 end
+s.mentioned_counter={
+	[0x6a]=true,
+}
 function s.filter(c)
 	return c:IsSetCard(0x1a3) and c:IsType(TYPE_MONSTER) and c:IsAbleToHand()
 end

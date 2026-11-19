@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Branded Fusion  (ID: 44362883)
 -- Type: Spell
 -- Setcode: 0x15d, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Fusion Monster that mentions "Fallen of Albaz" as material from your Extra Deck,
--- using 2 monsters from your hand, Deck, or field. You cannot Special Summon from the Extra Deck,
--- except Fusion Monsters, the turn you activate this card. You can only activate 1 "Branded Fusion"
--- per turn.
+-- using 2 monsters from your hand, Deck, or field.
+-- You cannot Special Summon from the Extra Deck, except Fusion Monsters, the turn you activate this
+-- card.
+-- You can only activate 1 "Branded Fusion" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --烙印融合

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Galaxy-Eyes Antimatter Dragon  (ID: 92517928)
 -- Type: Monster / Effect / Xyz
@@ -8,7 +8,7 @@
 -- Rank: 9
 -- ATK 4000 | DEF 0
 -- Setcode: 0x107b
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2 Level 9 monsters

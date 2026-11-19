@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Ninjitsu Art of Mosquito Marching  (ID: 68441986)
 -- Type: Spell
@@ -42,6 +42,9 @@ function c68441986.initial_effect(c)
 	e2:SetOperation(c68441986.counterop)
 	c:RegisterEffect(e2)
 end
+c68441986.mentioned_counter={
+	[0x1063]=true,
+}
 function c68441986.spfilter(c,e,tp)
 	return c:IsLevelBelow(4) and c:IsRace(RACE_INSECT) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end

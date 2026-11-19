@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Dark Contract with the Swamp King  (ID: 73360025)
 -- Type: Spell / Continuous
 -- Setcode: 0xae
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During your Main Phase: You can Fusion Summon 1 Fiend Fusion Monster from your Extra Deck, using
--- monsters from your hand or field as material. You can only use this effect of "Dark Contract with
--- the Swamp King" once per turn. If Summoning a "D/D" Fusion Monster this way, you can also banish
--- monsters from your GY as material. Once per turn, during your Standby Phase: Take 1000 damage.
+-- monsters from your hand or field.
+-- You can only use this effect of "Dark Contract with the Swamp King" once per turn.
+-- If Summoning a "D/D" Fusion Monster this way, you can also banish monsters from your GY as material.
+-- Once per turn, during your Standby Phase: Take 1000 damage.
 --[[ __CARD_HEADER_END__ ]]
 
 --魔神王の契約書

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Blue-Eyes Toon Ultimate Dragon  (ID: 71808988)
 -- Type: Monster / Effect / Fusion / Toon
@@ -8,16 +8,16 @@
 -- Level: 12
 -- ATK 4500 | DEF 3800
 -- Setcode: 0xdd, 0x62
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- "Blue-Eyes Toon Dragon" + 2 Toon monsters
 -- Must be Special Summoned (from your Extra Deck) by shuffling the above cards from your hand, field,
 -- and/or GY into the Deck/Extra Deck.
 -- Your Toon monsters can attack directly.
--- Once per turn: You can add 1 "Toon" card, or 1 card that mentions a "Toon" card's name, from your GY
--- to your hand.
--- During damage calculation, if your Toon monster is attacked: You can banish it until the end of the
+-- Once per turn, during your Main Phase: You can add 1 "Toon" card, or 1 card that mentions a "Toon"
+-- card by name, from your GY to your hand.
+-- If your Toon monster is attacked, during damage calculation: You can banish it until the end of the
 -- Damage Step.
 --[[ __CARD_HEADER_END__ ]]
 

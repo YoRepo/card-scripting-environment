@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Arcanite Magician/Assault Mode  (ID: 14553285)
 -- Type: Monster / Effect / Special Summon
@@ -72,6 +72,9 @@ function c14553285.initial_effect(c)
 	c:RegisterEffect(e5)
 end
 c14553285.assault_name=31924889
+c14553285.mentioned_counter={
+	[0x1]=true,
+}
 function c14553285.addct(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
 	Duel.SetOperationInfo(0,CATEGORY_COUNTER,nil,2,0,0x1)

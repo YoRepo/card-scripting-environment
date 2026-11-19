@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Albion the Branded Dragon  (ID: 87746184)
 -- Type: Monster / Effect / Fusion
 -- Attribute: DARK
@@ -8,15 +8,16 @@
 -- Level: 8
 -- ATK 2500 | DEF 2000
 -- Setcode: 0x15d
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- "Fallen of Albaz" + 1 LIGHT monster
 -- If this card is Fusion Summoned: You can Fusion Summon 1 Level 8 or lower Fusion Monster from your
 -- Extra Deck, except "Albion the Branded Dragon", by banishing Fusion Materials mentioned on it from
--- your hand, field, and/or GY. During the End Phase, if this card is in the GY because it was sent
--- there this turn: You can add to your hand or Set 1 "Branded" Spell/Trap from your Deck. You can only
--- use each effect of "Albion the Branded Dragon" once per turn.
+-- your hand, field, and/or GY.
+-- During the End Phase, if this card is in the GY because it was sent there this turn: You can add to
+-- your hand or Set 1 "Branded" Spell/Trap from your Deck.
+-- You can only use each effect of "Albion the Branded Dragon" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --烙印竜アルビオン

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Borreload Liberator Dragon  (ID: 27096833)
 -- Type: Monster / Effect / Link
@@ -9,7 +9,7 @@
 -- Link Arrows: Left, Right, Bottom-Left, Bottom-Right
 -- ATK 3000
 -- Setcode: 0x10f
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 3+ Effect Monsters

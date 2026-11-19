@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Gagaga Girl - Cell Phone Subtraction  (ID: 48393693)
 -- Type: Monster / Effect
@@ -8,7 +8,7 @@
 -- Level: 3
 -- ATK 1000 | DEF 800
 -- Setcode: 0x54
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If your opponent Special Summons a monster(s) from the Extra Deck (except during the Damage Step):

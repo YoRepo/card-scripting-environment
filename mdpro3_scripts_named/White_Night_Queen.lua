@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: White Night Queen  (ID: 20193924)
 -- Type: Monster / Effect
 -- Attribute: LIGHT
 -- Race: Fairy
 -- Level: 7
 -- ATK 2100 | DEF 800
--- Setcode: 0x2e2
+-- Setcode: 0x1e9
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Cannot be Special Summoned. Once per turn: You can target 1 Set card; destroy that target.
+-- Cannot be Special Summoned.
+-- Once per turn: You can target 1 Set card; destroy that target.
 --[[ __CARD_HEADER_END__ ]]
 
 --白夜の女王

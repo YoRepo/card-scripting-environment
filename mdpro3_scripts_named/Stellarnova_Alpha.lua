@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Stellarnova Alpha  (ID: 41510920)
 -- Type: Trap / Counter
@@ -7,7 +7,7 @@
 --
 -- Effect Text:
 -- When a Spell/Trap Card, or monster effect, is activated: Send 1 face-up "tellarknight" monster you
--- control to the Graveyard; negate the activation, and if you do, destroy that card, then draw 1 card.
+-- control to the GY; negate the activation, and if you do, destroy that card, then draw 1 card.
 --[[ __CARD_HEADER_END__ ]]
 
 --神星なる因子

@@ -1,22 +1,24 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Cartoon Shade  (ID: 101306034)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Cartoon Shade  (ID: 55363218)
 -- Type: Monster / Effect / Special Summon
 -- Attribute: DARK
 -- Race: Illusion
 -- Level: 1
 -- ATK 0 | DEF 2000
 -- Setcode: 0x62
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Cannot be Normal Summoned/Set. Must be Special Summoned (from your hand) while a face-up monster
--- that cannot be Normal Summoned/Set is on the field. You can only Special Summon "Cartoon Shade" once
--- per turn this way. If this card is Special Summoned: You can add 1 monster with 2000 ATK or DEF that
--- cannot be Normal Summoned/Set from your Deck to your hand. If this card on the field is Tributed:
--- You can target 1 card on the field, or you can target 2 if you control a monster with 2000 ATK or
--- DEF; return that card(s) to the hand.
+-- Cannot be Normal Summoned/Set.
+-- Must be Special Summoned (from your hand) while a monster that cannot be Normal Summoned/Set is
+-- face-up on the field.
+-- You can only Special Summon "Cartoon Shade" once per turn this way.
+-- If this card is Special Summoned: You can add 1 monster with 2000 ATK or DEF that cannot be Normal
+-- Summoned/Set from your Deck to your hand.
+-- If this card on the field is Tributed: You can target 1 card on the field, or target 2 if you
+-- control a monster with 2000 ATK or DEF; return them to the hand.
 --[[ __CARD_HEADER_END__ ]]
 
 --カートゥーン・シェード
@@ -102,7 +104,7 @@ function s.rthtg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	Duel.SetOperationInfo(0,CATEGORY_TOHAND,g,g:GetCount(),0,0)
 end
 function s.rthop(e,tp,eg,ep,ev,re,r,rp)
-	local tg=Duel.GetTargetsRelateToChain()
+	local tg=Duel.GetTargetsRelateToChain():Filter(Card.IsOnField,nil)
 	if tg:GetCount()>0 then
 		Duel.SendtoHand(tg,nil,REASON_EFFECT)
 	end

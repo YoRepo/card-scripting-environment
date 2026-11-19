@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Primite Fusion  (ID: 99161253)
 -- Type: Spell
 -- Setcode: 0x1b9, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Dragon Fusion Monster from your Extra Deck, by shuffling its materials from your
--- field, GY, and/or banishment into the Deck, including a Normal Monster. You can banish this card
--- from your GY; add 1 Level 5 or higher "Primite" monster from your Deck or GY to your hand. You can
--- only use each effect of "Primite Fusion" once per turn.
+-- field, GY, and/or banishment into the Deck, including a Normal Monster.
+-- You can banish this card from your GY; add 1 Level 5 or higher "Primite" monster from your Deck or
+-- GY to your hand.
+-- You can only use each effect of "Primite Fusion" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --原石融合

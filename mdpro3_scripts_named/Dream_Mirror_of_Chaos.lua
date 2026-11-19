@@ -1,16 +1,19 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Dream Mirror of Chaos  (ID: 98570539)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x131
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 "Dream Mirror" Fusion Monster from your Extra Deck, using monsters you control as
--- Fusion Material. If "Dream Mirror of Joy" is in a Field Zone, you can also use monsters in your hand
--- as Fusion Material. If "Dream Mirror of Terror" is in a Field Zone, you can also banish monsters
--- from your GY as Fusion Material. You can only activate 1 "Dream Mirror of Chaos" per turn.
+-- Fusion Material.
+-- If "Dream Mirror of Joy" is in a Field Zone, you can also use monsters in your hand as Fusion
+-- Material.
+-- If "Dream Mirror of Terror" is in a Field Zone, you can also banish monsters from your GY as Fusion
+-- Material.
+-- You can only activate 1 "Dream Mirror of Chaos" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --混沌の夢魔鏡

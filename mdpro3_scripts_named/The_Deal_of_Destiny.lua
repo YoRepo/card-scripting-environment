@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: The Deal of Destiny  (ID: 32245230)
 -- Type: Trap / Continuous
@@ -47,6 +47,9 @@ function c32245230.initial_effect(c)
 	e2:SetOperation(c32245230.spop)
 	c:RegisterEffect(e2)
 end
+c32245230.mentioned_counter={
+	[0x5e]=true,
+}
 function c32245230.cfilter(c,tp)
 	return c:IsPreviousControler(tp) and c:IsReason(REASON_BATTLE+REASON_EFFECT) and c:IsPreviousLocation(LOCATION_ONFIELD)
 end

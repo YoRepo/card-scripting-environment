@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: R.B. The Brute Blues  (ID: 32216688)
 -- Type: Monster / Effect / Link
 -- Attribute: WIND
@@ -17,11 +17,11 @@
 -- ● Gains ATK equal to the total original ATK of "R.B." monsters it points to.
 -- ● Can make a second attack during each Battle Phase.
 -- ● Cannot be destroyed by battle or card effects.
--- During your Main Phase: You can add 1 "R.B." card from your Deck to your hand. You can only use this
--- effect of "R.B. The Brute Blues" once per turn.
+-- During your Main Phase: You can add 1 "R.B." card from your Deck to your hand.
+-- You can only use this effect of "R.B. The Brute Blues" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---R.B. The Brute Blues
+--R.B.ブルート・ブルース
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--link summon

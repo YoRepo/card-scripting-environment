@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Call of the Reaper  (ID: 45133463)
 -- Type: Trap
@@ -24,7 +24,7 @@ function c45133463.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 function c45133463.cfiltetr(c,tp)
-	return c:IsPreviousLocation(LOCATION_GRAVE) and c:IsPreviousControler(tp)
+	return c:IsPreviousLocation(LOCATION_GRAVE) and c:IsPreviousControler(tp) and c:GetOriginalType()&TYPE_MONSTER~=0
 end
 function c45133463.condition(e,tp,eg,ep,ev,re,r,rp)
 	return eg:IsExists(c45133463.cfiltetr,1,nil,tp)

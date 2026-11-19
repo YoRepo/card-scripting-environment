@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Majespecter Orthrus - Nue  (ID: 66384688)
 -- Type: Monster / Effect / Link
@@ -67,7 +67,7 @@ function s.thop(e,tp,eg,ep,ev,re,r,rp)
 		if #cg>0 and Duel.SelectYesNo(tp,aux.Stringid(id,1)) then
 			Duel.Hint(HINT_SELECTMSG,tp,aux.Stringid(id,2))
 			local hg=cg:SelectSubGroup(tp,aux.dncheck,false,1,2)
-			if hg:GetCount()>0 then
+			if hg then
 				Duel.BreakEffect()
 				Duel.SendtoExtraP(hg,nil,REASON_EFFECT)
 			end

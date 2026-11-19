@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: ASHLAN U1000  (ID: 44376395)
 -- Type: Monster / Effect / Link
 -- Attribute: LIGHT
@@ -13,13 +13,15 @@
 -- Effect Text:
 -- 2 monsters with different Types and Attributes
 -- If a Ritual Monster this card points to attacks a Defense Position monster, inflict piercing battle
--- damage to your opponent. You can only use each of the following effects of "ASHLAN U1000" once per
--- turn. You can reveal 1 Ritual Monster in your hand; add 1 Ritual Monster with a different Type and
--- Attribute from your Deck to your hand. If you Ritual Summon (except during the Damage Step): You can
--- target 1 face-up card your opponent controls; return it to the hand.
+-- damage to your opponent.
+-- You can only use each of the following effects of "ASHLAN U1000" once per turn.
+-- You can reveal 1 Ritual Monster in your hand; add 1 Ritual Monster with a different Type and
+-- Attribute from your Deck to your hand.
+-- If you Ritual Summon (except during the Damage Step): You can target 1 face-up card your opponent
+-- controls; return it to the hand.
 --[[ __CARD_HEADER_END__ ]]
 
---ASHLAN U1000
+--ASHLAN－U１０００型
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Link Summon

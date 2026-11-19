@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Shaddoll Construct  (ID: 86938484)
 -- Type: Monster / Effect / Link
 -- Attribute: LIGHT
@@ -9,14 +9,15 @@
 -- Link Arrows: Left, Right
 -- ATK 1200
 -- Setcode: 0x9d
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2 Flip monsters
 -- During your Main Phase: You can Fusion Summon 1 "Shaddoll" Fusion Monster from your Extra Deck,
--- using monsters from your hand or field as Fusion Material. If this card is in your GY: You can send
--- 1 "Shaddoll" card from your hand or face-up field to the GY, and if you do, Special Summon this
--- card. You can only use each effect of "Shaddoll Construct" once per turn.
+-- using monsters from your hand or field as Fusion Material.
+-- If this card is in your GY: You can send 1 "Shaddoll" card from your hand or face-up field to the
+-- GY, and if you do, Special Summon this card.
+-- You can only use each effect of "Shaddoll Construct" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --シャドール・ネフィリム

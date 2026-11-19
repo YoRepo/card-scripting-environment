@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Otoshidamashi  (ID: 14957440)
 -- Type: Monster / Effect / Tuner
@@ -45,6 +45,9 @@ function c14957440.initial_effect(c)
 	e2:SetOperation(c14957440.tkop)
 	c:RegisterEffect(e2)
 end
+c14957440.mentioned_counter={
+	[0x59]=true,
+}
 function c14957440.atkfilter(c)
 	return c:IsFacedown() or c:IsFaceup() and not c:IsType(TYPE_TUNER)
 end

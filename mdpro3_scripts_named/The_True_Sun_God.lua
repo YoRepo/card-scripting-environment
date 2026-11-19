@@ -1,8 +1,9 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: The True Sun God  (ID: 11587414)
 -- Type: Spell / Continuous
+-- Setcode: 0x1ef
 -- Scope: OCG / TCG
 --
 -- Effect Text:

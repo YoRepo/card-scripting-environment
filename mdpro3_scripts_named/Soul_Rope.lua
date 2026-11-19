@@ -1,13 +1,13 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Soul Rope  (ID: 37383714)
 -- Type: Trap
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- When a monster you control is destroyed by a card effect and sent to the Graveyard (except during
--- the Damage Step): Pay 1000 LP; Special Summon 1 Level 4 monster from your Deck.
+-- When a monster you control is destroyed by a card effect and sent to the GY (except during the
+-- Damage Step): Pay 1000 LP; Special Summon 1 Level 4 monster from your Deck.
 --[[ __CARD_HEADER_END__ ]]
 
 --魂の綱

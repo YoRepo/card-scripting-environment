@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Assault Lion  (ID: 100200293)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Assault Lion  (ID: 67676619)
 -- Type: Monster / Effect
 -- Attribute: EARTH
 -- Race: Beast-Warrior
@@ -10,12 +10,13 @@
 -- Scope: OCG
 --
 -- Effect Text:
--- You can Tribute Summon this card face-up by Tributing 1 Beast-Warrior monster. If this card battles
--- a monster, any battle damage it inflicts to your opponent is doubled. If a Beast-Warrior monster(s)
--- is Normal or Special Summoned to your field while this card is in your GY: You can add this card to
--- your hand, then immediately after this effect resolves, you can Tribute Summon this card face-up,
--- and if you do, it gains 500 ATK, also banish it when it leaves the field. You can only use this
--- effect of "Assault Lion" once per turn.
+-- You can Tribute Summon this card face-up by Tributing 1 Beast-Warrior monster.
+-- If this card battles a monster, any battle damage it inflicts to your opponent is doubled.
+-- If a Beast-Warrior monster(s) is Normal or Special Summoned to your field while this card is in your
+-- GY (except during the Damage Step): You can add this card to your hand, then immediately after this
+-- effect resolves, you can Tribute Summon this card face-up, and if you do, it gains 500 ATK, also
+-- banish it when it leaves the field.
+-- You can only use this effect of "Assault Lion" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --アサルト・リオン
@@ -88,7 +89,7 @@ function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function s.thop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	if c:IsRelateToChain() and aux.NecroValleyFilter(c) then
+	if c:IsRelateToChain() and aux.NecroValleyFilter()(c) then
 		Duel.SendtoHand(c,nil,REASON_EFFECT)
 		Duel.ConfirmCards(1-tp,c)
 		if c:IsSummonable(true,nil,1) and Duel.SelectYesNo(tp,aux.Stringid(id,2)) then

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Crystron Smiger  (ID: 83443619)
 -- Type: Monster / Effect
@@ -14,7 +14,7 @@
 -- You can target 1 face-up card you control; you cannot Special Summon from the Extra Deck for the
 -- rest of this turn, except Machine Synchro Monsters, also, destroy that card, and if you do, Special
 -- Summon 1 "Crystron" Tuner from your Deck.
--- You can banish this card from your GY; add 1 "Crystron" Spell/Trap Card from your Deck to your hand.
+-- You can banish this card from your GY; add 1 "Crystron" Spell/Trap from your Deck to your hand.
 -- You can only use 1 "Crystron Smiger" effect per turn, and only once that turn.
 --[[ __CARD_HEADER_END__ ]]
 

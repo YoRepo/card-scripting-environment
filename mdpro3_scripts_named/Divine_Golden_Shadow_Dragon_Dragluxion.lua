@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Divine Golden Shadow Dragon Dragluxion  (ID: 44698398)
 -- Type: Monster / Effect / Xyz
@@ -15,8 +15,7 @@
 -- your Deck to your hand.
 -- You can detach 2 materials from this card; Special Summon from your Extra Deck, 1 Rank 8 Dragon Xyz
 -- Monster with 3000 ATK, using this card you control as material (this is treated as an Xyz Summon,
--- transfer its materials to the Summoned monster), then you can attach 1 "Galaxy" monster from your
--- Extra Deck to it.
+-- transfer this card's materials), then you can attach 1 "Galaxy" monster from your Extra Deck to it.
 -- You can only use each effect of "Divine Golden Shadow Dragon Dragluxion" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

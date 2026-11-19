@@ -1,20 +1,20 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: White Night Dragon  (ID: 79473793)
 -- Type: Monster / Effect
 -- Attribute: WATER
 -- Race: Dragon
 -- Level: 8
 -- ATK 3000 | DEF 2500
--- Setcode: 0x2e2
+-- Setcode: 0x1e9
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- During either player's turn, when a Spell/Trap Card that targets this card is activated: Negate the
--- activation, and if you do, destroy it. When another face-up monster you control is targeted for an
--- attack: You can send 1 Spell/Trap Card you control to the Graveyard; change the attack target to
--- this card.
+-- When a Spell/Trap Card that targets this card is activated (Quick Effect): Negate the activation,
+-- and if you do, destroy it.
+-- When another face-up monster you control is targeted for an attack: You can send 1 Spell/Trap you
+-- control to the GY; change the attack target to this card.
 --[[ __CARD_HEADER_END__ ]]
 
 --青氷の白夜龍

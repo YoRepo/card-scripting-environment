@@ -1,18 +1,19 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Branded in White  (ID: 34995106)
 -- Type: Spell
 -- Setcode: 0x15d
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from your hand or field,
--- including a Dragon monster. You can also banish monsters from your GY as material, if you use
--- "Fallen of Albaz" as Fusion Material from your hand, field, or by banishing itself from your GY.
+-- including a Dragon monster.
+-- You can also banish monsters from your GY as material, if you use "Fallen of Albaz" as Fusion
+-- Material from your hand, field, or by banishing itself from your GY.
 -- During the End Phase, if this card is in the GY because it was sent there to activate the effect of
--- "Fallen of Albaz" this turn: You can Set this card. You can only use each effect of "Branded in
--- White" once per turn.
+-- "Fallen of Albaz" this turn: You can Set this card.
+-- You can only use each effect of "Branded in White" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --白の烙印

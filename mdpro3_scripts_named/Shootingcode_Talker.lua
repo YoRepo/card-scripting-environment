@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Shootingcode Talker  (ID: 33897356)
 -- Type: Monster / Effect / Link
@@ -81,7 +81,7 @@ function c33897356.operation(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 function c33897356.atkcon(e)
-	if not Duel.GetCurrentPhase()==PHASE_DAMAGE_CAL then return false end
+	if Duel.GetCurrentPhase()~=PHASE_DAMAGE_CAL then return false end
 	local tp=e:GetHandlerPlayer()
 	local g=Duel.GetFieldGroup(tp,0,LOCATION_MZONE)
 	if #g~=1 then return false end

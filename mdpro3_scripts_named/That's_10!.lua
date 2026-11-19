@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: That's 10!  (ID: 97223101)
 -- Type: Spell / Continuous
@@ -56,6 +56,9 @@ function s.initial_effect(c)
 	e4:SetOperation(s.setop)
 	c:RegisterEffect(e4)
 end
+s.mentioned_counter={
+	[0x6c]=true,
+}
 function s.ctcon(e,tp,eg,ep,ev,re,r,rp)
 	return not re:GetHandler():IsCode(id)
 end

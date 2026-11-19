@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Azamina Determination  (ID: 42201897)
 -- Type: Trap
@@ -73,12 +73,12 @@ function s.activate(e,tp,eg,ep,ev,re,r,rp)
 		local ct=math.floor(tc:GetLevel()/4)
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
 		local sg=mg:SelectSubGroup(tp,s.gcheck,false,ct,ct,tp,tc)
-		if sg:GetCount()>0 then
+		if sg then
 			Duel.HintSelection(sg)
 			if Duel.SendtoDeck(sg,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)~=0 and sg:FilterCount(Card.IsLocation,nil,LOCATION_DECK+LOCATION_EXTRA)~=0 then
 				Duel.BreakEffect()
 				tc:SetMaterial(nil)
-				if Duel.SpecialSummon(tc,SUMMON_TYPE_FUSION,tp,tp,false,false,POS_FACEUP) then
+				if Duel.SpecialSummon(tc,SUMMON_TYPE_FUSION,tp,tp,false,false,POS_FACEUP)>0 then
 					tc:CompleteProcedure()
 				end
 			end

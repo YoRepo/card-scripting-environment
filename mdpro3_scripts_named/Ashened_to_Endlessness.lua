@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Ashened to Endlessness  (ID: 34813443)
 -- Type: Trap / Continuous
 -- Setcode: 0x1ad
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During the Main Phase: You can Fusion Summon 1 Pyro Fusion Monster from your Extra Deck using
 -- monsters from either field, including "Veidos the Eruption Dragon of Extinction", and if you do, it
--- gains 500 ATK for each material used. You can banish this card and 1 DARK Pyro monster from your GY;
--- all monsters your opponent currently controls become Pyro until the end of this turn. You can only
--- use each effect of "Ashened to Endlessness" once per turn.
+-- gains 500 ATK for each material used.
+-- You can banish this card and 1 DARK Pyro monster from your GY; all monsters your opponent currently
+-- controls become Pyro until the end of this turn.
+-- You can only use each effect of "Ashened to Endlessness" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --果てなき灰滅

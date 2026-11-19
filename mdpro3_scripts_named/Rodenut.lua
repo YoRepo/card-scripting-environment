@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Rodenut  (ID: 13478040)
 -- Type: Monster / Effect
@@ -37,6 +37,9 @@ function c13478040.initial_effect(c)
 	e2:SetOperation(c13478040.desop)
 	c:RegisterEffect(e2)
 end
+c13478040.mentioned_counter={
+	[0x17]=true,
+}
 function c13478040.cfilter(c,tp)
 	return c:IsSummonPlayer(tp)
 end

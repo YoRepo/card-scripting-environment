@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Temple of the Six  (ID: 53819808)
 -- Type: Spell / Field
@@ -39,6 +39,9 @@ function c53819808.initial_effect(c)
 	c:RegisterEffect(e4)
 end
 c53819808.counter_add_list={0x3}
+c53819808.mentioned_counter={
+	[0x3]=true,
+}
 function c53819808.ctfilter(c)
 	return c:IsFaceup() and c:IsSetCard(0x103d)
 end

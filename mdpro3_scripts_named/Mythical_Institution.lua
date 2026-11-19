@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Mythical Institution  (ID: 94599451)
 -- Type: Spell / Continuous
@@ -52,6 +52,9 @@ function c94599451.initial_effect(c)
 	e4:SetOperation(c94599451.repop)
 	c:RegisterEffect(e4)
 end
+c94599451.mentioned_counter={
+	[0x1]=true,
+}
 function c94599451.ctfilter(c,tp)
 	return c:IsPreviousLocation(LOCATION_ONFIELD) and c:IsPreviousPosition(POS_FACEUP) and c:IsPreviousControler(tp)
 		and c:IsType(TYPE_PENDULUM) and c:IsPreviousSetCard(0x10d) and c:IsReason(REASON_BATTLE+REASON_EFFECT)

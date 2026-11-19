@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Witness of the Ancient  (ID: 101305081)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Witness of the Ancient  (ID: 54577949)
 -- Type: Monster / Effect / Tuner
 -- Attribute: LIGHT
 -- Race: Machine
@@ -14,8 +14,8 @@
 -- If this card is Special Summoned: You can place up to 3 Synchro Monsters with different names from
 -- your Extra Deck and/or GY in your Spell & Trap Zone as face-up Continuous Spells, and Special Summon
 -- 1 "Arc Token" (Machine/LIGHT/ATK 0/DEF 0) with a Level equal to the number placed, also for the rest
--- of this turn, you cannot Special Summon from the Extra Deck, except Synchro Monsters. You can only
--- use each effect of "Witness of the Ancient" once per turn.
+-- of this turn, you cannot Special Summon from the Extra Deck, except Synchro Monsters.
+-- You can only use each effect of "Witness of the Ancient" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --Witness of the Ancient

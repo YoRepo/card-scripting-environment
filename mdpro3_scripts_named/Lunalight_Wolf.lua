@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Lunalight Wolf  (ID: 47705572)
 -- Type: Monster / Effect / Pendulum
 -- Attribute: LIGHT
@@ -9,14 +9,15 @@
 -- ATK 2000 | DEF 1800
 -- Pendulum Scale: L1 / R1
 -- Setcode: 0xdf
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Pendulum Scale = 1
 -- [ Pendulum Effect ]
--- You cannot Pendulum Summon monsters, except "Lunalight" monsters. This effect cannot be negated.
+-- You cannot Pendulum Summon, except "Lunalight" monsters.
+-- This effect cannot be negated.
 -- Once per turn: You can Fusion Summon 1 "Lunalight" Fusion Monster from your Extra Deck, by banishing
--- Fusion Materials listed on it from your field or Graveyard.
+-- its materials from your field or GY.
 -- ----------------------------------------
 -- [ Monster Effect ]
 -- If a "Lunalight" monster you control attacks a Defense Position monster, inflict piercing battle

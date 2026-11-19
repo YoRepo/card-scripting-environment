@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Horoscope Sorcerer, the Stargazer Magician  (ID: 1186447)
 -- Type: Monster / Effect / Pendulum
@@ -9,18 +9,18 @@
 -- ATK 1200 | DEF 2400
 -- Pendulum Scale: L1 / R1
 -- Setcode: 0x98
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Pendulum Scale = 1
 -- [ Pendulum Effect ]
 -- When a Spell Card or effect activated by your opponent resolves, if you control a "Magician"
--- Pendulum Monster or "Odd-Eyes" monster, you can negate that effect, then destroy this card.
+-- Pendulum Monster or an "Odd-Eyes" monster, you can negate that effect, then destroy this card.
 -- You can only use this effect of "Horoscope Sorcerer, the Stargazer Magician" once per turn.
 -- ----------------------------------------
 -- [ Monster Effect ]
--- You can discard 1 other "Magician" Pendulum Monster, "Performapal" monster, or "Odd-Eyes" monster;
--- Special Summon this card from your hand.
+-- If this card is in your hand: You can discard 1 other "Magician" Pendulum Monster, "Performapal"
+-- monster, or "Odd-Eyes" monster; Special Summon this card.
 -- If this card is Special Summoned: You can add 1 Pendulum Monster with 2500 ATK from your Deck to
 -- your hand.
 -- You can target 1 Pendulum Monster Card you control; destroy it, then you can add 1 face-up Pendulum

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Theorealize Past Lull  (ID: 36709484)
 -- Type: Spell
@@ -7,8 +7,8 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- If you control an "Artmage", "DoomZ", or "Elfnote" monster: You can Special Summon 1 "Medius the
--- Pure" from your hand or Deck.
+-- If you control an "Artmage", "DoomZ", or "Elfnote" card: You can Special Summon 1 "Medius the Pure"
+-- from your hand or Deck.
 -- Your opponent cannot activate cards or effects when that monster is Special Summoned.
 -- You can banish this card from your GY, then target 1 Fusion, Synchro, or Xyz Monster in your GY;
 -- Special Summon it to your zone a Link Monster points to.

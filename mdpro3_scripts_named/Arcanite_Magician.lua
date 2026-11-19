@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Arcanite Magician  (ID: 31924889)
 -- Type: Monster / Effect / Synchro
@@ -53,6 +53,9 @@ function c31924889.initial_effect(c)
 	e3:SetOperation(c31924889.desop)
 	c:RegisterEffect(e3)
 end
+c31924889.mentioned_counter={
+	[0x1]=true,
+}
 function c31924889.attackup(e,c)
 	return c:GetCounter(0x1)*1000
 end

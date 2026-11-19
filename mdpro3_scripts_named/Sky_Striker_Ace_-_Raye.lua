@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Sky Striker Ace - Raye  (ID: 26077387)
 -- Type: Monster / Effect
@@ -14,8 +14,7 @@
 -- (Quick Effect): You can Tribute this card; Special Summon 1 "Sky Striker Ace" monster from your
 -- Extra Deck to the Extra Monster Zone.
 -- While this card is in your GY, if a face-up "Sky Striker Ace" Link Monster you control is destroyed
--- by battle, or leaves the field because of an opponent's card effect: You can Special Summon this
--- card.
+-- by battle, or leaves the field by an opponent's card effect: You can Special Summon this card.
 -- You can only use each effect of "Sky Striker Ace - Raye" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

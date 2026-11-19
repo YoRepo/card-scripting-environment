@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Land Flipping  (ID: 61264008)
 -- Type: Spell
@@ -46,7 +46,7 @@ function c61264008.activate(e,tp,eg,ep,ev,re,r,rp)
 			local g=Duel.GetOperatedGroup()
 			local tc2=g:GetFirst()
 			local code=tc2:GetOriginalCode()
-			if Duel.MoveToField(tc2,1-ttp,1-ttp,LOCATION_FZONE,POS_FACEUP,true)~=0
+			if Duel.MoveToField(tc2,1-ttp,1-ttp,LOCATION_FZONE,POS_FACEUP,true)
 				and Duel.IsExistingMatchingCard(aux.NecroValleyFilter(c61264008.filter2),1-ttp,LOCATION_GRAVE,0,1,nil,code)
 				and Duel.SelectYesNo(tp,aux.Stringid(61264008,0)) then
 				Duel.BreakEffect()

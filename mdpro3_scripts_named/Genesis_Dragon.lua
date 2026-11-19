@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Genesis Dragon  (ID: 31038159)
 -- Type: Monster / Effect
@@ -10,10 +10,10 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Once per turn, you can send 1 Dragon-Type monster from your hand to the Graveyard to add 1
--- Dragon-Type monster from your Graveyard to your hand.
--- When this card is sent from the field to the Graveyard, you can return all Dragon-Type monsters from
--- your Graveyard to your Deck.
+-- Once per turn: You can send 1 Dragon monster from your hand to the GY, then target 1 Dragon monster
+-- in your GY; add that target to your hand.
+-- When this card is sent from the field to the GY: You can shuffle all Dragon monsters from your GY
+-- into the Deck.
 --[[ __CARD_HEADER_END__ ]]
 
 --創世竜

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Demiurge Ema  (ID: 26364381)
 -- Type: Monster / Effect
@@ -7,11 +7,11 @@
 -- Race: Fairy
 -- Level: 8
 -- ATK 3300 | DEF 2000
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- You can send 4 monsters with 2400 or more ATK and 1000 DEF from your hand, Deck, and/or face-up
--- field to the GY; Special Summon this card from your hand.
+-- If this card is in your hand: You can send 4 monsters with 2400 or more ATK and 1000 DEF from your
+-- hand, Deck, and/or face-up field to the GY; Special Summon this card.
 -- You can target 1 Spell/Trap on each field; destroy them, then Special Summon 1 "Homunculus Token"
 -- (Fairy/LIGHT/Level 2/ATK 800/DEF 800) to both players' fields in Defense Position, and if you do,
 -- this card gains 1600 ATK.

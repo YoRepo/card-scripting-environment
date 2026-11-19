@@ -1,9 +1,9 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Harpie Lady Elegance  (ID: 65664792)
 -- Type: Trap
--- Setcode: 0x64
+-- Setcode: 0x1064
 -- Scope: OCG / TCG
 --
 -- Effect Text:

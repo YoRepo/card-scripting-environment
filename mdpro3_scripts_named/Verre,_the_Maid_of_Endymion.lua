@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Verre, the Maid of Endymion  (ID: 22623509)
 -- Type: Monster / Effect
@@ -8,7 +8,7 @@
 -- Level: 4
 -- ATK 500 | DEF 1400
 -- Setcode: 0x12a, 0x128
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- (This card is always treated as a "Witchcrafter" card.)
@@ -16,7 +16,7 @@
 -- You can only use each of the following effects of "Verre, the Maid of Endymion" once per turn.
 -- During your Main Phase, if a Spell Card or effect was activated this turn: You can Special Summon
 -- this card from your hand.
--- If this card is Special Summoned: You can add 1 "Witchcrafter" Spell/Trap or "Magical Dimension"
+-- If this card is Special Summoned: You can add 1 "Witchcrafter" Spell/Trap or 1 "Magical Dimension"
 -- from your Deck to your hand.
 --[[ __CARD_HEADER_END__ ]]
 

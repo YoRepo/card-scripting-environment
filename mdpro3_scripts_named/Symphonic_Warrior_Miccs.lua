@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Symphonic Warrior Miccs  (ID: 5399521)
 -- Type: Monster / Effect / Pendulum
@@ -73,6 +73,9 @@ function c5399521.initial_effect(c)
 	e7:SetCode(EVENT_SPSUMMON_SUCCESS)
 	c:RegisterEffect(e7)
 end
+c5399521.mentioned_counter={
+	[0x35]=true,
+}
 function c5399521.thcon(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.GetTurnPlayer()==tp
 end

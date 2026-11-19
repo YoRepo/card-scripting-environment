@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Lycoris Lilyreaper  (ID: 81916745)
 -- Type: Monster / Effect / Synchro
 -- Attribute: DARK
@@ -12,14 +12,14 @@
 -- Effect Text:
 -- 1 Tuner + 1+ non-Tuner monsters
 -- If a monster(s) is sent from the field to your opponent's GY, while this card is in your Monster
--- Zone, even during the Damage Step: You can gain LP equal to 1 of those monsters' ATK in their GY. If
--- your opponent takes effect damage, while this card is in your GY (except during the Damage Step):
+-- Zone, even during the Damage Step: You can gain LP equal to 1 of those monsters' ATK in their GY.
+-- If your opponent takes effect damage, while this card is in your GY (except during the Damage Step):
 -- You can banish this card; send 1 monster from the field to the GY with ATK less than or equal to the
--- difference in your LP and your opponent's. You can only use each effect of "Lycoris Lilyreaper" once
--- per turn.
+-- difference in your LP and your opponent's.
+-- You can only use each effect of "Lycoris Lilyreaper" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Lycoris Lilyreaper
+--リコリス・リリィパー
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Synchro summon

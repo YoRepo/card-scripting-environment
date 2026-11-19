@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Rustin Mammoth  (ID: 3434362)
 -- Type: Monster / Effect
 -- Attribute: EARTH
@@ -11,13 +11,13 @@
 --
 -- Effect Text:
 -- If this card is in your hand: You can banish Machine Link Monsters from your Extra Deck whose
--- combined Link Ratings equal exactly 5; Special Summon this card. You can target 1 card you control
--- and 1 card your opponent controls; return them to the hand. This is a Quick Effect if this card is
--- linked to a Link-3 or higher Machine Link Monster. You can only use each effect of "Rustin Mammoth"
--- once per turn.
+-- combined Link Ratings equal exactly 5; Special Summon this card.
+-- You can target 1 card you control and 1 card your opponent controls; return them to the hand.
+-- This is a Quick Effect if this card is linked to a Link-3 or higher Machine Link Monster.
+-- You can only use each effect of "Rustin Mammoth" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Rustin Mammoth
+--ラスティン・マンモス
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--spsummon

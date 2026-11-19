@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Seed Cannon  (ID: 81524977)
 -- Type: Spell / Continuous
@@ -47,6 +47,9 @@ function c81524977.initial_effect(c)
 	e5:SetOperation(c81524977.damop)
 	c:RegisterEffect(e5)
 end
+c81524977.mentioned_counter={
+	[0x20]=true,
+}
 function c81524977.ctfilter(c)
 	return c:IsFaceup() and c:IsRace(RACE_PLANT)
 end

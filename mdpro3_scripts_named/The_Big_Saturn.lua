@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: The Big Saturn  (ID: 34004470)
 -- Type: Monster / Effect
@@ -11,10 +11,10 @@
 --
 -- Effect Text:
 -- Cannot be Special Summoned from the hand or Deck.
--- Once per turn: You can discard 1 card and pay 1000 Life Points; this card gains 1000 ATK until the
--- End Phase.
--- When this card in your possession is destroyed by your opponent's card effect and sent to your
--- Graveyard: Both players take damage equal to this card's ATK in the Graveyard.
+-- Once per turn: You can discard 1 card and pay 1000 LP; this card gains 1000 ATK until the end of
+-- this turn.
+-- When this card in your possession is destroyed by your opponent's card effect and sent to your GY:
+-- Both players take damage equal to this card's ATK in the GY.
 --[[ __CARD_HEADER_END__ ]]
 
 --The big SATURN

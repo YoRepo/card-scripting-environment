@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Iron Chain Dragon  (ID: 19974580)
 -- Type: Monster / Effect / Synchro
@@ -11,11 +11,11 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- 1 Tuner + 1 or more non-Tuner monsters
--- You can remove from play all "Iron Chain" monsters from your Graveyard to have this card gain 200
--- ATK for each card removed, until the End Phase.
--- When this card inflicts Battle Damage to your opponent, send the top 3 cards of your opponent's Deck
--- to the Graveyard.
+-- 1 Tuner + 1+ non-Tuners
+-- During your Main Phase: You can banish as many "Iron Chain" monsters as possible from your GY, and
+-- if you do, this card gains 200 ATK for each monster banished, until the end of this turn.
+-- If this card inflicts battle damage to your opponent: Send the top 3 cards of your opponent's Deck
+-- to the GY.
 --[[ __CARD_HEADER_END__ ]]
 
 --C・ドラゴン

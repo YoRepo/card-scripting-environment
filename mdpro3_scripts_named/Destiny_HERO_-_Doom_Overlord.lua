@@ -1,27 +1,28 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Destiny HERO - Doom Overlord  (ID: 101306022)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Destiny HERO - Doom Overlord  (ID: 62542673)
 -- Type: Monster / Effect
 -- Attribute: DARK
 -- Race: Warrior
 -- Level: 3
 -- ATK 600 | DEF 800
 -- Setcode: 0xc008
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If this card is Normal or Special Summoned: You can target 1 monster your opponent controls; banish
--- it until the next Standby Phase. You can send 1 "Destiny HERO" monster from your Deck to the GY; add
--- 1 "Clock Tower Prison" or "Dark City at Midnight" from your Deck or GY to your hand, also you cannot
--- Special Summon for the rest of this turn, except DARK "HERO" monsters. You can only use each effect
--- of "Destiny HERO - Doom Overlord" once per turn.
+-- it until the next Standby Phase.
+-- You can send 1 "Destiny HERO" monster from your Deck to the GY; add 1 "Clock Tower Prison" or "Dark
+-- City at Midnight" from your Deck or GY to your hand, also you cannot Special Summon for the rest of
+-- this turn, except DARK "HERO" monsters.
+-- You can only use each effect of "Destiny HERO - Doom Overlord" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --D－HERO デビルロードガイ
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.AddCodeList(c,75041269,101306062)
+	aux.AddCodeList(c,75041269,4663194)
 	--remove
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
@@ -65,7 +66,7 @@ function s.rmop(e,tp,eg,ep,ev,re,r,rp)
 		local e1=Effect.CreateEffect(e:GetHandler())
 		e1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
 		e1:SetCode(EVENT_PHASE+PHASE_STANDBY)
-		if Duel.GetCurrentPhase()<=PHASE_STANDBY then
+		if Duel.GetCurrentPhase()==PHASE_STANDBY then
 			e1:SetReset(RESET_PHASE+PHASE_STANDBY,2)
 		else
 			e1:SetReset(RESET_PHASE+PHASE_STANDBY)
@@ -95,7 +96,7 @@ function s.thcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SendtoGrave(g,REASON_COST)
 end
 function s.thfilter(c)
-	return c:IsCode(75041269,101306062) and c:IsAbleToHand()
+	return c:IsCode(75041269,4663194) and c:IsAbleToHand()
 end
 function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.thfilter,tp,LOCATION_DECK+LOCATION_GRAVE,0,1,nil) end

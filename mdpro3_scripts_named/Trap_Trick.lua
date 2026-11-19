@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Trap Trick  (ID: 80101899)
 -- Type: Trap
@@ -7,7 +7,7 @@
 --
 -- Effect Text:
 -- Banish 1 Normal Trap from your Deck, except "Trap Trick", and if you do, Set 1 card with the same
--- name directly from your Deck.
+-- name from your Deck.
 -- It can be activated this turn.
 -- You can only activate 1 Trap Card for the rest of this turn after this card resolves.
 -- You can only activate 1 "Trap Trick" per turn.

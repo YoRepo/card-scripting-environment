@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Chain Material  (ID: 39980304)
 -- Type: Trap
 -- Scope: OCG / TCG
@@ -8,7 +8,8 @@
 -- Effect Text:
 -- Any time you Fusion Summon a monster this turn, you can remove from play, from your side of the
 -- field, Deck, hand or Graveyard, Fusion Material Monsters that are listed on the Fusion Monster Card,
--- and use them as Fusion Material Monsters. You cannot attack during the turn this card is activated.
+-- and use them as Fusion Material Monsters.
+-- You cannot attack during the turn this card is activated.
 -- If you used this effect for a Fusion Summon, the Summoned Fusion Monster(s) is destroyed during the
 -- End Phase.
 --[[ __CARD_HEADER_END__ ]]

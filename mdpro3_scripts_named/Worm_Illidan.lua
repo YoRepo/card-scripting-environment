@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Worm Illidan  (ID: 57543573)
 -- Type: Monster / Effect
@@ -50,6 +50,9 @@ function c57543573.initial_effect(c)
 	e5:SetOperation(c57543573.desop)
 	c:RegisterEffect(e5)
 end
+c57543573.mentioned_counter={
+	[0xf]=true,
+}
 function c57543573.accon1(e,tp,eg,ep,ev,re,r,rp)
 	return eg:GetFirst():IsControler(tp)
 end

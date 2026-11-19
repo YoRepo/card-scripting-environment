@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Cloudian - Cirrostratus  (ID: 43318266)
 -- Type: Monster / Effect
@@ -54,6 +54,9 @@ function c43318266.initial_effect(c)
 	e4:SetOperation(c43318266.desop)
 	c:RegisterEffect(e4)
 end
+c43318266.mentioned_counter={
+	[0x1019]=true,
+}
 function c43318266.sdcon(e)
 	return e:GetHandler():IsPosition(POS_FACEUP_DEFENSE)
 end

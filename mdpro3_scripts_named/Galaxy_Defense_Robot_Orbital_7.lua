@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Galaxy Defense Robot Orbital 7  (ID: 91714772)
 -- Type: Monster / Effect
@@ -8,11 +8,11 @@
 -- Level: 8
 -- ATK 2000 | DEF 2000
 -- Setcode: 0x7b
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- You can Tribute this card from your hand or field; take 1 "Photon" monster and 1 "Galaxy" monster
--- from your Deck, add 1 of them to your hand, and send the other to the GY, also you cannot Special
+-- from your Deck, add 1 of them to your hand and send the other to the GY, also you cannot Special
 -- Summon for the rest of this turn, except LIGHT monsters.
 -- If a "Galaxy-Eyes" monster(s) is Special Summoned to your field (except during the Damage Step): You
 -- can Special Summon this card from your GY, but banish it when it leaves the field.

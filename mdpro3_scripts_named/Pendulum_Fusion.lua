@@ -1,15 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Pendulum Fusion  (ID: 65646587)
 -- Type: Spell
 -- Setcode: 0x46, 0xf2
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters you control as Fusion Materials.
 -- If you have 2 cards in your Pendulum Zones, you can also use cards in your Pendulum Zones as Fusion
--- Material(s). You can only activate 1 "Pendulum Fusion" per turn.
+-- Material(s).
+-- You can only activate 1 "Pendulum Fusion" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ペンデュラム・フュージョン

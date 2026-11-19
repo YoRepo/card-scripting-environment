@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Day-Breaker the Shining Magical Warrior  (ID: 91336701)
 -- Type: Monster / Effect / Link
@@ -70,6 +70,9 @@ function c91336701.initial_effect(c)
 	e4:SetOperation(c91336701.desop)
 	c:RegisterEffect(e4)
 end
+c91336701.mentioned_counter={
+	[0x1]=true,
+}
 function c91336701.ctcon1(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():IsSummonType(SUMMON_TYPE_LINK)
 end

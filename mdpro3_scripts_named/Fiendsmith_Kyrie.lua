@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Fiendsmith Kyrie  (ID: 26434972)
 -- Type: Trap
 -- Setcode: 0x1b0
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- This turn, your LIGHT Fiend monsters cannot be destroyed by battle, also any battle damage you take
--- becomes halved. You can banish this card from your GY; Fusion Summon 1 "Fiendsmith" Fusion Monster
--- from your Extra Deck, using monsters you control, and/or monsters in your Spell & Trap Zones that
--- are equipped to a "Fiendsmith" monster as an Equip Spell, as material. You can only use this effect
--- of "Fiendsmith Kyrie" once per turn.
+-- becomes halved.
+-- You can banish this card from your GY; Fusion Summon 1 "Fiendsmith" Fusion Monster from your Extra
+-- Deck, using monsters you control, and/or monsters in your Spell & Trap Zones that are equipped to a
+-- "Fiendsmith" monster as an Equip Spell, as material.
+-- You can only use this effect of "Fiendsmith Kyrie" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --刻まれし魔の憐歌

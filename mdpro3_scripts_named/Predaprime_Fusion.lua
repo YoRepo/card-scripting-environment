@@ -1,10 +1,10 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Predaprime Fusion  (ID: 8148322)
 -- Type: Spell / Quick-Play
 -- Setcode: 0xf3, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If a "Predaplant" monster(s) is on the field: Fusion Summon 1 DARK Fusion Monster from your Extra

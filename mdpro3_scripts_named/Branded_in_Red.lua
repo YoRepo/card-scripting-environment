@@ -1,10 +1,10 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Branded in Red  (ID: 82738008)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x15d
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Target 1 "Despia" monster or "Fallen of Albaz" in your GY; add it to your hand, then you can apply

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Maiden of Macabre  (ID: 84055227)
 -- Type: Monster / Effect
@@ -34,6 +34,9 @@ function c84055227.initial_effect(c)
 	e2:SetValue(c84055227.attackup)
 	c:RegisterEffect(e2)
 end
+c84055227.mentioned_counter={
+	[0x1]=true,
+}
 function c84055227.condition(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	return c:IsRelateToBattle() and c:GetBattleTarget():IsType(TYPE_MONSTER)

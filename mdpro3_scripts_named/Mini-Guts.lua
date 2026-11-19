@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Mini-Guts  (ID: 99004752)
 -- Type: Spell
@@ -8,8 +8,8 @@
 -- Effect Text:
 -- Tribute 1 monster, then target 1 face-up monster your opponent controls; its ATK becomes 0 until the
 -- End Phase.
--- This turn, when it is destroyed by battle and sent to their Graveyard: Inflict damage to your
--- opponent equal to its original ATK in the Graveyard.
+-- This turn, when it is destroyed by battle and sent to their GY: Inflict damage to your opponent
+-- equal to its original ATK in the GY.
 --[[ __CARD_HEADER_END__ ]]
 
 --ミニマム・ガッツ

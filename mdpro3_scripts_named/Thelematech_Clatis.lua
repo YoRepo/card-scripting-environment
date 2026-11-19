@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Thelematech Clatis  (ID: 98986900)
 -- Type: Monster / Effect / Xyz
@@ -64,6 +64,9 @@ function s.initial_effect(c)
 	e4:SetOperation(s.sop)
 	c:RegisterEffect(e4)
 end
+s.mentioned_counter={
+	[0x1]=true,
+}
 function s.ctcon(e,tp,eg,ep,ev,re,r,rp)
 	return re and re:IsActiveType(TYPE_TRAP+TYPE_MONSTER) and rp==1-tp and e:GetHandler():GetFlagEffect(FLAG_ID_CHAINING)>0
 end

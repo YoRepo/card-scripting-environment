@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Jade Dragon Mech  (ID: 69191257)
 -- Type: Monster / Effect / Synchro
 -- Attribute: WIND
@@ -13,12 +13,13 @@
 -- 1 Tuner + 1+ non-Tuners
 -- If this card is Special Summoned: You can send 1 Machine Tuner from your Deck to the GY, or if you
 -- control a monster whose current Level is different from its original Level, you can Special Summon
--- it instead. You can only use this effect of "Jade Dragon Mech" once per turn. If this Synchro
--- Summoned card is destroyed by card effect and sent to the GY: You can banish any number of Tuners
--- from your GY, then target that many cards on the field; destroy them.
+-- it instead.
+-- You can only use this effect of "Jade Dragon Mech" once per turn.
+-- If this Synchro Summoned card is destroyed by card effect and sent to the GY: You can banish any
+-- number of Tuners from your GY, then target that many cards on the field; destroy them.
 --[[ __CARD_HEADER_END__ ]]
 
---Jade Dragon Mech
+--翠鋁の機竜
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Synchro summon
