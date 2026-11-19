@@ -440,6 +440,9 @@ check("a dry run reports and writes nothing",
       and not os.path.exists(os.path.join(repo, "effect_index.json")), said[-300:])
 code, said = update(repo, before, "--apply")
 first = corpus(repo)
+check("a run that changed the corpus says what it could not refresh: the website's minings",
+      "a step behind" in said and "mine_card_codes.py --verify" in said
+      and "mine_api.py" in said and "mine_constants.py" in said, said[-600:])
 check("--apply writes one file per card, named after it, plus the two records",
       code == 0 and sorted(first) == sorted([
           "Stays_Put.lua", "Old_Name.lua", "Text_Changes.lua", "Script_Changes.lua",
@@ -472,6 +475,8 @@ code, said = update(repo, before, "--apply")
 check("a second run with the same sources changes nothing — not a byte, not a stamp",
       code == 0 and corpus(repo) == first and "up to date" not in said
       and "Wrote 0 file(s) and removed 0" in said, said[-400:])
+check("…and does not tell anyone the website is now behind, as the first run did",
+      "a step behind" not in said)
 code, said = update(repo, before)
 check("…and a dry run then says the corpus is up to date", "up to date with these sources" in said)
 

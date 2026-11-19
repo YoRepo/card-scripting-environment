@@ -427,11 +427,18 @@ def run(arguments, out=print):
         len(the_plan.writes), len(the_plan.removes), CORPUS_DIR, LOG_FILE, RECORD_FILE))
     out("Rebuilt {} ({:,} cards, custom_cards/ included).".format(
         mine_effects.DEFAULT_OUT, len(indexed)))
+    if not (the_plan.writes or the_plan.removes):
+        return 0
     out("")
-    out("Still to do by hand, in the sibling Website-TEST repository, when you "
-        "want its Script Studio to know the new cards' API usage:")
-    out("  python3 tools/mine_api.py --out ../Website-TEST/static/data/scripter/api.json --merge")
-    out("(and see that repository's docs/script-builder/ for the checks that follow).")
+    out("Not done here: what the sibling Website-TEST repository mined from this "
+        "corpus is now a step behind it. When you want it caught up:")
+    out("  in Website-TEST:  python3 tools/mine_card_codes.py --verify"
+        "    (archetype names; --write adopts them)")
+    out("  here:             python3 tools/mine_api.py --out "
+        "../Website-TEST/static/data/scripter/api.json --merge")
+    out("  here:             python3 tools/mine_constants.py --out "
+        "../Website-TEST/static/data/scripter/constants.json")
+    out("(Website-TEST's docs/script-builder/ has the checks that go with the last two.)")
     return 0
 
 

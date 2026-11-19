@@ -108,6 +108,10 @@ CACHE_FILES = {
     PRERELEASE_PACK.key: "ygopro-super-pre.ypk",
 }
 CACHE_RECORD = "sources.json"
+# What a fetch in progress keeps there, and a later one clears if it was cut
+# short: the throwaway clone, and a file not yet whole.
+_CLONE_PREFIX = "clone-"
+_PARTIAL_SUFFIX = ".part"
 
 # The two layers' names, as they appear in reports and the sources record.
 OFFICIAL = "official"
@@ -389,10 +393,6 @@ def _one_file(clone, upstream, destination):
     data = _git(["cat-file", "blob", "HEAD:" + upstream.path], cwd=clone)
     with open(destination, "wb") as handle:
         handle.write(data)
-
-
-_CLONE_PREFIX = "clone-"
-_PARTIAL_SUFFIX = ".part"
 
 
 def load_record(cache_dir):
