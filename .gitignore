@@ -1,0 +1,5 @@
+# What tools/update_corpus.py fetches from upstream (three files and a record).
+.corpus-cache/
+
+__pycache__/
+*.pyc
