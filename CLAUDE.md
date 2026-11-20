@@ -21,10 +21,15 @@ The ground-truth corpus for Yu-Gi-Oh (mdpro3, ygopro lineage) card scripting.
 - `reference/ygopro/` — the **ygopro** engine source (MyCard lineage; NOT
   EdoPro, which diverged) — authoritative for function SIGNATURES / arity, and
   the source read for return types, optional defaults, viewpoint meaning, and
-  required-non-nil params. `Website-TEST/tests/mine_reqargs.js` mines its C
-  source into `reqargs.json` (the required-non-nil map behind the studio's RED
-  filter-forward tier) — the sole engine-source miner, distinct from the
-  corpus-script miners (`tools/mine_api.py`, `tools/mine_constants.py`).
+  required-non-nil params. Every file is an exact copy of an upstream file at
+  the commit `reference/ygopro/sources.json` names, and its library half
+  (`ygopro-scripts/`) belongs at the SAME commit as the released scripts in
+  the corpus. Two miners in `Website-TEST` read it, both distinct from the
+  corpus-script miners (`tools/mine_api.py`, `tools/mine_constants.py`):
+  `tests/mine_reqargs.js` (its C source → `reqargs.json`, the
+  required-non-nil map behind the studio's RED filter-forward tier) and
+  `tests/mine_sources.js` (→ `sources.json`, the implementation the studio
+  shows for a function).
   See its `README.md` and `Website-TEST/docs/script-builder/api-signature-integrity.md`.
 - `tools/` — the corpus's own tooling: `update_corpus.py` (below), and the
   miners that read the corpus (`mine_effects.py` → `effect_index.json`, the
@@ -88,9 +93,12 @@ catalogs, the archetype-name table): those are that repository's own
 re-mining steps, with their own gates, and an update here leaves them one
 step behind until they are run.
 
-`reference/ygopro/` is not refreshed by it either — it is the engine's
-source, pinned separately (see its README), and may be older or newer than
-the corpus.
+`reference/ygopro/` is not refreshed by it either, deliberately: the engine
+is what the website's API docs were checked against, so refreshing it is a
+reviewed act with its own steps (its README, "Refreshing"). What the updater
+does is SAY SO when an update leaves the reference's library behind the
+scripts — the two are one upstream repository and belong at one commit
+(`reference/ygopro/sources.json` against `corpus_sources.json`).
 
 ## How this repo is used
 

@@ -16,7 +16,8 @@ here rewrites thousands of existing files; that is what the failure means.
 back, §5 reading the sources, §6 THE RULE that chooses between them, §7 file
 names that collide, §8 the update itself on a small corpus (every kind of
 change, that a second run changes nothing, the refusals), §9 fetching from
-git — against repositories made here — and §10 the real corpus directory:
+git — against repositories made here — with §9b the note an update owes when
+it leaves the engine reference behind, and §10 the real corpus directory:
 every file in it is one this tool reads and would name the same way, and
 the three things derived from it (the log, the sources record, the effect
 index) describe the corpus that is actually there.
@@ -681,6 +682,36 @@ else:
     check("the update reads a fetched cache and says where each source stands",
           code == 0 and "master %s" % moved[:10] in said and "3 scripts" in said, said[:700])
 
+    print("--- §9b the engine reference: left behind is said, never silent")
+    check("with no record of the reference there is nothing to compare, and nothing is said",
+          "engine reference" not in said)
+    pins = os.path.join(repo, up.REFERENCE_RECORD)
+    os.makedirs(os.path.dirname(pins))
+
+    def pin(commit):
+        with open(pins, "w", encoding="utf-8") as handle:
+            json.dump({"sources": {"ygopro-scripts": {"commit": commit}}}, handle)
+
+    pin(head)
+    code, said = update(repo, [], "--offline", "--cache", cache)
+    check("a reference copied from an older commit of the scripts' repository is called out, "
+          "both commits named",
+          code == 0 and "engine reference is behind" in said and head[:10] in said
+          and moved[:10] in said and "reference/ygopro/README.md" in said, said[-500:])
+    pin(moved)
+    code, said = update(repo, [], "--offline", "--cache", cache)
+    check("a reference at the scripts' own commit is not mentioned",
+          code == 0 and "engine reference" not in said, said[-300:])
+    pin(head)
+    code, said = update(repo, world("local-again", {1: script_of(1)}, [card(1, "Stays Put")]))
+    check("sources read from local files carry no commit, so no claim is made about the reference",
+          code == 0 and "engine reference" not in said, said[-300:])
+    with open(pins, "w", encoding="utf-8") as handle:
+        handle.write("not json")
+    code, said = update(repo, [], "--offline", "--cache", cache)
+    check("an unreadable record is no reason to stop an update", code == 0
+          and "engine reference" not in said and "Traceback" not in said, said[-300:])
+
 # ------------------------------------------------- §10 the corpus itself
 print("--- §10 every file in the real corpus is one this tool reads and would name the same")
 real = os.path.join(ROOT, up.CORPUS_DIR)
@@ -698,6 +729,15 @@ for name, parsed in existing.items():
 check("no card is in the corpus twice", not [v for v in ids.values() if len(v) > 1],
       [v for v in ids.values() if len(v) > 1][:3])
 check("no two files differ only by case", len({name.lower() for name in existing}) == len(existing))
+
+with open(os.path.join(ROOT, up.REFERENCE_RECORD), encoding="utf-8") as handle:
+    engine = json.load(handle)["sources"]
+with open(os.path.join(real, up.RECORD_FILE), encoding="utf-8") as handle:
+    scripts_commit = json.load(handle)["sources"][src.OFFICIAL_SCRIPTS.key].get("commit")
+check("the engine reference's library is the commit the released scripts are at "
+      "(reference/ygopro/README.md says how to refresh it)",
+      engine[up.REFERENCE_LIBRARY]["commit"] == scripts_commit,
+      "%s vs %s" % (engine[up.REFERENCE_LIBRARY]["commit"][:10], str(scripts_commit)[:10]))
 
 print("--- §10b what is derived from the corpus describes the corpus that is there")
 with open(os.path.join(real, up.LOG_FILE), encoding="utf-8", newline="") as handle:

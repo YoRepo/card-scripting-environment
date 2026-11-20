@@ -1,0 +1,17 @@
+{
+  "about": "Which upstream commit each directory of reference/ygopro/ is an exact copy of. Edit together with the files, by hand — see README.md, \"Refreshing\".",
+  "sources": {
+    "ygopro-core": {
+      "branch": "master",
+      "commit": "3209cd866a55e8501a0ed358d3064d9ae0ae6b30",
+      "committed": "2026-09-23T23:20:21+08:00",
+      "url": "https://github.com/mycard/ygopro-core"
+    },
+    "ygopro-scripts": {
+      "branch": "master",
+      "commit": "b83db1cc3f512d3bec2faafb9ecf199143332be1",
+      "committed": "2026-09-23T23:13:34+08:00",
+      "url": "https://github.com/mycard/ygopro-scripts"
+    }
+  }
+}

@@ -17,14 +17,54 @@ Do not use edo9300/ygopro-core or ProjectIgnis/CardScripts as the source.
 
 ## Provenance
 
-| dir | upstream | branch | fetched |
-|---|---|---|---|
-| `ygopro-core/` | `github.com/mycard/ygopro-core` (MoeCube/koishi — the maintained ygopro core) | master HEAD | 2026-07-15 |
-| `ygopro-scripts/` | `github.com/mycard/ygopro-scripts` | master HEAD | 2026-07-15 |
+Every file here is an exact, unmodified copy of an upstream file at one commit,
+and `sources.json` beside this README names that commit for each directory —
+check any file with `git cat-file blob <commit>:<file>` in a clone of its
+upstream:
 
-Commit SHAs were not pinned at fetch (the GitHub commit API was proxy-blocked,
-403). **Re-pin the SHA when you refresh these files** so the reference is
-reproducible.
+| dir | upstream | branch |
+|---|---|---|
+| `ygopro-core/` | `github.com/mycard/ygopro-core` (MoeCube/koishi — the maintained ygopro core) | master |
+| `ygopro-scripts/` | `github.com/mycard/ygopro-scripts` | master |
+
+**The library half follows the corpus.** `ygopro-scripts/` is the same
+repository as the released card scripts in `mdpro3_scripts_named/`, and must be
+the same COMMIT (`mdpro3_scripts_named/corpus_sources.json`,
+`official-scripts`): `utility.lua`, `procedure.lua` and `constant.lua` are what
+those scripts are written against. A corpus update that moves that commit
+leaves these three one step behind, and `tools/update_corpus.py` says so when
+it happens. `ygopro-core/` is a separate repository, and nothing records which
+of its commits a scripts commit was written for; take the one made alongside it
+(the maintainers merge both from upstream in one sitting — a script that calls
+a new `Card.*` function lands the same evening as the core change that defines
+it).
+
+## Refreshing
+
+**A reviewed act, not a side effect** — `tools/update_corpus.py` reports the
+drift and deliberately does not fix it. The engine is what every hand-written
+API doc in `Website-TEST` was checked against, so when it moves:
+
+1. copy the files at the new commits (from git's objects, not a checkout that
+   may have rewritten line endings) and update `sources.json`;
+2. list what changed — `git diff` on this directory is the whole worklist: a
+   new function, or an existing one whose body or parameter list moved;
+3. in `Website-TEST`, re-run the two engine miners (`node tests/mine_sources.js`,
+   `node tests/mine_reqargs.js`) and re-check the doc of every function the
+   diff touched.
+
+History: first vendored 2026-07-15, from the two repositories' master branches
+as they stood on 2026-06-24 (`ygopro-core` `8513ea7`, `ygopro-scripts`
+`df337be9` — not recorded at the time, identified afterwards by matching every
+file byte for byte). Refreshed 2026-11-20, with the corpus update that moved
+the scripts to `b83db1cc`: five new `Card.*` functions (`GetCardType`,
+`GetPreviousCardTypeOnField`, `IsCardType`, `IsAllCardTypes`,
+`IsPreviousCardTypeOnField`), `Card.RemoveCounter` now returning a boolean,
+`aux.HasMentionedCounter` and `aux.ArsMagnaFilter`, a changed
+`aux.RegisterMergedDelayedEvent_ToSingleCard_AddOperation` and `aux.covcheck`,
+the three `EFFECT_*_CARD_TYPE` constants, and `HINTMSG_NUMBER` /
+`HINTMSG_LVRANK` spelled correctly (the `HINGMSG_*` typos kept as deprecated
+aliases).
 
 ## What's here (only the API-defining files, not the whole engine)
 

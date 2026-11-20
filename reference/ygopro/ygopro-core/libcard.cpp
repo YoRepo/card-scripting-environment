@@ -252,6 +252,13 @@ int32_t scriptlib::card_is_special_summon_set_card(lua_State *L) {
 	lua_pushboolean(L, result);
 	return 1;
 }
+int32_t scriptlib::card_get_card_type(lua_State *L) {
+	check_param_count(L, 1);
+	check_param(L, PARAM_TYPE_CARD, 1);
+	card* pcard = *(card**) lua_touserdata(L, 1);
+	lua_pushinteger(L, pcard->get_card_type());
+	return 1;
+}
 int32_t scriptlib::card_get_type(lua_State *L) {
 	check_param_count(L, 1);
 	check_param(L, PARAM_TYPE_CARD, 1);
@@ -697,6 +704,13 @@ int32_t scriptlib::card_get_previous_code_onfield(lua_State *L) {
 	}
 	return 1;
 }
+int32_t scriptlib::card_get_previous_card_type_onfield(lua_State *L) {
+	check_param_count(L, 1);
+	check_param(L, PARAM_TYPE_CARD, 1);
+	card* pcard = *(card**) lua_touserdata(L, 1);
+	lua_pushinteger(L, pcard->previous.card_type);
+	return 1;
+}
 int32_t scriptlib::card_get_previous_type_onfield(lua_State *L) {
 	check_param_count(L, 1);
 	check_param(L, PARAM_TYPE_CARD, 1);
@@ -1005,6 +1019,39 @@ int32_t scriptlib::card_is_code(lua_State *L) {
 		}
 	}
 	lua_pushboolean(L, result);
+	return 1;
+}
+int32_t scriptlib::card_is_card_type(lua_State *L) {
+	check_param_count(L, 2);
+	check_param(L, PARAM_TYPE_CARD, 1);
+	card* pcard = *(card**) lua_touserdata(L, 1);
+	uint32_t ttype = (uint32_t)lua_tointeger(L, 2);
+	if(pcard->get_card_type() & ttype)
+		lua_pushboolean(L, 1);
+	else
+		lua_pushboolean(L, 0);
+	return 1;
+}
+int32_t scriptlib::card_is_all_card_types(lua_State *L) {
+	check_param_count(L, 2);
+	check_param(L, PARAM_TYPE_CARD, 1);
+	card* pcard = *(card**) lua_touserdata(L, 1);
+	uint32_t ttype = (uint32_t)lua_tointeger(L, 2);
+	if((pcard->get_card_type() & ttype) == ttype)
+		lua_pushboolean(L, 1);
+	else
+		lua_pushboolean(L, 0);
+	return 1;
+}
+int32_t scriptlib::card_is_previous_card_type_onfield(lua_State *L) {
+	check_param_count(L, 2);
+	check_param(L, PARAM_TYPE_CARD, 1);
+	card* pcard = *(card**) lua_touserdata(L, 1);
+	uint32_t ttype = (uint32_t)lua_tointeger(L, 2);
+	if(pcard->previous.card_type & ttype)
+		lua_pushboolean(L, 1);
+	else
+		lua_pushboolean(L, 0);
 	return 1;
 }
 int32_t scriptlib::card_is_type(lua_State *L) {
@@ -2920,7 +2967,9 @@ int32_t scriptlib::card_remove_counter(lua_State *L) {
 	duel* pduel = pcard->pduel;
 	if(countertype == 0) {
 		// c38834303: remove all counters
+		int32_t result = FALSE;
 		for(const auto& cmit : pcard->counters) {
+			result = TRUE;
 			pduel->write_buffer8(MSG_REMOVE_COUNTER);
 			pduel->write_buffer16(cmit.first);
 			pduel->write_buffer8(pcard->current.controler);
@@ -2929,7 +2978,8 @@ int32_t scriptlib::card_remove_counter(lua_State *L) {
 			pduel->write_buffer16(cmit.second);
 		}
 		pcard->counters.clear();
-		return 0;
+		lua_pushboolean(L, result);
+		return 1;
 	} else {
 		pduel->game_field->remove_counter(reason, pcard, rplayer, 0, 0, countertype, count);
 		return lua_yieldk(L, 0, (lua_KContext)pduel, [](lua_State *L, int32_t status, lua_KContext ctx) {
@@ -3396,6 +3446,7 @@ static const struct luaL_Reg cardlib[] = {
 	{ "IsFusionSetCard", scriptlib::card_is_fusion_set_card },
 	{ "IsLinkSetCard", scriptlib::card_is_link_set_card },
 	{ "IsSpecialSummonSetCard", scriptlib::card_is_special_summon_set_card },
+	{ "GetCardType", scriptlib::card_get_card_type },
 	{ "GetType", scriptlib::card_get_type },
 	{ "GetOriginalType", scriptlib::card_get_origin_type },
 	{ "GetFusionType", scriptlib::card_get_fusion_type },
@@ -3444,6 +3495,7 @@ static const struct luaL_Reg cardlib[] = {
 	{ "GetBaseDefense", scriptlib::card_get_origin_defense },
 	{ "GetTextDefense", scriptlib::card_get_text_defense },
 	{ "GetPreviousCodeOnField", scriptlib::card_get_previous_code_onfield },
+	{ "GetPreviousCardTypeOnField", scriptlib::card_get_previous_card_type_onfield },
 	{ "GetPreviousTypeOnField", scriptlib::card_get_previous_type_onfield },
 	{ "GetPreviousLevelOnField", scriptlib::card_get_previous_level_onfield },
 	{ "GetPreviousRankOnField", scriptlib::card_get_previous_rank_onfield },
@@ -3478,6 +3530,9 @@ static const struct luaL_Reg cardlib[] = {
 	{ "GetRealFieldID", scriptlib::card_get_fieldidr },
 	{ "IsOriginalCodeRule", scriptlib::card_is_origin_code_rule },
 	{ "IsCode", scriptlib::card_is_code },
+	{ "IsCardType", scriptlib::card_is_card_type },
+	{ "IsAllCardTypes", scriptlib::card_is_all_card_types },
+	{ "IsPreviousCardTypeOnField", scriptlib::card_is_previous_card_type_onfield },
 	{ "IsType", scriptlib::card_is_type },
 	{ "IsAllTypes", scriptlib::card_is_all_types },
 	{ "IsFusionType", scriptlib::card_is_fusion_type },

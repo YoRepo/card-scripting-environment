@@ -73,6 +73,10 @@ CACHE_DIR = ".corpus-cache"
 LOG_FILE = "card_header_log.csv"
 RECORD_FILE = "corpus_sources.json"
 EXTENSION = ".lua"
+# The engine reference's own record of the upstream commits it copies
+# (reference/ygopro/README.md). Read here, never written: see reference_drift.
+REFERENCE_RECORD = os.path.join("reference", "ygopro", "sources.json")
+REFERENCE_LIBRARY = "ygopro-scripts"
 
 # A plan that would leave the corpus this much smaller than it is has almost
 # certainly been handed a wrong or half-fetched source — the card pool only
@@ -328,6 +332,33 @@ def report(the_plan, files, existing, superseded, orphans, foreign, show_all, ou
               for bit, entry in sorted(unnamed.items())], show_all, out)
 
 
+# ---- the engine reference --------------------------------------------------
+def reference_drift(root, provenance):
+    """A sentence when reference/ygopro/'s library is a copy of a different
+    commit than the released scripts these sources are at, else None.
+
+    utility.lua, procedure.lua and constant.lua live in the same upstream
+    repository as the card scripts and are what those scripts are written
+    against, so the two belong at one commit. This tool moves the scripts and
+    deliberately NOT the reference — the engine is what the website's API
+    docs were checked against, and refreshing it is a reviewed act (its
+    README says how) — so the least it owes is to say when it has left the
+    reference behind. Silent when either side has no commit to compare: a
+    corpus made from local files, or a reference with no record."""
+    scripts = (provenance.get(src.OFFICIAL_SCRIPTS.key) or {}).get("commit")
+    try:
+        with open(os.path.join(root, REFERENCE_RECORD), encoding="utf-8") as handle:
+            pinned = json.load(handle)["sources"][REFERENCE_LIBRARY]["commit"]
+    except (OSError, ValueError, KeyError, TypeError):
+        return None
+    if not scripts or not pinned or scripts == pinned:
+        return None
+    return ("The engine reference is behind these scripts: reference/ygopro/ is a "
+            "copy of %s %s, and the released scripts are at %s. Its library is what "
+            "they are written against — refresh it (reference/ygopro/README.md, "
+            "\"Refreshing\")." % (REFERENCE_LIBRARY, str(pinned)[:10], scripts[:10]))
+
+
 # ---- the command -----------------------------------------------------------
 def _provenance(key, override, record):
     if override:
@@ -409,6 +440,11 @@ def run(arguments, out=print):
     the_plan = plan(files, existing, generated)
     report(the_plan, files, existing, superseded, orphans, foreign,
            arguments.list, out)
+
+    drift = reference_drift(root, provenance)
+    if drift:
+        out("")
+        out(drift)
 
     log = log_text(files, superseded, orphans)
     sources = record_text(provenance, files)
