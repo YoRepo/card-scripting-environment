@@ -39,6 +39,20 @@ of its commits a scripts commit was written for; take the one made alongside it
 a new `Card.*` function lands the same evening as the core change that defines
 it).
 
+**The pre-release layer has a library of its own, and it is not here.** This
+directory is the RELEASED engine. The pre-release pack the corpus takes its
+newest cards from (`tools/corpus_sources.py`) carries its own
+`script/constant.lua` and `script/procedure.lua` — a development version, ahead
+of master and not a superset of it: at the 2026-11 update, one constant more
+(`CATEGORY_DECK_SPSUMMON`), helpers master does not have
+(`aux.RegisterSynchroMaterialRequire` and the `SynchroRequire*` family behind
+it) and reworked Fusion procedures. So a name that only a pre-release card's
+script uses may be defined in the pack and nowhere in these files; it is not a
+typo for that, and not yet part of the language either. The scripts say so
+themselves — they guard what they borrow
+(`if not CATEGORY_DECK_SPSUMMON then … end`,
+`if aux.RegisterSynchroMaterialRequire then … end`).
+
 ## Refreshing
 
 **A reviewed act, not a side effect** — `tools/update_corpus.py` reports the
