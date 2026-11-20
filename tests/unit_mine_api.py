@@ -15,11 +15,19 @@ rely on: which namespace a call lands in, a method's receiver not counting
 as an argument, a function passed by name counted as a pointer use, and that
 the envelope is the counter's.
 
+§3 is the file it writes INTO. Half of api.json is hand-written (`doc`), and
+a re-mine may refresh the mined half only: with --merge every doc comes back
+byte for byte, a documented function the corpus stopped calling is kept, and
+the two ways to lose the written half — forgetting --merge, and merging into
+a file that cannot be read — are refusals that leave the file as it was.
+
 Run: python3 tests/unit_mine_api.py
 """
 
+import json
 import os
 import shutil
+import subprocess
 import sys
 import tempfile
 
@@ -136,6 +144,84 @@ check("only .lua files are read", "Duel.Ignored" not in mined)
 check("examples name the card, house customs first",
       [e["card"] for e in entry("Duel.SendtoGrave").get("examples", [])] == ["House_Card", "Real_Card"],
       entry("Duel.SendtoGrave").get("examples"))
+
+# ------------------------------------------------- §3 the file it writes into
+print("--- §3 a re-mine refreshes the mined half and never loses the written one")
+TOOL = os.path.join(ROOT, "tools", "mine_api.py")
+out = os.path.join(corpus, "api.json")
+
+
+def run(*flags):
+    done = subprocess.run([sys.executable, TOOL, "--corpus", corpus, "--out", out, "--min-freq", "1"]
+                          + list(flags), stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                          universal_newlines=True)
+    return done.returncode, done.stdout
+
+
+def catalog():
+    with open(out, encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def by_id(document):
+    return {f["id"]: f for f in document["functions"]}
+
+
+code, said = run()
+check("with no file there yet, the catalog is written from the corpus alone",
+      code == 0 and "Duel.SendtoGrave" in by_id(catalog()), said)
+document = catalog()
+WRITTEN = {"sig": [{"name": "targets", "type": "card|group"}], "ret": "int",
+           "desc": "Sends cards to the Graveyard — “written by hand”, é included."}
+by_id(document)["Duel.SendtoGrave"]["doc"] = WRITTEN
+document["functions"].append({"id": "Duel.NoLongerCalled", "ns": "Duel", "name": "NoLongerCalled",
+                              "freq": 9, "argc": [1, 1], "examples": [],
+                              "doc": {"sig": [], "desc": "A function the corpus used to call."}})
+with open(out, "w", encoding="utf-8") as handle:
+    json.dump(document, handle, indent=1, ensure_ascii=False)
+    handle.write("\n")
+with open(out, "rb") as handle:
+    before = handle.read()
+
+code, said = run()
+with open(out, "rb") as handle:
+    untouched = handle.read() == before
+check("without --merge, a catalog that holds hand-written docs is not overwritten",
+      code != 0 and untouched, said)
+check("…and the refusal says how many docs were at stake, and what to add",
+      "2 hand-written docs" in said and "--merge" in said and "Traceback" not in said, said)
+
+with open(os.path.join(corpus, "mdpro3_scripts_named", "Third_Card.lua"), "w", encoding="utf-8") as handle:
+    handle.write("function s.op(e,tp)\n\tDuel.SendtoGrave(g,REASON_EFFECT)\nend\n")
+code, said = run("--merge")
+merged = by_id(catalog())
+check("with --merge the mined half follows the corpus", code == 0
+      and merged["Duel.SendtoGrave"]["freq"] == 3, merged.get("Duel.SendtoGrave"))
+check("…and a hand-written doc comes back exactly as it was written",
+      merged["Duel.SendtoGrave"].get("doc") == WRITTEN, merged["Duel.SendtoGrave"].get("doc"))
+check("a documented function the corpus no longer calls is kept, at 0 uses, with its doc",
+      merged.get("Duel.NoLongerCalled", {}).get("freq") == 0
+      and merged["Duel.NoLongerCalled"].get("doc", {}).get("desc") == "A function the corpus used to call.",
+      merged.get("Duel.NoLongerCalled"))
+check("the catalog is ordered most used first, then by id",
+      [f["id"] for f in catalog()["functions"]]
+      == [f["id"] for f in sorted(catalog()["functions"], key=lambda f: (-f["freq"], f["id"]))])
+with open(out, "rb") as handle:
+    first = handle.read()
+run("--merge")
+with open(out, "rb") as handle:
+    check("merging twice changes nothing", handle.read() == first)
+
+with open(out, "w", encoding="utf-8") as handle:
+    handle.write('{"functions": [{"id": "Duel.SendtoGrave", "doc": {"desc": "cut off')
+for flags in ((), ("--merge",)):
+    code, said = run(*flags)
+    with open(out, encoding="utf-8") as handle:
+        left = handle.read()
+    check("a catalog that cannot be read is not overwritten %s"
+          % ("with --merge" if flags else "without --merge"),
+          code != 0 and left.endswith("cut off") and "cannot be read" in said
+          and "Traceback" not in said, said)
 
 shutil.rmtree(corpus, ignore_errors=True)
 print()

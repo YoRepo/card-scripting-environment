@@ -8,7 +8,10 @@ dropdowns can rank by real-world usage.
 Like mine_api.py, the miner only owns the mechanical half: if the output
 file already exists, hand-authored `desc` fields (the plain-language
 explanations the studio shows when a constant is tapped) are preserved
-across re-runs. Only frequencies and the constant inventory are refreshed.
+across re-runs. Only frequencies and the constant inventory are refreshed —
+and a member that carries a desc is never dropped from the inventory, even
+when the corpus has stopped using it (it stays, with its count, and the run
+says so).
 
 Usage:
   python3 tools/mine_constants.py --out ../Website-TEST/static/data/scripter/constants.json
@@ -109,30 +112,46 @@ def main():
                 for m in TOKEN.finditer(code):
                     counts[m.group(0)] = counts.get(m.group(0), 0) + 1
 
-    # authored desc fields from a previous run survive the re-mine
+    # authored desc fields from a previous run survive the re-mine — so a
+    # previous file that cannot be READ stops the run here. Carrying on would
+    # write a catalog with no descs over it.
     authored = {}
     if os.path.exists(args.out):
         try:
             with open(args.out, encoding="utf-8") as fh:
                 previous = json.load(fh)
-            for fam_entries in previous.get("families", {}).values():
-                for entry in fam_entries:
-                    if entry.get("desc"):
-                        authored[entry["id"]] = entry["desc"]
-        except (OSError, ValueError):
-            pass
+        except (OSError, ValueError) as error:
+            sys.exit(f"{args.out} exists but cannot be read as a catalog ({error}). "
+                     "Not overwriting it: repair it or move it away first.")
+        for fam_entries in previous.get("families", {}).values():
+            for entry in fam_entries:
+                if entry.get("desc"):
+                    authored[entry["id"]] = entry["desc"]
 
     forced = seeded_members(args.corpus)
     for token in forced:
         counts.setdefault(token, 0)
 
+    # A hand-written desc is never dropped by a re-mine. The floor decides
+    # which constants are worth OFFERING; it must not decide which written
+    # words survive — and a constant the corpus stops using (an upstream
+    # rename, a card rewritten) falls under it without anyone choosing that.
+    # mine_api.py keeps a documented function the corpus no longer calls for
+    # the same reason. Such a member stays where it was, with its honest
+    # count, and is named on the way out.
+    for token in authored:
+        counts.setdefault(token, 0)
+
     families = {}
+    kept_for_desc = []
     for token, freq in counts.items():
         fam = family_of(token)
         if fam is None:
             continue
         if token not in forced and freq < FAMILY_FLOOR.get(fam, args.min_freq):
-            continue
+            if token not in authored:
+                continue
+            kept_for_desc.append(token)
         entry = {"id": token, "freq": freq}
         if token in authored:
             entry["desc"] = authored[token]
@@ -151,6 +170,13 @@ def main():
         fh.write("\n")
     total = sum(len(v) for v in families.values())
     print(f"{total} constants in {len(families)} families -> {args.out}")
+    if kept_for_desc:
+        print(f"kept for their desc, though the corpus no longer uses them "
+              f"enough to be mined: {', '.join(sorted(kept_for_desc))}")
+    unplaced = sorted(t for t in authored if family_of(t) is None)
+    if unplaced:
+        print(f"WARNING: {len(unplaced)} authored desc(s) belong to no family "
+              f"this miner knows and were NOT written: {', '.join(unplaced)}")
 
 
 if __name__ == "__main__":

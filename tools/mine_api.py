@@ -19,7 +19,9 @@ undercount is honest, a miscount is not.
 Authored fields (`doc`: signature, parameter docs, description, tags) are
 NEVER produced or touched here — when --merge points at an existing
 api.json, its doc fields are preserved and only the mined data is
-refreshed. Run this after corpus updates.
+refreshed. Run this after corpus updates. Without --merge the file is
+written from the corpus alone, so that is REFUSED while the file holds a
+hand-written doc: forgetting one flag must not be able to discard them.
 
 Usage:
   python3 tools/mine_api.py --out ../Website-TEST/static/data/scripter/api.json --merge
@@ -215,6 +217,21 @@ def mine(corpus_root):
     return functions
 
 
+def previous_catalog(path):
+    """The catalog already at `path`, None when there is none — and a stop,
+    before anything is mined or written, when there is one that cannot be
+    read: what it holds is then unknown, and the hand-written half of this
+    file is the part no re-mine can bring back."""
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, encoding="utf-8") as fh:
+            return json.load(fh)
+    except (OSError, ValueError) as error:
+        sys.exit(f"{path} exists but cannot be read as a catalog ({error}). "
+                 "Not overwriting it: repair it or move it away first.")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--corpus", default=os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
@@ -226,16 +243,21 @@ def main():
                     help="drop mined-only functions used fewer than N times (authored ones always kept)")
     args = ap.parse_args()
 
-    mined = mine(args.corpus)
-
     docs = {}
     meta = {}
-    if args.merge and os.path.exists(args.out):
-        old = json.load(open(args.out, encoding="utf-8"))
-        meta = {k: v for k, v in old.items() if k != "functions"}
-        for f in old.get("functions", []):
-            if f.get("doc"):
-                docs[f["id"]] = f["doc"]
+    old = previous_catalog(args.out)
+    if old is not None:
+        written = [f["id"] for f in old.get("functions", []) if f.get("doc")]
+        if written and not args.merge:
+            sys.exit(f"{args.out} holds {len(written)} hand-written docs, and writing it "
+                     "without --merge would discard every one of them. Add --merge.")
+        if args.merge:
+            meta = {k: v for k, v in old.items() if k != "functions"}
+            for f in old.get("functions", []):
+                if f.get("doc"):
+                    docs[f["id"]] = f["doc"]
+
+    mined = mine(args.corpus)
 
     out_functions = []
     for key, f in mined.items():

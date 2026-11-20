@@ -32,8 +32,10 @@ The ground-truth corpus for Yu-Gi-Oh (mdpro3, ygopro lineage) card scripting.
   `mine_api.py` and `mine_constants.py` → the studio's catalogs in
   `Website-TEST`).
 - `tests/` — no network, no dependencies: `python3 tests/unit_update_corpus.py`
-  (the updater) and `python3 tests/unit_mine_api.py` (the API miner — how a
-  call's arguments are counted).
+  (the updater), and `python3 tests/unit_mine_api.py` /
+  `python3 tests/unit_mine_constants.py` (the two catalog miners — how a call's
+  arguments are counted, and that a re-mine never loses a hand-written
+  description).
 
 ## Keeping the corpus up to date
 
