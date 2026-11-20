@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:48
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Predaplanet  (ID: 51858200)
 -- Type: Trap / Continuous
 -- Setcode: 0xf3
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If a monster with a Predator Counter leaves the field while this card is face-up on the field: Add 1
--- "Predap" card from your Deck to your hand. You can only use this effect of "Predaplanet" once per
--- turn. You can banish this card from your Graveyard; Fusion Summon 1 Fusion Monster from your Extra
--- Deck, using monsters from your hand or field as Fusion Materials. Only "Predaplant" monsters can be
--- used as Fusion Materials for a Fusion Summon using this effect.
+-- "Predap" card from your Deck to your hand.
+-- You can only use this effect of "Predaplanet" once per turn.
+-- You can banish this card from your GY; Fusion Summon 1 Fusion Monster from your Extra Deck, using
+-- monsters from your hand or field as Fusion Materials.
+-- Only "Predaplant" monsters can be used as Fusion Materials for a Fusion Summon using this effect.
 --[[ __CARD_HEADER_END__ ]]
 
 --捕食惑星
@@ -54,6 +55,9 @@ function c51858200.initial_effect(c)
 	e3:SetOperation(c51858200.spop)
 	c:RegisterEffect(e3)
 end
+c51858200.mentioned_counter={
+	[0x1041]=true,
+}
 function c51858200.cfilter(c)
 	return c:IsLocation(LOCATION_MZONE) and c:GetCounter(0x1041)>0
 end

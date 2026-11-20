@@ -1,17 +1,19 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Aroma Blend  (ID: 25861589)
 -- Type: Spell
 -- Setcode: 0xc9
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Discard 1 card; place 1 "Humid Winds", "Dried Winds", or "Blessed Winds" from your hand or Deck,
--- face-up in your Spell & Trap Zone. You can banish this card from your GY; Fusion Summon 1 Plant
--- Fusion Monster from your Extra Deck, by banishing its materials from your hand or field. If your LP
--- are higher than your opponent's, you can also banish Plant monsters from your GY as material. You
--- can only use each effect of "Aroma Blend" once per turn.
+-- face-up in your Spell & Trap Zone.
+-- You can banish this card from your GY; Fusion Summon 1 Plant Fusion Monster from your Extra Deck, by
+-- banishing its materials from your hand or field.
+-- If your LP are higher than your opponent's, you can also banish Plant monsters from your GY as
+-- material.
+-- You can only use each effect of "Aroma Blend" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --アロマブレンド

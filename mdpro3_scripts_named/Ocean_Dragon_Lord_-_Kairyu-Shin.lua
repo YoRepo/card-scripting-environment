@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Ocean Dragon Lord - Kairyu-Shin  (ID: 23931679)
 -- Type: Monster / Effect
@@ -11,8 +11,8 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- While "Umi" is on the field, each player can only control 1 face-up non-WATER monster.
--- (If a player controls 2 or more, they must send some to the GY so they only control 1.)
+-- While "Umi" is on the field, each player can only control 1 face-up non-WATER monster (if a player
+-- controls 2 or more, they must send some to the GY so they only control 1).
 -- During your Main Phase: You can add from your Deck to your hand 1 "Umi", 1 "Kairyu-Shin" Spell/Trap,
 -- or 1 "Sea Stealth" Spell/Trap.
 -- You can only use this effect of "Ocean Dragon Lord - Kairyu-Shin" once per turn.

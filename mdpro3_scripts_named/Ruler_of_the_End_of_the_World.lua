@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Ruler of the End of the World  (ID: 3739500)
 -- Type: Monster / Effect / Ritual
@@ -8,10 +8,10 @@
 -- Level: 10
 -- ATK 3000 | DEF 2900
 -- Setcode: 0x1da
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- You can Ritual Summon this card with a "End of the World" card.
+-- You can Ritual Summon this card with an "End of the World" card.
 -- This card's name becomes "Demise, King of Armageddon" while in the hand or on the field.
 -- You can only use each of the following effects of "Ruler of the End of the World" once per turn.
 -- You can reveal this card in your hand, pay 2000 LP, then banish 1 Ritual Spell from your Deck; apply

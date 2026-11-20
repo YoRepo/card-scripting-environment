@@ -1,27 +1,27 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Fisherman of Legend  (ID: 101306004)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Fisherman of Legend  (ID: 76660178)
 -- Type: Monster / Effect
 -- Attribute: WATER
 -- Race: Warrior
 -- Level: 4
 -- ATK 1850 | DEF 1600
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- If your opponent activates a monster effect on the field, or when their monster declares an attack,
--- and "Umi" or a card that mentions "Dark Time Wizard" other than "Fisherman of Legend" is on the
--- field: You can Special Summon this card from your hand. If this card is Special Summoned: You can
--- target 1 monster your opponent controls; destroy it, also return this card from the field to the
--- hand during the End Phase of this turn. You can only use each effect of "Fisherman of Legend" once
--- per turn.
+-- If your opponent activates a monster effect on the field, or when an opponent's monster declares an
+-- attack, and "Umi" or a card that mentions "Dark Time Wizard" (except "Fisherman of Legend") is on
+-- the field (except during the Damage Step): Special Summon this card from your hand.
+-- If this card is Special Summoned: You can target 1 monster your opponent controls; destroy it, also
+-- during the End Phase of this turn, return this card from the field to the hand.
+-- You can only use each effect of "Fisherman of Legend" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --大海の伝説－フィッシャーマン
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.AddCodeList(c,101306052,22702055)
+	aux.AddCodeList(c,40235813,22702055)
 	--special summon
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
@@ -53,7 +53,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e3)
 end
 function s.cfilter(c)
-	return c:IsFaceupEx() and not c:IsCode(id) and (aux.IsCodeOrListed(c,101306052) or c:IsCode(22702055))
+	return c:IsFaceupEx() and not c:IsCode(id) and (aux.IsCodeOrListed(c,40235813) or c:IsCode(22702055))
 end
 function s.spcon(e,tp,eg,ep,ev,re,r,rp)
 	return rp==1-tp and re:IsActiveType(TYPE_MONSTER) and re:GetActivateLocation()==LOCATION_MZONE
@@ -63,7 +63,7 @@ function s.spcon2(e,tp,eg,ep,ev,re,r,rp)
 end
 function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.GetLocationCount(tp,LOCATION_MZONE)>0
-		and Duel.IsExistingMatchingCard(s.cfilter,tp,LOCATION_ONFIELD,0,1,nil)
+		and (Duel.IsExistingMatchingCard(s.cfilter,tp,LOCATION_ONFIELD,0,1,nil) or Duel.IsEnvironment(22702055))
 		and e:GetHandler():IsCanBeSpecialSummoned(e,0,tp,false,false) end
 	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,e:GetHandler(),1,0,0)
 end

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Lady's Dragonmaid  (ID: 48658295)
 -- Type: Monster / Effect / Fusion
 -- Attribute: LIGHT
@@ -8,15 +8,17 @@
 -- Level: 8
 -- ATK 2000 | DEF 3000
 -- Setcode: 0x133
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2 "Dragonmaid" monsters with the same Attribute but different Levels
 -- Must first be Special Summoned (from your Extra Deck) by banishing the above monsters, 1 each from
--- your field and GY. If this card is Special Summoned: You can Special Summon 1 Level 4 or lower
--- "Dragonmaid" monster from your Deck. During the Standby Phase: You can Fusion Summon 1 Dragon Fusion
--- Monster from your Extra Deck, by shuffling its materials from your field and/or banishment into the
--- Deck. You can only use each effect of "Lady's Dragonmaid" once per turn.
+-- your field and GY.
+-- If this card is Special Summoned: You can Special Summon 1 Level 4 or lower "Dragonmaid" monster
+-- from your Deck.
+-- During the Standby Phase: You can Fusion Summon 1 Dragon Fusion Monster from your Extra Deck, by
+-- shuffling its materials from your field and/or banishment into the Deck.
+-- You can only use each effect of "Lady's Dragonmaid" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ドラゴンメイド・ラティス

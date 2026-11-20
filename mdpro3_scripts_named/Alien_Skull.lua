@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Alien Skull  (ID: 25920413)
 -- Type: Monster / Effect
@@ -57,6 +57,9 @@ function c25920413.initial_effect(c)
 	c:RegisterEffect(e4)
 end
 c25920413.counter_add_list={0x100e}
+c25920413.mentioned_counter={
+	[0x100e]=true,
+}
 function c25920413.spfilter(c,tp)
 	return c:IsLevelBelow(3) and c:IsFaceup() and c:IsReleasable(REASON_SPSUMMON)
 		and Duel.GetMZoneCount(1-tp,c,tp)

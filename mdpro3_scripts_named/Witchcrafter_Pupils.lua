@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Witchcrafter Pupils  (ID: 69964858)
 -- Type: Monster / Effect / Fusion
@@ -8,13 +8,13 @@
 -- Level: 8
 -- ATK 1800 | DEF 2100
 -- Setcode: 0x128
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 1 "Witchcrafter" monster + 1 Spellcaster monster
 -- During the Main or Battle Phase (Quick Effect): You can activate 1 of these effects;
 -- ● Add 1 "Witchcrafter" Spell from your Deck to your hand.
--- ● Reveal 1 "Witchcrafter" Normal or Quick-Play Spell in your hand; apply that Spell's activation
+-- ● Reveal 1 "Witchcrafter" Normal or Quick-Play Spell in your hand; apply that card's activation
 -- effect.
 -- During your End Phase: You can return 1 of your banished "Witchcrafter" cards to the GY.
 -- You can only use each effect of "Witchcrafter Pupils" once per turn.

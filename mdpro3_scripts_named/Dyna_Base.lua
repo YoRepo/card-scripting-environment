@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Dyna Base  (ID: 39396763)
 -- Type: Monster / Effect
 -- Attribute: EARTH
@@ -10,10 +10,10 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- If your LP are lower than your opponent's: You can Special Summon this card from your hand. During
--- your Main Phase: You can Fusion Summon 1 Fusion Monster from your Extra Deck, using this card you
--- control and other monsters from your hand or field as material. You can only use each effect of
--- "Dyna Base" once per turn.
+-- If your LP are lower than your opponent's: You can Special Summon this card from your hand.
+-- During your Main Phase: You can Fusion Summon 1 Fusion Monster from your Extra Deck, using this card
+-- you control and other monsters from your hand or field as material.
+-- You can only use each effect of "Dyna Base" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ダイナ・ベース

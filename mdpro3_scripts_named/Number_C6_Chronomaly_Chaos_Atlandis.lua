@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Number C6: Chronomaly Chaos Atlandis  (ID: 6387204)
 -- Type: Monster / Effect / Xyz
@@ -12,12 +12,13 @@
 --
 -- Effect Text:
 -- 3 Level 7 monsters
--- If you activate any of this card's effects, your opponent takes no further damage this turn.
+-- If you activate either of this card's effects, your opponent takes no further damage this turn (this
+-- is not an effect).
 -- Once per turn: You can target 1 monster your opponent controls; equip that target to this card as an
--- Equip Spell Card whose effect makes this monster gain 1000 ATK.
--- If this card has "Number 6: Chronomaly Atlandis" as an Xyz Material, it gains this effect.
--- ● You can detach 3 Xyz Materials from this card and send all "Number" monsters equipped by this
--- card's effect to the Graveyard (min. 1); make your opponent's Life Points 100.
+-- Equip Spell that gives it 1000 ATK.
+-- If this card has "Number 6: Chronomaly Atlandis" as material: You can detach 3 materials from this
+-- card, and send all face-up "Number" Monster Cards you control equipped to this card by its effect to
+-- the GY (min. 1); make your opponent's LP 100.
 --[[ __CARD_HEADER_END__ ]]
 
 --CNo.6 先史遺産カオス・アトランタル

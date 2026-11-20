@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Buio the Dawn's Light  (ID: 19000848)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -10,14 +10,14 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Monsters in your leftmost or rightmost Main Monster Zones cannot be destroyed by card effects. You
--- can only use each of the following effects of "Buio the Dawn's Light" once per turn. If this card is
--- in your hand: You can target 1 Fiend Effect Monster you control; negate its effects, and if you do,
--- Special Summon this card. If this card is sent to the GY: You can add 1 "Mutiny in the Sky" from
--- your Deck to your hand.
+-- Monsters in your leftmost or rightmost Main Monster Zones cannot be destroyed by card effects.
+-- You can only use each of the following effects of "Buio the Dawn's Light" once per turn.
+-- If this card is in your hand: You can target 1 Fiend Effect Monster you control; negate its effects,
+-- and if you do, Special Summon this card.
+-- If this card is sent to the GY: You can add 1 "Mutiny in the Sky" from your Deck to your hand.
 --[[ __CARD_HEADER_END__ ]]
 
---Buio the Dawn's Light
+--暁光のブイオ
 local s,id,o=GetID()
 function s.initial_effect(c)
 	aux.AddCodeList(c,71593652)

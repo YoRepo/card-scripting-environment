@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Spiritual Power Recovery Potion  (ID: 61082944)
 -- Type: Spell / Quick-Play
@@ -94,7 +94,7 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	if g:GetCount()==0 then return end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
 	local sg=g:SelectSubGroup(tp,aux.dabcheck,false,1,ft)
-	if sg:GetCount()>0 then
+	if sg then
 		Duel.SpecialSummon(sg,0,tp,tp,false,false,POS_FACEUP)
 	end
 end

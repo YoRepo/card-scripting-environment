@@ -1,12 +1,13 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Miracle Raven  (ID: 18988396)
 -- Type: Monster / Effect / Ritual / Pendulum
 -- Attribute: DARK
 -- Race: Fiend
 -- Level: 1
 -- ATK 300 | DEF 300
+-- Pendulum Scale: L0 / R0
 -- Scope: OCG / TCG
 --
 -- Effect Text:
@@ -16,14 +17,17 @@
 -- your hand or field whose total Levels equal or exceed 1.
 -- ----------------------------------------
 -- [ Monster Effect ]
--- You can Ritual Summon this card with "Miracle Raven". Must be Ritual Summoned. This Ritual Summoned
--- card is unaffected by your opponent's activated effects. If you Ritual Summon exactly 1 Ritual
--- Monster with a card effect that requires use of monsters, this card you control can be used as the
--- entire Tribute. If this card is Tributed for a Ritual Summon: You can add 1 Ritual Monster from your
--- Deck to your hand. You can only use this effect of "Miracle Raven" once per turn.
+-- You can Ritual Summon this card with "Miracle Raven".
+-- Must be Ritual Summoned.
+-- This Ritual Summoned card is unaffected by your opponent's activated effects.
+-- If you Ritual Summon exactly 1 Ritual Monster with a card effect that requires use of monsters, this
+-- card you control can be used as the entire Tribute.
+-- If this card is Tributed for a Ritual Summon: You can add 1 Ritual Monster from your Deck to your
+-- hand.
+-- You can only use this effect of "Miracle Raven" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Miracle Raven
+--ミラクル・レイヴン－供物の儀式－
 local s,id=GetID()
 function s.initial_effect(c)
 	c:EnableReviveLimit()

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Chronomaly Mayan Machine  (ID: 25163248)
 -- Type: Monster / Effect
@@ -24,5 +24,6 @@ function c25163248.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 function c25163248.condition(e,c)
-	return c:IsRace(RACE_MACHINE)
+	local ec=e:GetHandler()
+	return c:IsRace(RACE_MACHINE) and (ec:IsFaceup() or c:GetControler()==ec:GetControler())
 end

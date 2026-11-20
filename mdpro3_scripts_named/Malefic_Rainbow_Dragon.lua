@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Malefic Rainbow Dragon  (ID: 598988)
 -- Type: Monster / Effect / Special Summon
@@ -11,12 +11,11 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- This card cannot be Normal Summoned or Set.
--- This card cannot be Special Summoned, except by removing from play 1 "Rainbow Dragon" from your hand
--- or Deck.
--- There can only be 1 face-up "Malefic" monster on the field.
+-- Cannot be Normal Summoned/Set.
+-- Must be Special Summoned (from your hand) by banishing 1 "Rainbow Dragon" from your hand or Deck.
+-- There can only be 1 "Malefic" monster on the field.
 -- Other monsters you control cannot declare an attack.
--- If there is no face-up Field Spell Card on the field, destroy this card.
+-- If there is no face-up Field Spell on the field, destroy this card.
 --[[ __CARD_HEADER_END__ ]]
 
 --Sin レインボー・ドラゴン

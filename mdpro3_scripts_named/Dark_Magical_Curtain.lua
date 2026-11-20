@@ -1,10 +1,10 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Dark Magical Curtain  (ID: 41350417)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x6e
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Each player can Special Summon 1 DARK Spellcaster monster from their hand or Deck (but neither

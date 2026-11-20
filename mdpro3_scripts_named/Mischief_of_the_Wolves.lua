@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Mischief of the Wolves  (ID: 95589901)
 -- Type: Spell / Quick-Play
 -- Scope: OCG / TCG
@@ -10,11 +10,11 @@
 -- ● Reduce the Levels of all monsters your opponent controls by 2.
 -- ● Increase the Levels of all monsters you control by 2.
 -- During your Main Phase, if this card is in the GY because it was sent there this turn: You can
--- target 1 face-up card you control; destroy it, and if you do, add this card to your hand. You can
--- only use this effect of "Mischief of the Wolves" once per turn.
+-- target 1 face-up card you control; destroy it, and if you do, add this card to your hand.
+-- You can only use this effect of "Mischief of the Wolves" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Mischief of the Wolves
+--大狼のいたずら
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Activate
@@ -51,7 +51,7 @@ function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
 		or Duel.IsExistingMatchingCard(s.lvfilter2,tp,LOCATION_MZONE,0,1,nil) end
 end
 function s.lvfilter(c)
-	return c:IsFaceup() and c:IsLevelAbove(3)
+	return c:IsFaceup() and c:IsLevelAbove(2)
 end
 function s.lvfilter2(c)
 	return c:IsFaceup() and c:IsLevelAbove(1)

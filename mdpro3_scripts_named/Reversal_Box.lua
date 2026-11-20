@@ -1,23 +1,25 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Reversal Box  (ID: 101306071)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Reversal Box  (ID: 2606417)
 -- Type: Trap / Continuous
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Once per turn, during the Standby Phase: Roll a six-sided die and place counters on this card up to
--- the result (max. 6). When a monster effect is activated on your opponent's field, or once per
--- battle, during damage calculation, if an opponent's monster attacks: You can remove 1 counter from
--- this card, then target 1 of those monsters; toss a coin and call it. If you call it right, you can
--- Special Summon 1 monster that mentions "Dark Time Wizard" from your Deck, and if you do, until the
--- end of this turn, change the targeted monster's ATK to 0, also its effects are negated.
+-- Once per turn, during the Standby Phase: Roll a six-sided die, and place counters on this card (max.
+-- 6), up to the result.
+-- When a monster effect is activated on your opponent's field, or once per battle, during damage
+-- calculation, if your opponent's monster attacks: You can remove 1 counter from this card, then
+-- target 1 of those monsters; toss a coin and call it.
+-- If you call it right, Special Summon 1 monster that mentions "Dark Time Wizard" from your Deck, and
+-- if you do, until the end of this turn, change the targeted monster's ATK to 0, also negate its
+-- effects.
 --[[ __CARD_HEADER_END__ ]]
 
 --大逆転BOX
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.AddCodeList(c,101306052)
+	aux.AddCodeList(c,40235813)
 	c:EnableCounterPermit(0x76)
 	c:SetCounterLimit(0x76,6)
 	--Activate
@@ -63,6 +65,9 @@ function s.initial_effect(c)
 	e4:SetOperation(s.atkop)
 	c:RegisterEffect(e4)
 end
+s.mentioned_counter={
+	[0x76]=true,
+}
 function s.cttg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
 end
@@ -82,20 +87,24 @@ function s.ctop(e,tp,eg,ep,ev,re,r,rp)
 		c:AddCounter(0x76,ct)
 	end
 end
+function s.mfilter(c)
+	return c:IsOnField() and c:IsFaceup() and c:IsType(TYPE_MONSTER)
+		and (c:GetAttack()~=0 or not c:IsDisabled())
+end
 function s.atkcon(e,tp,eg,ep,ev,re,r,rp)
 	local a=Duel.GetAttacker()
-	return a:IsControler(1-tp)
+	return a:IsControler(1-tp) and s.mfilter(a)
 end
 function s.atkcon2(e,tp,eg,ep,ev,re,r,rp)
-	local c=e:GetHandler()
-	return ep==1-tp and re:GetHandler():IsRelateToEffect(re) and re:IsActiveType(TYPE_MONSTER)
+	local rc=re:GetHandler()
+	return ep==1-tp and re:IsActiveType(TYPE_MONSTER) and rc:IsRelateToEffect(re) and s.mfilter(rc)
 end
 function s.atkcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return e:GetHandler():IsCanRemoveCounter(tp,0x76,1,REASON_COST) end
 	e:GetHandler():RemoveCounter(tp,0x76,1,REASON_COST)
 end
 function s.spfilter(c,e,tp)
-	return aux.IsCodeListed(c,101306052) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+	return aux.IsCodeListed(c,40235813) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function s.atktg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	local a=Duel.GetAttacker()
@@ -104,6 +113,7 @@ function s.atktg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 		and Duel.GetLocationCount(tp,LOCATION_MZONE)>0
 		and Duel.IsExistingMatchingCard(s.spfilter,tp,LOCATION_DECK,0,1,nil,e,tp) end
 	Duel.SetTargetCard(a)
+	Duel.SetOperationInfo(0,CATEGORY_COIN,nil,0,tp,1)
 end
 function s.atktg2(e,tp,eg,ep,ev,re,r,rp,chk)
 	local tc=re:GetHandler()
@@ -111,6 +121,7 @@ function s.atktg2(e,tp,eg,ep,ev,re,r,rp,chk)
 		and Duel.GetLocationCount(tp,LOCATION_MZONE)>0
 		and Duel.IsExistingMatchingCard(s.spfilter,tp,LOCATION_DECK,0,1,nil,e,tp) end
 	Duel.SetTargetCard(tc)
+	Duel.SetOperationInfo(0,CATEGORY_COIN,nil,0,tp,1)
 end
 function s.atkop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()

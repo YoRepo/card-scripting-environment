@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Invoked Magistus Omega  (ID: 38423248)
 -- Type: Monster / Effect / Fusion
@@ -68,7 +68,7 @@ function s.rmtg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 end
 function s.rmop(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.GetTargetsRelateToChain()
-	local tg=g:Filter(Card.IsType,nil,TYPE_MONSTER)
+	local tg=g:Filter(aux.NecroValleyFilter(Card.IsType),nil,TYPE_MONSTER)
 	if tg:GetCount()>0 then
 		Duel.Remove(tg,POS_FACEUP,REASON_EFFECT)
 	end

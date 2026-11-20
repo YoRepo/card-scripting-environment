@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Sharv Sarga  (ID: 75728539)
 -- Type: Trap
@@ -78,19 +78,19 @@ function c75728539.activate(e,tp,eg,ep,ev,re,r,rp)
 		Duel.RegisterEffect(e1,tp)
 	end
 end
-function c75728539.srfilter(c,race,lv)
-	return c:IsType(TYPE_MONSTER) and not c:IsRace(race) and c:IsLevelBelow(lv-1) and c:IsAbleToHand()
+function c75728539.srfilter(c,race,lv,p)
+	return c:IsType(TYPE_MONSTER) and not c:IsRace(race) and c:IsLevelBelow(lv-1) and c:IsAbleToHand(p)
 end
 function c75728539.srcon(e,tp,eg,ep,ev,re,r,rp)
 	local op,race,lv=e:GetLabel()
-	return Duel.IsExistingMatchingCard(c75728539.srfilter,op,LOCATION_DECK,0,1,nil,race,lv)
+	return Duel.IsExistingMatchingCard(c75728539.srfilter,op,LOCATION_DECK,0,1,nil,race,lv,op)
 end
 function c75728539.srop(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Hint(HINT_CARD,0,75728539)
 	local op,race,lv=e:GetLabel()
 	if Duel.SelectYesNo(op,aux.Stringid(75728539,2)) then
 		Duel.Hint(HINT_SELECTMSG,op,HINTMSG_ATOHAND)
-		local g=Duel.SelectMatchingCard(op,c75728539.srfilter,op,LOCATION_DECK,0,1,1,nil,race,lv)
+		local g=Duel.SelectMatchingCard(op,c75728539.srfilter,op,LOCATION_DECK,0,1,1,nil,race,lv,op)
 		if g:GetCount()>0 then
 			Duel.SendtoHand(g,nil,REASON_EFFECT,op)
 			Duel.ConfirmCards(1-op,g)

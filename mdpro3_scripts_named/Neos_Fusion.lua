@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Neos Fusion  (ID: 14088859)
 -- Type: Spell
@@ -7,13 +7,13 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Special Summon 1 Fusion Monster from your Extra Deck that lists exactly 2 monsters as material,
--- including "Elemental HERO Neos", by sending those monsters from your hand, Deck, or field, ignoring
--- its Summoning conditions.
--- For the rest of this turn after this card resolves, you cannot Special Summon monsters.
--- If a Fusion Monster(s) you control that lists "Elemental HERO Neos" as material would be destroyed
--- by battle or card effect, or shuffled into the Extra Deck by its own effect, you can banish this
--- card from your GY instead.
+-- Send from your hand, Deck, or field to the GY, the Fusion Materials that are mentioned on a Fusion
+-- Monster that mentions exactly 2 monsters as material, including "Elemental HERO Neos", then Special
+-- Summon that Fusion Monster from your Extra Deck, ignoring its Summoning conditions.
+-- You cannot Special Summon for the rest of this turn after this card resolves.
+-- If a Fusion Monster(s) you control that mentions "Elemental HERO Neos" as material would be
+-- destroyed by battle or card effect, or shuffled into the Extra Deck by its own effect, you can
+-- banish this card from your GY instead.
 --[[ __CARD_HEADER_END__ ]]
 
 --ネオス・フュージョン

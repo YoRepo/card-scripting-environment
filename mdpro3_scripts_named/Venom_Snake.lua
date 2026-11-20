@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Venom Snake  (ID: 73899015)
 -- Type: Monster / Effect
@@ -30,6 +30,9 @@ function c73899015.initial_effect(c)
 	e1:SetOperation(c73899015.operation)
 	c:RegisterEffect(e1)
 end
+c73899015.mentioned_counter={
+	[0x1009]=true,
+}
 function c73899015.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return e:GetHandler():GetAttackAnnouncedCount()==0 end
 	local e1=Effect.CreateEffect(e:GetHandler())

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Cyberse Code Magician  (ID: 64865)
 -- Type: Monster / Effect / Ritual
@@ -8,7 +8,7 @@
 -- Level: 7
 -- ATK 2500 | DEF 2000
 -- Setcode: 0x93
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- You can Ritual Summon this card with "Cynet Ritual".

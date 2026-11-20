@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Skull Archfiend of Chaos  (ID: 24088928)
 -- Type: Monster / Effect
@@ -71,7 +71,7 @@ function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 end
 function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	local tg=Duel.GetTargetsRelateToChain()
+	local tg=Duel.GetTargetsRelateToChain():Filter(aux.NecroValleyFilter(),nil)
 	if #tg>0 then
 		local ct=aux.PlaceCardsOnDeckBottom(tp,tg)
 		if ct>0 and tg:IsExists(Card.IsLocation,1,nil,LOCATION_DECK+LOCATION_EXTRA)

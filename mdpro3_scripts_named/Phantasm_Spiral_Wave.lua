@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Phantasm Spiral Wave  (ID: 1197847)
 -- Type: Spell / Equip
@@ -10,8 +10,8 @@
 -- Equip only to a Normal Monster.
 -- The first time the equipped monster would be destroyed by battle each turn, it is not destroyed.
 -- At the end of the Battle Phase, if the equipped monster battled: You can Special Summon 1 "Phantasm
--- Spiral Dragon" from your hand, Deck, or Graveyard, and equip it with this card, then if they have
--- any, your opponent discards 1 card.
+-- Spiral Dragon" from your hand, Deck, or GY, and equip it with this card, then if they have any, your
+-- opponent discards 1 card.
 -- You can only use this effect of "Phantasm Spiral Wave" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

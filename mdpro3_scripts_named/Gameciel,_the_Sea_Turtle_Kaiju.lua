@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Gameciel, the Sea Turtle Kaiju  (ID: 55063751)
 -- Type: Monster / Effect
@@ -57,6 +57,9 @@ function c55063751.initial_effect(c)
 	e3:SetOperation(c55063751.negop)
 	c:RegisterEffect(e3)
 end
+c55063751.mentioned_counter={
+	[0x37]=true,
+}
 function c55063751.spfilter(c,tp)
 	return c:IsReleasable(REASON_SPSUMMON) and Duel.GetMZoneCount(1-tp,c,tp)>0
 end

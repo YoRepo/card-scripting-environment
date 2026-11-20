@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Cubic Mandala  (ID: 8837932)
 -- Type: Trap / Continuous
@@ -45,6 +45,9 @@ function c8837932.initial_effect(c)
 	e3:SetOperation(c8837932.desop)
 	c:RegisterEffect(e3)
 end
+c8837932.mentioned_counter={
+	[0x1038]=true,
+}
 function c8837932.cfilter(c)
 	return c:IsFaceup() and c:IsSetCard(0xe3)
 end

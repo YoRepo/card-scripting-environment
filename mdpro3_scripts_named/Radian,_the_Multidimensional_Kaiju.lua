@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Radian, the Multidimensional Kaiju  (ID: 28674152)
 -- Type: Monster / Effect
@@ -54,6 +54,9 @@ function c28674152.initial_effect(c)
 	e3:SetOperation(c28674152.tkop)
 	c:RegisterEffect(e3)
 end
+c28674152.mentioned_counter={
+	[0x37]=true,
+}
 function c28674152.spfilter(c,tp)
 	return c:IsReleasable(REASON_SPSUMMON) and Duel.GetMZoneCount(1-tp,c,tp)>0
 end

@@ -1,10 +1,10 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Cyberdark Impact!  (ID: 80033124)
 -- Type: Spell
 -- Setcode: 0x4093
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 "Cyberdark Dragon" from your Extra Deck, by shuffling 1 each of "Cyberdark Horn",

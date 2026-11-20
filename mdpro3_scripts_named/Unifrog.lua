@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Unifrog  (ID: 56052205)
 -- Type: Monster / Effect
@@ -11,10 +11,11 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Can attack your opponent directly.
+-- Can attack directly.
 -- When this card inflicts battle damage to your opponent by a direct attack: You can target 1
 -- Spell/Trap your opponent controls; destroy that target.
--- You must control a "Frog" monster, other than "Unifrog", to activate and to resolve this effect.
+-- You must control a face-up "Frog" monster other than "Unifrog" to activate and to resolve this
+-- effect.
 --[[ __CARD_HEADER_END__ ]]
 
 --貫ガエル

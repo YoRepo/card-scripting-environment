@@ -1,18 +1,19 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Earthbound Fusion  (ID: 99599062)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x21, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- You can only activate this card during the Main Phase, unless a card is in a Field Zone. Fusion
--- Summon 1 DARK Fusion Monster from your Extra Deck, using monsters from your hand or field as
--- material. During your Main Phase, if a card is in a Field Zone: You can banish this card from your
--- GY; Special Summon 1 "Earthbound" monster from your hand or GY, also you cannot Special Summon from
--- the Extra Deck for the rest of this turn, except Fusion or Synchro Monsters. You can only use this
--- effect of "Earthbound Fusion" once per turn.
+-- You can only activate this card during the Main Phase, unless a card is in a Field Zone.
+-- Fusion Summon 1 DARK Fusion Monster from your Extra Deck, using monsters from your hand or field as
+-- material.
+-- During your Main Phase, if a card is in a Field Zone: You can banish this card from your GY; Special
+-- Summon 1 "Earthbound" monster from your hand or GY, also you cannot Special Summon from the Extra
+-- Deck for the rest of this turn, except Fusion or Synchro Monsters.
+-- You can only use this effect of "Earthbound Fusion" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --地縛融合

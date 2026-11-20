@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Alien Hypno  (ID: 38468214)
 -- Type: Monster / Effect / Gemini
@@ -35,6 +35,9 @@ function c38468214.initial_effect(c)
 	e1:SetOperation(c38468214.operation)
 	c:RegisterEffect(e1)
 end
+c38468214.mentioned_counter={
+	[0x100e]=true,
+}
 function c38468214.filter(c)
 	return c:GetCounter(0x100e)>0 and c:IsControlerCanBeChanged()
 end

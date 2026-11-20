@@ -1,15 +1,15 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Destruction Sword Memories  (ID: 32104431)
 -- Type: Trap
 -- Setcode: 0xd6
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Discard 1 "Destruction Sword" card; Special Summon 1 "Buster Blader" monster from the Deck. You can
--- banish this card from your GY; Fusion Summon 1 "Buster Blader, the Dragon Destroyer Swordsman" from
--- your Extra Deck, by banishing its Fusion Materials from your GY.
+-- Discard 1 "Destruction Sword" card; Special Summon 1 "Buster Blader" monster from the Deck.
+-- You can banish this card from your GY; Fusion Summon 1 "Buster Blader, the Dragon Destroyer
+-- Swordsman" from your Extra Deck, by banishing its Fusion Materials from your GY.
 --[[ __CARD_HEADER_END__ ]]
 
 --破壊剣の追憶

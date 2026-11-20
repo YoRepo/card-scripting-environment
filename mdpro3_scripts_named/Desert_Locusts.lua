@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Desert Locusts  (ID: 63410069)
 -- Type: Monster / Effect / Tuner / Synchro
@@ -10,7 +10,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- 1 Tuner + 1+ non-Tuner monsters
+-- 1 Tuner + 1+ non-Tuners
 -- If this card is Synchro Summoned: The turn player discards 1 card.
 -- You can only use this effect of "Desert Locusts" once per turn.
 -- Once per Chain, during your opponent's Main Phase, you can (Quick Effect): Immediately after this

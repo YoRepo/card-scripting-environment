@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Double Fusion  (ID: 10218411)
 -- Type: Spell
 -- Setcode: 0x46

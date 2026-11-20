@@ -1,14 +1,15 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Dark Fusion  (ID: 94820406)
 -- Type: Spell
 -- Setcode: 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Fiend Fusion Monster from your Extra Deck, using monsters from your hand or field as
--- material. Your opponent cannot target it with card effects this turn.
+-- material.
+-- Your opponent cannot target it with card effects this turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ダーク・フュージョン

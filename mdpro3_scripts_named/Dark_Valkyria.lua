@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Dark Valkyria  (ID: 83269557)
 -- Type: Monster / Effect / Gemini
@@ -57,6 +57,9 @@ function c83269557.initial_effect(c)
 	e4:SetOperation(c83269557.operation2)
 	c:RegisterEffect(e4)
 end
+c83269557.mentioned_counter={
+	[0x1]=true,
+}
 function c83269557.atkval(e,c)
 	return c:GetCounter(0x1)*300
 end

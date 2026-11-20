@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Aussa the Earth Charmer  (ID: 37970940)
 -- Type: Monster / Effect / Flip
@@ -11,7 +11,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- FLIP: Target 1 EARTH monster your opponent controls; take control of that target while this card is
+-- FLIP: Target 1 EARTH monster your opponent controls; take control of that monster while this card is
 -- face-up on the field.
 --[[ __CARD_HEADER_END__ ]]
 

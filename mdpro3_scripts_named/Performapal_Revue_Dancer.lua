@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Performapal Revue Dancer  (ID: 36527535)
 -- Type: Monster / Effect
@@ -41,5 +41,6 @@ function c36527535.sprcon(e,c)
 		and Duel.GetLocationCount(tp,LOCATION_MZONE)>0
 end
 function c36527535.dtcon(e,c)
-	return c:IsSetCard(0x9f)
+	local ec=e:GetHandler()
+	return c:IsSetCard(0x9f) and (ec:IsFaceup() or c:GetControler()==ec:GetControler())
 end

@@ -1,15 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Ancient Gear Fusion  (ID: 64061284)
 -- Type: Spell
 -- Setcode: 0x7, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 "Ancient Gear" Fusion Monster from your Extra Deck, using monsters from your hand or
--- field. If you use "Ancient Gear Golem" or "Ancient Gear Golem - Ultimate Pound" you control as
--- material, you can also use monsters from your Deck.
+-- field.
+-- If you use "Ancient Gear Golem" or "Ancient Gear Golem - Ultimate Pound" you control as material,
+-- you can also use monsters from your Deck.
 --[[ __CARD_HEADER_END__ ]]
 
 --古代の機械融合

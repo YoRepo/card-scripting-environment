@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Psychic Omnibuster  (ID: 70659412)
 -- Type: Monster / Effect / Synchro
 -- Attribute: WIND
@@ -20,7 +20,7 @@
 -- ● Banish the card you looked at, face-up, until the End Phase.
 --[[ __CARD_HEADER_END__ ]]
 
---Psychic Omnibuster
+--サイコ・オムニバスター
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--synchro summon

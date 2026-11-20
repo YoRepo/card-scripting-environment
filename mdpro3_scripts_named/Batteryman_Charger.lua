@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Batteryman Charger  (ID: 83446909)
 -- Type: Monster / Effect
@@ -11,9 +11,9 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- When this card is Normal Summoned, you can Special Summon 1 "Batteryman" monster, except "Batteryman
--- Charger", from your hand or Deck.
--- This card gains 300 ATK and DEF for each Thunder-Type monster you control.
+-- When this card is Normal Summoned: You can Special Summon 1 "Batteryman" monster from your hand or
+-- Deck, except "Batteryman Charger".
+-- Gains 300 ATK/DEF for each Thunder monster you control.
 --[[ __CARD_HEADER_END__ ]]
 
 --充電池メン

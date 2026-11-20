@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Vennominaga the Deity of Poisonous Snakes  (ID: 8062132)
 -- Type: Monster / Effect / Special Summon
@@ -81,6 +81,9 @@ function c8062132.initial_effect(c)
 	e7:SetOperation(c8062132.winop)
 	c:RegisterEffect(e7)
 end
+c8062132.mentioned_counter={
+	[0x11]=true,
+}
 function c8062132.splimit(e,se,sp,st)
 	local sc=se:GetHandler()
 	return sc:IsCode(16067089) or sc==e:GetHandler()

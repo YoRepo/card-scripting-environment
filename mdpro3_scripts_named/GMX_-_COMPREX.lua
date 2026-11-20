@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: GMX - COMPREX  (ID: 75191028)
 -- Type: Monster / Effect / Fusion
 -- Attribute: DARK
@@ -20,7 +20,7 @@
 -- on the field.
 --[[ __CARD_HEADER_END__ ]]
 
---GMX - COMPREX
+--GMX－COMPREX
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--fusion material

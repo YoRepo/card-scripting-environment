@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Vaalmonica Ereditare  (ID: 14972952)
 -- Type: Trap / Counter
@@ -43,6 +43,9 @@ function s.initial_effect(c)
 	e2:SetOperation(s.tdop)
 	c:RegisterEffect(e2)
 end
+s.mentioned_counter={
+	[0x6a]=true,
+}
 function s.cfilter(c)
 	return c:IsFaceup() and c:IsSetCard(0x1a3) and c:IsType(TYPE_LINK)
 end

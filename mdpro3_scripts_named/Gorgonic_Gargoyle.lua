@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Gorgonic Gargoyle  (ID: 64379261)
 -- Type: Monster / Effect
@@ -10,7 +10,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- When you Normal Summon a Rock-Type monster: You can Special Summon this card from your hand.
+-- When you Normal Summon a Rock monster: You can Special Summon this card from your hand.
 --[[ __CARD_HEADER_END__ ]]
 
 --ゴルゴニック・ガーゴイル

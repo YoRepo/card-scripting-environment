@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Fire Opal Head  (ID: 28363749)
 -- Type: Monster / Normal / Pendulum
@@ -7,6 +7,7 @@
 -- Race: Dinosaur
 -- Level: 6
 -- ATK 2500 | DEF 1000
+-- Pendulum Scale: L0 / R0
 -- Scope: OCG / TCG
 --
 -- Effect Text:

@@ -1,21 +1,21 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Number 104: Masquerade  (ID: 2061963)
 -- Type: Monster / Effect / Xyz
 -- Attribute: LIGHT
 -- Race: Spellcaster
 -- Rank: 4
 -- ATK 2700 | DEF 1200
--- Setcode: 0x48, 0x2e9
--- Scope: OCG / TCG / Illegal
+-- Setcode: 0x48, 0x1e3
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 3 Level 4 monsters
 -- During the Battle Phase, when your opponent activates a monster effect (Quick Effect): You can
 -- detach 1 material from this card; negate the activation, and if you do, inflict 800 damage to your
--- opponent. Once per turn, during your Main Phase: You can send the top card of your opponent's Deck
--- to the GY.
+-- opponent.
+-- Once per turn, during your Main Phase: You can send the top card of your opponent's Deck to the GY.
 --[[ __CARD_HEADER_END__ ]]
 
 --No.104 仮面魔踏士シャイニング

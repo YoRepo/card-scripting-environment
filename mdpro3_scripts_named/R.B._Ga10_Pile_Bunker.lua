@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: R.B. Ga10 Pile Bunker  (ID: 44573911)
 -- Type: Monster / Effect
 -- Attribute: EARTH
@@ -12,13 +12,14 @@
 --
 -- Effect Text:
 -- If you control no face-up monsters, or the only face-up monsters you control are "R.B." monsters,
--- you can Special Summon this card (from your hand). You can only Special Summon "R.B. Ga10 Pile
--- Bunker" once per turn this way. When an attack is declared involving an opponent's monster and "R.B.
--- The Brute Blues" that points to this card: You can pay 1500 LP; destroy all cards your opponent
--- controls and this card. You can only use this effect of "R.B. Ga10 Pile Bunker" once per turn.
+-- you can Special Summon this card (from your hand).
+-- You can only Special Summon "R.B. Ga10 Pile Bunker" once per turn this way.
+-- When an attack is declared involving an opponent's monster and "R.B. The Brute Blues" that points to
+-- this card: You can pay 1500 LP; destroy all cards your opponent controls and this card.
+-- You can only use this effect of "R.B. Ga10 Pile Bunker" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---R.B. Ga10 Pile Bunker
+--R.B.GA１０パイルバンカー
 local s,id,o=GetID()
 function s.initial_effect(c)
 	aux.AddCodeList(c,32216688)

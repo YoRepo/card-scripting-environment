@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Storm-Bane Dragon Destorbim  (ID: 94641726)
 -- Type: Monster / Effect / Synchro
 -- Attribute: DARK
@@ -11,14 +11,15 @@
 --
 -- Effect Text:
 -- 1 Tuner + 1+ non-Tuners
--- Your opponent cannot target this card with card effects. You can only use each of the following
--- effects of "Storm-Bane Dragon Destorbim" once per turn. You can banish any number of DARK monsters
--- from your GY that cannot be Normal Summoned/Set; banish that many cards your opponent controls. This
--- is a Quick Effect if your opponent controls more cards than you do. If this card is sent to the GY:
--- You can Special Summon 1 of your banished Dragon monsters.
+-- Your opponent cannot target this card with card effects.
+-- You can only use each of the following effects of "Storm-Bane Dragon Destorbim" once per turn.
+-- You can banish any number of DARK monsters from your GY that cannot be Normal Summoned/Set; banish
+-- that many cards your opponent controls.
+-- This is a Quick Effect if your opponent controls more cards than you do.
+-- If this card is sent to the GY: You can Special Summon 1 of your banished Dragon monsters.
 --[[ __CARD_HEADER_END__ ]]
 
---Storm-Bane Dragon Destorbim
+--嵐忌竜デストゥビム
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Synchro summon

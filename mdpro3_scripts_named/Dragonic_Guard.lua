@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Dragonic Guard  (ID: 78009994)
 -- Type: Monster / Effect
@@ -39,6 +39,9 @@ function c78009994.initial_effect(c)
 	e2:SetOperation(c78009994.spop)
 	c:RegisterEffect(e2)
 end
+c78009994.mentioned_counter={
+	[0x22]=true,
+}
 function c78009994.ctop(e,tp,eg,ep,ev,re,r,rp)
 	if eg:GetFirst()~=e:GetHandler() then
 		e:GetHandler():AddCounter(0x22,1)

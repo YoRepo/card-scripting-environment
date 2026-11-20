@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Alien Stealthbuster  (ID: 58066722)
 -- Type: Monster / Effect
@@ -46,6 +46,9 @@ function c58066722.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 c58066722.counter_add_list={0x100e}
+c58066722.mentioned_counter={
+	[0x100e]=true,
+}
 function c58066722.ctfilter(c)
 	return c:IsFaceup() and c:IsCanAddCounter(0x100e,2)
 end

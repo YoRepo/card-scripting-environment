@@ -1,22 +1,23 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Ashtraya Mikumari-no-Mikoto  (ID: 101306040)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Ashtraya Mikumari-no-Mikoto  (ID: 43419178)
 -- Type: Monster / Effect / Synchro
 -- Attribute: WATER
 -- Race: Wyrm
 -- Level: 8
 -- ATK 3000 | DEF 2500
--- Setcode: 0x2e4
--- Scope: OCG
+-- Setcode: 0x1e4
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 1 Tuner + 1+ non-Tuners
 -- If this card is Special Summoned: You can send 1 "Ashtra" card from your Deck to the GY, and if you
--- do, send 1 card on the field to the GY. You can only use this effect of "Ashtraya
--- Mikumari-no-Mikoto" once per turn. If your opponent activates a monster effect: You can target 1
--- "Ashtra" Trap in your GY or banishment, or if there are 3 or more face-down cards on the field, you
--- can target 1 Trap in your GY instead; Set it.
+-- do, send 1 card on the field to the GY.
+-- You can only use this effect of "Ashtraya Mikumari-no-Mikoto" once per turn.
+-- If your opponent activates a monster effect (except during the Damage Step): You can target 1
+-- "Ashtra" Trap in your GY or banishment, or if 3 or more cards are face-down on the field, you can
+-- target any 1 Trap in your GY instead; Set it.
 --[[ __CARD_HEADER_END__ ]]
 
 --鬼神 水子守命
@@ -50,7 +51,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 function s.tgfilter(c)
-	return c:IsSetCard(0x2e4) and c:IsAbleToGrave()
+	return c:IsSetCard(0x1e4) and c:IsAbleToGrave()
 end
 function s.tgtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.tgfilter,tp,LOCATION_DECK,0,1,nil)
@@ -61,7 +62,7 @@ function s.tgop(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
 	local g=Duel.SelectMatchingCard(tp,s.tgfilter,tp,LOCATION_DECK,0,1,1,nil)
 	local tc=g:GetFirst()
-	if tc and Duel.SendtoGrave(tc,REASON_EFFECT) and tc:IsLocation(LOCATION_GRAVE) then
+	if tc and Duel.SendtoGrave(tc,REASON_EFFECT)>0 and tc:IsLocation(LOCATION_GRAVE) then
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
 		local sg=Duel.SelectMatchingCard(tp,Card.IsAbleToGrave,tp,LOCATION_ONFIELD,LOCATION_ONFIELD,1,1,nil)
 		if sg:GetCount()>0 then
@@ -74,7 +75,7 @@ function s.setcon(e,tp,eg,ep,ev,re,r,rp)
 	return rp==1-tp and re:IsActiveType(TYPE_MONSTER)
 end
 function s.setfilter(c,res)
-	return c:IsFaceupEx() and (c:IsSetCard(0x2e4) or res and c:IsLocation(LOCATION_GRAVE)) and c:IsType(TYPE_TRAP) and c:IsSSetable()
+	return c:IsFaceupEx() and (c:IsSetCard(0x1e4) or res and c:IsLocation(LOCATION_GRAVE)) and c:IsType(TYPE_TRAP) and c:IsSSetable()
 end
 function s.settg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	local res=Duel.IsExistingMatchingCard(Card.IsFacedown,tp,LOCATION_ONFIELD,LOCATION_ONFIELD,3,nil)
@@ -83,7 +84,7 @@ function s.settg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SET)
 	local g=Duel.SelectTarget(tp,s.setfilter,tp,LOCATION_GRAVE+LOCATION_REMOVED,0,1,1,nil,res)
 	if g:IsExists(Card.IsLocation,1,nil,LOCATION_GRAVE) then
-		Duel.SetOperationInfo(0,CATEGORY_TOGRAVE,g,1,0,0)
+		Duel.SetOperationInfo(0,CATEGORY_LEAVE_GRAVE,g,1,0,0)
 	end
 end
 function s.setop(e,tp,eg,ep,ev,re,r,rp)

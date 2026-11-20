@@ -1,21 +1,21 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Cursed Copycat Noble Arms  (ID: 23249029)
 -- Type: Spell / Equip
 -- Setcode: 0x207a
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- The equipped monster gains 200 ATK/DEF for each Equip Spell in your field and GY. While this card is
--- equipped to a Warrior monster: You can activate this effect; you cannot Special Summon for the rest
--- of this turn, except Warrior monsters, also Special Summon 1 Warrior monster with the same Attribute
--- and Level as the equipped monster but a different name from your Deck, and if you do, equip it with
--- this card, then destroy the monster this card was equipped to. You can only use this effect of
--- "Cursed Copycat Noble Arms" once per turn.
+-- The equipped monster gains 200 ATK/DEF for each Equip Spell in your field and GY.
+-- While this card is equipped to a Warrior monster: You can activate this effect; you cannot Special
+-- Summon for the rest of this turn, except Warrior monsters, also Special Summon 1 Warrior monster
+-- with the same Attribute and Level as the equipped monster but a different name from your Deck, and
+-- if you do, equip it with this card, then destroy the monster this card was equipped to.
+-- You can only use this effect of "Cursed Copycat Noble Arms" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Cursed Copycat Noble Arms
+--天魔伏聖剣
 local s,id,o=GetID()
 function s.initial_effect(c)
 	aux.AddEquipSpellEffect(c,true,true,Card.IsFaceup,nil)

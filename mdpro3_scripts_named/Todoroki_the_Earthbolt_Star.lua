@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Todoroki the Earthbolt Star  (ID: 30118701)
 -- Type: Monster / Effect
 -- Attribute: EARTH
@@ -11,10 +11,11 @@
 --
 -- Effect Text:
 -- You can Special Summon this card (from your hand) by sending 1 other monster from your hand to the
--- GY, but this card loses 500 ATK. You can only Special Summon "Todoroki the Earthbolt Star" once per
--- turn this way. During the Battle Phase (Quick Effect): You can pay 500 LP; Fusion Summon 1 Warrior
--- Fusion Monster from your Extra Deck, using monsters from your hand or field as material. You can
--- only use this effect of "Todoroki the Earthbolt Star" once per turn.
+-- GY, but this card loses 500 ATK.
+-- You can only Special Summon "Todoroki the Earthbolt Star" once per turn this way.
+-- During the Battle Phase (Quick Effect): You can pay 500 LP; Fusion Summon 1 Warrior Fusion Monster
+-- from your Extra Deck, using monsters from your hand or field as material.
+-- You can only use this effect of "Todoroki the Earthbolt Star" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --地雷星トドロキ

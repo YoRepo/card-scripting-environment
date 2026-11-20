@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Morphtronic Map  (ID: 56074358)
 -- Type: Spell / Field
@@ -50,6 +50,9 @@ function c56074358.initial_effect(c)
 	e4:SetOperation(c56074358.spop)
 	c:RegisterEffect(e4)
 end
+c56074358.mentioned_counter={
+	[0x8]=true,
+}
 function c56074358.atkval(e,c)
 	return e:GetHandler():GetCounter(0x8)*300
 end

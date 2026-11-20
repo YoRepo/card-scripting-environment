@@ -1,16 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Mind Scan  (ID: 34298391)
 -- Type: Trap / Continuous
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- While you have a "Toon" card in your field or GY, your opponent must keep their hand revealed, also
 -- you can look at their Set cards at any time.
 -- If you have a Toon monster and a "Toon" Spell in your field and/or GY: You can declare 1 card name
--- that is not among the cards/effects activated in this Chain; negate the activated effects of cards
--- with that original name until the end of this turn, while this card is face-up on the field.
+-- (you cannot declare a name whose effect has been activated in a current Chain); until the end of
+-- this turn while this card is face-up, negate the activated effects of cards with that original name.
 -- You can only use this effect of "Mind Scan" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

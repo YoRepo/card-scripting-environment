@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Eternal Chaos  (ID: 25750986)
 -- Type: Trap
@@ -83,7 +83,7 @@ function c25750986.actlimit(e,re,tp)
 	return re:IsActiveType(TYPE_MONSTER) and re:GetActivateLocation()==LOCATION_GRAVE
 end
 function c25750986.aclimit1(e,tp,eg,ep,ev,re,r,rp)
-	local tp=e:GetHandlerPlayer()
-	if ep~=tp or not re:IsActiveType(TYPE_MONSTER) or not re:GetActivateLocation()==LOCATION_GRAVE then return end
-	Duel.RegisterFlagEffect(tp,25750986,RESET_PHASE+PHASE_END,0,1)
+	local p=e:GetHandlerPlayer()
+	if ep~=p or not re:IsActiveType(TYPE_MONSTER) or re:GetActivateLocation()~=LOCATION_GRAVE then return end
+	Duel.RegisterFlagEffect(p,25750986,RESET_PHASE+PHASE_END,0,1)
 end

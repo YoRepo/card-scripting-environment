@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Blue-Eyes White Dragon, the White Phantom Beast  (ID: 30397786)
 -- Type: Monster / Effect
@@ -8,18 +8,17 @@
 -- Level: 8
 -- ATK 3000 | DEF 2500
 -- Setcode: 0x1b, 0xdd
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
+-- When this card is added from the Deck to your hand, or a monster you control is destroyed by battle:
+-- You can reveal this card in your hand; Special Summon it.
+-- If this card is Special Summoned from the hand or Deck: You can destroy all monsters your opponent
+-- controls, also you can only attack directly with "Blue-Eyes" monsters for the rest of this turn.
+-- You can only use each of the preceding effects of "Blue-Eyes White Dragon, the White Phantom Beast"
+-- once per turn.
 -- When a card or effect is activated that targets this card on the field (Quick Effect): You can
 -- discard 1 card; negate that effect.
--- You can only use each of the following effects of "Blue-Eyes White Dragon, the White Phantom Beast"
--- once per turn.
--- When this card is added from the Deck to your hand, or your monster is destroyed by battle: You can
--- reveal this card in your hand; Special Summon it.
--- If this card is Special Summoned from the hand or Deck: You can destroy all monsters your opponent
--- controls, also you cannot attack directly for the rest of this turn, except with "Blue-Eyes"
--- monsters.
 --[[ __CARD_HEADER_END__ ]]
 
 --白き幻獣－青眼の白龍
@@ -128,7 +127,9 @@ function s.discon(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	if c:IsStatus(STATUS_BATTLE_DESTROYED) then return false end
 	if not Duel.IsChainDisablable(ev) then return false end
-	return re:IsHasProperty(EFFECT_FLAG_CARD_TARGET) and Duel.GetChainInfo(ev,CHAININFO_TARGET_CARDS):IsContains(c)
+	if not re:IsHasProperty(EFFECT_FLAG_CARD_TARGET) then return false end
+	local tg=Duel.GetChainInfo(ev,CHAININFO_TARGET_CARDS)
+	return tg and tg:IsContains(c)
 end
 function s.discost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsDiscardable,tp,LOCATION_HAND,0,1,nil) end

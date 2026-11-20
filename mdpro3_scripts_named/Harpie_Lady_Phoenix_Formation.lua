@@ -1,9 +1,9 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Harpie Lady Phoenix Formation  (ID: 86308219)
 -- Type: Spell
--- Setcode: 0x64
+-- Setcode: 0x1064
 -- Scope: OCG / TCG
 --
 -- Effect Text:

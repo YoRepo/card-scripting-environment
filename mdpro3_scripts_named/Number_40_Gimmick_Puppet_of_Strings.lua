@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Number 40: Gimmick Puppet of Strings  (ID: 75433814)
 -- Type: Monster / Effect / Xyz
@@ -47,6 +47,9 @@ function c75433814.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 aux.xyz_number[75433814]=40
+c75433814.mentioned_counter={
+	[0x1024]=true,
+}
 function c75433814.ctcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return e:GetHandler():CheckRemoveOverlayCard(tp,1,REASON_COST) end
 	e:GetHandler():RemoveOverlayCard(tp,1,1,REASON_COST)

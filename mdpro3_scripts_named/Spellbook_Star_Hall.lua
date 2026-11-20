@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Spellbook Star Hall  (ID: 56321639)
 -- Type: Spell / Continuous
@@ -65,6 +65,9 @@ function c56321639.initial_effect(c)
 	e4:SetLabelObject(e5)
 	c:RegisterEffect(e4)
 end
+c56321639.mentioned_counter={
+	[0x1]=true,
+}
 function c56321639.ctcon(e,tp,eg,ep,ev,re,r,rp)
 	if not re then return false end
 	local c=re:GetHandler()

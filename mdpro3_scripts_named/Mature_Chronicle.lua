@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Mature Chronicle  (ID: 92650749)
 -- Type: Spell / Continuous
@@ -91,6 +91,9 @@ function s.initial_effect(c)
 	e7:SetOperation(s.op5)
 	c:RegisterEffect(e7)
 end
+s.mentioned_counter={
+	[0x25]=true,
+}
 function s.cfilter(c)
 	return c:IsSetCard(0x1a5) or aux.IsCodeListed(c,78371393)
 end

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Returned Dino Daneen  (ID: 29927283)
 -- Type: Monster / Effect
 -- Attribute: WATER
@@ -11,13 +11,15 @@
 --
 -- Effect Text:
 -- If this card is Special Summoned by a monster effect: You can add 1 "GMX" monster from your Deck to
--- your hand. During your Main Phase: You can Fusion Summon 1 Dinosaur Fusion Monster from your Extra
--- Deck, using monsters from your hand or field. If this card is sent to the GY: You can make all
--- Dinosaur monsters you currently control gain 400 ATK. You can only use each effect of "Returned Dino
--- Daneen" once per turn.
+-- your hand.
+-- During your Main Phase: You can Fusion Summon 1 Dinosaur Fusion Monster from your Extra Deck, using
+-- monsters from your hand or field.
+-- If this card is sent to the GY: You can make all Dinosaur monsters you currently control gain 400
+-- ATK.
+-- You can only use each effect of "Returned Dino Daneen" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Returned Dino Daneen
+--新世竜ダニアン
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--search

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Number 88: Gimmick Puppet of Leo  (ID: 48995978)
 -- Type: Monster / Effect / Xyz
@@ -46,6 +46,9 @@ function c48995978.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 aux.xyz_number[48995978]=88
+c48995978.mentioned_counter={
+	[0x2b]=true,
+}
 function c48995978.filter(c)
 	return c:GetSequence()<5
 end

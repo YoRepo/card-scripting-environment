@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Ancient Chant  (ID: 78665705)
 -- Type: Spell
@@ -7,8 +7,8 @@
 --
 -- Effect Text:
 -- Add 1 "The Winged Dragon of Ra" from your Deck or GY to your hand, and if you do, you can Tribute
--- Summon 1 monster during your Main Phase this turn, in addition to your Normal Summon/Set.
--- (You can only gain this effect once per turn.)
+-- Summon 1 monster during your Main Phase this turn, in addition to your Normal Summon/Set (you can
+-- only gain this effect once per turn).
 -- You can banish this card from your GY: If you Tribute Summon "The Winged Dragon of Ra" this turn,
 -- its original ATK/DEF become the combined original ATK/DEF of the monsters Tributed for its Summon.
 -- You can only activate 1 "Ancient Chant" per turn.

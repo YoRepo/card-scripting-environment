@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Puppet Master  (ID: 41442341)
 -- Type: Monster / Effect
@@ -7,6 +7,7 @@
 -- Race: Fiend
 -- Level: 6
 -- ATK 0 | DEF 0
+-- Setcode: 0x83
 -- Scope: OCG / TCG
 --
 -- Effect Text:

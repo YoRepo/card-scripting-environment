@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Breaker the Dark Magical Warrior  (ID: 22923081)
 -- Type: Monster / Effect
@@ -63,6 +63,9 @@ function c22923081.initial_effect(c)
 	e4:SetOperation(c22923081.desop)
 	c:RegisterEffect(e4)
 end
+c22923081.mentioned_counter={
+	[0x1]=true,
+}
 function c22923081.addtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
 	Duel.SetOperationInfo(0,CATEGORY_COUNTER,nil,e:GetLabel(),0,0x1)

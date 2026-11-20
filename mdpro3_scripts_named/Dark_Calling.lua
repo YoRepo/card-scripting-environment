@@ -1,14 +1,14 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Dark Calling  (ID: 12071500)
 -- Type: Spell
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Fusion Monster from your Extra Deck, that must be Special Summoned with "Dark
--- Fusion", by banishing the Fusion Materials mentioned on it from your hand and/or GY. (This is
--- treated as a Fusion Summon with "Dark Fusion".)
+-- Fusion", by banishing the Fusion Materials mentioned on it from your hand and/or GY.
+-- (This is treated as a Fusion Summon with "Dark Fusion".)
 --[[ __CARD_HEADER_END__ ]]
 
 --ダーク・コーリング

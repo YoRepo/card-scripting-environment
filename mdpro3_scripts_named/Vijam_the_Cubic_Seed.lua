@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Vijam the Cubic Seed  (ID: 15610297)
 -- Type: Monster / Effect
@@ -50,6 +50,9 @@ function c15610297.initial_effect(c)
 	e3:SetOperation(c15610297.spop)
 	c:RegisterEffect(e3)
 end
+c15610297.mentioned_counter={
+	[0x1038]=true,
+}
 function c15610297.distg(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
 	local bc=c:GetBattleTarget()

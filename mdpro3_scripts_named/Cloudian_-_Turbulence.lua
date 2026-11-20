@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Cloudian - Turbulence  (ID: 16197610)
 -- Type: Monster / Effect
@@ -53,6 +53,9 @@ function c16197610.initial_effect(c)
 	e4:SetOperation(c16197610.spop)
 	c:RegisterEffect(e4)
 end
+c16197610.mentioned_counter={
+	[0x1019]=true,
+}
 function c16197610.sdcon(e)
 	return e:GetHandler():IsPosition(POS_FACEUP_DEFENSE)
 end

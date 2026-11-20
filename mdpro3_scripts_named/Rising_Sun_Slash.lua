@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Rising Sun Slash  (ID: 94807487)
 -- Type: Spell / Equip
@@ -64,6 +64,9 @@ function c94807487.initial_effect(c)
 	e6:SetOperation(c94807487.rop)
 	c:RegisterEffect(e6)
 end
+c94807487.mentioned_counter={
+	[0x31]=true,
+}
 function c94807487.eqlimit(e,c)
 	return c:IsSetCard(0x107f)
 end

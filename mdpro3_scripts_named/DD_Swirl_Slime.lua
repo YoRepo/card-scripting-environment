@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: D/D Swirl Slime  (ID: 45206713)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -8,13 +8,13 @@
 -- Level: 2
 -- ATK 200 | DEF 200
 -- Setcode: 0xaf
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If this card is in your hand: You can Fusion Summon 1 "D/D/D" Fusion Monster from your Extra Deck,
--- using monsters from your hand as Fusion Materials, including this card. You can banish this card
--- from your GY; Special Summon 1 "D/D" monster from your hand. You can only use each effect of "D/D
--- Swirl Slime" once per turn.
+-- using monsters from your hand as materials, including this card.
+-- You can banish this card from your GY; Special Summon 1 "D/D" monster from your hand.
+-- You can only use each effect of "D/D Swirl Slime" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --DDスワラル・スライム

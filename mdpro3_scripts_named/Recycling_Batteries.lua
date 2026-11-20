@@ -1,13 +1,12 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Recycling Batteries  (ID: 99995595)
 -- Type: Spell
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Target 2 Thunder-Type monsters with 1500 or less ATK in your Graveyard; add those targets to your
--- hand.
+-- Target 2 Thunder monsters with 1500 or less ATK in your GY; add those targets to your hand.
 --[[ __CARD_HEADER_END__ ]]
 
 --バッテリーリサイクル

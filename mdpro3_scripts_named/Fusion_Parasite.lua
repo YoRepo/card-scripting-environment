@@ -1,20 +1,20 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Fusion Parasite  (ID: 6205579)
 -- Type: Monster / Effect
 -- Attribute: DARK
 -- Race: Insect
 -- Level: 1
 -- ATK 0 | DEF 0
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- This card can be used as a substitute for any 1 Fusion Material whose name is specifically listed on
--- the Fusion Monster Card, but the other Fusion Material(s) must be correct. Cannot be used as Fusion
--- Material otherwise. If this card is Special Summoned (except during the Damage Step): You can Fusion
--- Summon 1 Fusion Monster from your Extra Deck, using monsters you control as Fusion Materials,
--- including this card.
+-- the Fusion Monster Card, but the other Fusion Material(s) must be correct.
+-- Cannot be used as Fusion Material otherwise.
+-- If this card is Special Summoned (except during the Damage Step): You can Fusion Summon 1 Fusion
+-- Monster from your Extra Deck, using monsters you control as Fusion Materials, including this card.
 --[[ __CARD_HEADER_END__ ]]
 
 --パラサイト・フュージョナー

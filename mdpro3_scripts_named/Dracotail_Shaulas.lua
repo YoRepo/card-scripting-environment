@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Dracotail Shaulas  (ID: 42125140)
 -- Type: Monster / Effect / Fusion
@@ -181,7 +181,7 @@ function s.tdtg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 end
 function s.tdop(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.GetTargetsRelateToChain()
-	if g:FilterCount(Card.IsAbleToDeck,nil)~=3 then return end
+	if g:FilterCount(aux.NecroValleyFilter(Card.IsAbleToDeck),nil)~=3 then return end
 	Duel.SendtoDeck(g,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)
 end
 function s.spcon(e,tp,eg,ep,ev,re,r,rp)

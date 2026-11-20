@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:48
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Graydle Dragon  (ID: 52145422)
 -- Type: Monster / Effect / Synchro
@@ -11,11 +11,11 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- 1 Aqua-Type Tuner + 1 or more non-Tuner monsters
+-- 1 Aqua Tuner + 1 or more non-Tuner monsters
 -- When this card is Synchro Summoned: You can target cards your opponent controls, up to the number of
 -- WATER monsters used for the Synchro Summon of this card; destroy them.
--- If this card is destroyed by battle or card effect and sent to the Graveyard: You can target 1 other
--- WATER monster in your Graveyard; Special Summon it, but its effects are negated.
+-- If this card is destroyed by battle or card effect and sent to the GY: You can target 1 other WATER
+-- monster in your GY; Special Summon it, but its effects are negated.
 -- You can only use each effect of "Graydle Dragon" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

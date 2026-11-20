@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Myutant Cry  (ID: 31855260)
 -- Type: Trap
 -- Setcode: 0x157
@@ -9,7 +9,8 @@
 -- Effect Text:
 -- During the Main Phase: Fusion Summon 1 "Myutant" Fusion Monster from your Extra Deck, by shuffling
 -- the Fusion Materials listed on it into the Deck, from among your cards on the field, in your GY,
--- and/or your face-up banished cards. You can only activate 1 "Myutant Cry" per turn.
+-- and/or your face-up banished cards.
+-- You can only activate 1 "Myutant Cry" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ミュートリアスの産声

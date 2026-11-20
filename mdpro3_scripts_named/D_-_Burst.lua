@@ -1,16 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: D - Burst  (ID: 100263010)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: D - Burst  (ID: 47471667)
 -- Type: Spell
 -- Scope: OCG
 --
 -- Effect Text:
 -- Target 1 face-up Spell you control; destroy it, and if you do, draw 1 card, then if you control a
 -- "Destiny HERO" monster, you can Special Summon 1 "Destiny HERO" monster from your hand, GY, or
--- banishment. At the end of the Damage Step, if a monster equipped with an Equip Card, or "Destiny
--- HERO - Dogma", attacked: You can banish this card from your GY; that monster can make a second
--- attack in a row. You can only activate 1 "D - Burst" per turn.
+-- banishment.
+-- At the end of the Damage Step, if "Destiny HERO - Dogma" or a monster equipped with an Equip Card
+-- attacked: You can banish this card from your GY; the attacking monster can make a second attack in a
+-- row.
+-- You can only activate 1 "D - Burst" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --D－バースト

@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Relinquished Fusion  (ID: 78063197)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x110, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 "Eyes Restrict" Fusion Monster from your Extra Deck, by banishing materials from
--- your hand, field, and/or GY. During your Main Phase: You can banish this card from your GY, then
--- target 1 Effect Monster your opponent controls; equip that target to an "Eyes Restrict" Fusion
--- Monster or "Relinquished" you control, as if it were equipped by that monster's effect. You can only
--- use each effect of "Relinquished Fusion" once per turn.
+-- your hand, field, and/or GY.
+-- During your Main Phase: You can banish this card from your GY, then target 1 Effect Monster your
+-- opponent controls; equip that target to an "Eyes Restrict" Fusion Monster or "Relinquished" you
+-- control, as if it were equipped by that monster's effect.
+-- You can only use each effect of "Relinquished Fusion" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --サクリファイス・フュージョン

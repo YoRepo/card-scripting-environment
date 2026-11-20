@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Hojo the Vaylantz Warrior  (ID: 88919365)
 -- Type: Monster / Effect / Pendulum
 -- Attribute: WATER
@@ -9,20 +9,21 @@
 -- ATK 1900 | DEF 1900
 -- Pendulum Scale: L1 / R1
 -- Setcode: 0x17d
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Pendulum Scale = 1
 -- [ Pendulum Effect ]
 -- If "Vaylantz World - Shinra Bansho" is in a Field Zone or if you control a WATER "Vaylantz" monster:
--- You can Special Summon this card to your Main Monster Zone in its same column. You can only use this
--- effect of "Hojo the Vaylantz Warrior" once per turn.
+-- You can Special Summon this card to your Main Monster Zone in its same column.
+-- You can only use this effect of "Hojo the Vaylantz Warrior" once per turn.
 -- ----------------------------------------
 -- [ Monster Effect ]
--- You can target 1 face-up card in either Spell & Trap Zone; return it to the hand. If this card in
--- the Monster Zone moves to another Monster Zone (except during the Damage Step): You can Fusion
--- Summon 1 "Vaylantz" Fusion Monster from your Extra Deck, using monsters from your hand, field,
--- and/or Pendulum Zones. You can only use each effect of "Hojo the Vaylantz Warrior" once per turn.
+-- You can target 1 face-up card in either Spell & Trap Zone; return it to the hand.
+-- If this card in the Monster Zone moves to another Monster Zone (except during the Damage Step): You
+-- can Fusion Summon 1 "Vaylantz" Fusion Monster from your Extra Deck, using monsters from your hand,
+-- field, and/or Pendulum Zones.
+-- You can only use each effect of "Hojo the Vaylantz Warrior" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ヴァリアンツの武者－北条

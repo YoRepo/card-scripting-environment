@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Phantasm Spiral Power  (ID: 61397885)
 -- Type: Trap
@@ -10,8 +10,8 @@
 -- If all monsters you control are Normal Monsters (min. 1): Target 1 Effect Monster your opponent
 -- controls; until the end of this turn, it loses 1000 ATK and DEF, also it has its effects negated.
 -- If "Umi" is on the field, you can activate this card from your hand.
--- You can banish this card from your Graveyard, then target 1 Normal Monster you control; equip 1
--- "Phantasm Spiral" Equip Spell Card from your hand or Graveyard to that Normal Monster.
+-- You can banish this card from your GY, then target 1 Normal Monster you control; equip 1 "Phantasm
+-- Spiral" Equip Spell from your hand or GY to that Normal Monster.
 --[[ __CARD_HEADER_END__ ]]
 
 --幻煌龍の浸渦

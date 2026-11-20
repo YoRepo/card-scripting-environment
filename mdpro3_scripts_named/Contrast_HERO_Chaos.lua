@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Contrast HERO Chaos  (ID: 23204029)
 -- Type: Monster / Effect / Fusion
@@ -15,8 +15,8 @@
 -- (This card is always treated as an "Elemental HERO" card.)
 -- Must be Fusion Summoned and cannot be Special Summoned by other ways.
 -- While face-up on the field, this card is also LIGHT-Attribute.
--- Once per turn, during either player's turn: You can target 1 face-up card on the field; negate that
--- target's effects until the end of this turn.
+-- Once per turn (Quick Effect): You can target 1 face-up card on the field; negate that target's
+-- effects until the end of this turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --C・HERO カオス

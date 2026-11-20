@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:48
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: El Shaddoll Apkallone  (ID: 50907446)
 -- Type: Monster / Effect / Fusion
 -- Attribute: DARK
@@ -8,12 +8,13 @@
 -- Level: 6
 -- ATK 2500 | DEF 2000
 -- Setcode: 0x9d
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2 "Shaddoll" monsters with different Attributes
--- Must first be Fusion Summoned. Cannot be destroyed by battle. You can only use each of the following
--- effects of "El Shaddoll Apkallone" once per turn.
+-- Must first be Fusion Summoned.
+-- Cannot be destroyed by battle.
+-- You can only use each of the following effects of "El Shaddoll Apkallone" once per turn.
 -- ● If this card is Special Summoned: You can target 1 face-up card on the field; negate its effects.
 -- ● If this card is sent to the GY: You can add 1 "Shaddoll" card from your Deck or GY to your hand,
 -- then discard 1 card.

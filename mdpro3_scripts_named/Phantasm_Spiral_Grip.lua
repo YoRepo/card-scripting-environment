@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Phantasm Spiral Grip  (ID: 75702749)
 -- Type: Spell / Equip
@@ -10,8 +10,8 @@
 -- Equip only to a Normal Monster.
 -- It gains 500 ATK.
 -- When the equipped monster destroys an opponent's monster by battle: You can Special Summon 1
--- "Phantasm Spiral Dragon" from your hand, Deck, or Graveyard, and equip it with this card, then
--- inflict 1000 damage to your opponent.
+-- "Phantasm Spiral Dragon" from your hand, Deck, or GY, and equip it with this card, then inflict 1000
+-- damage to your opponent.
 -- You can only use this effect of "Phantasm Spiral Grip" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

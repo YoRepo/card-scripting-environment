@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Predaplant Triantis  (ID: 17825378)
 -- Type: Monster / Effect / Pendulum
 -- Attribute: DARK
@@ -9,7 +9,7 @@
 -- ATK 2400 | DEF 1000
 -- Pendulum Scale: L8 / R8
 -- Setcode: 0x10f3
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Pendulum Scale = 8
@@ -48,6 +48,9 @@ function c17825378.initial_effect(c)
 	e2:SetOperation(c17825378.ctop)
 	c:RegisterEffect(e2)
 end
+c17825378.mentioned_counter={
+	[0x1041]=true,
+}
 function c17825378.mtval(e,c)
 	if not c then return true end
 	return true --c:IsAttribute(ATTRIBUTE_DARK)

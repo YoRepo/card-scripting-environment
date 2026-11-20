@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Artmage Power Patron  (ID: 23829452)
 -- Type: Monster / Effect
 -- Attribute: EARTH
@@ -8,15 +8,16 @@
 -- Level: 1
 -- ATK 300 | DEF 200
 -- Setcode: 0x1cd, 0x1ce
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- You cannot Special Summon from the Extra Deck, except Fusion Monsters. You can only use each of the
--- following effects of "Artmage Power Patron" once per turn. During the Main Phase (Quick Effect): You
--- can Fusion Summon 1 "Artmage" Fusion Monster or 1 "Nerva the Power Patron of Creation" from your
--- Extra Deck, using this card you control and monsters from your hand or field. If this card is sent
--- from the hand or field to the GY: You can add 1 "Artmage" Spell/Trap from your Deck to your hand,
--- with a different name from the cards in your GY.
+-- You cannot Special Summon from the Extra Deck, except Fusion Monsters.
+-- You can only use each of the following effects of "Artmage Power Patron" once per turn.
+-- During the Main Phase (Quick Effect): You can Fusion Summon 1 "Artmage" Fusion Monster or 1 "Nerva
+-- the Power Patron of Creation" from your Extra Deck, using this card you control and monsters from
+-- your hand or field.
+-- If this card is sent from the hand or field to the GY: You can add 1 "Artmage" Spell/Trap from your
+-- Deck to your hand, with a different name from the cards in your GY.
 --[[ __CARD_HEADER_END__ ]]
 
 --アルトメギアの獄神獣

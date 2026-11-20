@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Armor Exe  (ID: 7180418)
 -- Type: Monster / Effect
@@ -41,6 +41,9 @@ function c7180418.initial_effect(c)
 	e4:SetOperation(c7180418.ccost)
 	c:RegisterEffect(e4)
 end
+c7180418.mentioned_counter={
+	[0x1]=true,
+}
 function c7180418.atklimit(e,tp,eg,ep,ev,re,r,rp)
 	local e1=Effect.CreateEffect(e:GetHandler())
 	e1:SetType(EFFECT_TYPE_SINGLE)

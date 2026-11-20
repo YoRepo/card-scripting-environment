@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Synchro World  (ID: 36742774)
 -- Type: Spell / Field
@@ -77,6 +77,9 @@ function s.initial_effect(c)
 	c:RegisterEffect(e6)
 end
 s.counter_add_list={0x104d}
+s.mentioned_counter={
+	[0x104d]=true,
+}
 function s.ctfilter(c)
 	return c:IsFaceup() and c:IsSummonType(SUMMON_TYPE_SYNCHRO)
 end

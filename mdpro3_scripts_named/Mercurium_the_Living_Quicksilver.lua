@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Mercurium the Living Quicksilver  (ID: 22984000)
 -- Type: Monster / Effect / Xyz
 -- Attribute: DARK
@@ -11,14 +11,14 @@
 --
 -- Effect Text:
 -- 2+ Level 10 monsters
--- If this card is Xyz Summoned: You can attach 1 monster from your Deck to this card as material. You
--- can only use this effect of "Mercurium the Living Quicksilver" once per turn. While this card has
--- material, your opponent cannot activate the effects of monsters in their GY with the same Attribute
--- as a monster in your GY. Once per turn, during the End Phase: Detach 1 material from this card or
--- take 3000 damage.
+-- If this card is Xyz Summoned: You can attach 1 monster from your Deck to this card as material.
+-- You can only use this effect of "Mercurium the Living Quicksilver" once per turn.
+-- While this card has material, your opponent cannot activate the effects of monsters in their GY with
+-- the same Attribute as a monster in your GY.
+-- Once per turn, during the End Phase: Detach 1 material from this card or take 3000 damage.
 --[[ __CARD_HEADER_END__ ]]
 
---Mercurium the Living Quicksilver
+--生命の汞 メルクリウム
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--xyz summon

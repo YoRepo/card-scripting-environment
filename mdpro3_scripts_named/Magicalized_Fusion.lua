@@ -1,14 +1,15 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Magicalized Fusion  (ID: 11827244)
 -- Type: Spell
 -- Setcode: 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Spellcaster Fusion Monster from your Extra Deck, by banishing its materials from
--- your field or GY. You can only activate 1 "Magicalized Fusion" per turn.
+-- your field or GY.
+-- You can only activate 1 "Magicalized Fusion" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --円融魔術

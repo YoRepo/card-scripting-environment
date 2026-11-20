@@ -1,21 +1,22 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Father Grizzly  (ID: 101306032)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Father Grizzly  (ID: 82970905)
 -- Type: Monster / Effect
 -- Attribute: WATER
 -- Race: Beast-Warrior
 -- Level: 4
 -- ATK 1400 | DEF 1000
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- When this card is destroyed by battle and sent to the GY: You can Special Summon 1 Level 4 monster
 -- with 1400 ATK from your Deck, or if you have 2 or more Level 4 monsters with 1400 ATK in your GY,
--- you can Special Summon 1 Normal Monster instead. When your opponent activates a monster effect and
--- you control a face-up non-Effect Monster (Quick Effect): You can banish this card from your GY;
--- negate the activation, and if you do, destroy that monster. You can only use this effect of "Father
--- Grizzly" once per turn.
+-- you can Special Summon 1 Normal Monster instead.
+-- When your opponent activates a monster effect, while you control a face-up non-Effect Monster (Quick
+-- Effect): You can banish this card from your GY; negate the activation, and if you do, destroy that
+-- card.
+-- You can only use this effect of "Father Grizzly" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --グリズリーファザー
@@ -71,7 +72,7 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 function s.ngfilter(c)
-	return not c:IsType(TYPE_EFFECT) and c:IsFaceup() or c:IsFacedown()
+	return not c:IsType(TYPE_EFFECT) and c:IsFaceup()
 end
 function s.ngcon(e,tp,eg,ep,ev,re,r,rp)
 	return rp~=tp and re:IsActiveType(TYPE_MONSTER) and Duel.IsChainNegatable(ev)

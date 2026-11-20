@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Number C103: Ragnafinity  (ID: 20785975)
 -- Type: Monster / Effect / Xyz
@@ -12,12 +12,11 @@
 --
 -- Effect Text:
 -- 3 Level 5 monsters
--- Once per turn, during either player's turn: You can detach 1 Xyz Material from this card, then
--- target 1 face-up monster your opponent controls; inflict damage to your opponent equal to the
--- difference between that monster's original ATK and current ATK, and if you do, banish it.
--- When this card is destroyed and sent to the Graveyard while it has Xyz Material: You can Special
--- Summon this card. "Number 103: Ragnazero" must be in your Graveyard to activate and to resolve this
--- effect.
+-- Once per turn (Quick Effect): You can detach 1 Xyz Material from this card, then target 1 face-up
+-- monster your opponent controls; inflict damage to your opponent equal to the difference between that
+-- monster's original ATK and current ATK, and if you do, banish it.
+-- When this card is destroyed and sent to the GY while it has Xyz Material: You can Special Summon
+-- this card. "Number 103: Ragnazero" must be in your GY to activate and to resolve this effect.
 --[[ __CARD_HEADER_END__ ]]
 
 --CNo.103 神葬零嬢ラグナ・インフィニティ

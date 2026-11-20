@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Elzette, Azamina of the White Forest  (ID: 38648860)
 -- Type: Monster / Effect
 -- Attribute: LIGHT
@@ -8,14 +8,16 @@
 -- Level: 2
 -- ATK 0 | DEF 0
 -- Setcode: 0x1b1, 0x1bc
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- You can reveal this card in your hand; Special Summon 1 "White Forest" or "Azamina" monster from
--- your hand. During your Main Phase: You can Fusion Summon 1 "Azamina" Fusion Monster from your Extra
--- Deck, using monsters from your hand or field. If this card is sent to the GY as Synchro Material:
--- You can add 1 "Sinful Spoils" card from your Deck to your hand. You can only use each effect of
--- "Elzette, Azamina of the White Forest" once per turn.
+-- your hand.
+-- During your Main Phase: You can Fusion Summon 1 "Azamina" Fusion Monster from your Extra Deck, using
+-- monsters from your hand or field.
+-- If this card is sent to the GY as Synchro Material: You can add 1 "Sinful Spoils" card from your
+-- Deck to your hand.
+-- You can only use each effect of "Elzette, Azamina of the White Forest" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --白き森の聖徒リゼット

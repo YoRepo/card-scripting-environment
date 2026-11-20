@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Plunder Patroll Shipshape Ships Shipping  (ID: 44227727)
 -- Type: Spell
 -- Setcode: 0x13f
@@ -8,10 +8,10 @@
 --
 -- Effect Text:
 -- Fusion Summon 1 Fiend Fusion Monster from your Extra Deck, using monsters from your hand or field as
--- Fusion Material. You can banish this card from your GY, then target 1 "Plunder Patroll" monster you
--- control; equip 1 "Emblem of the Plunder Patroll", or 1 "Plunder Patroll" monster, from your Deck to
--- that target. You can only use this effect of "Plunder Patroll Shipshape Ships Shipping" once per
--- turn.
+-- Fusion Material.
+-- You can banish this card from your GY, then target 1 "Plunder Patroll" monster you control; equip 1
+-- "Emblem of the Plunder Patroll", or 1 "Plunder Patroll" monster, from your Deck to that target.
+-- You can only use this effect of "Plunder Patroll Shipshape Ships Shipping" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --海造賊－進水式

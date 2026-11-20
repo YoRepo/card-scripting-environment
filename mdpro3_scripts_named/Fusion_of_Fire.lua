@@ -1,15 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Fusion of Fire  (ID: 25800447)
 -- Type: Spell
 -- Setcode: 0x46, 0x119
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- (This card is always treated as a "Salamangreat" card.)
 -- Fusion Summon 1 "Salamangreat" Fusion Monster from your Extra Deck, using monsters from your hand
--- and/or either field as Fusion Material. You can only activate 1 "Fusion of Fire" per turn.
+-- and/or either field as material.
+-- You can only activate 1 "Fusion of Fire" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --フュージョン・オブ・ファイア

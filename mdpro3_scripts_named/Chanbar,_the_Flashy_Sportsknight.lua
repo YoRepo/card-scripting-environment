@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:48
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Chanbar, the Flashy Sportsknight  (ID: 50643638)
 -- Type: Monster / Effect / Synchro
 -- Attribute: LIGHT
@@ -10,15 +10,16 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- 1 Tuner + 1+ non-Tuner monsters
--- Monsters your opponent controls lose 400 ATK for each Equip Spell you control. You can only use each
--- of the following effects of "Chanbar, the Flashy Sportsknight" once per turn. You can target 1 other
--- card on the field; send 1 Equip Spell from your hand or Deck to the GY, and if you do, destroy that
--- target. If this card is in your GY: You can target 2 face-up cards in your Spell & Trap Zone;
--- destroy them, and if you do, Special Summon this card.
+-- 1 Tuner + 1+ non-Tuners
+-- Monsters your opponent controls lose 400 ATK for each Equip Spell you control.
+-- You can only use each of the following effects of "Chanbar, the Flashy Sportsknight" once per turn.
+-- You can target 1 other card on the field; send 1 Equip Spell from your hand or Deck to the GY, and
+-- if you do, destroy that target.
+-- If this card is in your GY: You can target 2 face-up cards in your Spell & Trap Zone; destroy them,
+-- and if you do, Special Summon this card.
 --[[ __CARD_HEADER_END__ ]]
 
---Chanbar, the Flashy Sportsknight
+--明滅騎士チャンバル
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Synchro summon

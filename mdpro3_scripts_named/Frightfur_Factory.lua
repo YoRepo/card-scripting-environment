@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Frightfur Factory  (ID: 43698897)
 -- Type: Spell / Continuous
 -- Setcode: 0xad
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- You can banish 1 "Polymerization" Spell Card or "Fusion" Spell Card from your Graveyard, except
 -- "Diffusion Wave-Motion"; Fusion Summon 1 "Frightfur" Fusion Monster from your Extra Deck, using
--- monsters from your hand or your side of the field as Fusion Materials. If this card is sent to the
--- Graveyard: You can target 1 of your banished "Frightfur Fusion"; add it to your hand. You can only
--- use each effect of "Frightfur Factory" once per turn.
+-- monsters from your hand or your side of the field as Fusion Materials.
+-- If this card is sent to the Graveyard: You can target 1 of your banished "Frightfur Fusion"; add it
+-- to your hand.
+-- You can only use each effect of "Frightfur Factory" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --デストーイ・ファクトリー

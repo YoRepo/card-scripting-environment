@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Super Soldier Shield  (ID: 799183)
 -- Type: Trap / Counter
@@ -35,6 +35,9 @@ function c799183.initial_effect(c)
 	e2:SetOperation(c799183.setop)
 	c:RegisterEffect(e2)
 end
+c799183.mentioned_counter={
+	[0x1]=true,
+}
 function c799183.condition(e,tp,eg,ep,ev,re,r,rp)
 	if not Duel.IsExistingMatchingCard(Card.IsSetCard,tp,LOCATION_MZONE,0,1,nil,0x10cf) then return false end
 	if not re:IsHasProperty(EFFECT_FLAG_CARD_TARGET) then return false end

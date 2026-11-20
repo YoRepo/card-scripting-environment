@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Divine Serpent Apophis  (ID: 97800311)
 -- Type: Monster / Effect / Fusion
@@ -112,7 +112,7 @@ function s.settg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	Duel.SetOperationInfo(0,CATEGORY_LEAVE_GRAVE,sg,1,0,0)
 end
 function s.setop(e,tp,eg,ep,ev,re,r,rp)
-	local tg=Duel.GetTargetsRelateToChain()
+	local tg=Duel.GetTargetsRelateToChain():Filter(aux.NecroValleyFilter(),nil)
 	local ft=Duel.GetLocationCount(tp,LOCATION_SZONE)
 	if #tg==0 or ft<=0 then return end
 	if #tg>ft then

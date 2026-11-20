@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Beetrooper Landing  (ID: 13234975)
 -- Type: Spell
 -- Setcode: 0x170
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Insect Fusion Monster from your Extra Deck, using monsters from your hand or field
--- as Fusion Material. If this card is in your GY, except the turn it was sent there: You can banish 2
--- Insect monsters from your GY; add this card to your hand. You can only use this effect of
--- "Beetrooper Landing" once per turn.
+-- as Fusion Material.
+-- If this card is in your GY, except the turn it was sent there: You can banish 2 Insect monsters from
+-- your GY; add this card to your hand.
+-- You can only use this effect of "Beetrooper Landing" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --騎甲虫隊上陸態勢

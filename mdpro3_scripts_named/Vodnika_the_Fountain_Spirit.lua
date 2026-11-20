@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Vodnika the Fountain Spirit  (ID: 68378605)
 -- Type: Monster / Effect
 -- Attribute: LIGHT
@@ -12,13 +12,13 @@
 -- Effect Text:
 -- If a Level 10 monster(s) is sent to the GY, except "Vodnika the Fountain Spirit" (except during the
 -- Damage Step): You can Special Summon this card from your GY (if it was there when the monster was
--- sent) or hand (even if not) in Defense Position, but banish it when it leaves the field. You can
--- target 1 Level 10 monster in your GY; Special Summon it to your opponent's field (but negate its
--- effects), then draw 1 card. You can only use each effect of "Vodnika the Fountain Spirit" once per
--- turn.
+-- sent) or hand (even if not) in Defense Position, but banish it when it leaves the field.
+-- You can target 1 Level 10 monster in your GY; Special Summon it to your opponent's field (but negate
+-- its effects), then draw 1 card.
+-- You can only use each effect of "Vodnika the Fountain Spirit" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Vodnika the Fountain Spirit
+--還流の精ヴォドニカ
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--spsummon

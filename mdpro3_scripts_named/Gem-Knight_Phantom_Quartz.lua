@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Gem-Knight Phantom Quartz  (ID: 24484270)
 -- Type: Monster / Effect / Link
 -- Attribute: EARTH
@@ -9,14 +9,14 @@
 -- Link Arrows: Bottom-Left, Bottom-Right
 -- ATK 1450
 -- Setcode: 0x1047
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2 "Gem-" monsters
--- If this card is Link Summoned: You can add 1 "Gem-Knight" card from your Deck to your hand. You can
--- pay 1000 LP; Fusion Summon 1 "Gem-Knight" Fusion Monster from your Extra Deck, by shuffling its
--- materials from your GY or banishment into the Deck, but it cannot attack directly this turn. You can
--- only use each effect of "Gem-Knight Phantom Quartz" once per turn.
+-- If this card is Link Summoned: You can add 1 "Gem-Knight" card from your Deck to your hand.
+-- You can pay 1000 LP; Fusion Summon 1 "Gem-Knight" Fusion Monster from your Extra Deck, by shuffling
+-- its materials from your GY or banishment into the Deck, but it cannot attack directly this turn.
+-- You can only use each effect of "Gem-Knight Phantom Quartz" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ジェムナイト・ファントムルーツ

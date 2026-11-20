@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Fossil Fusion  (ID: 59419719)
 -- Type: Spell
 -- Setcode: 0x149, 0x46
@@ -8,11 +8,12 @@
 --
 -- Effect Text:
 -- Fusion Summon 1 "Fossil" Fusion Monster from your Extra Deck, by banishing Fusion Materials
--- mentioned on it from any GYs (except for materials with a specific GY requirement listed). If you
--- banished monsters from both GYs, neither player can target that Special Summoned monster with
--- monster effects. If a face-up "Fossil" Fusion Monster(s) you control is destroyed by battle or card
--- effect, while this card is in your GY: You can add this card from the GY to your hand. You can only
--- use this effect of "Fossil Fusion" once per turn.
+-- mentioned on it from any GYs (except for materials with a specific GY requirement listed).
+-- If you banished monsters from both GYs, neither player can target that Special Summoned monster with
+-- monster effects.
+-- If a face-up "Fossil" Fusion Monster(s) you control is destroyed by battle or card effect, while
+-- this card is in your GY: You can add this card from the GY to your hand.
+-- You can only use this effect of "Fossil Fusion" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --化石融合－フォッシル・フュージョン

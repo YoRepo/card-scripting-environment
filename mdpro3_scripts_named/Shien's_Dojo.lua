@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Shien's Dojo  (ID: 47436247)
 -- Type: Spell / Continuous
@@ -43,6 +43,9 @@ function c47436247.initial_effect(c)
 	c:RegisterEffect(e4)
 end
 c47436247.counter_add_list={0x3}
+c47436247.mentioned_counter={
+	[0x3]=true,
+}
 function c47436247.ctfilter(c)
 	return c:IsFaceup() and c:IsSetCard(0x103d)
 end

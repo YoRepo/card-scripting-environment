@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Dracotail Mululu  (ID: 7375867)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -8,15 +8,15 @@
 -- Level: 3
 -- ATK 1100 | DEF 1500
 -- Setcode: 0x1c9
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During the Main Phase (Quick Effect): You can Fusion Summon 1 "Dracotail" Fusion Monster from your
 -- Extra Deck, using monsters from your hand or field, also you cannot Special Summon from the Extra
--- Deck for the rest of this turn, except Fusion Monsters. If this card is sent to the GY as material
--- for a Fusion Summon: You can Set 1 "Dracotail" Spell/Trap from your Deck, then you can negate the
--- effects of 1 face-up monster your opponent controls. You can only use each effect of "Dracotail
--- Mululu" once per turn.
+-- Deck for the rest of this turn, except Fusion Monsters.
+-- If this card is sent to the GY as material for a Fusion Summon: You can Set 1 "Dracotail" Spell/Trap
+-- from your Deck, then you can negate the effects of 1 face-up monster your opponent controls.
+-- You can only use each effect of "Dracotail Mululu" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --星辰竜ムルル

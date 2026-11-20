@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Red-Eyes Archfiend of Lightning  (ID: 39357122)
 -- Type: Monster / Effect / Gemini
@@ -11,7 +11,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- This card is treated as a Normal Monster while face-up on the field or in the Graveyard.
+-- This card is treated as a Normal Monster while face-up on the field or in the GY.
 -- While this card is a Normal Monster on the field, you can Normal Summon it to have it become an
 -- Effect Monster with this effect.
 -- ● Once per turn: You can destroy all face-up monsters your opponent controls with DEF lower than

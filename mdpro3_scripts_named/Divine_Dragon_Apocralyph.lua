@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Divine Dragon Apocralyph  (ID: 20277376)
 -- Type: Monster / Effect
@@ -10,8 +10,8 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Once per turn: You can discard 1 card, then target 1 Dragon-Type monster in your Graveyard; add that
--- target to your hand.
+-- Once per turn: You can discard 1 card, then target 1 Dragon monster in your GY; add that target to
+-- your hand.
 --[[ __CARD_HEADER_END__ ]]
 
 --神竜 アポカリプス

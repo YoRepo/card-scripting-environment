@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Turbo-Tainted Hot Rod GT19  (ID: 16769305)
 -- Type: Monster / Effect / Tuner / Flip
@@ -54,7 +54,7 @@ end
 function s.lvtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
 	local lv=e:GetHandler():GetLevel()
-	Duel.Hint(HINT_SELECTMSG,tp,HINGMSG_LVRANK)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_LVRANK)
 	e:SetLabel(Duel.AnnounceLevel(tp,1,9,lv))
 end
 function s.lvop(e,tp,eg,ep,ev,re,r,rp)

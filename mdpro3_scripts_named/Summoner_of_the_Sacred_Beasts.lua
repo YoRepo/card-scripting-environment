@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Summoner of the Sacred Beasts  (ID: 22734799)
 -- Type: Monster / Effect
@@ -70,7 +70,7 @@ function s.spfilter(c,e,tp)
 end
 function s.spsummon(c,tp)
 	local flag=aux.PhantasmsSpSummonType(c)
-	if Duel.SpecialSummon(c,0,tp,tp,false,flag,POS_FACEUP_DEFENSE) and flag then
+	if Duel.SpecialSummon(c,0,tp,tp,false,flag,POS_FACEUP_DEFENSE)>0 and flag then
 		c:CompleteProcedure()
 	end
 end

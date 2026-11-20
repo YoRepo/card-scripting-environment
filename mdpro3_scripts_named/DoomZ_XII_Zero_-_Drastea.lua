@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: DoomZ XII Zero - Drastea  (ID: 92472273)
 -- Type: Monster / Effect
@@ -15,7 +15,7 @@
 -- your hand, then you can equip 1 Equip Spell from your Deck to this card.
 -- While this card is equipped with an Equip Card (Quick Effect): You can Special Summon 1 WIND Machine
 -- Xyz Monster from your Extra Deck with the same Rank as this card's Level, and if you do, attach this
--- card and its Equip Cards to that monster as material (this is treated as an Xyz Summon).
+-- card and its Equip Cards to that monster (this is treated as an Xyz Summon).
 -- You can only use each effect of "DoomZ XII Zero - Drastea" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Stare of the Snake Hair  (ID: 54077752)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -11,13 +11,14 @@
 --
 -- Effect Text:
 -- You can discard this card; add 1 "Call of the Haunted" or 1 Spell/Trap that mentions it from your
--- Deck to your hand. If this card is Special Summoned: You can target 1 Attack Position monster your
--- opponent controls; that face-up monster cannot attack, its effects are negated, also it cannot be
--- used as material for a Fusion, Synchro, Xyz, or Link Summon. You can only use each effect of "Stare
--- of the Snake Hair" once per turn.
+-- Deck to your hand.
+-- If this card is Special Summoned: You can target 1 Attack Position monster your opponent controls;
+-- that face-up monster cannot attack, its effects are negated, also it cannot be used as material for
+-- a Fusion, Synchro, Xyz, or Link Summon.
+-- You can only use each effect of "Stare of the Snake Hair" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Stare of the Snake Hair
+--凍てつく眼光のメデューサ
 local s,id,o=GetID()
 function s.initial_effect(c)
 	aux.AddCodeList(c,97077563)

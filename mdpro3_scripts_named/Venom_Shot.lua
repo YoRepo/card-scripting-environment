@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Venom Shot  (ID: 60728397)
 -- Type: Spell
@@ -26,6 +26,9 @@ function c60728397.initial_effect(c)
 	e1:SetOperation(c60728397.activate)
 	c:RegisterEffect(e1)
 end
+c60728397.mentioned_counter={
+	[0x1009]=true,
+}
 function c60728397.cfilter(c)
 	return c:IsFaceup() and (c:IsCode(72677437,8062132) or c:IsSetCard(0x50))
 end

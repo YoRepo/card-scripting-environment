@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: The Dragon Dwelling in the Deep  (ID: 4404099)
 -- Type: Monster / Effect
@@ -45,6 +45,9 @@ function c4404099.initial_effect(c)
 	e2:SetLabelObject(e0)
 	c:RegisterEffect(e2)
 end
+c4404099.mentioned_counter={
+	[0x23]=true,
+}
 function c4404099.addct(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
 	Duel.SetOperationInfo(0,CATEGORY_COUNTER,nil,1,0,0x23)

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Ecclesia and the Dark Dragon  (ID: 78397661)
 -- Type: Monster / Effect / Synchro
@@ -123,6 +123,6 @@ function s.tdop(e,tp,eg,ep,ev,re,r,rp)
 	if not c:IsRelateToChain() then return end
 	local g=Duel.GetTargetsRelateToChain()
 	g:AddCard(c)
-	if g:FilterCount(Card.IsAbleToDeck,nil)~=3 then return end
+	if g:FilterCount(aux.NecroValleyFilter(Card.IsAbleToDeck),nil)~=3 then return end
 	Duel.SendtoDeck(g,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)
 end

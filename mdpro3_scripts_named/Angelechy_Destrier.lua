@@ -1,22 +1,23 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Angelechy Destrier  (ID: 101305092)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Angelechy Destrier  (ID: 55393975)
 -- Type: Monster / Effect / Synchro
 -- Attribute: LIGHT
 -- Race: Fairy
 -- Level: 7
 -- ATK 2500 | DEF 2000
--- Setcode: 0x2e5
+-- Setcode: 0x1e2
 -- Scope: TCG
 --
 -- Effect Text:
 -- 1 Tuner + 1+ non-Tuners
--- You can target 1 monster in another column; banish it. If this card is placed in the Spell & Trap
--- Zone as a Continuous Spell: You can add 1 "Angelechy" Spell from your Deck to your hand. You can
--- only use each of the preceding effects of "Angelechy Destrier" once per turn. While this card is
--- treated as a Continuous Spell, each time your opponent activates a card or effect, inflict 500
--- damage to your opponent when it resolves.
+-- You can target 1 monster in another column; banish it.
+-- If this card is placed in the Spell & Trap Zone as a Continuous Spell: You can add 1 "Angelechy"
+-- Spell from your Deck to your hand.
+-- You can only use each of the preceding effects of "Angelechy Destrier" once per turn.
+-- While this card is treated as a Continuous Spell, each time your opponent activates a card or
+-- effect, inflict 500 damage to your opponent when it resolves.
 --[[ __CARD_HEADER_END__ ]]
 
 --Angelechy Destrier
@@ -51,6 +52,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e3)
 	local e4=Effect.CreateEffect(c)
 	e4:SetDescription(aux.Stringid(id,1))
+	e4:SetCategory(CATEGORY_TOHAND+CATEGORY_SEARCH)
 	e4:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
 	e4:SetCode(EVENT_CUSTOM+id)
 	e4:SetProperty(EFFECT_FLAG_DELAY)
@@ -68,13 +70,13 @@ function s.initial_effect(c)
 	e5:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
 	e5:SetOperation(s.regop)
 	c:RegisterEffect(e5)
-	local e5=Effect.CreateEffect(c)
-	e5:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
-	e5:SetCode(EVENT_CHAIN_SOLVED)
-	e5:SetRange(LOCATION_SZONE)
-	e5:SetCondition(s.damcon)
-	e5:SetOperation(s.damop)
-	c:RegisterEffect(e5)
+	local e6=Effect.CreateEffect(c)
+	e6:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
+	e6:SetCode(EVENT_CHAIN_SOLVED)
+	e6:SetRange(LOCATION_SZONE)
+	e6:SetCondition(s.damcon)
+	e6:SetOperation(s.damop)
+	c:RegisterEffect(e6)
 end
 function s.rmfilter(c,g)
 	return c:IsAbleToRemove() and not g:IsContains(c)
@@ -97,7 +99,7 @@ function s.rmop(e,tp,eg,ep,ev,re,r,rp)
 end
 function s.flagop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	if not c:IsLocation(LOCATION_SZONE) or not c:GetType()==TYPE_SPELL+TYPE_CONTINUOUS then return end
+	if not c:IsLocation(LOCATION_SZONE) or c:GetType()~=TYPE_SPELL+TYPE_CONTINUOUS then return end
 	if Duel.GetCurrentChain()>0 then
 		c:RegisterFlagEffect(id+o,RESET_EVENT+RESETS_STANDARD+RESET_CHAIN,0,1)
 	else
@@ -106,7 +108,7 @@ function s.flagop(e,tp,eg,ep,ev,re,r,rp)
 end
 function s.raiseop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	if not c:GetType()==TYPE_SPELL+TYPE_CONTINUOUS then return end
+	if c:GetType()~=TYPE_SPELL+TYPE_CONTINUOUS then return end
 	if c:GetFlagEffect(id+o)~=0 then
 		Duel.RaiseSingleEvent(c,EVENT_CUSTOM+id,e,0,tp,tp,0)
 	end
@@ -115,7 +117,7 @@ function s.thcon(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():GetType()==TYPE_SPELL+TYPE_CONTINUOUS
 end
 function s.thfilter(c)
-	return c:IsSetCard(0x2e5) and c:IsType(TYPE_SPELL) and c:IsAbleToHand()
+	return c:IsSetCard(0x1e2) and c:IsType(TYPE_SPELL) and c:IsAbleToHand()
 end
 function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.thfilter,tp,LOCATION_DECK,0,1,nil) end

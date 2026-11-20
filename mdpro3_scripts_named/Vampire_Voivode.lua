@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Vampire Voivode  (ID: 4918855)
 -- Type: Monster / Effect
@@ -114,7 +114,7 @@ function c4918855.negop(e,tp,eg,ep,ev,re,r,rp)
 	Duel.NegateActivation(ev)
 end
 function c4918855.cfilter(c,tp)
-	return c:IsSummonLocation(LOCATION_GRAVE) and c:IsPreviousControler(1-tp)
+	return c:IsSummonLocation(LOCATION_GRAVE) and c:IsPreviousControler(1-tp) and c:GetOriginalType()&TYPE_MONSTER~=0
 end
 function c4918855.spcon2(e,tp,eg,ep,ev,re,r,rp)
 	return eg:IsExists(c4918855.cfilter,1,nil,tp)

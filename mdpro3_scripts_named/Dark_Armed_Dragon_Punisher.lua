@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Dark Armed Dragon Punisher  (ID: 100266004)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Dark Armed Dragon Punisher  (ID: 39030883)
 -- Type: Monster / Effect / Special Summon
 -- Attribute: DARK
 -- Race: Dragon
@@ -11,12 +11,13 @@
 -- Scope: OCG
 --
 -- Effect Text:
--- Cannot be Normal Summoned/Set. Must be Special Summoned (from your hand) by having exactly 3 DARK
--- monsters in your GY. You can reveal this card in your hand; Special Summon 1 Level 6 or lower DARK
--- monster from your hand, also you cannot Special Summon for the rest of this turn, except DARK
--- monsters. During the Main Phase (Quick Effect): You can banish up to 3 DARK monsters from your GY,
--- then target that many cards on the field; destroy them. You can only use each effect of "Dark Armed
--- Dragon Punisher" once per turn.
+-- Cannot be Normal Summoned/Set.
+-- Must be Special Summoned (from your hand) by having exactly 3 DARK monsters in your GY.
+-- You can reveal this card in your hand; Special Summon 1 Level 6 or lower DARK monster from your
+-- hand, also you cannot Special Summon for the rest of this turn, except DARK monsters.
+-- During the Main Phase (Quick Effect): You can banish up to 3 DARK monsters from your GY, then target
+-- that many cards on the field; destroy them.
+-- You can only use each effect of "Dark Armed Dragon Punisher" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ダーク・アームド・ドラゴン・バニッシャー

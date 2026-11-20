@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Dark Time Wizard  (ID: 101306052)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Dark Time Wizard  (ID: 40235813)
 -- Type: Spell / Quick-Play
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Activate 1 of these effects (but you can only use each effect of "Dark Time Wizard" once per turn);
 -- ● Add 1 card that mentions "Dark Time Wizard" from your Deck to your hand, except "Dark Time
--- Wizard", also add 1 "Dark Time Wizard" from your GY to your hand during the End Phase of this turn.
--- ● Toss a coin and call it. If you call it right, destroy as many monsters your opponent controls as
--- possible, and if you do, inflict damage to your opponent equal to half the total original ATK of
--- those monsters. If you call it wrong, destroy all monsters you control.
+-- Wizard", also during the End Phase of this turn, add 1 "Dark Time Wizard" from your GY to your hand.
+-- ● Toss a coin and call it.
+-- If you call it right, destroy as many monsters your opponent controls as possible, and if you do,
+-- inflict damage to your opponent equal to half the combined original ATK of those destroyed monsters.
+-- If you call it wrong, destroy all monsters you control.
 --[[ __CARD_HEADER_END__ ]]
 
 --時の黒魔術師
@@ -51,16 +52,17 @@ function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
 		Duel.SetOperationInfo(0,CATEGORY_TOHAND,nil,1,tp,LOCATION_DECK)
 	elseif op==2 then
 		if e:IsCostChecked() then
-			e:SetCategory(CATEGORY_DESTROY)
+			e:SetCategory(CATEGORY_DESTROY+CATEGORY_DAMAGE+CATEGORY_COIN)
 			Duel.RegisterFlagEffect(tp,id+o,RESET_PHASE+PHASE_END,0,1)
 		end
+		local g=Duel.GetMatchingGroup(aux.TRUE,tp,LOCATION_MZONE,LOCATION_MZONE,nil)
+		Duel.SetOperationInfo(0,CATEGORY_DESTROY,g,1,0,0)
+		Duel.SetOperationInfo(0,CATEGORY_COIN,nil,0,tp,1)
 	end
 end
 function s.calfilter(c)
 	if c:GetTextAttack()<0 then return false end
-	if c:GetOriginalType()&TYPE_MONSTER~=0 then return true end
-	local se=c:GetSpecialSummonInfo(SUMMON_INFO_REASON_EFFECT)
-	return se and se:GetHandler()==c
+	return aux.covcheck(c)
 end
 function s.activate(e,tp,eg,ep,ev,re,r,rp)
 	if e:GetLabel()==1 then

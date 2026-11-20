@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Enneacraft - Asta.PIXEA  (ID: 28454232)
 -- Type: Monster / Effect / Flip / Pendulum
@@ -7,6 +7,7 @@
 -- Race: Machine
 -- Level: 9
 -- ATK 3000 | DEF 2500
+-- Pendulum Scale: L0 / R0
 -- Setcode: 0x1d4
 -- Scope: OCG / TCG
 --
@@ -96,6 +97,9 @@ function s.initial_effect(c)
 	c:RegisterEffect(e5)
 	Duel.AddCustomActivityCounter(id,ACTIVITY_SPSUMMON,s.counterfilter)
 end
+s.mentioned_counter={
+	[0x71]=true,
+}
 function s.counterfilter(c)
 	return c:IsFacedown()
 end

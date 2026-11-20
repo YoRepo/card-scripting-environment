@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Explosive Magician  (ID: 33413279)
 -- Type: Monster / Effect / Synchro
@@ -32,6 +32,9 @@ function c33413279.initial_effect(c)
 	e1:SetOperation(c33413279.desop)
 	c:RegisterEffect(e1)
 end
+c33413279.mentioned_counter={
+	[0x1]=true,
+}
 function c33413279.descost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsCanRemoveCounter(tp,1,0,0x1,2,REASON_COST) end
 	Duel.RemoveCounter(tp,1,0,0x1,2,REASON_COST)

@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Shamanite Shamanknight  (ID: 101305086)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Shamanite Shamanknight  (ID: 16237004)
 -- Type: Monster / Effect / Xyz
 -- Attribute: DARK
 -- Race: Warrior
@@ -12,8 +12,9 @@
 -- Effect Text:
 -- 2+ Level 3 monsters
 -- If this card is Xyz Summoned, or if a Trap you own is banished: You can target 1 of your banished
--- Traps; attach it to this card. You can detach any number of materials from this card, then target 1
--- DARK monster in your GY or banishment with a Level equal to the number detached; Special Summon it.
+-- Traps; attach it to this card.
+-- You can detach any number of materials from this card, then target 1 DARK monster in your GY or
+-- banishment with a Level equal to the number detached; Special Summon it.
 -- You can only use each effect of "Shamanite Shamanknight" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
@@ -27,7 +28,7 @@ function s.initial_effect(c)
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
 	e1:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_O)
-	e1:SetProperty(EFFECT_FLAG_DELAY+EFFECT_FLAG_CARD_TARGET)
+	e1:SetProperty(EFFECT_FLAG_DELAY+EFFECT_FLAG_CARD_TARGET+EFFECT_FLAG_DAMAGE_STEP)
 	e1:SetCode(EVENT_SPSUMMON_SUCCESS)
 	e1:SetCountLimit(1,id)
 	e1:SetCondition(s.xyzcon)

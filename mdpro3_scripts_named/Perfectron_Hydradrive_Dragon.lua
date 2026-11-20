@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Perfectron Hydradrive Dragon  (ID: 13203964)
 -- Type: Monster / Effect / Link
@@ -8,17 +8,17 @@
 -- Link Rating: 5
 -- Link Arrows: Left, Right, Bottom-Left, Bottom, Bottom-Right
 -- ATK 5000
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 1+ Link Monsters
+-- While face-up on the field, this card is also LIGHT, WATER, FIRE, and WIND-Attribute, also it is
+-- unaffected by the activated effects of monsters with the same Attribute.
 -- If this card is Link Summoned, or at the end of the Damage Step if this card battled: Destroy as
 -- many monsters your opponent controls as possible, then inflict 300 damage to your opponent for each
 -- Link Monster in your GY.
--- While face-up on the field, this card is also LIGHT, WATER, FIRE, and WIND-Attribute.
--- Unaffected by the activated effects of monsters that share an Attribute with this card.
--- If this card with 1000 or more ATK would be destroyed by battle or card effect, you can make its ATK
--- become reduced by 1000 instead.
+-- If this card with 1000 or more ATK would be destroyed by battle or card effect, you can change its
+-- ATK to be 1000 less than its current ATK instead.
 --[[ __CARD_HEADER_END__ ]]
 
 --パーフェクトロン・ハイドライブ・ドラゴン

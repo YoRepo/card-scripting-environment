@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Garbage Lord  (ID: 44682448)
 -- Type: Monster / Effect
@@ -10,7 +10,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- You can Special Summon this card (from your hand) by paying 2000 Life Points.
+-- You can Special Summon this card (from your hand) by paying 2000 LP.
 -- This card cannot be used as an Xyz Material for an Xyz Summon, except for the Xyz Summon of a DARK
 -- monster.
 --[[ __CARD_HEADER_END__ ]]

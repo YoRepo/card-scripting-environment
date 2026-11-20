@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Invincible Demise Lord  (ID: 100263006)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Invincible Demise Lord  (ID: 71108540)
 -- Type: Monster / Effect
 -- Attribute: DARK
 -- Race: Fiend
@@ -12,10 +12,10 @@
 -- Effect Text:
 -- During the End Phase, if a monster(s) was destroyed by battle this turn: You can Special Summon this
 -- card from your hand or GY, and if "Invincible Demise Lord" was destroyed by battle this turn, this
--- card's original ATK becomes 3000, also it cannot be destroyed by card effects. During your Main
--- Phase: You can reveal cards in your Deck, including "Slash Draw", equal to the number of cards your
--- opponent controls +1 and place those revealed cards on top of the Deck in any order. You can only
--- use each effect of "Invincible Demise Lord" once per turn.
+-- card's original ATK becomes 3000, also it cannot be destroyed by card effects.
+-- During your Main Phase: You can reveal cards from your Deck, including "Slash Draw", equal to the
+-- number of cards your opponent controls +1, and place them on top of your Deck in any order.
+-- You can only use each effect of "Invincible Demise Lord" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --不死のデスロード
@@ -82,16 +82,17 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 		e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_DISABLE)
 		c:RegisterEffect(e1)
 		local e2=Effect.CreateEffect(c)
+		e2:SetDescription(aux.Stringid(id,2))
 		e2:SetType(EFFECT_TYPE_SINGLE)
 		e2:SetCode(EFFECT_INDESTRUCTABLE_EFFECT)
-		e2:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
+		e2:SetProperty(EFFECT_FLAG_CANNOT_DISABLE+EFFECT_FLAG_CLIENT_HINT)
 		e2:SetValue(1)
 		e2:SetReset(RESET_EVENT+RESETS_STANDARD)
 		c:RegisterEffect(e2)
 	end
 end
 function s.cfilter(c)
-	return c:IsCode(71344451) and c:IsAbleToHand()
+	return c:IsCode(71344451)
 end
 function s.tdtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	local ct=Duel.GetMatchingGroupCount(aux.TRUE,tp,0,LOCATION_ONFIELD,nil)
@@ -108,9 +109,9 @@ function s.tdop(e,tp,eg,ep,ev,re,r,rp)
 		return
 	end
 	local g=Duel.GetMatchingGroup(aux.TRUE,tp,LOCATION_DECK,0,nil)
-	Duel.Hint(HINT_SELECTMSG,tp,aux.Stringid(id,2))
+	Duel.Hint(HINT_SELECTMSG,tp,aux.Stringid(id,3))
 	local sg=g:SelectSubGroup(tp,s.gcheck,false,ct+1,ct+1)
-	if sg:GetCount()>0 then
+	if sg then
 		Duel.ConfirmCards(1-tp,sg)
 		for tc in aux.Next(sg) do
 			Duel.MoveSequence(tc,SEQ_DECKTOP)

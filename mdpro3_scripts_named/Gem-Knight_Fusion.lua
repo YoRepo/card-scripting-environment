@@ -1,15 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Gem-Knight Fusion  (ID: 1264319)
 -- Type: Spell
 -- Setcode: 0x1047, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 "Gem-Knight" Fusion Monster from your Extra Deck, using monsters from your hand or
--- field. If this card is in your GY: You can banish 1 "Gem-Knight" monster from your GY; add this card
--- to your hand.
+-- field.
+-- If this card is in your GY: You can banish 1 "Gem-Knight" monster from your GY; add this card to
+-- your hand.
 --[[ __CARD_HEADER_END__ ]]
 
 --ジェムナイト・フュージョン

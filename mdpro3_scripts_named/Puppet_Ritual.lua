@@ -1,8 +1,9 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Puppet Ritual  (ID: 1969506)
 -- Type: Spell
+-- Setcode: 0x83
 -- Scope: OCG / TCG
 --
 -- Effect Text:

@@ -1,10 +1,10 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Sinful Spoils of the White Forest  (ID: 3496543)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x1b1, 0x19e
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If you control a Fiend, Illusion, or Spellcaster monster: Activate 1 of these effects;

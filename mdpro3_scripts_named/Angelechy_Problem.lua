@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Angelechy Problem  (ID: 101305094)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Angelechy Problem  (ID: 17782288)
 -- Type: Spell / Field
--- Setcode: 0x2e5
+-- Setcode: 0x1e2
 -- Scope: TCG
 --
 -- Effect Text:
 -- Once per turn: You can discard 1 Spell/Trap; Special Summon 1 Level 2 "Angelechy" monster from your
 -- Extra Deck, and if you do, place 1 "Angelechy" monster from your Extra Deck to your Spell & Trap
--- Zone as a face-up Continuous Spell. If a face-up "Angelechy" Monster Card(s) you control is
--- destroyed by battle or card effect: You can return 1 "Angelechy" Monster Card you own from your
--- Spell & Trap Zone to the Extra Deck, then you can Special Summon it.
+-- Zone as a face-up Continuous Spell.
+-- If a face-up "Angelechy" Monster Card(s) you control is destroyed by battle or card effect: You can
+-- return 1 "Angelechy" Monster Card you own from your Spell & Trap Zone to the Extra Deck, then you
+-- can Special Summon it.
 --[[ __CARD_HEADER_END__ ]]
 
 --Angelechy Problem
@@ -54,11 +55,11 @@ function s.spcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.DiscardHand(tp,s.costfilter,1,1,REASON_COST+REASON_DISCARD,nil)
 end
 function s.setfilter(c,tp)
-	return c:IsSetCard(0x2e5) and c:IsType(TYPE_MONSTER) and not c:IsForbidden()
+	return c:IsSetCard(0x1e2) and c:IsType(TYPE_MONSTER) and not c:IsForbidden()
 		and c:CheckUniqueOnField(tp,LOCATION_SZONE)
 end
 function s.spfilter(c,e,tp,sp2)
-	return c:IsLevel(2) and c:IsSetCard(0x2e5) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+	return c:IsLevel(2) and c:IsSetCard(0x1e2) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 		and Duel.GetLocationCountFromEx(tp,tp,nil,c)>0
 		and (not sp2 or Duel.IsExistingMatchingCard(s.setfilter,tp,LOCATION_EXTRA,0,1,c,tp))
 end
@@ -98,14 +99,14 @@ end
 function s.sfilter(c,tp)
 	return c:IsPreviousPosition(POS_FACEUP) and c:IsPreviousControler(tp)
 		and bit.band(c:GetOriginalType(),TYPE_MONSTER)~=0
-		and c:IsPreviousSetCard(0x2e5)
+		and c:IsPreviousSetCard(0x1e2)
 		and c:IsReason(REASON_BATTLE+REASON_EFFECT) and c:IsPreviousLocation(LOCATION_ONFIELD)
 end
 function s.tecon(e,tp,eg,ep,ev,re,r,rp)
 	return eg:IsExists(s.sfilter,1,nil,tp) and not eg:IsContains(e:GetHandler())
 end
 function s.tefilter(c,tp)
-	return c:IsSetCard(0x2e5) and bit.band(c:GetOriginalType(),TYPE_MONSTER)~=0
+	return c:IsSetCard(0x1e2) and bit.band(c:GetOriginalType(),TYPE_MONSTER)~=0
 		and c:IsAbleToExtra() and c:IsFaceup() and c:GetOwner()==tp
 end
 function s.tetg(e,tp,eg,ep,ev,re,r,rp,chk)

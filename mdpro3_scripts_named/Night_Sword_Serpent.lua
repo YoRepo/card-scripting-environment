@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Night Sword Serpent  (ID: 20295753)
 -- Type: Monster / Effect
@@ -10,8 +10,8 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- If this card is sent to the GY by a card effect: You can Special Summon this card, but banish it
--- when it leaves the field.
+-- If this card is sent to the GY by card effect: You can Special Summon this card, but banish it when
+-- it leaves the field.
 -- You can only use this effect of "Night Sword Serpent" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

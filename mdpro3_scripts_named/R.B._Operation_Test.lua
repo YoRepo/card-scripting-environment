@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: R.B. Operation Test  (ID: 16066654)
 -- Type: Spell / Continuous
 -- Setcode: 0x1cf
@@ -8,13 +8,15 @@
 --
 -- Effect Text:
 -- When this card is activated: You can target 1 Level 3 or higher "R.B." monster in your GY; Special
--- Summon it. You can target any number of "R.B." monsters you control; gain LP equal to their combined
--- original ATK, and if you do, return them to the hand/Extra Deck, then you can Special Summon 1
--- "R.B." monster from your hand. You can only use this effect of "R.B. Operation Test" once per turn.
+-- Summon it.
+-- You can target any number of "R.B." monsters you control; gain LP equal to their combined original
+-- ATK, and if you do, return them to the hand/Extra Deck, then you can Special Summon 1 "R.B." monster
+-- from your hand.
+-- You can only use this effect of "R.B. Operation Test" once per turn.
 -- You can only activate 1 "R.B. Operation Test" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---R.B. Operation Test
+--R.B.オペレーション・テスト
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Activate

@@ -1,10 +1,10 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Fusion Gate  (ID: 33550694)
 -- Type: Spell / Field
 -- Setcode: 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During the Main Phase: The turn player can Fusion Summon 1 Fusion Monster from their Extra Deck, by

@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Seven Cities of the Golden Land  (ID: 95034141)
 -- Type: Spell / Continuous
 -- Setcode: 0x143
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During your Main Phase: You can Fusion Summon 1 Fusion Monster from your Extra Deck, using only
--- Zombie monsters from your hand or field as Fusion Material. If a Zombie monster(s) is Special
--- Summoned by card effect (except during the Damage Step): You can target 1 Set card in a Spell & Trap
--- Zone; that Set card cannot be activated this turn (even if this card leaves the field). You can only
--- use each effect of "Seven Cities of the Golden Land" once per turn.
+-- Zombie monsters from your hand or field as Fusion Material.
+-- If a Zombie monster(s) is Special Summoned by card effect (except during the Damage Step): You can
+-- target 1 Set card in a Spell & Trap Zone; that Set card cannot be activated this turn (even if this
+-- card leaves the field).
+-- You can only use each effect of "Seven Cities of the Golden Land" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --黄金郷の七摩天

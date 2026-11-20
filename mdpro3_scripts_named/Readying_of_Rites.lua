@@ -1,19 +1,20 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Readying of Rites  (ID: 71771004)
 -- Type: Spell
 -- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Add 1 Fiend Ritual Monster from your Deck to your hand, then if you added a Pendulum Monster, you
--- can Special Summon 1 "Sacrificial Offering Token" (Fiend/DARK/Level 1/ATK 300/DEF 300). While you
--- control that Token, you cannot Special Summon from the Extra Deck. When your Ritual Monster inflicts
--- battle damage to your opponent: You can banish this card from your GY; draw 1 card. You can only use
--- each effect of "Readying of Rites" once per turn.
+-- can Special Summon 1 "Sacrificial Offering Token" (Fiend/DARK/Level 1/ATK 300/DEF 300).
+-- While you control that Token, you cannot Special Summon from the Extra Deck.
+-- When your Ritual Monster inflicts battle damage to your opponent: You can banish this card from your
+-- GY; draw 1 card.
+-- You can only use each effect of "Readying of Rites" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Readying of Rites
+--供物の下ごしらえ
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Activate

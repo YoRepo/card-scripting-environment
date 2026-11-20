@@ -1,9 +1,9 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Rainbow Bridge Bifrost  (ID: 32236916)
 -- Type: Spell
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- (This card is not treated as a "Rainbow Bridge" card.)

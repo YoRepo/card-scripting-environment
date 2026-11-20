@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Ice Master  (ID: 32750510)
 -- Type: Monster / Effect
@@ -49,6 +49,9 @@ function c32750510.initial_effect(c)
 	e3:SetOperation(c32750510.desop)
 	c:RegisterEffect(e3)
 end
+c32750510.mentioned_counter={
+	[0x1015]=true,
+}
 function c32750510.rfilter(c,tp)
 	return c:IsAttribute(ATTRIBUTE_WATER) and (c:IsControler(tp) or c:IsFaceup())
 end

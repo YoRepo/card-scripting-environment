@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Performage Hat Tricker  (ID: 31292357)
 -- Type: Monster / Effect
@@ -47,6 +47,9 @@ function c31292357.initial_effect(c)
 	e3:SetOperation(c31292357.atkop)
 	c:RegisterEffect(e3)
 end
+c31292357.mentioned_counter={
+	[0x36]=true,
+}
 function c31292357.spcon(e,c)
 	if c==nil then return true end
 	local tp=c:GetControler()

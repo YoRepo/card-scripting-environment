@@ -1,19 +1,19 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Fallen of Albaz  (ID: 68468459)
 -- Type: Monster / Effect
 -- Attribute: DARK
 -- Race: Dragon
 -- Level: 4
 -- ATK 1800 | DEF 0
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If this card is Normal or Special Summoned (except during the Damage Step): You can discard 1 card;
 -- Fusion Summon 1 Fusion Monster from your Extra Deck using monsters on either field, including this
--- card, but you cannot use other monsters you control as material. You can only use this effect of
--- "Fallen of Albaz" once per turn.
+-- card, but you cannot use other monsters you control as material.
+-- You can only use this effect of "Fallen of Albaz" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --アルバスの落胤

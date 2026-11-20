@@ -1,14 +1,15 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Super Polymerization  (ID: 48130397)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Discard 1 card; Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from either
--- field. Neither player can activate cards or effects in response to this card's activation.
+-- field.
+-- Neither player can activate cards or effects in response to this card's activation.
 --[[ __CARD_HEADER_END__ ]]
 
 --超融合

@@ -1,18 +1,19 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Deadly Zombie Breath  (ID: 75527221)
 -- Type: Trap
 -- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If you control a Zombie monster and "Call of the Haunted": Target 1 monster your opponent controls;
--- send it to the GY. If you control a Zombie monster: You can banish this card from your GY, then
--- target 1 face-up card you control and 1 face-up card your opponent controls; send them to the GY.
+-- send it to the GY.
+-- If you control a Zombie monster: You can banish this card from your GY, then target 1 face-up card
+-- you control and 1 face-up card your opponent controls; send them to the GY.
 -- You can only use 1 "Deadly Zombie Breath" effect per turn, and only once that turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Deadly Zombie Breath
+--朽ち果ての吐息
 local s,id,o=GetID()
 function s.initial_effect(c)
 	aux.AddCodeList(c,97077563)

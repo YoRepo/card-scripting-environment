@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Magical Plant Mandragola  (ID: 7802006)
 -- Type: Monster / Effect / Flip
@@ -23,6 +23,9 @@ function c7802006.initial_effect(c)
 	e1:SetOperation(c7802006.operation)
 	c:RegisterEffect(e1)
 end
+c7802006.mentioned_counter={
+	[0x1]=true,
+}
 function c7802006.filter(c)
 	return c:IsFaceup() and c:IsCanAddCounter(0x1,1)
 end

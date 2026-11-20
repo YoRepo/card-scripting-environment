@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Power of the Guardians  (ID: 1118137)
 -- Type: Spell / Equip
@@ -60,6 +60,9 @@ function c1118137.initial_effect(c)
 	e6:SetValue(1)
 	c:RegisterEffect(e6)
 end
+c1118137.mentioned_counter={
+	[0x1]=true,
+}
 function c1118137.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	if chkc then return chkc:IsLocation(LOCATION_MZONE) and chkc:IsFaceup() end
 	if chk==0 then return Duel.IsExistingTarget(Card.IsFaceup,tp,LOCATION_MZONE,LOCATION_MZONE,1,nil) end

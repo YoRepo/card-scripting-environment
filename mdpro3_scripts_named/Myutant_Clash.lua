@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Myutant Clash  (ID: 5466615)
 -- Type: Trap / Continuous
@@ -66,7 +66,7 @@ function c5466615.activate(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
 	local g=Duel.SelectMatchingCard(tp,c5466615.tgfilter,tp,LOCATION_GRAVE,0,1,1,nil)
-	if #g>0 and Duel.Remove(g,POS_FACEUP,REASON_EFFECT) then
+	if #g>0 and Duel.Remove(g,POS_FACEUP,REASON_EFFECT)>0 then
 		local tc=Duel.GetFirstTarget()
 		if tc:IsRelateToEffect(e) and tc:IsFaceup() then
 			Duel.NegateRelatedChain(tc,RESET_TURN_SET)

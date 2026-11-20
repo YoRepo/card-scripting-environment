@@ -1,13 +1,13 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Lubellion the Searing Dragon  (ID: 70534340)
 -- Type: Monster / Effect / Fusion
 -- Attribute: LIGHT
 -- Race: Dragon
 -- Level: 8
 -- ATK 2500 | DEF 3000
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 1 DARK monster + "Fallen of Albaz"
@@ -15,8 +15,8 @@
 -- Monster from your Extra Deck, except "Lubellion the Searing Dragon", by shuffling Fusion Materials
 -- mentioned on it into the Deck, from your monsters on the field, GY, and/or face-up banished cards.
 -- For the rest of this turn, this card cannot attack, also you cannot Special Summon from the Extra
--- Deck, except Fusion Monsters. You can only use this effect of "Lubellion the Searing Dragon" once
--- per turn.
+-- Deck, except Fusion Monsters.
+-- You can only use this effect of "Lubellion the Searing Dragon" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --神炎竜ルベリオン

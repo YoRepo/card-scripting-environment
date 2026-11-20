@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Infernal Strike Fighter  (ID: 66122213)
 -- Type: Monster / Effect / Synchro
@@ -7,13 +7,13 @@
 -- Race: Machine
 -- Level: 7
 -- ATK 2600 | DEF 1800
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 1 Tuner + 1+ non-Tuners
--- During the Main Phase 2 (Quick Effect): You can destroy as many face-up monsters on the field as
--- possible, and if you do, inflict damage to your opponent equal to the combined original Levels of
--- the destroyed monsters x 200.
+-- During Main Phase 2 (Quick Effect): You can destroy as many face-up monsters on the field as
+-- possible, and if you do, inflict damage to your opponent equal to the total original Levels of those
+-- destroyed monsters x 200.
 -- If this card is destroyed by battle or card effect: You can target 1 Level 5 or lower Machine
 -- monster in your GY; Special Summon it in Defense Position.
 -- You can only use each effect of "Infernal Strike Fighter" once per turn.

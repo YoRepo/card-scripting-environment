@@ -1,20 +1,21 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Medius the Pure  (ID: 97556336)
 -- Type: Monster / Effect
 -- Attribute: DARK
 -- Race: Fairy
 -- Level: 4
 -- ATK 1800 | DEF 1800
--- Setcode: 0x2e8
--- Scope: OCG / TCG / Illegal
+-- Setcode: 0x1e8
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If this card is Normal or Special Summoned: You can add to your hand, or Special Summon, 1 "Power
--- Patron" monster from your Deck. If this card is in your GY: You can shuffle 1 monster from your hand
--- or face-up field into the Deck, and if you do, Special Summon this card, but banish it when it
--- leaves the field. You can only use each effect of "Medius the Pure" once per turn.
+-- Patron" monster from your Deck.
+-- If this card is in your GY: You can shuffle 1 monster from your hand or face-up field into the Deck,
+-- and if you do, Special Summon this card, but banish it when it leaves the field.
+-- You can only use each effect of "Medius the Pure" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --無垢なる者 メディウス

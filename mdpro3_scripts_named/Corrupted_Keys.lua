@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Corrupted Keys  (ID: 67949763)
 -- Type: Trap
@@ -7,7 +7,7 @@
 --
 -- Effect Text:
 -- Target 1 face-up Xyz Monster you control; Special Summon 3 "Umbral Horror Mirage Tokens"
--- (Fiend-Type/DARK/Level 1/ATK ?/DEF 0).
+-- (Fiend/DARK/Level 1/ATK ?/DEF 0).
 -- (When Summoned, each Token's ATK becomes equal to that Xyz Monster's current ATK. They cannot attack
 -- your opponent directly or be Tributed, except for a Tribute Summon.)
 -- When that face-up Xyz Monster leaves the field, destroy these Tokens.

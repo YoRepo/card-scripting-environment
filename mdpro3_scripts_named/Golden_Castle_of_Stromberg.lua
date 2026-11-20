@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Golden Castle of Stromberg  (ID: 72283691)
 -- Type: Spell / Field
@@ -8,8 +8,8 @@
 -- Effect Text:
 -- Once per turn, during your Standby Phase, you must banish 10 cards from the top of your Deck
 -- face-down (this is not optional), or this card is destroyed.
--- During your Main Phase: You can Special Summon 1 monster from your Deck that specifically lists the
--- card "Golden Castle of Stromberg" in its text.
+-- During your Main Phase: You can Special Summon 1 monster that mentions "Golden Castle of Stromberg"
+-- from your Deck.
 -- You cannot Normal Summon/Set the turn you activate this effect (even if this card leaves the field).
 -- You can only use this effect of "Golden Castle of Stromberg" once per turn.
 -- When an opponent's monster declares an attack: Destroy the attacking monster, and if you do, inflict

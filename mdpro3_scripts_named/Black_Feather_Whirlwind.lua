@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Black Feather Whirlwind  (ID: 7602800)
 -- Type: Spell / Continuous
@@ -45,6 +45,9 @@ function c7602800.initial_effect(c)
 	e3:SetOperation(c7602800.repop)
 	c:RegisterEffect(e3)
 end
+c7602800.mentioned_counter={
+	[0x10]=true,
+}
 function c7602800.cfilter(c,tp)
 	return c:IsSummonPlayer(tp) and c:IsType(TYPE_SYNCHRO) and c:IsAttribute(ATTRIBUTE_DARK)
 		and c:IsPreviousLocation(LOCATION_EXTRA)

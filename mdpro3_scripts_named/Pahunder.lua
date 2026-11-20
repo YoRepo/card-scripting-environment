@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Pahunder  (ID: 84530620)
 -- Type: Monster / Effect
@@ -10,7 +10,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Once per turn: You can Normal Summon 1 Level 4 LIGHT Thunder-Type monster from your hand, except
+-- Once per turn: You can Normal Summon 1 Level 4 LIGHT Thunder monster from your hand, except
 -- "Pahunder", as an additional Normal Summon.
 --[[ __CARD_HEADER_END__ ]]
 

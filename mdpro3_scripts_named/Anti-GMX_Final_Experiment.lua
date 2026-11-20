@@ -1,19 +1,20 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Anti-GMX Final Experiment  (ID: 1463589)
 -- Type: Trap / Continuous
 -- Setcode: 0x1dd
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Activate only if you control a "GMX" monster. Once per turn, when your opponent activates a monster
--- effect on the field (except during the Damage Step): You can excavate the top 5 cards of your Deck,
--- then if you excavated a "GMX" card(s), negate that activated effect, also place all the excavated
--- cards on the top or bottom of the Deck in any order.
+-- Activate only if you control a "GMX" monster.
+-- Once per turn, when your opponent activates a monster effect on the field (except during the Damage
+-- Step): You can excavate the top 5 cards of your Deck, then if you excavated a "GMX" card(s), negate
+-- that activated effect, also place all the excavated cards on the top or bottom of the Deck in any
+-- order.
 --[[ __CARD_HEADER_END__ ]]
 
---Anti-GMX Final Experiment
+--A－GMX最終検証
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--activate

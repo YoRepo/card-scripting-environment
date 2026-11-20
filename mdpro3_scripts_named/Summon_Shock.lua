@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Summon Shock  (ID: 42719764)
 -- Type: Trap / Continuous
@@ -44,6 +44,9 @@ function s.initial_effect(c)
 	e4:SetOperation(s.tgop)
 	c:RegisterEffect(e4)
 end
+s.mentioned_counter={
+	[0x4c]=true,
+}
 function s.cttg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return e:GetHandler():IsCanAddCounter(0x4c,1) end
 end

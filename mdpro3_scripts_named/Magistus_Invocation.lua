@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Magistus Invocation  (ID: 34933456)
 -- Type: Spell
 -- Setcode: 0x150
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from your hand or field as
--- material, including a Spellcaster monster. If Summoning a "Magistus" Fusion Monster this way, you
--- can also use monsters in your Spell & Trap Zones that are equipped to a "Magistus" monster. You can
--- only activate 1 "Magistus Invocation" per turn.
+-- material, including a Spellcaster monster.
+-- If Summoning a "Magistus" Fusion Monster this way, you can also use monsters in your Spell & Trap
+-- Zones that are equipped to a "Magistus" monster.
+-- You can only activate 1 "Magistus Invocation" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --聖なる法典

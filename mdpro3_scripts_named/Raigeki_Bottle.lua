@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Raigeki Bottle  (ID: 11741041)
 -- Type: Trap / Continuous
@@ -39,6 +39,9 @@ function c11741041.initial_effect(c)
 	e3:SetOperation(c11741041.desop)
 	c:RegisterEffect(e3)
 end
+c11741041.mentioned_counter={
+	[0xc]=true,
+}
 function c11741041.ctop(e,tp,eg,ep,ev,re,r,rp)
 	if Duel.GetAttacker():IsControler(tp) then
 		e:GetHandler():AddCounter(0xc,1)

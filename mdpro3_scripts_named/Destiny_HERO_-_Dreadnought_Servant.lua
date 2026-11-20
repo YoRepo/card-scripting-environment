@@ -1,21 +1,23 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Destiny HERO - Dreadnought Servant  (ID: 101306023)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Destiny HERO - Dreadnought Servant  (ID: 98931282)
 -- Type: Monster / Effect
 -- Attribute: DARK
 -- Race: Warrior
 -- Level: 3
 -- ATK 400 | DEF 700
 -- Setcode: 0xc008
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If you control a "Destiny HERO" monster or a face-up Field Spell: You can Special Summon this card
 -- from your hand, then you can destroy 1 card you control, and if you do, add 1 "Polymerization" from
--- your Deck to your hand. If you Special Summon a Level 8 "Destiny HERO" monster(s): You can banish
--- this card from your GY, then target 1 card your opponent controls; place it on top of the Deck. You
--- can only use each effect of "Destiny HERO - Dreadnought Servant" once per turn.
+-- your Deck to your hand.
+-- If you Special Summon a Level 8 "Destiny HERO" monster(s) (except during the Damage Step): You can
+-- banish this card from your GY, then target 1 card your opponent controls; place it on top of the
+-- Deck.
+-- You can only use each effect of "Destiny HERO - Dreadnought Servant" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --D－HERO ドレッドノートサーヴァント

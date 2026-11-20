@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Tradetoad  (ID: 23408872)
 -- Type: Monster / Effect
@@ -10,9 +10,8 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Once per turn, you can Tribute 1 Aqua-Type monster to select 1 "Frog" monster in your Graveyard,
--- except "Frog the Jam".
--- Special Summon that monster from your Graveyard.
+-- Once per turn: You can Tribute 1 Aqua monster, then target 1 "Frog" monster in your GY; Special
+-- Summon it.
 --[[ __CARD_HEADER_END__ ]]
 
 --サシカエル

@@ -1,25 +1,27 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Number C104: Umbral Horror Masquerade Victory  (ID: 101306043)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Number C104: Umbral Horror Masquerade Victory  (ID: 42396591)
 -- Type: Monster / Effect / Xyz
 -- Attribute: DARK
 -- Race: Spellcaster
 -- Rank: 5
 -- ATK 3000 | DEF 1500
--- Setcode: 0x1048, 0x2e9, 0x87
--- Scope: OCG
+-- Setcode: 0x1048, 0x1e3, 0x87
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 4 Level 5 monsters
 -- Once per turn (Quick Effect): You can detach 1 material from this card, then target 1 card your
--- opponent controls; destroy it. If this card battles an opponent's monster, during damage
--- calculation: This card's ATK/DEF become that opponent's monster's ATK or DEF (whichever is higher)
--- +100 during damage calculation only. If this card destroys a monster by battle: Send 1 random card
--- from your opponent's hand to the GY, and if you do, halve your opponent's LP.
+-- opponent controls; destroy it.
+-- If this card battles an opponent's monster, during damage calculation: This card's ATK/DEF become
+-- equal to that opponent's monster's ATK or DEF (whichever is higher) +100, during that damage
+-- calculation only.
+-- If this card destroys a monster by battle: Send 1 random card from your opponent's hand to the GY,
+-- and if you do, halve your opponent's LP.
 --[[ __CARD_HEADER_END__ ]]
 
---CNo.104 仮面魔踏士 アンブラル・ヴィクトリー
+--CNo.104 仮面魔踏士アンブラル・ヴィクトリー
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--xyz summon

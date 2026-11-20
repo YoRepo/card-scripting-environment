@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Vortex of Time  (ID: 42138622)
 -- Type: Spell / Quick-Play
 -- Scope: OCG / TCG
@@ -14,7 +14,7 @@
 -- You can only activate 1 "Vortex of Time" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Vortex of Time
+--時空の渦
 local s,id,o=GetID()
 function s.initial_effect(c)
 	aux.AddCodeList(c,97077563)
@@ -30,9 +30,12 @@ function s.initial_effect(c)
 	e1:SetOperation(s.chop)
 	c:RegisterEffect(e1)
 end
+function s.mfilter(c)
+	return c:IsRace(RACE_ZOMBIE) and c:IsType(TYPE_MONSTER) and c:IsFaceup()
+end
 function s.condition(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.GetMatchingGroup(Card.IsFaceup,tp,LOCATION_ONFIELD,0,nil)
-	local check=g:IsExists(Card.IsRace,1,nil,RACE_ZOMBIE) and g:IsExists(Card.IsCode,1,nil,97077563)
+	local check=g:IsExists(s.mfilter,1,nil) and g:IsExists(Card.IsCode,1,nil,97077563)
 	return rp==1-tp and check and
 		(re:IsActiveType(TYPE_MONSTER) or re:GetActiveType()==TYPE_SPELL or re:IsActiveType(TYPE_QUICKPLAY))
 end

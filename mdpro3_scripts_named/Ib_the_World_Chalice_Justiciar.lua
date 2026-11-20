@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Ib the World Chalice Justiciar  (ID: 94677445)
 -- Type: Monster / Effect / Tuner / Synchro
@@ -11,7 +11,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- 1 Tuner + 1+ non-Tuner monsters
+-- 1 Tuner + 1+ non-Tuners
 -- For this card's Synchro Summon, you can treat 1 "World Chalice" Normal Monster you control as a
 -- Tuner.
 -- You can only use each of the following effects of "Ib the World Chalice Justiciar" once per turn.

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Alien Shocktrooper M-Frame  (ID: 74974229)
 -- Type: Monster / Effect / Link
@@ -53,6 +53,9 @@ function c74974229.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 c74974229.counter_add_list={0x100e}
+c74974229.mentioned_counter={
+	[0x100e]=true,
+}
 function c74974229.costfilter(c)
 	return c:IsType(TYPE_MONSTER) and c:IsLevelAbove(1) and c:IsDiscardable()
 end

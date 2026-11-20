@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Red-Eyes Toon Dragon  (ID: 31733941)
 -- Type: Monster / Effect / Toon
@@ -13,7 +13,7 @@
 -- Effect Text:
 -- Cannot attack the turn it is Summoned.
 -- While you control "Toon World" and your opponent controls no Toon monsters, this card can attack
--- your opponent directly.
+-- directly.
 -- Once per turn: You can Special Summon 1 Toon monster from your hand, except "Red-Eyes Toon Dragon",
 -- ignoring its Summoning conditions.
 --[[ __CARD_HEADER_END__ ]]

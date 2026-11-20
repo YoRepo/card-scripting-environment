@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Okiku's Dish Count  (ID: 89086647)
 -- Type: Trap / Continuous
@@ -71,6 +71,9 @@ function s.initial_effect(c)
 	e5:SetOperation(s.tgop)
 	c:RegisterEffect(e5)
 end
+s.mentioned_counter={
+	[0x70]=true,
+}
 function s.coucon(e,tp,eg,ep,ev,re,r,rp)
 	return rp==1-tp
 end

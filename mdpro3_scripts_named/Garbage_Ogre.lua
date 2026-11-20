@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Garbage Ogre  (ID: 18698739)
 -- Type: Monster / Effect
@@ -10,8 +10,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- You can send this card from your hand to the Graveyard; add 1 "Garbage Lord" from your Deck to your
--- hand.
+-- You can send this card from your hand to the GY; add 1 "Garbage Lord" from your Deck to your hand.
 -- You can only use the effect of "Garbage Ogre" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

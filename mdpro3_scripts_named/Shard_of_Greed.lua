@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Shard of Greed  (ID: 33904024)
 -- Type: Spell / Continuous
@@ -38,6 +38,9 @@ function c33904024.initial_effect(c)
 	e3:SetOperation(c33904024.drop)
 	c:RegisterEffect(e3)
 end
+c33904024.mentioned_counter={
+	[0xd]=true,
+}
 function c33904024.ctop(e,tp,eg,ep,ev,re,r,rp)
 	if ep==tp and r==REASON_RULE then
 		e:GetHandler():AddCounter(0xd,1)

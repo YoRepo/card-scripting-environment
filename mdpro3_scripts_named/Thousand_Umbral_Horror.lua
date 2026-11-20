@@ -1,28 +1,29 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Thousand Umbral Horror  (ID: 101306008)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Thousand Umbral Horror  (ID: 2932235)
 -- Type: Monster / Effect
 -- Attribute: DARK
 -- Race: Fiend
 -- Level: 4
 -- ATK 0 | DEF 0
 -- Setcode: 0x87
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- (Quick Effect): You can send this card from your hand or field to the GY; place 1 "Seventh Barian's"
--- from your hand or Deck face-up in your Field Zone, also you cannot Special Summon from the Extra
--- Deck until the end of your next turn, except Xyz Monsters. If an Xyz Monster(s) is Special Summoned
--- while this card is in your GY: You can Special Summon this card, also you take no effect damage from
--- your card effects for the rest of this turn. You can only use each effect of "Thousand Umbral
--- Horror" once per turn.
+-- (Quick Effect): You can send this card from your hand or field to the GY; place 1 "Barian's Seventh
+-- Untopia" from your hand or Deck, face-up in your Field Zone, also you cannot Special Summon from the
+-- Extra Deck until the end of your next turn after this effect resolves, except Xyz Monsters.
+-- If an Xyz Monster(s) is Special Summoned, while this card is in your GY (except during the Damage
+-- Step): You can Special Summon this card, also you take no effect damage from your card effects this
+-- turn.
+-- You can only use each effect of "Thousand Umbral Horror" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --サウザンド・アンブラル
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.AddCodeList(c,101306055)
+	aux.AddCodeList(c,39513225)
 	--activate card
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
@@ -56,7 +57,7 @@ function s.actcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SendtoGrave(e:GetHandler(),REASON_COST)
 end
 function s.pfilter(c,tp)
-	return not c:IsForbidden() and c:IsType(TYPE_FIELD) and c:IsCode(101306055) and c:CheckUniqueOnField(tp)
+	return not c:IsForbidden() and c:IsType(TYPE_FIELD) and c:IsCode(39513225) and c:CheckUniqueOnField(tp)
 end
 function s.acttg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.pfilter,tp,LOCATION_DECK+LOCATION_HAND,0,1,nil,tp) end

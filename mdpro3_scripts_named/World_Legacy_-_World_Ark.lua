@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: World Legacy - "World Ark"  (ID: 42388271)
 -- Type: Monster / Effect
@@ -40,7 +40,7 @@ function c42388271.initial_effect(c)
 	local e2=Effect.CreateEffect(c)
 	e2:SetType(EFFECT_TYPE_SINGLE)
 	e2:SetCode(EFFECT_DOUBLE_TRIBUTE)
-	e2:SetValue(1)
+	e2:SetValue(c42388271.condition)
 	c:RegisterEffect(e2)
 	--tograve
 	local e3=Effect.CreateEffect(c)
@@ -55,6 +55,10 @@ function c42388271.initial_effect(c)
 	e3:SetTarget(c42388271.tgtg)
 	e3:SetOperation(c42388271.tgop)
 	c:RegisterEffect(e3)
+end
+function c42388271.condition(e,c)
+	local ec=e:GetHandler()
+	return ec:IsFaceup() or c:GetControler()==ec:GetControler()
 end
 function c42388271.spcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return e:GetHandler():IsAbleToGraveAsCost() end

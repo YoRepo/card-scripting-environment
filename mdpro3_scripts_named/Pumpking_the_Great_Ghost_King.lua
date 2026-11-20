@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Pumpking the Great Ghost King  (ID: 17856505)
 -- Type: Monster / Effect / Xyz
 -- Attribute: DARK
@@ -12,13 +12,15 @@
 -- Effect Text:
 -- 2 Level 6 Zombie monsters
 -- While you control "Call of the Haunted", your opponent cannot target Zombie monsters you control
--- with monster effects. You can only use each of the following effects of "Pumpking the Great Ghost
--- King" once per turn. If this card is Special Summoned: You can add 1 "Call of the Haunted" or 1 card
--- that mentions it from your Deck to your hand. You can detach 1 material from this card, then target
--- up to 2 cards on the field; return them to the hand.
+-- with monster effects.
+-- You can only use each of the following effects of "Pumpking the Great Ghost King" once per turn.
+-- If this card is Special Summoned: You can add 1 "Call of the Haunted" or 1 card that mentions it
+-- from your Deck to your hand.
+-- You can detach 1 material from this card, then target up to 2 cards on the field; return them to the
+-- hand.
 --[[ __CARD_HEADER_END__ ]]
 
---Pumpking the Great Ghost King
+--ゴースト大王－パンプキング－
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--xyz summon

@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:48
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Fusion Destiny  (ID: 52947044)
 -- Type: Spell
 -- Setcode: 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Fusion Monster from your Extra Deck that mentions a "Destiny HERO" monster as
 -- material, using monsters from your hand or Deck as Fusion Material, but destroy it during the End
 -- Phase of the next turn, also for the rest of this turn after this card resolves, you cannot Special
--- Summon monsters, except DARK "HERO" monsters. You can only activate 1 "Fusion Destiny" per turn.
+-- Summon monsters, except DARK "HERO" monsters.
+-- You can only activate 1 "Fusion Destiny" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --フュージョン・デステニー

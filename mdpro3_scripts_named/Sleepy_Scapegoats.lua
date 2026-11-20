@@ -1,23 +1,23 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Sleepy Scapegoats  (ID: 101306054)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Sleepy Scapegoats  (ID: 3129527)
 -- Type: Spell / Quick-Play
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Special Summon up to 4 "Scapegoat Tokens" (Beast/EARTH/Level 1/ATK 0/DEF 0) in Defense Position,
--- then if your opponent controls a monster, you can Special Summon 1 "Swiftwind Panther Warrior" from
--- your Deck, also for the rest of this turn, these Tokens cannot be Tributed for a Tribute Summon,
--- also you cannot Special Summon from the Extra Deck, except Fusion Monsters. If a card(s) you control
--- that mentions "Dark Time Wizard" would be destroyed by battle or card effect, you can destroy 1
--- Token you control that was Special Summoned by this effect instead.
+-- Special Summon up to 4 "Sacrificial Sheep Tokens" (Beast/EARTH/Level 1/ATK 0/DEF 0) in Defense
+-- Position (they cannot be Tributed for a Tribute Summon this turn), then if your opponent controls a
+-- monster, you can Special Summon 1 "Swiftwind Panther Warrior" from your Deck, also for the rest of
+-- this turn, you cannot Special Summon from the Extra Deck, except Fusion Monsters.
+-- If a card(s) you control that mentions "Dark Time Wizard" would be destroyed by battle or card
+-- effect, you can destroy 1 Token you control that was Special Summoned by this effect instead.
 --[[ __CARD_HEADER_END__ ]]
 
 --眠れる羊 スケープ・ゴート
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.AddCodeList(c,101306001,101306052)
+	aux.AddCodeList(c,77482666,40235813)
 	--Activate
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
@@ -36,7 +36,7 @@ function s.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,0,0)
 end
 function s.spfilter(c,e,tp)
-	return c:IsCode(101306001) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+	return c:IsCode(77482666) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function s.activate(e,tp,eg,ep,ev,re,r,rp)
 	local ft=Duel.GetLocationCount(tp,LOCATION_MZONE)
@@ -98,7 +98,7 @@ function s.splimit(e,c)
 	return not c:IsType(TYPE_FUSION) and c:IsLocation(LOCATION_EXTRA)
 end
 function s.rfilter(c,tp)
-	return c:IsFaceup() and aux.IsCodeListed(c,101306052) and c:IsReason(REASON_BATTLE+REASON_EFFECT) and not c:IsReason(REASON_REPLACE)
+	return c:IsFaceup() and aux.IsCodeListed(c,40235813) and c:IsReason(REASON_BATTLE+REASON_EFFECT) and not c:IsReason(REASON_REPLACE)
 		and c:IsControler(tp)
 end
 function s.destg(e,tp,eg,ep,ev,re,r,rp,chk)
@@ -111,5 +111,5 @@ function s.destg(e,tp,eg,ep,ev,re,r,rp,chk)
 	else return false end
 end
 function s.repval(e,c)
-	return c:IsFaceup() and aux.IsCodeListed(c,101306052) and c~=e:GetHandler() and c:IsControler(e:GetLabel())
+	return c:IsFaceup() and aux.IsCodeListed(c,40235813) and c~=e:GetHandler() and c:IsControler(e:GetLabel())
 end

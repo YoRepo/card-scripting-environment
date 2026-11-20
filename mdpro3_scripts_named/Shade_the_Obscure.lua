@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Shade the Obscure  (ID: 77157846)
 -- Type: Monster / Effect / Pendulum
 -- Attribute: DARK
@@ -13,18 +13,20 @@
 -- Effect Text:
 -- Pendulum Scale = 11
 -- [ Pendulum Effect ]
--- You cannot Pendulum Summon, except Pendulum Monsters (this effect cannot be negated). If a
--- monster(s) with 1000 ATK or less is Special Summoned (except during the Damage Step): You can return
--- this card to the hand. You can only use this effect of "Shade the Obscure" once per turn.
+-- You cannot Pendulum Summon, except Pendulum Monsters (this effect cannot be negated).
+-- If a monster(s) with 1000 ATK or less is Special Summoned (except during the Damage Step): You can
+-- return this card to the hand.
+-- You can only use this effect of "Shade the Obscure" once per turn.
 -- ----------------------------------------
 -- [ Monster Effect ]
 -- If you have a card in your Pendulum Zone and this card is in your hand: You can Special Summon this
--- card. You can pay 1000 LP; destroy 1 Pendulum Monster Card in your hand or face-up field, then you
--- can add 1 Pendulum Monster from your Deck to your face-up Extra Deck. You can only use each effect
--- of "Shade the Obscure" once per turn.
+-- card.
+-- You can pay 1000 LP; destroy 1 Pendulum Monster Card in your hand or face-up field, then you can add
+-- 1 Pendulum Monster from your Deck to your face-up Extra Deck.
+-- You can only use each effect of "Shade the Obscure" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Shade the Obscure
+--暗翳の信仰者
 local s,id,o=GetID()
 function s.initial_effect(c)
 	aux.EnablePendulumAttribute(c)

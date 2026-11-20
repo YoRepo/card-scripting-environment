@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Ukanomitsune-no-Onari  (ID: 49451215)
 -- Type: Monster / Effect / Link
@@ -77,7 +77,7 @@ function s.settg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 end
 function s.setop(e,tp,eg,ep,ev,re,r,rp)
 	local tc=Duel.GetFirstTarget()
-	if tc and tc:IsRelateToChain() and aux.NecroValleyFilter(tc) then
+	if tc and tc:IsRelateToChain() and aux.NecroValleyFilter()(tc) then
 		Duel.SSet(tp,tc)
 	end
 end

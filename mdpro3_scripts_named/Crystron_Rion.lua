@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Crystron Rion  (ID: 66938505)
 -- Type: Monster / Effect / Tuner
@@ -43,7 +43,7 @@ function c66938505.sccon(e,tp,eg,ep,ev,re,r,rp)
 end
 function c66938505.scfilter1(c,e,tp,mc)
 	local mg=Group.FromCards(c,mc)
-	return not c:IsType(TYPE_TUNER) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+	return c:IsFaceup() and not c:IsType(TYPE_TUNER) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 		and Duel.IsExistingMatchingCard(c66938505.scfilter2,tp,LOCATION_EXTRA,0,1,nil,mg)
 end
 function c66938505.scfilter2(c,mg)

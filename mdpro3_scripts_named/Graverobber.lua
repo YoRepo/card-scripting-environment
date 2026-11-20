@@ -1,14 +1,14 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Graverobber  (ID: 61705417)
 -- Type: Trap
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Select 1 Spell Card from your opponent's Graveyard.
--- You can use it as your hand until the end of the turn.
--- If you use it, you take 2000 points of damage.
+-- Target 1 Spell in your opponent's GY; add it to your hand.
+-- If you activate that Spell Card, immediately after it resolves, take 2000 damage.
+-- If you do not activate it, send it from your hand or field to the GY during the End Phase.
 --[[ __CARD_HEADER_END__ ]]
 
 --墓荒らし

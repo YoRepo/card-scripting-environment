@@ -19,7 +19,9 @@ undercount is honest, a miscount is not.
 Authored fields (`doc`: signature, parameter docs, description, tags) are
 NEVER produced or touched here — when --merge points at an existing
 api.json, its doc fields are preserved and only the mined data is
-refreshed. Run this after corpus updates.
+refreshed. Run this after corpus updates. Without --merge the file is
+written from the corpus alone, so that is REFUSED while the file holds a
+hand-written doc: forgetting one flag must not be able to discard them.
 
 Usage:
   python3 tools/mine_api.py --out ../Website-TEST/static/data/scripter/api.json --merge
@@ -52,24 +54,63 @@ PTR_AT = re.compile(r"\s*[,)]")
 
 
 def count_args(line, open_idx):
-    """Rough top-level argument count for the call whose '(' is at open_idx."""
-    depth = 0
+    """How many arguments the call whose '(' is at open_idx passes, or None
+    when the call does not close on this line.
+
+    Only a comma at the call's OWN level separates two arguments. One inside
+    a nested call, inside a table constructor (`{EVENT_TO_GRAVE,EVENT_REMOVE}`)
+    or inside a string — quoted, or a long `[[...]]` one — belongs to the
+    argument it sits in. This used to track parentheses alone, so a table
+    argument was counted as one argument per element —
+    aux.AddFusionProcCodeFunRep(c,89631139,{89631139,s.mfilter},2,2,true,true)
+    read as eight — and every envelope that met one was wide by the table's
+    length. The website's signature gate (Website-TEST
+    tests/validate_api_sigs.js) carried a written exception for each function
+    that made look over-called; none is needed for that reason now.
+
+    What it still cannot see is in the text, not in the counting: an argument
+    list spread from a table at run time (`f(table.unpack(t))` is one
+    argument here, however many `t` holds)."""
+    depth = 0          # parentheses: 1 is the call's own level
+    nest = 0           # braces and brackets opened inside the call
     args = 0
     seen_any = False
-    for ch in line[open_idx:]:
+    quote = None
+    i = open_idx
+    while i < len(line):
+        ch = line[i]
+        if quote:
+            if ch == "\\":
+                i += 2
+                continue
+            if ch == quote:
+                quote = None
+            i += 1
+            continue
+        if ch in "\"'":
+            quote = ch
+            seen_any = True
+            i += 1
+            continue
         if ch == "(":
             depth += 1
             if depth == 1:
+                i += 1
                 continue
         elif ch == ")":
             depth -= 1
             if depth == 0:
                 return args + 1 if seen_any else 0
+        elif ch in "{[":
+            nest += 1
+        elif ch in "}]":
+            nest -= 1
         if depth >= 1:
             if not ch.isspace():
                 seen_any = True
-            if ch == "," and depth == 1:
+            if ch == "," and depth == 1 and nest == 0:
                 args += 1
+        i += 1
     return None  # call spans lines; unknown
 
 
@@ -176,6 +217,21 @@ def mine(corpus_root):
     return functions
 
 
+def previous_catalog(path):
+    """The catalog already at `path`, None when there is none — and a stop,
+    before anything is mined or written, when there is one that cannot be
+    read: what it holds is then unknown, and the hand-written half of this
+    file is the part no re-mine can bring back."""
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, encoding="utf-8") as fh:
+            return json.load(fh)
+    except (OSError, ValueError) as error:
+        sys.exit(f"{path} exists but cannot be read as a catalog ({error}). "
+                 "Not overwriting it: repair it or move it away first.")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--corpus", default=os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
@@ -187,16 +243,21 @@ def main():
                     help="drop mined-only functions used fewer than N times (authored ones always kept)")
     args = ap.parse_args()
 
-    mined = mine(args.corpus)
-
     docs = {}
     meta = {}
-    if args.merge and os.path.exists(args.out):
-        old = json.load(open(args.out, encoding="utf-8"))
-        meta = {k: v for k, v in old.items() if k != "functions"}
-        for f in old.get("functions", []):
-            if f.get("doc"):
-                docs[f["id"]] = f["doc"]
+    old = previous_catalog(args.out)
+    if old is not None:
+        written = [f["id"] for f in old.get("functions", []) if f.get("doc")]
+        if written and not args.merge:
+            sys.exit(f"{args.out} holds {len(written)} hand-written docs, and writing it "
+                     "without --merge would discard every one of them. Add --merge.")
+        if args.merge:
+            meta = {k: v for k, v in old.items() if k != "functions"}
+            for f in old.get("functions", []):
+                if f.get("doc"):
+                    docs[f["id"]] = f["doc"]
+
+    mined = mine(args.corpus)
 
     out_functions = []
     for key, f in mined.items():

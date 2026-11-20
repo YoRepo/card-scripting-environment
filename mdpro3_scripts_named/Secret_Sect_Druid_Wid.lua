@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Secret Sect Druid Wid  (ID: 97064649)
 -- Type: Monster / Effect
@@ -10,8 +10,8 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- If this card is sent from the field to the Graveyard: You can target 1 Continuous Spell Card in your
--- Graveyard; Set that target.
+-- If this card is sent from the field to the GY: You can target 1 Continuous Spell Card in your GY;
+-- Set that target.
 -- That Set card cannot be activated this turn.
 -- You can only use the effect of "Secret Sect Druid Wid" once per turn.
 --[[ __CARD_HEADER_END__ ]]

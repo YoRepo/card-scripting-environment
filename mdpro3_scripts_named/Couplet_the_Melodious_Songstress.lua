@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Couplet the Melodious Songstress  (ID: 90276649)
 -- Type: Monster / Effect / Pendulum
@@ -101,7 +101,7 @@ function c90276649.thop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 function c90276649.spcon(e,tp,eg,ep,ev,re,r,rp)
-	return not (r==REASON_RULE)
+	return r~=REASON_RULE
 end
 function c90276649.spcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return not e:GetHandler():IsPublic() end

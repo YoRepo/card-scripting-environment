@@ -1,14 +1,15 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Frightfur Fusion  (ID: 6077601)
 -- Type: Spell
 -- Setcode: 0xad, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 "Frightfur" Fusion Monster from your Extra Deck, by banishing Fusion Materials
--- listed on it from your field or Graveyard. You can only activate 1 "Frightfur Fusion" per turn.
+-- listed on it from your field or Graveyard.
+-- You can only activate 1 "Frightfur Fusion" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --魔玩具融合

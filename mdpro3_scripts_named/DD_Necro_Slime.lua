@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: D/D Necro Slime  (ID: 72291412)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -8,12 +8,12 @@
 -- Level: 1
 -- ATK 300 | DEF 300
 -- Setcode: 0xaf
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If this card is in your GY: You can Fusion Summon 1 "D/D/D" Fusion Monster from your Extra Deck, by
--- banishing Fusion Materials mentioned on it from your GY, including this card. You can only use this
--- effect of "D/D Necro Slime" once per turn.
+-- banishing materials mentioned on it from your GY, including this card.
+-- You can only use this effect of "D/D Necro Slime" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --DDネクロ・スライム

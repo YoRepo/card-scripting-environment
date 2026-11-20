@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Pumpking the King of Grave Ghosts  (ID: 81684048)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -11,13 +11,15 @@
 --
 -- Effect Text:
 -- You can reveal this card in your hand; Set 1 "Call of the Haunted" from your Deck or GY, and if you
--- do, discard 1 card. That Set card can be activated this turn. If this card is Special Summoned: You
--- can Special Summon 1 Level 6 Zombie monster from your Deck, except with 1950 ATK, also you cannot
--- Special Summon from the hand or GY for the rest of this turn, except Zombie monsters. You can only
--- use each effect of "Pumpking the King of Grave Ghosts" once per turn.
+-- do, discard 1 card.
+-- That Set card can be activated this turn.
+-- If this card is Special Summoned: You can Special Summon 1 Level 6 Zombie monster from your Deck,
+-- except with 1950 ATK, also you cannot Special Summon from the hand or GY for the rest of this turn,
+-- except Zombie monsters.
+-- You can only use each effect of "Pumpking the King of Grave Ghosts" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Pumpking the King of Grave Ghosts
+--墓場のゴースト王－パンプキング－
 local s,id,o=GetID()
 function s.initial_effect(c)
 	aux.AddCodeList(c,97077563)

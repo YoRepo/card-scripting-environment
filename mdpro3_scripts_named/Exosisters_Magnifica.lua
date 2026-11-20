@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Exosisters Magnifica  (ID: 59242457)
 -- Type: Monster / Effect / Xyz
@@ -16,10 +16,10 @@
 -- Can make a second attack during each Battle Phase.
 -- Once per turn (Quick Effect): You can detach 1 material from this card; banish 1 card your opponent
 -- controls.
--- When your opponent activates a card or effect (Quick Effect): You can return 1 Xyz Monster you own
--- attached to this card to your Extra Deck, then you can Special Summon that monster from your Extra
--- Deck, using this card you control as material.
--- (This is treated as an Xyz Summon. Transfer this card's materials to the Summoned monster.)
+-- Once per Chain, when your opponent activates a card or effect (Quick Effect): You can return 1 Xyz
+-- Monster you own attached to this card to your Extra Deck, then you can Special Summon that monster
+-- from your Extra Deck, using this card you control as material (this is treated as an Xyz Summon,
+-- transfer its materials).
 --[[ __CARD_HEADER_END__ ]]
 
 --エクソシスターズ・マニフィカ

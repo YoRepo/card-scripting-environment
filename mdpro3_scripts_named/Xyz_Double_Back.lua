@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Xyz Double Back  (ID: 57836546)
 -- Type: Spell / Quick-Play
@@ -8,9 +8,9 @@
 --
 -- Effect Text:
 -- During the turn a face-up Xyz Monster you control was destroyed, if you control no monsters: Target
--- 1 Xyz Monster in your Graveyard that was destroyed this turn and 1 monster in your Graveyard with
--- ATK less than or equal to that Xyz Monster's; Special Summon these targets, but they are destroyed
--- during the End Phase.
+-- 1 Xyz Monster in your GY that was destroyed this turn and 1 monster in your GY with ATK less than or
+-- equal to that Xyz Monster's; Special Summon these targets, but they are destroyed during the End
+-- Phase.
 --[[ __CARD_HEADER_END__ ]]
 
 --エクシーズ・ダブル・バック

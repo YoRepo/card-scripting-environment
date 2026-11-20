@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Vain Betrayer  (ID: 94933468)
 -- Type: Trap / Continuous
@@ -10,7 +10,7 @@
 -- monster.
 -- It cannot attack, also its effects are negated.
 -- While that monster is on the field, during each of your opponent's End Phases: Send the top 3 cards
--- of the opponent's Deck to the Graveyard.
+-- of the opponent's Deck to the GY.
 -- When that monster leaves the field, destroy this card.
 --[[ __CARD_HEADER_END__ ]]
 

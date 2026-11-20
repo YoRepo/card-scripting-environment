@@ -1,20 +1,21 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Curse of Dragon, the Magical Knight Dragon  (ID: 72064891)
 -- Type: Monster / Effect / Fusion
 -- Attribute: DARK
 -- Race: Dragon
 -- Level: 5
 -- ATK 2000 | DEF 1500
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 1 Warrior monster + 1 Level 5 or higher Dragon monster
 -- If you Fusion Summon a Level 7 Dragon Fusion Monster, you can also banish monsters from your GY as
--- material. If this card is Fusion Summoned: You can target 1 Spell/Trap in your GY that mentions
--- "Gaia the Dragon Champion"; add it to your hand. You can only use this effect of "Curse of Dragon,
--- the Magical Knight Dragon" once per turn.
+-- material.
+-- If this card is Fusion Summoned: You can target 1 Spell/Trap in your GY that mentions "Gaia the
+-- Dragon Champion"; add it to your hand.
+-- You can only use this effect of "Curse of Dragon, the Magical Knight Dragon" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --魔道騎竜カース・オブ・ドラゴン

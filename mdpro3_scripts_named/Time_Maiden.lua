@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Time Maiden  (ID: 27107590)
 -- Type: Monster / Effect
@@ -62,7 +62,8 @@ function c27107590.sprcon(e,c)
 		and Duel.GetLocationCount(tp,LOCATION_MZONE)>0
 end
 function c27107590.dtcon(e,c)
-	return c:IsSetCard(0x4a)
+	local ec=e:GetHandler()
+	return c:IsSetCard(0x4a) and (ec:IsFaceup() or c:GetControler()==ec:GetControler())
 end
 function c27107590.thcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return e:GetHandler():IsReleasable() end

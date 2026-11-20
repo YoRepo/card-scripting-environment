@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Phantasm Spiral Assault  (ID: 97795930)
 -- Type: Trap
@@ -8,11 +8,11 @@
 --
 -- Effect Text:
 -- Target 1 "Phantasm Spiral Dragon" you control; when it destroys 3 Effect Monsters your opponent
--- controls, by battle, while equipped with 3 or more "Phantasm Spiral" Equip Spell Cards with
--- different names, you win the Duel.
+-- controls, by battle, while equipped with 3 or more "Phantasm Spiral" Equip Spells with different
+-- names, you win the Duel.
 -- If "Umi" is on the field, you can activate this card from your hand.
 -- If a Normal Monster(s) you control would be destroyed by battle or card effect, you can banish this
--- card from your Graveyard instead.
+-- card from your GY instead.
 --[[ __CARD_HEADER_END__ ]]
 
 --幻煌龍の天渦

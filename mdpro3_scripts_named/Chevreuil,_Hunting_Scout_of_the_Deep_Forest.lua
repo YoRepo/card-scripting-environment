@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Chevreuil, Hunting Scout of the Deep Forest  (ID: 13023431)
 -- Type: Monster / Effect / Fusion
 -- Attribute: EARTH
@@ -11,14 +11,15 @@
 --
 -- Effect Text:
 -- 1 Level 5 or higher EARTH Warrior monster + 1 EARTH Warrior monster
--- Unaffected by your opponent's activated effects, during the Main Phase only. Your opponent's
--- monsters that can attack must attack the monster you control with the highest ATK (their choice, if
--- tied). When another EARTH Warrior monster you control destroys an opponent's monster by battle: You
--- can Special Summon 1 EARTH Warrior monster from your GY or banishment. You can only use this effect
--- of "Chevreuil, Hunting Scout of the Deep Forest" once per turn.
+-- Unaffected by your opponent's activated effects, during the Main Phase only.
+-- Your opponent's monsters that can attack must attack the monster you control with the highest ATK
+-- (their choice, if tied).
+-- When another EARTH Warrior monster you control destroys an opponent's monster by battle: You can
+-- Special Summon 1 EARTH Warrior monster from your GY or banishment.
+-- You can only use this effect of "Chevreuil, Hunting Scout of the Deep Forest" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Chevreuil, Hunting Scout of the Deep Forest
+--密林の狩猟者シュヴルイユ
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--material

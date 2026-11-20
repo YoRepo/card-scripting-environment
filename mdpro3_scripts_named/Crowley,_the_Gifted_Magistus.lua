@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Crowley, the Gifted Magistus  (ID: 875572)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -8,14 +8,14 @@
 -- Level: 4
 -- ATK 1800 | DEF 1000
 -- Setcode: 0x150
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If this face-up card is used as Fusion Material, its name can be treated as "Aleister the Invoker".
--- You can only use each of the following effects of "Crowley, the Gifted Magistus" once per turn. If
--- this card is added to your hand, except by drawing it: You can Special Summon it. If this card is
--- Normal or Special Summoned (except during the Damage Step): You can Fusion Summon 1 "Magistus" or
--- "Invoked" Fusion Monster from your Extra Deck, using monsters from your hand or field.
+-- You can only use each of the following effects of "Crowley, the Gifted Magistus" once per turn.
+-- If this card is added to your hand, except by drawing it: You can Special Summon it.
+-- If this card is Normal or Special Summoned (except during the Damage Step): You can Fusion Summon 1
+-- "Magistus" or "Invoked" Fusion Monster from your Extra Deck, using monsters from your hand or field.
 --[[ __CARD_HEADER_END__ ]]
 
 --天賦の魔導士クロウリー

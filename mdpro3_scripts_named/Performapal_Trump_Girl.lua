@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Performapal Trump Girl  (ID: 42002073)
 -- Type: Monster / Effect / Pendulum
 -- Attribute: DARK
@@ -16,9 +16,9 @@
 -- ----------------------------------------
 -- [ Monster Effect ]
 -- Once per turn: You can Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters you
--- control as Fusion Materials, including this card. If this card in the Pendulum Zone is destroyed:
--- You can target 1 Dragon-Type Fusion Monster in your Graveyard; Special Summon it, but destroy it
--- during the End Phase.
+-- control as Fusion Materials, including this card.
+-- If this card in the Pendulum Zone is destroyed: You can target 1 Dragon-Type Fusion Monster in your
+-- Graveyard; Special Summon it, but destroy it during the End Phase.
 --[[ __CARD_HEADER_END__ ]]
 
 --EMトランプ・ガール

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: The Undying Legion  (ID: 43355214)
 -- Type: Monster / Effect / Xyz
 -- Attribute: DARK
@@ -12,13 +12,14 @@
 -- Effect Text:
 -- 2 Level 7 monsters
 -- Once per turn, you can also Xyz Summon "The Undying Legion" by using 1 Rank 6 Zombie Xyz Monster you
--- control (transfer its materials). During your opponent's Main Phase (Quick Effect): You can detach 2
--- materials from this card (or just 1 material if all this card's materials are Xyz Monsters), then
--- target 1 Attack Position monster your opponent controls or 1 monster in their GY; attach it to this
--- card. You can only use this effect of "The Undying Legion" once per turn.
+-- control (transfer its materials).
+-- During your opponent's Main Phase (Quick Effect): You can detach 2 materials from this card (or just
+-- 1 material if all this card's materials are Xyz Monsters), then target 1 Attack Position monster
+-- your opponent controls or 1 monster in their GY; attach it to this card.
+-- You can only use this effect of "The Undying Legion" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---The Undying Legion
+--不死の大軍団
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--xyz summon

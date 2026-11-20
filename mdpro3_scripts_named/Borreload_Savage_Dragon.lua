@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Borreload Savage Dragon  (ID: 27548199)
 -- Type: Monster / Effect / Synchro
@@ -51,6 +51,9 @@ function c27548199.initial_effect(c)
 	e2:SetOperation(c27548199.disop)
 	c:RegisterEffect(e2)
 end
+c27548199.mentioned_counter={
+	[0x4b]=true,
+}
 function c27548199.eqcon(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():IsSummonType(SUMMON_TYPE_SYNCHRO)
 end

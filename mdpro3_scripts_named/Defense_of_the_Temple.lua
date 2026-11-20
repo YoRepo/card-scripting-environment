@@ -1,16 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Defense of the Temple  (ID: 96687733)
 -- Type: Spell
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 EARTH Fusion Monster from your Extra Deck, using monsters from your hand or field.
 -- If you use a monster you control that mentions "Temple of the Kings", you can also use face-up
--- monsters your opponent controls as material. If you control "Temple of the Kings": You can banish
--- this card from your GY; add 1 "Dangers of the Divine" from your Deck to your hand. You can only use
--- this effect of "Defense of the Temple" once per turn.
+-- monsters your opponent controls as material.
+-- If you control "Temple of the Kings": You can banish this card from your GY; add 1 "Dangers of the
+-- Divine" from your Deck to your hand.
+-- You can only use this effect of "Defense of the Temple" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --神殿の守護神

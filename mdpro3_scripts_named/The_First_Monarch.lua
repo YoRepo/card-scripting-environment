@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: The First Monarch  (ID: 8522996)
 -- Type: Trap / Continuous
@@ -92,7 +92,8 @@ function c8522996.chop(e,tp,eg,ep,ev,re,r,rp)
 	c:RegisterEffect(e2)
 end
 function c8522996.condition(e,c)
-	return c:IsAttribute(e:GetHandler():GetAttribute())
+	local ec=e:GetHandler()
+	return c:IsAttribute(ec:GetAttribute()) and (ec:IsFaceup() or c:GetControler()==ec:GetControler())
 end
 function c8522996.splimit(e,c,tp,sumtp,sumpos)
 	return not c:IsAttribute(e:GetHandler():GetAttribute())

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Snow Dragon  (ID: 3070049)
 -- Type: Monster / Effect
@@ -25,6 +25,9 @@ function c3070049.initial_effect(c)
 	e1:SetOperation(c3070049.operation)
 	c:RegisterEffect(e1)
 end
+c3070049.mentioned_counter={
+	[0x1015]=true,
+}
 function c3070049.condition(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():IsReason(REASON_DESTROY)
 end

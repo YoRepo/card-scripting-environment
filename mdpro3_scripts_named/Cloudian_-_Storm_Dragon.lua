@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Cloudian - Storm Dragon  (ID: 13474291)
 -- Type: Monster / Effect / Special Summon
@@ -56,6 +56,9 @@ function c13474291.initial_effect(c)
 	e4:SetOperation(c13474291.ctop)
 	c:RegisterEffect(e4)
 end
+c13474291.mentioned_counter={
+	[0x1019]=true,
+}
 function c13474291.sdcon(e)
 	return e:GetHandler():IsPosition(POS_FACEUP_DEFENSE)
 end

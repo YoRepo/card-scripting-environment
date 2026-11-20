@@ -1,26 +1,28 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Predaplant Bufolicula  (ID: 70427670)
 -- Type: Monster / Effect / Pendulum
 -- Attribute: DARK
 -- Race: Plant
 -- Level: 1
 -- ATK 0 | DEF 0
+-- Pendulum Scale: L0 / R0
 -- Setcode: 0x10f3
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Pendulum Scale = 0
 -- [ Pendulum Effect ]
 -- During your Main Phase: You can Fusion Summon 1 DARK Fusion Monster from your Extra Deck, using
--- monsters from your hand or field as Fusion Material. You can only use this effect of "Predaplant
--- Bufolicula" once per turn.
+-- monsters from your hand or field as Fusion Material.
+-- You can only use this effect of "Predaplant Bufolicula" once per turn.
 -- ----------------------------------------
 -- [ Monster Effect ]
 -- If this card is sent to the GY or added to your Extra Deck face-up because it was used as Fusion
 -- Material: You can add 1 face-up DARK Pendulum Monster from your Extra Deck to your hand, except
--- "Predaplant Bufolicula". You can only use this effect of "Predaplant Bufolicula" once per turn.
+-- "Predaplant Bufolicula".
+-- You can only use this effect of "Predaplant Bufolicula" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --捕食植物ブフォリキュラ

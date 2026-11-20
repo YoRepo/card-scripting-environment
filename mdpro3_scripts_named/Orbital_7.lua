@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Orbital 7  (ID: 71071546)
 -- Type: Monster / Effect
@@ -51,6 +51,9 @@ function c71071546.initial_effect(c)
 	e3:SetOperation(c71071546.thop)
 	c:RegisterEffect(e3)
 end
+c71071546.mentioned_counter={
+	[0x2c]=true,
+}
 function c71071546.ctop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	if c:IsRelateToEffect(e) and c:IsFaceup() then

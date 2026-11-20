@@ -1,15 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Rahu Dracotail  (ID: 32548318)
 -- Type: Spell
 -- Setcode: 0x1c9
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 "Dracotail" monster from your Extra Deck, using monsters from your hand, Deck, or
 -- field, also for the rest of this turn after this card resolves, you cannot Special Summon from the
--- Extra Deck, except Fusion Monsters. You can only activate 1 "Rahu Dracotail" per turn.
+-- Extra Deck, except Fusion Monsters.
+-- You can only activate 1 "Rahu Dracotail" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --羅睺星辰

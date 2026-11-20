@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: W:P Fancy Ball  (ID: 4993187)
 -- Type: Monster / Effect / Link
@@ -8,7 +8,7 @@
 -- Link Rating: 3
 -- Link Arrows: Top, Bottom-Left, Bottom-Right
 -- ATK 2400
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2+ Effect Monsters

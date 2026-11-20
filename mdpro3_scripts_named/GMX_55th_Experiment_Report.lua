@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: GMX 55th Experiment Report  (ID: 38984832)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x1dd
@@ -11,10 +11,11 @@
 -- If your opponent controls a monster, you can also use 1 "GMX" monster in your Deck as material.
 -- During your Main Phase: You can banish this card from your GY; excavate the top cards of your Deck
 -- until you excavate a "GMX" card, add that "GMX" card to your hand, also shuffle the rest into the
--- Deck. You can only use 1 "GMX 55th Experiment Report" effect per turn, and only once that turn.
+-- Deck.
+-- You can only use 1 "GMX 55th Experiment Report" effect per turn, and only once that turn.
 --[[ __CARD_HEADER_END__ ]]
 
---GMX 55th Experiment Report
+--第５５次GMX試験報告
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--fusion summon

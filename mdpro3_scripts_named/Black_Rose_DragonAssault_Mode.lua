@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Black Rose Dragon/Assault Mode  (ID: 46985799)
 -- Type: Monster / Effect / Special Summon
@@ -17,8 +17,8 @@
 -- You can only use each of the following effects of "Black Rose Dragon/Assault Mode" once per turn.
 -- You can reveal this card in your hand; shuffle it into the Deck, and if you do, change the ATK of 1
 -- face-up monster on the field to 0.
--- If this card is Special Summoned, or a monster(s) is Special Summoned to your opponent's field: You
--- can destroy all cards on the field.
+-- If this card is Special Summoned, or if a monster(s) is Special Summoned to your opponent's field:
+-- You can destroy all cards on the field.
 --[[ __CARD_HEADER_END__ ]]
 
 --ブラック・ローズ・ドラゴン／バスター

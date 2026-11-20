@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Wind Unicorn Parallel, the Dracoslayer  (ID: 39016067)
 -- Type: Monster / Effect / Pendulum
@@ -9,7 +9,7 @@
 -- ATK 2000 | DEF 2000
 -- Pendulum Scale: L2 / R2
 -- Setcode: 0xc7
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Pendulum Scale = 2

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Hunting Horn  (ID: 55421040)
 -- Type: Spell / Quick-Play
 -- Scope: OCG / TCG
@@ -9,12 +9,12 @@
 -- Fusion Summon 1 EARTH Warrior Fusion Monster from your Extra Deck, using Warrior monsters from your
 -- hand or field, then if you activated this card during the Battle Phase, you can choose monsters your
 -- opponent controls, up to the number of materials used from the hand for this Fusion Summon, and
--- their ATK become halved until the end of the Battle Phase. You cannot declare attacks the turn you
--- activate this card, except with EARTH Warrior monsters. You can only activate 1 "Hunting Horn" per
--- turn.
+-- their ATK become halved until the end of the Battle Phase.
+-- You cannot declare attacks the turn you activate this card, except with EARTH Warrior monsters.
+-- You can only activate 1 "Hunting Horn" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Hunting Horn
+--ハンティングホーン
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Activate

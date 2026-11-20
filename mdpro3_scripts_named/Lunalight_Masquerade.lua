@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Lunalight Masquerade  (ID: 2344618)
 -- Type: Spell / Continuous
 -- Setcode: 0xdf
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During your Main Phase, if this card was activated this turn: You can send 1 "Lunalight" monster
--- from your Deck to the GY. If you Fusion Summon a "Lunalight" monster: You can add 1 "Polymerization"
--- from your GY or banishment to your hand, then you can discard 1 card, and if you do, once, if you
--- Fusion Summon a "Lunalight" monster this turn, you can also banish monsters from your GY as
--- material. You can only use each effect of "Lunalight Masquerade" once per turn.
+-- from your Deck to the GY.
+-- If you Fusion Summon a "Lunalight" monster: You can add 1 "Polymerization" from your GY or
+-- banishment to your hand, then you can discard 1 card, and if you do, once, if you Fusion Summon a
+-- "Lunalight" monster this turn, you can also banish monsters from your GY as material.
+-- You can only use each effect of "Lunalight Masquerade" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --月光舞踏会

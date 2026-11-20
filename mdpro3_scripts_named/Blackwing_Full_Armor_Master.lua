@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Blackwing Full Armor Master  (ID: 54082269)
 -- Type: Monster / Effect / Synchro
@@ -72,6 +72,9 @@ function c54082269.initial_effect(c)
 	e5:SetOperation(c54082269.desop)
 	c:RegisterEffect(e5)
 end
+c54082269.mentioned_counter={
+	[0x1002]=true,
+}
 function c54082269.efilter(e,te)
 	return te:GetOwner()~=e:GetOwner()
 end

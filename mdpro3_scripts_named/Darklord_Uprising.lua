@@ -1,16 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Darklord Uprising  (ID: 54527349)
 -- Type: Trap
 -- Setcode: 0xef
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Send 1 "Darklord" monster from your hand or face-up field to the GY; Fusion Summon 1 DARK Fusion
--- Monster from your Extra Deck, using monsters from your hand or field as Fusion Material, then, you
--- can gain LP equal to the original ATK of the monster sent to the GY to activate this card. You can
--- only activate 1 "Darklord Uprising" per turn.
+-- Monster from your Extra Deck, using monsters from your hand or field as material, then you can gain
+-- LP equal to the original ATK of the monster sent to the GY to activate this card.
+-- You can only activate 1 "Darklord Uprising" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --叛逆の堕天使

@@ -1,19 +1,20 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Garbage Golem  (ID: 101306033)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Garbage Golem  (ID: 28968609)
 -- Type: Monster / Effect
 -- Attribute: DARK
 -- Race: Fiend
 -- Level: 4
 -- ATK 0 | DEF 0
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- If you control a monster with 0 ATK or DEF: You can Special Summon this card from your hand. You can
--- reveal 3 Xyz Monsters with different Ranks in your Extra Deck, then target 1 other card on the
--- field; destroy both it and this card. You can banish this card from your GY; detach 1 material from
--- a monster you control, then you can Special Summon 1 monster with 0 ATK or DEF from your hand or GY.
+-- If you control a monster with 0 ATK or DEF: You can Special Summon this card from your hand.
+-- You can reveal 3 Xyz Monsters in your Extra Deck with different Ranks, then target 1 other card on
+-- the field; destroy both it and this card.
+-- You can banish this card from your GY; detach 1 material from a monster you control, then you can
+-- Special Summon 1 monster with 0 ATK or DEF from your hand or GY.
 -- You can only use each effect of "Garbage Golem" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

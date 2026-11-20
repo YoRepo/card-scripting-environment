@@ -1,24 +1,24 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Elemental Saga Doriado  (ID: 101306028)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Elemental Saga Doriado  (ID: 50208444)
 -- Type: Monster / Effect
 -- Attribute: LIGHT
 -- Race: Spellcaster
 -- Level: 7
 -- ATK 2400 | DEF 2800
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Neither player can activate cards or effects in response to the activation of this card's effects.
--- If you have 3 or more different Attributes in your GY and this card is in your hand: You can target
--- 1 monster in your GY; Special Summon both it and this card. If you have 3 or more different
--- Attributes in your GY: You can Special Summon 1 monster from your Deck with a different Attribute
--- from the monsters in your field and GY. You can only use each effect of "Elemental Saga Doriado"
--- once per turn.
+-- If this card is in your hand, and you have 3 or more different Attributes among the monsters in your
+-- GY: You can target 1 monster in your GY; Special Summon both it and this card.
+-- If you have 3 or more different Attributes among the monsters in your GY: You can Special Summon 1
+-- monster from your Deck with a different Attribute from the monsters in your field or GY.
+-- You can only use each effect of "Elemental Saga Doriado" once per turn, also neither player can
+-- activate cards or effects in response to either of these effect activations.
 --[[ __CARD_HEADER_END__ ]]
 
---精霊世妃ドリアード
+--精霊世妃 ドリアード
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--spsummon

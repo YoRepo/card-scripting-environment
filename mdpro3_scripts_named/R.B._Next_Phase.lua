@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: R.B. Next Phase  (ID: 79859067)
 -- Type: Trap / Counter
 -- Setcode: 0x1cf
@@ -9,10 +9,11 @@
 -- Effect Text:
 -- When your opponent activates a monster effect, while you control an "R.B." monster: Destroy 1
 -- monster you control, and if you do, negate the activation, and if you do that, destroy that card,
--- then gain 2000 LP. You can only activate 1 "R.B. Next Phase" per turn.
+-- then gain 2000 LP.
+-- You can only activate 1 "R.B. Next Phase" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---R.B. Next Phase
+--R.B.ネクスト・フェーズ
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Activate

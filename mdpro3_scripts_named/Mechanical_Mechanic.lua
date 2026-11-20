@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Mechanical Mechanic  (ID: 22106558)
 -- Type: Monster / Effect / Tuner
 -- Attribute: WIND
@@ -11,14 +11,15 @@
 --
 -- Effect Text:
 -- When an attack is declared involving your other Machine monster: You can increase or decrease the
--- Level of that other monster you control by 1. You can only use each of the following effects of
--- "Mechanical Mechanic" once per turn. If a card is in the Field Zone: You can Special Summon this
--- card from your hand. You can target 1 face-up Spell/Trap you control; destroy it, and if you do, add
--- 1 WIND Machine monster with 0 ATK from your Deck to your hand, also you cannot Special Summon from
--- the Extra Deck for the rest of this turn, except Machine monsters.
+-- Level of that other monster you control by 1.
+-- You can only use each of the following effects of "Mechanical Mechanic" once per turn.
+-- If a card is in the Field Zone: You can Special Summon this card from your hand.
+-- You can target 1 face-up Spell/Trap you control; destroy it, and if you do, add 1 WIND Machine
+-- monster with 0 ATK from your Deck to your hand, also you cannot Special Summon from the Extra Deck
+-- for the rest of this turn, except Machine monsters.
 --[[ __CARD_HEADER_END__ ]]
 
---Mechanical Mechanic
+--機叡のメカチューナー
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--lv

@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Fire Formation - Ingen  (ID: 29143457)
 -- Type: Spell / Continuous
 -- Setcode: 0x7c
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- When this card is activated: You can Fusion Summon 1 Beast-Warrior Fusion Monster from your Extra
--- Deck, using monsters from your hand or field as Fusion Material. If this face-up card is sent from
--- the Spell & Trap Zone to the GY: You can target 1 "Fire Fist" monster in your GY; add it to your
--- hand. You can only use this effect of "Fire Formation - Ingen" once per turn. You can only activate
--- 1 "Fire Formation - Ingen" per turn.
+-- Deck, using monsters from your hand or field as Fusion Material.
+-- If this face-up card is sent from the Spell & Trap Zone to the GY: You can target 1 "Fire Fist"
+-- monster in your GY; add it to your hand.
+-- You can only use this effect of "Fire Formation - Ingen" once per turn.
+-- You can only activate 1 "Fire Formation - Ingen" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --炎舞－「隠元」

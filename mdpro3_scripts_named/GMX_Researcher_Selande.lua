@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: GMX Researcher Selande  (ID: 20049870)
 -- Type: Monster / Effect
 -- Attribute: FIRE
@@ -12,14 +12,15 @@
 --
 -- Effect Text:
 -- If this card is Normal Summoned: You can Special Summon 1 non-Warrior "GMX" monster or 1 Level 3 or
--- lower Dinosaur monster from your Deck. If this card is Special Summoned by a monster effect: You can
--- add 1 "GMX" Spell/Trap from your Deck to your hand. If a Dinosaur Fusion Monster is on the field:
--- You can shuffle this card from the field into the Deck, and if you do, negate the effects of 1
--- face-up card on the field until the end of this turn. You can only use each effect of "GMX
--- Researcher Selande" once per turn.
+-- lower Dinosaur monster from your Deck.
+-- If this card is Special Summoned by a monster effect: You can add 1 "GMX" Spell/Trap from your Deck
+-- to your hand.
+-- If a Dinosaur Fusion Monster is on the field: You can shuffle this card from the field into the
+-- Deck, and if you do, negate the effects of 1 face-up card on the field until the end of this turn.
+-- You can only use each effect of "GMX Researcher Selande" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---GMX Researcher Selande
+--GMX研究員セラン
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--spsummon

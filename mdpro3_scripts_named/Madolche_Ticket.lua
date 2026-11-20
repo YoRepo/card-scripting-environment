@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Madolche Ticket  (ID: 60470713)
 -- Type: Spell / Continuous
@@ -7,10 +7,9 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- If another "Madolche" card(s) you control or in your GY is added to your hand or shuffled into your
--- Main Deck by a card effect: Add 1 "Madolche" monster from your Deck to your hand.
--- If you control a Fairy "Madolche" monster, you can Special Summon the monster from your Deck in
--- Attack Position instead of adding it to your hand.
+-- If another "Madolche" card(s) in your face-up field or GY is added to your hand or shuffled into
+-- your Main Deck by card effect: Add 1 "Madolche" monster from your Deck to your hand, or if you
+-- control a Fairy "Madolche" monster, you can Special Summon that monster in Attack Position instead.
 -- You can only use this effect of "Madolche Ticket" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

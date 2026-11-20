@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Thundercrash Snarecrow  (ID: 101305084)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Thundercrash Snarecrow  (ID: 53754391)
 -- Type: Monster / Effect
 -- Attribute: LIGHT
 -- Race: Thunder
@@ -11,9 +11,10 @@
 --
 -- Effect Text:
 -- Each time a non-Thunder monster(s) is Special Summoned face-up, while this card is in the Monster
--- Zone: That monster(s) cannot attack this turn, also destroy it during the End Phase. If this card is
--- in your GY: You can target 1 face-up card you control; destroy it, and if you do, add this card to
--- your hand. You can only use this effect of "Thundercrash Snarecrow" once per turn.
+-- Zone: That monster(s) cannot attack this turn, also destroy it during the End Phase.
+-- If this card is in your GY: You can target 1 face-up card you control; destroy it, and if you do,
+-- add this card to your hand.
+-- You can only use this effect of "Thundercrash Snarecrow" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --Thundercrash Snarecrow

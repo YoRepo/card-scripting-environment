@@ -18,8 +18,9 @@ Quick-Play", "Monster / Effect / Xyz", bare "Trap") — it powers the
 studio's "filter by card details" (Monster/Spell/Trap + subtype).
 
 No .cdb is needed — the effect text is derived entirely from the script
-headers (which were themselves generated from cards.cdb upstream). Re-run
-after corpus updates:
+headers (which tools/update_corpus.py generates from the game's card
+databases). That tool rebuilds this index itself whenever it changes
+mdpro3_scripts_named/; run this by hand after editing custom_cards/:
 
     python3 tools/mine_effects.py --out effect_index.json
 """
@@ -29,10 +30,13 @@ import json
 import os
 import sys
 
+# The header's markers have one home — corpus_format.py, which writes them.
+from corpus_format import EFFECT_FIELD as EFFECT_MARKER
+from corpus_format import END_TOKEN as HEADER_END
+from corpus_format import TYPE_FIELD as TYPE_MARKER
+
 DIRS = ("mdpro3_scripts_named", "custom_cards")
-TYPE_MARKER = "-- Type:"
-EFFECT_MARKER = "-- Effect Text:"
-HEADER_END = "__CARD_HEADER_END__"
+DEFAULT_OUT = "effect_index.json"
 
 
 def extract_header(path):
@@ -82,21 +86,30 @@ def mine(corpus_root):
     return entries
 
 
+def write_index(corpus_root, out):
+    """Mine the corpus at `corpus_root` and write the index to `out` (taken
+    as relative to the corpus root unless absolute). Returns (path, entries).
+    tools/update_corpus.py calls this after it changes the corpus, so the
+    index never names a file the corpus no longer holds."""
+    entries = mine(corpus_root)
+    path = out if os.path.isabs(out) else os.path.join(corpus_root, out)
+    with open(path, "w", encoding="utf-8") as fh:
+        # compact: this file is fetched over the wire by the website
+        json.dump(entries, fh, ensure_ascii=False, separators=(",", ":"))
+        fh.write("\n")
+    return path, entries
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--corpus",
                     default=os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                     help="corpus repo root (default: this repo)")
-    ap.add_argument("--out", default="effect_index.json",
+    ap.add_argument("--out", default=DEFAULT_OUT,
                     help="index path to write (default: effect_index.json at the repo root)")
     args = ap.parse_args()
 
-    entries = mine(args.corpus)
-    out = args.out if os.path.isabs(args.out) else os.path.join(args.corpus, args.out)
-    with open(out, "w", encoding="utf-8") as fh:
-        # compact: this file is fetched over the wire by the website
-        json.dump(entries, fh, ensure_ascii=False, separators=(",", ":"))
-        fh.write("\n")
+    out, entries = write_index(args.corpus, args.out)
     with_effect = sum(1 for e in entries if e["effect"])
     print(f"{len(entries)} cards ({with_effect} with effect text) -> {out}")
 

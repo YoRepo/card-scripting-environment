@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Arcana Force EX - The Light Ruler  (ID: 5861892)
 -- Type: Monster / Effect / Special Summon
@@ -131,15 +131,15 @@ function c5861892.negop(e,tp,eg,ep,ev,re,r,rp)
 	if c:IsFacedown() or c:GetAttack()<1000 or not c:IsRelateToEffect(e) or Duel.GetCurrentChain()~=ev+1 then
 		return
 	end
-	if Duel.NegateActivation(ev) then
-		if re:GetHandler():IsRelateToEffect(re) then
-			Duel.Destroy(re:GetHandler(),REASON_EFFECT)
+	local e1=Effect.CreateEffect(c)
+	e1:SetType(EFFECT_TYPE_SINGLE)
+	e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_DISABLE)
+	e1:SetCode(EFFECT_UPDATE_ATTACK)
+	e1:SetValue(-1000)
+	c:RegisterEffect(e1)
+	if not c:IsHasEffect(EFFECT_REVERSE_UPDATE) then
+		if Duel.NegateActivation(ev) and re:GetHandler():IsRelateToEffect(re) then
+			Duel.Destroy(eg,REASON_EFFECT)
 		end
-		local e1=Effect.CreateEffect(c)
-		e1:SetType(EFFECT_TYPE_SINGLE)
-		e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_DISABLE)
-		e1:SetCode(EFFECT_UPDATE_ATTACK)
-		e1:SetValue(-1000)
-		c:RegisterEffect(e1)
 	end
 end

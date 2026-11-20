@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Starving Venom Predapower Fusion Dragon  (ID: 39915560)
 -- Type: Monster / Effect / Fusion
@@ -51,6 +51,9 @@ function c39915560.initial_effect(c)
 	e2:SetOperation(c39915560.spop)
 	c:RegisterEffect(e2)
 end
+c39915560.mentioned_counter={
+	[0x1041]=true,
+}
 function c39915560.fusmatfilter(c)
 	return c:IsFusionAttribute(ATTRIBUTE_DARK) and c:IsFusionType(TYPE_FUSION)
 end

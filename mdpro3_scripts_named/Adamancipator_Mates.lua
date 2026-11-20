@@ -1,18 +1,19 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Adamancipator Mates  (ID: 101306063)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Adamancipator Mates  (ID: 30068809)
 -- Type: Spell
 -- Setcode: 0x140
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Add 1 "Adamancipator" monster from your Deck to your hand. If this card is in your GY: You can place
--- 1 card from your hand on top of the Deck; add this card to your hand. You can only use each effect
--- of "Adamancipator Mates" once per turn.
+-- Add 1 "Adamancipator" monster from your Deck to your hand.
+-- If this card is in your GY: You can place 1 card from your hand on top of the Deck; add this card to
+-- your hand.
+-- You can only use each effect of "Adamancipator Mates" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---魔救の合緣
+--魔救の合縁
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Activate

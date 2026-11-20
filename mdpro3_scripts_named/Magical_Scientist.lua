@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Magical Scientist  (ID: 34206604)
 -- Type: Monster / Effect
@@ -11,10 +11,8 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Pay 1000 Life Points to Special Summon 1 level 6 or lower Fusion Monster from your Extra Deck in
--- face-up Attack or Defense Position.
--- That Fusion Monster cannot attack your opponent's Life Points directly, and is returned to your
--- Extra Deck at the end of the turn.
+-- You can pay 1000 LP; Special Summon 1 Level 6 or lower Fusion Monster from your Extra Deck, but it
+-- cannot attack directly, also return it to the Extra Deck during the End Phase.
 --[[ __CARD_HEADER_END__ ]]
 
 --魔導サイエンティスト

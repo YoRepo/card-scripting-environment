@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Zapper Shrimp  (ID: 92744676)
 -- Type: Monster / Effect / Tuner / Synchro
@@ -10,7 +10,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- 1 Tuner + 1 non-Tuner monster
+-- 1 Tuner + 1 non-Tuner
 -- If this card is Special Summoned: You can send 1 other card from your hand or field to the GY, then
 -- target 1 Spell/Trap your opponent controls; destroy it.
 -- You can only use this effect of "Zapper Shrimp" once per turn.

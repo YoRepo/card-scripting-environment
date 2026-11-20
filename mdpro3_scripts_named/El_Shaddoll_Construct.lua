@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: El Shaddoll Construct  (ID: 20366274)
 -- Type: Monster / Effect / Fusion
 -- Attribute: LIGHT
@@ -8,14 +8,16 @@
 -- Level: 8
 -- ATK 2800 | DEF 2500
 -- Setcode: 0x9d
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 1 "Shaddoll" monster + 1 LIGHT monster
--- Must first be Fusion Summoned. If this card is Special Summoned: You can send 1 "Shaddoll" card from
--- your Deck to the GY. At the start of the Damage Step, if this card battles a Special Summoned
--- monster: Destroy that monster. If this card is sent to the GY: You can target 1 "Shaddoll"
--- Spell/Trap in your GY; add it to your hand.
+-- Must first be Fusion Summoned.
+-- If this card is Special Summoned: You can send 1 "Shaddoll" card from your Deck to the GY.
+-- At the start of the Damage Step, if this card battles a Special Summoned monster: Destroy that
+-- monster.
+-- If this card is sent to the GY: You can target 1 "Shaddoll" Spell/Trap in your GY; add it to your
+-- hand.
 --[[ __CARD_HEADER_END__ ]]
 
 --エルシャドール・ネフィリム

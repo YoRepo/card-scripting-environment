@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Raging Cloudian  (ID: 23639291)
 -- Type: Trap
@@ -23,6 +23,9 @@ function c23639291.initial_effect(c)
 	e1:SetOperation(c23639291.operation)
 	c:RegisterEffect(e1)
 end
+c23639291.mentioned_counter={
+	[0x1019]=true,
+}
 function c23639291.condition(e,tp,eg,ep,ev,re,r,rp)
 	local tc=eg:GetFirst()
 	return eg:GetCount()==1 and tc:IsControler(tp) and tc:IsPreviousControler(tp) and tc:IsReason(REASON_DESTROY)

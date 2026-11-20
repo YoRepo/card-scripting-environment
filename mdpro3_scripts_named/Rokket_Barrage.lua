@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Rokket Barrage  (ID: 53481938)
 -- Type: Monster / Effect
@@ -8,15 +8,15 @@
 -- Level: 5
 -- ATK 1500 | DEF 1600
 -- Setcode: 0x102
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- You can send 1 DARK Dragon monster from your Deck to the GY, except a Level 5 monster; Special
--- Summon this card from your hand, also you cannot Special Summon from the Extra Deck for the rest of
--- this turn, except DARK monsters.
+-- If this card is in your hand: You can send 1 DARK Dragon monster from your Deck to the GY, except a
+-- Level 5 monster; Special Summon this card, also you cannot Special Summon from the Extra Deck for
+-- the rest of this turn, except DARK monsters.
 -- When a Link Monster's effect is activated that targets this card on the field (Quick Effect): You
 -- can destroy this card, then Special Summon up to 1 "Rokket" monster each from your hand, Deck, GY,
--- and/or banishment, except "Rokket Barrage".
+-- and banishment, except "Rokket Barrage".
 -- You can only use each effect of "Rokket Barrage" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

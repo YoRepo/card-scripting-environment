@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: R.B. Ga10 Driller  (ID: 6043161)
 -- Type: Monster / Effect
 -- Attribute: EARTH
@@ -12,13 +12,14 @@
 --
 -- Effect Text:
 -- If you control no face-up monsters, or the only face-up monsters you control are "R.B." monsters,
--- you can Special Summon this card (from your hand). You can only Special Summon "R.B. Ga10 Driller"
--- once per turn this way. During the Main Phase, if this card is linked to an "R.B." Link Monster
--- (Quick Effect): You can pay 500 LP, then target 1 monster your opponent controls; destroy both that
--- monster and this card. You can only use this effect of "R.B. Ga10 Driller" once per turn.
+-- you can Special Summon this card (from your hand).
+-- You can only Special Summon "R.B. Ga10 Driller" once per turn this way.
+-- During the Main Phase, if this card is linked to an "R.B." Link Monster (Quick Effect): You can pay
+-- 500 LP, then target 1 monster your opponent controls; destroy both that monster and this card.
+-- You can only use this effect of "R.B. Ga10 Driller" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---R.B. Ga10 Driller
+--R.B.GA１０ドリラー
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--special summon

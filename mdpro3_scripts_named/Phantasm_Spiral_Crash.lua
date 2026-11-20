@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Phantasm Spiral Crash  (ID: 48308134)
 -- Type: Spell / Equip
@@ -11,8 +11,8 @@
 -- If the equipped monster attacks a Defense Position monster, inflict piercing battle damage to your
 -- opponent.
 -- When the equipped monster inflicts battle damage to your opponent: You can Special Summon 1
--- "Phantasm Spiral Dragon" from your hand, Deck, or Graveyard, and equip it with this card, then you
--- can change 1 Attack Position monster your opponent controls to Defense Position.
+-- "Phantasm Spiral Dragon" from your hand, Deck, or GY, and equip it with this card, then you can
+-- change 1 Attack Position monster your opponent controls to Defense Position.
 -- You can only use this effect of "Phantasm Spiral Crash" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

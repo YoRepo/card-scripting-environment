@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Vaalmonica Creation  (ID: 98167225)
 -- Type: Trap / Continuous
@@ -63,6 +63,9 @@ function s.initial_effect(c)
 	e4:SetOperation(s.couop)
 	c:RegisterEffect(e4)
 end
+s.mentioned_counter={
+	[0x6a]=true,
+}
 function s.cfilter(c)
 	return c:GetCounter(0x6a)>0
 end

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Edge Imp Scythe  (ID: 29280589)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -8,14 +8,15 @@
 -- Level: 3
 -- ATK 1000 | DEF 0
 -- Setcode: 0xc3
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During your opponent's Main Phase (Quick Effect): You can reveal this card in your hand; Fusion
 -- Summon 1 "Frightfur" Fusion Monster from your Extra Deck, using monsters from your hand or field as
--- Fusion Material, including this card in your hand. If a "Frightfur" Fusion Monster(s) you control
--- would be destroyed by battle or card effect, you can banish this card from your GY instead. You can
--- only use each effect of "Edge Imp Scythe" once per turn.
+-- Fusion Material, including this card in your hand.
+-- If a "Frightfur" Fusion Monster(s) you control would be destroyed by battle or card effect, you can
+-- banish this card from your GY instead.
+-- You can only use each effect of "Edge Imp Scythe" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --エッジインプ・サイズ

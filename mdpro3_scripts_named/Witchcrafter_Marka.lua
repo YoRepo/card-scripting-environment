@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Witchcrafter Marka  (ID: 6071005)
 -- Type: Monster / Effect
@@ -8,7 +8,7 @@
 -- Level: 6
 -- ATK 2500 | DEF 0
 -- Setcode: 0x128
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- You can Tribute this card from your hand or field; add 1 "Witchcrafter" Field or Continuous Spell
@@ -82,7 +82,7 @@ function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	if c:IsRelateToChain() and Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)~=0 then
+	if c:IsRelateToChain() and aux.NecroValleyFilter()(c) and Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP)~=0 then
 		local e1=Effect.CreateEffect(c)
 		e1:SetType(EFFECT_TYPE_SINGLE)
 		e1:SetCode(EFFECT_LEAVE_FIELD_REDIRECT)

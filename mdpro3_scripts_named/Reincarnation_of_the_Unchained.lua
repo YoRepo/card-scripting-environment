@@ -1,14 +1,14 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Reincarnation of the Unchained  (ID: 67803035)
 -- Type: Spell / Continuous
 -- Setcode: 0x130
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- When this card is activated: You can add 1 "Unchained" Spell (except "Reincarnation of the
--- Unchained") or 1 "Abomination's Prison" from your Deck to your hand.
+-- When this card is activated: You can add 1 "Abomination's Prison", or 1 "Unchained" Spell, except
+-- "Reincarnation of the Unchained", from your Deck to your hand.
 -- Once per turn: You can target up to 3 "Unchained" cards in your GY, except "Reincarnation of the
 -- Unchained"; shuffle them into the Deck, then you can destroy other cards you control up to the
 -- number shuffled.
@@ -63,7 +63,7 @@ function s.tdtg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	Duel.SetOperationInfo(0,CATEGORY_TODECK,g,g:GetCount(),0,0)
 end
 function s.tdop(e,tp,eg,ep,ev,re,r,rp)
-	local g=Duel.GetTargetsRelateToChain()
+	local g=Duel.GetTargetsRelateToChain():Filter(aux.NecroValleyFilter(),nil)
 	if g:GetCount()>0 and Duel.SendtoDeck(g,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)~=0 then
 		local ct=Duel.GetOperatedGroup():FilterCount(Card.IsLocation,nil,LOCATION_DECK+LOCATION_EXTRA)
 		if ct>0 and Duel.IsExistingMatchingCard(aux.TRUE,tp,LOCATION_ONFIELD,0,1,aux.ExceptThisCard(e))

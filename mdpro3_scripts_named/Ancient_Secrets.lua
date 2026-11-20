@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Ancient Secrets  (ID: 100266001)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Ancient Secrets  (ID: 30752324)
 -- Type: Spell
 -- Scope: OCG
 --
@@ -39,9 +39,7 @@ function s.spfilter2(c,e,tp)
 	return c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function s.cfilter(c)
-	return c:IsFaceup() and c:GetOriginalType()&TYPE_MONSTER==TYPE_MONSTER
-		and (c:IsLocation(LOCATION_MZONE) and c:IsType(TYPE_NORMAL)
-		or not c:IsLocation(LOCATION_MZONE) and c:GetOriginalType()&TYPE_NORMAL==TYPE_NORMAL)
+	return c:IsFaceup() and c:IsAllCardTypes(TYPE_NORMAL+TYPE_MONSTER)
 end
 function s.desfilter(c)
 	return c:IsType(TYPE_SPELL+TYPE_TRAP)

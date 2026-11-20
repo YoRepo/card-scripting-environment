@@ -1,10 +1,10 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Trickstar Diffusion  (ID: 63181559)
 -- Type: Trap
 -- Setcode: 0xfb, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Activate 1 of these effects;
@@ -13,7 +13,8 @@
 -- ● Immediately after this effect resolves, Link Summon 1 "Trickstar" Link Monster.
 -- You can banish this card from your GY, then target 1 "Trickstar" monster you control; this turn,
 -- while that monster is face-up on your field, your opponent's monsters can only target that monster
--- for attacks. You can only use each effect of "Trickstar Diffusion" once per turn.
+-- for attacks.
+-- You can only use each effect of "Trickstar Diffusion" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --トリックスター・ディフュージョン

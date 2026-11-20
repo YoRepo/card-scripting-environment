@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Number 76: Harmonizer Gradielle  (ID: 92015800)
 -- Type: Monster / Effect / Xyz
@@ -13,10 +13,10 @@
 -- Effect Text:
 -- 2 Level 7 monsters
 -- This card's Attribute is also treated as each of its attached materials' Attributes.
--- Cannot be destroyed by battle with a monster of the same Attribute, also cannot be destroyed by the
--- activated effects of your opponent's monsters with the same Attribute.
+-- Cannot be destroyed by battle with a monster with the same Attribute, also cannot be destroyed by
+-- the activated effects of your opponent's monsters with the same Attribute.
 -- (Quick Effect): You can target 1 monster in your opponent's GY; detach 1 material from this card,
--- and if you do, attach that target to this card as material.
+-- and if you do, attach that target to this card.
 -- You can only use this effect of "Number 76: Harmonizer Gradielle" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

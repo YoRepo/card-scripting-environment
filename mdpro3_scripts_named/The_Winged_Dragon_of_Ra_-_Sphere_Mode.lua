@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: The Winged Dragon of Ra - Sphere Mode  (ID: 10000080)
 -- Type: Monster / Effect
@@ -7,6 +7,7 @@
 -- Race: Divine-Beast
 -- Level: 10
 -- ATK ? | DEF ?
+-- Setcode: 0x1f0
 -- Scope: OCG / TCG
 --
 -- Effect Text:

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Cyber Pharos  (ID: 29719112)
 -- Type: Monster / Effect
 -- Attribute: LIGHT
@@ -8,14 +8,15 @@
 -- Level: 1
 -- ATK 0 | DEF 2100
 -- Setcode: 0x93
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- You can Special Summon this card (from your hand) by Tributing 1 Machine monster. Once per turn,
--- during your Main Phase: You can Fusion Summon 1 Machine Fusion Monster from your Extra Deck, using
--- monsters from your hand and/or field as material. When a Fusion Monster you control is destroyed by
--- battle: You can banish this card from your GY; add 1 "Power Bond" from your Deck to your hand. You
--- can only use this effect of "Cyber Pharos" once per turn.
+-- You can Special Summon this card (from your hand) by Tributing 1 Machine monster.
+-- Once per turn, during your Main Phase: You can Fusion Summon 1 Machine Fusion Monster from your
+-- Extra Deck, using monsters from your hand and/or field as material.
+-- When a Fusion Monster you control is destroyed by battle: You can banish this card from your GY; add
+-- 1 "Power Bond" from your Deck to your hand.
+-- You can only use this effect of "Cyber Pharos" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --サイバー・ファロス

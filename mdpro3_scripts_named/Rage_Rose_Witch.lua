@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Rage Rose Witch  (ID: 33955120)
 -- Type: Monster / Effect / Synchro
@@ -82,7 +82,7 @@ function s.tgop(e,tp,eg,ep,ev,re,r,rp)
 	aux.GCheckAdditional=s.lncheck
 	local sg=g:SelectSubGroup(tp,aux.TRUE,false,1,2)
 	aux.GCheckAdditional=nil
-	if sg:GetCount()>0 then
+	if sg then
 		Duel.SendtoGrave(sg,REASON_EFFECT)
 	end
 	local e1=Effect.CreateEffect(e:GetHandler())

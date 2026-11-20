@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Disguise, the Copycat Hero  (ID: 87750925)
 -- Type: Monster / Effect / Tuner
 -- Attribute: LIGHT
@@ -10,15 +10,16 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- If you have an Equip Spell in your field or GY: You can Special Summon this card from your hand. If
--- this card is Normal or Special Summoned: You can add 1 "Cursed Copycat Noble Arms" from your Deck to
--- your hand. While this card is equipped with an Equip Card: You can target 1 non-Tuner Warrior
--- monster on the field with a Level; this card's Level, also its name, become the same as that
--- monster's until the End Phase. You can only use each effect of "Disguise, the Copycat Hero" once per
--- turn.
+-- If you have an Equip Spell in your field or GY: You can Special Summon this card from your hand.
+-- If this card is Normal or Special Summoned: You can add 1 "Cursed Copycat Noble Arms" from your Deck
+-- to your hand.
+-- While this card is equipped with an Equip Card: You can target 1 non-Tuner Warrior monster on the
+-- field with a Level; this card's Level, also its name, become the same as that monster's until the
+-- End Phase.
+-- You can only use each effect of "Disguise, the Copycat Hero" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Disguise, the Copycat Hero
+--虚英雄ディスガイス
 local s,id,o=GetID()
 function s.initial_effect(c)
 	aux.AddCodeList(c,23249029)

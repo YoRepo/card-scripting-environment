@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Magikey Maftea  (ID: 99426088)
 -- Type: Spell
 -- Setcode: 0x165
@@ -9,8 +9,9 @@
 -- Effect Text:
 -- Fusion Summon 1 "Magikey" Fusion Monster from your Extra Deck, using monsters from your hand or
 -- field as Fusion Material, OR Ritual Summon 1 "Magikey" Ritual Monster from your hand, by Tributing
--- monsters from your hand or field whose total Levels equal or exceed its Level. If you control a
--- Normal Monster, you can also send 1 Normal Monster from your Deck to the GY as material or Tribute.
+-- monsters from your hand or field whose total Levels equal or exceed its Level.
+-- If you control a Normal Monster, you can also send 1 Normal Monster from your Deck to the GY as
+-- material or Tribute.
 --[[ __CARD_HEADER_END__ ]]
 
 --魔鍵－マフテア

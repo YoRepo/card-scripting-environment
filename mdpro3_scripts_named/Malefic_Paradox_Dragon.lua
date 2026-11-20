@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Malefic Paradox Dragon  (ID: 8310162)
 -- Type: Monster / Effect / Synchro
@@ -12,10 +12,10 @@
 --
 -- Effect Text:
 -- "Malefic Parallel Gear" + 1 non-Tuner "Malefic" monster
--- When this card is Synchro Summoned, you can select 1 Synchro Monster in either player's Graveyard,
--- and Special Summon it.
--- There can only be 1 face-up "Malefic Paradox Dragon" on the field.
--- If "Malefic World" is not face-up on the field, destroy this card.
+-- When this card is Synchro Summoned: You can target 1 Synchro Monster in either GY; Special Summon
+-- it.
+-- There can only be 1 "Malefic Paradox Dragon" on the field.
+-- If "Malefic World" is not on the field, destroy this card.
 --[[ __CARD_HEADER_END__ ]]
 
 --Sin パラドクス・ドラゴン

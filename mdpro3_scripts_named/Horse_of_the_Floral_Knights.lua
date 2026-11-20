@@ -1,19 +1,20 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Horse of the Floral Knights  (ID: 71736213)
 -- Type: Monster / Effect
 -- Attribute: WIND
 -- Race: Beast
 -- Level: 3
 -- ATK 400 | DEF 800
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If this card is Normal or Special Summoned: You can add 1 LIGHT "Noble Knight" monster from your
--- Deck to your hand. You can only use this effect of "Horse of the Floral Knights" once per turn. Once
--- per turn, during your Main Phase: You can Fusion Summon 1 Fusion Monster from your Extra Deck, using
--- this card you control and other monsters from your hand or field as Fusion Material.
+-- Deck to your hand.
+-- You can only use this effect of "Horse of the Floral Knights" once per turn.
+-- Once per turn, during your Main Phase: You can Fusion Summon 1 Fusion Monster from your Extra Deck,
+-- using this card you control and other monsters from your hand or field as Fusion Material.
 --[[ __CARD_HEADER_END__ ]]
 
 --花騎士団の駿馬

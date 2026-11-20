@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Gagaga Magician - Gagaga Magic  (ID: 12908094)
 -- Type: Monster / Effect
@@ -8,12 +8,12 @@
 -- Level: 4
 -- ATK 1500 | DEF 1000
 -- Setcode: 0x54
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- If this card is in your hand: You can Special Summon both it and 1 other "Zubaba", "Gagaga",
--- "Gogogo", or "Dododo" monster from your hand or GY, except "Gagaga Magician - Gagaga Magic", and if
--- you do, immediately after this effect resolves, Xyz Summon 1 "Zubaba", "Gagaga", "Gogogo", "Dododo",
+-- If this card is in your hand: You can Special Summon both this card and 1 "Zubaba", "Gagaga",
+-- "Gogogo", or "Dododo" monster from your hand or GY, except "Gagaga Magician - Gagaga Magic", then
+-- immediately after this effect resolves, Xyz Summon 1 "Zubaba", "Gagaga", "Gogogo", "Dododo",
 -- "Djinn", "Heroic Champion", "Number", "ZW -", or "ZS -" Xyz Monster using only those 2 monsters.
 -- When you do, treat the Level of 1 of the monsters the same as the other monster's.
 -- You can only use this effect of "Gagaga Magician - Gagaga Magic" once per turn.

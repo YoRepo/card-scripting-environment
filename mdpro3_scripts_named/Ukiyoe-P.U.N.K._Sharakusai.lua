@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Ukiyoe-P.U.N.K. Sharakusai  (ID: 13258285)
 -- Type: Monster / Effect / Tuner
 -- Attribute: EARTH
@@ -8,13 +8,14 @@
 -- Level: 3
 -- ATK 1200 | DEF 600
 -- Setcode: 0x171
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- You can pay 600 LP; Fusion Summon 1 "P.U.N.K." Fusion Monster from your Extra Deck, using monsters
--- from your hand or field as material. During your opponent's turn (Quick Effect): You can pay 600 LP;
--- immediately after this effect resolves, Synchro Summon 1 "P.U.N.K." Synchro Monster using monsters
--- you control as material. You can only use each effect of "Ukiyoe-P.U.N.K. Sharakusai" once per turn.
+-- from your hand or field as material.
+-- During your opponent's turn (Quick Effect): You can pay 600 LP; immediately after this effect
+-- resolves, Synchro Summon 1 "P.U.N.K." Synchro Monster using monsters you control as material.
+-- You can only use each effect of "Ukiyoe-P.U.N.K. Sharakusai" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --Uk－P.U.N.K.娑楽斎

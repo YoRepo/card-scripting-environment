@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Silent Magician LV4  (ID: 73665146)
 -- Type: Monster / Effect
@@ -51,6 +51,9 @@ function c73665146.initial_effect(c)
 	c:RegisterEffect(e3)
 end
 c73665146.lvup={72443568}
+c73665146.mentioned_counter={
+	[0x1]=true,
+}
 function c73665146.addc(e,tp,eg,ep,ev,re,r,rp)
 	if ep~=tp then
 		e:GetHandler():AddCounter(0x1,1)

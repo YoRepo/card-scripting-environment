@@ -1,15 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Doll Hammer  (ID: 100263008)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Doll Hammer  (ID: 44088353)
 -- Type: Spell
 -- Scope: OCG
 --
 -- Effect Text:
 -- Target 1 monster you control; destroy it, and if you do, draw 2 cards, then you can change the
--- battle position of 1 monster your opponent controls. If a monster(s) is Special Summoned from your
--- GY while this card is in your GY: You can add this card to your hand. You can only use each effect
--- of "Doll Hammer" once per turn.
+-- battle position of 1 monster your opponent controls.
+-- If a monster(s) is Special Summoned from your GY, while this card is in your GY (except during the
+-- Damage Step): You can add this card to your hand.
+-- You can only use each effect of "Doll Hammer" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ドールハンマー
@@ -68,7 +69,7 @@ function s.activate(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 function s.cfilter(c,tp)
-	return c:IsSummonLocation(LOCATION_GRAVE) and c:GetPreviousControler()==tp
+	return c:IsSummonLocation(LOCATION_GRAVE) and c:GetPreviousControler()==tp and c:GetOriginalType()&TYPE_MONSTER~=0
 end
 function s.thcon(e,tp,eg,ep,ev,re,r,rp)
 	return eg:IsExists(s.cfilter,1,nil,tp)

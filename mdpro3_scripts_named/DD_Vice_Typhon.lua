@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: D/D Vice Typhon  (ID: 59123937)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -8,14 +8,15 @@
 -- Level: 7
 -- ATK 2300 | DEF 2800
 -- Setcode: 0xaf
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- When this card is Normal Summoned: You can Tribute 1 "D/D" monster; Special Summon 1 Level 7 "D/D/D"
--- monster from your Deck. During your Main Phase, if this card is in the GY because it was sent there
--- this turn: You can Fusion Summon 1 Level 8 or higher "D/D/D" Fusion Monster from your Extra Deck, by
--- banishing Fusion Materials listed on it from your GY, including this card. You can only use each
--- effect of "D/D Vice Typhon" once per turn.
+-- monster from your Deck.
+-- During your Main Phase, if this card is in the GY because it was sent there this turn: You can
+-- Fusion Summon 1 Level 8 or higher "D/D/D" Fusion Monster from your Extra Deck, by banishing
+-- materials mentioned on it from your GY, including this card.
+-- You can only use each effect of "D/D Vice Typhon" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --DDヴァイス・テュポーン

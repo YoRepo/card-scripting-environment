@@ -1,13 +1,13 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Malefic Force  (ID: 68721020)
 -- Type: Trap
 -- Setcode: 0x23
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Target 1 face-up monster on the field; equip this card to it as an Equip Card with these effects.
+-- Target 1 face-up monster on the field; equip this card to it with the following effects.
 -- ● The equipped monster is unaffected by Spell effects.
 -- ● Once per turn: You can destroy this card, and if you do, add 1 "Malefic" card from your Deck to
 -- your hand.

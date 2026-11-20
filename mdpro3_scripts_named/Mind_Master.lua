@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Mind Master  (ID: 96782886)
 -- Type: Monster / Effect / Tuner
@@ -10,8 +10,9 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- You can pay 800 Life Points and Tribute 1 Psychic-Type monster, except "Mind Master", to Special
--- Summon 1 Level 4 or lower Psychic-Type monster from your Deck in face-up Attack Position.
+-- You can pay 800 LP and Tribute 1 Psychic monster; Special Summon 1 Level 4 or lower Psychic monster
+-- from your Deck in Attack Position.
+-- You can only use this effect of "Mind Master" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --メンタルマスター

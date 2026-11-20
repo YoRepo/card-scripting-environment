@@ -1,15 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Ostinato  (ID: 9113513)
 -- Type: Spell
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If you control no monsters: Fusion Summon 1 "Melodious" Fusion Monster from your Extra Deck, using 2
--- monsters from your hand and/or Deck as material. During the End Phase of this turn, destroy the
--- monster Fusion Summoned by this effect, and if you do, if all the materials that were used for its
--- Fusion Summon are in your GY, you can Special Summon all of them.
+-- monsters from your hand and/or Deck as material.
+-- During the End Phase of this turn, destroy the monster Fusion Summoned by this effect, and if you
+-- do, if all the materials that were used for its Fusion Summon are in your GY, you can Special Summon
+-- all of them.
 --[[ __CARD_HEADER_END__ ]]
 
 --オスティナート

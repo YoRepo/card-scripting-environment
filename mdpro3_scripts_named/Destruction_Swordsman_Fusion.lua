@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Destruction Swordsman Fusion  (ID: 41940225)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x46, 0xd6
@@ -8,9 +8,10 @@
 --
 -- Effect Text:
 -- Fusion Summon 1 Fusion Monster that mentions "Buster Blader" as material from your Extra Deck, using
--- monsters from your hand or either field as Fusion Material. If this card is in your GY: You can send
--- 1 card from your hand to the GY; add this card to your hand. You can only use each effect of
--- "Destruction Swordsman Fusion" once per turn.
+-- monsters from your hand or either field as Fusion Material.
+-- If this card is in your GY: You can send 1 card from your hand to the GY; add this card to your
+-- hand.
+-- You can only use each effect of "Destruction Swordsman Fusion" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --破壊剣士融合

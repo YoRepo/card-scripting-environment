@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Cubic Wave  (ID: 35058588)
 -- Type: Spell
@@ -39,6 +39,9 @@ function c35058588.initial_effect(c)
 	e2:SetOperation(c35058588.counterop)
 	c:RegisterEffect(e2)
 end
+c35058588.mentioned_counter={
+	[0x1038]=true,
+}
 function c35058588.atkfilter(c)
 	return c:IsFaceup() and c:IsSetCard(0xe3)
 end

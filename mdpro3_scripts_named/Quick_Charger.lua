@@ -1,12 +1,12 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Quick Charger  (ID: 49479374)
 -- Type: Spell / Quick-Play
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Add 2 Level 4 or lower "Batteryman" monsters from your Graveyard to your hand.
+-- Target 2 Level 4 or lower "Batteryman" monsters in your GY; add them to your hand.
 --[[ __CARD_HEADER_END__ ]]
 
 --急速充電器

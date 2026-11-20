@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Favorite HERO Flame Wingman  (ID: 13243124)
 -- Type: Monster / Effect / Fusion
@@ -8,7 +8,7 @@
 -- Level: 6
 -- ATK 2100 | DEF 1200
 -- Setcode: 0x3008, 0x184, 0x194
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2 monsters with the same Type but different Attributes

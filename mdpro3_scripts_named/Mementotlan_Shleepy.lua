@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Mementotlan Shleepy  (ID: 50042011)
 -- Type: Monster / Effect
 -- Attribute: EARTH
@@ -8,15 +8,16 @@
 -- Level: 3
 -- ATK 800 | DEF 1000
 -- Setcode: 0x1a1
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During the turn a monster(s) in your possession was destroyed by card effect (Quick Effect): You can
--- Special Summon this card from your hand. If this card is Normal or Special Summoned: You can Fusion
--- Summon 1 "Memento" Fusion Monster from your Extra Deck, using monsters from your hand or field. If
--- this card is destroyed by battle or card effect: You can send 1 "Memento" card from your Deck to the
--- GY, except "Mementotlan Shleepy". You can only use each effect of "Mementotlan Shleepy" once per
--- turn.
+-- Special Summon this card from your hand.
+-- If this card is Normal or Special Summoned: You can Fusion Summon 1 "Memento" Fusion Monster from
+-- your Extra Deck, using monsters from your hand or field.
+-- If this card is destroyed by battle or card effect: You can send 1 "Memento" card from your Deck to
+-- the GY, except "Mementotlan Shleepy".
+-- You can only use each effect of "Mementotlan Shleepy" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --メメント・スリーピィ

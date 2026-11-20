@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Mixousia the Confounder  (ID: 101305085)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Mixousia the Confounder  (ID: 80843006)
 -- Type: Monster / Effect / Fusion
 -- Attribute: DARK
 -- Race: Spellcaster
@@ -13,9 +13,10 @@
 -- 1 Spellcaster monster + 1 non-Spellcaster monster
 -- You can target 1 face-up monster on the field and declare 1 Attribute; it becomes that Attribute.
 -- During your opponent's Main Phase (Quick Effect): You can Fusion Summon 1 Fusion Monster from your
--- Extra Deck, by banishing this card you control and monsters from your field or GY as material. If
--- this card is in your GY: You can declare 1 Attribute; this card in the GY becomes that Attribute
--- until the end of this turn. You can only use each effect of "Mixousia the Confounder" once per turn.
+-- Extra Deck, by banishing this card you control and monsters from your field or GY as material.
+-- If this card is in your GY: You can declare 1 Attribute; this card in the GY becomes that Attribute
+-- until the end of this turn.
+-- You can only use each effect of "Mixousia the Confounder" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --Mixousia the Confounder
@@ -37,7 +38,7 @@ function s.initial_effect(c)
 	--spsummon
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,1))
-	e2:SetCategory(CATEGORY_SPECIAL_SUMMON+CATEGORY_FUSION_SUMMON+CATEGORY_REMOVE)
+	e2:SetCategory(CATEGORY_SPECIAL_SUMMON+CATEGORY_FUSION_SUMMON+CATEGORY_REMOVE+CATEGORY_GRAVE_ACTION)
 	e2:SetType(EFFECT_TYPE_QUICK_O)
 	e2:SetCode(EVENT_FREE_CHAIN)
 	e2:SetRange(LOCATION_MZONE)
@@ -115,9 +116,9 @@ end
 function s.fspop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	local chkf=tp
-	if not c:IsRelateToEffect(e) or c:IsImmuneToEffect(e) then return end
+	if not c:IsRelateToChain() or c:IsImmuneToEffect(e) then return end
 	local mg1=Duel.GetFusionMaterial(tp):Filter(Card.IsOnField,nil):Filter(s.filter1,nil,e)
-	local mg2=Duel.GetMatchingGroup(s.filter1,tp,LOCATION_GRAVE,0,nil,e)
+	local mg2=Duel.GetMatchingGroup(aux.NecroValleyFilter(s.filter1),tp,LOCATION_GRAVE,0,nil,e)
 	mg1:Merge(mg2)
 	local sg1=Duel.GetMatchingGroup(s.filter2,tp,LOCATION_EXTRA,0,nil,e,tp,mg1,nil,c,chkf)
 	local mg3=nil

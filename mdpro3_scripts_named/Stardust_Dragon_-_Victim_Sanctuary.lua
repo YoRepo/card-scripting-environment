@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Stardust Dragon - Victim Sanctuary  (ID: 76636978)
 -- Type: Monster / Effect / Synchro
@@ -8,12 +8,13 @@
 -- Level: 8
 -- ATK 2500 | DEF 2000
 -- Setcode: 0xa3
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 1 Tuner + 1+ non-Tuners
 -- When your opponent activates a card or effect in response to your card or effect activation (Quick
--- Effect): You can Tribute this card; negate that opponent's effect, and if you do, destroy that card.
+-- Effect): You can Tribute this card; negate the activation of your opponent's card or effect, and if
+-- you do, destroy that card.
 -- If a monster(s) in your possession was Tributed this turn (Quick Effect): You can banish this card
 -- from your GY; Special Summon 1 "Stardust" Synchro Monster from your Extra Deck.
 -- You can only use each effect of "Stardust Dragon - Victim Sanctuary" once per turn, and cannot

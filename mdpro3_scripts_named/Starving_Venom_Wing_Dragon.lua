@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:48
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Starving Venom Wing Dragon  (ID: 5148778)
 -- Type: Monster / Effect / Fusion / Pendulum
@@ -80,6 +80,9 @@ function s.initial_effect(c)
 	e4:SetOperation(s.penop)
 	c:RegisterEffect(e4)
 end
+s.mentioned_counter={
+	[0x1041]=true,
+}
 function s.cofilter(c,tp)
 	return c:IsFaceup() and c:IsControler(1-tp)
 end

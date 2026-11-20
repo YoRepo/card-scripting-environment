@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Number 80: Rhapsody in Berserk  (ID: 93568288)
 -- Type: Monster / Effect / Xyz
@@ -14,8 +14,8 @@
 -- 2 Level 4 monsters
 -- You can target 1 face-up Xyz Monster you control; equip this monster you control to that target.
 -- It gains 1200 ATK.
--- You can detach 1 Xyz Material from this card, then target 1 card in your opponent's Graveyard;
--- banish that target.
+-- You can detach 1 Xyz Material from this card, then target 1 card in your opponent's GY; banish that
+-- target.
 -- You can use this effect of "Number 80: Rhapsody in Berserk" up to twice per turn.
 --[[ __CARD_HEADER_END__ ]]
 

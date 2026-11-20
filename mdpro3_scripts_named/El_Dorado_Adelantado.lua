@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: El Dorado Adelantado  (ID: 92379223)
 -- Type: Trap
@@ -74,9 +74,8 @@ function c92379223.activate(e,tp,eg,ep,ev,re,r,rp)
 		if g:GetClassCount(Card.GetCode)>=3 then
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
 			local tg=g:SelectSubGroup(tp,aux.dncheck,false,3,3)
-			if #tg>0 then
-				Duel.HintSelection(tg)
-			end
+			if not tg then return end
+			Duel.HintSelection(tg)
 			Duel.SendtoDeck(tg,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)
 			local og=Duel.GetOperatedGroup()
 			if og:IsExists(Card.IsLocation,1,nil,LOCATION_DECK) then Duel.ShuffleDeck(tp) end
@@ -94,9 +93,8 @@ function c92379223.activate(e,tp,eg,ep,ev,re,r,rp)
 		if g:GetClassCount(Card.GetCode)>=3 then
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
 			local tg=g:SelectSubGroup(tp,aux.dncheck,false,3,3)
-			if #tg>0 then
-				Duel.HintSelection(tg)
-			end
+			if not tg then return end
+			Duel.HintSelection(tg)
 			Duel.SendtoDeck(tg,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)
 			local og=Duel.GetOperatedGroup()
 			if og:IsExists(Card.IsLocation,1,nil,LOCATION_DECK) then Duel.ShuffleDeck(tp) end

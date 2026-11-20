@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Fire Fortress atop Liang Peak  (ID: 66750703)
 -- Type: Spell / Field
@@ -68,6 +68,9 @@ function c66750703.initial_effect(c)
 	e6:SetOperation(c66750703.spop)
 	c:RegisterEffect(e6)
 end
+c66750703.mentioned_counter={
+	[0x56]=true,
+}
 function c66750703.ctfilter(c)
 	return c:IsFaceup() and c:IsSetCard(0x79)
 end

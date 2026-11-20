@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Gem-Knight Master Diamond Dispersion  (ID: 25342956)
 -- Type: Monster / Effect / Fusion
@@ -113,7 +113,7 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 		if g:GetCount()>0 then
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
 			local sg=g:SelectSubGroup(tp,s.gcheck,false,1,3,eft1,eft2,eft3,ect,ft)
-			if sg:GetCount()>0 then
+			if sg then
 				local exg1=sg:Filter(s.exfilter2,nil)
 				sg:Sub(exg1)
 				if exg1:GetCount()>0 then

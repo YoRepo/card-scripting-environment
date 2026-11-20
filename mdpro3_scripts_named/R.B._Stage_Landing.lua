@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:48
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: R.B. Stage Landing  (ID: 5109321)
 -- Type: Spell
 -- Setcode: 0x1cf
@@ -8,12 +8,14 @@
 --
 -- Effect Text:
 -- Special Summon 1 "R.B." monster from your Deck/Extra Deck with a different name than the cards you
--- control. If an "R.B." monster(s) you control would be destroyed by battle or card effect, you can
--- banish this card from your GY instead. You cannot Special Summon from the Extra Deck the turn you
--- activate this card, except Machine monsters with 1500 or less original ATK.
+-- control.
+-- If an "R.B." monster(s) you control would be destroyed by battle or card effect, you can banish this
+-- card from your GY instead.
+-- You cannot Special Summon from the Extra Deck the turn you activate this card, except Machine
+-- monsters with 1500 or less original ATK.
 --[[ __CARD_HEADER_END__ ]]
 
---R.B. Stage Landing
+--R.B.ジャンプ・ナンバー
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Activate

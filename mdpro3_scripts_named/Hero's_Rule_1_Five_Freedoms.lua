@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Hero's Rule 1: Five Freedoms  (ID: 33995387)
 -- Type: Trap
@@ -50,7 +50,7 @@ function s.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	Duel.SetOperationInfo(0,CATEGORY_REMOVE,g,g:GetCount(),PLAYER_ALL,LOCATION_GRAVE)
 end
 function s.activate(e,tp,eg,ep,ev,re,r,rp)
-	local sg=Duel.GetTargetsRelateToChain()
+	local sg=Duel.GetTargetsRelateToChain():Filter(aux.NecroValleyFilter(),nil)
 	Duel.Remove(sg,POS_FACEUP,REASON_EFFECT)
 end
 function s.spfilter(c,e,tp)

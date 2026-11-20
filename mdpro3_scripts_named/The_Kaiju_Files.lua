@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: The Kaiju Files  (ID: 11163040)
 -- Type: Spell / Continuous
@@ -54,6 +54,9 @@ function c11163040.initial_effect(c)
 	e4:SetOperation(c11163040.thop)
 	c:RegisterEffect(e4)
 end
+c11163040.mentioned_counter={
+	[0x37]=true,
+}
 function c11163040.cfilter(c)
 	return c:IsSetCard(0xd3) and c:IsPreviousLocation(LOCATION_HAND+LOCATION_GRAVE)
 end

@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Arcana Force XII - The Hangman  (ID: 100263002)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Arcana Force XII - The Hangman  (ID: 72321198)
 -- Type: Monster / Effect
 -- Attribute: LIGHT
 -- Race: Fairy
@@ -12,8 +12,9 @@
 --
 -- Effect Text:
 -- When a card or effect is activated (Quick Effect): You can reveal this card in your hand; Special
--- Summon 1 "Arcana Force" monster from your hand in Defense Position. You can only use this effect of
--- "Arcana Force XII - The Hangman" once per turn. If this card is Summoned: Toss a coin.
+-- Summon 1 "Arcana Force" monster from your hand in Defense Position.
+-- You can only use this effect of "Arcana Force XII - The Hangman" once per turn.
+-- If this card is Summoned: Toss a coin.
 -- ● Heads: Destroy 1 monster you control, and if you do, take damage equal to its original ATK.
 -- ● Tails: Destroy 1 monster your opponent controls, and if you do, inflict damage to your opponent
 -- equal to its original ATK.
@@ -50,7 +51,6 @@ function s.initial_effect(c)
 	e4:SetCode(EVENT_FLIP_SUMMON_SUCCESS)
 	c:RegisterEffect(e4)
 end
-s.toss_coin=true
 function s.spcost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return not e:GetHandler():IsPublic() end
 end
@@ -80,31 +80,23 @@ function s.cointg(e,tp,eg,ep,ev,re,r,rp,chk)
 		Duel.SetOperationInfo(0,CATEGORY_DESTROY,dg,1,0,0)
 	end
 end
----Check whether a monster is special summoned by Tiki Peace, which should not calculate its original value after leaving the field
----@param c Card
----@return boolean
-function Auxiliary.covcheck(c)
-	if c:GetOriginalType()&TYPE_MONSTER~=0 then return true end
-	local se=c:GetSpecialSummonInfo(SUMMON_INFO_REASON_EFFECT)
-	return se and se:GetHandler()==c
-end
 function s.coinop(e,tp,eg,ep,ev,re,r,rp)
 	local res=-1
 	if Duel.IsPlayerAffectedByEffect(tp,73206827) then
 		local b1=Duel.IsExistingMatchingCard(aux.TRUE,tp,LOCATION_MZONE,0,1,nil)
 		local b2=Duel.IsExistingMatchingCard(aux.TRUE,tp,0,LOCATION_MZONE,1,nil)
 		if b1 and not b2 then
-			Duel.Hint(HINT_OPSELECTED,1-tp,60)
+			Duel.Hint(HINT_OPSELECTED,1-tp,SELECT_HEADS)
 			res=1
 		end
 		if b2 and not b1 then
-			Duel.Hint(HINT_OPSELECTED,1-tp,61)
+			Duel.Hint(HINT_OPSELECTED,1-tp,SELECT_TAILS)
 			res=0
 		end
 		if b1 and b2 then
 			res=aux.SelectFromOptions(tp,
-				{b1,60,1},
-				{b2,61,0})
+				{b1,SELECT_HEADS,1},
+				{b2,SELECT_TAILS,0})
 		end
 	else
 		res=Duel.TossCoin(tp,1)
@@ -115,7 +107,7 @@ function s.coinop(e,tp,eg,ep,ev,re,r,rp)
 		local tc=g:GetFirst()
 		if tc then
 			Duel.HintSelection(g)
-			local flag=Auxiliary.covcheck(tc)
+			local flag=aux.covcheck(tc)
 			if Duel.Destroy(tc,REASON_EFFECT)~=0 and flag and tc:GetTextAttack()>0 then
 				Duel.Damage(tp,tc:GetTextAttack(),REASON_EFFECT)
 			end
@@ -126,7 +118,7 @@ function s.coinop(e,tp,eg,ep,ev,re,r,rp)
 		local tc=g:GetFirst()
 		if tc then
 			Duel.HintSelection(g)
-			local flag=Auxiliary.covcheck(tc)
+			local flag=aux.covcheck(tc)
 			if Duel.Destroy(tc,REASON_EFFECT)~=0 and flag and tc:GetTextAttack()>0 then
 				Duel.Damage(1-tp,tc:GetTextAttack(),REASON_EFFECT)
 			end

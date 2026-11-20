@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Infernity Doom Slinger  (ID: 14425515)
 -- Type: Monster / Effect
@@ -8,7 +8,7 @@
 -- Level: 1
 -- ATK 100 | DEF 100
 -- Setcode: 0xb
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During your Main Phase: You can Special Summon 1 Fiend monster from your hand.
@@ -16,7 +16,7 @@
 -- opponent chooses 1 of these effects for you to apply.
 -- ● Reveal the top card of your Deck, and if it is a monster, your opponent takes any effect damage
 -- you would have taken this turn instead.
--- Otherwise, you take 4000 damage.
+-- If it isn't, you take 4000 damage.
 -- ● You take no effect damage this turn.
 -- You can only use each effect of "Infernity Doom Slinger" once per turn.
 --[[ __CARD_HEADER_END__ ]]

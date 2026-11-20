@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Particle Fusion  (ID: 39261576)
 -- Type: Spell
 -- Setcode: 0x46
@@ -9,9 +9,10 @@
 -- Effect Text:
 -- Send, from your side of the field to the Graveyard, the Fusion Material Monsters that are listed on
 -- a "Gem-Knight" Fusion Monster Card, then Special Summon that Fusion Monster from your Extra Deck.
--- (This Special Summon is treated as a Fusion Summon.) When you do: Banish this card from the
--- Graveyard to target 1 "Gem-Knight" Fusion Material Monster used for the Fusion Summon; the Fusion
--- Summoned monster gains that monster's ATK until the End Phase.
+-- (This Special Summon is treated as a Fusion Summon.)
+-- When you do: Banish this card from the Graveyard to target 1 "Gem-Knight" Fusion Material Monster
+-- used for the Fusion Summon; the Fusion Summoned monster gains that monster's ATK until the End
+-- Phase.
 --[[ __CARD_HEADER_END__ ]]
 
 --パーティカル・フュージョン

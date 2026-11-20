@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Constellar Sombre  (ID: 78358521)
 -- Type: Monster / Effect
@@ -12,10 +12,10 @@
 --
 -- Effect Text:
 -- You can only use each effect of "Constellar Sombre" once per turn.
--- While this card is in the Graveyard, if it was sent there this turn, you can Normal Summon 1
--- "Constellar" monster for 1 less Tribute.
--- You can banish 1 "Constellar" monster from your Graveyard, then target 1 "Constellar" monster in
--- your Graveyard; add that target to your hand, also, this card gains the following effect.
+-- While this card is in the GY, if it was sent there this turn, you can Normal Summon 1 "Constellar"
+-- monster for 1 less Tribute.
+-- You can banish 1 "Constellar" monster from your GY, then target 1 "Constellar" monster in your GY;
+-- add that target to your hand, also, this card gains the following effect.
 -- ● This turn: You can activate this effect; Normal Summon 1 "Constellar" monster.
 --[[ __CARD_HEADER_END__ ]]
 

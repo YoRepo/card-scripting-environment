@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Puppet Pawn  (ID: 89839552)
 -- Type: Monster / Effect
@@ -87,7 +87,7 @@ function c89839552.thop2(e,tp,eg,ep,ev,re,r,rp)
 			Duel.BreakEffect()
 			Duel.Hint(HINT_SELECTMSG,1-tp,HINTMSG_ATOHAND)
 			local sg=og:Select(1-tp,1,1,nil)
-			Duel.SendtoHand(sg,nil,REASON_EFFECT)
+			Duel.SendtoHand(sg,nil,REASON_EFFECT,1-tp)
 			Duel.ConfirmCards(tp,sg)
 		end
 	end

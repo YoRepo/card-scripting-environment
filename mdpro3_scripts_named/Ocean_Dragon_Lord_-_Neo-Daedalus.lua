@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Ocean Dragon Lord - Neo-Daedalus  (ID: 10485110)
 -- Type: Monster / Effect / Special Summon
@@ -7,13 +7,14 @@
 -- Race: Sea Serpent
 -- Level: 8
 -- ATK 2900 | DEF 1600
+-- Setcode: 0x1e5
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- This card cannot be Normal Summoned or Set.
--- This card cannot be Special Summoned except by Tributing 1 "Levia-Dragon - Daedalus".
--- You can send "Umi" you control to the Graveyard to send all cards in both players' hands and on the
--- field to the Graveyard, except this card.
+-- Cannot be Normal Summoned/Set.
+-- Must be Special Summoned (from your hand) by Tributing 1 "Levia-Dragon - Daedalus".
+-- You can send 1 face-up "Umi" you control to the GY; send all cards in both players' hands and on the
+-- field to the GY, except this card.
 --[[ __CARD_HEADER_END__ ]]
 
 --海竜神－ネオダイダロス

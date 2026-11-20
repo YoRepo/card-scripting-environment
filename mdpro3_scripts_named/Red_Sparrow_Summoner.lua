@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Red Sparrow Summoner  (ID: 81354330)
 -- Type: Monster / Effect
@@ -11,8 +11,8 @@
 --
 -- Effect Text:
 -- When this card you control is destroyed by battle with an opponent's attacking monster and sent to
--- your Graveyard: You can Special Summon 1 Warrior-Type monster with 1500 or less ATK from your Deck
--- in Attack Position.
+-- the GY: You can Special Summon 1 Warrior monster with 1500 or less ATK from your Deck in Attack
+-- Position.
 --[[ __CARD_HEADER_END__ ]]
 
 --朱雀の召喚士

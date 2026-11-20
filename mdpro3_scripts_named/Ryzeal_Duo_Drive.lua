@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Ryzeal Duo Drive  (ID: 7511613)
 -- Type: Monster / Effect / Xyz
@@ -15,8 +15,7 @@
 -- For each material this card has, monsters you control gain 100 ATK and monsters your opponent
 -- controls lose 100 ATK.
 -- You can only use each of the following effects of "Ryzeal Duo Drive" once per turn.
--- If this card is Special Summoned: You can attach 1 "Ryzeal" monster from your GY to this card as
--- material.
+-- If this card is Special Summoned: You can attach 1 "Ryzeal" monster from your GY to this card.
 -- During your Main Phase: You can detach 2 materials from a monster(s) you control, and if you do, add
 -- 2 "Ryzeal" cards with different names from your Deck to your hand.
 --[[ __CARD_HEADER_END__ ]]
@@ -101,7 +100,7 @@ function s.thop(e,tp,eg,ep,ev,re,r,rp)
 		and g:GetClassCount(Card.GetCode)>=2 then
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
 		local tg=g:SelectSubGroup(tp,aux.dncheck,false,2,2)
-		if tg:GetCount()>0 then
+		if tg then
 			Duel.SendtoHand(tg,nil,REASON_EFFECT)
 			Duel.ConfirmCards(1-tp,tg)
 		end

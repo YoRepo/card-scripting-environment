@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Pacifis, the Phantasm City  (ID: 2819435)
 -- Type: Spell / Field
@@ -13,8 +13,7 @@
 -- Once per turn, if you Normal or Special Summon exactly 1 Normal Monster (and no other cards): Add 1
 -- "Phantasm Spiral" card from your Deck to your hand.
 -- If your opponent activates a card or effect (except during the Damage Step), and you control no
--- Tokens: You can Special Summon 1 "Phantasm Spiral Token" (Wyrm-Type/WATER/Level 8/ATK 2000/DEF
--- 2000).
+-- Tokens: You can Special Summon 1 "Phantasm Spiral Token" (Wyrm/WATER/Level 8/ATK 2000/DEF 2000).
 --[[ __CARD_HEADER_END__ ]]
 
 --幻煌の都 パシフィス

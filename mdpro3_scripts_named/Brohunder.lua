@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Brohunder  (ID: 27217742)
 -- Type: Monster / Effect
@@ -10,8 +10,8 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- When this card is Normal Summoned: You can add 1 Level 4 LIGHT Thunder-Type monster from your Deck
--- to your hand, except "Brohunder".
+-- When this card is Normal Summoned: You can add 1 Level 4 LIGHT Thunder monster from your Deck to
+-- your hand, except "Brohunder".
 --[[ __CARD_HEADER_END__ ]]
 
 --ONiサンダー

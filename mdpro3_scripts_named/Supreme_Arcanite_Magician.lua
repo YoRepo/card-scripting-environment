@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Supreme Arcanite Magician  (ID: 21113684)
 -- Type: Monster / Effect / Fusion
@@ -11,13 +11,12 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- 1 Spellcaster-Type Synchro Monster + 1 Spellcaster-Type monster
--- This monster can only be Special Summoned by Fusion Summon (from the Extra Deck).
--- When this card is Fusion Summoned, place 2 Spell Counters on it.
--- This card gains 1000 ATK for each Spell Counter on it.
--- Once per turn, you can remove 1 Spell Counter from your side of the field to activate 1 of the
--- following effects:
--- ● Select 1 card on the field, and destroy it.
+-- 1 Spellcaster Synchro Monster + 1 Spellcaster monster
+-- Must first be Fusion Summoned.
+-- If this card is Fusion Summoned: Place 2 Spell Counters on it.
+-- Gains 1000 ATK for each Spell Counter on it.
+-- Once per turn: You can remove 1 Spell Counter from your field, then activate 1 of these effects;
+-- ● Target 1 card on the field; destroy it.
 -- ● Draw 1 card.
 --[[ __CARD_HEADER_END__ ]]
 
@@ -78,6 +77,9 @@ function c21113684.initial_effect(c)
 	c:RegisterEffect(e6)
 end
 c21113684.material_type=TYPE_SYNCHRO
+c21113684.mentioned_counter={
+	[0x1]=true,
+}
 function c21113684.splimit(e,se,sp,st)
 	if e:GetHandler():IsLocation(LOCATION_EXTRA) then
 		return bit.band(st,SUMMON_TYPE_FUSION)==SUMMON_TYPE_FUSION

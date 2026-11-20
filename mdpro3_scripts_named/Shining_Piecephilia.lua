@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Shining Piecephilia  (ID: 49776811)
 -- Type: Monster / Effect
@@ -39,6 +39,9 @@ function c49776811.initial_effect(c)
 	e2:SetOperation(c49776811.ctop)
 	c:RegisterEffect(e2)
 end
+c49776811.mentioned_counter={
+	[0x5f]=true,
+}
 function c49776811.cttg(e,tp,eg,ep,ev,re,r,rp,chk)
 	local tc=e:GetHandler():GetBattleTarget()
 	if chk==0 then return tc and e:GetHandler():IsCanAddCounter(0x5f,1) end

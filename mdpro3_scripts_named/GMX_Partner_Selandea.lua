@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: GMX Partner Selandea  (ID: 2618725)
 -- Type: Monster / Effect
 -- Attribute: FIRE
@@ -12,13 +12,13 @@
 --
 -- Effect Text:
 -- You can reveal this card in your hand; Special Summon 1 "GMX" monster or 1 Dinosaur monster from
--- your hand, also you can only attack directly with "GMX" monsters for the rest of this turn. If this
--- card is Special Summoned by a monster effect: You can Special Summon 1 Level 4 or lower "GMX" or
--- Dinosaur monster from your hand, GY, or banishment in Defense Position. You can only use each effect
--- of "GMX Partner Selandea" once per turn.
+-- your hand, also you can only attack directly with "GMX" monsters for the rest of this turn.
+-- If this card is Special Summoned by a monster effect: You can Special Summon 1 Level 4 or lower
+-- "GMX" or Dinosaur monster from your hand, GY, or banishment in Defense Position.
+-- You can only use each effect of "GMX Partner Selandea" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---GMX Partner Selandea
+--GMX同絆者セランディア
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--special summon from hand

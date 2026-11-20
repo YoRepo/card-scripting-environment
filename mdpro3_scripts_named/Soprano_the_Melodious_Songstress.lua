@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Soprano the Melodious Songstress  (ID: 62895219)
 -- Type: Monster / Effect
 -- Attribute: LIGHT
@@ -8,13 +8,14 @@
 -- Level: 4
 -- ATK 1400 | DEF 1400
 -- Setcode: 0x9b
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- When this card is Special Summoned: You can target 1 "Melodious" monster in your Graveyard, except
--- "Soprano the Melodious Songstress"; add it to your hand. You can only use this effect of "Soprano
--- the Melodious Songstress" once per turn. Once per turn: You can Fusion Summon 1 "Melodious" Fusion
--- Monster from your Extra Deck, using monsters you control as Fusion Materials, including this card.
+-- When this card is Special Summoned: You can target 1 "Melodious" monster in your GY, except "Soprano
+-- the Melodious Songstress"; add it to your hand.
+-- You can only use this effect of "Soprano the Melodious Songstress" once per turn.
+-- Once per turn: You can Fusion Summon 1 "Melodious" Fusion Monster from your Extra Deck, using
+-- monsters you control as material, including this card.
 --[[ __CARD_HEADER_END__ ]]
 
 --幻奏の歌姫ソプラノ

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Umbral Horror Unform  (ID: 33551032)
 -- Type: Monster / Effect
@@ -11,8 +11,8 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- When this card is destroyed by battle and sent to the Graveyard while attacking a monster: You can
--- Special Summon 2 "Umbral Horror" monsters from your Deck.
+-- When this card is destroyed by battle and sent to the GY while attacking a monster: You can Special
+-- Summon 2 "Umbral Horror" monsters from your Deck.
 -- You can only use the effect of "Umbral Horror Unform" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

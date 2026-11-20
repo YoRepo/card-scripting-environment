@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Dark Tuner Catastrogue  (ID: 15141103)
 -- Type: Monster / Effect / Tuner
@@ -8,7 +8,7 @@
 -- Level: 8
 -- ATK 0 | DEF 0
 -- Setcode: 0x1de
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- You can reveal this card in your hand; immediately after this effect resolves, Normal Summon 1 "Dark

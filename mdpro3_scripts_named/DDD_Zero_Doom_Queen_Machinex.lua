@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: D/D/D Zero Doom Queen Machinex  (ID: 20715411)
 -- Type: Monster / Effect / Pendulum
@@ -7,6 +7,7 @@
 -- Race: Fiend
 -- Level: 8
 -- ATK 3000 | DEF 0
+-- Pendulum Scale: L0 / R0
 -- Setcode: 0x10af
 -- Scope: OCG / TCG
 --

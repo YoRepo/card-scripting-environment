@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:48
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Mysterious Triangle  (ID: 53291093)
 -- Type: Spell / Quick-Play
@@ -24,6 +24,9 @@ function c53291093.initial_effect(c)
 	e1:SetOperation(c53291093.activate)
 	c:RegisterEffect(e1)
 end
+c53291093.mentioned_counter={
+	[0x100e]=true,
+}
 function c53291093.filter(c)
 	return c:GetCounter(0x100e)>0
 end

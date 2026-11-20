@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Void Apocalypse  (ID: 7337976)
 -- Type: Spell / Continuous
@@ -85,7 +85,7 @@ function c7337976.tgop2(e,tp,eg,ep,ev,re,r,rp)
 	aux.GCheckAdditional=aux.dncheck
 	local sg=g:SelectSubGroup(tp,aux.TRUE,false,1,ct)
 	aux.GCheckAdditional=nil
-	if sg:GetCount()>0 then
+	if sg then
 		Duel.SendtoGrave(sg,REASON_EFFECT)
 	end
 end

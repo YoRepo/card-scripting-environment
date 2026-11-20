@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Predaplast  (ID: 72129804)
 -- Type: Spell / Quick-Play
@@ -35,6 +35,9 @@ function c72129804.initial_effect(c)
 	e2:SetOperation(c72129804.repop)
 	c:RegisterEffect(e2)
 end
+c72129804.mentioned_counter={
+	[0x1041]=true,
+}
 function c72129804.cfilter(c)
 	return c:IsSetCard(0xf3) and not c:IsPublic()
 end

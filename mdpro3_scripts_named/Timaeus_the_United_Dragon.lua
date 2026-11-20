@@ -1,20 +1,20 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Timaeus the United Dragon  (ID: 3078380)
 -- Type: Monster / Effect
 -- Attribute: LIGHT
 -- Race: Dragon
 -- Level: 8
 -- ATK 2800 | DEF 1800
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- You can send 1 Spellcaster monster, or 1 Spell/Trap that mentions "Dark Magician", from your hand or
--- face-up field to the GY; Special Summon this card from your hand. During your Main Phase: You can
--- Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from your hand or field as
--- material, including a Spellcaster monster. You can only use each effect of "Timaeus the United
--- Dragon" once per turn.
+-- face-up field to the GY; Special Summon this card from your hand.
+-- During your Main Phase: You can Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters
+-- from your hand or field as material, including a Spellcaster monster.
+-- You can only use each effect of "Timaeus the United Dragon" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --合体竜ティマイオス

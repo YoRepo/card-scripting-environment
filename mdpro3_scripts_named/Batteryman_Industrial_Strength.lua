@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Batteryman Industrial Strength  (ID: 19441018)
 -- Type: Monster / Effect / Special Summon
@@ -11,11 +11,10 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- This card cannot be Normal Summoned or Set.
--- This card cannot be Special Summoned except by removing from play 2 "Batteryman" monsters from your
--- Graveyard.
--- Once per turn, you can remove from play 1 Thunder-Type monster from your Graveyard to destroy 1
--- monster and 1 Spell or Trap Card on the field.
+-- Cannot be Normal Summoned/Set.
+-- Must be Special Summoned (from your hand) by banishing 2 "Batteryman" monsters from your GY.
+-- Once per turn: You can banish 1 Thunder monster from your GY, then target 1 monster and 1 Spell/Trap
+-- on the field; destroy them.
 --[[ __CARD_HEADER_END__ ]]
 
 --電池メン－業務用

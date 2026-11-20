@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Number C96: Dark Storm  (ID: 77205367)
 -- Type: Monster / Effect / Xyz
@@ -15,10 +15,9 @@
 -- This card cannot be destroyed by battle, also all battle damage you take from battles involving this
 -- card is also inflicted to your opponent.
 -- If this card has "Number 96: Dark Mist" as an Xyz Material, it gains this effect.
--- ● Once per battle, during either player's turn, when an attack is declared involving this card and
--- an opponent's monster: You can detach 1 Xyz Material from this card; the ATK of the opponent's
--- monster becomes 0, and if it does, this card gains ATK equal to the original ATK of the opponent's
--- monster.
+-- ● Once per battle, when an attack is declared involving this card and an opponent's monster (Quick
+-- Effect): You can detach 1 Xyz Material from this card; the ATK of the opponent's monster becomes 0,
+-- and if it does, this card gains ATK equal to the original ATK of the opponent's monster.
 --[[ __CARD_HEADER_END__ ]]
 
 --CNo.96 ブラック・ストーム

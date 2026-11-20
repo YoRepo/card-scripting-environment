@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Pumprincess the Princess of Ghosts  (ID: 17601919)
 -- Type: Monster / Effect
@@ -29,6 +29,9 @@ function c17601919.initial_effect(c)
 	e1:SetOperation(c17601919.repop)
 	c:RegisterEffect(e1)
 end
+c17601919.mentioned_counter={
+	[0x2f]=true,
+}
 function c17601919.repcon(e)
 	local c=e:GetHandler()
 	return c:IsFaceup() and c:IsLocation(LOCATION_MZONE) and c:IsReason(REASON_DESTROY)

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Tobari the Sky Ninja  (ID: 31887806)
 -- Type: Monster / Effect
 -- Attribute: EARTH
@@ -12,11 +12,12 @@
 --
 -- Effect Text:
 -- This card cannot be destroyed by battle or card effect the turn it was Special Summoned or flipped
--- face-up. You can only use each of the following effects of "Tobari the Sky Ninja" once per turn. You
--- can send this card from your hand to the GY; Special Summon 1 "Ninja" monster from your hand in
--- face-up or face-down Defense Position. During your opponent's Main or Battle Phase (Quick Effect):
--- You can Fusion Summon 1 "Ninja" Fusion Monster from your Extra Deck, using monsters from your hand
--- or field as material.
+-- face-up.
+-- You can only use each of the following effects of "Tobari the Sky Ninja" once per turn.
+-- You can send this card from your hand to the GY; Special Summon 1 "Ninja" monster from your hand in
+-- face-up or face-down Defense Position.
+-- During your opponent's Main or Battle Phase (Quick Effect): You can Fusion Summon 1 "Ninja" Fusion
+-- Monster from your Extra Deck, using monsters from your hand or field as material.
 --[[ __CARD_HEADER_END__ ]]
 
 --宙の忍者－鳥帷

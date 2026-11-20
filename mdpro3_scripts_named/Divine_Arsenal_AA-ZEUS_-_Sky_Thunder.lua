@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Divine Arsenal AA-ZEUS - Sky Thunder  (ID: 90448279)
 -- Type: Monster / Effect / Xyz
@@ -12,7 +12,7 @@
 -- Effect Text:
 -- 2 Level 12 monsters
 -- Once per turn, if an Xyz Monster battled this turn, you can also Xyz Summon "Divine Arsenal AA-ZEUS
--- - Sky Thunder" by using 1 Xyz Monster you control as material (transfer its materials to this card).
+-- - Sky Thunder" by using 1 Xyz Monster you control (transfer its materials).
 -- (Quick Effect): You can detach 2 materials from this card; send all other cards from the field to
 -- the GY.
 -- Once per turn, if another card(s) you control is destroyed by battle or an opponent's card effect:

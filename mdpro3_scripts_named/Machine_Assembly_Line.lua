@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Machine Assembly Line  (ID: 25518020)
 -- Type: Spell / Continuous
@@ -51,6 +51,9 @@ function c25518020.initial_effect(c)
 	e4:SetOperation(c25518020.spop)
 	c:RegisterEffect(e4)
 end
+c25518020.mentioned_counter={
+	[0x1d]=true,
+}
 function c25518020.ctfilter(c)
 	return c:IsPreviousLocation(LOCATION_MZONE) and c:IsPreviousPosition(POS_FACEUP) and bit.band(c:GetPreviousRaceOnField(),RACE_MACHINE)~=0
 end

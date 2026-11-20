@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Trifortressops  (ID: 12275533)
 -- Type: Monster / Effect
@@ -10,10 +10,9 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- During either player's turn, if your opponent Summoned 3 or more monsters this turn: You can Special
--- Summon this card from your hand.
--- If Summoned this way, it is unaffected by other cards' effects, but loses 500 DEF during each
--- player's Standby Phase.
+-- Once per Chain, during a turn your opponent Summoned 3 or more monsters (Quick Effect): You can
+-- Special Summon this card from your hand, and if you do, it is unaffected by other cards' effects,
+-- but loses 500 DEF during each Standby Phase.
 --[[ __CARD_HEADER_END__ ]]
 
 --機動要犀 トリケライナー

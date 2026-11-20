@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Officiator of Doom Samuel  (ID: 76213610)
 -- Type: Monster / Effect / Xyz
 -- Attribute: DARK
@@ -13,12 +13,12 @@
 -- 2 Level 6 monsters
 -- During the Main Phase (Quick Effect): You can detach 1 material from this card, then target 1 Zombie
 -- monster in your GY; Special Summon it, then you can negate the effects of 1 monster your opponent
--- controls with ATK less than or equal to that monster. If this card is sent to the GY: You can target
--- 1 monster in either GY; shuffle it into the Deck. You can only use each effect of "Officiator of
--- Doom Samuel" once per turn.
+-- controls with ATK less than or equal to that monster.
+-- If this card is sent to the GY: You can target 1 monster in either GY; shuffle it into the Deck.
+-- You can only use each effect of "Officiator of Doom Samuel" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Officiator of Doom Samuel
+--死宰 サムエル
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--xyz summon

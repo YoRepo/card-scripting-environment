@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Witchcrafter Seed  (ID: 100265002)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Witchcrafter Seed  (ID: 59106048)
 -- Type: Monster / Effect
 -- Attribute: WIND
 -- Race: Spellcaster
@@ -11,11 +11,12 @@
 -- Scope: OCG
 --
 -- Effect Text:
--- If this card is Normal or Special Summoned and you control a "Witchcrafter" monster other than
--- "Witchcrafter Seed", or "Regulus, the Prince of Endymion": You can target 1 face-up card on the
--- field; return it to the hand. You can banish this card from your GY; reveal any number of cards in
--- your hand, including a Spell, and shuffle them into the Deck, then draw that many cards. You can
--- only use each effect of "Witchcrafter Seed" once per turn.
+-- If this card is Normal or Special Summoned, and you control "Regulus, the Prince of Endymion" or a
+-- "Witchcrafter" monster, except "Witchcrafter Seed": You can target 1 face-up card on the field;
+-- return it to the hand.
+-- You can banish this card from your GY; reveal any number of cards in your hand, including a Spell,
+-- shuffle them into the Deck, then draw cards equal to the number shuffled.
+-- You can only use each effect of "Witchcrafter Seed" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --ウィッチクラフト・シード
@@ -90,7 +91,7 @@ function s.drop(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.GetMatchingGroup(s.tdfilter,p,LOCATION_HAND,0,nil)
 	Duel.Hint(HINT_SELECTMSG,p,HINTMSG_TODECK)
 	local sg=g:SelectSubGroup(p,s.gcheck,false,1,g:GetCount())
-	if sg:GetCount()==0 then return end
+	if not sg then return end
 	Duel.ConfirmCards(1-p,sg)
 	Duel.SendtoDeck(sg,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)
 	Duel.ShuffleDeck(p)

@@ -1,14 +1,15 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Spirit Illusion  (ID: 71939275)
 -- Type: Spell / Equip
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Equip only to a Level 5 or higher Fiend or Zombie monster. When an attack is declared involving the
--- equipped monster and an opponent's monster: You can make that opponent's monster lose ATK equal to
--- the equipped monster's ATK. You can activate 1 of these effects;
+-- Equip only to a Level 5 or higher Fiend or Zombie monster.
+-- When an attack is declared involving the equipped monster and an opponent's monster: You can make
+-- that opponent's monster lose ATK equal to the equipped monster's ATK.
+-- You can activate 1 of these effects;
 -- ● Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from your hand or field.
 -- ● Special Summon 1 "Doppelganger Token" (Level 5/ATK ?/DEF 0) with the equipped monster's Type,
 -- Attribute, and ATK.

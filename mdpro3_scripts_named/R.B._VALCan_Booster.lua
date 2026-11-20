@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: R.B. VALCan Booster  (ID: 6821579)
 -- Type: Monster / Effect / Link
 -- Attribute: FIRE
@@ -13,14 +13,15 @@
 --
 -- Effect Text:
 -- 2 Machine monsters
--- If this card is Link Summoned: You can add 1 "R.B." Spell from your Deck to your hand. If this card
--- is in the Extra Monster Zone: You can Special Summon 1 "R.B." monster from your hand or GY in
--- Defense Position, then you can move this card you control to another of your Main Monster Zones,
--- also you cannot Special Summon from the Extra Deck for the rest of this turn, except Machine
--- monsters with 1500 or less ATK. You can only use each effect of "R.B. VALCan Booster" once per turn.
+-- If this card is Link Summoned: You can add 1 "R.B." Spell from your Deck to your hand.
+-- If this card is in the Extra Monster Zone: You can Special Summon 1 "R.B." monster from your hand or
+-- GY in Defense Position, then you can move this card you control to another of your Main Monster
+-- Zones, also you cannot Special Summon from the Extra Deck for the rest of this turn, except Machine
+-- monsters with 1500 or less ATK.
+-- You can only use each effect of "R.B. VALCan Booster" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---R.B. VALCan Booster
+--R.B.バルカンブースター
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--link summon

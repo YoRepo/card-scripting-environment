@@ -1,18 +1,20 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Angelechy Opening to e4  (ID: 101305096)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Angelechy Opening to e4  (ID: 80565021)
 -- Type: Trap
--- Setcode: 0x2e5
+-- Setcode: 0x1e2
 -- Scope: TCG
 --
 -- Effect Text:
 -- If your opponent goes first, you can also activate this card from your hand during the Standby Phase
--- of their first turn. Place 1 "Angelechy" Field Spell from your hand, Deck, or GY, face-up on your
--- field, and if you do, Special Summon 1 Level 2 or 7 "Angelechy" monster from your Extra Deck to the
--- Extra Monster Zone, and if you do that, place 1 "Angelechy" monster from your Extra Deck in your
--- Spell & Trap Zone as a face-up Continuous Spell. Until the end of your next turn after this card
--- resolves, you cannot Special Summon from the Extra Deck, except Synchro Monsters.
+-- of their first turn.
+-- Place 1 "Angelechy" Field Spell from your hand, Deck, or GY, face-up on your field, and if you do,
+-- Special Summon 1 Level 2 or 7 "Angelechy" monster from your Extra Deck to the Extra Monster Zone,
+-- and if you do that, place 1 "Angelechy" monster from your Extra Deck in your Spell & Trap Zone as a
+-- face-up Continuous Spell.
+-- Until the end of your next turn after this card resolves, you cannot Special Summon from the Extra
+-- Deck, except Synchro Monsters.
 --[[ __CARD_HEADER_END__ ]]
 
 --Angelechy Opening to e4
@@ -42,14 +44,14 @@ function s.handcon(e)
 		and Duel.GetCurrentPhase()==PHASE_STANDBY
 end
 function s.stfilter(c,tp)
-	return c:IsSetCard(0x2e5) and c:IsType(TYPE_FIELD) and not c:IsForbidden() and c:CheckUniqueOnField(tp)
+	return c:IsSetCard(0x1e2) and c:IsType(TYPE_FIELD) and not c:IsForbidden() and c:CheckUniqueOnField(tp)
 end
 function s.setfilter(c,tp)
-	return c:IsSetCard(0x2e5) and c:IsType(TYPE_MONSTER) and not c:IsForbidden()
+	return c:IsSetCard(0x1e2) and c:IsType(TYPE_MONSTER) and not c:IsForbidden()
 		and c:CheckUniqueOnField(tp,LOCATION_SZONE)
 end
 function s.spfilter(c,e,tp,pchk)
-	return c:IsLevel(2,7) and c:IsSetCard(0x2e5) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+	return c:IsLevel(2,7) and c:IsSetCard(0x1e2) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 		and Duel.GetLocationCountFromEx(tp,tp,nil,c,0x60)>0
 		and (not pchk or Duel.IsExistingMatchingCard(s.setfilter,tp,LOCATION_EXTRA,0,1,c,tp))
 end
@@ -77,7 +79,7 @@ function s.activate(e,tp,eg,ep,ev,re,r,rp)
 				if g:GetCount()>0 and Duel.SpecialSummon(g,0,tp,tp,false,false,POS_FACEUP,0x60)~=0 then
 					if Duel.GetLocationCount(tp,LOCATION_SZONE)>0 then
 						Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOFIELD)
-						local sg=Duel.SelectMatchingCard(tp,s.setfilter,tp,LOCATION_EXTRA,0,1,1,nil)
+						local sg=Duel.SelectMatchingCard(tp,s.setfilter,tp,LOCATION_EXTRA,0,1,1,nil,tp)
 						local sc=sg:GetFirst()
 						if sc then
 							Duel.MoveToField(sc,tp,tp,LOCATION_SZONE,POS_FACEUP,true)

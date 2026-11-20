@@ -1,20 +1,21 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Blazing Cartesia, the Virtuous  (ID: 95515789)
 -- Type: Monster / Effect / Tuner
 -- Attribute: LIGHT
 -- Race: Spellcaster
 -- Level: 4
 -- ATK 1500 | DEF 1500
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If you have "Fallen of Albaz" in your field or GY: You can Special Summon this card from your hand.
 -- During the Main Phase (Quick Effect): You can Fusion Summon 1 Level 8 or higher Fusion Monster from
--- your Extra Deck, using monsters from your hand or field. During the End Phase, if a Fusion
--- Monster(s) was sent to your GY this turn: You can add this card from the GY to your hand. You can
--- only use each effect of "Blazing Cartesia, the Virtuous" once per turn.
+-- your Extra Deck, using monsters from your hand or field.
+-- During the End Phase, if a Fusion Monster(s) was sent to your GY this turn: You can add this card
+-- from the GY to your hand.
+-- You can only use each effect of "Blazing Cartesia, the Virtuous" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --赫の聖女カルテシア

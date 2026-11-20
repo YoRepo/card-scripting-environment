@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Spell Power Mastery  (ID: 38943357)
 -- Type: Spell
@@ -24,6 +24,9 @@ function c38943357.initial_effect(c)
 	e1:SetOperation(c38943357.operation)
 	c:RegisterEffect(e1)
 end
+c38943357.mentioned_counter={
+	[0x1]=true,
+}
 function c38943357.filter(c)
 	return c:IsSetCard(0x12a) and c:IsAbleToHand()
 end

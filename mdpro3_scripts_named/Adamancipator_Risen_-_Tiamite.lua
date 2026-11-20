@@ -1,23 +1,24 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Adamancipator Risen - Tiamite  (ID: 101306041)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Adamancipator Risen - Tiamite  (ID: 89813287)
 -- Type: Monster / Effect / Synchro
 -- Attribute: DARK
 -- Race: Rock
 -- Level: 10
 -- ATK 3300 | DEF 2200
 -- Setcode: 0x140
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 1 Tuner + 1+ non-Tuners
 -- If you have a DARK monster in your GY: You can add 1 "Adamancipator" Spell/Trap from your Deck to
--- your hand. When your opponent activates a monster effect on the field (Quick Effect): You can
--- excavate the top 5 cards of your Deck, and if you do, you can return cards your opponent controls to
--- the hand, up to the number of excavated Rock monsters, also place the excavated cards on the bottom
--- of the Deck in any order. You can only use each effect of "Adamancipator Risen - Tiamite" once per
--- turn.
+-- your hand.
+-- When your opponent activates a monster effect on the field (Quick Effect): You can excavate the top
+-- 5 cards of your Deck, and if you do, you can return cards your opponent controls to the hand, up to
+-- the number of excavated Rock monsters, also place the excavated cards on the bottom of your Deck in
+-- any order.
+-- You can only use each effect of "Adamancipator Risen - Tiamite" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --魔救の奇跡－ティアマイト

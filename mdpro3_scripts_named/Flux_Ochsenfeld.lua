@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Flux Ochsenfeld  (ID: 21861412)
 -- Type: Monster / Effect / Fusion
 -- Attribute: EARTH
@@ -12,12 +12,14 @@
 -- Effect Text:
 -- 1 Level 5 or higher EARTH monster + 1 Rock monster
 -- If this card is Fusion Summoned: You can Special Summon 1 Rock monster from your hand or GY, except
--- "Flux Ochsenfeld". (Quick Effect): You can target 1 EARTH monster you control and 1 card your
--- opponent controls; return them to the hand. You can only use each effect of "Flux Ochsenfeld" once
--- per turn, and cannot activate more than 1 in the same Chain.
+-- "Flux Ochsenfeld".
+-- (Quick Effect): You can target 1 EARTH monster you control and 1 card your opponent controls; return
+-- them to the hand.
+-- You can only use each effect of "Flux Ochsenfeld" once per turn, and cannot activate more than 1 in
+-- the same Chain.
 --[[ __CARD_HEADER_END__ ]]
 
---Flux Ochsenfeld
+--フラックス・オクセンフェルト
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--fusion procedure

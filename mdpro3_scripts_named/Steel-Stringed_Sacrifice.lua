@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Steel-Stringed Sacrifice  (ID: 7166709)
 -- Type: Monster / Effect
 -- Attribute: LIGHT
@@ -20,7 +20,7 @@
 -- hand.
 --[[ __CARD_HEADER_END__ ]]
 
---Steel-Stringed Sacrifice
+--鉄絃の犠打職人
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--spsummon

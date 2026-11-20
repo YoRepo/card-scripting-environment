@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Infernity Necromancer  (ID: 56209279)
 -- Type: Monster / Effect
@@ -11,10 +11,9 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- When this card is Normal Summoned: Change this card to Defense Position.
--- While you have no cards in your hand, this card gains the following effect.
--- ● Once per turn: You can target 1 "Infernity" monster in your GY, except "Infernity Necromancer";
--- Special Summon it.
+-- If this card is Normal Summoned: Change this card to Defense Position.
+-- Once per turn, if you have no cards in your hand: You can target 1 "Infernity" monster in your GY,
+-- except "Infernity Necromancer"; Special Summon it.
 --[[ __CARD_HEADER_END__ ]]
 
 --インフェルニティ・ネクロマンサー

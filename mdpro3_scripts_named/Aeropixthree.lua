@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Aeropixthree  (ID: 83094004)
 -- Type: Monster / Effect / Tuner
@@ -43,6 +43,9 @@ function c83094004.initial_effect(c)
 	e3:SetCode(EFFECT_UPDATE_DEFENSE)
 	c:RegisterEffect(e3)
 end
+c83094004.mentioned_counter={
+	[0x105c]=true,
+}
 function c83094004.seqfilter(c,e,tp)
 	local g=e:GetHandler():GetColumnGroup()
 	if not (c:IsFaceup() and g:IsContains(c) and c:IsCanAddCounter(0x105c,1)) then return false end

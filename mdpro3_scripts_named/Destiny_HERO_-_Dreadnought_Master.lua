@@ -1,23 +1,25 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Destiny HERO - Dreadnought Master  (ID: 101306037)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Destiny HERO - Dreadnought Master  (ID: 54641720)
 -- Type: Monster / Effect / Fusion
 -- Attribute: DARK
 -- Race: Warrior
 -- Level: 8
 -- ATK ? | DEF 2800
 -- Setcode: 0xc008
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2 Level 5 or higher "Destiny HERO" monsters
 -- Must be either Fusion Summoned, or Special Summoned (from your Extra Deck) by Tributing 1 "Destiny
--- HERO - Dreadmaster". You can only Special Summon "Destiny HERO - Dreadnought Master" once per turn
--- this way, no matter which method you use. If this card is Special Summoned: You can add 2 "Destiny
--- HERO" monsters and/or cards that mention a "Destiny HERO" monster's card name from your Deck to your
--- hand. This card's ATK becomes the total original ATK of all other "Destiny HERO" monsters in your
--- field and GY.
+-- HERO - Dreadmaster".
+-- You can only Special Summon "Destiny HERO - Dreadnought Master" once per turn this way, no matter
+-- which method you use.
+-- If this card is Special Summoned: You can add 2 cards from your Deck to your hand, that are "Destiny
+-- HERO" monsters and/or mention a "Destiny HERO" monster by name.
+-- This card's ATK becomes the total original ATK of other "Destiny HERO" monsters in your field and
+-- GY.
 --[[ __CARD_HEADER_END__ ]]
 
 --D－HERO ドレッドノートガイ
@@ -94,10 +96,10 @@ function s.spcon(e,c)
 	if c==nil then return true end
 	local tp=c:GetControler()
 	if Duel.GetFlagEffect(tp,id)>0 then return false end
-	return Duel.IsExistingMatchingCard(s.hspfilter,tp,LOCATION_MZONE,0,1,nil,tp,c)
+	return Duel.CheckReleaseGroupEx(tp,s.hspfilter,1,REASON_SPSUMMON,false,nil,tp,c)
 end
 function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk,c)
-	local g=Duel.GetMatchingGroup(s.hspfilter,tp,LOCATION_MZONE,0,nil,tp,c)
+	local g=Duel.GetReleaseGroup(tp,false,REASON_SPSUMMON):Filter(s.hspfilter,nil,tp,c)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_RELEASE)
 	local tc=g:SelectUnselect(nil,tp,false,true,1,1)
 	if tc then

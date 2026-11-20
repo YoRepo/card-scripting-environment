@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Kumongous, the Sticky String Kaiju  (ID: 29726552)
 -- Type: Monster / Effect
@@ -57,6 +57,9 @@ function c29726552.initial_effect(c)
 	e4:SetCode(EVENT_SPSUMMON_SUCCESS)
 	c:RegisterEffect(e4)
 end
+c29726552.mentioned_counter={
+	[0x37]=true,
+}
 function c29726552.spfilter(c,tp)
 	return c:IsReleasable(REASON_SPSUMMON) and Duel.GetMZoneCount(1-tp,c,tp)>0
 end

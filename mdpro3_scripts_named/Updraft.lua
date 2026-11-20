@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Updraft  (ID: 90557975)
 -- Type: Trap
@@ -23,6 +23,9 @@ function c90557975.initial_effect(c)
 	e1:SetOperation(c90557975.damop)
 	c:RegisterEffect(e1)
 end
+c90557975.mentioned_counter={
+	[0x1019]=true,
+}
 function c90557975.filter(c)
 	return c:GetCounter(0x1019)>0
 end

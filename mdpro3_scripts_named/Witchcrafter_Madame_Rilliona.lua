@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Witchcrafter Madame Rilliona  (ID: 33475154)
 -- Type: Monster / Effect / Fusion
@@ -8,13 +8,13 @@
 -- Level: 8
 -- ATK 3800 | DEF 2800
 -- Setcode: 0x128
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- "Witchcrafter Madame Verre" + 2 Spellcaster monsters
 -- If this card is Fusion Summoned: You can Special Summon up to 3 Level 7 or lower "Witchcrafter"
--- monsters with different Attributes from each other from your hand and/or Deck, also you cannot
--- Special Summon from the Extra Deck for the rest of this turn, except Fusion Monsters.
+-- monsters with different Attributes from your hand and/or Deck, also you cannot Special Summon from
+-- the Extra Deck for the rest of this turn, except Fusion Monsters.
 -- During your End Phase, if this card is in your GY: You can reveal 1 Spell in your hand; Special
 -- Summon this card in Defense Position.
 -- You can only use each effect of "Witchcrafter Madame Rilliona" once per turn.
@@ -71,7 +71,7 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	if ft>0 and g:GetCount()>0 then
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
 		local sg=g:SelectSubGroup(tp,aux.dabcheck,false,1,ft)
-		if sg:GetCount()>0 then
+		if sg then
 			Duel.SpecialSummon(sg,0,tp,tp,false,false,POS_FACEUP)
 		end
 	end
@@ -108,7 +108,7 @@ function s.sptg2(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function s.spop2(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	if c:IsRelateToChain() then
+	if c:IsRelateToChain() and aux.NecroValleyFilter()(c) then
 		Duel.SpecialSummon(c,0,tp,tp,false,false,POS_FACEUP_DEFENSE)
 	end
 end

@@ -1,21 +1,22 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Artmage Diactorus  (ID: 27184601)
 -- Type: Monster / Effect / Fusion
 -- Attribute: LIGHT
 -- Race: Fairy
 -- Level: 8
 -- ATK 2800 | DEF 2500
--- Setcode: 0x1cd, 0x2e7
--- Scope: OCG / TCG / Illegal
+-- Setcode: 0x1cd, 0x1e7
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- "Medius the Pure" + 1 "Artmage" monster
--- You can target 1 monster on the field; change its battle position. When your opponent activates a
--- card or effect on the field, if you have 3 or more different Monster Types on your field (Quick
--- Effect): You can negate the activation, and if you do, destroy that card. If this Fusion Summoned
--- card is destroyed: You can Special Summon 1 "Medius the Pure" from your hand, Deck, or banishment.
+-- You can target 1 monster on the field; change its battle position.
+-- When your opponent activates a card or effect on the field, if you have 3 or more different Monster
+-- Types on your field (Quick Effect): You can negate the activation, and if you do, destroy that card.
+-- If this Fusion Summoned card is destroyed: You can Special Summon 1 "Medius the Pure" from your
+-- hand, Deck, or banishment.
 -- You can only use each effect of "Artmage Diactorus" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

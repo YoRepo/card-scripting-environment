@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: GMX Associate Noma  (ID: 83528184)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -12,14 +12,14 @@
 --
 -- Effect Text:
 -- If this card is Special Summoned by a monster effect: You can target 1 card each from your GY and
--- your opponent's GY; place each card on either the top or bottom of the Deck. If a monster(s) is
--- Normal or Special Summoned to your opponent's field, while this card is in your Monster Zone (except
--- during the Damage Step): You can Fusion Summon 1 "GMX" Fusion Monster from your Extra Deck, by
--- shuffling its materials from your field, GY, and/or banishment into the Deck. You can only use each
--- effect of "GMX Associate Noma" once per turn.
+-- your opponent's GY; place each card on either the top or bottom of the Deck.
+-- If a monster(s) is Normal or Special Summoned to your opponent's field, while this card is in your
+-- Monster Zone (except during the Damage Step): You can Fusion Summon 1 "GMX" Fusion Monster from your
+-- Extra Deck, by shuffling its materials from your field, GY, and/or banishment into the Deck.
+-- You can only use each effect of "GMX Associate Noma" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---GMX Associate Noma
+--GMX准教授ノーマ
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--to deck
@@ -66,7 +66,7 @@ function s.tdtg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	Duel.SetOperationInfo(0,CATEGORY_TODECK,g1,g1:GetCount(),0,0)
 end
 function s.tdop(e,tp,eg,ep,ev,re,r,rp)
-	local tg=Duel.GetTargetsRelateToChain()
+	local tg=Duel.GetTargetsRelateToChain():Filter(aux.NecroValleyFilter(),nil)
 	if tg:GetCount()>0 then
 		for tc in aux.Next(tg) do
 			if tc:IsExtraDeckMonster()

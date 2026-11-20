@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Master Spirit Tech Force - Pendulum Ruler  (ID: 68508433)
 -- Type: Monster / Effect / Fusion / Pendulum
@@ -9,7 +9,7 @@
 -- ATK 3500 | DEF 3000
 -- Pendulum Scale: L1 / R1
 -- Setcode: 0xf2
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Pendulum Scale = 1
@@ -24,7 +24,7 @@
 -- Your opponent's monsters cannot attack, except Pendulum Monsters without a Level.
 -- You can Tribute 1 monster, then target 1 card your opponent controls; destroy it, and if you do,
 -- inflict 1600 damage to your opponent.
--- You can only use this effect of "Master Spirit Tech Force - Pendulum Ruler" twice per turn.
+-- You can use this effect of "Master Spirit Tech Force - Pendulum Ruler" twice per turn.
 -- Once per turn: You can place this card in your Pendulum Zone.
 --[[ __CARD_HEADER_END__ ]]
 

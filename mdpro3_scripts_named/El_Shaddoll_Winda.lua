@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: El Shaddoll Winda  (ID: 94977269)
 -- Type: Monster / Effect / Fusion
 -- Attribute: DARK
@@ -8,13 +8,16 @@
 -- Level: 5
 -- ATK 2200 | DEF 800
 -- Setcode: 0x9d
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 1 "Shaddoll" monster + 1 DARK monster
--- Must first be Fusion Summoned. Cannot be destroyed by an opponent's card effects. Each player can
--- only Special Summon monster(s) once per turn while this card is face-up on the field. If this card
--- is sent to the GY: You can target 1 "Shaddoll" Spell/Trap in your GY; add it to your hand.
+-- Must first be Fusion Summoned.
+-- Cannot be destroyed by an opponent's card effects.
+-- Each player can only Special Summon monster(s) once per turn while this card is face-up on the
+-- field.
+-- If this card is sent to the GY: You can target 1 "Shaddoll" Spell/Trap in your GY; add it to your
+-- hand.
 --[[ __CARD_HEADER_END__ ]]
 
 --エルシャドール・ミドラーシュ

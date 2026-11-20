@@ -1,21 +1,22 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: V Umbral Horror  (ID: 101306006)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: V Umbral Horror  (ID: 39053882)
 -- Type: Monster / Effect
 -- Attribute: DARK
 -- Race: Spellcaster
 -- Level: 4
 -- ATK 500 | DEF 1500
 -- Setcode: 0x87
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If this card is Normal or Special Summoned: You can add 1 "Umbral Horror" monster from your Deck to
--- your hand, except "V Umbral Horror". You can banish this card from your GY, then target 1
--- "Masquerade" Xyz Monster you control; Special Summon from your Extra Deck, 1 "Number" monster that
--- is 1 Rank higher than that monster you control, by using it as material (this is treated as an Xyz
--- Summon, transfer its materials). You can only use each effect of "V Umbral Horror" once per turn.
+-- your hand, except "V Umbral Horror".
+-- You can banish this card from your GY, then target 1 "Masquerade" Xyz Monster you control; Special
+-- Summon from your Extra Deck, 1 "Number" monster that is 1 Rank higher than that monster you control,
+-- by using it as material (this is treated as an Xyz Summon, transfer its materials).
+-- You can only use each effect of "V Umbral Horror" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --Vアンブラル
@@ -65,7 +66,7 @@ function s.thop(e,tp,eg,ep,ev,re,r,rp)
 end
 function s.filter1(c,e,tp)
 	local rk=c:GetRank()
-	return rk>0 and c:IsFaceup() and c:IsSetCard(0x2e9)
+	return rk>0 and c:IsFaceup() and c:IsSetCard(0x1e3)
 		and Duel.IsExistingMatchingCard(s.filter2,tp,LOCATION_EXTRA,0,1,nil,e,tp,c,c:GetRank()+1)
 		and aux.MustMaterialCheck(c,tp,EFFECT_MUST_BE_XMATERIAL)
 end
@@ -82,10 +83,9 @@ function s.xyztg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_EXTRA)
 end
 function s.xyzop(e,tp,eg,ep,ev,re,r,rp)
-	local c=e:GetHandler()
 	local tc=Duel.GetFirstTarget()
 	if not aux.MustMaterialCheck(tc,tp,EFFECT_MUST_BE_XMATERIAL) then return end
-	if tc:GetControler()~=tp or tc:IsFacedown() or not tc:IsRelateToChain() or not s.filter1(tc,e,tp) or tc:IsImmuneToEffect(e) then return end
+	if tc:GetControler()~=tp or tc:IsFacedown() or not tc:IsRelateToChain() or tc:IsImmuneToEffect(e) then return end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
 	local g=Duel.SelectMatchingCard(tp,s.filter2,tp,LOCATION_EXTRA,0,1,1,nil,e,tp,tc,tc:GetRank()+1)
 	local sc=g:GetFirst()

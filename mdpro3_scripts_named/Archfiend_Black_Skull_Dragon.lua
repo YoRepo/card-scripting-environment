@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Archfiend Black Skull Dragon  (ID: 45349196)
 -- Type: Monster / Effect / Fusion
@@ -16,8 +16,8 @@
 -- If this card battles, your opponent's cards and effects cannot be activated until the end of the
 -- Damage Step.
 -- If damage calculation is performed involving this Fusion Summoned card, at the end of the Battle
--- Phase: You can target 1 "Red-Eyes" Normal Monster in your Graveyard; inflict damage to your opponent
--- equal to its ATK in the Graveyard, then shuffle it into the Deck.
+-- Phase: You can target 1 "Red-Eyes" Normal Monster in your GY; inflict damage to your opponent equal
+-- to its ATK in the GY, then shuffle it into the Deck.
 --[[ __CARD_HEADER_END__ ]]
 
 --悪魔竜ブラック・デーモンズ・ドラゴン

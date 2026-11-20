@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Electric Jellyfish  (ID: 95824983)
 -- Type: Monster / Effect
@@ -13,7 +13,7 @@
 -- You can send 1 "Umi" from your hand, Deck, or face-up field to the GY; Special Summon 1 WATER
 -- monster from your hand.
 -- When your opponent activates a monster effect, or Spell Card or effect, while "Umi" is on the field
--- (Quick Effect): You can negate that effect, then, you can make this card gain 600 ATK/DEF.
+-- (Quick Effect): You can negate that effect, then you can make this card gain 600 ATK/DEF.
 -- You can only use each effect of "Electric Jellyfish" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

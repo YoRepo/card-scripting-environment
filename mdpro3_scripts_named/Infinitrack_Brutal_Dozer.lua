@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Infinitrack Brutal Dozer  (ID: 76830505)
 -- Type: Monster / Effect
@@ -13,9 +13,9 @@
 -- Effect Text:
 -- You can Tribute 1 EARTH Machine monster; Special Summon this card from your hand in Defense
 -- Position.
--- If this card is Special Summoned from the hand, you can: Special Summon 1 "Infinitrack" monster from
+-- If this card is Special Summoned from the hand: You can Special Summon 1 "Infinitrack" monster from
 -- your Deck in Defense Position, except "Infinitrack Brutal Dozer", but negate its effects, also you
--- cannot Special Summon monsters for the rest of this turn, except EARTH Machine monsters.
+-- cannot Special Summon for the rest of this turn, except EARTH Machine monsters.
 -- You can only use each effect of "Infinitrack Brutal Dozer" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

@@ -1,22 +1,23 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Angelechy Enlisted  (ID: 101305093)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Angelechy Enlisted  (ID: 81797573)
 -- Type: Monster / Effect / Tuner / Synchro
 -- Attribute: LIGHT
 -- Race: Fairy
 -- Level: 2
 -- ATK 1500 | DEF 1500
--- Setcode: 0x2e5
+-- Setcode: 0x1e2
 -- Scope: TCG
 --
 -- Effect Text:
 -- 1 Tuner + 1 non-Tuner
 -- You can target 1 opponent's monster in this card's adjacent column; banish it, then change control
 -- of this card by moving it to one of your opponent's Main Monster Zones in this card's adjacent
--- columns. If the control of this face-up card changes: Return this card to the Extra Deck, then the
--- owner of this card Special Summons 1 "Angelechy" monster from their Extra Deck. You can only use
--- each effect of "Angelechy Enlisted" once per turn.
+-- columns.
+-- If the control of this face-up card changes: Return this card to the Extra Deck, then the owner of
+-- this card Special Summons 1 "Angelechy" monster from their Extra Deck.
+-- You can only use each effect of "Angelechy Enlisted" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --Angelechy Enlisted
@@ -36,7 +37,7 @@ function s.initial_effect(c)
 	e1:SetTarget(s.rmtg)
 	e1:SetOperation(s.rmop)
 	c:RegisterEffect(e1)
-	--special
+	--special summon
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(id,1))
 	e2:SetCategory(CATEGORY_SPECIAL_SUMMON+CATEGORY_TOEXTRA)
@@ -94,7 +95,7 @@ function s.spcon(e,tp,eg,ep,ev,re,r,rp,chk)
 	return eg:IsContains(c) and c:IsFaceup()
 end
 function s.spfilter(c,e,tp,cp)
-	return c:IsSetCard(0x2e5) and c:IsCanBeSpecialSummoned(e,0,cp,false,false,POS_FACEUP,cp)
+	return c:IsSetCard(0x1e2) and c:IsCanBeSpecialSummoned(e,0,cp,false,false,POS_FACEUP,cp)
 		and Duel.GetLocationCountFromEx(tp,tp,nil,c)>0
 end
 function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk)

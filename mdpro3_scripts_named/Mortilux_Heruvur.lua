@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Mortilux Heruvur  (ID: 101305089)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Mortilux Heruvur  (ID: 15415552)
 -- Type: Monster / Effect / Xyz
 -- Attribute: LIGHT
 -- Race: Winged Beast
@@ -12,8 +12,9 @@
 -- Effect Text:
 -- 2+ Level 8 monsters
 -- If a monster(s) is sent to your opponent's GY (except during the Damage Step): You can target 1 of
--- them; attach it to this card. You can only use this effect of "Mortilux Heruvur" once per turn. This
--- card gains effects based on the number of materials attached to it.
+-- them; attach it to this card.
+-- You can only use this effect of "Mortilux Heruvur" once per turn.
+-- This card gains effects based on the number of materials attached to it.
 -- ● 2+: Cannot be destroyed by battle or card effects.
 -- ● 3+: Your opponent cannot target cards in the GYs with card effects.
 -- ● 4+: You can detach 3 materials from this card; send 1 monster on the field to the GY.
@@ -84,6 +85,7 @@ function s.rmtg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TARGET)
 	local g=sg:Select(tp,1,1,nil)
 	Duel.SetTargetCard(g)
+	Duel.SetOperationInfo(0,CATEGORY_LEAVE_GRAVE,g,1,0,0)
 end
 function s.rmop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Performapal U Go Golem  (ID: 73511233)
 -- Type: Monster / Effect / Pendulum
 -- Attribute: DARK

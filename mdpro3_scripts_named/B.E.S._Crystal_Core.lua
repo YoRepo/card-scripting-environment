@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: B.E.S. Crystal Core  (ID: 22790789)
 -- Type: Monster / Effect
@@ -11,12 +11,12 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- When this card is Normal Summoned, put 3 counters on it.
--- This card cannot be destroyed by battle.
--- If this card attacks or is attacked, remove 1 counter from this card at the end of the Damage Step.
--- If you cannot, destroy it.
--- Once per turn, during your Main Phase, you can change 1 face-up Attack Position monster your
--- opponent controls to face-up Defense Position.
+-- If this card is Normal Summoned: Place 3 counters on this card.
+-- Cannot be destroyed by battle.
+-- At the end of the Damage Step, if this card battled: Remove 1 counter from this card, or if you
+-- cannot, destroy this card.
+-- Once per turn: You can target 1 Attack Position monster your opponent controls; change that target
+-- to face-up Defense Position.
 --[[ __CARD_HEADER_END__ ]]
 
 --巨大戦艦 クリスタル・コア

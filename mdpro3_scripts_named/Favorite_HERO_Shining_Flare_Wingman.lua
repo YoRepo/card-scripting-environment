@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Favorite HERO Shining Flare Wingman  (ID: 87758525)
 -- Type: Monster / Effect / Fusion
@@ -8,7 +8,7 @@
 -- Level: 8
 -- ATK 2500 | DEF 2100
 -- Setcode: 0x3008, 0x184, 0x194
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 1 Fusion Monster + 1 face-up monster on the field

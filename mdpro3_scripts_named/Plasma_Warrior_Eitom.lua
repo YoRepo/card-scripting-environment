@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Plasma Warrior Eitom  (ID: 100263004)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Plasma Warrior Eitom  (ID: 45700805)
 -- Type: Monster / Effect / Special Summon
 -- Attribute: LIGHT
 -- Race: Thunder
@@ -12,10 +12,11 @@
 --
 -- Effect Text:
 -- (This card is always treated as a "Magna Warrior" card.)
--- Cannot be Normal Summoned/Set. Must be Special Summoned (from your hand or GY) by Tributing 1 Level
--- 7 or higher monster. You can only Special Summon "Plasma Warrior Eitom" once per turn this way. Once
--- per turn: You can send 1 "Magnet Warrior" or "Magna Warrior" monster from your Deck to the GY,
--- except "Plasma Warrior Eitom"; for the rest of this turn, this card's original ATK becomes 1500,
+-- Cannot be Normal Summoned/Set.
+-- Must be Special Summoned (from your hand or GY) by Tributing 1 Level 7 or higher monster.
+-- You can only Special Summon "Plasma Warrior Eitom" once per turn this way.
+-- Once per turn: You can send 1 "Magnet Warrior" or "Magna Warrior" monster from your Deck to the GY,
+-- except "Plasma Warrior Eitom"; until the end of this turn, this card's original ATK becomes 1500,
 -- also it can attack directly.
 --[[ __CARD_HEADER_END__ ]]
 

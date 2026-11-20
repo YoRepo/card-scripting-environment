@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Cybernetic Fusion Support  (ID: 58199906)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x94, 0x46
@@ -8,8 +8,8 @@
 --
 -- Effect Text:
 -- Pay half your LP; once, if you Fusion Summon a Machine Fusion Monster this turn, you can banish
--- monsters from your hand, field, and/or GY as the Fusion Materials. You can only activate 1
--- "Cybernetic Fusion Support" per turn.
+-- monsters from your hand, field, and/or GY as the Fusion Materials.
+-- You can only activate 1 "Cybernetic Fusion Support" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --サイバネティック・フュージョン・サポート

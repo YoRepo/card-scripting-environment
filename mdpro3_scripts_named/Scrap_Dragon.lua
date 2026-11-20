@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Scrap Dragon  (ID: 76774528)
 -- Type: Monster / Effect / Synchro
@@ -13,7 +13,7 @@
 -- Effect Text:
 -- 1 Tuner + 1+ non-Tuners
 -- Once per turn: You can target 1 card you control and 1 card your opponent controls; destroy them.
--- When this card in your possession is destroyed by your opponent's card and sent to your GY: Target 1
+-- If this card in your possession is destroyed by your opponent's card and sent to your GY: Target 1
 -- non-Synchro "Scrap" monster in your GY; Special Summon that target.
 --[[ __CARD_HEADER_END__ ]]
 

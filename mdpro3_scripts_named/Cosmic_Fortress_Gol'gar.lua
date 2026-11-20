@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Cosmic Fortress Gol'gar  (ID: 68319538)
 -- Type: Monster / Effect / Synchro
@@ -49,6 +49,9 @@ function c68319538.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 c68319538.counter_add_list={0x100e}
+c68319538.mentioned_counter={
+	[0x100e]=true,
+}
 function c68319538.filter(c)
 	return c:IsFaceup() and c:IsType(TYPE_SPELL+TYPE_TRAP) and c:IsAbleToHand()
 end

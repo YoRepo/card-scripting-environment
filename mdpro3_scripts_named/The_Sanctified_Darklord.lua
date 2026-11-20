@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: The Sanctified Darklord  (ID: 48152161)
 -- Type: Trap
@@ -8,7 +8,7 @@
 --
 -- Effect Text:
 -- Send 1 "Darklord" monster from your hand or face-up field to the GY; negate the effects of 1 Effect
--- Monster on the field until the end of this turn, and if you do, gain LP equal to its ATK.
+-- Monster on the field (until the end of this turn), and if you do, gain LP equal to its ATK.
 -- You can only activate 1 "The Sanctified Darklord" per turn.
 --[[ __CARD_HEADER_END__ ]]
 

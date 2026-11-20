@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Neo Galaxy-Eyes Photon Dragon - Photon Howling  (ID: 28331069)
 -- Type: Monster / Effect / Xyz
@@ -8,14 +8,14 @@
 -- Rank: 8
 -- ATK 4500 | DEF 3000
 -- Setcode: 0x107b, 0x55
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 3 Level 8 monsters
 -- Once per turn, you can also Xyz Summon "Neo Galaxy-Eyes Photon Dragon - Photon Howling" by using 1
 -- Rank 8 Xyz Monster you control (transfer its materials).
 -- If this card is Xyz Summoned: You can take 1 "Photon" monster from your Deck, and either Special
--- Summon it in Defense Position or attach it to this card as material.
+-- Summon it in Defense Position or attach it to this card.
 -- (Quick Effect): You can detach 3 materials from this card; Tribute 1 other Xyz Monster, and if you
 -- do, negate the effects of all other face-up cards currently on the field until the end of this turn.
 --[[ __CARD_HEADER_END__ ]]

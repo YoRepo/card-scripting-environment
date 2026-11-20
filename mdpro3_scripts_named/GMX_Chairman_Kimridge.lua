@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: GMX Chairman Kimridge  (ID: 56034579)
 -- Type: Monster / Effect
 -- Attribute: LIGHT
@@ -12,13 +12,14 @@
 --
 -- Effect Text:
 -- You can reveal this card in your hand; add 1 "GMX Applied Experiment #55" from your Deck or GY to
--- your hand, and if you do, shuffle this card into the Deck. If this card is Special Summoned by a
--- monster effect: You can target 2 cards in your GY, that are "GMX" cards and/or Dinosaur monsters;
--- place them on top of your Deck in any order, then you can destroy 1 Attack Position monster your
--- opponent controls. You can only use each effect of "GMX Chairman Kimridge" once per turn.
+-- your hand, and if you do, shuffle this card into the Deck.
+-- If this card is Special Summoned by a monster effect: You can target 2 cards in your GY, that are
+-- "GMX" cards and/or Dinosaur monsters; place them on top of your Deck in any order, then you can
+-- destroy 1 Attack Position monster your opponent controls.
+-- You can only use each effect of "GMX Chairman Kimridge" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---GMX Chairman Kimridge
+--GMX主任教授キンリッジ
 local s,id,o=GetID()
 function s.initial_effect(c)
 	aux.AddCodeList(c,18795635)
@@ -84,7 +85,7 @@ function s.tdtg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	Duel.SetOperationInfo(0,CATEGORY_TODECK,tg,tg:GetCount(),0,0)
 end
 function s.tdop(e,tp,eg,ep,ev,re,r,rp)
-	local tg=Duel.GetTargetsRelateToChain()
+	local tg=Duel.GetTargetsRelateToChain():Filter(aux.NecroValleyFilter(),nil)
 	if tg:GetCount()==0 then return end
 	if Duel.SendtoDeck(tg,nil,SEQ_DECKTOP,REASON_EFFECT)==0 then return end
 	local ct=Duel.GetOperatedGroup():FilterCount(Card.IsLocation,nil,LOCATION_DECK)

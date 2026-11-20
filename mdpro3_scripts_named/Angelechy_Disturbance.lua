@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Angelechy Disturbance  (ID: 101305095)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Angelechy Disturbance  (ID: 54171327)
 -- Type: Trap
--- Setcode: 0x2e5
+-- Setcode: 0x1e2
 -- Scope: TCG
 --
 -- Effect Text:
 -- Give control of 1 "Angelechy" monster you control to your opponent (until the End Phase), then if
 -- your opponent controls a face-up card(s) in its adjacent Monster Zones and/or Spell & Trap Zones,
--- their effects are negated. You can banish this card from your GY; add 1 "Angelechy" Spell/Trap from
--- your Deck to your hand, except "Angelechy Disturbance". You can only use each effect of "Angelechy
--- Disturbance" once per turn.
+-- their effects are negated.
+-- You can banish this card from your GY; add 1 "Angelechy" Spell/Trap from your Deck to your hand,
+-- except "Angelechy Disturbance".
+-- You can only use each effect of "Angelechy Disturbance" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --Angelechy Disturbance
@@ -42,7 +43,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 function s.cfilter(c)
-	return c:IsFaceup() and c:IsSetCard(0x2e5) and c:IsControlerCanBeChanged()
+	return c:IsFaceup() and c:IsSetCard(0x1e2) and c:IsControlerCanBeChanged()
 end
 function s.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.cfilter,tp,LOCATION_MZONE,0,1,nil) end
@@ -98,7 +99,7 @@ function s.activate(e,tp,eg,ep,ev,re,r,rp)
 end
 function s.thfilter(c)
 	return not c:IsCode(id) and c:IsType(TYPE_SPELL+TYPE_TRAP) and c:IsAbleToHand()
-		and c:IsSetCard(0x2e5)
+		and c:IsSetCard(0x1e2)
 end
 function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.thfilter,tp,LOCATION_DECK,0,1,nil) end

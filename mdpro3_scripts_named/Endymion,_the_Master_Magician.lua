@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Endymion, the Master Magician  (ID: 40732515)
 -- Type: Monster / Effect
@@ -54,6 +54,9 @@ function c40732515.initial_effect(c)
 	e3:SetOperation(c40732515.desop)
 	c:RegisterEffect(e3)
 end
+c40732515.mentioned_counter={
+	[0x1]=true,
+}
 function c40732515.spcfilter(c,tp)
 	return c:IsCode(39910367) and c:IsCanRemoveCounter(tp,0x1,1,REASON_COST)
 end

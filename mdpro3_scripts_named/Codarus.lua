@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Codarus  (ID: 65496056)
 -- Type: Monster / Effect
@@ -10,8 +10,8 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- You can send 1 face-up "Umi" you control to the Graveyard to target up to 2 cards your opponent
--- controls; send those targets to the Graveyard.
+-- You can send 1 face-up "Umi" you control to the GY to target up to 2 cards your opponent controls;
+-- send those targets to the GY.
 --[[ __CARD_HEADER_END__ ]]
 
 --コダロス

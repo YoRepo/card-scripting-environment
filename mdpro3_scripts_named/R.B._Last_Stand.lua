@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: R.B. Last Stand  (ID: 43450363)
 -- Type: Trap
 -- Setcode: 0x1cf
@@ -8,13 +8,15 @@
 --
 -- Effect Text:
 -- Special Summon 1 "R.B." monster from your Deck, Extra Deck, or GY, with a different name than the
--- cards you control. For the rest of this turn after this card resolves, you cannot Special Summon
--- from the Extra Deck, except Machine monsters with 1500 or less ATK. When your opponent activates a
--- card or effect that targets an "R.B." monster(s) you control: You can banish this card from your GY;
--- negate that effect. You can only use 1 "R.B. Last Stand" effect per turn, and only once that turn.
+-- cards you control.
+-- For the rest of this turn after this card resolves, you cannot Special Summon from the Extra Deck,
+-- except Machine monsters with 1500 or less ATK.
+-- When your opponent activates a card or effect that targets an "R.B." monster(s) you control: You can
+-- banish this card from your GY; negate that effect.
+-- You can only use 1 "R.B. Last Stand" effect per turn, and only once that turn.
 --[[ __CARD_HEADER_END__ ]]
 
---R.B. Last Stand
+--R.B.ラスト・スタンド
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Activate

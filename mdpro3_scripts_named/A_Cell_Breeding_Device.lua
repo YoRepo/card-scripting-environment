@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: "A" Cell Breeding Device  (ID: 34541863)
 -- Type: Spell / Continuous
@@ -30,6 +30,9 @@ function c34541863.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 c34541863.counter_add_list={0x100e}
+c34541863.mentioned_counter={
+	[0x100e]=true,
+}
 function c34541863.condition(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.GetTurnPlayer()==tp
 end

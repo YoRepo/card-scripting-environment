@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Checkker  (ID: 77435268)
 -- Type: Monster / Effect
 -- Attribute: EARTH
@@ -10,14 +10,16 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Cannot be Normal Summoned if you control a monster. You can Tribute this card; Special Summon 1
--- Machine monster from your Deck whose ATK equals its own DEF, but return it to the hand during the
--- End Phase. You can banish this card from your GY and discard 1 card; Special Summon 1 "Iron Rubble
--- Token" (Machine/EARTH/Level 1/ATK 0/DEF 0), but it cannot be used as material for a Fusion, Synchro,
--- or Link Summon. You can only use each effect of "Checkker" once per turn.
+-- Cannot be Normal Summoned if you control a monster.
+-- You can Tribute this card; Special Summon 1 Machine monster from your Deck whose ATK equals its own
+-- DEF, but return it to the hand during the End Phase.
+-- You can banish this card from your GY and discard 1 card; Special Summon 1 "Iron Rubble Token"
+-- (Machine/EARTH/Level 1/ATK 0/DEF 0), but it cannot be used as material for a Fusion, Synchro, or
+-- Link Summon.
+-- You can only use each effect of "Checkker" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Checkker
+--チェツカー
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--summon limit

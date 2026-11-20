@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Phantasm Spiral Battle  (ID: 34302287)
 -- Type: Trap
@@ -10,8 +10,8 @@
 -- If all monsters you control are Normal Monsters (min. 1): Target 1 card your opponent controls;
 -- destroy it.
 -- If "Umi" is on the field, you can activate this card from your hand.
--- You can banish this card from your Graveyard, then target 1 Normal Monster you control; equip that
--- Normal Monster with all "Phantasm Spiral" Equip Spell Cards you control that can equip to it.
+-- You can banish this card from your GY, then target 1 Normal Monster you control; equip that Normal
+-- Monster with all "Phantasm Spiral" Equip Spells you control that can equip to it.
 --[[ __CARD_HEADER_END__ ]]
 
 --幻煌龍の戦渦

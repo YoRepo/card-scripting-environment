@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Mass Hypnosis  (ID: 21768554)
 -- Type: Trap / Continuous
@@ -43,6 +43,9 @@ function c21768554.initial_effect(c)
 	e3:SetValue(c21768554.ctval)
 	c:RegisterEffect(e3)
 end
+c21768554.mentioned_counter={
+	[0x100e]=true,
+}
 function c21768554.cfilter(c)
 	return c:IsFaceup() and c:IsSetCard(0xc)
 end

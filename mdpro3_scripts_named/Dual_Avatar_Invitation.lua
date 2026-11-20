@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Dual Avatar Invitation  (ID: 87669904)
 -- Type: Spell
 -- Setcode: 0x14f
@@ -10,8 +10,8 @@
 -- Discard 1 card, and if you do, Special Summon as many "Dual Avatar Spirit Tokens" as possible
 -- (Warrior/LIGHT/Level 2/ATK 0/DEF 0), also for the rest of this turn you cannot Special Summon
 -- monsters from the Extra Deck, except Fusion Monsters, and all Tokens you control cannot be Tributed
--- and are destroyed during the End Phase. After Summoning these Token(s), you can apply this effect up
--- to twice.
+-- and are destroyed during the End Phase.
+-- After Summoning these Token(s), you can apply this effect up to twice.
 -- ● Fusion Summon 1 "Dual Avatar" Fusion Monster from your Extra Deck, using monsters from your hand
 -- or field as Fusion Material.
 -- You can only activate 1 "Dual Avatar Invitation" per turn.

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Archfiend Emperor  (ID: 48469380)
 -- Type: Monster / Effect / Ritual / Pendulum
@@ -7,6 +7,7 @@
 -- Race: Fiend
 -- Level: 7
 -- ATK 2500 | DEF 1200
+-- Pendulum Scale: L0 / R0
 -- Setcode: 0x45
 -- Scope: OCG / TCG
 --

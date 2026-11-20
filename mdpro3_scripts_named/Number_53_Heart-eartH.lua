@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Number 53: Heart-eartH  (ID: 23998625)
 -- Type: Monster / Effect / Xyz
@@ -18,7 +18,7 @@
 -- instead.
 -- When this card on the field is destroyed by a card effect while it has no Xyz Materials: You can
 -- Special Summon 1 "Number 92: Heart-eartH Dragon" from your Extra Deck and attach this card from the
--- Graveyard to it as an Xyz Material.
+-- GY to it as an Xyz Material.
 -- (This Special Summon is treated as an Xyz Summon.)
 --[[ __CARD_HEADER_END__ ]]
 

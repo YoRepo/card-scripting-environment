@@ -1,17 +1,17 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Quick Summon  (ID: 100263009)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Quick Summon  (ID: 10086952)
 -- Type: Spell / Quick-Play
 -- Scope: OCG
 --
 -- Effect Text:
--- Immediately after this effect resolves, Normal Summon/Set 1 monster. When you do, if your opponent
--- controls a monster, you can Normal Summon a Level 5 or higher monster without Tributing. During your
--- Main Phase, if this card is in your GY, except the turn it was sent there: You can banish it; add 1
--- Level 5 or higher monster that can be Normal Summoned/Set from your Deck or GY to your hand, then
--- immediately after this effect resolves, Tribute Summon it. You can only use this effect of "Quick
--- Summon" once per turn.
+-- Immediately after this effect resolves, Normal Summon/Set 1 monster, or if your opponent controls a
+-- monster, you can Normal Summon 1 Level 5 or higher monster without Tributing.
+-- During your Main Phase, if this card is in your GY, except the turn it was sent there: You can
+-- banish it; add 1 Level 5 or higher monster from your Deck or GY to your hand that can be Normal
+-- Summoned/Set, then immediately after this effect resolves, Tribute Summon that monster.
+-- You can only use this effect of "Quick Summon" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --速攻召喚

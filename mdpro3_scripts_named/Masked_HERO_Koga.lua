@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:48
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Masked HERO Koga  (ID: 50608164)
 -- Type: Monster / Effect / Fusion
@@ -13,9 +13,9 @@
 -- Effect Text:
 -- Must be Special Summoned with "Mask Change" and cannot be Special Summoned by other ways.
 -- This card gains 500 ATK for each monster your opponent controls.
--- Once per turn, during either player's turn: You can banish 1 "HERO" monster from your Graveyard,
--- then target 1 face-up monster on the field; that target loses ATK equal to the ATK of the monster
--- banished to activate this effect, until the end of this turn.
+-- Once per turn (Quick Effect): You can banish 1 "HERO" monster from your GY, then target 1 face-up
+-- monster on the field; that target loses ATK equal to the ATK of the monster banished to activate
+-- this effect, until the end of this turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --M・HERO 光牙

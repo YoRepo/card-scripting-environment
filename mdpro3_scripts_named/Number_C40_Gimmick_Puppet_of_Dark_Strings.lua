@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Number C40: Gimmick Puppet of Dark Strings  (ID: 69170557)
 -- Type: Monster / Effect / Xyz
@@ -46,6 +46,9 @@ function c69170557.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 aux.xyz_number[69170557]=40
+c69170557.mentioned_counter={
+	[0x1024]=true,
+}
 function c69170557.desfilter(c)
 	return c:GetCounter(0x1024)~=0
 end

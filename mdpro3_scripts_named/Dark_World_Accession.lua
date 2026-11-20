@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Dark World Accession  (ID: 65956182)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x6
@@ -8,10 +8,11 @@
 --
 -- Effect Text:
 -- During the Main Phase: Fusion Summon 1 Fiend Fusion Monster from your Extra Deck, by banishing
--- materials mentioned on it from your field or GY. If Fusion Summoning a "Dark World" monster this
--- way, you can also discard monsters as material. During your Main Phase, if this card is in your GY:
--- You can add this card to your hand, then discard 1 "Dark World" monster. You can only use each
--- effect of "Dark World Accession" once per turn.
+-- materials mentioned on it from your field or GY.
+-- If Fusion Summoning a "Dark World" monster this way, you can also discard monsters as material.
+-- During your Main Phase, if this card is in your GY: You can add this card to your hand, then discard
+-- 1 "Dark World" monster.
+-- You can only use each effect of "Dark World Accession" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --暗黒界の登極

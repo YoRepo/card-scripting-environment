@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Ghostrick Alucard  (ID: 75367227)
 -- Type: Monster / Effect / Xyz
@@ -12,13 +12,13 @@
 --
 -- Effect Text:
 -- 2 Level 3 monsters
--- Monsters your opponent controls cannot target face-up "Ghostrick" monsters, or any face-down Defense
--- Position monsters, for attacks, except this one.
--- You can detach 1 Xyz Material from this card, then target 1 Set card your opponent controls; destroy
+-- Your opponent's monsters cannot target "Ghostrick" monsters, or any face-down Defense Position
+-- monsters, for attacks, except this one.
+-- You can detach 1 material from this card, then target 1 Set card your opponent controls; destroy
 -- that target.
 -- You can only use this effect of "Ghostrick Alucard" once per turn.
--- If this card is sent to the Graveyard: You can target 1 other "Ghostrick" card in your Graveyard;
--- add that target to your hand.
+-- If this card is sent to the GY: You can target 1 other "Ghostrick" card in your GY; add that target
+-- to your hand.
 --[[ __CARD_HEADER_END__ ]]
 
 --ゴーストリック・アルカード

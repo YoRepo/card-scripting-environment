@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Gem-Knight Dispersion  (ID: 24220368)
 -- Type: Spell
 -- Setcode: 0x1047
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Activate 1 of these effects (but you can only use each effect of "Gem-Knight Dispersion" once per
 -- turn);
 -- ● Fusion Summon 1 "Gem-Knight" Fusion Monster from your Extra Deck, using monsters from your hand or
--- field. Up to 2 monsters from your Deck/Extra Deck can be used, if they are non-Rock "Gem-Knight"
--- monsters and you have "Gem-Knight Fusion" in your GY.
+-- field.
+-- Up to 2 monsters from your Deck/Extra Deck can be used, if they are non-Rock "Gem-Knight" monsters
+-- and you have "Gem-Knight Fusion" in your GY.
 -- ● Add 1 "Gem-" monster from your Deck or banishment to your hand, also any effect damage your
 -- opponent takes during the Main Phase this turn is halved.
 --[[ __CARD_HEADER_END__ ]]

@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Fleeting Flower of the Magician  (ID: 54399598)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x98
@@ -14,7 +14,7 @@
 -- You can only activate 1 "Fleeting Flower of the Magician" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Fleeting Flower of the Magician
+--魔術師の空華
 local s,id,o=GetID()
 function s.initial_effect(c)
 	--Activate

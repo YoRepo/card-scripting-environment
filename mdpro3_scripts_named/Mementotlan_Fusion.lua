@@ -1,18 +1,19 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Mementotlan Fusion  (ID: 66518509)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x1a1, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During the Main Phase: Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from your
--- hand or field as material, including a "Memento" monster. If a monster(s) in your possession was
--- destroyed by card effect this turn, you can also shuffle "Memento" monsters from your GY into the
--- Deck as material. During your Main Phase: You can banish this card from your GY; destroy 1 monster
--- you control, and if you do, add 1 "Memento" Spell/Trap from your Deck to your hand. You can only use
--- each effect of "Mementotlan Fusion" once per turn.
+-- hand or field as material, including a "Memento" monster.
+-- If a monster(s) in your possession was destroyed by card effect this turn, you can also shuffle
+-- "Memento" monsters from your GY into the Deck as material.
+-- During your Main Phase: You can banish this card from your GY; destroy 1 monster you control, and if
+-- you do, add 1 "Memento" Spell/Trap from your Deck to your hand.
+-- You can only use each effect of "Mementotlan Fusion" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --冥骸融合－メメント・フュージョン

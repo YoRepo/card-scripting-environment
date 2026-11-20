@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Venom Swamp  (ID: 54306223)
 -- Type: Spell / Field
@@ -49,6 +49,9 @@ function c54306223.initial_effect(c)
 	e4:SetOperation(c54306223.desop)
 	c:RegisterEffect(e4)
 end
+c54306223.mentioned_counter={
+	[0x1009]=true,
+}
 function c54306223.atkval(e,c)
 	return c:GetCounter(0x1009)*-500
 end

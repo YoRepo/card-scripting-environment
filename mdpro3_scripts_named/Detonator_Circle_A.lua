@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Detonator Circle "A"  (ID: 20985997)
 -- Type: Trap
@@ -21,6 +21,9 @@ function c20985997.initial_effect(c)
 	e1:SetOperation(c20985997.activate)
 	c:RegisterEffect(e1)
 end
+c20985997.mentioned_counter={
+	[0x100e]=true,
+}
 function c20985997.filter(c)
 	return c:GetCounter(0x100e)>0
 end

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Mythical Beast Medusa  (ID: 54965929)
 -- Type: Monster / Effect / Pendulum
@@ -73,6 +73,9 @@ function c54965929.initial_effect(c)
 	e4:SetOperation(c54965929.atkop)
 	c:RegisterEffect(e4)
 end
+c54965929.mentioned_counter={
+	[0x1]=true,
+}
 function c54965929.spcon(e,tp,eg,ep,ev,re,r,rp)
 	return not Duel.IsExistingMatchingCard(nil,tp,LOCATION_PZONE,0,1,e:GetHandler())
 end

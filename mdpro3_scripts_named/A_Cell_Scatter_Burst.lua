@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: "A" Cell Scatter Burst  (ID: 73262676)
 -- Type: Spell / Quick-Play
@@ -23,6 +23,9 @@ function c73262676.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 c73262676.counter_add_list={0x100e}
+c73262676.mentioned_counter={
+	[0x100e]=true,
+}
 function c73262676.filter(c)
 	return c:IsFaceup() and c:IsSetCard(0xc) and c:GetLevel()>0
 end

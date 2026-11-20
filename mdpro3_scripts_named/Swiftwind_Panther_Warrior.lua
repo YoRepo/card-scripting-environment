@@ -1,29 +1,29 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Swiftwind Panther Warrior  (ID: 101306001)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Swiftwind Panther Warrior  (ID: 77482666)
 -- Type: Monster / Effect
 -- Attribute: EARTH
 -- Race: Beast-Warrior
 -- Level: 4
 -- ATK 2000 | DEF 1600
 -- Setcode: 0x66
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- During the Main Phase (Quick Effect): You can Tribute 1 other monster from your hand or field, then
--- activate 1 of these effects;
+-- Cannot declare an attack unless a monster was Tributed this turn.
+-- During the Main Phase, if this card is on the field (Quick Effect): You can Tribute 1 other monster
+-- from your hand or field, then activate 1 of these effects;
 -- ● Special Summon 1 monster that mentions "Dark Time Wizard" from your hand or Deck, except
 -- "Swiftwind Panther Warrior".
 -- ● Send 1 Spell/Trap that mentions "Dark Time Wizard" from your Deck to the GY.
--- You can only use this effect of "Swiftwind Panther Warrior" once per turn. Cannot declare an attack
--- unless a monster(s) was Tributed this turn.
+-- You can only use this effect of "Swiftwind Panther Warrior" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --疾風の豹戦士パンサーウォリアー
 local s,id,o=GetID()
 function s.initial_effect(c)
-	aux.AddCodeList(c,101306052)
+	aux.AddCodeList(c,40235813)
 	--to hand
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
@@ -76,11 +76,11 @@ function s.recost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.Release(g,REASON_COST)
 end
 function s.tgfilter(c)
-	return aux.IsCodeListed(c,101306052) and c:IsType(TYPE_SPELL+TYPE_TRAP)
+	return aux.IsCodeListed(c,40235813) and c:IsType(TYPE_SPELL+TYPE_TRAP)
 		and c:IsAbleToGrave()
 end
 function s.spfilter(c,e,tp)
-	return not c:IsCode(id) and aux.IsCodeListed(c,101306052) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+	return not c:IsCode(id) and aux.IsCodeListed(c,40235813) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function s.retg(e,tp,eg,ep,ev,re,r,rp,chk)
 	local b1=Duel.IsExistingMatchingCard(s.spfilter,tp,LOCATION_HAND+LOCATION_DECK,0,1,nil,e,tp) and Duel.GetLocationCount(tp,LOCATION_MZONE)>0

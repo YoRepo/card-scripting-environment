@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Odd-Eyes Solblaze Dragon  (ID: 29325276)
 -- Type: Monster / Effect / Tuner / Synchro
@@ -8,7 +8,7 @@
 -- Level: 8
 -- ATK 2000 | DEF 2500
 -- Setcode: 0x99
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 1 Tuner + 1+ non-Tuners

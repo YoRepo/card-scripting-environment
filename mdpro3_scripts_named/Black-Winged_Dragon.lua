@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Black-Winged Dragon  (ID: 9012916)
 -- Type: Monster / Effect / Synchro
@@ -56,6 +56,9 @@ function c9012916.initial_effect(c)
 	e3:SetOperation(c9012916.operation)
 	c:RegisterEffect(e3)
 end
+c9012916.mentioned_counter={
+	[0x10]=true,
+}
 function c9012916.damval(e,re,val,r,rp,rc)
 	if bit.band(r,REASON_EFFECT)~=0 then
 		e:GetHandler():AddCounter(0x10,1)

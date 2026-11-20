@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Kuebiko  (ID: 20087414)
 -- Type: Trap / Continuous
@@ -57,7 +57,7 @@ function s.discfilter(c,tp)
 end
 function s.discon(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	if c:IsStatus(STATUS_BATTLE_DESTROYED) or not c:GetSummonType()==SUMMON_TYPE_SPECIAL+SUMMON_VALUE_SELF then return false end
+	if c:IsStatus(STATUS_BATTLE_DESTROYED) or c:GetSummonType()~=SUMMON_TYPE_SPECIAL+SUMMON_VALUE_SELF then return false end
 	if rp~=1-tp or not re:IsActiveType(TYPE_MONSTER) or not re:IsHasProperty(EFFECT_FLAG_CARD_TARGET) then return false end
 	local loc,tg=Duel.GetChainInfo(ev,CHAININFO_TRIGGERING_LOCATION,CHAININFO_TARGET_CARDS)
 	return loc==LOCATION_MZONE and tg and tg:IsExists(s.discfilter,1,nil,tp) and Duel.IsChainDisablable(ev)
@@ -79,7 +79,7 @@ function s.disop(e,tp,eg,ep,ev,re,r,rp)
 	local tg=g:GetMaxGroup(Card.GetAttack)
 	local c=e:GetHandler()
 	local rc=re:GetHandler()
-	if c:IsRelateToEffect(e) and Duel.SSet(tp,c) and Duel.NegateEffect(ev) and tg:IsContains(rc) and rc:IsRelateToEffect(re) then
+	if c:IsRelateToEffect(e) and Duel.SSet(tp,c)>0 and Duel.NegateEffect(ev) and tg:IsContains(rc) and rc:IsRelateToEffect(re) then
 		Duel.BreakEffect()
 		Duel.SendtoHand(rc,nil,REASON_EFFECT)
 	end

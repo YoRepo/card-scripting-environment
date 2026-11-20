@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Dogoran, the Mad Flame Kaiju  (ID: 93332803)
 -- Type: Monster / Effect
@@ -54,6 +54,9 @@ function c93332803.initial_effect(c)
 	e3:SetOperation(c93332803.desop)
 	c:RegisterEffect(e3)
 end
+c93332803.mentioned_counter={
+	[0x37]=true,
+}
 function c93332803.spfilter(c,tp)
 	return c:IsReleasable(REASON_SPSUMMON) and Duel.GetMZoneCount(1-tp,c,tp)>0
 end

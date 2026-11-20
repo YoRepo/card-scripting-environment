@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Kaiju Capture Mission  (ID: 81057455)
 -- Type: Trap / Continuous
@@ -50,6 +50,9 @@ function c81057455.initial_effect(c)
 	e3:SetOperation(c81057455.drop)
 	c:RegisterEffect(e3)
 end
+c81057455.mentioned_counter={
+	[0x37]=true,
+}
 function c81057455.poscon(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():GetCounter(0x37)<3
 end

@@ -1,18 +1,19 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:49
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Ancient Gear Duel  (ID: 53541822)
 -- Type: Trap / Continuous
 -- Setcode: 0x7
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- "Ancient Gear Golem", and monsters that mention it, in your Monster Zone are unaffected by your
--- opponent's activated monster effects. If your opponent controls a monster: You can Fusion Summon 1
--- Fusion Monster that mentions "Ancient Gear Golem" from your Extra Deck, by banishing monsters from
--- your field or GY as material, including "Ancient Gear Golem" you control, and if you do, it can make
--- up to 3 attacks during each Battle Phase. You can only use this effect of "Ancient Gear Duel" once
--- per turn.
+-- opponent's activated monster effects.
+-- If your opponent controls a monster: You can Fusion Summon 1 Fusion Monster that mentions "Ancient
+-- Gear Golem" from your Extra Deck, by banishing monsters from your field or GY as material, including
+-- "Ancient Gear Golem" you control, and if you do, it can make up to 3 attacks during each Battle
+-- Phase.
+-- You can only use this effect of "Ancient Gear Duel" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --古代の機械競闘

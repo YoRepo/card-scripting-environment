@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Amazoness Secret Arts  (ID: 86758746)
 -- Type: Spell / Quick-Play
 -- Setcode: 0x4
@@ -8,10 +8,11 @@
 --
 -- Effect Text:
 -- Fusion Summon 1 "Amazoness" Fusion Monster from your Extra Deck, using monsters from your hand or
--- field as Fusion Material. During your Main Phase: You can banish this card from your GY; once, if
--- you Fusion Summon an "Amazoness" Fusion Monster this turn, you can also send 1 "Amazoness" monster
--- from your Extra Deck to the GY as material. You can only use 1 "Amazoness Secret Arts" effect per
--- turn, and only once that turn.
+-- field as Fusion Material.
+-- During your Main Phase: You can banish this card from your GY; once, if you Fusion Summon an
+-- "Amazoness" Fusion Monster this turn, you can also send 1 "Amazoness" monster from your Extra Deck
+-- to the GY as material.
+-- You can only use 1 "Amazoness Secret Arts" effect per turn, and only once that turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --アマゾネスの秘術

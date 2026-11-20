@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Performapal Odd-Eyes Dissolver  (ID: 46136942)
 -- Type: Monster / Effect / Pendulum
 -- Attribute: DARK
@@ -9,7 +9,7 @@
 -- ATK 2000 | DEF 2600
 -- Pendulum Scale: L4 / R4
 -- Setcode: 0x9f, 0x99
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Pendulum Scale = 4
@@ -20,9 +20,10 @@
 -- [ Monster Effect ]
 -- At the start of the Damage Step, if your Pendulum Monster battles an opponent's monster: You can
 -- Special Summon this card from your hand, and if you do, your monster cannot be destroyed by that
--- battle. You can only use this effect of "Performapal Odd-Eyes Dissolver" once per turn. During your
--- Main Phase: You can Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from your
--- field and/or Pendulum Zones, including this card.
+-- battle.
+-- You can only use this effect of "Performapal Odd-Eyes Dissolver" once per turn.
+-- During your Main Phase: You can Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters
+-- from your field and/or Pendulum Zones, including this card.
 --[[ __CARD_HEADER_END__ ]]
 
 --EMオッドアイズ・ディゾルヴァー

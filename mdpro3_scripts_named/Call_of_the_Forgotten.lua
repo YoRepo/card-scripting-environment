@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Call of the Forgotten  (ID: 80749819)
 -- Type: Spell / Field
 -- Scope: OCG / TCG
@@ -8,12 +8,13 @@
 -- Effect Text:
 -- When this card is activated: You can Set up to 3 "Call of the Haunted" from your Deck and/or GY, and
 -- if you do, until the end of your opponent's turn, you cannot Special Summon, except Zombie monsters,
--- or monsters from the GY. Once per turn, if you activate "Call of the Haunted": You can target 1
--- monster your opponent controls; send it to the GY. You can only activate 1 "Call of the Forgotten"
--- per turn.
+-- or monsters from the GY.
+-- Once per turn, if you activate "Call of the Haunted": You can target 1 monster your opponent
+-- controls; send it to the GY.
+-- You can only activate 1 "Call of the Forgotten" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
---Call of the Forgotten
+--生ける屍の呼び声
 local s,id,o=GetID()
 function s.initial_effect(c)
 	aux.AddCodeList(c,97077563)

@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Bramble Rose Dragon  (ID: 6560411)
 -- Type: Monster / Effect / Synchro
@@ -11,7 +11,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- 1 Plant Tuner + 1+ non-Tuner monsters
+-- 1 Plant Tuner + 1+ non-Tuners
 -- Each time your opponent activates a monster effect, inflict 600 damage to your opponent, and if you
 -- do, all monsters your opponent currently controls lose 600 ATK.
 -- You can only use each of the following effects of "Bramble Rose Dragon" once per turn.

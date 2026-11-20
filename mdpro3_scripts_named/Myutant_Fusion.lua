@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Myutant Fusion  (ID: 42577802)
 -- Type: Spell
 -- Setcode: 0x157, 0x46
@@ -8,9 +8,10 @@
 --
 -- Effect Text:
 -- Fusion Summon 1 "Myutant" Fusion Monster from your Extra Deck, by banishing Fusion Materials listed
--- on it from your hand or field. If your opponent has activated a card or effect this turn, you can
--- use up to 1 monster each from your Deck and GY as Fusion Material. You can only activate 1 "Myutant
--- Fusion" per turn.
+-- on it from your hand or field.
+-- If your opponent has activated a card or effect this turn, you can use up to 1 monster each from
+-- your Deck and GY as Fusion Material.
+-- You can only activate 1 "Myutant Fusion" per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --フュージョン・ミュートリアス

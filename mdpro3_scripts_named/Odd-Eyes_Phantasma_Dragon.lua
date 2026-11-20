@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Odd-Eyes Phantasma Dragon  (ID: 21770839)
 -- Type: Monster / Effect / Pendulum
@@ -7,6 +7,7 @@
 -- Race: Dragon
 -- Level: 8
 -- ATK 3000 | DEF 2500
+-- Pendulum Scale: L0 / R0
 -- Setcode: 0x99
 -- Scope: OCG / TCG
 --

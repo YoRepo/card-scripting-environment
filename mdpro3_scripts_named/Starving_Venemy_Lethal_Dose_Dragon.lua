@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Starving Venemy Lethal Dose Dragon  (ID: 22070401)
 -- Type: Monster / Effect / Fusion / Pendulum
@@ -85,6 +85,9 @@ function c22070401.initial_effect(c)
 	e6:SetOperation(c22070401.penop)
 	c:RegisterEffect(e6)
 end
+c22070401.mentioned_counter={
+	[0x104f]=true,
+}
 function c22070401.ffilter(c)
 	return c:IsFusionAttribute(ATTRIBUTE_DARK) and c:IsFusionType(TYPE_PENDULUM)
 end

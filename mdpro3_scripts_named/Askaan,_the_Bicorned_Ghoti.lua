@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Askaan, the Bicorned Ghoti  (ID: 46815301)
 -- Type: Monster / Effect / Synchro
@@ -11,7 +11,7 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- 1 Tuner + 1+ non-Tuner monsters
+-- 1 Tuner + 1+ non-Tuners
 -- If this card is Synchro Summoned: You can target 1 Fish monster you control and 1 card your opponent
 -- controls; banish them.
 -- If this card is banished: You can banish 1 Fish monster from your GY; Special Summon this card.

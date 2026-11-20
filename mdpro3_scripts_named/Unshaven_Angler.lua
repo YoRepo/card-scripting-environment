@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Unshaven Angler  (ID: 92084010)
 -- Type: Monster / Effect
@@ -23,5 +23,6 @@ function c92084010.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 function c92084010.condition(e,c)
-	return c:IsAttribute(ATTRIBUTE_WATER)
+	local ec=e:GetHandler()
+	return c:IsAttribute(ATTRIBUTE_WATER) and (ec:IsFaceup() or c:GetControler()==ec:GetControler())
 end

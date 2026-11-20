@@ -1,15 +1,16 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Power Connection  (ID: 100200294)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Power Connection  (ID: 52558178)
 -- Type: Spell
 -- Scope: OCG
 --
 -- Effect Text:
 -- Target any number of face-up monsters you control (if you target 2 or more monsters, they must have
--- the same Type); they gain 500 ATK for each monster targeted, until the end of this turn. If you
--- activated "Armament Reincarnation" this turn: You can add this card from your GY to your hand. You
--- can only use each effect of "Power Connection" once per turn.
+-- the same Type); they gain 500 ATK for each monster targeted, until the end of this turn.
+-- If you activated "Armament Reincarnation" this turn: You can add this card from your GY to your
+-- hand.
+-- You can only use each effect of "Power Connection" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --パワーコネクション

@@ -1,22 +1,23 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Ashtraja Susanoo  (ID: 101306039)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Ashtraja Susanoo  (ID: 17020474)
 -- Type: Monster / Effect / Synchro
 -- Attribute: FIRE
 -- Race: Fiend
 -- Level: 9
 -- ATK 3300 | DEF 0
--- Setcode: 0x2e4
--- Scope: OCG
+-- Setcode: 0x1e4
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 1 Tuner + 1+ non-Tuners
 -- If this card is Synchro Summoned: You can banish any number of Traps from your GY; banish that many
--- cards on the field. During the End Phase: You can target up to 2 "Ashtra" monsters and/or "Ashtra"
--- Traps in your GY and/or banishment; for each of them, add it to your hand or Set it, then if you
--- targeted 2 cards, return this card to the Extra Deck. You can only use each effect of "Ashtraja
--- Susanoo" once per turn.
+-- cards from the field.
+-- During the End Phase: You can target up to 2 "Ashtra" monsters and/or "Ashtra" Traps in your GY
+-- and/or banishment; add to your hand or Set each card, then if you targeted 2 cards, return this card
+-- to the Extra Deck.
+-- You can only use each effect of "Ashtraja Susanoo" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --鬼神 朱沙之王
@@ -82,7 +83,7 @@ function s.rmop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 function s.tgfilter(c,e,tp)
-	return c:IsFaceupEx() and c:IsSetCard(0x2e4) and c:IsType(TYPE_MONSTER+TYPE_TRAP)
+	return c:IsFaceupEx() and c:IsSetCard(0x1e4) and c:IsType(TYPE_MONSTER+TYPE_TRAP)
 		and (c:IsAbleToHand() or s.setfilter(c,e,tp))
 end
 function s.setfilter(c,e,tp)
@@ -112,7 +113,10 @@ function s.settg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	if g:IsExists(s.cspfilter,1,nil) then cat=cat|CATEGORY_GRAVE_SPSUMMON end
 	if g:GetCount()>=2 then cat=cat|CATEGORY_TOEXTRA end
 	e:SetCategory(cat)
-	Duel.SetOperationInfo(0,CATEGORY_LEAVE_GRAVE,g,2,0,0)
+	local gg=g:Filter(Card.IsLocation,nil,LOCATION_GRAVE)
+	if gg:GetCount()>0 then
+		Duel.SetOperationInfo(0,CATEGORY_LEAVE_GRAVE,gg,gg:GetCount(),0,0)
+	end
 end
 function s.setop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
@@ -126,7 +130,7 @@ function s.setop(e,tp,eg,ep,ev,re,r,rp)
 			and (not set or Duel.SelectOption(tp,1190,1153)==0) then
 			Duel.SendtoHand(tc,nil,REASON_EFFECT)
 			Duel.ConfirmCards(1-tp,tc)
-		else
+		elseif set then
 			if tc:IsType(TYPE_MONSTER) then
 				Duel.SpecialSummon(tc,0,tp,tp,false,false,POS_FACEDOWN_DEFENSE)
 				Duel.ConfirmCards(1-tp,tc)
@@ -183,7 +187,8 @@ function s.setop(e,tp,eg,ep,ev,re,r,rp)
 			Duel.SSet(tp,ssg)
 		end
 	end
-	if e:GetLabel()==1 and c:IsRelateToChain() then
+	if e:GetLabel()==1 and sg:GetCount()>0 and c:IsRelateToChain() then
+		Duel.BreakEffect()
 		Duel.SendtoDeck(c,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)
 	end
 end

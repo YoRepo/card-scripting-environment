@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Defect Compiler  (ID: 92327802)
 -- Type: Monster / Effect
@@ -45,6 +45,9 @@ function c92327802.initial_effect(c)
 	e2:SetOperation(c92327802.op)
 	c:RegisterEffect(e2)
 end
+c92327802.mentioned_counter={
+	[0x43]=true,
+}
 function c92327802.damval(e,re,val,r,rp,rc)
 	local c=e:GetHandler()
 	if bit.band(r,REASON_EFFECT)~=0 and rp==1-e:GetOwnerPlayer()

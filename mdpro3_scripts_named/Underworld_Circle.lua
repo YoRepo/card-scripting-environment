@@ -1,14 +1,14 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Underworld Circle  (ID: 73443672)
 -- Type: Spell / Continuous
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Activate this card if both players have 5 or more monsters in their GYs; destroy as many monsters on
--- the field as possible, then each player banishes (face-down) all monsters from their Deck, then you
--- can Special Summon 1 Normal Monster from your GY.
+-- the field as possible, then each player banishes (face-down) as many monsters from their Deck as
+-- possible, then you can Special Summon 1 Normal Monster from your GY.
 -- Once per turn, during the Standby Phase: Activate this effect; each player can Special Summon 1
 -- monster from their GY, ignoring its Summoning conditions, but banish it when it leaves the field.
 -- You can only activate 1 "Underworld Circle" per Duel.

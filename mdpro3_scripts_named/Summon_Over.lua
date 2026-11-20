@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:47
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Summon Over  (ID: 48015771)
 -- Type: Spell / Field
@@ -50,6 +50,9 @@ function c48015771.initial_effect(c)
 	e4:SetOperation(c48015771.tgop)
 	c:RegisterEffect(e4)
 end
+c48015771.mentioned_counter={
+	[0x4c]=true,
+}
 function c48015771.ctop(e,tp,eg,ep,ev,re,r,rp)
 	e:GetHandler():AddCounter(0x4c,1)
 end

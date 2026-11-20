@@ -1,15 +1,15 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:46
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Full Moon Mirror  (ID: 44857722)
 -- Type: Spell / Continuous
 -- Scope: OCG
 --
 -- Effect Text:
--- Each time a monster(s) is destroyed by battle or effect, place 1 Full Moon Counter on this card for
--- each.
--- You can remove Full Moon Counters from this card, then activate 1 of these effects;
--- ● 1: Special Summon 1 Level 6 or lower monster (Fiend or Fairy) from your hand or GY.
+-- Each time a monster(s) is destroyed by battle or card effect, place 1 Full Moon Counter on this card
+-- for each monster.
+-- You can remove Full Moon Counters from this card to activate 1 of these effects;
+-- ● 1: Special Summon 1 Level 6 or lower Fiend or Fairy monster from your hand or GY.
 -- ● 3: Add 1 Level 10 DARK monster from your Deck to your hand.
 -- ● 5: Special Summon 1 Level 10 monster from your hand or GY.
 -- You can only use this effect of "Full Moon Mirror" once per turn.
@@ -44,6 +44,9 @@ function s.initial_effect(c)
 	e3:SetOperation(s.thop)
 	c:RegisterEffect(e3)
 end
+s.mentioned_counter={
+	[0x74]=true,
+}
 function s.ctfilter(c)
 	return (c:IsPreviousLocation(LOCATION_MZONE) or
 		not c:IsPreviousLocation(LOCATION_ONFIELD) and c:IsType(TYPE_MONSTER))

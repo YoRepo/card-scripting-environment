@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:51
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Batteryman Fuel Cell  (ID: 74730899)
 -- Type: Monster / Effect
@@ -11,10 +11,9 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- If you control 2 or more face-up "Batteryman" monsters, you can Special Summon this card from your
--- hand.
--- Once per turn, you can Tribute 1 "Batteryman" monster, except this card, to select 1 card your
--- opponent controls and return it to its owner's hand.
+-- If you control 2 or more "Batteryman" monsters, you can Special Summon this card (from your hand).
+-- Once per turn: You can Tribute 1 other "Batteryman" monster, then target 1 card your opponent
+-- controls; return that target to the hand.
 --[[ __CARD_HEADER_END__ ]]
 
 --燃料電池メン

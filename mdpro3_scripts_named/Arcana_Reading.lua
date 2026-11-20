@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Arcana Reading  (ID: 11819473)
 -- Type: Spell
@@ -87,7 +87,7 @@ function c11819473.activate(e,tp,eg,ep,ev,re,r,rp)
 		local g=Duel.SelectMatchingCard(1-tp,c11819473.thfilter2,1-tp,LOCATION_DECK,0,1,1,nil,1-tp)
 		if g:GetCount()>0 then
 			g:GetFirst():SetStatus(STATUS_TO_HAND_WITHOUT_CONFIRM,true)
-			Duel.SendtoHand(g,nil,REASON_EFFECT)
+			Duel.SendtoHand(g,nil,REASON_EFFECT,1-tp)
 		end
 	end
 end

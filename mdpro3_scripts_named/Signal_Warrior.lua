@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Signal Warrior  (ID: 9634146)
 -- Type: Monster / Effect / Synchro
@@ -86,6 +86,9 @@ function c9634146.initial_effect(c)
 	e6:SetOperation(c9634146.desop)
 	c:RegisterEffect(e6)
 end
+c9634146.mentioned_counter={
+	[0x104d]=true,
+}
 function c9634146.ctop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	local g=Duel.GetFieldGroup(tp,LOCATION_FZONE,LOCATION_FZONE)

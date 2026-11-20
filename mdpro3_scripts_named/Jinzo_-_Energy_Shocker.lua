@@ -1,21 +1,22 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Jinzo - Energy Shocker  (ID: 101306003)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Jinzo - Energy Shocker  (ID: 40275470)
 -- Type: Monster / Effect
 -- Attribute: DARK
 -- Race: Machine
 -- Level: 7
 -- ATK 2400 | DEF 1500
 -- Setcode: 0xbc
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- This card's name becomes "Jinzo" while in the field or GY. If this card is Normal or Special
--- Summoned: You can destroy as many Traps your opponent controls as possible (if a card is Set, reveal
--- it), then this card gains 300 ATK for each card destroyed this way. You can only use this effect of
--- "Jinzo - Energy Shocker" once per turn. Your opponent cannot activate Trap Cards or effects while
--- you have another monster in your field or GY that mentions "Dark Time Wizard".
+-- This card's name becomes "Jinzo" while on the field or in the GY.
+-- If this card is Normal or Special Summoned: You can destroy all Traps your opponent controls (if
+-- face-down, reveal it), then this card gains 300 ATK for each card destroyed.
+-- You can only use this effect of "Jinzo - Energy Shocker" once per turn.
+-- While you have another monster that mentions "Dark Time Wizard" in your field or GY, your opponent
+-- cannot activate Trap Cards or effects.
 --[[ __CARD_HEADER_END__ ]]
 
 --人造人間－サイコ・エナジー・ショッカー
@@ -23,7 +24,7 @@ local s,id,o=GetID()
 function s.initial_effect(c)
 	--change
 	aux.EnableChangeCode(c,77585513,LOCATION_MZONE+LOCATION_GRAVE)
-	aux.AddCodeList(c,101306052)
+	aux.AddCodeList(c,40235813)
 	--destroy
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(id,0))
@@ -76,7 +77,6 @@ function s.desop(e,tp,eg,ep,ev,re,r,rp)
 			Duel.BreakEffect()
 			local e2=Effect.CreateEffect(c)
 			e2:SetType(EFFECT_TYPE_SINGLE)
-			e2:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
 			e2:SetCode(EFFECT_UPDATE_ATTACK)
 			e2:SetReset(RESET_EVENT+RESETS_STANDARD)
 			e2:SetValue(atk*300)
@@ -85,7 +85,7 @@ function s.desop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 function s.cfilter(c)
-	return c:IsFaceupEx() and aux.IsCodeListed(c,101306052) and c:IsType(TYPE_MONSTER)
+	return c:IsFaceupEx() and aux.IsCodeListed(c,40235813) and c:IsType(TYPE_MONSTER)
 end
 function s.condition(e)
 	return Duel.IsExistingMatchingCard(s.cfilter,e:GetHandlerPlayer(),LOCATION_MZONE+LOCATION_GRAVE,0,1,e:GetHandler())

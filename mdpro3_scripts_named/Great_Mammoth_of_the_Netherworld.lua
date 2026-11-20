@@ -1,6 +1,6 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Great Mammoth of the Netherworld  (ID: 80461466)
 -- Type: Monster / Effect
 -- Attribute: DARK
@@ -11,13 +11,13 @@
 --
 -- Effect Text:
 -- If this card is Special Summoned and you control "Call of the Haunted" or a Zombie monster, except
--- "Great Mammoth of the Netherworld": You can target 1 card on the field; destroy it. You can only use
--- this effect of "Great Mammoth of the Netherworld" once per turn. A Zombie Xyz Monster that has this
--- card as material gains this effect.
+-- "Great Mammoth of the Netherworld": You can target 1 card on the field; destroy it.
+-- You can only use this effect of "Great Mammoth of the Netherworld" once per turn.
+-- A Zombie Xyz Monster that has this card as material gains this effect.
 -- ● Gains 1000 ATK.
 --[[ __CARD_HEADER_END__ ]]
 
---Great Mammoth of the Netherworld
+--冥界の魔象
 local s,id,o=GetID()
 function s.initial_effect(c)
 	aux.AddCodeList(c,97077563)

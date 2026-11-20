@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:54
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Despia, Theater of the Branded  (ID: 99543666)
 -- Type: Spell / Field
 -- Setcode: 0x15d, 0x164
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- During your Main Phase: You can Fusion Summon 1 Level 8 or higher Fusion Monster from your Extra
--- Deck, using monsters from your hand or field as material. If a face-up non-Fusion Fairy monster you
--- control leaves the field by an opponent's card effect, or is destroyed by battle: You can target 1
--- Level 8 or higher Fusion Monster in your GY; Special Summon it. You can only use each effect of
--- "Despia, Theater of the Branded" once per turn.
+-- Deck, using monsters from your hand or field.
+-- If a face-up non-Fusion Fairy monster you control leaves the field by an opponent's card effect, or
+-- is destroyed by battle: You can target 1 Level 8 or higher Fusion Monster in your GY; Special Summon
+-- it.
+-- You can only use each effect of "Despia, Theater of the Branded" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --烙印劇城デスピア

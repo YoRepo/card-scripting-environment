@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Flame Ruler  (ID: 41089128)
 -- Type: Monster / Effect
@@ -23,5 +23,6 @@ function c41089128.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 function c41089128.condition(e,c)
-	return c:IsAttribute(ATTRIBUTE_FIRE)
+	local ec=e:GetHandler()
+	return c:IsAttribute(ATTRIBUTE_FIRE) and (ec:IsFaceup() or c:GetControler()==ec:GetControler())
 end

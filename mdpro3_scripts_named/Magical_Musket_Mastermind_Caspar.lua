@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Magical Musket Mastermind Caspar  (ID: 3287359)
 -- Type: Monster / Effect / Link
@@ -91,7 +91,7 @@ function s.spop(e,tp,eg,ep,ev,re,r,rp)
 	if not g:CheckSubGroup(s.gcheck,2,2,e,tp) then return end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TARGET)
 	local tg=g:SelectSubGroup(tp,s.gcheck,false,2,2,e,tp)
-	if tg:GetCount()>1 then
+	if tg then
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
 		local sg=tg:FilterSelect(tp,s.spfilter,1,1,nil,tg,e,tp)
 		tg:Sub(sg)

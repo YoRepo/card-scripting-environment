@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:52
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Alchemist of Black Spells  (ID: 78121572)
 -- Type: Monster / Effect
@@ -30,6 +30,9 @@ function c78121572.initial_effect(c)
 	e1:SetOperation(c78121572.op)
 	c:RegisterEffect(e1)
 end
+c78121572.mentioned_counter={
+	[0x1]=true,
+}
 function c78121572.con(e,tp,eg,ep,ev,re,r,rp)
 	return e:GetHandler():IsPosition(POS_FACEUP_ATTACK)
 end

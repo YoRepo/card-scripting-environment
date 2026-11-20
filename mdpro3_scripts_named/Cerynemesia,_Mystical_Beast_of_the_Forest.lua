@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Cerynemesia, Mystical Beast of the Forest  (ID: 101305087)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Cerynemesia, Mystical Beast of the Forest  (ID: 43632709)
 -- Type: Monster / Effect
 -- Attribute: EARTH
 -- Race: Beast
@@ -14,9 +14,10 @@
 -- If this card is Normal or Special Summoned: You can banish (face-up) 1 Beast monster from your hand
 -- or face-up field until the End Phase; Special Summon 1 EARTH Beast monster from your Deck or GY,
 -- with an equal or lower Level than that monster's original Level, then your opponent can Special
--- Summon 1 monster from their hand. You can only use this effect of "Cerynemesia, Mystical Beast of
--- the Forest" once per turn. Your opponent's monsters that can attack must attack the monster you
--- control with the highest ATK (their choice, if tied).
+-- Summon 1 monster from their hand.
+-- You can only use this effect of "Cerynemesia, Mystical Beast of the Forest" once per turn.
+-- Your opponent's monsters that can attack must attack the monster you control with the highest ATK
+-- (their choice, if tied).
 --[[ __CARD_HEADER_END__ ]]
 
 --Cerynemesia, Mystical Beast of the Forest
@@ -50,17 +51,9 @@ function s.initial_effect(c)
 	e4:SetValue(s.atklimit)
 	c:RegisterEffect(e4)
 end
----Check whether a monster is special summoned by Tiki Peace, which should not calculate its original value after leaving the field
----@param c Card
----@return boolean
-function Auxiliary.covcheck(c)
-	if c:GetOriginalType()&TYPE_MONSTER~=0 then return true end
-	local se=c:GetSpecialSummonInfo(SUMMON_INFO_REASON_EFFECT)
-	return se and se:GetHandler()==c
-end
 function s.rmfilter(c,e,tp)
 	return c:IsFaceupEx() and c:IsRace(RACE_BEAST) and c:IsAbleToRemoveAsCost()
-		and Duel.GetMZoneCount(tp,c)>0 and (not c:IsLocation(LOCATION_MZONE) or Auxiliary.covcheck(c))
+		and Duel.GetMZoneCount(tp,c)>0 and (not c:IsLocation(LOCATION_MZONE) or aux.covcheck(c))
 		and Duel.IsExistingMatchingCard(s.spfilter,tp,LOCATION_DECK+LOCATION_GRAVE,0,1,nil,e,tp,c:GetOriginalLevel())
 end
 function s.spfilter(c,e,tp,olv)

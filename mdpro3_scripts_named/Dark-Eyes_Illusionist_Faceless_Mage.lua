@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Dark-Eyes Illusionist Faceless Mage  (ID: 34314989)
 -- Type: Monster / Effect
@@ -7,14 +7,14 @@
 -- Race: Illusion
 -- Level: 4
 -- ATK 0 | DEF 0
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- If this card battles a monster, neither can be destroyed by that battle.
--- You can discard this card, then activate 1 of these effects (but you can only use each of these
--- effects of "Dark-Eyes Illusionist Faceless Mage" once per turn);
--- ● Place 1 "Mind Scan" from your hand or Deck face-up on your field.
--- ● Add 1 other monster from your GY to your hand that mentions "Toon World", then you can Special
+-- You can discard this card, then activate 1 of these effects (but you can only use each effect of
+-- "Dark-Eyes Illusionist Faceless Mage" once per turn);
+-- ● Place 1 "Mind Scan" from your hand or Deck, face-up on your field.
+-- ● Add 1 other monster that mentions "Toon World" from your GY to your hand, then you can Special
 -- Summon it, ignoring its Summoning conditions.
 --[[ __CARD_HEADER_END__ ]]
 

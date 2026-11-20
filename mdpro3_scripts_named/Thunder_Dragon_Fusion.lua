@@ -1,17 +1,18 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
--- Source DB: test-update.cdb
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
 -- Card: Thunder Dragon Fusion  (ID: 95238394)
 -- Type: Spell
 -- Setcode: 0x11c, 0x46
--- Scope: OCG / TCG / Illegal
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- Fusion Summon 1 Thunder Fusion Monster from your Extra Deck, by shuffling the Fusion Materials
 -- listed on it into the Deck, from among your cards on the field, in your GY, and/or your face-up
--- banished cards. During your Main Phase, except the turn this card was sent to the GY: You can banish
--- this card from your GY; add 1 Thunder monster from your Deck to your hand. You can only use each
--- effect of "Thunder Dragon Fusion" once per turn.
+-- banished cards.
+-- During your Main Phase, except the turn this card was sent to the GY: You can banish this card from
+-- your GY; add 1 Thunder monster from your Deck to your hand.
+-- You can only use each effect of "Thunder Dragon Fusion" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --雷龍融合

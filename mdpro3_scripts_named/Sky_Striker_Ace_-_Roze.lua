@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:45
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Sky Striker Ace - Roze  (ID: 37351133)
 -- Type: Monster / Effect
@@ -13,9 +13,9 @@
 -- Effect Text:
 -- If a "Sky Striker Ace" monster(s) is Normal or Special Summoned, except "Sky Striker Ace - Roze"
 -- (except during the Damage Step): You can Special Summon this card from your hand.
--- If an opponent's monster in the Extra Monster Zone is destroyed by battle, or leaves the field
--- because of your card effect, while this card is in your GY: You can Special Summon this card, then
--- you can negate the effects of 1 face-up monster your opponent controls, until the end of this turn.
+-- If an opponent's monster in the Extra Monster Zone is destroyed by battle, or leaves the field by
+-- your card effect, while this card is in your GY: You can Special Summon this card, then you can
+-- negate the effects of 1 face-up monster your opponent controls, until the end of this turn.
 -- You can only use each effect of "Sky Striker Ace - Roze" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 

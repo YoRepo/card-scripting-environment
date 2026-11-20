@@ -1,13 +1,13 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:44
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: The Selection  (ID: 30888983)
 -- Type: Trap / Counter
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- Pay 1000 Life Points.
--- Negate the Summon of a monster that has the same Type as a monster on the field, and destroy it.
+-- Pay 1000 LP; Negate the Summon of a monster that has the same Type as a monster on the field, and
+-- destroy it.
 --[[ __CARD_HEADER_END__ ]]
 
 --方舟の選別

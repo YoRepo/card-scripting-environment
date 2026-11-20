@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Shell Knight  (ID: 10163855)
 -- Type: Monster / Effect
@@ -54,7 +54,7 @@ function c10163855.damtg(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function c10163855.damop(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	if c:IsFaceup() and c:IsAttackPos() and c:IsRelateToEffect(e) and Duel.ChangePosition(c,POS_FACEUP_DEFENSE) then
+	if c:IsFaceup() and c:IsAttackPos() and c:IsRelateToEffect(e) and Duel.ChangePosition(c,POS_FACEUP_DEFENSE)>0 then
 		Duel.Damage(1-tp,500,REASON_EFFECT)
 	end
 end

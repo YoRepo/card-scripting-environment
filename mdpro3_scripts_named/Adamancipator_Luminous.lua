@@ -1,7 +1,7 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Adamancipator Luminous  (ID: 101306049)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Adamancipator Luminous  (ID: 41458361)
 -- Type: Monster / Effect / Link
 -- Attribute: LIGHT
 -- Race: Rock
@@ -9,15 +9,16 @@
 -- Link Arrows: Left, Bottom
 -- ATK 1800
 -- Setcode: 0x140
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- 2 Effect Monsters, including a Synchro Monster
 -- If this card is Link Summoned, or a monster(s) is Special Summoned to a zone(s) this card points to:
--- You can target 1 monster in your field or GY that has a Level; Special Summon 1 "Glimmer Token"
--- (Rock/LIGHT/ATK 0/DEF 0) with the same Level. When another monster on the field activates its effect
--- (Quick Effect): You can place it on top of the Deck. You can only use each effect of "Adamancipator
--- Luminous" once per turn.
+-- You can target 1 monster in your face-up field or GY; Special Summon 1 "Dwimmered Stone Token"
+-- (Rock/LIGHT/ATK 0/DEF 0) with the same Level as that monster.
+-- When an effect of another monster on the field is activated (Quick Effect): You can place that
+-- monster on top of the Deck.
+-- You can only use each effect of "Adamancipator Luminous" once per turn.
 --[[ __CARD_HEADER_END__ ]]
 
 --魔救の輝跡

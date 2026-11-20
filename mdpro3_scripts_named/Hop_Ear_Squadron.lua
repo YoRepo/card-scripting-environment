@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:43
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Hop Ear Squadron  (ID: 1980574)
 -- Type: Monster / Effect / Tuner
@@ -10,8 +10,8 @@
 -- Scope: OCG / TCG
 --
 -- Effect Text:
--- During your opponent's Main Phase (Quick Effect): You can target 1 face-up monster you control;
--- Special Summon this card from your hand, and if you do, immediately after this effect resolves,
+-- During your opponent's Main Phase, if this card is in your hand (Quick Effect): You can target 1
+-- face-up monster you control; Special Summon this card, then immediately after this effect resolves,
 -- Synchro Summon 1 Synchro Monster using only this card you control and that target.
 -- You can only use this effect of "Hop Ear Squadron" once per turn.
 --[[ __CARD_HEADER_END__ ]]

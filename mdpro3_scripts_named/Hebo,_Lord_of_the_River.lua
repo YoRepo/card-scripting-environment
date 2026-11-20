@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:53
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Hebo, Lord of the River  (ID: 90365482)
 -- Type: Monster / Effect / Spirit
@@ -74,7 +74,7 @@ function c90365482.posop(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 function c90365482.retcon(e,tp,eg,ep,ev,re,r,rp)
-	if not (e:GetLabelObject():GetFlagEffectLabel(90365482)==e:GetLabel()) then
+	if e:GetLabelObject():GetFlagEffectLabel(90365482)~=e:GetLabel() then
 		e:Reset()
 		return false
 	else return true end

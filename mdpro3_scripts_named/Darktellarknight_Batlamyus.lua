@@ -1,5 +1,5 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:50
+-- Generated: 2026-11-19T23:32:31
 -- Source DB: cards.cdb
 -- Card: Darktellarknight Batlamyus  (ID: 64414267)
 -- Type: Monster / Effect / Xyz
@@ -18,8 +18,8 @@
 -- also you cannot Xyz Summon other monsters for the rest of this turn.
 -- (This is treated as an Xyz Summon. Xyz Materials attached to this card also become Xyz Materials on
 -- the Summoned monster.)
--- This effect can be activated during either player's turn, if you have 7 or more "tellarknight"
--- monsters with different names in your Graveyard.
+-- This is a Quick Effect if you have 7 or more "tellarknight" monsters with different names in your
+-- GY.
 --[[ __CARD_HEADER_END__ ]]
 
 --煉獄の騎士 ヴァトライムス

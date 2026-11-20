@@ -1,22 +1,25 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Destiny HERO - Destro-Dogma  (ID: 101306021)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Destiny HERO - Destro-Dogma  (ID: 25158975)
 -- Type: Monster / Effect / Special Summon
 -- Attribute: DARK
 -- Race: Warrior
 -- Level: 8
 -- ATK 3400 | DEF 2400
 -- Setcode: 0xc008
--- Scope: OCG
+-- Scope: OCG / TCG
 --
 -- Effect Text:
--- Cannot be Normal Summoned/Set. Must be Special Summoned (from your hand or GY) by banishing 3
--- Warrior and/or DARK monsters from your GY. You can only Special Summon "Destiny HERO - Destro-Dogma"
--- once per turn this way. If Summoned this way: You can activate this effect; inflict 2000 damage to
--- your opponent during the next Standby Phase. Once per turn, when your opponent activates a card or
--- effect (Quick Effect): You can Fusion Summon 1 DARK or Warrior Fusion Monster from your Extra Deck,
--- by shuffling its materials from your hand, field, and/or GY into the Deck.
+-- Cannot be Normal Summoned/Set.
+-- Must be Special Summoned (from your hand or GY) by banishing 3 Warrior and/or DARK monsters from
+-- your GY.
+-- You can only Special Summon "Destiny HERO - Destro-Dogma" once per turn this way.
+-- If Summoned this way: You can activate this effect; during the next Standby Phase, inflict 2000
+-- damage to your opponent.
+-- Once per turn, when your opponent activates a card or effect (Quick Effect): You can Fusion Summon 1
+-- Warrior or DARK Fusion Monster from your Extra Deck, by shuffling its materials from your hand,
+-- field, and/or GY into the Deck.
 --[[ __CARD_HEADER_END__ ]]
 
 --D－HERO デスドグマガイ
@@ -51,7 +54,7 @@ function s.initial_effect(c)
 	e3:SetCondition(s.damcon)
 	e3:SetOperation(s.damop)
 	c:RegisterEffect(e3)
-	--spsummon
+	--fusion summon
 	local e4=Effect.CreateEffect(c)
 	e4:SetDescription(aux.Stringid(id,2))
 	e4:SetCategory(CATEGORY_FUSION_SUMMON+CATEGORY_TODECK+CATEGORY_SPECIAL_SUMMON)
@@ -70,13 +73,12 @@ end
 function s.spcon(e,c)
 	if c==nil then return true end
 	local tp=c:GetControler()
-	local g=Duel.GetMatchingGroup(s.spfilter,tp,LOCATION_GRAVE,0,c)
-	return g:CheckSubGroup(aux.mzctcheck,3,3,tp)
+	return Duel.GetLocationCount(tp,LOCATION_MZONE)>0 and Duel.IsExistingMatchingCard(s.spfilter,tp,LOCATION_GRAVE,0,3,c)
 end
 function s.sptg(e,tp,eg,ep,ev,re,r,rp,chk,c)
 	local g=Duel.GetMatchingGroup(s.spfilter,tp,LOCATION_GRAVE,0,c)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_REMOVE)
-	local sg=g:SelectSubGroup(tp,aux.mzctcheck,true,3,3,tp)
+	local sg=g:CancelableSelect(tp,3,3,nil)
 	if sg then
 		sg:KeepAlive()
 		e:SetLabelObject(sg)
@@ -107,9 +109,6 @@ end
 function s.fspcon(e,tp,eg,ep,ev,re,r,rp)
 	return rp==1-tp
 end
-function s.filter0(c)
-	return c:IsType(TYPE_MONSTER) and c:IsAbleToDeck()
-end
 function s.filter1(c,e)
 	return c:IsType(TYPE_MONSTER) and not c:IsImmuneToEffect(e) and c:IsAbleToDeck()
 end
@@ -121,7 +120,7 @@ function s.fsptg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then
 		local chkf=tp
 		local mg1=Duel.GetFusionMaterial(tp):Filter(s.filter1,nil,e)
-		local mg2=Duel.GetMatchingGroup(s.filter0,tp,LOCATION_GRAVE,0,nil)
+		local mg2=Duel.GetMatchingGroup(s.filter1,tp,LOCATION_GRAVE,0,nil,e)
 		mg1:Merge(mg2)
 		local res=Duel.IsExistingMatchingCard(s.filter2,tp,LOCATION_EXTRA,0,1,nil,e,tp,mg1,nil,chkf)
 		if not res then
@@ -141,7 +140,7 @@ end
 function s.fspop(e,tp,eg,ep,ev,re,r,rp)
 	local chkf=tp
 	local mg1=Duel.GetFusionMaterial(tp):Filter(s.filter1,nil,e)
-	local mg2=Duel.GetMatchingGroup(s.filter1,tp,LOCATION_GRAVE,0,nil,e)
+	local mg2=Duel.GetMatchingGroup(aux.NecroValleyFilter(s.filter1),tp,LOCATION_GRAVE,0,nil,e)
 	mg1:Merge(mg2)
 	local sg1=Duel.GetMatchingGroup(s.filter2,tp,LOCATION_EXTRA,0,nil,e,tp,mg1,nil,chkf)
 	local mg3=nil

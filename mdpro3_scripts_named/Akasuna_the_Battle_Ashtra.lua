@@ -1,21 +1,22 @@
 --[[ __CARD_HEADER_START__ ]]
--- Generated: 2026-07-12T02:17:42
--- Source DB: test-release.cdb
--- Card: Akasuna the Battle Ashtra  (ID: 101306009)
+-- Generated: 2026-11-19T23:32:31
+-- Source DB: cards.cdb
+-- Card: Akasuna the Battle Ashtra  (ID: 38331244)
 -- Type: Monster / Effect
 -- Attribute: FIRE
 -- Race: Fiend
 -- Level: 8
 -- ATK 3000 | DEF 300
--- Setcode: 0x2e4
--- Scope: OCG
+-- Setcode: 0x1e4
+-- Scope: OCG / TCG
 --
 -- Effect Text:
 -- You can Special Summon this card (from your hand) by revealing 1 face-down card you control and
--- returning it to the hand/Extra Deck. You can only Special Summon "Akasuna the Battle Ashtra" once
--- per turn this way. You can only use each of the following effects of "Akasuna the Battle Ashtra"
--- once per turn. During the Main Phase (Quick Effect): You can send 1 Trap from your hand or face-down
--- field to the GY; change all face-up monsters your opponent controls to face-down Defense Position.
+-- returning it to the hand or Extra Deck.
+-- You can only Special Summon "Akasuna the Battle Ashtra" once per turn this way.
+-- You can only use each of the following effects of "Akasuna the Battle Ashtra" once per turn.
+-- During the Main Phase (Quick Effect): You can send 1 Trap from your hand or face-down field to the
+-- GY; change all face-up monsters your opponent controls to face-down Defense Position.
 -- During your End Phase: You can Set 1 "Ashtra" Trap from your Deck.
 --[[ __CARD_HEADER_END__ ]]
 
@@ -115,7 +116,7 @@ function s.setcon2(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.GetTurnPlayer()==tp
 end
 function s.setfilter(c)
-	return c:IsSetCard(0x2e4) and c:IsType(TYPE_TRAP) and c:IsSSetable()
+	return c:IsSetCard(0x1e4) and c:IsType(TYPE_TRAP) and c:IsSSetable()
 end
 function s.settg2(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.setfilter,tp,LOCATION_DECK,0,1,nil) end
