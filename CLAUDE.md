@@ -50,6 +50,11 @@ The ground-truth corpus for Yu-Gi-Oh (mdpro3, ygopro lineage) card scripting.
 One command, safe to repeat: without `--apply` it writes nothing. It needs
 Python 3 and `git`, nothing else.
 
+In a Claude Code session that has `Website-TEST` beside this repository,
+`/update-corpus` (that repository's `.claude/commands/update-corpus.md`) runs
+the whole loop as a checklist — this update, the engine reference below, then
+the website's re-mining — and `/update-corpus check` only looks.
+
 **The corpus is a function of its sources.** For every card the game has a
 script for there is one file: named after the card, holding the card's
 details as a header comment and then the script exactly as upstream ships
