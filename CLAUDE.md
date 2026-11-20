@@ -31,8 +31,9 @@ The ground-truth corpus for Yu-Gi-Oh (mdpro3, ygopro lineage) card scripting.
   index the website's Script Studio searches cards by effect with;
   `mine_api.py` and `mine_constants.py` → the studio's catalogs in
   `Website-TEST`).
-- `tests/` — `python3 tests/unit_update_corpus.py` (no network, no
-  dependencies).
+- `tests/` — no network, no dependencies: `python3 tests/unit_update_corpus.py`
+  (the updater) and `python3 tests/unit_mine_api.py` (the API miner — how a
+  call's arguments are counted).
 
 ## Keeping the corpus up to date
 

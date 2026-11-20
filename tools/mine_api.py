@@ -52,24 +52,63 @@ PTR_AT = re.compile(r"\s*[,)]")
 
 
 def count_args(line, open_idx):
-    """Rough top-level argument count for the call whose '(' is at open_idx."""
-    depth = 0
+    """How many arguments the call whose '(' is at open_idx passes, or None
+    when the call does not close on this line.
+
+    Only a comma at the call's OWN level separates two arguments. One inside
+    a nested call, inside a table constructor (`{EVENT_TO_GRAVE,EVENT_REMOVE}`)
+    or inside a string — quoted, or a long `[[...]]` one — belongs to the
+    argument it sits in. This used to track parentheses alone, so a table
+    argument was counted as one argument per element —
+    aux.AddFusionProcCodeFunRep(c,89631139,{89631139,s.mfilter},2,2,true,true)
+    read as eight — and every envelope that met one was wide by the table's
+    length. The website's signature gate (Website-TEST
+    tests/validate_api_sigs.js) carried a written exception for each function
+    that made look over-called; none is needed for that reason now.
+
+    What it still cannot see is in the text, not in the counting: an argument
+    list spread from a table at run time (`f(table.unpack(t))` is one
+    argument here, however many `t` holds)."""
+    depth = 0          # parentheses: 1 is the call's own level
+    nest = 0           # braces and brackets opened inside the call
     args = 0
     seen_any = False
-    for ch in line[open_idx:]:
+    quote = None
+    i = open_idx
+    while i < len(line):
+        ch = line[i]
+        if quote:
+            if ch == "\\":
+                i += 2
+                continue
+            if ch == quote:
+                quote = None
+            i += 1
+            continue
+        if ch in "\"'":
+            quote = ch
+            seen_any = True
+            i += 1
+            continue
         if ch == "(":
             depth += 1
             if depth == 1:
+                i += 1
                 continue
         elif ch == ")":
             depth -= 1
             if depth == 0:
                 return args + 1 if seen_any else 0
+        elif ch in "{[":
+            nest += 1
+        elif ch in "}]":
+            nest -= 1
         if depth >= 1:
             if not ch.isspace():
                 seen_any = True
-            if ch == "," and depth == 1:
+            if ch == "," and depth == 1 and nest == 0:
                 args += 1
+        i += 1
     return None  # call spans lines; unknown
 
 
