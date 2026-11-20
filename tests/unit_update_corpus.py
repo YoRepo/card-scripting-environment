@@ -441,9 +441,11 @@ check("a dry run reports and writes nothing",
       and not os.path.exists(os.path.join(repo, "effect_index.json")), said[-300:])
 code, said = update(repo, before, "--apply")
 first = corpus(repo)
-check("a run that changed the corpus says what it could not refresh: the website's minings",
+check("a run that changed the corpus says what it could not refresh: the website's minings, "
+      "and where their whole procedure is written down",
       "a step behind" in said and "mine_card_codes.py --verify" in said
-      and "mine_api.py" in said and "mine_constants.py" in said, said[-600:])
+      and "mine_api.py" in said and "mine_constants.py" in said
+      and "docs/script-builder/re-mining.md" in said, said[-700:])
 check("--apply writes one file per card, named after it, plus the two records",
       code == 0 and sorted(first) == sorted([
           "Stays_Put.lua", "Old_Name.lua", "Text_Changes.lua", "Script_Changes.lua",

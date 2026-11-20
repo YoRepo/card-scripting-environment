@@ -474,7 +474,9 @@ def run(arguments, out=print):
         "../Website-TEST/static/data/scripter/api.json --merge")
     out("  here:             python3 tools/mine_constants.py --out "
         "../Website-TEST/static/data/scripter/constants.json")
-    out("(Website-TEST's docs/script-builder/ has the checks that go with the last two.)")
+    out("(Those are the three minings. Website-TEST's docs/script-builder/re-mining.md "
+        "is the whole procedure: the order, what else follows from them, and what "
+        "its gates then ask.)")
     return 0
 
 

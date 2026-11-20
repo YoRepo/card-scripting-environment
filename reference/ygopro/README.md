@@ -60,12 +60,17 @@ drift and deliberately does not fix it. The engine is what every hand-written
 API doc in `Website-TEST` was checked against, so when it moves:
 
 1. copy the files at the new commits (from git's objects, not a checkout that
-   may have rewritten line endings) and update `sources.json`;
+   may have rewritten line endings), update `sources.json`, and COMMIT — the
+   next step finds the previous files by their git blob ids;
 2. list what changed — `git diff` on this directory is the whole worklist: a
    new function, or an existing one whose body or parameter list moved;
-3. in `Website-TEST`, re-run the two engine miners (`node tests/mine_sources.js`,
-   `node tests/mine_reqargs.js`) and re-check the doc of every function the
-   diff touched.
+3. in `Website-TEST`, follow `docs/script-builder/re-mining.md`. Three things
+   there hang on this directory: the docs' line citations (some six hundred
+   "libcard.cpp:2576" are coordinates in the files you just replaced —
+   `python3 tools/remap_engine_cites.py --write` renumbers them and lists the
+   ones whose own line changed), the two engine miners
+   (`node tests/mine_sources.js`, `node tests/mine_reqargs.js`), and the doc of
+   every function the diff touched, re-read.
 
 History: first vendored 2026-07-15, from the two repositories' master branches
 as they stood on 2026-06-24 (`ygopro-core` `8513ea7`, `ygopro-scripts`
