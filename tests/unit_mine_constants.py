@@ -2,9 +2,12 @@
 """Unit tests for tools/mine_constants.py — the miner behind the website's
 constant catalog (Website-TEST static/data/scripter/constants.json).
 
-What is pinned is what a RE-MINE may and may not do to a file people have
-written into: frequencies and the inventory follow the corpus, and a
-hand-written desc is never lost — not when its constant's use falls under
+§1 is what counts as a use — a constant in a comment is not one, and (§1b)
+neither is a script's own definition of the constant or the guard around it.
+
+The rest is what a RE-MINE may and may not do to a file people have written
+into: frequencies and the inventory follow the corpus, and a hand-written
+desc is never lost — not when its constant's use falls under
 the floor, and not when the corpus stops writing it altogether (an upstream
 rename does exactly that: HINGMSG_LVRANK became HINTMSG_LVRANK in every
 script at once). §3 is the two cases it cannot carry a desc over: it says so,
@@ -79,6 +82,33 @@ check("a closed enum is seeded from the engine's constant.lua, an unused member 
       and "CHINT_TURN" in members(doc, "CHINT"), doc["families"].get("CHINT"))
 check("…and only closed enums are: an ordinary family holds what the corpus writes",
       "LOCATION" not in doc["families"])
+
+print("--- §1b a script's own definition of a constant is not a use of it")
+write_script("Ahead_Of_Its_Engine.lua",
+             "if not CATEGORY_DECK_SPSUMMON then\n\tCATEGORY_DECK_SPSUMMON=0x800000000\nend\n"
+             "EFFECT_OPPO_SELECT_SPSUMMON_ZONE\t=380\t--declared by the card itself\n"
+             "TIMING_MADE_UP=TIMING_END_PHASE+TIMING_END_PHASE\n"
+             "function s.initial_effect(c)\n"
+             "\te1:SetCategory(CATEGORY_SPECIAL_SUMMON+CATEGORY_DECK_SPSUMMON)\n"
+             "\te1:SetCode(EFFECT_OPPO_SELECT_SPSUMMON_ZONE)\n"
+             "\tif CATEGORY_DECK_SPSUMMON==0x800000000 then return end\n"
+             "end\n")
+write_script("Also_Ahead.lua",
+             "if not CATEGORY_DECK_SPSUMMON then\n\tCATEGORY_DECK_SPSUMMON=0x800000000\nend\n"
+             "e1:SetCategory(CATEGORY_DECK_SPSUMMON)\n")
+said, ahead = mine()
+check("the guard and the definition are not counted, a comparison is: three uses, not seven lines",
+      members(ahead, "CATEGORY").get("CATEGORY_DECK_SPSUMMON", {}).get("freq") == 3,
+      members(ahead, "CATEGORY").get("CATEGORY_DECK_SPSUMMON"))
+check("a constant one script declares for itself and uses once does not reach the floor on that",
+      "EFFECT_OPPO_SELECT_SPSUMMON_ZONE" not in members(ahead, "EFFECT"), ahead["families"].get("EFFECT"))
+check("…and one that is only ever defined is not catalogued at all",
+      "TIMING_MADE_UP" not in members(ahead, "TIMING"))
+check("what a definition is made FROM is used: the right-hand side still counts",
+      members(ahead, "TIMING")["TIMING_END_PHASE"]["freq"] == 4, members(ahead, "TIMING"))
+os.remove(os.path.join(corpus, "mdpro3_scripts_named", "Ahead_Of_Its_Engine.lua"))
+os.remove(os.path.join(corpus, "mdpro3_scripts_named", "Also_Ahead.lua"))
+said, doc = mine()
 
 print("--- §2 a re-mine keeps every written desc")
 for family in doc["families"].values():

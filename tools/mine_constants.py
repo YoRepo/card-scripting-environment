@@ -62,6 +62,22 @@ CLOSED_ENUM = {"CHINT", "LINK_MARKER"}
 
 DECL = re.compile(r"^([A-Z][A-Z0-9_]{2,})\s*=", re.M)
 
+# A script that DEFINES a constant is not using it. Cards announced ahead of
+# the engine release that supports them bring the constant along:
+#
+#     if not CATEGORY_DECK_SPSUMMON then
+#         CATEGORY_DECK_SPSUMMON=0x800000000
+#     end
+#
+# and one declares an effect code no constant.lua has at all
+# (EFFECT_OPPO_SELECT_SPSUMMON_ZONE =380). Counted as written, the guard and
+# the definition tripled a constant's uses and — worse — carried a name over
+# the floor on the strength of its own declaration: the studio's picker then
+# offers a constant that is nil in every script but the one that made it.
+# Neither line is a use; whatever else stands on them still is.
+OWN_DEFINITION = re.compile(r"^\s*([A-Z][A-Z0-9_]{2,})\s*=(?!=)")
+OWN_GUARD = re.compile(r"^\s*if\s+not\s+([A-Z][A-Z0-9_]{2,})\s+then\b")
+
 
 def seeded_members(corpus_root):
     """Every constant a CLOSED_ENUM family declares in the vendored constant.lua."""
@@ -109,7 +125,10 @@ def main():
                 continue
             for line in text.split("\n"):
                 code = line.split("--")[0]
+                own = OWN_DEFINITION.match(code) or OWN_GUARD.match(code)
                 for m in TOKEN.finditer(code):
+                    if own and m.span() == own.span(1):
+                        continue
                     counts[m.group(0)] = counts.get(m.group(0), 0) + 1
 
     # authored desc fields from a previous run survive the re-mine — so a
